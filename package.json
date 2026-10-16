@@ -4,14 +4,22 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build --webpack",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "test": "tsx --test tests/bilingual.test.ts && tsx --test tests/rag.test.ts && tsx src/lib/search/__tests__/runTests.ts",
+    "test:bilingual": "tsx --test tests/bilingual.test.ts",
+    "test:rag": "tsx --test tests/rag.test.ts",
+    "test:pipeline": "python3 -m unittest discover -s pipeline/tests -v"
   },
   "dependencies": {
+    "clsx": "^2.1.1",
+    "firebase": "^13.0.0",
+    "lucide-react": "^1.57.0",
     "next": "16.4.1",
     "react": "19.3.0",
-    "react-dom": "19.3.0"
+    "react-dom": "19.3.0",
+    "tailwind-merge": "^3.7.0"
   },
   "devDependencies": {
     "@tailwindcss/turbopack": "^4",
@@ -21,6 +29,7 @@
     "eslint": "^9",
     "eslint-config-next": "16.4.1",
     "tailwindcss": "^4",
+    "tsx": "^4.23.15",
     "typescript": "^5"
   }
 }

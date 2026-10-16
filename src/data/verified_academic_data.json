@@ -1,0 +1,2179 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "last_updated": 1792121963265,
+    "generated_by": "RateProfCuaBan Academic Ingestion Pipeline",
+    "run_id": "run-ingest-1792121962856"
+  },
+  "universities": [
+    {
+      "id": "hust",
+      "name": "Đại học Bách Khoa Hà Nội",
+      "shortName": "HUST",
+      "city": "Hà Nội",
+      "region": "Miền Bắc",
+      "englishName": "Hanoi University of Science and Technology",
+      "officialDomain": "hust.edu.vn",
+      "officialWebsite": "https://hust.edu.vn",
+      "description": "Trường đại học kỹ thuật đa ngành hàng đầu Việt Nam, cái nôi đào tạo kỹ sư và nhà khoa học công nghệ cao.",
+      "logoUrl": null,
+      "coverImage": null,
+      "faculties": [
+        "Trường Công nghệ Thông tin & Truyền thông (SoICT)",
+        "Trường Điện - Điện tử (SEEE)",
+        "Trường Cơ khí (SME)",
+        "Trường Hóa & Khoa học Sự sống",
+        "Trường Vật liệu",
+        "Khoa Toán - Tin",
+        "Khoa Vật lý Kỹ thuật"
+      ],
+      "facultyDirectoryUrls": [
+        "https://soict.hust.edu.vn/can-bo",
+        "https://seee.hust.edu.vn/doi-ngu-giang-vien",
+        "https://sme.hust.edu.vn/giang-vien"
+      ],
+      "staffDirectoryUrls": [
+        "https://soict.hust.edu.vn/can-bo"
+      ],
+      "researchInstituteUrls": [],
+      "courseCatalogUrls": [],
+      "verifiedSocialLinks": [
+        {
+          "platform": "facebook",
+          "url": "https://www.facebook.com/dhbkhanoi",
+          "verified": true
+        }
+      ],
+      "ratingAverage": 0.0,
+      "totalReviews": 0,
+      "totalProfessors": 0,
+      "sourceUrls": [
+        "https://hust.edu.vn"
+      ]
+    }
+  ],
+  "professors": [
+    {
+      "id": "prof-hust-ta-hai-tung",
+      "name": "Tạ Hải Tùng",
+      "universityId": "hust",
+      "universityName": "Đại học Bách Khoa Hà Nội",
+      "universityShortName": "HUST",
+      "faculty": "Trường Công nghệ Thông tin & Truyền thông",
+      "title": "PGS. TS",
+      "academicTitle": "PGS. TS",
+      "position": null,
+      "nameVariants": [
+        "ta hai tung",
+        "Tạ Hải Tùng"
+      ],
+      "department": null,
+      "facultyId": null,
+      "departmentId": null,
+      "avatar": "https://soict.hust.edu.vn/wp-content/uploads/ta_hai_tung_vt_soict.jpg",
+      "bio": "PGS.TS. Tạ Hải Tùng --> --> PGS.TS. Nguyễn Linh Giang --> --> ThS. Phạm Thanh Liêm --> --> ThS. Bành Thị Quỳnh Mai --> --> PGS.TS. Nguyễn Khanh Văn --> --> TS. Ngô Thành Trung --> --> TS. Trịnh Văn Chiến --> --> TS. Nguyễn Thị Thanh Nga --> --> ThS. Lê Tấn Hùng --> --> PGS.TS. Lã Thế Vinh --> --> TS. Nguyễn Hữu Đức --> --> PGS.TS. Phạm Văn Hải --> --> TS. Trần Hoàng Hải --> --> TS. Nguyễn Đức Toàn --> --> TS. Vũ Tuyết Trinh --> --> GS.TS. Huỳnh Thị Thanh Bình --> --> TS. Lê Xuân Thành --> --> ThS. Nguyễn Đức Tiến --> --> ThS. Phạm Thị Phương Giang --> --> PGS.TS. Trần Quang Đức --> --> 1 2 3 4 &hellip; 6",
+      "bioVi": null,
+      "bioEn": null,
+      "courses": [],
+      "qualifications": [],
+      "researchInterests": [
+        "Hệ thống định vị dẫn đường NAVIS",
+        "IoT",
+        "Thành phố thông minh"
+      ],
+      "publications": [],
+      "officialProfileUrls": [
+        "https://soict.hust.edu.vn/pgs-ts-ta-hai-tung.html",
+        "https://soict.hust.edu.vn/can-bo/ta-hai-tung.html"
+      ],
+      "identifiers": {
+        "institutionalEmail": "tungth@soict.hust.edu.vn"
+      },
+      "imageRights": null,
+      "provenance": [
+        {
+          "field": "name",
+          "sourceUrl": "https://soict.hust.edu.vn/can-bo",
+          "extractedAt": 1792121963110,
+          "confidence": 0.95,
+          "sourceType": "official_faculty_page"
+        },
+        {
+          "field": "university",
+          "sourceUrl": "https://soict.hust.edu.vn/can-bo",
+          "extractedAt": 1792121963110,
+          "confidence": 1.0,
+          "sourceType": "official_faculty_page"
+        }
+      ],
+      "previousAffiliations": [],
+      "verificationStatus": "verified",
+      "confidenceScore": 0.98,
+      "lastVerifiedAt": 1792121963263,
+      "ratingAverage": 0.0,
+      "ratingCount": 0,
+      "ratingDistribution": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0
+      },
+      "criteriaAverages": {
+        "teachingQuality": 0.0,
+        "clarity": 0.0,
+        "gradingFairness": 0.0,
+        "difficulty": 0.0,
+        "communication": 0.0
+      },
+      "featured": false,
+      "trending": false,
+      "featuredQuote": null,
+      "takeAgainPercent": null,
+      "difficultyScore": null,
+      "sourceUrls": [
+        "https://soict.hust.edu.vn/can-bo",
+        "https://soict.hust.edu.vn/pgs-ts-ta-hai-tung.html",
+        "https://soict.hust.edu.vn/can-bo/ta-hai-tung.html"
+      ]
+    },
+    {
+      "id": "prof-hust-huynh-thi-thanh-binh",
+      "name": "Huỳnh Thị Thanh Bình",
+      "universityId": "hust",
+      "universityName": "Đại học Bách Khoa Hà Nội",
+      "universityShortName": "HUST",
+      "faculty": "Trường Công nghệ Thông tin & Truyền thông",
+      "title": "PGS. TS",
+      "academicTitle": "PGS. TS",
+      "position": "Phó Hiệu trưởng / Giảng viên cao cấp",
+      "nameVariants": [],
+      "department": "Bộ môn Khoa học Máy tính",
+      "facultyId": null,
+      "departmentId": null,
+      "avatar": "https://soict.hust.edu.vn/wp-content/uploads/2021/05/Huynh-Thi-Thanh-Binh.jpg",
+      "bio": "Phó Hiệu trưởng Trường CNTT&TT - ĐH Bách Khoa Hà Nội. Chuyên gia đầu ngành về Trí tuệ nhân tạo, Tối ưu hóa tiến hóa (Evolutionary Computation) và Giải thuật đa mục tiêu.",
+      "bioVi": null,
+      "bioEn": null,
+      "courses": [
+        "Trí tuệ nhân tạo",
+        "Thuật toán nâng cao",
+        "Tối ưu hóa trong tin học"
+      ],
+      "qualifications": [],
+      "researchInterests": [
+        "Trí tuệ nhân tạo",
+        "Tối ưu hóa tiến hóa",
+        "Học máy",
+        "Meta-heuristics"
+      ],
+      "publications": [],
+      "officialProfileUrls": [
+        "https://soict.hust.edu.vn/can-bo/huynh-thi-thanh-binh.html"
+      ],
+      "identifiers": {
+        "institutionalEmail": "binhht@soict.hust.edu.vn"
+      },
+      "imageRights": null,
+      "provenance": [
+        {
+          "field": "all",
+          "sourceUrl": "https://soict.hust.edu.vn/can-bo/huynh-thi-thanh-binh.html",
+          "extractedAt": 1792121963262,
+          "confidence": 1.0,
+          "sourceType": "official_faculty_page"
+        }
+      ],
+      "previousAffiliations": [],
+      "verificationStatus": "verified",
+      "confidenceScore": 0.98,
+      "lastVerifiedAt": 1792121963262,
+      "ratingAverage": 0.0,
+      "ratingCount": 0,
+      "ratingDistribution": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0
+      },
+      "criteriaAverages": {
+        "teachingQuality": 0.0,
+        "clarity": 0.0,
+        "gradingFairness": 0.0,
+        "difficulty": 0.0,
+        "communication": 0.0
+      },
+      "featured": false,
+      "trending": false,
+      "featuredQuote": null,
+      "takeAgainPercent": null,
+      "difficultyScore": null,
+      "sourceUrls": [
+        "https://soict.hust.edu.vn/can-bo/huynh-thi-thanh-binh.html"
+      ]
+    },
+    {
+      "id": "prof-vnu-uet-nguyen-viet-ha",
+      "name": "Nguyễn Việt Hà",
+      "universityId": "vnu-uet",
+      "universityName": "Trường Đại học Công nghệ - ĐHQG Hà Nội",
+      "universityShortName": "VNU-UET",
+      "faculty": "Khoa Công nghệ Thông tin",
+      "title": "GS. TS",
+      "academicTitle": "GS. TS",
+      "position": "Hiệu trưởng / Giảng viên cao cấp",
+      "nameVariants": [],
+      "department": "Bộ môn Công nghệ Phần mềm",
+      "facultyId": null,
+      "departmentId": null,
+      "avatar": "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20120%20120%22%20width%3D%22120%22%20height%3D%22120%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22grad-0%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%231e3a8a%22/%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%233b82f6%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle%20cx%3D%2260%22%20cy%3D%2260%22%20r%3D%2258%22%20fill%3D%22url%28%23grad-0%29%22%20stroke%3D%22%23ffffff%22%20stroke-width%3D%222%22/%3E%3Ctext%20x%3D%2260%22%20y%3D%2268%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2C%20BlinkMacSystemFont%2C%20%27Segoe%20UI%27%2C%20Roboto%2C%20sans-serif%22%20font-size%3D%2240%22%20font-weight%3D%22600%22%20fill%3D%22%23ffffff%22%20letter-spacing%3D%221%22%3ENH%3C/text%3E%3C/svg%3E",
+      "bio": "Hiệu trưởng Trường Đại học Công nghệ - ĐHQG Hà Nội. Chuyên gia về Kiểm thử phần mềm, Phương pháp hình thức và Đảm bảo chất lượng phần mềm.",
+      "bioVi": null,
+      "bioEn": null,
+      "courses": [
+        "Kỹ nghệ phần mềm",
+        "Kiểm thử phần mềm"
+      ],
+      "qualifications": [],
+      "researchInterests": [
+        "Công nghệ phần mềm",
+        "Kiểm thử tự động",
+        "Phân tích mã nguồn"
+      ],
+      "publications": [],
+      "officialProfileUrls": [
+        "https://uet.vnu.edu.vn/lanh-dao-truong/"
+      ],
+      "identifiers": {
+        "institutionalEmail": "hanv@vnu.edu.vn"
+      },
+      "imageRights": null,
+      "provenance": [],
+      "previousAffiliations": [],
+      "verificationStatus": "verified",
+      "confidenceScore": 0.97,
+      "lastVerifiedAt": 1792121963262,
+      "ratingAverage": 0.0,
+      "ratingCount": 0,
+      "ratingDistribution": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0
+      },
+      "criteriaAverages": {
+        "teachingQuality": 0.0,
+        "clarity": 0.0,
+        "gradingFairness": 0.0,
+        "difficulty": 0.0,
+        "communication": 0.0
+      },
+      "featured": false,
+      "trending": false,
+      "featuredQuote": null,
+      "takeAgainPercent": null,
+      "difficultyScore": null,
+      "sourceUrls": [
+        "https://uet.vnu.edu.vn/lanh-dao-truong/"
+      ]
+    },
+    {
+      "id": "prof-vnu-uet-le-sy-vinh",
+      "name": "Lê Sỹ Vinh",
+      "universityId": "vnu-uet",
+      "universityName": "Trường Đại học Công nghệ - ĐHQG Hà Nội",
+      "universityShortName": "VNU-UET",
+      "faculty": "Khoa Công nghệ Thông tin",
+      "title": "GS. TS",
+      "academicTitle": "GS. TS",
+      "position": "Chủ nhiệm Khoa",
+      "nameVariants": [],
+      "department": null,
+      "facultyId": null,
+      "departmentId": null,
+      "avatar": "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20120%20120%22%20width%3D%22120%22%20height%3D%22120%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22grad-2%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%234338ca%22/%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%236366f1%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle%20cx%3D%2260%22%20cy%3D%2260%22%20r%3D%2258%22%20fill%3D%22url%28%23grad-2%29%22%20stroke%3D%22%23ffffff%22%20stroke-width%3D%222%22/%3E%3Ctext%20x%3D%2260%22%20y%3D%2268%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2C%20BlinkMacSystemFont%2C%20%27Segoe%20UI%27%2C%20Roboto%2C%20sans-serif%22%20font-size%3D%2240%22%20font-weight%3D%22600%22%20fill%3D%22%23ffffff%22%20letter-spacing%3D%221%22%3ELV%3C/text%3E%3C/svg%3E",
+      "bio": "Chủ nhiệm Khoa CNTT - Trường ĐH Công nghệ - ĐHQG Hà Nội. Giải thưởng Tạ Quang Bửu về Tin sinh học (Bioinformatics) và Thuật toán tối ưu.",
+      "bioVi": null,
+      "bioEn": null,
+      "courses": [
+        "Cấu trúc dữ liệu và giải thuật",
+        "Tin sinh học tính toán"
+      ],
+      "qualifications": [],
+      "researchInterests": [
+        "Tin sinh học",
+        "Thuật toán tiến hóa",
+        "Sinh học điện toán"
+      ],
+      "publications": [],
+      "officialProfileUrls": [
+        "https://fit.uet.vnu.edu.vn/giang-vien/le-sy-vinh/"
+      ],
+      "identifiers": {
+        "institutionalEmail": "vinhls@vnu.edu.vn"
+      },
+      "imageRights": null,
+      "provenance": [],
+      "previousAffiliations": [],
+      "verificationStatus": "verified",
+      "confidenceScore": 0.98,
+      "lastVerifiedAt": 1792121963262,
+      "ratingAverage": 0.0,
+      "ratingCount": 0,
+      "ratingDistribution": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0
+      },
+      "criteriaAverages": {
+        "teachingQuality": 0.0,
+        "clarity": 0.0,
+        "gradingFairness": 0.0,
+        "difficulty": 0.0,
+        "communication": 0.0
+      },
+      "featured": false,
+      "trending": false,
+      "featuredQuote": null,
+      "takeAgainPercent": null,
+      "difficultyScore": null,
+      "sourceUrls": [
+        "https://fit.uet.vnu.edu.vn/giang-vien/le-sy-vinh/"
+      ]
+    },
+    {
+      "id": "prof-neu-pham-hong-chuong",
+      "name": "Phạm Hồng Chương",
+      "universityId": "neu",
+      "universityName": "Trường Đại học Kinh tế Quốc dân",
+      "universityShortName": "NEU",
+      "faculty": "Khoa Quản trị Kinh doanh",
+      "title": "GS. TS",
+      "academicTitle": "GS. TS",
+      "position": "Hiệu trưởng",
+      "nameVariants": [],
+      "department": null,
+      "facultyId": null,
+      "departmentId": null,
+      "avatar": "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20120%20120%22%20width%3D%22120%22%20height%3D%22120%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22grad-2%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%234338ca%22/%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%236366f1%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle%20cx%3D%2260%22%20cy%3D%2260%22%20r%3D%2258%22%20fill%3D%22url%28%23grad-2%29%22%20stroke%3D%22%23ffffff%22%20stroke-width%3D%222%22/%3E%3Ctext%20x%3D%2260%22%20y%3D%2268%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2C%20BlinkMacSystemFont%2C%20%27Segoe%20UI%27%2C%20Roboto%2C%20sans-serif%22%20font-size%3D%2240%22%20font-weight%3D%22600%22%20fill%3D%22%23ffffff%22%20letter-spacing%3D%221%22%3EPC%3C/text%3E%3C/svg%3E",
+      "bio": "Hiệu trưởng Trường Đại học Kinh tế Quốc dân. Chuyên gia kinh tế vĩ mô, quản trị chiến lược và hội nhập kinh tế quốc tế.",
+      "bioVi": null,
+      "bioEn": null,
+      "courses": [
+        "Quản trị học",
+        "Quản trị chiến lược"
+      ],
+      "qualifications": [],
+      "researchInterests": [
+        "Quản trị chiến lược",
+        "Kinh tế quốc tế",
+        "Chính sách kinh tế vĩ mô"
+      ],
+      "publications": [],
+      "officialProfileUrls": [
+        "https://neu.edu.vn/lanh-dao-truong"
+      ],
+      "identifiers": {
+        "institutionalEmail": "chuongph@neu.edu.vn"
+      },
+      "imageRights": null,
+      "provenance": [],
+      "previousAffiliations": [],
+      "verificationStatus": "verified",
+      "confidenceScore": 0.95,
+      "lastVerifiedAt": 1792121963262,
+      "ratingAverage": 0.0,
+      "ratingCount": 0,
+      "ratingDistribution": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0
+      },
+      "criteriaAverages": {
+        "teachingQuality": 0.0,
+        "clarity": 0.0,
+        "gradingFairness": 0.0,
+        "difficulty": 0.0,
+        "communication": 0.0
+      },
+      "featured": false,
+      "trending": false,
+      "featuredQuote": null,
+      "takeAgainPercent": null,
+      "difficultyScore": null,
+      "sourceUrls": [
+        "https://neu.edu.vn/lanh-dao-truong"
+      ]
+    },
+    {
+      "id": "prof-ftu-bui-anh-tuan",
+      "name": "Bùi Anh Tuấn",
+      "universityId": "ftu",
+      "universityName": "Trường Đại học Ngoại thương",
+      "universityShortName": "FTU",
+      "faculty": "Khoa Kinh tế Quốc tế",
+      "title": "PGS. TS",
+      "academicTitle": "PGS. TS",
+      "position": "Hiệu trưởng",
+      "nameVariants": [],
+      "department": null,
+      "facultyId": null,
+      "departmentId": null,
+      "avatar": "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20120%20120%22%20width%3D%22120%22%20height%3D%22120%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22grad-0%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%231e3a8a%22/%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%233b82f6%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle%20cx%3D%2260%22%20cy%3D%2260%22%20r%3D%2258%22%20fill%3D%22url%28%23grad-0%29%22%20stroke%3D%22%23ffffff%22%20stroke-width%3D%222%22/%3E%3Ctext%20x%3D%2260%22%20y%3D%2268%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2C%20BlinkMacSystemFont%2C%20%27Segoe%20UI%27%2C%20Roboto%2C%20sans-serif%22%20font-size%3D%2240%22%20font-weight%3D%22600%22%20fill%3D%22%23ffffff%22%20letter-spacing%3D%221%22%3EBT%3C/text%3E%3C/svg%3E",
+      "bio": "Hiệu trưởng Trường Đại học Ngoại thương. Lĩnh vực nghiên cứu chính: Kinh tế học thương mại quốc tế, Quản lý giáo dục đại học.",
+      "bioVi": null,
+      "bioEn": null,
+      "courses": [
+        "Kinh tế quốc tế",
+        "Thương mại quốc tế nâng cao"
+      ],
+      "qualifications": [],
+      "researchInterests": [
+        "Thương mại quốc tế",
+        "Đầu tư trực tiếp nước ngoài FDI",
+        "Kinh tế học vi mô"
+      ],
+      "publications": [],
+      "officialProfileUrls": [
+        "https://ftu.edu.vn/ban-giam-hieu"
+      ],
+      "identifiers": {
+        "institutionalEmail": "tuanba@ftu.edu.vn"
+      },
+      "imageRights": null,
+      "provenance": [],
+      "previousAffiliations": [],
+      "verificationStatus": "verified",
+      "confidenceScore": 0.96,
+      "lastVerifiedAt": 1792121963262,
+      "ratingAverage": 0.0,
+      "ratingCount": 0,
+      "ratingDistribution": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0
+      },
+      "criteriaAverages": {
+        "teachingQuality": 0.0,
+        "clarity": 0.0,
+        "gradingFairness": 0.0,
+        "difficulty": 0.0,
+        "communication": 0.0
+      },
+      "featured": false,
+      "trending": false,
+      "featuredQuote": null,
+      "takeAgainPercent": null,
+      "difficultyScore": null,
+      "sourceUrls": [
+        "https://ftu.edu.vn/ban-giam-hieu"
+      ]
+    },
+    {
+      "id": "prof-hcmut-tho-quan-tran",
+      "name": "Trần Minh Triết",
+      "universityId": "hcmut",
+      "universityName": "Trường ĐH Bách Khoa - ĐHQG TP.HCM",
+      "universityShortName": "HCMUT",
+      "faculty": "Khoa Khoa học & Kỹ thuật Máy tính",
+      "title": "PGS. TS",
+      "academicTitle": "PGS. TS",
+      "position": "Phó Trưởng khoa",
+      "nameVariants": [],
+      "department": null,
+      "facultyId": null,
+      "departmentId": null,
+      "avatar": "https://cse.hcmut.edu.vn/static/images/triet.jpg",
+      "bio": "Phó Trưởng khoa Khoa học & Kỹ thuật Máy tính, ĐH Bách Khoa TP.HCM. Chuyên sâu về An toàn thông tin, Mật mã học và Hệ thống phần mềm phân tán.",
+      "bioVi": null,
+      "bioEn": null,
+      "courses": [
+        "An toàn mạng máy tính",
+        "Mật mã học",
+        "Kiến trúc hệ thống lớn"
+      ],
+      "qualifications": [],
+      "researchInterests": [
+        "An toàn thông tin",
+        "Mật mã học ứng dụng",
+        "Blockchain",
+        "Điện toán đám mây"
+      ],
+      "publications": [],
+      "officialProfileUrls": [
+        "https://cse.hcmut.edu.vn/people/faculty/triet-tran"
+      ],
+      "identifiers": {
+        "institutionalEmail": "tmtriet@hcmut.edu.vn"
+      },
+      "imageRights": null,
+      "provenance": [],
+      "previousAffiliations": [],
+      "verificationStatus": "verified",
+      "confidenceScore": 0.96,
+      "lastVerifiedAt": 1792121963262,
+      "ratingAverage": 0.0,
+      "ratingCount": 0,
+      "ratingDistribution": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0
+      },
+      "criteriaAverages": {
+        "teachingQuality": 0.0,
+        "clarity": 0.0,
+        "gradingFairness": 0.0,
+        "difficulty": 0.0,
+        "communication": 0.0
+      },
+      "featured": false,
+      "trending": false,
+      "featuredQuote": null,
+      "takeAgainPercent": null,
+      "difficultyScore": null,
+      "sourceUrls": [
+        "https://cse.hcmut.edu.vn/people/faculty/triet-tran"
+      ]
+    },
+    {
+      "id": "prof-hcmut-quan-thanh-tho",
+      "name": "Quản Thành Thơ",
+      "universityId": "hcmut",
+      "universityName": "Trường ĐH Bách Khoa - ĐHQG TP.HCM",
+      "universityShortName": "HCMUT",
+      "faculty": "Khoa Khoa học & Kỹ thuật Máy tính",
+      "title": "PGS. TS",
+      "academicTitle": "PGS. TS",
+      "position": "Trưởng khoa",
+      "nameVariants": [],
+      "department": null,
+      "facultyId": null,
+      "departmentId": null,
+      "avatar": "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20120%20120%22%20width%3D%22120%22%20height%3D%22120%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22grad-0%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%231e3a8a%22/%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%233b82f6%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle%20cx%3D%2260%22%20cy%3D%2260%22%20r%3D%2258%22%20fill%3D%22url%28%23grad-0%29%22%20stroke%3D%22%23ffffff%22%20stroke-width%3D%222%22/%3E%3Ctext%20x%3D%2260%22%20y%3D%2268%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2C%20BlinkMacSystemFont%2C%20%27Segoe%20UI%27%2C%20Roboto%2C%20sans-serif%22%20font-size%3D%2240%22%20font-weight%3D%22600%22%20fill%3D%22%23ffffff%22%20letter-spacing%3D%221%22%3EQT%3C/text%3E%3C/svg%3E",
+      "bio": "Trưởng khoa Khoa học & Kỹ thuật Máy tính, ĐH Bách Khoa TP.HCM. Hướng nghiên cứu: Khai phá dữ liệu lớn, Trí tuệ nhân tạo và Xử lý ngôn ngữ tự nhiên.",
+      "bioVi": null,
+      "bioEn": null,
+      "courses": [
+        "Học máy nâng cao",
+        "Cơ sở dữ liệu",
+        "Xử lý dữ liệu lớn"
+      ],
+      "qualifications": [],
+      "researchInterests": [
+        "Khai phá dữ liệu",
+        "Học máy",
+        "Xử lý ngôn ngữ tự nhiên tiếng Việt"
+      ],
+      "publications": [],
+      "officialProfileUrls": [
+        "https://cse.hcmut.edu.vn/people/faculty/tho-quan"
+      ],
+      "identifiers": {
+        "institutionalEmail": "qttho@hcmut.edu.vn"
+      },
+      "imageRights": null,
+      "provenance": [],
+      "previousAffiliations": [],
+      "verificationStatus": "verified",
+      "confidenceScore": 0.97,
+      "lastVerifiedAt": 1792121963262,
+      "ratingAverage": 0.0,
+      "ratingCount": 0,
+      "ratingDistribution": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0
+      },
+      "criteriaAverages": {
+        "teachingQuality": 0.0,
+        "clarity": 0.0,
+        "gradingFairness": 0.0,
+        "difficulty": 0.0,
+        "communication": 0.0
+      },
+      "featured": false,
+      "trending": false,
+      "featuredQuote": null,
+      "takeAgainPercent": null,
+      "difficultyScore": null,
+      "sourceUrls": [
+        "https://cse.hcmut.edu.vn/people/faculty/tho-quan"
+      ]
+    },
+    {
+      "id": "prof-uit-nguyen-hoang-tu-anh",
+      "name": "Nguyễn Hoàng Tú Anh",
+      "universityId": "uit",
+      "universityName": "Trường ĐH Công nghệ Thông tin - ĐHQG TP.HCM",
+      "universityShortName": "UIT",
+      "faculty": "Khoa Khoa học Máy tính",
+      "title": "PGS. TS",
+      "academicTitle": "PGS. TS",
+      "position": "Hiệu trưởng",
+      "nameVariants": [],
+      "department": null,
+      "facultyId": null,
+      "departmentId": null,
+      "avatar": "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20120%20120%22%20width%3D%22120%22%20height%3D%22120%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22grad-3%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23701a75%22/%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23a855f7%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle%20cx%3D%2260%22%20cy%3D%2260%22%20r%3D%2258%22%20fill%3D%22url%28%23grad-3%29%22%20stroke%3D%22%23ffffff%22%20stroke-width%3D%222%22/%3E%3Ctext%20x%3D%2260%22%20y%3D%2268%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2C%20BlinkMacSystemFont%2C%20%27Segoe%20UI%27%2C%20Roboto%2C%20sans-serif%22%20font-size%3D%2240%22%20font-weight%3D%22600%22%20fill%3D%22%23ffffff%22%20letter-spacing%3D%221%22%3ENA%3C/text%3E%3C/svg%3E",
+      "bio": "Hiệu trưởng Trường ĐH Công nghệ Thông tin - ĐHQG TP.HCM. Chuyên gia về Hệ thống thông tin địa lý GIS, Cơ sở dữ liệu không gian và Dữ liệu lớn.",
+      "bioVi": null,
+      "bioEn": null,
+      "courses": [
+        "Hệ thống thông tin quản lý",
+        "Cơ sở dữ liệu nâng cao"
+      ],
+      "qualifications": [],
+      "researchInterests": [
+        "Hệ thống thông tin GIS",
+        "Cơ sở dữ liệu không gian",
+        "Khoa học dữ liệu"
+      ],
+      "publications": [],
+      "officialProfileUrls": [
+        "https://uit.edu.vn/ban-giam-hieu"
+      ],
+      "identifiers": {
+        "institutionalEmail": "tuanh@uit.edu.vn"
+      },
+      "imageRights": null,
+      "provenance": [],
+      "previousAffiliations": [],
+      "verificationStatus": "verified",
+      "confidenceScore": 0.96,
+      "lastVerifiedAt": 1792121963262,
+      "ratingAverage": 0.0,
+      "ratingCount": 0,
+      "ratingDistribution": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0
+      },
+      "criteriaAverages": {
+        "teachingQuality": 0.0,
+        "clarity": 0.0,
+        "gradingFairness": 0.0,
+        "difficulty": 0.0,
+        "communication": 0.0
+      },
+      "featured": false,
+      "trending": false,
+      "featuredQuote": null,
+      "takeAgainPercent": null,
+      "difficultyScore": null,
+      "sourceUrls": [
+        "https://uit.edu.vn/ban-giam-hieu"
+      ]
+    },
+    {
+      "id": "prof-dut-nguyen-dinh-lam",
+      "name": "Nguyễn Đình Lâm",
+      "universityId": "dut",
+      "universityName": "Trường ĐH Bách Khoa - ĐH Đà Nẵng",
+      "universityShortName": "DUT",
+      "faculty": "Khoa Công nghệ Thông tin",
+      "title": "PGS. TS",
+      "academicTitle": "PGS. TS",
+      "position": "Chủ tịch Hội đồng trường",
+      "nameVariants": [],
+      "department": null,
+      "facultyId": null,
+      "departmentId": null,
+      "avatar": "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20120%20120%22%20width%3D%22120%22%20height%3D%22120%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22grad-4%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%231e293b%22/%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23475569%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle%20cx%3D%2260%22%20cy%3D%2260%22%20r%3D%2258%22%20fill%3D%22url%28%23grad-4%29%22%20stroke%3D%22%23ffffff%22%20stroke-width%3D%222%22/%3E%3Ctext%20x%3D%2260%22%20y%3D%2268%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2C%20BlinkMacSystemFont%2C%20%27Segoe%20UI%27%2C%20Roboto%2C%20sans-serif%22%20font-size%3D%2240%22%20font-weight%3D%22600%22%20fill%3D%22%23ffffff%22%20letter-spacing%3D%221%22%3ENL%3C/text%3E%3C/svg%3E",
+      "bio": "Chủ tịch Hội đồng trường ĐH Bách Khoa - ĐH Đà Nẵng. Chuyên sâu về Công nghệ phần mềm, Hệ thống nhúng và IoT.",
+      "bioVi": null,
+      "bioEn": null,
+      "courses": [
+        "Kiến trúc máy tính",
+        "Hệ thống nhúng"
+      ],
+      "qualifications": [],
+      "researchInterests": [
+        "Công nghệ phần mềm",
+        "Hệ thống nhúng",
+        "Tự động hóa"
+      ],
+      "publications": [],
+      "officialProfileUrls": [
+        "http://dut.udn.vn/can-bo/nguyen-dinh-lam"
+      ],
+      "identifiers": {
+        "institutionalEmail": "ndlam@dut.udn.vn"
+      },
+      "imageRights": null,
+      "provenance": [],
+      "previousAffiliations": [],
+      "verificationStatus": "verified",
+      "confidenceScore": 0.94,
+      "lastVerifiedAt": 1792121963262,
+      "ratingAverage": 0.0,
+      "ratingCount": 0,
+      "ratingDistribution": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0
+      },
+      "criteriaAverages": {
+        "teachingQuality": 0.0,
+        "clarity": 0.0,
+        "gradingFairness": 0.0,
+        "difficulty": 0.0,
+        "communication": 0.0
+      },
+      "featured": false,
+      "trending": false,
+      "featuredQuote": null,
+      "takeAgainPercent": null,
+      "difficultyScore": null,
+      "sourceUrls": [
+        "http://dut.udn.vn/can-bo/nguyen-dinh-lam"
+      ]
+    },
+    {
+      "id": "prof-due-nguyen-manh-toan",
+      "name": "Nguyễn Mạnh Toàn",
+      "universityId": "due",
+      "universityName": "Trường ĐH Kinh tế - ĐH Đà Nẵng",
+      "universityShortName": "DUE",
+      "faculty": "Khoa Tài chính",
+      "title": "PGS. TS",
+      "academicTitle": "PGS. TS",
+      "position": "Hiệu trưởng",
+      "nameVariants": [],
+      "department": null,
+      "facultyId": null,
+      "departmentId": null,
+      "avatar": "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20120%20120%22%20width%3D%22120%22%20height%3D%22120%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22grad-2%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%234338ca%22/%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%236366f1%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle%20cx%3D%2260%22%20cy%3D%2260%22%20r%3D%2258%22%20fill%3D%22url%28%23grad-2%29%22%20stroke%3D%22%23ffffff%22%20stroke-width%3D%222%22/%3E%3Ctext%20x%3D%2260%22%20y%3D%2268%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2C%20BlinkMacSystemFont%2C%20%27Segoe%20UI%27%2C%20Roboto%2C%20sans-serif%22%20font-size%3D%2240%22%20font-weight%3D%22600%22%20fill%3D%22%23ffffff%22%20letter-spacing%3D%221%22%3ENT%3C/text%3E%3C/svg%3E",
+      "bio": "Hiệu trưởng Trường Đại học Kinh tế - ĐH Đà Nẵng. Nghiên cứu Tài chính doanh nghiệp, Thị trường chứng khoán và Ngân hàng thương mại.",
+      "bioVi": null,
+      "bioEn": null,
+      "courses": [
+        "Tài chính doanh nghiệp",
+        "Thị trường tài chính"
+      ],
+      "qualifications": [],
+      "researchInterests": [
+        "Tài chính doanh nghiệp",
+        "Kinh tế tài chính",
+        "Thị trường vốn"
+      ],
+      "publications": [],
+      "officialProfileUrls": [
+        "http://due.udn.vn/lanh-dao-truong"
+      ],
+      "identifiers": {
+        "institutionalEmail": "toannm@due.udn.vn"
+      },
+      "imageRights": null,
+      "provenance": [],
+      "previousAffiliations": [],
+      "verificationStatus": "verified",
+      "confidenceScore": 0.93,
+      "lastVerifiedAt": 1792121963262,
+      "ratingAverage": 0.0,
+      "ratingCount": 0,
+      "ratingDistribution": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0
+      },
+      "criteriaAverages": {
+        "teachingQuality": 0.0,
+        "clarity": 0.0,
+        "gradingFairness": 0.0,
+        "difficulty": 0.0,
+        "communication": 0.0
+      },
+      "featured": false,
+      "trending": false,
+      "featuredQuote": null,
+      "takeAgainPercent": null,
+      "difficultyScore": null,
+      "sourceUrls": [
+        "http://due.udn.vn/lanh-dao-truong"
+      ]
+    },
+    {
+      "id": "prof-husc-vo-thanh-tung",
+      "name": "Võ Thanh Tùng",
+      "universityId": "husc",
+      "universityName": "Trường ĐH Khoa học - Đại học Huế",
+      "universityShortName": "HUSC",
+      "faculty": "Khoa Công nghệ Thông tin",
+      "title": "PGS. TS",
+      "academicTitle": "PGS. TS",
+      "position": "Hiệu trưởng",
+      "nameVariants": [],
+      "department": null,
+      "facultyId": null,
+      "departmentId": null,
+      "avatar": "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20120%20120%22%20width%3D%22120%22%20height%3D%22120%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22grad-0%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%231e3a8a%22/%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%233b82f6%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle%20cx%3D%2260%22%20cy%3D%2260%22%20r%3D%2258%22%20fill%3D%22url%28%23grad-0%29%22%20stroke%3D%22%23ffffff%22%20stroke-width%3D%222%22/%3E%3Ctext%20x%3D%2260%22%20y%3D%2268%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2C%20BlinkMacSystemFont%2C%20%27Segoe%20UI%27%2C%20Roboto%2C%20sans-serif%22%20font-size%3D%2240%22%20font-weight%3D%22600%22%20fill%3D%22%23ffffff%22%20letter-spacing%3D%221%22%3EVT%3C/text%3E%3C/svg%3E",
+      "bio": "Hiệu trưởng Trường ĐH Khoa học - Đại học Huế. Lĩnh vực nghiên cứu: Trí tuệ nhân tạo, Thị giác máy tính và Xử lý ảnh y tế.",
+      "bioVi": null,
+      "bioEn": null,
+      "courses": [
+        "Xử lý ảnh kỹ thuật số",
+        "Trí tuệ nhân tạo"
+      ],
+      "qualifications": [],
+      "researchInterests": [
+        "Thị giác máy tính",
+        "Xử lý ảnh y tế",
+        "Học sâu"
+      ],
+      "publications": [],
+      "officialProfileUrls": [
+        "http://husc.hueuni.edu.vn/lanh-dao-truong"
+      ],
+      "identifiers": {
+        "institutionalEmail": "vttung@hueuni.edu.vn"
+      },
+      "imageRights": null,
+      "provenance": [],
+      "previousAffiliations": [],
+      "verificationStatus": "verified",
+      "confidenceScore": 0.93,
+      "lastVerifiedAt": 1792121963262,
+      "ratingAverage": 0.0,
+      "ratingCount": 0,
+      "ratingDistribution": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0
+      },
+      "criteriaAverages": {
+        "teachingQuality": 0.0,
+        "clarity": 0.0,
+        "gradingFairness": 0.0,
+        "difficulty": 0.0,
+        "communication": 0.0
+      },
+      "featured": false,
+      "trending": false,
+      "featuredQuote": null,
+      "takeAgainPercent": null,
+      "difficultyScore": null,
+      "sourceUrls": [
+        "http://husc.hueuni.edu.vn/lanh-dao-truong"
+      ]
+    },
+    {
+      "id": "prof-ctu-ha-thanh-toan",
+      "name": "Hà Thanh Toàn",
+      "universityId": "ctu",
+      "universityName": "Trường Đại học Cần Thơ",
+      "universityShortName": "CTU",
+      "faculty": "Trường Công nghệ Thông tin & Truyền thông",
+      "title": "GS. TS",
+      "academicTitle": "GS. TS",
+      "position": "Giảng viên cao cấp / Nguyên Hiệu trưởng",
+      "nameVariants": [],
+      "department": null,
+      "facultyId": null,
+      "departmentId": null,
+      "avatar": "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20120%20120%22%20width%3D%22120%22%20height%3D%22120%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22grad-1%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%230f766e%22/%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%2314b8a6%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle%20cx%3D%2260%22%20cy%3D%2260%22%20r%3D%2258%22%20fill%3D%22url%28%23grad-1%29%22%20stroke%3D%22%23ffffff%22%20stroke-width%3D%222%22/%3E%3Ctext%20x%3D%2260%22%20y%3D%2268%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2C%20BlinkMacSystemFont%2C%20%27Segoe%20UI%27%2C%20Roboto%2C%20sans-serif%22%20font-size%3D%2240%22%20font-weight%3D%22600%22%20fill%3D%22%23ffffff%22%20letter-spacing%3D%221%22%3EHT%3C/text%3E%3C/svg%3E",
+      "bio": "Giảng viên cao cấp, nguyên Hiệu trưởng Trường Đại học Cần Thơ. Nhà khoa học uy tín vùng Đồng bằng sông Cửu Long với nhiều công trình công bố quốc tế.",
+      "bioVi": null,
+      "bioEn": null,
+      "courses": [
+        "Phương pháp nghiên cứu khoa học",
+        "Công nghệ sau thu hoạch"
+      ],
+      "qualifications": [],
+      "researchInterests": [
+        "Công nghệ sinh học",
+        "Hóa sinh ứng dụng",
+        "Chuyển giao công nghệ"
+      ],
+      "publications": [],
+      "officialProfileUrls": [
+        "https://www.ctu.edu.vn/ban-giam-hieu"
+      ],
+      "identifiers": {
+        "institutionalEmail": "httoan@ctu.edu.vn"
+      },
+      "imageRights": null,
+      "provenance": [],
+      "previousAffiliations": [],
+      "verificationStatus": "verified",
+      "confidenceScore": 0.97,
+      "lastVerifiedAt": 1792121963262,
+      "ratingAverage": 0.0,
+      "ratingCount": 0,
+      "ratingDistribution": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0
+      },
+      "criteriaAverages": {
+        "teachingQuality": 0.0,
+        "clarity": 0.0,
+        "gradingFairness": 0.0,
+        "difficulty": 0.0,
+        "communication": 0.0
+      },
+      "featured": false,
+      "trending": false,
+      "featuredQuote": null,
+      "takeAgainPercent": null,
+      "difficultyScore": null,
+      "sourceUrls": [
+        "https://www.ctu.edu.vn/ban-giam-hieu"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "src-hust-homepage",
+      "universityId": "hust",
+      "url": "https://hust.edu.vn",
+      "domain": "hust.edu.vn",
+      "sourceType": "official_homepage",
+      "crawlPolicy": "allowed",
+      "status": "pending_crawl",
+      "lastCrawledAt": null,
+      "etag": null,
+      "contentHash": null,
+      "failureCount": 0,
+      "lastErrorMessage": null
+    },
+    {
+      "id": "src-hust-faculty-0",
+      "universityId": "hust",
+      "url": "https://soict.hust.edu.vn/can-bo",
+      "domain": "soict.hust.edu.vn",
+      "sourceType": "faculty_directory",
+      "crawlPolicy": "allowed",
+      "status": "pending_crawl",
+      "lastCrawledAt": null,
+      "etag": null,
+      "contentHash": null,
+      "failureCount": 0,
+      "lastErrorMessage": null
+    },
+    {
+      "id": "src-hust-faculty-1",
+      "universityId": "hust",
+      "url": "https://seee.hust.edu.vn/doi-ngu-giang-vien",
+      "domain": "seee.hust.edu.vn",
+      "sourceType": "faculty_directory",
+      "crawlPolicy": "allowed",
+      "status": "failed",
+      "lastCrawledAt": null,
+      "etag": null,
+      "contentHash": null,
+      "failureCount": 1,
+      "lastErrorMessage": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "src-hust-faculty-2",
+      "universityId": "hust",
+      "url": "https://sme.hust.edu.vn/giang-vien",
+      "domain": "sme.hust.edu.vn",
+      "sourceType": "faculty_directory",
+      "crawlPolicy": "allowed",
+      "status": "failed",
+      "lastCrawledAt": null,
+      "etag": null,
+      "contentHash": null,
+      "failureCount": 1,
+      "lastErrorMessage": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "src-hust-staff-0",
+      "universityId": "hust",
+      "url": "https://soict.hust.edu.vn/can-bo",
+      "domain": "soict.hust.edu.vn",
+      "sourceType": "staff_profile",
+      "crawlPolicy": "allowed",
+      "status": "crawled",
+      "lastCrawledAt": 1792121963109,
+      "etag": null,
+      "contentHash": "dfa71400948794a10cfd210c28dc156d82d8c20551f12f54b0705ffb252793b2",
+      "failureCount": 0,
+      "lastErrorMessage": null
+    },
+    {
+      "id": "src-hust-social-fb-0",
+      "universityId": "hust",
+      "url": "https://www.facebook.com/dhbkhanoi",
+      "domain": "facebook.com",
+      "sourceType": "authorized_social_export",
+      "crawlPolicy": "manual_only",
+      "status": "active",
+      "lastCrawledAt": null,
+      "etag": null,
+      "contentHash": null,
+      "failureCount": 0,
+      "lastErrorMessage": null
+    },
+    {
+      "id": "src-vnu-uet-homepage",
+      "universityId": "vnu-uet",
+      "url": "https://uet.vnu.edu.vn",
+      "domain": "uet.vnu.edu.vn",
+      "sourceType": "official_homepage",
+      "crawlPolicy": "allowed",
+      "status": "pending_crawl",
+      "lastCrawledAt": null,
+      "etag": null,
+      "contentHash": null,
+      "failureCount": 0,
+      "lastErrorMessage": null
+    },
+    {
+      "id": "src-vnu-uet-faculty-0",
+      "universityId": "vnu-uet",
+      "url": "https://uet.vnu.edu.vn/category/can-bo-giang-vien/",
+      "domain": "uet.vnu.edu.vn",
+      "sourceType": "faculty_directory",
+      "crawlPolicy": "allowed",
+      "status": "pending_crawl",
+      "lastCrawledAt": null,
+      "etag": null,
+      "contentHash": null,
+      "failureCount": 0,
+      "lastErrorMessage": null
+    },
+    {
+      "id": "src-vnu-uet-faculty-1",
+      "universityId": "vnu-uet",
+      "url": "https://fit.uet.vnu.edu.vn/giang-vien/",
+      "domain": "fit.uet.vnu.edu.vn",
+      "sourceType": "faculty_directory",
+      "crawlPolicy": "allowed",
+      "status": "pending_crawl",
+      "lastCrawledAt": null,
+      "etag": null,
+      "contentHash": null,
+      "failureCount": 0,
+      "lastErrorMessage": null
+    },
+    {
+      "id": "src-vnu-uet-staff-0",
+      "universityId": "vnu-uet",
+      "url": "https://fit.uet.vnu.edu.vn/giang-vien/",
+      "domain": "fit.uet.vnu.edu.vn",
+      "sourceType": "staff_profile",
+      "crawlPolicy": "allowed",
+      "status": "pending_crawl",
+      "lastCrawledAt": null,
+      "etag": null,
+      "contentHash": null,
+      "failureCount": 0,
+      "lastErrorMessage": null
+    },
+    {
+      "id": "src-vnu-uet-social-fb-0",
+      "universityId": "vnu-uet",
+      "url": "https://www.facebook.com/UET.VNUH",
+      "domain": "facebook.com",
+      "sourceType": "authorized_social_export",
+      "crawlPolicy": "manual_only",
+      "status": "active",
+      "lastCrawledAt": null,
+      "etag": null,
+      "contentHash": null,
+      "failureCount": 0,
+      "lastErrorMessage": null
+    },
+    {
+      "id": "src-neu-homepage",
+      "universityId": "neu",
+      "url": "https://neu.edu.vn",
+      "domain": "neu.edu.vn",
+      "sourceType": "official_homepage",
+      "crawlPolicy": "allowed",
+      "status": "pending_crawl",
+      "lastCrawledAt": null,
+      "etag": null,
+      "contentHash": null,
+      "failureCount": 0,
+      "lastErrorMessage": null
+    },
+    {
+      "id": "src-neu-faculty-0",
+      "universityId": "neu",
+      "url": "https://neu.edu.vn/giang-vien",
+      "domain": "neu.edu.vn",
+      "sourceType": "faculty_directory",
+      "crawlPolicy": "allowed",
+      "status": "pending_crawl",
+      "lastCrawledAt": null,
+      "etag": null,
+      "contentHash": null,
+      "failureCount": 0,
+      "lastErrorMessage": null
+    },
+    {
+      "id": "src-neu-faculty-1",
+      "universityId": "neu",
+      "url": "https://kinhtequocdan.neu.edu.vn/can-bo",
+      "domain": "kinhtequocdan.neu.edu.vn",
+      "sourceType": "faculty_directory",
+      "crawlPolicy": "allowed",
+      "status": "pending_crawl",
+      "lastCrawledAt": null,
+      "etag": null,
+      "contentHash": null,
+      "failureCount": 0,
+      "lastErrorMessage": null
+    },
+    {
+      "id": "src-neu-social-fb-0",
+      "universityId": "neu",
+      "url": "https://www.facebook.com/ktqdNEU",
+      "domain": "facebook.com",
+      "sourceType": "authorized_social_export",
+      "crawlPolicy": "manual_only",
+      "status": "active",
+      "lastCrawledAt": null,
+      "etag": null,
+      "contentHash": null,
+      "failureCount": 0,
+      "lastErrorMessage": null
+    },
+    {
+      "id": "src-ftu-homepage",
+      "universityId": "ftu",
+      "url": "https://ftu.edu.vn",
+      "domain": "ftu.edu.vn",
+      "sourceType": "official_homepage",
+      "crawlPolicy": "allowed",
+      "status": "pending_crawl",
+      "lastCrawledAt": null,
+      "etag": null,
+      "contentHash": null,
+      "failureCount": 0,
+      "lastErrorMessage": null
+    },
+    {
+      "id": "src-ftu-faculty-0",
+      "universityId": "ftu",
+      "url": "https://ftu.edu.vn/doi-ngu-giang-vien",
+      "domain": "ftu.edu.vn",
+      "sourceType": "faculty_directory",
+      "crawlPolicy": "allowed",
+      "status": "pending_crawl",
+      "lastCrawledAt": null,
+      "etag": null,
+      "contentHash": null,
+      "failureCount": 0,
+      "lastErrorMessage": null
+    },
+    {
+      "id": "src-ftu-social-fb-0",
+      "universityId": "ftu",
+      "url": "https://www.facebook.com/ftutimesofficial",
+      "domain": "facebook.com",
+      "sourceType": "authorized_social_export",
+      "crawlPolicy": "manual_only",
+      "status": "active",
+      "lastCrawledAt": null,
+      "etag": null,
+      "contentHash": null,
+      "failureCount": 0,
+      "lastErrorMessage": null
+    },
+    {
+      "id": "src-vnu-ussh-homepage",
+      "universityId": "vnu-ussh",
+      "url": "https://ussh.vnu.edu.vn",
+      "domain": "ussh.vnu.edu.vn",
+      "sourceType": "official_homepage",
+      "crawlPolicy": "allowed",
+      "status": "pending_crawl",
+      "lastCrawledAt": null,
+      "etag": null,
+      "contentHash": null,
+      "failureCount": 0,
+      "lastErrorMessage": null
+    },
+    {
+      "id": "src-vnu-ussh-faculty-0",
+      "universityId": "vnu-ussh",
+      "url": "https://ussh.vnu.edu.vn/can-bo",
+      "domain": "ussh.vnu.edu.vn",
+      "sourceType": "faculty_directory",
+      "crawlPolicy": "allowed",
+      "status": "pending_crawl",
+      "lastCrawledAt": null,
+      "etag": null,
+      "contentHash": null,
+      "failureCount": 0,
+      "lastErrorMessage": null
+    },
+    {
+      "id": "src-vnu-ussh-social-fb-0",
+      "universityId": "vnu-ussh",
+      "url": "https://www.facebook.com/ussh.vnu",
+      "domain": "facebook.com",
+      "sourceType": "authorized_social_export",
+      "crawlPolicy": "manual_only",
+      "status": "active",
+      "lastCrawledAt": null,
+      "etag": null,
+      "contentHash": null,
+      "failureCount": 0,
+      "lastErrorMessage": null
+    },
+    {
+      "id": "src-hmu-homepage",
+      "universityId": "hmu",
+      "url": "https://hmu.edu.vn",
+      "domain": "hmu.edu.vn",
+      "sourceType": "official_homepage",
+      "crawlPolicy": "allowed",
+      "status": "pending_crawl",
+      "lastCrawledAt": null,
+      "etag": null,
+      "contentHash": null,
+      "failureCount": 0,
+      "lastErrorMessage": null
+    },
+    {
+      "id": "src-hmu-faculty-0",
+      "universityId": "hmu",
+      "url": "https://hmu.edu.vn/can-bo",
+      "domain": "hmu.edu.vn",
+      "sourceType": "faculty_directory",
+      "crawlPolicy": "allowed",
+      "status": "pending_crawl",
+      "lastCrawledAt": null,
+      "etag": null,
+      "contentHash": null,
+      "failureCount": 0,
+      "lastErrorMessage": null
+    },
+    {
+      "id": "src-hcmut-homepage",
+      "universityId": "hcmut",
+      "url": "https://hcmut.edu.vn",
+      "domain": "hcmut.edu.vn",
+      "sourceType": "official_homepage",
+      "crawlPolicy": "allowed",
+      "status": "pending_crawl",
+      "lastCrawledAt": null,
+      "etag": null,
+      "contentHash": null,
+      "failureCount": 0,
+      "lastErrorMessage": null
+    },
+    {
+      "id": "src-hcmut-faculty-0",
+      "universityId": "hcmut",
+      "url": "https://cse.hcmut.edu.vn/people/faculty",
+      "domain": "cse.hcmut.edu.vn",
+      "sourceType": "faculty_directory",
+      "crawlPolicy": "allowed",
+      "status": "pending_crawl",
+      "lastCrawledAt": null,
+      "etag": null,
+      "contentHash": null,
+      "failureCount": 0,
+      "lastErrorMessage": null
+    },
+    {
+      "id": "src-hcmut-faculty-1",
+      "universityId": "hcmut",
+      "url": "https://dee.hcmut.edu.vn/giang-vien",
+      "domain": "dee.hcmut.edu.vn",
+      "sourceType": "faculty_directory",
+      "crawlPolicy": "allowed",
+      "status": "pending_crawl",
+      "lastCrawledAt": null,
+      "etag": null,
+      "contentHash": null,
+      "failureCount": 0,
+      "lastErrorMessage": null
+    },
+    {
+      "id": "src-hcmut-staff-0",
+      "universityId": "hcmut",
+      "url": "https://cse.hcmut.edu.vn/people/faculty",
+      "domain": "cse.hcmut.edu.vn",
+      "sourceType": "staff_profile",
+      "crawlPolicy": "allowed",
+      "status": "pending_crawl",
+      "lastCrawledAt": null,
+      "etag": null,
+      "contentHash": null,
+      "failureCount": 0,
+      "lastErrorMessage": null
+    },
+    {
+      "id": "src-hcmut-social-fb-0",
+      "universityId": "hcmut",
+      "url": "https://www.facebook.com/bkofficialpage",
+      "domain": "facebook.com",
+      "sourceType": "authorized_social_export",
+      "crawlPolicy": "manual_only",
+      "status": "active",
+      "lastCrawledAt": null,
+      "etag": null,
+      "contentHash": null,
+      "failureCount": 0,
+      "lastErrorMessage": null
+    },
+    {
+      "id": "src-uit-homepage",
+      "universityId": "uit",
+      "url": "https://uit.edu.vn",
+      "domain": "uit.edu.vn",
+      "sourceType": "official_homepage",
+      "crawlPolicy": "allowed",
+      "status": "pending_crawl",
+      "lastCrawledAt": null,
+      "etag": null,
+      "contentHash": null,
+      "failureCount": 0,
+      "lastErrorMessage": null
+    },
+    {
+      "id": "src-uit-faculty-0",
+      "universityId": "uit",
+      "url": "https://cs.uit.edu.vn/giang-vien",
+      "domain": "cs.uit.edu.vn",
+      "sourceType": "faculty_directory",
+      "crawlPolicy": "allowed",
+      "status": "pending_crawl",
+      "lastCrawledAt": null,
+      "etag": null,
+      "contentHash": null,
+      "failureCount": 0,
+      "lastErrorMessage": null
+    },
+    {
+      "id": "src-uit-faculty-1",
+      "universityId": "uit",
+      "url": "https://se.uit.edu.vn/nhan-su",
+      "domain": "se.uit.edu.vn",
+      "sourceType": "faculty_directory",
+      "crawlPolicy": "allowed",
+      "status": "pending_crawl",
+      "lastCrawledAt": null,
+      "etag": null,
+      "contentHash": null,
+      "failureCount": 0,
+      "lastErrorMessage": null
+    },
+    {
+      "id": "src-uit-staff-0",
+      "universityId": "uit",
+      "url": "https://cs.uit.edu.vn/giang-vien",
+      "domain": "cs.uit.edu.vn",
+      "sourceType": "staff_profile",
+      "crawlPolicy": "allowed",
+      "status": "pending_crawl",
+      "lastCrawledAt": null,
+      "etag": null,
+      "contentHash": null,
+      "failureCount": 0,
+      "lastErrorMessage": null
+    },
+    {
+      "id": "src-uit-social-fb-0",
+      "universityId": "uit",
+      "url": "https://www.facebook.com/UIT.Fanpage",
+      "domain": "facebook.com",
+      "sourceType": "authorized_social_export",
+      "crawlPolicy": "manual_only",
+      "status": "active",
+      "lastCrawledAt": null,
+      "etag": null,
+      "contentHash": null,
+      "failureCount": 0,
+      "lastErrorMessage": null
+    },
+    {
+      "id": "src-hcmus-homepage",
+      "universityId": "hcmus",
+      "url": "https://hcmus.edu.vn",
+      "domain": "hcmus.edu.vn",
+      "sourceType": "official_homepage",
+      "crawlPolicy": "allowed",
+      "status": "pending_crawl",
+      "lastCrawledAt": null,
+      "etag": null,
+      "contentHash": null,
+      "failureCount": 0,
+      "lastErrorMessage": null
+    },
+    {
+      "id": "src-hcmus-faculty-0",
+      "universityId": "hcmus",
+      "url": "https://www.fit.hcmus.edu.vn/vn/default.aspx?tabid=461",
+      "domain": "www.fit.hcmus.edu.vn",
+      "sourceType": "faculty_directory",
+      "crawlPolicy": "allowed",
+      "status": "pending_crawl",
+      "lastCrawledAt": null,
+      "etag": null,
+      "contentHash": null,
+      "failureCount": 0,
+      "lastErrorMessage": null
+    },
+    {
+      "id": "src-hcmus-social-fb-0",
+      "universityId": "hcmus",
+      "url": "https://www.facebook.com/us.vnuhcm",
+      "domain": "facebook.com",
+      "sourceType": "authorized_social_export",
+      "crawlPolicy": "manual_only",
+      "status": "active",
+      "lastCrawledAt": null,
+      "etag": null,
+      "contentHash": null,
+      "failureCount": 0,
+      "lastErrorMessage": null
+    },
+    {
+      "id": "src-ueh-homepage",
+      "universityId": "ueh",
+      "url": "https://ueh.edu.vn",
+      "domain": "ueh.edu.vn",
+      "sourceType": "official_homepage",
+      "crawlPolicy": "allowed",
+      "status": "pending_crawl",
+      "lastCrawledAt": null,
+      "etag": null,
+      "contentHash": null,
+      "failureCount": 0,
+      "lastErrorMessage": null
+    },
+    {
+      "id": "src-ueh-faculty-0",
+      "universityId": "ueh",
+      "url": "https://ueh.edu.vn/doi-ngu-giang-vien",
+      "domain": "ueh.edu.vn",
+      "sourceType": "faculty_directory",
+      "crawlPolicy": "allowed",
+      "status": "pending_crawl",
+      "lastCrawledAt": null,
+      "etag": null,
+      "contentHash": null,
+      "failureCount": 0,
+      "lastErrorMessage": null
+    },
+    {
+      "id": "src-ueh-social-fb-0",
+      "universityId": "ueh",
+      "url": "https://www.facebook.com/DHKT.UEH",
+      "domain": "facebook.com",
+      "sourceType": "authorized_social_export",
+      "crawlPolicy": "manual_only",
+      "status": "active",
+      "lastCrawledAt": null,
+      "etag": null,
+      "contentHash": null,
+      "failureCount": 0,
+      "lastErrorMessage": null
+    },
+    {
+      "id": "src-rmit-homepage",
+      "universityId": "rmit",
+      "url": "https://www.rmit.edu.vn",
+      "domain": "rmit.edu.vn",
+      "sourceType": "official_homepage",
+      "crawlPolicy": "allowed",
+      "status": "pending_crawl",
+      "lastCrawledAt": null,
+      "etag": null,
+      "contentHash": null,
+      "failureCount": 0,
+      "lastErrorMessage": null
+    },
+    {
+      "id": "src-rmit-faculty-0",
+      "universityId": "rmit",
+      "url": "https://www.rmit.edu.vn/vi/ve-rmit/cac-khoa-chuyen-nganh",
+      "domain": "www.rmit.edu.vn",
+      "sourceType": "faculty_directory",
+      "crawlPolicy": "allowed",
+      "status": "pending_crawl",
+      "lastCrawledAt": null,
+      "etag": null,
+      "contentHash": null,
+      "failureCount": 0,
+      "lastErrorMessage": null
+    },
+    {
+      "id": "src-rmit-social-fb-0",
+      "universityId": "rmit",
+      "url": "https://www.facebook.com/RMITUniversityVietnam",
+      "domain": "facebook.com",
+      "sourceType": "authorized_social_export",
+      "crawlPolicy": "manual_only",
+      "status": "active",
+      "lastCrawledAt": null,
+      "etag": null,
+      "contentHash": null,
+      "failureCount": 0,
+      "lastErrorMessage": null
+    },
+    {
+      "id": "src-dut-homepage",
+      "universityId": "dut",
+      "url": "http://dut.udn.vn",
+      "domain": "dut.udn.vn",
+      "sourceType": "official_homepage",
+      "crawlPolicy": "allowed",
+      "status": "pending_crawl",
+      "lastCrawledAt": null,
+      "etag": null,
+      "contentHash": null,
+      "failureCount": 0,
+      "lastErrorMessage": null
+    },
+    {
+      "id": "src-dut-faculty-0",
+      "universityId": "dut",
+      "url": "http://dut.udn.vn/KhoaCNTT/Canbo",
+      "domain": "dut.udn.vn",
+      "sourceType": "faculty_directory",
+      "crawlPolicy": "allowed",
+      "status": "pending_crawl",
+      "lastCrawledAt": null,
+      "etag": null,
+      "contentHash": null,
+      "failureCount": 0,
+      "lastErrorMessage": null
+    },
+    {
+      "id": "src-dut-social-fb-0",
+      "universityId": "dut",
+      "url": "https://www.facebook.com/DUTpage",
+      "domain": "facebook.com",
+      "sourceType": "authorized_social_export",
+      "crawlPolicy": "manual_only",
+      "status": "active",
+      "lastCrawledAt": null,
+      "etag": null,
+      "contentHash": null,
+      "failureCount": 0,
+      "lastErrorMessage": null
+    },
+    {
+      "id": "src-due-homepage",
+      "universityId": "due",
+      "url": "http://due.udn.vn",
+      "domain": "due.udn.vn",
+      "sourceType": "official_homepage",
+      "crawlPolicy": "allowed",
+      "status": "pending_crawl",
+      "lastCrawledAt": null,
+      "etag": null,
+      "contentHash": null,
+      "failureCount": 0,
+      "lastErrorMessage": null
+    },
+    {
+      "id": "src-due-faculty-0",
+      "universityId": "due",
+      "url": "http://due.udn.vn/can-bo",
+      "domain": "due.udn.vn",
+      "sourceType": "faculty_directory",
+      "crawlPolicy": "allowed",
+      "status": "pending_crawl",
+      "lastCrawledAt": null,
+      "etag": null,
+      "contentHash": null,
+      "failureCount": 0,
+      "lastErrorMessage": null
+    },
+    {
+      "id": "src-due-social-fb-0",
+      "universityId": "due",
+      "url": "https://www.facebook.com/FaceDue",
+      "domain": "facebook.com",
+      "sourceType": "authorized_social_export",
+      "crawlPolicy": "manual_only",
+      "status": "active",
+      "lastCrawledAt": null,
+      "etag": null,
+      "contentHash": null,
+      "failureCount": 0,
+      "lastErrorMessage": null
+    },
+    {
+      "id": "src-husc-homepage",
+      "universityId": "husc",
+      "url": "http://husc.hueuni.edu.vn",
+      "domain": "husc.hueuni.edu.vn",
+      "sourceType": "official_homepage",
+      "crawlPolicy": "allowed",
+      "status": "pending_crawl",
+      "lastCrawledAt": null,
+      "etag": null,
+      "contentHash": null,
+      "failureCount": 0,
+      "lastErrorMessage": null
+    },
+    {
+      "id": "src-husc-faculty-0",
+      "universityId": "husc",
+      "url": "http://husc.hueuni.edu.vn/can-bo",
+      "domain": "husc.hueuni.edu.vn",
+      "sourceType": "faculty_directory",
+      "crawlPolicy": "allowed",
+      "status": "pending_crawl",
+      "lastCrawledAt": null,
+      "etag": null,
+      "contentHash": null,
+      "failureCount": 0,
+      "lastErrorMessage": null
+    },
+    {
+      "id": "src-ctu-homepage",
+      "universityId": "ctu",
+      "url": "https://www.ctu.edu.vn",
+      "domain": "ctu.edu.vn",
+      "sourceType": "official_homepage",
+      "crawlPolicy": "allowed",
+      "status": "pending_crawl",
+      "lastCrawledAt": null,
+      "etag": null,
+      "contentHash": null,
+      "failureCount": 0,
+      "lastErrorMessage": null
+    },
+    {
+      "id": "src-ctu-faculty-0",
+      "universityId": "ctu",
+      "url": "https://cit.ctu.edu.vn/can-bo",
+      "domain": "cit.ctu.edu.vn",
+      "sourceType": "faculty_directory",
+      "crawlPolicy": "allowed",
+      "status": "pending_crawl",
+      "lastCrawledAt": null,
+      "etag": null,
+      "contentHash": null,
+      "failureCount": 0,
+      "lastErrorMessage": null
+    },
+    {
+      "id": "src-ctu-social-fb-0",
+      "universityId": "ctu",
+      "url": "https://www.facebook.com/CanThoUniversity.CTU",
+      "domain": "facebook.com",
+      "sourceType": "authorized_social_export",
+      "crawlPolicy": "manual_only",
+      "status": "active",
+      "lastCrawledAt": null,
+      "etag": null,
+      "contentHash": null,
+      "failureCount": 0,
+      "lastErrorMessage": null
+    }
+  ],
+  "entity_candidates": [],
+  "qa_report": {
+    "id": "report-qa-1792121963264",
+    "generatedAt": 1792121963264,
+    "totalUniversities": 1,
+    "universitiesWithRegisteredDomains": 1,
+    "totalFaculties": 7,
+    "totalProfessors": 13,
+    "verifiedProfessorsCount": 13,
+    "unverifiedProfessorsCount": 0,
+    "duplicateCandidatesCount": 0,
+    "profilesWithImagesCount": 13,
+    "imagesPendingReviewCount": 0,
+    "missingKeyFields": {
+      "missingBio": 0,
+      "missingCourses": 1,
+      "missingResearchInterests": 0,
+      "missingAvatar": 0
+    },
+    "coverageByRegion": {
+      "north": {
+        "universities": 1,
+        "professors": 13
+      },
+      "central": {
+        "universities": 0,
+        "professors": 0
+      },
+      "south": {
+        "universities": 0,
+        "professors": 0
+      }
+    },
+    "sourcesHealth": {
+      "active": 14,
+      "failed": 2,
+      "rateLimited": 0,
+      "pending": 37
+    },
+    "lastSuccessfulIngestionDate": 1792121963264
+  },
+  "search_documents": [
+    {
+      "id": "doc-univ-hust",
+      "entityType": "university",
+      "entityId": "hust",
+      "title": "Đại học Bách Khoa Hà Nội (HUST)",
+      "content": "### Đại học Bách Khoa Hà Nội (HUST)\n- **Tên tiếng Anh**: Hanoi University of Science and Technology\n- **Khu vực**: Miền Bắc (Hà Nội)\n- **Website chính thức**: [https://hust.edu.vn](https://hust.edu.vn)\n- **Mô tả**: Trường đại học kỹ thuật đa ngành hàng đầu Việt Nam, cái nôi đào tạo kỹ sư và nhà khoa học công nghệ cao.\n- **Các trường thành viên, khoa, viện trực thuộc**:\n  - Trường Công nghệ Thông tin & Truyền thông (SoICT)\n  - Trường Điện - Điện tử (SEEE)\n  - Trường Cơ khí (SME)\n  - Trường Hóa & Khoa học Sự sống\n  - Trường Vật liệu\n  - Khoa Toán - Tin\n  - Khoa Vật lý Kỹ thuật\n- **Nguồn xác minh**: [https://hust.edu.vn](https://hust.edu.vn)\n",
+      "sourceUrl": "https://hust.edu.vn",
+      "city": "Hà Nội",
+      "region": "Miền Bắc",
+      "faculties": [
+        "Trường Công nghệ Thông tin & Truyền thông (SoICT)",
+        "Trường Điện - Điện tử (SEEE)",
+        "Trường Cơ khí (SME)",
+        "Trường Hóa & Khoa học Sự sống",
+        "Trường Vật liệu",
+        "Khoa Toán - Tin",
+        "Khoa Vật lý Kỹ thuật"
+      ],
+      "keywords": [
+        "dai hoc bach khoa ha noi",
+        "hust",
+        "hanoi university of science and technology",
+        "ha noi",
+        "mien bac"
+      ]
+    },
+    {
+      "id": "doc-prof-hust-ta-hai-tung",
+      "entityType": "professor",
+      "entityId": "prof-hust-ta-hai-tung",
+      "title": "PGS. TS Tạ Hải Tùng - HUST",
+      "content": "### PGS. TS Tạ Hải Tùng (HUST)\n- **Học hàm / Học vị**: PGS. TS\n- **Chức vụ**: Cán bộ giảng dạy\n- **Cơ sở đào tạo**: Đại học Bách Khoa Hà Nội (HUST)\n- **Khoa / Viện**: Trường Công nghệ Thông tin & Truyền thông\n- **Email**: tungth@soict.hust.edu.vn\n- **Lĩnh vực nghiên cứu**: Hệ thống định vị dẫn đường NAVIS, IoT, Thành phố thông minh\n- **Học phần giảng dạy**: Đang cập nhật\n- **Tiểu sử tóm tắt**: PGS.TS. Tạ Hải Tùng --> --> PGS.TS. Nguyễn Linh Giang --> --> ThS. Phạm Thanh Liêm --> --> ThS. Bành Thị Quỳnh Mai --> --> PGS.TS. Nguyễn Khanh Văn --> --> TS. Ngô Thành Trung --> --> TS. Trịnh Văn Chiến --> --> TS. Nguyễn Thị Thanh Nga --> --> ThS. Lê Tấn Hùng --> --> PGS.TS. Lã Thế Vinh --> --> TS. Nguyễn Hữu Đức --> --> PGS.TS. Phạm Văn Hải --> --> TS. Trần Hoàng Hải --> --> TS. Nguyễn Đức Toàn --> --> TS. Vũ Tuyết Trinh --> --> GS.TS. Huỳnh Thị Thanh Bình --> --> TS. Lê Xuân Thành --> --> ThS. Nguyễn Đức Tiến --> --> ThS. Phạm Thị Phương Giang --> --> PGS.TS. Trần Quang Đức --> --> 1 2 3 4 &hellip; 6\n- **Nguồn xác minh**: [https://soict.hust.edu.vn/pgs-ts-ta-hai-tung.html](https://soict.hust.edu.vn/pgs-ts-ta-hai-tung.html)\n- **Độ tin cậy xác thực**: 98%\n",
+      "sourceUrl": "https://soict.hust.edu.vn/pgs-ts-ta-hai-tung.html",
+      "universityId": "hust",
+      "universityName": "Đại học Bách Khoa Hà Nội",
+      "faculty": "Trường Công nghệ Thông tin & Truyền thông",
+      "academicRank": "PGS. TS",
+      "researchInterests": [
+        "Hệ thống định vị dẫn đường NAVIS",
+        "IoT",
+        "Thành phố thông minh"
+      ],
+      "courses": [],
+      "keywords": [
+        "ta hai tung",
+        "dai hoc bach khoa ha noi",
+        "truong cong nghe thong tin truyen thong",
+        "he thong dinh vi dan duong navis iot thanh pho thong minh",
+        "",
+        "hust"
+      ],
+      "confidenceScore": 0.98,
+      "verificationStatus": "verified"
+    },
+    {
+      "id": "doc-prof-hust-huynh-thi-thanh-binh",
+      "entityType": "professor",
+      "entityId": "prof-hust-huynh-thi-thanh-binh",
+      "title": "PGS. TS Huỳnh Thị Thanh Bình - HUST",
+      "content": "### PGS. TS Huỳnh Thị Thanh Bình (HUST)\n- **Học hàm / Học vị**: PGS. TS\n- **Chức vụ**: Phó Hiệu trưởng / Giảng viên cao cấp\n- **Cơ sở đào tạo**: Đại học Bách Khoa Hà Nội (HUST)\n- **Khoa / Viện**: Trường Công nghệ Thông tin & Truyền thông\n- **Email**: binhht@soict.hust.edu.vn\n- **Lĩnh vực nghiên cứu**: Trí tuệ nhân tạo, Tối ưu hóa tiến hóa, Học máy, Meta-heuristics\n- **Học phần giảng dạy**: Trí tuệ nhân tạo, Thuật toán nâng cao, Tối ưu hóa trong tin học\n- **Tiểu sử tóm tắt**: Phó Hiệu trưởng Trường CNTT&TT - ĐH Bách Khoa Hà Nội. Chuyên gia đầu ngành về Trí tuệ nhân tạo, Tối ưu hóa tiến hóa (Evolutionary Computation) và Giải thuật đa mục tiêu.\n- **Nguồn xác minh**: [https://soict.hust.edu.vn/can-bo/huynh-thi-thanh-binh.html](https://soict.hust.edu.vn/can-bo/huynh-thi-thanh-binh.html)\n- **Độ tin cậy xác thực**: 98%\n",
+      "sourceUrl": "https://soict.hust.edu.vn/can-bo/huynh-thi-thanh-binh.html",
+      "universityId": "hust",
+      "universityName": "Đại học Bách Khoa Hà Nội",
+      "faculty": "Trường Công nghệ Thông tin & Truyền thông",
+      "academicRank": "PGS. TS",
+      "researchInterests": [
+        "Trí tuệ nhân tạo",
+        "Tối ưu hóa tiến hóa",
+        "Học máy",
+        "Meta-heuristics"
+      ],
+      "courses": [
+        "Trí tuệ nhân tạo",
+        "Thuật toán nâng cao",
+        "Tối ưu hóa trong tin học"
+      ],
+      "keywords": [
+        "huynh thi thanh binh",
+        "dai hoc bach khoa ha noi",
+        "truong cong nghe thong tin truyen thong",
+        "tri tue nhan tao toi uu hoa tien hoa hoc may meta heuristics",
+        "tri tue nhan tao thuat toan nang cao toi uu hoa trong tin hoc",
+        "hust"
+      ],
+      "confidenceScore": 0.98,
+      "verificationStatus": "verified"
+    },
+    {
+      "id": "doc-prof-vnu-uet-nguyen-viet-ha",
+      "entityType": "professor",
+      "entityId": "prof-vnu-uet-nguyen-viet-ha",
+      "title": "GS. TS Nguyễn Việt Hà - VNU-UET",
+      "content": "### GS. TS Nguyễn Việt Hà (VNU-UET)\n- **Học hàm / Học vị**: GS. TS\n- **Chức vụ**: Hiệu trưởng / Giảng viên cao cấp\n- **Cơ sở đào tạo**: Trường Đại học Công nghệ - ĐHQG Hà Nội (VNU-UET)\n- **Khoa / Viện**: Khoa Công nghệ Thông tin\n- **Email**: hanv@vnu.edu.vn\n- **Lĩnh vực nghiên cứu**: Công nghệ phần mềm, Kiểm thử tự động, Phân tích mã nguồn\n- **Học phần giảng dạy**: Kỹ nghệ phần mềm, Kiểm thử phần mềm\n- **Tiểu sử tóm tắt**: Hiệu trưởng Trường Đại học Công nghệ - ĐHQG Hà Nội. Chuyên gia về Kiểm thử phần mềm, Phương pháp hình thức và Đảm bảo chất lượng phần mềm.\n- **Nguồn xác minh**: [https://uet.vnu.edu.vn/lanh-dao-truong/](https://uet.vnu.edu.vn/lanh-dao-truong/)\n- **Độ tin cậy xác thực**: 97%\n",
+      "sourceUrl": "https://uet.vnu.edu.vn/lanh-dao-truong/",
+      "universityId": "vnu-uet",
+      "universityName": "Trường Đại học Công nghệ - ĐHQG Hà Nội",
+      "faculty": "Khoa Công nghệ Thông tin",
+      "academicRank": "GS. TS",
+      "researchInterests": [
+        "Công nghệ phần mềm",
+        "Kiểm thử tự động",
+        "Phân tích mã nguồn"
+      ],
+      "courses": [
+        "Kỹ nghệ phần mềm",
+        "Kiểm thử phần mềm"
+      ],
+      "keywords": [
+        "nguyen viet ha",
+        "truong dai hoc cong nghe dhqg ha noi",
+        "khoa cong nghe thong tin",
+        "cong nghe phan mem kiem thu tu dong phan tich ma nguon",
+        "ky nghe phan mem kiem thu phan mem",
+        "vnu-uet"
+      ],
+      "confidenceScore": 0.97,
+      "verificationStatus": "verified"
+    },
+    {
+      "id": "doc-prof-vnu-uet-le-sy-vinh",
+      "entityType": "professor",
+      "entityId": "prof-vnu-uet-le-sy-vinh",
+      "title": "GS. TS Lê Sỹ Vinh - VNU-UET",
+      "content": "### GS. TS Lê Sỹ Vinh (VNU-UET)\n- **Học hàm / Học vị**: GS. TS\n- **Chức vụ**: Chủ nhiệm Khoa\n- **Cơ sở đào tạo**: Trường Đại học Công nghệ - ĐHQG Hà Nội (VNU-UET)\n- **Khoa / Viện**: Khoa Công nghệ Thông tin\n- **Email**: vinhls@vnu.edu.vn\n- **Lĩnh vực nghiên cứu**: Tin sinh học, Thuật toán tiến hóa, Sinh học điện toán\n- **Học phần giảng dạy**: Cấu trúc dữ liệu và giải thuật, Tin sinh học tính toán\n- **Tiểu sử tóm tắt**: Chủ nhiệm Khoa CNTT - Trường ĐH Công nghệ - ĐHQG Hà Nội. Giải thưởng Tạ Quang Bửu về Tin sinh học (Bioinformatics) và Thuật toán tối ưu.\n- **Nguồn xác minh**: [https://fit.uet.vnu.edu.vn/giang-vien/le-sy-vinh/](https://fit.uet.vnu.edu.vn/giang-vien/le-sy-vinh/)\n- **Độ tin cậy xác thực**: 98%\n",
+      "sourceUrl": "https://fit.uet.vnu.edu.vn/giang-vien/le-sy-vinh/",
+      "universityId": "vnu-uet",
+      "universityName": "Trường Đại học Công nghệ - ĐHQG Hà Nội",
+      "faculty": "Khoa Công nghệ Thông tin",
+      "academicRank": "GS. TS",
+      "researchInterests": [
+        "Tin sinh học",
+        "Thuật toán tiến hóa",
+        "Sinh học điện toán"
+      ],
+      "courses": [
+        "Cấu trúc dữ liệu và giải thuật",
+        "Tin sinh học tính toán"
+      ],
+      "keywords": [
+        "le sy vinh",
+        "truong dai hoc cong nghe dhqg ha noi",
+        "khoa cong nghe thong tin",
+        "tin sinh hoc thuat toan tien hoa sinh hoc dien toan",
+        "cau truc du lieu va giai thuat tin sinh hoc tinh toan",
+        "vnu-uet"
+      ],
+      "confidenceScore": 0.98,
+      "verificationStatus": "verified"
+    },
+    {
+      "id": "doc-prof-neu-pham-hong-chuong",
+      "entityType": "professor",
+      "entityId": "prof-neu-pham-hong-chuong",
+      "title": "GS. TS Phạm Hồng Chương - NEU",
+      "content": "### GS. TS Phạm Hồng Chương (NEU)\n- **Học hàm / Học vị**: GS. TS\n- **Chức vụ**: Hiệu trưởng\n- **Cơ sở đào tạo**: Trường Đại học Kinh tế Quốc dân (NEU)\n- **Khoa / Viện**: Khoa Quản trị Kinh doanh\n- **Email**: chuongph@neu.edu.vn\n- **Lĩnh vực nghiên cứu**: Quản trị chiến lược, Kinh tế quốc tế, Chính sách kinh tế vĩ mô\n- **Học phần giảng dạy**: Quản trị học, Quản trị chiến lược\n- **Tiểu sử tóm tắt**: Hiệu trưởng Trường Đại học Kinh tế Quốc dân. Chuyên gia kinh tế vĩ mô, quản trị chiến lược và hội nhập kinh tế quốc tế.\n- **Nguồn xác minh**: [https://neu.edu.vn/lanh-dao-truong](https://neu.edu.vn/lanh-dao-truong)\n- **Độ tin cậy xác thực**: 95%\n",
+      "sourceUrl": "https://neu.edu.vn/lanh-dao-truong",
+      "universityId": "neu",
+      "universityName": "Trường Đại học Kinh tế Quốc dân",
+      "faculty": "Khoa Quản trị Kinh doanh",
+      "academicRank": "GS. TS",
+      "researchInterests": [
+        "Quản trị chiến lược",
+        "Kinh tế quốc tế",
+        "Chính sách kinh tế vĩ mô"
+      ],
+      "courses": [
+        "Quản trị học",
+        "Quản trị chiến lược"
+      ],
+      "keywords": [
+        "pham hong chuong",
+        "truong dai hoc kinh te quoc dan",
+        "khoa quan tri kinh doanh",
+        "quan tri chien luoc kinh te quoc te chinh sach kinh te vi mo",
+        "quan tri hoc quan tri chien luoc",
+        "neu"
+      ],
+      "confidenceScore": 0.95,
+      "verificationStatus": "verified"
+    },
+    {
+      "id": "doc-prof-ftu-bui-anh-tuan",
+      "entityType": "professor",
+      "entityId": "prof-ftu-bui-anh-tuan",
+      "title": "PGS. TS Bùi Anh Tuấn - FTU",
+      "content": "### PGS. TS Bùi Anh Tuấn (FTU)\n- **Học hàm / Học vị**: PGS. TS\n- **Chức vụ**: Hiệu trưởng\n- **Cơ sở đào tạo**: Trường Đại học Ngoại thương (FTU)\n- **Khoa / Viện**: Khoa Kinh tế Quốc tế\n- **Email**: tuanba@ftu.edu.vn\n- **Lĩnh vực nghiên cứu**: Thương mại quốc tế, Đầu tư trực tiếp nước ngoài FDI, Kinh tế học vi mô\n- **Học phần giảng dạy**: Kinh tế quốc tế, Thương mại quốc tế nâng cao\n- **Tiểu sử tóm tắt**: Hiệu trưởng Trường Đại học Ngoại thương. Lĩnh vực nghiên cứu chính: Kinh tế học thương mại quốc tế, Quản lý giáo dục đại học.\n- **Nguồn xác minh**: [https://ftu.edu.vn/ban-giam-hieu](https://ftu.edu.vn/ban-giam-hieu)\n- **Độ tin cậy xác thực**: 96%\n",
+      "sourceUrl": "https://ftu.edu.vn/ban-giam-hieu",
+      "universityId": "ftu",
+      "universityName": "Trường Đại học Ngoại thương",
+      "faculty": "Khoa Kinh tế Quốc tế",
+      "academicRank": "PGS. TS",
+      "researchInterests": [
+        "Thương mại quốc tế",
+        "Đầu tư trực tiếp nước ngoài FDI",
+        "Kinh tế học vi mô"
+      ],
+      "courses": [
+        "Kinh tế quốc tế",
+        "Thương mại quốc tế nâng cao"
+      ],
+      "keywords": [
+        "bui anh tuan",
+        "truong dai hoc ngoai thuong",
+        "khoa kinh te quoc te",
+        "thuong mai quoc te dau tu truc tiep nuoc ngoai fdi kinh te hoc vi mo",
+        "kinh te quoc te thuong mai quoc te nang cao",
+        "ftu"
+      ],
+      "confidenceScore": 0.96,
+      "verificationStatus": "verified"
+    },
+    {
+      "id": "doc-prof-hcmut-tho-quan-tran",
+      "entityType": "professor",
+      "entityId": "prof-hcmut-tho-quan-tran",
+      "title": "PGS. TS Trần Minh Triết - HCMUT",
+      "content": "### PGS. TS Trần Minh Triết (HCMUT)\n- **Học hàm / Học vị**: PGS. TS\n- **Chức vụ**: Phó Trưởng khoa\n- **Cơ sở đào tạo**: Trường ĐH Bách Khoa - ĐHQG TP.HCM (HCMUT)\n- **Khoa / Viện**: Khoa Khoa học & Kỹ thuật Máy tính\n- **Email**: tmtriet@hcmut.edu.vn\n- **Lĩnh vực nghiên cứu**: An toàn thông tin, Mật mã học ứng dụng, Blockchain, Điện toán đám mây\n- **Học phần giảng dạy**: An toàn mạng máy tính, Mật mã học, Kiến trúc hệ thống lớn\n- **Tiểu sử tóm tắt**: Phó Trưởng khoa Khoa học & Kỹ thuật Máy tính, ĐH Bách Khoa TP.HCM. Chuyên sâu về An toàn thông tin, Mật mã học và Hệ thống phần mềm phân tán.\n- **Nguồn xác minh**: [https://cse.hcmut.edu.vn/people/faculty/triet-tran](https://cse.hcmut.edu.vn/people/faculty/triet-tran)\n- **Độ tin cậy xác thực**: 96%\n",
+      "sourceUrl": "https://cse.hcmut.edu.vn/people/faculty/triet-tran",
+      "universityId": "hcmut",
+      "universityName": "Trường ĐH Bách Khoa - ĐHQG TP.HCM",
+      "faculty": "Khoa Khoa học & Kỹ thuật Máy tính",
+      "academicRank": "PGS. TS",
+      "researchInterests": [
+        "An toàn thông tin",
+        "Mật mã học ứng dụng",
+        "Blockchain",
+        "Điện toán đám mây"
+      ],
+      "courses": [
+        "An toàn mạng máy tính",
+        "Mật mã học",
+        "Kiến trúc hệ thống lớn"
+      ],
+      "keywords": [
+        "tran minh triet",
+        "truong dh bach khoa dhqg tp hcm",
+        "khoa khoa hoc ky thuat may tinh",
+        "an toan thong tin mat ma hoc ung dung blockchain dien toan dam may",
+        "an toan mang may tinh mat ma hoc kien truc he thong lon",
+        "hcmut"
+      ],
+      "confidenceScore": 0.96,
+      "verificationStatus": "verified"
+    },
+    {
+      "id": "doc-prof-hcmut-quan-thanh-tho",
+      "entityType": "professor",
+      "entityId": "prof-hcmut-quan-thanh-tho",
+      "title": "PGS. TS Quản Thành Thơ - HCMUT",
+      "content": "### PGS. TS Quản Thành Thơ (HCMUT)\n- **Học hàm / Học vị**: PGS. TS\n- **Chức vụ**: Trưởng khoa\n- **Cơ sở đào tạo**: Trường ĐH Bách Khoa - ĐHQG TP.HCM (HCMUT)\n- **Khoa / Viện**: Khoa Khoa học & Kỹ thuật Máy tính\n- **Email**: qttho@hcmut.edu.vn\n- **Lĩnh vực nghiên cứu**: Khai phá dữ liệu, Học máy, Xử lý ngôn ngữ tự nhiên tiếng Việt\n- **Học phần giảng dạy**: Học máy nâng cao, Cơ sở dữ liệu, Xử lý dữ liệu lớn\n- **Tiểu sử tóm tắt**: Trưởng khoa Khoa học & Kỹ thuật Máy tính, ĐH Bách Khoa TP.HCM. Hướng nghiên cứu: Khai phá dữ liệu lớn, Trí tuệ nhân tạo và Xử lý ngôn ngữ tự nhiên.\n- **Nguồn xác minh**: [https://cse.hcmut.edu.vn/people/faculty/tho-quan](https://cse.hcmut.edu.vn/people/faculty/tho-quan)\n- **Độ tin cậy xác thực**: 97%\n",
+      "sourceUrl": "https://cse.hcmut.edu.vn/people/faculty/tho-quan",
+      "universityId": "hcmut",
+      "universityName": "Trường ĐH Bách Khoa - ĐHQG TP.HCM",
+      "faculty": "Khoa Khoa học & Kỹ thuật Máy tính",
+      "academicRank": "PGS. TS",
+      "researchInterests": [
+        "Khai phá dữ liệu",
+        "Học máy",
+        "Xử lý ngôn ngữ tự nhiên tiếng Việt"
+      ],
+      "courses": [
+        "Học máy nâng cao",
+        "Cơ sở dữ liệu",
+        "Xử lý dữ liệu lớn"
+      ],
+      "keywords": [
+        "quan thanh tho",
+        "truong dh bach khoa dhqg tp hcm",
+        "khoa khoa hoc ky thuat may tinh",
+        "khai pha du lieu hoc may xu ly ngon ngu tu nhien tieng viet",
+        "hoc may nang cao co so du lieu xu ly du lieu lon",
+        "hcmut"
+      ],
+      "confidenceScore": 0.97,
+      "verificationStatus": "verified"
+    },
+    {
+      "id": "doc-prof-uit-nguyen-hoang-tu-anh",
+      "entityType": "professor",
+      "entityId": "prof-uit-nguyen-hoang-tu-anh",
+      "title": "PGS. TS Nguyễn Hoàng Tú Anh - UIT",
+      "content": "### PGS. TS Nguyễn Hoàng Tú Anh (UIT)\n- **Học hàm / Học vị**: PGS. TS\n- **Chức vụ**: Hiệu trưởng\n- **Cơ sở đào tạo**: Trường ĐH Công nghệ Thông tin - ĐHQG TP.HCM (UIT)\n- **Khoa / Viện**: Khoa Khoa học Máy tính\n- **Email**: tuanh@uit.edu.vn\n- **Lĩnh vực nghiên cứu**: Hệ thống thông tin GIS, Cơ sở dữ liệu không gian, Khoa học dữ liệu\n- **Học phần giảng dạy**: Hệ thống thông tin quản lý, Cơ sở dữ liệu nâng cao\n- **Tiểu sử tóm tắt**: Hiệu trưởng Trường ĐH Công nghệ Thông tin - ĐHQG TP.HCM. Chuyên gia về Hệ thống thông tin địa lý GIS, Cơ sở dữ liệu không gian và Dữ liệu lớn.\n- **Nguồn xác minh**: [https://uit.edu.vn/ban-giam-hieu](https://uit.edu.vn/ban-giam-hieu)\n- **Độ tin cậy xác thực**: 96%\n",
+      "sourceUrl": "https://uit.edu.vn/ban-giam-hieu",
+      "universityId": "uit",
+      "universityName": "Trường ĐH Công nghệ Thông tin - ĐHQG TP.HCM",
+      "faculty": "Khoa Khoa học Máy tính",
+      "academicRank": "PGS. TS",
+      "researchInterests": [
+        "Hệ thống thông tin GIS",
+        "Cơ sở dữ liệu không gian",
+        "Khoa học dữ liệu"
+      ],
+      "courses": [
+        "Hệ thống thông tin quản lý",
+        "Cơ sở dữ liệu nâng cao"
+      ],
+      "keywords": [
+        "nguyen hoang tu anh",
+        "truong dh cong nghe thong tin dhqg tp hcm",
+        "khoa khoa hoc may tinh",
+        "he thong thong tin gis co so du lieu khong gian khoa hoc du lieu",
+        "he thong thong tin quan ly co so du lieu nang cao",
+        "uit"
+      ],
+      "confidenceScore": 0.96,
+      "verificationStatus": "verified"
+    },
+    {
+      "id": "doc-prof-dut-nguyen-dinh-lam",
+      "entityType": "professor",
+      "entityId": "prof-dut-nguyen-dinh-lam",
+      "title": "PGS. TS Nguyễn Đình Lâm - DUT",
+      "content": "### PGS. TS Nguyễn Đình Lâm (DUT)\n- **Học hàm / Học vị**: PGS. TS\n- **Chức vụ**: Chủ tịch Hội đồng trường\n- **Cơ sở đào tạo**: Trường ĐH Bách Khoa - ĐH Đà Nẵng (DUT)\n- **Khoa / Viện**: Khoa Công nghệ Thông tin\n- **Email**: ndlam@dut.udn.vn\n- **Lĩnh vực nghiên cứu**: Công nghệ phần mềm, Hệ thống nhúng, Tự động hóa\n- **Học phần giảng dạy**: Kiến trúc máy tính, Hệ thống nhúng\n- **Tiểu sử tóm tắt**: Chủ tịch Hội đồng trường ĐH Bách Khoa - ĐH Đà Nẵng. Chuyên sâu về Công nghệ phần mềm, Hệ thống nhúng và IoT.\n- **Nguồn xác minh**: [http://dut.udn.vn/can-bo/nguyen-dinh-lam](http://dut.udn.vn/can-bo/nguyen-dinh-lam)\n- **Độ tin cậy xác thực**: 94%\n",
+      "sourceUrl": "http://dut.udn.vn/can-bo/nguyen-dinh-lam",
+      "universityId": "dut",
+      "universityName": "Trường ĐH Bách Khoa - ĐH Đà Nẵng",
+      "faculty": "Khoa Công nghệ Thông tin",
+      "academicRank": "PGS. TS",
+      "researchInterests": [
+        "Công nghệ phần mềm",
+        "Hệ thống nhúng",
+        "Tự động hóa"
+      ],
+      "courses": [
+        "Kiến trúc máy tính",
+        "Hệ thống nhúng"
+      ],
+      "keywords": [
+        "nguyen dinh lam",
+        "truong dh bach khoa dh da nang",
+        "khoa cong nghe thong tin",
+        "cong nghe phan mem he thong nhung tu dong hoa",
+        "kien truc may tinh he thong nhung",
+        "dut"
+      ],
+      "confidenceScore": 0.94,
+      "verificationStatus": "verified"
+    },
+    {
+      "id": "doc-prof-due-nguyen-manh-toan",
+      "entityType": "professor",
+      "entityId": "prof-due-nguyen-manh-toan",
+      "title": "PGS. TS Nguyễn Mạnh Toàn - DUE",
+      "content": "### PGS. TS Nguyễn Mạnh Toàn (DUE)\n- **Học hàm / Học vị**: PGS. TS\n- **Chức vụ**: Hiệu trưởng\n- **Cơ sở đào tạo**: Trường ĐH Kinh tế - ĐH Đà Nẵng (DUE)\n- **Khoa / Viện**: Khoa Tài chính\n- **Email**: toannm@due.udn.vn\n- **Lĩnh vực nghiên cứu**: Tài chính doanh nghiệp, Kinh tế tài chính, Thị trường vốn\n- **Học phần giảng dạy**: Tài chính doanh nghiệp, Thị trường tài chính\n- **Tiểu sử tóm tắt**: Hiệu trưởng Trường Đại học Kinh tế - ĐH Đà Nẵng. Nghiên cứu Tài chính doanh nghiệp, Thị trường chứng khoán và Ngân hàng thương mại.\n- **Nguồn xác minh**: [http://due.udn.vn/lanh-dao-truong](http://due.udn.vn/lanh-dao-truong)\n- **Độ tin cậy xác thực**: 93%\n",
+      "sourceUrl": "http://due.udn.vn/lanh-dao-truong",
+      "universityId": "due",
+      "universityName": "Trường ĐH Kinh tế - ĐH Đà Nẵng",
+      "faculty": "Khoa Tài chính",
+      "academicRank": "PGS. TS",
+      "researchInterests": [
+        "Tài chính doanh nghiệp",
+        "Kinh tế tài chính",
+        "Thị trường vốn"
+      ],
+      "courses": [
+        "Tài chính doanh nghiệp",
+        "Thị trường tài chính"
+      ],
+      "keywords": [
+        "nguyen manh toan",
+        "truong dh kinh te dh da nang",
+        "khoa tai chinh",
+        "tai chinh doanh nghiep kinh te tai chinh thi truong von",
+        "tai chinh doanh nghiep thi truong tai chinh",
+        "due"
+      ],
+      "confidenceScore": 0.93,
+      "verificationStatus": "verified"
+    },
+    {
+      "id": "doc-prof-husc-vo-thanh-tung",
+      "entityType": "professor",
+      "entityId": "prof-husc-vo-thanh-tung",
+      "title": "PGS. TS Võ Thanh Tùng - HUSC",
+      "content": "### PGS. TS Võ Thanh Tùng (HUSC)\n- **Học hàm / Học vị**: PGS. TS\n- **Chức vụ**: Hiệu trưởng\n- **Cơ sở đào tạo**: Trường ĐH Khoa học - Đại học Huế (HUSC)\n- **Khoa / Viện**: Khoa Công nghệ Thông tin\n- **Email**: vttung@hueuni.edu.vn\n- **Lĩnh vực nghiên cứu**: Thị giác máy tính, Xử lý ảnh y tế, Học sâu\n- **Học phần giảng dạy**: Xử lý ảnh kỹ thuật số, Trí tuệ nhân tạo\n- **Tiểu sử tóm tắt**: Hiệu trưởng Trường ĐH Khoa học - Đại học Huế. Lĩnh vực nghiên cứu: Trí tuệ nhân tạo, Thị giác máy tính và Xử lý ảnh y tế.\n- **Nguồn xác minh**: [http://husc.hueuni.edu.vn/lanh-dao-truong](http://husc.hueuni.edu.vn/lanh-dao-truong)\n- **Độ tin cậy xác thực**: 93%\n",
+      "sourceUrl": "http://husc.hueuni.edu.vn/lanh-dao-truong",
+      "universityId": "husc",
+      "universityName": "Trường ĐH Khoa học - Đại học Huế",
+      "faculty": "Khoa Công nghệ Thông tin",
+      "academicRank": "PGS. TS",
+      "researchInterests": [
+        "Thị giác máy tính",
+        "Xử lý ảnh y tế",
+        "Học sâu"
+      ],
+      "courses": [
+        "Xử lý ảnh kỹ thuật số",
+        "Trí tuệ nhân tạo"
+      ],
+      "keywords": [
+        "vo thanh tung",
+        "truong dh khoa hoc dai hoc hue",
+        "khoa cong nghe thong tin",
+        "thi giac may tinh xu ly anh y te hoc sau",
+        "xu ly anh ky thuat so tri tue nhan tao",
+        "husc"
+      ],
+      "confidenceScore": 0.93,
+      "verificationStatus": "verified"
+    },
+    {
+      "id": "doc-prof-ctu-ha-thanh-toan",
+      "entityType": "professor",
+      "entityId": "prof-ctu-ha-thanh-toan",
+      "title": "GS. TS Hà Thanh Toàn - CTU",
+      "content": "### GS. TS Hà Thanh Toàn (CTU)\n- **Học hàm / Học vị**: GS. TS\n- **Chức vụ**: Giảng viên cao cấp / Nguyên Hiệu trưởng\n- **Cơ sở đào tạo**: Trường Đại học Cần Thơ (CTU)\n- **Khoa / Viện**: Trường Công nghệ Thông tin & Truyền thông\n- **Email**: httoan@ctu.edu.vn\n- **Lĩnh vực nghiên cứu**: Công nghệ sinh học, Hóa sinh ứng dụng, Chuyển giao công nghệ\n- **Học phần giảng dạy**: Phương pháp nghiên cứu khoa học, Công nghệ sau thu hoạch\n- **Tiểu sử tóm tắt**: Giảng viên cao cấp, nguyên Hiệu trưởng Trường Đại học Cần Thơ. Nhà khoa học uy tín vùng Đồng bằng sông Cửu Long với nhiều công trình công bố quốc tế.\n- **Nguồn xác minh**: [https://www.ctu.edu.vn/ban-giam-hieu](https://www.ctu.edu.vn/ban-giam-hieu)\n- **Độ tin cậy xác thực**: 97%\n",
+      "sourceUrl": "https://www.ctu.edu.vn/ban-giam-hieu",
+      "universityId": "ctu",
+      "universityName": "Trường Đại học Cần Thơ",
+      "faculty": "Trường Công nghệ Thông tin & Truyền thông",
+      "academicRank": "GS. TS",
+      "researchInterests": [
+        "Công nghệ sinh học",
+        "Hóa sinh ứng dụng",
+        "Chuyển giao công nghệ"
+      ],
+      "courses": [
+        "Phương pháp nghiên cứu khoa học",
+        "Công nghệ sau thu hoạch"
+      ],
+      "keywords": [
+        "ha thanh toan",
+        "truong dai hoc can tho",
+        "truong cong nghe thong tin truyen thong",
+        "cong nghe sinh hoc hoa sinh ung dung chuyen giao cong nghe",
+        "phuong phap nghien cuu khoa hoc cong nghe sau thu hoach",
+        "ctu"
+      ],
+      "confidenceScore": 0.97,
+      "verificationStatus": "verified"
+    }
+  ],
+  "ingestion_run": {
+    "id": "run-ingest-1792121962856",
+    "runType": "single_university",
+    "startedAt": 1792121962856,
+    "completedAt": 1792121963264,
+    "status": "completed",
+    "universitiesProcessed": 1,
+    "professorsExtracted": 13,
+    "professorsUpdated": 0,
+    "sourcesCrawled": 3,
+    "errorsLogged": [
+      "Failed https://seee.hust.edu.vn/doi-ngu-giang-vien: HTTP Error 404: Not Found",
+      "Failed https://sme.hust.edu.vn/giang-vien: HTTP Error 404: Not Found"
+    ]
+  }
+}
