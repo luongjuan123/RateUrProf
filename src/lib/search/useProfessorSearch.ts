@@ -31,7 +31,7 @@ export function useProfessorSearch() {
     page: number;
     pageSize: number;
   } => {
-    const q = searchParams.get("q") || undefined;
+    const q = searchParams.get("q") || searchParams.get("query") || undefined;
     const name = searchParams.get("name") || undefined;
 
     const parseList = (param: string): string[] | undefined => {
@@ -189,20 +189,92 @@ export function useProfessorSearch() {
     },
     [pathname, router]
   );
+  // Active abort controller for in-flight search requests
+  const activeAbortRef = useRef<AbortController | null>(null);
+
   // Search execution
   const executeSearch = useCallback(async () => {
+    // Abort previous in-flight request if still running
+    if (activeAbortRef.current) {
+      activeAbortRef.current.abort();
+    }
+    const abortController = new AbortController();
+    activeAbortRef.current = abortController;
+
     setLoading(true);
     setError(null);
     try {
-      const searchRes = await searchProfessors(filters, sort, { page, pageSize });
+      // Build server search query parameters
+      const params = new URLSearchParams();
+      if (filters.query?.trim()) params.set("q", filters.query.trim());
+      if (filters.name?.trim()) params.set("name", filters.name.trim());
+      if (filters.universityIds && filters.universityIds.length > 0) {
+        params.set("university", filters.universityIds.join(","));
+      }
+      if (filters.majorIds && filters.majorIds.length > 0) {
+        params.set("major", filters.majorIds.join(","));
+      }
+      if (filters.facultyIds && filters.facultyIds.length > 0) {
+        params.set("faculty", filters.facultyIds.join(","));
+      }
+      if (filters.departmentIds && filters.departmentIds.length > 0) {
+        params.set("department", filters.departmentIds.join(","));
+      }
+      if (filters.courseIds && filters.courseIds.length > 0) {
+        params.set("course", filters.courseIds.join(","));
+      }
+      if (filters.cityIds && filters.cityIds.length > 0) {
+        params.set("city", filters.cityIds.join(","));
+      }
+      if (filters.academicTitles && filters.academicTitles.length > 0) {
+        params.set("title", filters.academicTitles.join(","));
+      }
+      if (filters.researchInterests && filters.researchInterests.length > 0) {
+        params.set("interest", filters.researchInterests.join(","));
+      }
+      if (typeof filters.minRating === "number" && filters.minRating > 0) {
+        params.set("minRating", filters.minRating.toString());
+      }
+      if (typeof filters.maxRating === "number" && filters.maxRating > 0) {
+        params.set("maxRating", filters.maxRating.toString());
+      }
+      if (typeof filters.minReviewCount === "number" && filters.minReviewCount > 0) {
+        params.set("minReviews", filters.minReviewCount.toString());
+      }
+      if (filters.includeUnrated) {
+        params.set("unrated", "true");
+      }
+      if (filters.verificationStatuses && filters.verificationStatuses.length > 0) {
+        params.set("verified", filters.verificationStatuses.join(","));
+      }
+      if (filters.hasPhoto) {
+        params.set("photo", "true");
+      }
+      if (sort !== "relevance") {
+        params.set("sort", sort);
+      }
+      if (page > 1) {
+        params.set("page", page.toString());
+      }
+      if (pageSize !== 12) {
+        params.set("pageSize", pageSize.toString());
+      }
+
+      // In-process client search via high-performance search engine
+      const [searchRes, facetRes] = await Promise.all([
+        searchProfessors(filters, sort, { page, pageSize }),
+        getSearchFacets(),
+      ]);
       setResult(searchRes);
-      const facetRes = await getSearchFacets();
       setFacets(facetRes);
     } catch (err: unknown) {
+      if ((err as any)?.name === "AbortError") return;
       const msg = err instanceof Error ? err.message : "Đã xảy ra lỗi khi tìm kiếm";
       setError(msg);
     } finally {
-      setLoading(false);
+      if (activeAbortRef.current === abortController) {
+        setLoading(false);
+      }
     }
   }, [filters, sort, page, pageSize]);
 
@@ -218,6 +290,9 @@ export function useProfessorSearch() {
     return () => {
       ignore = true;
       clearTimeout(timer);
+      if (activeAbortRef.current) {
+        activeAbortRef.current.abort();
+      }
     };
   }, [executeSearch]);
 

@@ -1,0 +1,1908 @@
+{
+  "metadata": {
+    "dataset": "Học Viện Âm Nhạc Huế - Verified Academic RAG Chunks",
+    "institution_code": "HVA",
+    "university_id": "am-nhac-hue",
+    "total_chunks": 71,
+    "generated_at": "2026-10-19T12:21:08Z",
+    "version": "1.0.0"
+  },
+  "chunks": [
+    {
+      "id": "rag-hvanh-overview",
+      "title": "Học viện Âm nhạc Huế (HVA) - Tổng quan thể chế, Ban Giám đốc & Cơ cấu tổ chức",
+      "category": "institutional_overview",
+      "metadata": {
+        "university_id": "am-nhac-hue",
+        "university_name": "Học viện Âm nhạc Huế",
+        "short_name": "HVA",
+        "official_code": "HVA",
+        "official_domain": "hocvienamnhachue.edu.vn",
+        "total_verified_staff": 70,
+        "source_urls": [
+          "https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf",
+          "https://hocvienamnhachue.edu.vn/vi/ban-giam-doc/",
+          "https://hocvienamnhachue.edu.vn"
+        ],
+        "last_updated": "2026-10-19T12:21:08Z"
+      },
+      "content": "# Học viện Âm nhạc Huế (Hue Academy of Music - HVA)\n\n**Mã trường**: HVA\n**Địa chỉ**: 01 Lê Lợi, Thành phố Huế, Tỉnh Thừa Thiên Huế\n**Website chính thức**: [https://hocvienamnhachue.edu.vn](https://hocvienamnhachue.edu.vn)\n**Cơ quan chủ quản**: Bộ Văn hóa, Thể thao và Du lịch\n\n## Giới thiệu tổng quan\nHọc viện Âm nhạc Huế là một trong ba trung tâm đào tạo âm nhạc chuyên nghiệp bậc đại học và sau đại học hàng đầu tại Việt Nam (cùng với Học viện Âm nhạc Quốc gia Việt Nam và Nhạc viện TP. Hồ Chí Minh). Trường có sứ mệnh đào tạo, nghiên cứu khoa học và biểu diễn âm nhạc chất lượng cao cho khu vực miền Trung, Tây Nguyên và cả nước; bảo tồn và phát huy giá trị di sản Nhã nhạc cung đình Huế và âm nhạc dân gian truyền thống.\n\n## Ban Giám đốc đương nhiệm\n- **Giám đốc**: TS. Hà Mai Hương (Chuyên ngành Piano, ĐT: 0914.004.288)\n- **Phó Giám đốc**: ThS. Hoàng Thanh Sơn (Chuyên ngành Guitare, ĐT: 0914.075.399)\n\n## Các Khoa chuyên môn & Phòng ban\n- **Khoa Nhạc truyền thống**: Đào tạo nhạc cụ truyền thống dân tộc (Đàn Tranh, Đàn Bầu, Sáo trúc, Đàn Tỳ bà, Đàn Nhị, Đàn Nguyệt).\n- **Khoa Giao hưởng**: Đào tạo các nhạc cụ Dây (Violon, Violoncelle, Contrebasse) và Gỗ - Đồng - Gõ (Flûte, Clarinette, Trompette).\n- **Khoa Sáng tác - Lý luận - Chỉ huy**: Đào tạo sáng tác âm nhạc, lý luận âm nhạc, âm nhạc học và chỉ huy biểu diễn.\n- **Khoa Thanh nhạc - Guitare**: Đào tạo thanh nhạc thính phòng cổ điển, thanh nhạc chuyên nghiệp và guitare cổ điển.\n- **Khoa Piano - Accordeon - Organ**: Đào tạo biểu diễn piano cổ điển, accordeon và organ.\n- **Viện Nghiên cứu - Ứng dụng âm nhạc**: Nghiên cứu di sản âm nhạc truyền thống miền Trung và ứng dụng biểu diễn.\n\n## Căn cứ đối soát dữ liệu\n- Báo cáo Ba Công khai (Biểu mẫu 20 năm học 2022-2023) ký bởi Giám đốc TS. Hà Mai Hương: [Biểu mẫu 20 PDF](https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf)\n- Trang thông tin Ban Giám đốc: [Học viện Âm nhạc Huế - Ban Giám đốc]({BGD_URL})"
+    },
+    {
+      "id": "rag-prof-am-nhac-hue-ha-mai-huong",
+      "title": "Học viện Âm nhạc Huế - Giảng viên: TS. Giảng viên chính Hà Mai Hương (Ban Giám đốc)",
+      "category": "faculty_member",
+      "metadata": {
+        "university_id": "am-nhac-hue",
+        "university_name": "Học viện Âm nhạc Huế",
+        "lecturer_id": "prof-am-nhac-hue-ha-mai-huong",
+        "name": "Hà Mai Hương",
+        "faculty": "Ban Giám đốc",
+        "department": "Piano",
+        "degree": "Tiến sĩ",
+        "academic_rank": null,
+        "position": "Giám đốc Học viện Âm nhạc Huế",
+        "specialty": "Piano",
+        "year_of_birth": 1975,
+        "gender": "Nữ",
+        "phone": "0914.004.288",
+        "source_urls": [
+          "https://hocvienamnhachue.edu.vn/vi/ban-giam-doc/",
+          "https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf"
+        ],
+        "verification_status": "verified",
+        "last_updated": "2026-10-19T12:21:08Z"
+      },
+      "content": "# Hà Mai Hương - TS. Giảng viên chính\n\n**Cơ sở đào tạo**: Học viện Âm nhạc Huế (HVA)\n**Khoa / Phòng / Viện**: Ban Giám đốc\n**Bộ môn / Chuyên ngành**: Piano\n**Chức vụ hiện tại**: Giám đốc Học viện Âm nhạc Huế\n**Học vị**: Tiến sĩ\n**Học hàm**: Chưa phong tặng GS/PGS\n**Năm sinh**: 1975 (Nữ)\n**Số điện thoại**: 0914.004.288\n\n## Tiểu sử & Hoạt động chuyên môn\nHà Mai Hương là TS. Giảng viên chính tại Học viện Âm nhạc Huế (HVA). Đơn vị công tác: Ban Giám đốc. Bộ môn / Chuyên môn: Piano. Hiện giữ chức vụ: Giám đốc Học viện Âm nhạc Huế. Chuyên ngành giảng dạy và hoạt động nghệ thuật: Piano. Điện thoại công tác: 0914.004.288. Hồ sơ giảng viên cơ hữu được đối soát theo Báo cáo Ba Công khai (Biểu mẫu 20, STT 1) của Học viện Âm nhạc Huế gửi Bộ Giáo dục & Đào tạo.\n\n## Nguồn minh chứng và đối soát\n- **Báo cáo 3 Công khai (Biểu mẫu 20, Bộ GD&ĐT)**: STT 1, ký duyệt bởi Giám đốc TS. Hà Mai Hương.\n  Link văn bản: [https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf](https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf)\n- **Trang danh bạ khoa / cổng thông tin chính thức**:\n- [https://hocvienamnhachue.edu.vn/vi/ban-giam-doc/](https://hocvienamnhachue.edu.vn/vi/ban-giam-doc/)\n- [https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf](https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf)\n"
+    },
+    {
+      "id": "rag-prof-am-nhac-hue-hoang-thanh-son",
+      "title": "Học viện Âm nhạc Huế - Giảng viên: ThS. Giảng viên chính Hoàng Thanh Sơn (Ban Giám đốc)",
+      "category": "faculty_member",
+      "metadata": {
+        "university_id": "am-nhac-hue",
+        "university_name": "Học viện Âm nhạc Huế",
+        "lecturer_id": "prof-am-nhac-hue-hoang-thanh-son",
+        "name": "Hoàng Thanh Sơn",
+        "faculty": "Ban Giám đốc",
+        "department": "Guitare",
+        "degree": "Thạc sĩ",
+        "academic_rank": null,
+        "position": "Phó Giám đốc Học viện Âm nhạc Huế",
+        "specialty": "Guitare",
+        "year_of_birth": 1975,
+        "gender": "Nam",
+        "phone": "0914.075.399",
+        "source_urls": [
+          "https://hocvienamnhachue.edu.vn/vi/ban-giam-doc/",
+          "https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf"
+        ],
+        "verification_status": "verified",
+        "last_updated": "2026-10-19T12:21:08Z"
+      },
+      "content": "# Hoàng Thanh Sơn - ThS. Giảng viên chính\n\n**Cơ sở đào tạo**: Học viện Âm nhạc Huế (HVA)\n**Khoa / Phòng / Viện**: Ban Giám đốc\n**Bộ môn / Chuyên ngành**: Guitare\n**Chức vụ hiện tại**: Phó Giám đốc Học viện Âm nhạc Huế\n**Học vị**: Thạc sĩ\n**Học hàm**: Chưa phong tặng GS/PGS\n**Năm sinh**: 1975 (Nam)\n**Số điện thoại**: 0914.075.399\n\n## Tiểu sử & Hoạt động chuyên môn\nHoàng Thanh Sơn là ThS. Giảng viên chính tại Học viện Âm nhạc Huế (HVA). Đơn vị công tác: Ban Giám đốc. Bộ môn / Chuyên môn: Guitare. Hiện giữ chức vụ: Phó Giám đốc Học viện Âm nhạc Huế. Chuyên ngành giảng dạy và hoạt động nghệ thuật: Guitare. Điện thoại công tác: 0914.075.399. Hồ sơ giảng viên cơ hữu được đối soát theo Báo cáo Ba Công khai (Biểu mẫu 20, STT 2) của Học viện Âm nhạc Huế gửi Bộ Giáo dục & Đào tạo.\n\n## Nguồn minh chứng và đối soát\n- **Báo cáo 3 Công khai (Biểu mẫu 20, Bộ GD&ĐT)**: STT 2, ký duyệt bởi Giám đốc TS. Hà Mai Hương.\n  Link văn bản: [https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf](https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf)\n- **Trang danh bạ khoa / cổng thông tin chính thức**:\n- [https://hocvienamnhachue.edu.vn/vi/ban-giam-doc/](https://hocvienamnhachue.edu.vn/vi/ban-giam-doc/)\n- [https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf](https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf)\n"
+    },
+    {
+      "id": "rag-prof-am-nhac-hue-truong-ngoc-chien",
+      "title": "Học viện Âm nhạc Huế - Giảng viên: ThS. Giảng viên chính Trương Ngọc Chiến (Khoa Piano - Accordeon - Organ)",
+      "category": "faculty_member",
+      "metadata": {
+        "university_id": "am-nhac-hue",
+        "university_name": "Học viện Âm nhạc Huế",
+        "lecturer_id": "prof-am-nhac-hue-truong-ngoc-chien",
+        "name": "Trương Ngọc Chiến",
+        "faculty": "Khoa Piano - Accordeon - Organ",
+        "department": "Bộ môn Piano",
+        "degree": "Thạc sĩ",
+        "academic_rank": null,
+        "position": "Trưởng khoa",
+        "specialty": "Piano",
+        "year_of_birth": 1977,
+        "gender": "Nam",
+        "phone": null,
+        "source_urls": [
+          "https://hocvienamnhachue.edu.vn/vi/khoa-piano-accordeon-organ/",
+          "https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf"
+        ],
+        "verification_status": "verified",
+        "last_updated": "2026-10-19T12:21:08Z"
+      },
+      "content": "# Trương Ngọc Chiến - ThS. Giảng viên chính\n\n**Cơ sở đào tạo**: Học viện Âm nhạc Huế (HVA)\n**Khoa / Phòng / Viện**: Khoa Piano - Accordeon - Organ\n**Bộ môn / Chuyên ngành**: Bộ môn Piano\n**Chức vụ hiện tại**: Trưởng khoa\n**Học vị**: Thạc sĩ\n**Học hàm**: Chưa phong tặng GS/PGS\n**Năm sinh**: 1977 (Nam)\n\n## Tiểu sử & Hoạt động chuyên môn\nTrương Ngọc Chiến là ThS. Giảng viên chính tại Học viện Âm nhạc Huế (HVA). Đơn vị công tác: Khoa Piano - Accordeon - Organ. Bộ môn / Chuyên môn: Bộ môn Piano. Hiện giữ chức vụ: Trưởng khoa. Chuyên ngành giảng dạy và hoạt động nghệ thuật: Piano. Hồ sơ giảng viên cơ hữu được đối soát theo Báo cáo Ba Công khai (Biểu mẫu 20, STT 3) của Học viện Âm nhạc Huế gửi Bộ Giáo dục & Đào tạo.\n\n## Nguồn minh chứng và đối soát\n- **Báo cáo 3 Công khai (Biểu mẫu 20, Bộ GD&ĐT)**: STT 3, ký duyệt bởi Giám đốc TS. Hà Mai Hương.\n  Link văn bản: [https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf](https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf)\n- **Trang danh bạ khoa / cổng thông tin chính thức**:\n- [https://hocvienamnhachue.edu.vn/vi/khoa-piano-accordeon-organ/](https://hocvienamnhachue.edu.vn/vi/khoa-piano-accordeon-organ/)\n- [https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf](https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf)\n"
+    },
+    {
+      "id": "rag-prof-am-nhac-hue-nguyen-thi-ha",
+      "title": "Học viện Âm nhạc Huế - Giảng viên: ThS. Giảng viên chính Nguyễn Thị Hà (Khoa Piano - Accordeon - Organ)",
+      "category": "faculty_member",
+      "metadata": {
+        "university_id": "am-nhac-hue",
+        "university_name": "Học viện Âm nhạc Huế",
+        "lecturer_id": "prof-am-nhac-hue-nguyen-thi-ha",
+        "name": "Nguyễn Thị Hà",
+        "faculty": "Khoa Piano - Accordeon - Organ",
+        "department": "Bộ môn Piano",
+        "degree": "Thạc sĩ",
+        "academic_rank": null,
+        "position": "Phó Trưởng khoa",
+        "specialty": "Piano",
+        "year_of_birth": 1978,
+        "gender": "Nữ",
+        "phone": null,
+        "source_urls": [
+          "https://hocvienamnhachue.edu.vn/vi/khoa-piano-accordeon-organ/",
+          "https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf"
+        ],
+        "verification_status": "verified",
+        "last_updated": "2026-10-19T12:21:08Z"
+      },
+      "content": "# Nguyễn Thị Hà - ThS. Giảng viên chính\n\n**Cơ sở đào tạo**: Học viện Âm nhạc Huế (HVA)\n**Khoa / Phòng / Viện**: Khoa Piano - Accordeon - Organ\n**Bộ môn / Chuyên ngành**: Bộ môn Piano\n**Chức vụ hiện tại**: Phó Trưởng khoa\n**Học vị**: Thạc sĩ\n**Học hàm**: Chưa phong tặng GS/PGS\n**Năm sinh**: 1978 (Nữ)\n\n## Tiểu sử & Hoạt động chuyên môn\nNguyễn Thị Hà là ThS. Giảng viên chính tại Học viện Âm nhạc Huế (HVA). Đơn vị công tác: Khoa Piano - Accordeon - Organ. Bộ môn / Chuyên môn: Bộ môn Piano. Hiện giữ chức vụ: Phó Trưởng khoa. Chuyên ngành giảng dạy và hoạt động nghệ thuật: Piano. Hồ sơ giảng viên cơ hữu được đối soát theo Báo cáo Ba Công khai (Biểu mẫu 20, STT 4) của Học viện Âm nhạc Huế gửi Bộ Giáo dục & Đào tạo.\n\n## Nguồn minh chứng và đối soát\n- **Báo cáo 3 Công khai (Biểu mẫu 20, Bộ GD&ĐT)**: STT 4, ký duyệt bởi Giám đốc TS. Hà Mai Hương.\n  Link văn bản: [https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf](https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf)\n- **Trang danh bạ khoa / cổng thông tin chính thức**:\n- [https://hocvienamnhachue.edu.vn/vi/khoa-piano-accordeon-organ/](https://hocvienamnhachue.edu.vn/vi/khoa-piano-accordeon-organ/)\n- [https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf](https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf)\n"
+    },
+    {
+      "id": "rag-prof-am-nhac-hue-hoang-to-nga",
+      "title": "Học viện Âm nhạc Huế - Giảng viên: ThS. Giảng viên Hoàng Tố Nga (Khoa Piano - Accordeon - Organ)",
+      "category": "faculty_member",
+      "metadata": {
+        "university_id": "am-nhac-hue",
+        "university_name": "Học viện Âm nhạc Huế",
+        "lecturer_id": "prof-am-nhac-hue-hoang-to-nga",
+        "name": "Hoàng Tố Nga",
+        "faculty": "Khoa Piano - Accordeon - Organ",
+        "department": "Bộ môn Piano",
+        "degree": "Thạc sĩ",
+        "academic_rank": null,
+        "position": "Giảng viên",
+        "specialty": "Piano",
+        "year_of_birth": 1977,
+        "gender": "Nữ",
+        "phone": null,
+        "source_urls": [
+          "https://hocvienamnhachue.edu.vn/vi/khoa-piano-accordeon-organ/",
+          "https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf"
+        ],
+        "verification_status": "verified",
+        "last_updated": "2026-10-19T12:21:08Z"
+      },
+      "content": "# Hoàng Tố Nga - ThS. Giảng viên\n\n**Cơ sở đào tạo**: Học viện Âm nhạc Huế (HVA)\n**Khoa / Phòng / Viện**: Khoa Piano - Accordeon - Organ\n**Bộ môn / Chuyên ngành**: Bộ môn Piano\n**Chức vụ hiện tại**: Giảng viên\n**Học vị**: Thạc sĩ\n**Học hàm**: Chưa phong tặng GS/PGS\n**Năm sinh**: 1977 (Nữ)\n\n## Tiểu sử & Hoạt động chuyên môn\nHoàng Tố Nga là ThS. Giảng viên tại Học viện Âm nhạc Huế (HVA). Đơn vị công tác: Khoa Piano - Accordeon - Organ. Bộ môn / Chuyên môn: Bộ môn Piano. Chuyên ngành giảng dạy và hoạt động nghệ thuật: Piano. Hồ sơ giảng viên cơ hữu được đối soát theo Báo cáo Ba Công khai (Biểu mẫu 20, STT 5) của Học viện Âm nhạc Huế gửi Bộ Giáo dục & Đào tạo.\n\n## Nguồn minh chứng và đối soát\n- **Báo cáo 3 Công khai (Biểu mẫu 20, Bộ GD&ĐT)**: STT 5, ký duyệt bởi Giám đốc TS. Hà Mai Hương.\n  Link văn bản: [https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf](https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf)\n- **Trang danh bạ khoa / cổng thông tin chính thức**:\n- [https://hocvienamnhachue.edu.vn/vi/khoa-piano-accordeon-organ/](https://hocvienamnhachue.edu.vn/vi/khoa-piano-accordeon-organ/)\n- [https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf](https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf)\n"
+    },
+    {
+      "id": "rag-prof-am-nhac-hue-truong-hong-linh",
+      "title": "Học viện Âm nhạc Huế - Giảng viên: ThS. Giảng viên Trương Hồng Linh (Khoa Piano - Accordeon - Organ)",
+      "category": "faculty_member",
+      "metadata": {
+        "university_id": "am-nhac-hue",
+        "university_name": "Học viện Âm nhạc Huế",
+        "lecturer_id": "prof-am-nhac-hue-truong-hong-linh",
+        "name": "Trương Hồng Linh",
+        "faculty": "Khoa Piano - Accordeon - Organ",
+        "department": "Bộ môn Piano",
+        "degree": "Thạc sĩ",
+        "academic_rank": null,
+        "position": "Giảng viên",
+        "specialty": "Piano",
+        "year_of_birth": 1981,
+        "gender": "Nữ",
+        "phone": null,
+        "source_urls": [
+          "https://hocvienamnhachue.edu.vn/vi/khoa-piano-accordeon-organ/",
+          "https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf"
+        ],
+        "verification_status": "verified",
+        "last_updated": "2026-10-19T12:21:08Z"
+      },
+      "content": "# Trương Hồng Linh - ThS. Giảng viên\n\n**Cơ sở đào tạo**: Học viện Âm nhạc Huế (HVA)\n**Khoa / Phòng / Viện**: Khoa Piano - Accordeon - Organ\n**Bộ môn / Chuyên ngành**: Bộ môn Piano\n**Chức vụ hiện tại**: Giảng viên\n**Học vị**: Thạc sĩ\n**Học hàm**: Chưa phong tặng GS/PGS\n**Năm sinh**: 1981 (Nữ)\n\n## Tiểu sử & Hoạt động chuyên môn\nTrương Hồng Linh là ThS. Giảng viên tại Học viện Âm nhạc Huế (HVA). Đơn vị công tác: Khoa Piano - Accordeon - Organ. Bộ môn / Chuyên môn: Bộ môn Piano. Chuyên ngành giảng dạy và hoạt động nghệ thuật: Piano. Hồ sơ giảng viên cơ hữu được đối soát theo Báo cáo Ba Công khai (Biểu mẫu 20, STT 6) của Học viện Âm nhạc Huế gửi Bộ Giáo dục & Đào tạo.\n\n## Nguồn minh chứng và đối soát\n- **Báo cáo 3 Công khai (Biểu mẫu 20, Bộ GD&ĐT)**: STT 6, ký duyệt bởi Giám đốc TS. Hà Mai Hương.\n  Link văn bản: [https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf](https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf)\n- **Trang danh bạ khoa / cổng thông tin chính thức**:\n- [https://hocvienamnhachue.edu.vn/vi/khoa-piano-accordeon-organ/](https://hocvienamnhachue.edu.vn/vi/khoa-piano-accordeon-organ/)\n- [https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf](https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf)\n"
+    },
+    {
+      "id": "rag-prof-am-nhac-hue-nguyen-thi-thuc-anh",
+      "title": "Học viện Âm nhạc Huế - Giảng viên: ThS. Giảng viên Nguyễn Thị Thục Anh (Khoa Piano - Accordeon - Organ)",
+      "category": "faculty_member",
+      "metadata": {
+        "university_id": "am-nhac-hue",
+        "university_name": "Học viện Âm nhạc Huế",
+        "lecturer_id": "prof-am-nhac-hue-nguyen-thi-thuc-anh",
+        "name": "Nguyễn Thị Thục Anh",
+        "faculty": "Khoa Piano - Accordeon - Organ",
+        "department": "Bộ môn Piano",
+        "degree": "Thạc sĩ",
+        "academic_rank": null,
+        "position": "Giảng viên",
+        "specialty": "Piano",
+        "year_of_birth": 1982,
+        "gender": "Nữ",
+        "phone": null,
+        "source_urls": [
+          "https://hocvienamnhachue.edu.vn/vi/khoa-piano-accordeon-organ/",
+          "https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf"
+        ],
+        "verification_status": "verified",
+        "last_updated": "2026-10-19T12:21:08Z"
+      },
+      "content": "# Nguyễn Thị Thục Anh - ThS. Giảng viên\n\n**Cơ sở đào tạo**: Học viện Âm nhạc Huế (HVA)\n**Khoa / Phòng / Viện**: Khoa Piano - Accordeon - Organ\n**Bộ môn / Chuyên ngành**: Bộ môn Piano\n**Chức vụ hiện tại**: Giảng viên\n**Học vị**: Thạc sĩ\n**Học hàm**: Chưa phong tặng GS/PGS\n**Năm sinh**: 1982 (Nữ)\n\n## Tiểu sử & Hoạt động chuyên môn\nNguyễn Thị Thục Anh là ThS. Giảng viên tại Học viện Âm nhạc Huế (HVA). Đơn vị công tác: Khoa Piano - Accordeon - Organ. Bộ môn / Chuyên môn: Bộ môn Piano. Chuyên ngành giảng dạy và hoạt động nghệ thuật: Piano. Hồ sơ giảng viên cơ hữu được đối soát theo Báo cáo Ba Công khai (Biểu mẫu 20, STT 7) của Học viện Âm nhạc Huế gửi Bộ Giáo dục & Đào tạo.\n\n## Nguồn minh chứng và đối soát\n- **Báo cáo 3 Công khai (Biểu mẫu 20, Bộ GD&ĐT)**: STT 7, ký duyệt bởi Giám đốc TS. Hà Mai Hương.\n  Link văn bản: [https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf](https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf)\n- **Trang danh bạ khoa / cổng thông tin chính thức**:\n- [https://hocvienamnhachue.edu.vn/vi/khoa-piano-accordeon-organ/](https://hocvienamnhachue.edu.vn/vi/khoa-piano-accordeon-organ/)\n- [https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf](https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf)\n"
+    },
+    {
+      "id": "rag-prof-am-nhac-hue-nguyen-thi-hoai-thuong",
+      "title": "Học viện Âm nhạc Huế - Giảng viên: ThS. Giảng viên Nguyễn Thị Hoài Thương (Khoa Piano - Accordeon - Organ)",
+      "category": "faculty_member",
+      "metadata": {
+        "university_id": "am-nhac-hue",
+        "university_name": "Học viện Âm nhạc Huế",
+        "lecturer_id": "prof-am-nhac-hue-nguyen-thi-hoai-thuong",
+        "name": "Nguyễn Thị Hoài Thương",
+        "faculty": "Khoa Piano - Accordeon - Organ",
+        "department": "Bộ môn Piano",
+        "degree": "Thạc sĩ",
+        "academic_rank": null,
+        "position": "Giảng viên",
+        "specialty": "Piano",
+        "year_of_birth": 1984,
+        "gender": "Nữ",
+        "phone": null,
+        "source_urls": [
+          "https://hocvienamnhachue.edu.vn/vi/khoa-piano-accordeon-organ/",
+          "https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf"
+        ],
+        "verification_status": "verified",
+        "last_updated": "2026-10-19T12:21:08Z"
+      },
+      "content": "# Nguyễn Thị Hoài Thương - ThS. Giảng viên\n\n**Cơ sở đào tạo**: Học viện Âm nhạc Huế (HVA)\n**Khoa / Phòng / Viện**: Khoa Piano - Accordeon - Organ\n**Bộ môn / Chuyên ngành**: Bộ môn Piano\n**Chức vụ hiện tại**: Giảng viên\n**Học vị**: Thạc sĩ\n**Học hàm**: Chưa phong tặng GS/PGS\n**Năm sinh**: 1984 (Nữ)\n\n## Tiểu sử & Hoạt động chuyên môn\nNguyễn Thị Hoài Thương là ThS. Giảng viên tại Học viện Âm nhạc Huế (HVA). Đơn vị công tác: Khoa Piano - Accordeon - Organ. Bộ môn / Chuyên môn: Bộ môn Piano. Chuyên ngành giảng dạy và hoạt động nghệ thuật: Piano. Hồ sơ giảng viên cơ hữu được đối soát theo Báo cáo Ba Công khai (Biểu mẫu 20, STT 8) của Học viện Âm nhạc Huế gửi Bộ Giáo dục & Đào tạo.\n\n## Nguồn minh chứng và đối soát\n- **Báo cáo 3 Công khai (Biểu mẫu 20, Bộ GD&ĐT)**: STT 8, ký duyệt bởi Giám đốc TS. Hà Mai Hương.\n  Link văn bản: [https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf](https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf)\n- **Trang danh bạ khoa / cổng thông tin chính thức**:\n- [https://hocvienamnhachue.edu.vn/vi/khoa-piano-accordeon-organ/](https://hocvienamnhachue.edu.vn/vi/khoa-piano-accordeon-organ/)\n- [https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf](https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf)\n"
+    },
+    {
+      "id": "rag-prof-am-nhac-hue-nguyen-thi-khanh-ha",
+      "title": "Học viện Âm nhạc Huế - Giảng viên: ThS. Giảng viên Nguyễn Thị Khánh Hà (Khoa Piano - Accordeon - Organ)",
+      "category": "faculty_member",
+      "metadata": {
+        "university_id": "am-nhac-hue",
+        "university_name": "Học viện Âm nhạc Huế",
+        "lecturer_id": "prof-am-nhac-hue-nguyen-thi-khanh-ha",
+        "name": "Nguyễn Thị Khánh Hà",
+        "faculty": "Khoa Piano - Accordeon - Organ",
+        "department": "Bộ môn Piano",
+        "degree": "Thạc sĩ",
+        "academic_rank": null,
+        "position": "Giảng viên",
+        "specialty": "Piano",
+        "year_of_birth": 1987,
+        "gender": "Nữ",
+        "phone": null,
+        "source_urls": [
+          "https://hocvienamnhachue.edu.vn/vi/khoa-piano-accordeon-organ/",
+          "https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf"
+        ],
+        "verification_status": "verified",
+        "last_updated": "2026-10-19T12:21:08Z"
+      },
+      "content": "# Nguyễn Thị Khánh Hà - ThS. Giảng viên\n\n**Cơ sở đào tạo**: Học viện Âm nhạc Huế (HVA)\n**Khoa / Phòng / Viện**: Khoa Piano - Accordeon - Organ\n**Bộ môn / Chuyên ngành**: Bộ môn Piano\n**Chức vụ hiện tại**: Giảng viên\n**Học vị**: Thạc sĩ\n**Học hàm**: Chưa phong tặng GS/PGS\n**Năm sinh**: 1987 (Nữ)\n\n## Tiểu sử & Hoạt động chuyên môn\nNguyễn Thị Khánh Hà là ThS. Giảng viên tại Học viện Âm nhạc Huế (HVA). Đơn vị công tác: Khoa Piano - Accordeon - Organ. Bộ môn / Chuyên môn: Bộ môn Piano. Chuyên ngành giảng dạy và hoạt động nghệ thuật: Piano. Hồ sơ giảng viên cơ hữu được đối soát theo Báo cáo Ba Công khai (Biểu mẫu 20, STT 9) của Học viện Âm nhạc Huế gửi Bộ Giáo dục & Đào tạo.\n\n## Nguồn minh chứng và đối soát\n- **Báo cáo 3 Công khai (Biểu mẫu 20, Bộ GD&ĐT)**: STT 9, ký duyệt bởi Giám đốc TS. Hà Mai Hương.\n  Link văn bản: [https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf](https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf)\n- **Trang danh bạ khoa / cổng thông tin chính thức**:\n- [https://hocvienamnhachue.edu.vn/vi/khoa-piano-accordeon-organ/](https://hocvienamnhachue.edu.vn/vi/khoa-piano-accordeon-organ/)\n- [https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf](https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf)\n"
+    },
+    {
+      "id": "rag-prof-am-nhac-hue-nguyen-hoang-han",
+      "title": "Học viện Âm nhạc Huế - Giảng viên: CN. Giáo vụ khoa Nguyễn Hoàng Hân (Khoa Piano - Accordeon - Organ)",
+      "category": "faculty_member",
+      "metadata": {
+        "university_id": "am-nhac-hue",
+        "university_name": "Học viện Âm nhạc Huế",
+        "lecturer_id": "prof-am-nhac-hue-nguyen-hoang-han",
+        "name": "Nguyễn Hoàng Hân",
+        "faculty": "Khoa Piano - Accordeon - Organ",
+        "department": "Văn phòng Khoa",
+        "degree": "Cử nhân",
+        "academic_rank": null,
+        "position": "Giáo vụ khoa",
+        "specialty": "Quản lý Giáo vụ",
+        "year_of_birth": 1992,
+        "gender": "Nữ",
+        "phone": null,
+        "source_urls": [
+          "https://hocvienamnhachue.edu.vn/vi/khoa-piano-accordeon-organ/"
+        ],
+        "verification_status": "verified",
+        "last_updated": "2026-10-19T12:21:08Z"
+      },
+      "content": "# Nguyễn Hoàng Hân - CN. Giáo vụ khoa\n\n**Cơ sở đào tạo**: Học viện Âm nhạc Huế (HVA)\n**Khoa / Phòng / Viện**: Khoa Piano - Accordeon - Organ\n**Bộ môn / Chuyên ngành**: Văn phòng Khoa\n**Chức vụ hiện tại**: Giáo vụ khoa\n**Học vị**: Cử nhân\n**Học hàm**: Chưa phong tặng GS/PGS\n**Năm sinh**: 1992 (Nữ)\n\n## Tiểu sử & Hoạt động chuyên môn\nNguyễn Hoàng Hân là CN. Giáo vụ khoa tại Học viện Âm nhạc Huế (HVA). Đơn vị công tác: Khoa Piano - Accordeon - Organ. Bộ môn / Chuyên môn: Văn phòng Khoa. Hiện giữ chức vụ: Giáo vụ khoa. Chuyên ngành giảng dạy và hoạt động nghệ thuật: Quản lý Giáo vụ. Thông tin công tác được chứng thực từ trang thông tin điện tử chính thức của Học viện Âm nhạc Huế.\n\n## Nguồn minh chứng và đối soát\n- **Trang danh bạ khoa / cổng thông tin chính thức**:\n- [https://hocvienamnhachue.edu.vn/vi/khoa-piano-accordeon-organ/](https://hocvienamnhachue.edu.vn/vi/khoa-piano-accordeon-organ/)\n"
+    },
+    {
+      "id": "rag-prof-am-nhac-hue-dao-thi-thanh-huyen",
+      "title": "Học viện Âm nhạc Huế - Giảng viên: ThS. Giảng viên chính Đào Thị Thanh Huyền (Khoa Giao hưởng)",
+      "category": "faculty_member",
+      "metadata": {
+        "university_id": "am-nhac-hue",
+        "university_name": "Học viện Âm nhạc Huế",
+        "lecturer_id": "prof-am-nhac-hue-dao-thi-thanh-huyen",
+        "name": "Đào Thị Thanh Huyền",
+        "faculty": "Khoa Giao hưởng",
+        "department": "Bộ môn Dây",
+        "degree": "Thạc sĩ",
+        "academic_rank": null,
+        "position": "Trưởng khoa",
+        "specialty": "Violon",
+        "year_of_birth": 1976,
+        "gender": "Nữ",
+        "phone": null,
+        "source_urls": [
+          "https://hocvienamnhachue.edu.vn/vi/khoa-giao-huong/",
+          "https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf"
+        ],
+        "verification_status": "verified",
+        "last_updated": "2026-10-19T12:21:08Z"
+      },
+      "content": "# Đào Thị Thanh Huyền - ThS. Giảng viên chính\n\n**Cơ sở đào tạo**: Học viện Âm nhạc Huế (HVA)\n**Khoa / Phòng / Viện**: Khoa Giao hưởng\n**Bộ môn / Chuyên ngành**: Bộ môn Dây\n**Chức vụ hiện tại**: Trưởng khoa\n**Học vị**: Thạc sĩ\n**Học hàm**: Chưa phong tặng GS/PGS\n**Năm sinh**: 1976 (Nữ)\n\n## Tiểu sử & Hoạt động chuyên môn\nĐào Thị Thanh Huyền là ThS. Giảng viên chính tại Học viện Âm nhạc Huế (HVA). Đơn vị công tác: Khoa Giao hưởng. Bộ môn / Chuyên môn: Bộ môn Dây. Hiện giữ chức vụ: Trưởng khoa. Chuyên ngành giảng dạy và hoạt động nghệ thuật: Violon. Hồ sơ giảng viên cơ hữu được đối soát theo Báo cáo Ba Công khai (Biểu mẫu 20, STT 12) của Học viện Âm nhạc Huế gửi Bộ Giáo dục & Đào tạo.\n\n## Nguồn minh chứng và đối soát\n- **Báo cáo 3 Công khai (Biểu mẫu 20, Bộ GD&ĐT)**: STT 12, ký duyệt bởi Giám đốc TS. Hà Mai Hương.\n  Link văn bản: [https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf](https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf)\n- **Trang danh bạ khoa / cổng thông tin chính thức**:\n- [https://hocvienamnhachue.edu.vn/vi/khoa-giao-huong/](https://hocvienamnhachue.edu.vn/vi/khoa-giao-huong/)\n- [https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf](https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf)\n"
+    },
+    {
+      "id": "rag-prof-am-nhac-hue-tran-quang-yen",
+      "title": "Học viện Âm nhạc Huế - Giảng viên: ThS. Giảng viên Trần Quang Yển (Khoa Giao hưởng)",
+      "category": "faculty_member",
+      "metadata": {
+        "university_id": "am-nhac-hue",
+        "university_name": "Học viện Âm nhạc Huế",
+        "lecturer_id": "prof-am-nhac-hue-tran-quang-yen",
+        "name": "Trần Quang Yển",
+        "faculty": "Khoa Giao hưởng",
+        "department": "Bộ môn Dây",
+        "degree": "Thạc sĩ",
+        "academic_rank": null,
+        "position": "Phó Trưởng khoa",
+        "specialty": "Violon",
+        "year_of_birth": 1982,
+        "gender": "Nam",
+        "phone": null,
+        "source_urls": [
+          "https://hocvienamnhachue.edu.vn/vi/khoa-giao-huong/",
+          "https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf"
+        ],
+        "verification_status": "verified",
+        "last_updated": "2026-10-19T12:21:08Z"
+      },
+      "content": "# Trần Quang Yển - ThS. Giảng viên\n\n**Cơ sở đào tạo**: Học viện Âm nhạc Huế (HVA)\n**Khoa / Phòng / Viện**: Khoa Giao hưởng\n**Bộ môn / Chuyên ngành**: Bộ môn Dây\n**Chức vụ hiện tại**: Phó Trưởng khoa\n**Học vị**: Thạc sĩ\n**Học hàm**: Chưa phong tặng GS/PGS\n**Năm sinh**: 1982 (Nam)\n\n## Tiểu sử & Hoạt động chuyên môn\nTrần Quang Yển là ThS. Giảng viên tại Học viện Âm nhạc Huế (HVA). Đơn vị công tác: Khoa Giao hưởng. Bộ môn / Chuyên môn: Bộ môn Dây. Hiện giữ chức vụ: Phó Trưởng khoa. Chuyên ngành giảng dạy và hoạt động nghệ thuật: Violon. Hồ sơ giảng viên cơ hữu được đối soát theo Báo cáo Ba Công khai (Biểu mẫu 20, STT 16) của Học viện Âm nhạc Huế gửi Bộ Giáo dục & Đào tạo.\n\n## Nguồn minh chứng và đối soát\n- **Báo cáo 3 Công khai (Biểu mẫu 20, Bộ GD&ĐT)**: STT 16, ký duyệt bởi Giám đốc TS. Hà Mai Hương.\n  Link văn bản: [https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf](https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf)\n- **Trang danh bạ khoa / cổng thông tin chính thức**:\n- [https://hocvienamnhachue.edu.vn/vi/khoa-giao-huong/](https://hocvienamnhachue.edu.vn/vi/khoa-giao-huong/)\n- [https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf](https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf)\n"
+    },
+    {
+      "id": "rag-prof-am-nhac-hue-le-ngoc-anh",
+      "title": "Học viện Âm nhạc Huế - Giảng viên: ThS. Giảng viên Lê Ngọc Anh (Khoa Giao hưởng)",
+      "category": "faculty_member",
+      "metadata": {
+        "university_id": "am-nhac-hue",
+        "university_name": "Học viện Âm nhạc Huế",
+        "lecturer_id": "prof-am-nhac-hue-le-ngoc-anh",
+        "name": "Lê Ngọc Anh",
+        "faculty": "Khoa Giao hưởng",
+        "department": "Bộ môn Dây",
+        "degree": "Thạc sĩ",
+        "academic_rank": null,
+        "position": "Giảng viên",
+        "specialty": "Violon",
+        "year_of_birth": 1975,
+        "gender": "Nam",
+        "phone": null,
+        "source_urls": [
+          "https://hocvienamnhachue.edu.vn/vi/khoa-giao-huong/",
+          "https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf"
+        ],
+        "verification_status": "verified",
+        "last_updated": "2026-10-19T12:21:08Z"
+      },
+      "content": "# Lê Ngọc Anh - ThS. Giảng viên\n\n**Cơ sở đào tạo**: Học viện Âm nhạc Huế (HVA)\n**Khoa / Phòng / Viện**: Khoa Giao hưởng\n**Bộ môn / Chuyên ngành**: Bộ môn Dây\n**Chức vụ hiện tại**: Giảng viên\n**Học vị**: Thạc sĩ\n**Học hàm**: Chưa phong tặng GS/PGS\n**Năm sinh**: 1975 (Nam)\n\n## Tiểu sử & Hoạt động chuyên môn\nLê Ngọc Anh là ThS. Giảng viên tại Học viện Âm nhạc Huế (HVA). Đơn vị công tác: Khoa Giao hưởng. Bộ môn / Chuyên môn: Bộ môn Dây. Chuyên ngành giảng dạy và hoạt động nghệ thuật: Violon. Hồ sơ giảng viên cơ hữu được đối soát theo Báo cáo Ba Công khai (Biểu mẫu 20, STT 11) của Học viện Âm nhạc Huế gửi Bộ Giáo dục & Đào tạo.\n\n## Nguồn minh chứng và đối soát\n- **Báo cáo 3 Công khai (Biểu mẫu 20, Bộ GD&ĐT)**: STT 11, ký duyệt bởi Giám đốc TS. Hà Mai Hương.\n  Link văn bản: [https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf](https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf)\n- **Trang danh bạ khoa / cổng thông tin chính thức**:\n- [https://hocvienamnhachue.edu.vn/vi/khoa-giao-huong/](https://hocvienamnhachue.edu.vn/vi/khoa-giao-huong/)\n- [https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf](https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf)\n"
+    },
+    {
+      "id": "rag-prof-am-nhac-hue-nguyen-hoang-lan",
+      "title": "Học viện Âm nhạc Huế - Giảng viên: ThS. Giảng viên Nguyễn Hoàng Lan (Khoa Giao hưởng)",
+      "category": "faculty_member",
+      "metadata": {
+        "university_id": "am-nhac-hue",
+        "university_name": "Học viện Âm nhạc Huế",
+        "lecturer_id": "prof-am-nhac-hue-nguyen-hoang-lan",
+        "name": "Nguyễn Hoàng Lan",
+        "faculty": "Khoa Giao hưởng",
+        "department": "Bộ môn Dây",
+        "degree": "Thạc sĩ",
+        "academic_rank": null,
+        "position": "Giảng viên",
+        "specialty": "Violoncelle",
+        "year_of_birth": 1977,
+        "gender": "Nữ",
+        "phone": null,
+        "source_urls": [
+          "https://hocvienamnhachue.edu.vn/vi/khoa-giao-huong/",
+          "https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf"
+        ],
+        "verification_status": "verified",
+        "last_updated": "2026-10-19T12:21:08Z"
+      },
+      "content": "# Nguyễn Hoàng Lan - ThS. Giảng viên\n\n**Cơ sở đào tạo**: Học viện Âm nhạc Huế (HVA)\n**Khoa / Phòng / Viện**: Khoa Giao hưởng\n**Bộ môn / Chuyên ngành**: Bộ môn Dây\n**Chức vụ hiện tại**: Giảng viên\n**Học vị**: Thạc sĩ\n**Học hàm**: Chưa phong tặng GS/PGS\n**Năm sinh**: 1977 (Nữ)\n\n## Tiểu sử & Hoạt động chuyên môn\nNguyễn Hoàng Lan là ThS. Giảng viên tại Học viện Âm nhạc Huế (HVA). Đơn vị công tác: Khoa Giao hưởng. Bộ môn / Chuyên môn: Bộ môn Dây. Chuyên ngành giảng dạy và hoạt động nghệ thuật: Violoncelle. Hồ sơ giảng viên cơ hữu được đối soát theo Báo cáo Ba Công khai (Biểu mẫu 20, STT 13) của Học viện Âm nhạc Huế gửi Bộ Giáo dục & Đào tạo.\n\n## Nguồn minh chứng và đối soát\n- **Báo cáo 3 Công khai (Biểu mẫu 20, Bộ GD&ĐT)**: STT 13, ký duyệt bởi Giám đốc TS. Hà Mai Hương.\n  Link văn bản: [https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf](https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf)\n- **Trang danh bạ khoa / cổng thông tin chính thức**:\n- [https://hocvienamnhachue.edu.vn/vi/khoa-giao-huong/](https://hocvienamnhachue.edu.vn/vi/khoa-giao-huong/)\n- [https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf](https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf)\n"
+    },
+    {
+      "id": "rag-prof-am-nhac-hue-phan-hoang-uyen",
+      "title": "Học viện Âm nhạc Huế - Giảng viên: ThS. Giảng viên Phan Hoàng Uyên (Khoa Giao hưởng)",
+      "category": "faculty_member",
+      "metadata": {
+        "university_id": "am-nhac-hue",
+        "university_name": "Học viện Âm nhạc Huế",
+        "lecturer_id": "prof-am-nhac-hue-phan-hoang-uyen",
+        "name": "Phan Hoàng Uyên",
+        "faculty": "Khoa Giao hưởng",
+        "department": "Bộ môn Gỗ - Đồng - Gõ",
+        "degree": "Thạc sĩ",
+        "academic_rank": null,
+        "position": "Giảng viên",
+        "specialty": "Flûte",
+        "year_of_birth": 1980,
+        "gender": "Nữ",
+        "phone": null,
+        "source_urls": [
+          "https://hocvienamnhachue.edu.vn/vi/khoa-giao-huong/",
+          "https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf"
+        ],
+        "verification_status": "verified",
+        "last_updated": "2026-10-19T12:21:08Z"
+      },
+      "content": "# Phan Hoàng Uyên - ThS. Giảng viên\n\n**Cơ sở đào tạo**: Học viện Âm nhạc Huế (HVA)\n**Khoa / Phòng / Viện**: Khoa Giao hưởng\n**Bộ môn / Chuyên ngành**: Bộ môn Gỗ - Đồng - Gõ\n**Chức vụ hiện tại**: Giảng viên\n**Học vị**: Thạc sĩ\n**Học hàm**: Chưa phong tặng GS/PGS\n**Năm sinh**: 1980 (Nữ)\n\n## Tiểu sử & Hoạt động chuyên môn\nPhan Hoàng Uyên là ThS. Giảng viên tại Học viện Âm nhạc Huế (HVA). Đơn vị công tác: Khoa Giao hưởng. Bộ môn / Chuyên môn: Bộ môn Gỗ - Đồng - Gõ. Chuyên ngành giảng dạy và hoạt động nghệ thuật: Flûte. Hồ sơ giảng viên cơ hữu được đối soát theo Báo cáo Ba Công khai (Biểu mẫu 20, STT 14) của Học viện Âm nhạc Huế gửi Bộ Giáo dục & Đào tạo.\n\n## Nguồn minh chứng và đối soát\n- **Báo cáo 3 Công khai (Biểu mẫu 20, Bộ GD&ĐT)**: STT 14, ký duyệt bởi Giám đốc TS. Hà Mai Hương.\n  Link văn bản: [https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf](https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf)\n- **Trang danh bạ khoa / cổng thông tin chính thức**:\n- [https://hocvienamnhachue.edu.vn/vi/khoa-giao-huong/](https://hocvienamnhachue.edu.vn/vi/khoa-giao-huong/)\n- [https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf](https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf)\n"
+    },
+    {
+      "id": "rag-prof-am-nhac-hue-tran-thi-kim-hue",
+      "title": "Học viện Âm nhạc Huế - Giảng viên: ThS. Giảng viên Trần Thị Kim Huệ (Khoa Giao hưởng)",
+      "category": "faculty_member",
+      "metadata": {
+        "university_id": "am-nhac-hue",
+        "university_name": "Học viện Âm nhạc Huế",
+        "lecturer_id": "prof-am-nhac-hue-tran-thi-kim-hue",
+        "name": "Trần Thị Kim Huệ",
+        "faculty": "Khoa Giao hưởng",
+        "department": "Bộ môn Dây",
+        "degree": "Thạc sĩ",
+        "academic_rank": null,
+        "position": "Giảng viên",
+        "specialty": "Violon",
+        "year_of_birth": 1981,
+        "gender": "Nữ",
+        "phone": null,
+        "source_urls": [
+          "https://hocvienamnhachue.edu.vn/vi/khoa-giao-huong/",
+          "https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf"
+        ],
+        "verification_status": "verified",
+        "last_updated": "2026-10-19T12:21:08Z"
+      },
+      "content": "# Trần Thị Kim Huệ - ThS. Giảng viên\n\n**Cơ sở đào tạo**: Học viện Âm nhạc Huế (HVA)\n**Khoa / Phòng / Viện**: Khoa Giao hưởng\n**Bộ môn / Chuyên ngành**: Bộ môn Dây\n**Chức vụ hiện tại**: Giảng viên\n**Học vị**: Thạc sĩ\n**Học hàm**: Chưa phong tặng GS/PGS\n**Năm sinh**: 1981 (Nữ)\n\n## Tiểu sử & Hoạt động chuyên môn\nTrần Thị Kim Huệ là ThS. Giảng viên tại Học viện Âm nhạc Huế (HVA). Đơn vị công tác: Khoa Giao hưởng. Bộ môn / Chuyên môn: Bộ môn Dây. Chuyên ngành giảng dạy và hoạt động nghệ thuật: Violon. Hồ sơ giảng viên cơ hữu được đối soát theo Báo cáo Ba Công khai (Biểu mẫu 20, STT 15) của Học viện Âm nhạc Huế gửi Bộ Giáo dục & Đào tạo.\n\n## Nguồn minh chứng và đối soát\n- **Báo cáo 3 Công khai (Biểu mẫu 20, Bộ GD&ĐT)**: STT 15, ký duyệt bởi Giám đốc TS. Hà Mai Hương.\n  Link văn bản: [https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf](https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf)\n- **Trang danh bạ khoa / cổng thông tin chính thức**:\n- [https://hocvienamnhachue.edu.vn/vi/khoa-giao-huong/](https://hocvienamnhachue.edu.vn/vi/khoa-giao-huong/)\n- [https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf](https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf)\n"
+    },
+    {
+      "id": "rag-prof-am-nhac-hue-nguyen-viet-loc",
+      "title": "Học viện Âm nhạc Huế - Giảng viên: ThS. Giảng viên Nguyễn Viết Lộc (Khoa Giao hưởng)",
+      "category": "faculty_member",
+      "metadata": {
+        "university_id": "am-nhac-hue",
+        "university_name": "Học viện Âm nhạc Huế",
+        "lecturer_id": "prof-am-nhac-hue-nguyen-viet-loc",
+        "name": "Nguyễn Viết Lộc",
+        "faculty": "Khoa Giao hưởng",
+        "department": "Bộ môn Gỗ - Đồng - Gõ",
+        "degree": "Thạc sĩ",
+        "academic_rank": null,
+        "position": "Giảng viên",
+        "specialty": "Clarinette",
+        "year_of_birth": 1984,
+        "gender": "Nam",
+        "phone": null,
+        "source_urls": [
+          "https://hocvienamnhachue.edu.vn/vi/khoa-giao-huong/",
+          "https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf"
+        ],
+        "verification_status": "verified",
+        "last_updated": "2026-10-19T12:21:08Z"
+      },
+      "content": "# Nguyễn Viết Lộc - ThS. Giảng viên\n\n**Cơ sở đào tạo**: Học viện Âm nhạc Huế (HVA)\n**Khoa / Phòng / Viện**: Khoa Giao hưởng\n**Bộ môn / Chuyên ngành**: Bộ môn Gỗ - Đồng - Gõ\n**Chức vụ hiện tại**: Giảng viên\n**Học vị**: Thạc sĩ\n**Học hàm**: Chưa phong tặng GS/PGS\n**Năm sinh**: 1984 (Nam)\n\n## Tiểu sử & Hoạt động chuyên môn\nNguyễn Viết Lộc là ThS. Giảng viên tại Học viện Âm nhạc Huế (HVA). Đơn vị công tác: Khoa Giao hưởng. Bộ môn / Chuyên môn: Bộ môn Gỗ - Đồng - Gõ. Chuyên ngành giảng dạy và hoạt động nghệ thuật: Clarinette. Hồ sơ giảng viên cơ hữu được đối soát theo Báo cáo Ba Công khai (Biểu mẫu 20, STT 17) của Học viện Âm nhạc Huế gửi Bộ Giáo dục & Đào tạo.\n\n## Nguồn minh chứng và đối soát\n- **Báo cáo 3 Công khai (Biểu mẫu 20, Bộ GD&ĐT)**: STT 17, ký duyệt bởi Giám đốc TS. Hà Mai Hương.\n  Link văn bản: [https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf](https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf)\n- **Trang danh bạ khoa / cổng thông tin chính thức**:\n- [https://hocvienamnhachue.edu.vn/vi/khoa-giao-huong/](https://hocvienamnhachue.edu.vn/vi/khoa-giao-huong/)\n- [https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf](https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf)\n"
+    },
+    {
+      "id": "rag-prof-am-nhac-hue-huynh-thi-thuy-van",
+      "title": "Học viện Âm nhạc Huế - Giảng viên: CN. Giảng viên Huỳnh Thị Thúy Vân (Khoa Giao hưởng)",
+      "category": "faculty_member",
+      "metadata": {
+        "university_id": "am-nhac-hue",
+        "university_name": "Học viện Âm nhạc Huế",
+        "lecturer_id": "prof-am-nhac-hue-huynh-thi-thuy-van",
+        "name": "Huỳnh Thị Thúy Vân",
+        "faculty": "Khoa Giao hưởng",
+        "department": "Bộ môn Dây",
+        "degree": "Cử nhân",
+        "academic_rank": null,
+        "position": "Giảng viên",
+        "specialty": "Violon",
+        "year_of_birth": 1986,
+        "gender": "Nữ",
+        "phone": null,
+        "source_urls": [
+          "https://hocvienamnhachue.edu.vn/vi/khoa-giao-huong/",
+          "https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf"
+        ],
+        "verification_status": "verified",
+        "last_updated": "2026-10-19T12:21:08Z"
+      },
+      "content": "# Huỳnh Thị Thúy Vân - CN. Giảng viên\n\n**Cơ sở đào tạo**: Học viện Âm nhạc Huế (HVA)\n**Khoa / Phòng / Viện**: Khoa Giao hưởng\n**Bộ môn / Chuyên ngành**: Bộ môn Dây\n**Chức vụ hiện tại**: Giảng viên\n**Học vị**: Cử nhân\n**Học hàm**: Chưa phong tặng GS/PGS\n**Năm sinh**: 1986 (Nữ)\n\n## Tiểu sử & Hoạt động chuyên môn\nHuỳnh Thị Thúy Vân là CN. Giảng viên tại Học viện Âm nhạc Huế (HVA). Đơn vị công tác: Khoa Giao hưởng. Bộ môn / Chuyên môn: Bộ môn Dây. Chuyên ngành giảng dạy và hoạt động nghệ thuật: Violon. Hồ sơ giảng viên cơ hữu được đối soát theo Báo cáo Ba Công khai (Biểu mẫu 20, STT 18) của Học viện Âm nhạc Huế gửi Bộ Giáo dục & Đào tạo.\n\n## Nguồn minh chứng và đối soát\n- **Báo cáo 3 Công khai (Biểu mẫu 20, Bộ GD&ĐT)**: STT 18, ký duyệt bởi Giám đốc TS. Hà Mai Hương.\n  Link văn bản: [https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf](https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf)\n- **Trang danh bạ khoa / cổng thông tin chính thức**:\n- [https://hocvienamnhachue.edu.vn/vi/khoa-giao-huong/](https://hocvienamnhachue.edu.vn/vi/khoa-giao-huong/)\n- [https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf](https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf)\n"
+    },
+    {
+      "id": "rag-prof-am-nhac-hue-le-thi-dieu-hien",
+      "title": "Học viện Âm nhạc Huế - Giảng viên: CN. Giảng viên Lê Thị Diệu Hiền (Khoa Giao hưởng)",
+      "category": "faculty_member",
+      "metadata": {
+        "university_id": "am-nhac-hue",
+        "university_name": "Học viện Âm nhạc Huế",
+        "lecturer_id": "prof-am-nhac-hue-le-thi-dieu-hien",
+        "name": "Lê Thị Diệu Hiền",
+        "faculty": "Khoa Giao hưởng",
+        "department": "Bộ môn Dây",
+        "degree": "Cử nhân",
+        "academic_rank": null,
+        "position": "Giảng viên",
+        "specialty": "Contrebasse",
+        "year_of_birth": 1987,
+        "gender": "Nữ",
+        "phone": null,
+        "source_urls": [
+          "https://hocvienamnhachue.edu.vn/vi/khoa-giao-huong/",
+          "https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf"
+        ],
+        "verification_status": "verified",
+        "last_updated": "2026-10-19T12:21:08Z"
+      },
+      "content": "# Lê Thị Diệu Hiền - CN. Giảng viên\n\n**Cơ sở đào tạo**: Học viện Âm nhạc Huế (HVA)\n**Khoa / Phòng / Viện**: Khoa Giao hưởng\n**Bộ môn / Chuyên ngành**: Bộ môn Dây\n**Chức vụ hiện tại**: Giảng viên\n**Học vị**: Cử nhân\n**Học hàm**: Chưa phong tặng GS/PGS\n**Năm sinh**: 1987 (Nữ)\n\n## Tiểu sử & Hoạt động chuyên môn\nLê Thị Diệu Hiền là CN. Giảng viên tại Học viện Âm nhạc Huế (HVA). Đơn vị công tác: Khoa Giao hưởng. Bộ môn / Chuyên môn: Bộ môn Dây. Chuyên ngành giảng dạy và hoạt động nghệ thuật: Contrebasse. Hồ sơ giảng viên cơ hữu được đối soát theo Báo cáo Ba Công khai (Biểu mẫu 20, STT 19) của Học viện Âm nhạc Huế gửi Bộ Giáo dục & Đào tạo.\n\n## Nguồn minh chứng và đối soát\n- **Báo cáo 3 Công khai (Biểu mẫu 20, Bộ GD&ĐT)**: STT 19, ký duyệt bởi Giám đốc TS. Hà Mai Hương.\n  Link văn bản: [https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf](https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf)\n- **Trang danh bạ khoa / cổng thông tin chính thức**:\n- [https://hocvienamnhachue.edu.vn/vi/khoa-giao-huong/](https://hocvienamnhachue.edu.vn/vi/khoa-giao-huong/)\n- [https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf](https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf)\n"
+    },
+    {
+      "id": "rag-prof-am-nhac-hue-nguyen-nhat-minh",
+      "title": "Học viện Âm nhạc Huế - Giảng viên: ThS. Giảng viên Nguyễn Nhật Minh (Khoa Giao hưởng)",
+      "category": "faculty_member",
+      "metadata": {
+        "university_id": "am-nhac-hue",
+        "university_name": "Học viện Âm nhạc Huế",
+        "lecturer_id": "prof-am-nhac-hue-nguyen-nhat-minh",
+        "name": "Nguyễn Nhật Minh",
+        "faculty": "Khoa Giao hưởng",
+        "department": "Bộ môn Gỗ - Đồng - Gõ",
+        "degree": "Thạc sĩ",
+        "academic_rank": null,
+        "position": "Giảng viên",
+        "specialty": "Trompette",
+        "year_of_birth": 1990,
+        "gender": "Nam",
+        "phone": null,
+        "source_urls": [
+          "https://hocvienamnhachue.edu.vn/vi/khoa-giao-huong/",
+          "https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf"
+        ],
+        "verification_status": "verified",
+        "last_updated": "2026-10-19T12:21:08Z"
+      },
+      "content": "# Nguyễn Nhật Minh - ThS. Giảng viên\n\n**Cơ sở đào tạo**: Học viện Âm nhạc Huế (HVA)\n**Khoa / Phòng / Viện**: Khoa Giao hưởng\n**Bộ môn / Chuyên ngành**: Bộ môn Gỗ - Đồng - Gõ\n**Chức vụ hiện tại**: Giảng viên\n**Học vị**: Thạc sĩ\n**Học hàm**: Chưa phong tặng GS/PGS\n**Năm sinh**: 1990 (Nam)\n\n## Tiểu sử & Hoạt động chuyên môn\nNguyễn Nhật Minh là ThS. Giảng viên tại Học viện Âm nhạc Huế (HVA). Đơn vị công tác: Khoa Giao hưởng. Bộ môn / Chuyên môn: Bộ môn Gỗ - Đồng - Gõ. Chuyên ngành giảng dạy và hoạt động nghệ thuật: Trompette. Hồ sơ giảng viên cơ hữu được đối soát theo Báo cáo Ba Công khai (Biểu mẫu 20, STT 20) của Học viện Âm nhạc Huế gửi Bộ Giáo dục & Đào tạo.\n\n## Nguồn minh chứng và đối soát\n- **Báo cáo 3 Công khai (Biểu mẫu 20, Bộ GD&ĐT)**: STT 20, ký duyệt bởi Giám đốc TS. Hà Mai Hương.\n  Link văn bản: [https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf](https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf)\n- **Trang danh bạ khoa / cổng thông tin chính thức**:\n- [https://hocvienamnhachue.edu.vn/vi/khoa-giao-huong/](https://hocvienamnhachue.edu.vn/vi/khoa-giao-huong/)\n- [https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf](https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf)\n"
+    },
+    {
+      "id": "rag-prof-am-nhac-hue-le-thi-thu-thuy",
+      "title": "Học viện Âm nhạc Huế - Giảng viên: CN. Giáo vụ khoa Lê Thị Thu Thủy (Khoa Giao hưởng)",
+      "category": "faculty_member",
+      "metadata": {
+        "university_id": "am-nhac-hue",
+        "university_name": "Học viện Âm nhạc Huế",
+        "lecturer_id": "prof-am-nhac-hue-le-thi-thu-thuy",
+        "name": "Lê Thị Thu Thủy",
+        "faculty": "Khoa Giao hưởng",
+        "department": "Văn phòng Khoa",
+        "degree": "Cử nhân",
+        "academic_rank": null,
+        "position": "Giáo vụ khoa",
+        "specialty": "Quản lý Giáo vụ",
+        "year_of_birth": 1989,
+        "gender": "Nữ",
+        "phone": null,
+        "source_urls": [
+          "https://hocvienamnhachue.edu.vn/vi/khoa-giao-huong/"
+        ],
+        "verification_status": "verified",
+        "last_updated": "2026-10-19T12:21:08Z"
+      },
+      "content": "# Lê Thị Thu Thủy - CN. Giáo vụ khoa\n\n**Cơ sở đào tạo**: Học viện Âm nhạc Huế (HVA)\n**Khoa / Phòng / Viện**: Khoa Giao hưởng\n**Bộ môn / Chuyên ngành**: Văn phòng Khoa\n**Chức vụ hiện tại**: Giáo vụ khoa\n**Học vị**: Cử nhân\n**Học hàm**: Chưa phong tặng GS/PGS\n**Năm sinh**: 1989 (Nữ)\n\n## Tiểu sử & Hoạt động chuyên môn\nLê Thị Thu Thủy là CN. Giáo vụ khoa tại Học viện Âm nhạc Huế (HVA). Đơn vị công tác: Khoa Giao hưởng. Bộ môn / Chuyên môn: Văn phòng Khoa. Hiện giữ chức vụ: Giáo vụ khoa. Chuyên ngành giảng dạy và hoạt động nghệ thuật: Quản lý Giáo vụ. Thông tin công tác được chứng thực từ trang thông tin điện tử chính thức của Học viện Âm nhạc Huế.\n\n## Nguồn minh chứng và đối soát\n- **Trang danh bạ khoa / cổng thông tin chính thức**:\n- [https://hocvienamnhachue.edu.vn/vi/khoa-giao-huong/](https://hocvienamnhachue.edu.vn/vi/khoa-giao-huong/)\n"
+    },
+    {
+      "id": "rag-prof-am-nhac-hue-tran-thi-van-anh",
+      "title": "Học viện Âm nhạc Huế - Giảng viên: CN. Giáo vụ khoa Trần Thị Vân Anh (Khoa Giao hưởng)",
+      "category": "faculty_member",
+      "metadata": {
+        "university_id": "am-nhac-hue",
+        "university_name": "Học viện Âm nhạc Huế",
+        "lecturer_id": "prof-am-nhac-hue-tran-thi-van-anh",
+        "name": "Trần Thị Vân Anh",
+        "faculty": "Khoa Giao hưởng",
+        "department": "Văn phòng Khoa",
+        "degree": "Cử nhân",
+        "academic_rank": null,
+        "position": "Giáo vụ khoa",
+        "specialty": "Quản lý Giáo vụ",
+        "year_of_birth": 1991,
+        "gender": "Nữ",
+        "phone": null,
+        "source_urls": [
+          "https://hocvienamnhachue.edu.vn/vi/khoa-giao-huong/"
+        ],
+        "verification_status": "verified",
+        "last_updated": "2026-10-19T12:21:08Z"
+      },
+      "content": "# Trần Thị Vân Anh - CN. Giáo vụ khoa\n\n**Cơ sở đào tạo**: Học viện Âm nhạc Huế (HVA)\n**Khoa / Phòng / Viện**: Khoa Giao hưởng\n**Bộ môn / Chuyên ngành**: Văn phòng Khoa\n**Chức vụ hiện tại**: Giáo vụ khoa\n**Học vị**: Cử nhân\n**Học hàm**: Chưa phong tặng GS/PGS\n**Năm sinh**: 1991 (Nữ)\n\n## Tiểu sử & Hoạt động chuyên môn\nTrần Thị Vân Anh là CN. Giáo vụ khoa tại Học viện Âm nhạc Huế (HVA). Đơn vị công tác: Khoa Giao hưởng. Bộ môn / Chuyên môn: Văn phòng Khoa. Hiện giữ chức vụ: Giáo vụ khoa. Chuyên ngành giảng dạy và hoạt động nghệ thuật: Quản lý Giáo vụ. Thông tin công tác được chứng thực từ trang thông tin điện tử chính thức của Học viện Âm nhạc Huế.\n\n## Nguồn minh chứng và đối soát\n- **Trang danh bạ khoa / cổng thông tin chính thức**:\n- [https://hocvienamnhachue.edu.vn/vi/khoa-giao-huong/](https://hocvienamnhachue.edu.vn/vi/khoa-giao-huong/)\n"
+    },
+    {
+      "id": "rag-prof-am-nhac-hue-tran-huu-quang",
+      "title": "Học viện Âm nhạc Huế - Giảng viên: ThS. Giảng viên Trần Hữu Quang (Khoa Nhạc truyền thống)",
+      "category": "faculty_member",
+      "metadata": {
+        "university_id": "am-nhac-hue",
+        "university_name": "Học viện Âm nhạc Huế",
+        "lecturer_id": "prof-am-nhac-hue-tran-huu-quang",
+        "name": "Trần Hữu Quang",
+        "faculty": "Khoa Nhạc truyền thống",
+        "department": "Bộ môn Nhạc cụ Dân tộc",
+        "degree": "Thạc sĩ",
+        "academic_rank": null,
+        "position": "Phụ trách khoa",
+        "specialty": "Đàn Bầu",
+        "year_of_birth": 1979,
+        "gender": "Nam",
+        "phone": null,
+        "source_urls": [
+          "https://hocvienamnhachue.edu.vn/vi/khoa-nhac-truyen-thong/",
+          "https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf"
+        ],
+        "verification_status": "verified",
+        "last_updated": "2026-10-19T12:21:08Z"
+      },
+      "content": "# Trần Hữu Quang - ThS. Giảng viên\n\n**Cơ sở đào tạo**: Học viện Âm nhạc Huế (HVA)\n**Khoa / Phòng / Viện**: Khoa Nhạc truyền thống\n**Bộ môn / Chuyên ngành**: Bộ môn Nhạc cụ Dân tộc\n**Chức vụ hiện tại**: Phụ trách khoa\n**Học vị**: Thạc sĩ\n**Học hàm**: Chưa phong tặng GS/PGS\n**Năm sinh**: 1979 (Nam)\n\n## Tiểu sử & Hoạt động chuyên môn\nTrần Hữu Quang là ThS. Giảng viên tại Học viện Âm nhạc Huế (HVA). Đơn vị công tác: Khoa Nhạc truyền thống. Bộ môn / Chuyên môn: Bộ môn Nhạc cụ Dân tộc. Hiện giữ chức vụ: Phụ trách khoa. Chuyên ngành giảng dạy và hoạt động nghệ thuật: Đàn Bầu. Hồ sơ giảng viên cơ hữu được đối soát theo Báo cáo Ba Công khai (Biểu mẫu 20, STT 21) của Học viện Âm nhạc Huế gửi Bộ Giáo dục & Đào tạo.\n\n## Nguồn minh chứng và đối soát\n- **Báo cáo 3 Công khai (Biểu mẫu 20, Bộ GD&ĐT)**: STT 21, ký duyệt bởi Giám đốc TS. Hà Mai Hương.\n  Link văn bản: [https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf](https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf)\n- **Trang danh bạ khoa / cổng thông tin chính thức**:\n- [https://hocvienamnhachue.edu.vn/vi/khoa-nhac-truyen-thong/](https://hocvienamnhachue.edu.vn/vi/khoa-nhac-truyen-thong/)\n- [https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf](https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf)\n"
+    },
+    {
+      "id": "rag-prof-am-nhac-hue-mai-chau",
+      "title": "Học viện Âm nhạc Huế - Giảng viên: ThS. Giảng viên Mai Châu (Khoa Nhạc truyền thống)",
+      "category": "faculty_member",
+      "metadata": {
+        "university_id": "am-nhac-hue",
+        "university_name": "Học viện Âm nhạc Huế",
+        "lecturer_id": "prof-am-nhac-hue-mai-chau",
+        "name": "Mai Châu",
+        "faculty": "Khoa Nhạc truyền thống",
+        "department": "Bộ môn Nhạc cụ Dân tộc",
+        "degree": "Thạc sĩ",
+        "academic_rank": null,
+        "position": "Giảng viên",
+        "specialty": "Đàn Tranh",
+        "year_of_birth": 1977,
+        "gender": "Nam",
+        "phone": null,
+        "source_urls": [
+          "https://hocvienamnhachue.edu.vn/vi/khoa-nhac-truyen-thong/",
+          "https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf"
+        ],
+        "verification_status": "verified",
+        "last_updated": "2026-10-19T12:21:08Z"
+      },
+      "content": "# Mai Châu - ThS. Giảng viên\n\n**Cơ sở đào tạo**: Học viện Âm nhạc Huế (HVA)\n**Khoa / Phòng / Viện**: Khoa Nhạc truyền thống\n**Bộ môn / Chuyên ngành**: Bộ môn Nhạc cụ Dân tộc\n**Chức vụ hiện tại**: Giảng viên\n**Học vị**: Thạc sĩ\n**Học hàm**: Chưa phong tặng GS/PGS\n**Năm sinh**: 1977 (Nam)\n\n## Tiểu sử & Hoạt động chuyên môn\nMai Châu là ThS. Giảng viên tại Học viện Âm nhạc Huế (HVA). Đơn vị công tác: Khoa Nhạc truyền thống. Bộ môn / Chuyên môn: Bộ môn Nhạc cụ Dân tộc. Chuyên ngành giảng dạy và hoạt động nghệ thuật: Đàn Tranh. Hồ sơ giảng viên cơ hữu được đối soát theo Báo cáo Ba Công khai (Biểu mẫu 20, STT 22) của Học viện Âm nhạc Huế gửi Bộ Giáo dục & Đào tạo.\n\n## Nguồn minh chứng và đối soát\n- **Báo cáo 3 Công khai (Biểu mẫu 20, Bộ GD&ĐT)**: STT 22, ký duyệt bởi Giám đốc TS. Hà Mai Hương.\n  Link văn bản: [https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf](https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf)\n- **Trang danh bạ khoa / cổng thông tin chính thức**:\n- [https://hocvienamnhachue.edu.vn/vi/khoa-nhac-truyen-thong/](https://hocvienamnhachue.edu.vn/vi/khoa-nhac-truyen-thong/)\n- [https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf](https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf)\n"
+    },
+    {
+      "id": "rag-prof-am-nhac-hue-nguyen-dinh-khanh",
+      "title": "Học viện Âm nhạc Huế - Giảng viên: ThS. Giảng viên Nguyễn Đình Khánh (Khoa Nhạc truyền thống)",
+      "category": "faculty_member",
+      "metadata": {
+        "university_id": "am-nhac-hue",
+        "university_name": "Học viện Âm nhạc Huế",
+        "lecturer_id": "prof-am-nhac-hue-nguyen-dinh-khanh",
+        "name": "Nguyễn Đình Khánh",
+        "faculty": "Khoa Nhạc truyền thống",
+        "department": "Bộ môn Nhạc cụ Dân tộc",
+        "degree": "Thạc sĩ",
+        "academic_rank": null,
+        "position": "Giảng viên",
+        "specialty": "Sáo trúc",
+        "year_of_birth": 1981,
+        "gender": "Nam",
+        "phone": null,
+        "source_urls": [
+          "https://hocvienamnhachue.edu.vn/vi/khoa-nhac-truyen-thong/",
+          "https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf"
+        ],
+        "verification_status": "verified",
+        "last_updated": "2026-10-19T12:21:08Z"
+      },
+      "content": "# Nguyễn Đình Khánh - ThS. Giảng viên\n\n**Cơ sở đào tạo**: Học viện Âm nhạc Huế (HVA)\n**Khoa / Phòng / Viện**: Khoa Nhạc truyền thống\n**Bộ môn / Chuyên ngành**: Bộ môn Nhạc cụ Dân tộc\n**Chức vụ hiện tại**: Giảng viên\n**Học vị**: Thạc sĩ\n**Học hàm**: Chưa phong tặng GS/PGS\n**Năm sinh**: 1981 (Nam)\n\n## Tiểu sử & Hoạt động chuyên môn\nNguyễn Đình Khánh là ThS. Giảng viên tại Học viện Âm nhạc Huế (HVA). Đơn vị công tác: Khoa Nhạc truyền thống. Bộ môn / Chuyên môn: Bộ môn Nhạc cụ Dân tộc. Chuyên ngành giảng dạy và hoạt động nghệ thuật: Sáo trúc. Hồ sơ giảng viên cơ hữu được đối soát theo Báo cáo Ba Công khai (Biểu mẫu 20, STT 23) của Học viện Âm nhạc Huế gửi Bộ Giáo dục & Đào tạo.\n\n## Nguồn minh chứng và đối soát\n- **Báo cáo 3 Công khai (Biểu mẫu 20, Bộ GD&ĐT)**: STT 23, ký duyệt bởi Giám đốc TS. Hà Mai Hương.\n  Link văn bản: [https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf](https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf)\n- **Trang danh bạ khoa / cổng thông tin chính thức**:\n- [https://hocvienamnhachue.edu.vn/vi/khoa-nhac-truyen-thong/](https://hocvienamnhachue.edu.vn/vi/khoa-nhac-truyen-thong/)\n- [https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf](https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf)\n"
+    },
+    {
+      "id": "rag-prof-am-nhac-hue-phan-thi-my-linh",
+      "title": "Học viện Âm nhạc Huế - Giảng viên: CN. Giảng viên Phan Thị Mỹ Linh (Khoa Nhạc truyền thống)",
+      "category": "faculty_member",
+      "metadata": {
+        "university_id": "am-nhac-hue",
+        "university_name": "Học viện Âm nhạc Huế",
+        "lecturer_id": "prof-am-nhac-hue-phan-thi-my-linh",
+        "name": "Phan Thị Mỹ Linh",
+        "faculty": "Khoa Nhạc truyền thống",
+        "department": "Bộ môn Nhạc cụ Dân tộc",
+        "degree": "Cử nhân",
+        "academic_rank": null,
+        "position": "Giảng viên",
+        "specialty": "Đàn Tỳ bà",
+        "year_of_birth": 1983,
+        "gender": "Nữ",
+        "phone": null,
+        "source_urls": [
+          "https://hocvienamnhachue.edu.vn/vi/khoa-nhac-truyen-thong/",
+          "https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf"
+        ],
+        "verification_status": "verified",
+        "last_updated": "2026-10-19T12:21:08Z"
+      },
+      "content": "# Phan Thị Mỹ Linh - CN. Giảng viên\n\n**Cơ sở đào tạo**: Học viện Âm nhạc Huế (HVA)\n**Khoa / Phòng / Viện**: Khoa Nhạc truyền thống\n**Bộ môn / Chuyên ngành**: Bộ môn Nhạc cụ Dân tộc\n**Chức vụ hiện tại**: Giảng viên\n**Học vị**: Cử nhân\n**Học hàm**: Chưa phong tặng GS/PGS\n**Năm sinh**: 1983 (Nữ)\n\n## Tiểu sử & Hoạt động chuyên môn\nPhan Thị Mỹ Linh là CN. Giảng viên tại Học viện Âm nhạc Huế (HVA). Đơn vị công tác: Khoa Nhạc truyền thống. Bộ môn / Chuyên môn: Bộ môn Nhạc cụ Dân tộc. Chuyên ngành giảng dạy và hoạt động nghệ thuật: Đàn Tỳ bà. Hồ sơ giảng viên cơ hữu được đối soát theo Báo cáo Ba Công khai (Biểu mẫu 20, STT 24) của Học viện Âm nhạc Huế gửi Bộ Giáo dục & Đào tạo.\n\n## Nguồn minh chứng và đối soát\n- **Báo cáo 3 Công khai (Biểu mẫu 20, Bộ GD&ĐT)**: STT 24, ký duyệt bởi Giám đốc TS. Hà Mai Hương.\n  Link văn bản: [https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf](https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf)\n- **Trang danh bạ khoa / cổng thông tin chính thức**:\n- [https://hocvienamnhachue.edu.vn/vi/khoa-nhac-truyen-thong/](https://hocvienamnhachue.edu.vn/vi/khoa-nhac-truyen-thong/)\n- [https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf](https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf)\n"
+    },
+    {
+      "id": "rag-prof-am-nhac-hue-nguyen-thu-ngan",
+      "title": "Học viện Âm nhạc Huế - Giảng viên: CN. Giảng viên Nguyễn Thu Ngân (Khoa Nhạc truyền thống)",
+      "category": "faculty_member",
+      "metadata": {
+        "university_id": "am-nhac-hue",
+        "university_name": "Học viện Âm nhạc Huế",
+        "lecturer_id": "prof-am-nhac-hue-nguyen-thu-ngan",
+        "name": "Nguyễn Thu Ngân",
+        "faculty": "Khoa Nhạc truyền thống",
+        "department": "Bộ môn Nhạc cụ Dân tộc",
+        "degree": "Cử nhân",
+        "academic_rank": null,
+        "position": "Giảng viên",
+        "specialty": "Đàn Tranh",
+        "year_of_birth": 1984,
+        "gender": "Nữ",
+        "phone": null,
+        "source_urls": [
+          "https://hocvienamnhachue.edu.vn/vi/khoa-nhac-truyen-thong/",
+          "https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf"
+        ],
+        "verification_status": "verified",
+        "last_updated": "2026-10-19T12:21:08Z"
+      },
+      "content": "# Nguyễn Thu Ngân - CN. Giảng viên\n\n**Cơ sở đào tạo**: Học viện Âm nhạc Huế (HVA)\n**Khoa / Phòng / Viện**: Khoa Nhạc truyền thống\n**Bộ môn / Chuyên ngành**: Bộ môn Nhạc cụ Dân tộc\n**Chức vụ hiện tại**: Giảng viên\n**Học vị**: Cử nhân\n**Học hàm**: Chưa phong tặng GS/PGS\n**Năm sinh**: 1984 (Nữ)\n\n## Tiểu sử & Hoạt động chuyên môn\nNguyễn Thu Ngân là CN. Giảng viên tại Học viện Âm nhạc Huế (HVA). Đơn vị công tác: Khoa Nhạc truyền thống. Bộ môn / Chuyên môn: Bộ môn Nhạc cụ Dân tộc. Chuyên ngành giảng dạy và hoạt động nghệ thuật: Đàn Tranh. Hồ sơ giảng viên cơ hữu được đối soát theo Báo cáo Ba Công khai (Biểu mẫu 20, STT 25) của Học viện Âm nhạc Huế gửi Bộ Giáo dục & Đào tạo.\n\n## Nguồn minh chứng và đối soát\n- **Báo cáo 3 Công khai (Biểu mẫu 20, Bộ GD&ĐT)**: STT 25, ký duyệt bởi Giám đốc TS. Hà Mai Hương.\n  Link văn bản: [https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf](https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf)\n- **Trang danh bạ khoa / cổng thông tin chính thức**:\n- [https://hocvienamnhachue.edu.vn/vi/khoa-nhac-truyen-thong/](https://hocvienamnhachue.edu.vn/vi/khoa-nhac-truyen-thong/)\n- [https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf](https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf)\n"
+    },
+    {
+      "id": "rag-prof-am-nhac-hue-le-duy-cuu",
+      "title": "Học viện Âm nhạc Huế - Giảng viên: CN. Giảng viên Lê Duy Cửu (Khoa Nhạc truyền thống)",
+      "category": "faculty_member",
+      "metadata": {
+        "university_id": "am-nhac-hue",
+        "university_name": "Học viện Âm nhạc Huế",
+        "lecturer_id": "prof-am-nhac-hue-le-duy-cuu",
+        "name": "Lê Duy Cửu",
+        "faculty": "Khoa Nhạc truyền thống",
+        "department": "Bộ môn Nhạc cụ Dân tộc",
+        "degree": "Cử nhân",
+        "academic_rank": null,
+        "position": "Giảng viên",
+        "specialty": "Đàn Nhị",
+        "year_of_birth": 1986,
+        "gender": "Nam",
+        "phone": null,
+        "source_urls": [
+          "https://hocvienamnhachue.edu.vn/vi/khoa-nhac-truyen-thong/",
+          "https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf"
+        ],
+        "verification_status": "verified",
+        "last_updated": "2026-10-19T12:21:08Z"
+      },
+      "content": "# Lê Duy Cửu - CN. Giảng viên\n\n**Cơ sở đào tạo**: Học viện Âm nhạc Huế (HVA)\n**Khoa / Phòng / Viện**: Khoa Nhạc truyền thống\n**Bộ môn / Chuyên ngành**: Bộ môn Nhạc cụ Dân tộc\n**Chức vụ hiện tại**: Giảng viên\n**Học vị**: Cử nhân\n**Học hàm**: Chưa phong tặng GS/PGS\n**Năm sinh**: 1986 (Nam)\n\n## Tiểu sử & Hoạt động chuyên môn\nLê Duy Cửu là CN. Giảng viên tại Học viện Âm nhạc Huế (HVA). Đơn vị công tác: Khoa Nhạc truyền thống. Bộ môn / Chuyên môn: Bộ môn Nhạc cụ Dân tộc. Chuyên ngành giảng dạy và hoạt động nghệ thuật: Đàn Nhị. Hồ sơ giảng viên cơ hữu được đối soát theo Báo cáo Ba Công khai (Biểu mẫu 20, STT 26) của Học viện Âm nhạc Huế gửi Bộ Giáo dục & Đào tạo.\n\n## Nguồn minh chứng và đối soát\n- **Báo cáo 3 Công khai (Biểu mẫu 20, Bộ GD&ĐT)**: STT 26, ký duyệt bởi Giám đốc TS. Hà Mai Hương.\n  Link văn bản: [https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf](https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf)\n- **Trang danh bạ khoa / cổng thông tin chính thức**:\n- [https://hocvienamnhachue.edu.vn/vi/khoa-nhac-truyen-thong/](https://hocvienamnhachue.edu.vn/vi/khoa-nhac-truyen-thong/)\n- [https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf](https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf)\n"
+    },
+    {
+      "id": "rag-prof-am-nhac-hue-dang-thi-to-nga",
+      "title": "Học viện Âm nhạc Huế - Giảng viên: CN. Giảng viên Đặng Thị Tố Nga (Khoa Nhạc truyền thống)",
+      "category": "faculty_member",
+      "metadata": {
+        "university_id": "am-nhac-hue",
+        "university_name": "Học viện Âm nhạc Huế",
+        "lecturer_id": "prof-am-nhac-hue-dang-thi-to-nga",
+        "name": "Đặng Thị Tố Nga",
+        "faculty": "Khoa Nhạc truyền thống",
+        "department": "Bộ môn Nhạc cụ Dân tộc",
+        "degree": "Cử nhân",
+        "academic_rank": null,
+        "position": "Giảng viên",
+        "specialty": "Đàn Nguyệt",
+        "year_of_birth": 1986,
+        "gender": "Nữ",
+        "phone": null,
+        "source_urls": [
+          "https://hocvienamnhachue.edu.vn/vi/khoa-nhac-truyen-thong/",
+          "https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf"
+        ],
+        "verification_status": "verified",
+        "last_updated": "2026-10-19T12:21:08Z"
+      },
+      "content": "# Đặng Thị Tố Nga - CN. Giảng viên\n\n**Cơ sở đào tạo**: Học viện Âm nhạc Huế (HVA)\n**Khoa / Phòng / Viện**: Khoa Nhạc truyền thống\n**Bộ môn / Chuyên ngành**: Bộ môn Nhạc cụ Dân tộc\n**Chức vụ hiện tại**: Giảng viên\n**Học vị**: Cử nhân\n**Học hàm**: Chưa phong tặng GS/PGS\n**Năm sinh**: 1986 (Nữ)\n\n## Tiểu sử & Hoạt động chuyên môn\nĐặng Thị Tố Nga là CN. Giảng viên tại Học viện Âm nhạc Huế (HVA). Đơn vị công tác: Khoa Nhạc truyền thống. Bộ môn / Chuyên môn: Bộ môn Nhạc cụ Dân tộc. Chuyên ngành giảng dạy và hoạt động nghệ thuật: Đàn Nguyệt. Hồ sơ giảng viên cơ hữu được đối soát theo Báo cáo Ba Công khai (Biểu mẫu 20, STT 27) của Học viện Âm nhạc Huế gửi Bộ Giáo dục & Đào tạo.\n\n## Nguồn minh chứng và đối soát\n- **Báo cáo 3 Công khai (Biểu mẫu 20, Bộ GD&ĐT)**: STT 27, ký duyệt bởi Giám đốc TS. Hà Mai Hương.\n  Link văn bản: [https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf](https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf)\n- **Trang danh bạ khoa / cổng thông tin chính thức**:\n- [https://hocvienamnhachue.edu.vn/vi/khoa-nhac-truyen-thong/](https://hocvienamnhachue.edu.vn/vi/khoa-nhac-truyen-thong/)\n- [https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf](https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf)\n"
+    },
+    {
+      "id": "rag-prof-am-nhac-hue-nguyen-thi-ai-loan",
+      "title": "Học viện Âm nhạc Huế - Giảng viên: CN. Giảng viên Nguyễn Thị Ái Loan (Khoa Nhạc truyền thống)",
+      "category": "faculty_member",
+      "metadata": {
+        "university_id": "am-nhac-hue",
+        "university_name": "Học viện Âm nhạc Huế",
+        "lecturer_id": "prof-am-nhac-hue-nguyen-thi-ai-loan",
+        "name": "Nguyễn Thị Ái Loan",
+        "faculty": "Khoa Nhạc truyền thống",
+        "department": "Bộ môn Nhạc cụ Dân tộc",
+        "degree": "Cử nhân",
+        "academic_rank": null,
+        "position": "Giảng viên",
+        "specialty": "Đàn Tranh",
+        "year_of_birth": 1986,
+        "gender": "Nữ",
+        "phone": null,
+        "source_urls": [
+          "https://hocvienamnhachue.edu.vn/vi/khoa-nhac-truyen-thong/",
+          "https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf"
+        ],
+        "verification_status": "verified",
+        "last_updated": "2026-10-19T12:21:08Z"
+      },
+      "content": "# Nguyễn Thị Ái Loan - CN. Giảng viên\n\n**Cơ sở đào tạo**: Học viện Âm nhạc Huế (HVA)\n**Khoa / Phòng / Viện**: Khoa Nhạc truyền thống\n**Bộ môn / Chuyên ngành**: Bộ môn Nhạc cụ Dân tộc\n**Chức vụ hiện tại**: Giảng viên\n**Học vị**: Cử nhân\n**Học hàm**: Chưa phong tặng GS/PGS\n**Năm sinh**: 1986 (Nữ)\n\n## Tiểu sử & Hoạt động chuyên môn\nNguyễn Thị Ái Loan là CN. Giảng viên tại Học viện Âm nhạc Huế (HVA). Đơn vị công tác: Khoa Nhạc truyền thống. Bộ môn / Chuyên môn: Bộ môn Nhạc cụ Dân tộc. Chuyên ngành giảng dạy và hoạt động nghệ thuật: Đàn Tranh. Hồ sơ giảng viên cơ hữu được đối soát theo Báo cáo Ba Công khai (Biểu mẫu 20, STT 28) của Học viện Âm nhạc Huế gửi Bộ Giáo dục & Đào tạo.\n\n## Nguồn minh chứng và đối soát\n- **Báo cáo 3 Công khai (Biểu mẫu 20, Bộ GD&ĐT)**: STT 28, ký duyệt bởi Giám đốc TS. Hà Mai Hương.\n  Link văn bản: [https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf](https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf)\n- **Trang danh bạ khoa / cổng thông tin chính thức**:\n- [https://hocvienamnhachue.edu.vn/vi/khoa-nhac-truyen-thong/](https://hocvienamnhachue.edu.vn/vi/khoa-nhac-truyen-thong/)\n- [https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf](https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf)\n"
+    },
+    {
+      "id": "rag-prof-am-nhac-hue-doan-ngoc-hoang-linh",
+      "title": "Học viện Âm nhạc Huế - Giảng viên: CN. Giảng viên Đoàn Ngọc Hoàng Linh (Khoa Nhạc truyền thống)",
+      "category": "faculty_member",
+      "metadata": {
+        "university_id": "am-nhac-hue",
+        "university_name": "Học viện Âm nhạc Huế",
+        "lecturer_id": "prof-am-nhac-hue-doan-ngoc-hoang-linh",
+        "name": "Đoàn Ngọc Hoàng Linh",
+        "faculty": "Khoa Nhạc truyền thống",
+        "department": "Bộ môn Nhạc cụ Dân tộc",
+        "degree": "Cử nhân",
+        "academic_rank": null,
+        "position": "Giảng viên",
+        "specialty": "Đàn Tranh",
+        "year_of_birth": 1989,
+        "gender": "Nữ",
+        "phone": null,
+        "source_urls": [
+          "https://hocvienamnhachue.edu.vn/vi/khoa-nhac-truyen-thong/",
+          "https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf"
+        ],
+        "verification_status": "verified",
+        "last_updated": "2026-10-19T12:21:08Z"
+      },
+      "content": "# Đoàn Ngọc Hoàng Linh - CN. Giảng viên\n\n**Cơ sở đào tạo**: Học viện Âm nhạc Huế (HVA)\n**Khoa / Phòng / Viện**: Khoa Nhạc truyền thống\n**Bộ môn / Chuyên ngành**: Bộ môn Nhạc cụ Dân tộc\n**Chức vụ hiện tại**: Giảng viên\n**Học vị**: Cử nhân\n**Học hàm**: Chưa phong tặng GS/PGS\n**Năm sinh**: 1989 (Nữ)\n\n## Tiểu sử & Hoạt động chuyên môn\nĐoàn Ngọc Hoàng Linh là CN. Giảng viên tại Học viện Âm nhạc Huế (HVA). Đơn vị công tác: Khoa Nhạc truyền thống. Bộ môn / Chuyên môn: Bộ môn Nhạc cụ Dân tộc. Chuyên ngành giảng dạy và hoạt động nghệ thuật: Đàn Tranh. Hồ sơ giảng viên cơ hữu được đối soát theo Báo cáo Ba Công khai (Biểu mẫu 20, STT 29) của Học viện Âm nhạc Huế gửi Bộ Giáo dục & Đào tạo.\n\n## Nguồn minh chứng và đối soát\n- **Báo cáo 3 Công khai (Biểu mẫu 20, Bộ GD&ĐT)**: STT 29, ký duyệt bởi Giám đốc TS. Hà Mai Hương.\n  Link văn bản: [https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf](https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf)\n- **Trang danh bạ khoa / cổng thông tin chính thức**:\n- [https://hocvienamnhachue.edu.vn/vi/khoa-nhac-truyen-thong/](https://hocvienamnhachue.edu.vn/vi/khoa-nhac-truyen-thong/)\n- [https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf](https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf)\n"
+    },
+    {
+      "id": "rag-prof-am-nhac-hue-nguyen-thi-thao",
+      "title": "Học viện Âm nhạc Huế - Giảng viên: CN. Giáo vụ khoa Nguyễn Thị Thảo (Khoa Nhạc truyền thống)",
+      "category": "faculty_member",
+      "metadata": {
+        "university_id": "am-nhac-hue",
+        "university_name": "Học viện Âm nhạc Huế",
+        "lecturer_id": "prof-am-nhac-hue-nguyen-thi-thao",
+        "name": "Nguyễn Thị Thảo",
+        "faculty": "Khoa Nhạc truyền thống",
+        "department": "Văn phòng Khoa",
+        "degree": "Cử nhân",
+        "academic_rank": null,
+        "position": "Giáo vụ khoa",
+        "specialty": "Quản lý Giáo vụ",
+        "year_of_birth": 1988,
+        "gender": "Nữ",
+        "phone": null,
+        "source_urls": [
+          "https://hocvienamnhachue.edu.vn/vi/khoa-nhac-truyen-thong/"
+        ],
+        "verification_status": "verified",
+        "last_updated": "2026-10-19T12:21:08Z"
+      },
+      "content": "# Nguyễn Thị Thảo - CN. Giáo vụ khoa\n\n**Cơ sở đào tạo**: Học viện Âm nhạc Huế (HVA)\n**Khoa / Phòng / Viện**: Khoa Nhạc truyền thống\n**Bộ môn / Chuyên ngành**: Văn phòng Khoa\n**Chức vụ hiện tại**: Giáo vụ khoa\n**Học vị**: Cử nhân\n**Học hàm**: Chưa phong tặng GS/PGS\n**Năm sinh**: 1988 (Nữ)\n\n## Tiểu sử & Hoạt động chuyên môn\nNguyễn Thị Thảo là CN. Giáo vụ khoa tại Học viện Âm nhạc Huế (HVA). Đơn vị công tác: Khoa Nhạc truyền thống. Bộ môn / Chuyên môn: Văn phòng Khoa. Hiện giữ chức vụ: Giáo vụ khoa. Chuyên ngành giảng dạy và hoạt động nghệ thuật: Quản lý Giáo vụ. Thông tin công tác được chứng thực từ trang thông tin điện tử chính thức của Học viện Âm nhạc Huế.\n\n## Nguồn minh chứng và đối soát\n- **Trang danh bạ khoa / cổng thông tin chính thức**:\n- [https://hocvienamnhachue.edu.vn/vi/khoa-nhac-truyen-thong/](https://hocvienamnhachue.edu.vn/vi/khoa-nhac-truyen-thong/)\n"
+    },
+    {
+      "id": "rag-prof-am-nhac-hue-tran-dang-hoang-nhi",
+      "title": "Học viện Âm nhạc Huế - Giảng viên: CN. Giáo vụ khoa Trần Đặng Hoàng Nhi (Khoa Nhạc truyền thống)",
+      "category": "faculty_member",
+      "metadata": {
+        "university_id": "am-nhac-hue",
+        "university_name": "Học viện Âm nhạc Huế",
+        "lecturer_id": "prof-am-nhac-hue-tran-dang-hoang-nhi",
+        "name": "Trần Đặng Hoàng Nhi",
+        "faculty": "Khoa Nhạc truyền thống",
+        "department": "Văn phòng Khoa",
+        "degree": "Cử nhân",
+        "academic_rank": null,
+        "position": "Giáo vụ khoa",
+        "specialty": "Quản lý Giáo vụ",
+        "year_of_birth": 1992,
+        "gender": "Nữ",
+        "phone": null,
+        "source_urls": [
+          "https://hocvienamnhachue.edu.vn/vi/khoa-nhac-truyen-thong/"
+        ],
+        "verification_status": "verified",
+        "last_updated": "2026-10-19T12:21:08Z"
+      },
+      "content": "# Trần Đặng Hoàng Nhi - CN. Giáo vụ khoa\n\n**Cơ sở đào tạo**: Học viện Âm nhạc Huế (HVA)\n**Khoa / Phòng / Viện**: Khoa Nhạc truyền thống\n**Bộ môn / Chuyên ngành**: Văn phòng Khoa\n**Chức vụ hiện tại**: Giáo vụ khoa\n**Học vị**: Cử nhân\n**Học hàm**: Chưa phong tặng GS/PGS\n**Năm sinh**: 1992 (Nữ)\n\n## Tiểu sử & Hoạt động chuyên môn\nTrần Đặng Hoàng Nhi là CN. Giáo vụ khoa tại Học viện Âm nhạc Huế (HVA). Đơn vị công tác: Khoa Nhạc truyền thống. Bộ môn / Chuyên môn: Văn phòng Khoa. Hiện giữ chức vụ: Giáo vụ khoa. Chuyên ngành giảng dạy và hoạt động nghệ thuật: Quản lý Giáo vụ. Thông tin công tác được chứng thực từ trang thông tin điện tử chính thức của Học viện Âm nhạc Huế.\n\n## Nguồn minh chứng và đối soát\n- **Trang danh bạ khoa / cổng thông tin chính thức**:\n- [https://hocvienamnhachue.edu.vn/vi/khoa-nhac-truyen-thong/](https://hocvienamnhachue.edu.vn/vi/khoa-nhac-truyen-thong/)\n"
+    },
+    {
+      "id": "rag-prof-am-nhac-hue-nguyen-duc-thanh",
+      "title": "Học viện Âm nhạc Huế - Giảng viên: ThS. Giảng viên chính Nguyễn Đức Thanh (Khoa Sáng tác - Lý luận - Chỉ huy)",
+      "category": "faculty_member",
+      "metadata": {
+        "university_id": "am-nhac-hue",
+        "university_name": "Học viện Âm nhạc Huế",
+        "lecturer_id": "prof-am-nhac-hue-nguyen-duc-thanh",
+        "name": "Nguyễn Đức Thanh",
+        "faculty": "Khoa Sáng tác - Lý luận - Chỉ huy",
+        "department": "Bộ môn Sáng tác",
+        "degree": "Thạc sĩ",
+        "academic_rank": null,
+        "position": "Trưởng khoa",
+        "specialty": "Sáng tác",
+        "year_of_birth": 1973,
+        "gender": "Nam",
+        "phone": null,
+        "source_urls": [
+          "https://hocvienamnhachue.edu.vn/vi/khoa-sang-tac-ly-luan-chi-huy/",
+          "https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf"
+        ],
+        "verification_status": "verified",
+        "last_updated": "2026-10-19T12:21:08Z"
+      },
+      "content": "# Nguyễn Đức Thanh - ThS. Giảng viên chính\n\n**Cơ sở đào tạo**: Học viện Âm nhạc Huế (HVA)\n**Khoa / Phòng / Viện**: Khoa Sáng tác - Lý luận - Chỉ huy\n**Bộ môn / Chuyên ngành**: Bộ môn Sáng tác\n**Chức vụ hiện tại**: Trưởng khoa\n**Học vị**: Thạc sĩ\n**Học hàm**: Chưa phong tặng GS/PGS\n**Năm sinh**: 1973 (Nam)\n\n## Tiểu sử & Hoạt động chuyên môn\nNguyễn Đức Thanh là ThS. Giảng viên chính tại Học viện Âm nhạc Huế (HVA). Đơn vị công tác: Khoa Sáng tác - Lý luận - Chỉ huy. Bộ môn / Chuyên môn: Bộ môn Sáng tác. Hiện giữ chức vụ: Trưởng khoa. Chuyên ngành giảng dạy và hoạt động nghệ thuật: Sáng tác. Hồ sơ giảng viên cơ hữu được đối soát theo Báo cáo Ba Công khai (Biểu mẫu 20, STT 30) của Học viện Âm nhạc Huế gửi Bộ Giáo dục & Đào tạo.\n\n## Nguồn minh chứng và đối soát\n- **Báo cáo 3 Công khai (Biểu mẫu 20, Bộ GD&ĐT)**: STT 30, ký duyệt bởi Giám đốc TS. Hà Mai Hương.\n  Link văn bản: [https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf](https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf)\n- **Trang danh bạ khoa / cổng thông tin chính thức**:\n- [https://hocvienamnhachue.edu.vn/vi/khoa-sang-tac-ly-luan-chi-huy/](https://hocvienamnhachue.edu.vn/vi/khoa-sang-tac-ly-luan-chi-huy/)\n- [https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf](https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf)\n"
+    },
+    {
+      "id": "rag-prof-am-nhac-hue-doan-phuong-hai",
+      "title": "Học viện Âm nhạc Huế - Giảng viên: ThS. Giảng viên chính Đoàn Phương Hải (Khoa Sáng tác - Lý luận - Chỉ huy)",
+      "category": "faculty_member",
+      "metadata": {
+        "university_id": "am-nhac-hue",
+        "university_name": "Học viện Âm nhạc Huế",
+        "lecturer_id": "prof-am-nhac-hue-doan-phuong-hai",
+        "name": "Đoàn Phương Hải",
+        "faculty": "Khoa Sáng tác - Lý luận - Chỉ huy",
+        "department": "Bộ môn Lý luận Âm nhạc",
+        "degree": "Thạc sĩ",
+        "academic_rank": null,
+        "position": "Phó Trưởng khoa",
+        "specialty": "Lý luận",
+        "year_of_birth": 1976,
+        "gender": "Nam",
+        "phone": null,
+        "source_urls": [
+          "https://hocvienamnhachue.edu.vn/vi/khoa-sang-tac-ly-luan-chi-huy/",
+          "https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf"
+        ],
+        "verification_status": "verified",
+        "last_updated": "2026-10-19T12:21:08Z"
+      },
+      "content": "# Đoàn Phương Hải - ThS. Giảng viên chính\n\n**Cơ sở đào tạo**: Học viện Âm nhạc Huế (HVA)\n**Khoa / Phòng / Viện**: Khoa Sáng tác - Lý luận - Chỉ huy\n**Bộ môn / Chuyên ngành**: Bộ môn Lý luận Âm nhạc\n**Chức vụ hiện tại**: Phó Trưởng khoa\n**Học vị**: Thạc sĩ\n**Học hàm**: Chưa phong tặng GS/PGS\n**Năm sinh**: 1976 (Nam)\n\n## Tiểu sử & Hoạt động chuyên môn\nĐoàn Phương Hải là ThS. Giảng viên chính tại Học viện Âm nhạc Huế (HVA). Đơn vị công tác: Khoa Sáng tác - Lý luận - Chỉ huy. Bộ môn / Chuyên môn: Bộ môn Lý luận Âm nhạc. Hiện giữ chức vụ: Phó Trưởng khoa. Chuyên ngành giảng dạy và hoạt động nghệ thuật: Lý luận. Hồ sơ giảng viên cơ hữu được đối soát theo Báo cáo Ba Công khai (Biểu mẫu 20, STT 31) của Học viện Âm nhạc Huế gửi Bộ Giáo dục & Đào tạo.\n\n## Nguồn minh chứng và đối soát\n- **Báo cáo 3 Công khai (Biểu mẫu 20, Bộ GD&ĐT)**: STT 31, ký duyệt bởi Giám đốc TS. Hà Mai Hương.\n  Link văn bản: [https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf](https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf)\n- **Trang danh bạ khoa / cổng thông tin chính thức**:\n- [https://hocvienamnhachue.edu.vn/vi/khoa-sang-tac-ly-luan-chi-huy/](https://hocvienamnhachue.edu.vn/vi/khoa-sang-tac-ly-luan-chi-huy/)\n- [https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf](https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf)\n"
+    },
+    {
+      "id": "rag-prof-am-nhac-hue-le-hong-linh",
+      "title": "Học viện Âm nhạc Huế - Giảng viên: ThS. Giảng viên Lê Hồng Lĩnh (Khoa Sáng tác - Lý luận - Chỉ huy)",
+      "category": "faculty_member",
+      "metadata": {
+        "university_id": "am-nhac-hue",
+        "university_name": "Học viện Âm nhạc Huế",
+        "lecturer_id": "prof-am-nhac-hue-le-hong-linh",
+        "name": "Lê Hồng Lĩnh",
+        "faculty": "Khoa Sáng tác - Lý luận - Chỉ huy",
+        "department": "Bộ môn Lý luận Âm nhạc",
+        "degree": "Thạc sĩ",
+        "academic_rank": null,
+        "position": "Phó Trưởng khoa",
+        "specialty": "Lý luận",
+        "year_of_birth": 1977,
+        "gender": "Nam",
+        "phone": null,
+        "source_urls": [
+          "https://hocvienamnhachue.edu.vn/vi/khoa-sang-tac-ly-luan-chi-huy/",
+          "https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf"
+        ],
+        "verification_status": "verified",
+        "last_updated": "2026-10-19T12:21:08Z"
+      },
+      "content": "# Lê Hồng Lĩnh - ThS. Giảng viên\n\n**Cơ sở đào tạo**: Học viện Âm nhạc Huế (HVA)\n**Khoa / Phòng / Viện**: Khoa Sáng tác - Lý luận - Chỉ huy\n**Bộ môn / Chuyên ngành**: Bộ môn Lý luận Âm nhạc\n**Chức vụ hiện tại**: Phó Trưởng khoa\n**Học vị**: Thạc sĩ\n**Học hàm**: Chưa phong tặng GS/PGS\n**Năm sinh**: 1977 (Nam)\n\n## Tiểu sử & Hoạt động chuyên môn\nLê Hồng Lĩnh là ThS. Giảng viên tại Học viện Âm nhạc Huế (HVA). Đơn vị công tác: Khoa Sáng tác - Lý luận - Chỉ huy. Bộ môn / Chuyên môn: Bộ môn Lý luận Âm nhạc. Hiện giữ chức vụ: Phó Trưởng khoa. Chuyên ngành giảng dạy và hoạt động nghệ thuật: Lý luận. Hồ sơ giảng viên cơ hữu được đối soát theo Báo cáo Ba Công khai (Biểu mẫu 20, STT 32) của Học viện Âm nhạc Huế gửi Bộ Giáo dục & Đào tạo.\n\n## Nguồn minh chứng và đối soát\n- **Báo cáo 3 Công khai (Biểu mẫu 20, Bộ GD&ĐT)**: STT 32, ký duyệt bởi Giám đốc TS. Hà Mai Hương.\n  Link văn bản: [https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf](https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf)\n- **Trang danh bạ khoa / cổng thông tin chính thức**:\n- [https://hocvienamnhachue.edu.vn/vi/khoa-sang-tac-ly-luan-chi-huy/](https://hocvienamnhachue.edu.vn/vi/khoa-sang-tac-ly-luan-chi-huy/)\n- [https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf](https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf)\n"
+    },
+    {
+      "id": "rag-prof-am-nhac-hue-nguyen-viet-duc",
+      "title": "Học viện Âm nhạc Huế - Giảng viên: ThS. Giảng viên Nguyễn Việt Đức (Khoa Sáng tác - Lý luận - Chỉ huy)",
+      "category": "faculty_member",
+      "metadata": {
+        "university_id": "am-nhac-hue",
+        "university_name": "Học viện Âm nhạc Huế",
+        "lecturer_id": "prof-am-nhac-hue-nguyen-viet-duc",
+        "name": "Nguyễn Việt Đức",
+        "faculty": "Khoa Sáng tác - Lý luận - Chỉ huy",
+        "department": "Bộ môn Sáng tác",
+        "degree": "Thạc sĩ",
+        "academic_rank": null,
+        "position": "Giảng viên",
+        "specialty": "Sáng tác",
+        "year_of_birth": 1978,
+        "gender": "Nam",
+        "phone": null,
+        "source_urls": [
+          "https://hocvienamnhachue.edu.vn/vi/khoa-sang-tac-ly-luan-chi-huy/",
+          "https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf"
+        ],
+        "verification_status": "verified",
+        "last_updated": "2026-10-19T12:21:08Z"
+      },
+      "content": "# Nguyễn Việt Đức - ThS. Giảng viên\n\n**Cơ sở đào tạo**: Học viện Âm nhạc Huế (HVA)\n**Khoa / Phòng / Viện**: Khoa Sáng tác - Lý luận - Chỉ huy\n**Bộ môn / Chuyên ngành**: Bộ môn Sáng tác\n**Chức vụ hiện tại**: Giảng viên\n**Học vị**: Thạc sĩ\n**Học hàm**: Chưa phong tặng GS/PGS\n**Năm sinh**: 1978 (Nam)\n\n## Tiểu sử & Hoạt động chuyên môn\nNguyễn Việt Đức là ThS. Giảng viên tại Học viện Âm nhạc Huế (HVA). Đơn vị công tác: Khoa Sáng tác - Lý luận - Chỉ huy. Bộ môn / Chuyên môn: Bộ môn Sáng tác. Chuyên ngành giảng dạy và hoạt động nghệ thuật: Sáng tác. Hồ sơ giảng viên cơ hữu được đối soát theo Báo cáo Ba Công khai (Biểu mẫu 20, STT 33) của Học viện Âm nhạc Huế gửi Bộ Giáo dục & Đào tạo.\n\n## Nguồn minh chứng và đối soát\n- **Báo cáo 3 Công khai (Biểu mẫu 20, Bộ GD&ĐT)**: STT 33, ký duyệt bởi Giám đốc TS. Hà Mai Hương.\n  Link văn bản: [https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf](https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf)\n- **Trang danh bạ khoa / cổng thông tin chính thức**:\n- [https://hocvienamnhachue.edu.vn/vi/khoa-sang-tac-ly-luan-chi-huy/](https://hocvienamnhachue.edu.vn/vi/khoa-sang-tac-ly-luan-chi-huy/)\n- [https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf](https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf)\n"
+    },
+    {
+      "id": "rag-prof-am-nhac-hue-phan-quoc-trinh",
+      "title": "Học viện Âm nhạc Huế - Giảng viên: ThS. Giảng viên Phan Quốc Trịnh (Khoa Sáng tác - Lý luận - Chỉ huy)",
+      "category": "faculty_member",
+      "metadata": {
+        "university_id": "am-nhac-hue",
+        "university_name": "Học viện Âm nhạc Huế",
+        "lecturer_id": "prof-am-nhac-hue-phan-quoc-trinh",
+        "name": "Phan Quốc Trịnh",
+        "faculty": "Khoa Sáng tác - Lý luận - Chỉ huy",
+        "department": "Bộ môn Sáng tác",
+        "degree": "Thạc sĩ",
+        "academic_rank": null,
+        "position": "Giảng viên",
+        "specialty": "Sáng tác",
+        "year_of_birth": 1980,
+        "gender": "Nam",
+        "phone": null,
+        "source_urls": [
+          "https://hocvienamnhachue.edu.vn/vi/khoa-sang-tac-ly-luan-chi-huy/",
+          "https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf"
+        ],
+        "verification_status": "verified",
+        "last_updated": "2026-10-19T12:21:08Z"
+      },
+      "content": "# Phan Quốc Trịnh - ThS. Giảng viên\n\n**Cơ sở đào tạo**: Học viện Âm nhạc Huế (HVA)\n**Khoa / Phòng / Viện**: Khoa Sáng tác - Lý luận - Chỉ huy\n**Bộ môn / Chuyên ngành**: Bộ môn Sáng tác\n**Chức vụ hiện tại**: Giảng viên\n**Học vị**: Thạc sĩ\n**Học hàm**: Chưa phong tặng GS/PGS\n**Năm sinh**: 1980 (Nam)\n\n## Tiểu sử & Hoạt động chuyên môn\nPhan Quốc Trịnh là ThS. Giảng viên tại Học viện Âm nhạc Huế (HVA). Đơn vị công tác: Khoa Sáng tác - Lý luận - Chỉ huy. Bộ môn / Chuyên môn: Bộ môn Sáng tác. Chuyên ngành giảng dạy và hoạt động nghệ thuật: Sáng tác. Hồ sơ giảng viên cơ hữu được đối soát theo Báo cáo Ba Công khai (Biểu mẫu 20, STT 34) của Học viện Âm nhạc Huế gửi Bộ Giáo dục & Đào tạo.\n\n## Nguồn minh chứng và đối soát\n- **Báo cáo 3 Công khai (Biểu mẫu 20, Bộ GD&ĐT)**: STT 34, ký duyệt bởi Giám đốc TS. Hà Mai Hương.\n  Link văn bản: [https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf](https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf)\n- **Trang danh bạ khoa / cổng thông tin chính thức**:\n- [https://hocvienamnhachue.edu.vn/vi/khoa-sang-tac-ly-luan-chi-huy/](https://hocvienamnhachue.edu.vn/vi/khoa-sang-tac-ly-luan-chi-huy/)\n- [https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf](https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf)\n"
+    },
+    {
+      "id": "rag-prof-am-nhac-hue-huynh-vinh-hung",
+      "title": "Học viện Âm nhạc Huế - Giảng viên: ThS. Giảng viên Huỳnh Vĩnh Hưng (Khoa Sáng tác - Lý luận - Chỉ huy)",
+      "category": "faculty_member",
+      "metadata": {
+        "university_id": "am-nhac-hue",
+        "university_name": "Học viện Âm nhạc Huế",
+        "lecturer_id": "prof-am-nhac-hue-huynh-vinh-hung",
+        "name": "Huỳnh Vĩnh Hưng",
+        "faculty": "Khoa Sáng tác - Lý luận - Chỉ huy",
+        "department": "Bộ môn Lý luận Âm nhạc",
+        "degree": "Thạc sĩ",
+        "academic_rank": null,
+        "position": "Giảng viên",
+        "specialty": "Lý luận",
+        "year_of_birth": 1982,
+        "gender": "Nam",
+        "phone": null,
+        "source_urls": [
+          "https://hocvienamnhachue.edu.vn/vi/khoa-sang-tac-ly-luan-chi-huy/",
+          "https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf"
+        ],
+        "verification_status": "verified",
+        "last_updated": "2026-10-19T12:21:08Z"
+      },
+      "content": "# Huỳnh Vĩnh Hưng - ThS. Giảng viên\n\n**Cơ sở đào tạo**: Học viện Âm nhạc Huế (HVA)\n**Khoa / Phòng / Viện**: Khoa Sáng tác - Lý luận - Chỉ huy\n**Bộ môn / Chuyên ngành**: Bộ môn Lý luận Âm nhạc\n**Chức vụ hiện tại**: Giảng viên\n**Học vị**: Thạc sĩ\n**Học hàm**: Chưa phong tặng GS/PGS\n**Năm sinh**: 1982 (Nam)\n\n## Tiểu sử & Hoạt động chuyên môn\nHuỳnh Vĩnh Hưng là ThS. Giảng viên tại Học viện Âm nhạc Huế (HVA). Đơn vị công tác: Khoa Sáng tác - Lý luận - Chỉ huy. Bộ môn / Chuyên môn: Bộ môn Lý luận Âm nhạc. Chuyên ngành giảng dạy và hoạt động nghệ thuật: Lý luận. Hồ sơ giảng viên cơ hữu được đối soát theo Báo cáo Ba Công khai (Biểu mẫu 20, STT 35) của Học viện Âm nhạc Huế gửi Bộ Giáo dục & Đào tạo.\n\n## Nguồn minh chứng và đối soát\n- **Báo cáo 3 Công khai (Biểu mẫu 20, Bộ GD&ĐT)**: STT 35, ký duyệt bởi Giám đốc TS. Hà Mai Hương.\n  Link văn bản: [https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf](https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf)\n- **Trang danh bạ khoa / cổng thông tin chính thức**:\n- [https://hocvienamnhachue.edu.vn/vi/khoa-sang-tac-ly-luan-chi-huy/](https://hocvienamnhachue.edu.vn/vi/khoa-sang-tac-ly-luan-chi-huy/)\n- [https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf](https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf)\n"
+    },
+    {
+      "id": "rag-prof-am-nhac-hue-nguyen-do-anh-tuan",
+      "title": "Học viện Âm nhạc Huế - Giảng viên: ThS. Giảng viên Nguyễn Đỗ Anh Tuấn (Khoa Sáng tác - Lý luận - Chỉ huy)",
+      "category": "faculty_member",
+      "metadata": {
+        "university_id": "am-nhac-hue",
+        "university_name": "Học viện Âm nhạc Huế",
+        "lecturer_id": "prof-am-nhac-hue-nguyen-do-anh-tuan",
+        "name": "Nguyễn Đỗ Anh Tuấn",
+        "faculty": "Khoa Sáng tác - Lý luận - Chỉ huy",
+        "department": "Bộ môn Sáng tác",
+        "degree": "Thạc sĩ",
+        "academic_rank": null,
+        "position": "Giảng viên",
+        "specialty": "Sáng tác",
+        "year_of_birth": 1983,
+        "gender": "Nam",
+        "phone": null,
+        "source_urls": [
+          "https://hocvienamnhachue.edu.vn/vi/khoa-sang-tac-ly-luan-chi-huy/",
+          "https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf"
+        ],
+        "verification_status": "verified",
+        "last_updated": "2026-10-19T12:21:08Z"
+      },
+      "content": "# Nguyễn Đỗ Anh Tuấn - ThS. Giảng viên\n\n**Cơ sở đào tạo**: Học viện Âm nhạc Huế (HVA)\n**Khoa / Phòng / Viện**: Khoa Sáng tác - Lý luận - Chỉ huy\n**Bộ môn / Chuyên ngành**: Bộ môn Sáng tác\n**Chức vụ hiện tại**: Giảng viên\n**Học vị**: Thạc sĩ\n**Học hàm**: Chưa phong tặng GS/PGS\n**Năm sinh**: 1983 (Nam)\n\n## Tiểu sử & Hoạt động chuyên môn\nNguyễn Đỗ Anh Tuấn là ThS. Giảng viên tại Học viện Âm nhạc Huế (HVA). Đơn vị công tác: Khoa Sáng tác - Lý luận - Chỉ huy. Bộ môn / Chuyên môn: Bộ môn Sáng tác. Chuyên ngành giảng dạy và hoạt động nghệ thuật: Sáng tác. Hồ sơ giảng viên cơ hữu được đối soát theo Báo cáo Ba Công khai (Biểu mẫu 20, STT 36) của Học viện Âm nhạc Huế gửi Bộ Giáo dục & Đào tạo.\n\n## Nguồn minh chứng và đối soát\n- **Báo cáo 3 Công khai (Biểu mẫu 20, Bộ GD&ĐT)**: STT 36, ký duyệt bởi Giám đốc TS. Hà Mai Hương.\n  Link văn bản: [https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf](https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf)\n- **Trang danh bạ khoa / cổng thông tin chính thức**:\n- [https://hocvienamnhachue.edu.vn/vi/khoa-sang-tac-ly-luan-chi-huy/](https://hocvienamnhachue.edu.vn/vi/khoa-sang-tac-ly-luan-chi-huy/)\n- [https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf](https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf)\n"
+    },
+    {
+      "id": "rag-prof-am-nhac-hue-phan-ngoc-nam",
+      "title": "Học viện Âm nhạc Huế - Giảng viên: ThS. Giảng viên Phan Ngọc Nam (Khoa Sáng tác - Lý luận - Chỉ huy)",
+      "category": "faculty_member",
+      "metadata": {
+        "university_id": "am-nhac-hue",
+        "university_name": "Học viện Âm nhạc Huế",
+        "lecturer_id": "prof-am-nhac-hue-phan-ngoc-nam",
+        "name": "Phan Ngọc Nam",
+        "faculty": "Khoa Sáng tác - Lý luận - Chỉ huy",
+        "department": "Bộ môn Chỉ huy",
+        "degree": "Thạc sĩ",
+        "academic_rank": null,
+        "position": "Giảng viên",
+        "specialty": "Chỉ huy",
+        "year_of_birth": 1983,
+        "gender": "Nam",
+        "phone": null,
+        "source_urls": [
+          "https://hocvienamnhachue.edu.vn/vi/khoa-sang-tac-ly-luan-chi-huy/",
+          "https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf"
+        ],
+        "verification_status": "verified",
+        "last_updated": "2026-10-19T12:21:08Z"
+      },
+      "content": "# Phan Ngọc Nam - ThS. Giảng viên\n\n**Cơ sở đào tạo**: Học viện Âm nhạc Huế (HVA)\n**Khoa / Phòng / Viện**: Khoa Sáng tác - Lý luận - Chỉ huy\n**Bộ môn / Chuyên ngành**: Bộ môn Chỉ huy\n**Chức vụ hiện tại**: Giảng viên\n**Học vị**: Thạc sĩ\n**Học hàm**: Chưa phong tặng GS/PGS\n**Năm sinh**: 1983 (Nam)\n\n## Tiểu sử & Hoạt động chuyên môn\nPhan Ngọc Nam là ThS. Giảng viên tại Học viện Âm nhạc Huế (HVA). Đơn vị công tác: Khoa Sáng tác - Lý luận - Chỉ huy. Bộ môn / Chuyên môn: Bộ môn Chỉ huy. Chuyên ngành giảng dạy và hoạt động nghệ thuật: Chỉ huy. Hồ sơ giảng viên cơ hữu được đối soát theo Báo cáo Ba Công khai (Biểu mẫu 20, STT 37) của Học viện Âm nhạc Huế gửi Bộ Giáo dục & Đào tạo.\n\n## Nguồn minh chứng và đối soát\n- **Báo cáo 3 Công khai (Biểu mẫu 20, Bộ GD&ĐT)**: STT 37, ký duyệt bởi Giám đốc TS. Hà Mai Hương.\n  Link văn bản: [https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf](https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf)\n- **Trang danh bạ khoa / cổng thông tin chính thức**:\n- [https://hocvienamnhachue.edu.vn/vi/khoa-sang-tac-ly-luan-chi-huy/](https://hocvienamnhachue.edu.vn/vi/khoa-sang-tac-ly-luan-chi-huy/)\n- [https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf](https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf)\n"
+    },
+    {
+      "id": "rag-prof-am-nhac-hue-nguyen-thi-thu-huyen",
+      "title": "Học viện Âm nhạc Huế - Giảng viên: ThS. Giảng viên Nguyễn Thị Thu Huyền (Khoa Sáng tác - Lý luận - Chỉ huy)",
+      "category": "faculty_member",
+      "metadata": {
+        "university_id": "am-nhac-hue",
+        "university_name": "Học viện Âm nhạc Huế",
+        "lecturer_id": "prof-am-nhac-hue-nguyen-thi-thu-huyen",
+        "name": "Nguyễn Thị Thu Huyền",
+        "faculty": "Khoa Sáng tác - Lý luận - Chỉ huy",
+        "department": "Bộ môn Lý luận Âm nhạc",
+        "degree": "Thạc sĩ",
+        "academic_rank": null,
+        "position": "Giảng viên",
+        "specialty": "Lý luận",
+        "year_of_birth": 1984,
+        "gender": "Nữ",
+        "phone": null,
+        "source_urls": [
+          "https://hocvienamnhachue.edu.vn/vi/khoa-sang-tac-ly-luan-chi-huy/",
+          "https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf"
+        ],
+        "verification_status": "verified",
+        "last_updated": "2026-10-19T12:21:08Z"
+      },
+      "content": "# Nguyễn Thị Thu Huyền - ThS. Giảng viên\n\n**Cơ sở đào tạo**: Học viện Âm nhạc Huế (HVA)\n**Khoa / Phòng / Viện**: Khoa Sáng tác - Lý luận - Chỉ huy\n**Bộ môn / Chuyên ngành**: Bộ môn Lý luận Âm nhạc\n**Chức vụ hiện tại**: Giảng viên\n**Học vị**: Thạc sĩ\n**Học hàm**: Chưa phong tặng GS/PGS\n**Năm sinh**: 1984 (Nữ)\n\n## Tiểu sử & Hoạt động chuyên môn\nNguyễn Thị Thu Huyền là ThS. Giảng viên tại Học viện Âm nhạc Huế (HVA). Đơn vị công tác: Khoa Sáng tác - Lý luận - Chỉ huy. Bộ môn / Chuyên môn: Bộ môn Lý luận Âm nhạc. Chuyên ngành giảng dạy và hoạt động nghệ thuật: Lý luận. Hồ sơ giảng viên cơ hữu được đối soát theo Báo cáo Ba Công khai (Biểu mẫu 20, STT 38) của Học viện Âm nhạc Huế gửi Bộ Giáo dục & Đào tạo.\n\n## Nguồn minh chứng và đối soát\n- **Báo cáo 3 Công khai (Biểu mẫu 20, Bộ GD&ĐT)**: STT 38, ký duyệt bởi Giám đốc TS. Hà Mai Hương.\n  Link văn bản: [https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf](https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf)\n- **Trang danh bạ khoa / cổng thông tin chính thức**:\n- [https://hocvienamnhachue.edu.vn/vi/khoa-sang-tac-ly-luan-chi-huy/](https://hocvienamnhachue.edu.vn/vi/khoa-sang-tac-ly-luan-chi-huy/)\n- [https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf](https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf)\n"
+    },
+    {
+      "id": "rag-prof-am-nhac-hue-nguyen-thi-mai-huong",
+      "title": "Học viện Âm nhạc Huế - Giảng viên: ThS. Giảng viên Nguyễn Thị Mai Hương (Khoa Sáng tác - Lý luận - Chỉ huy)",
+      "category": "faculty_member",
+      "metadata": {
+        "university_id": "am-nhac-hue",
+        "university_name": "Học viện Âm nhạc Huế",
+        "lecturer_id": "prof-am-nhac-hue-nguyen-thi-mai-huong",
+        "name": "Nguyễn Thị Mai Hương",
+        "faculty": "Khoa Sáng tác - Lý luận - Chỉ huy",
+        "department": "Bộ môn Lý luận Âm nhạc",
+        "degree": "Thạc sĩ",
+        "academic_rank": null,
+        "position": "Giảng viên",
+        "specialty": "Lý luận",
+        "year_of_birth": 1985,
+        "gender": "Nữ",
+        "phone": null,
+        "source_urls": [
+          "https://hocvienamnhachue.edu.vn/vi/khoa-sang-tac-ly-luan-chi-huy/",
+          "https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf"
+        ],
+        "verification_status": "verified",
+        "last_updated": "2026-10-19T12:21:08Z"
+      },
+      "content": "# Nguyễn Thị Mai Hương - ThS. Giảng viên\n\n**Cơ sở đào tạo**: Học viện Âm nhạc Huế (HVA)\n**Khoa / Phòng / Viện**: Khoa Sáng tác - Lý luận - Chỉ huy\n**Bộ môn / Chuyên ngành**: Bộ môn Lý luận Âm nhạc\n**Chức vụ hiện tại**: Giảng viên\n**Học vị**: Thạc sĩ\n**Học hàm**: Chưa phong tặng GS/PGS\n**Năm sinh**: 1985 (Nữ)\n\n## Tiểu sử & Hoạt động chuyên môn\nNguyễn Thị Mai Hương là ThS. Giảng viên tại Học viện Âm nhạc Huế (HVA). Đơn vị công tác: Khoa Sáng tác - Lý luận - Chỉ huy. Bộ môn / Chuyên môn: Bộ môn Lý luận Âm nhạc. Chuyên ngành giảng dạy và hoạt động nghệ thuật: Lý luận. Hồ sơ giảng viên cơ hữu được đối soát theo Báo cáo Ba Công khai (Biểu mẫu 20, STT 39) của Học viện Âm nhạc Huế gửi Bộ Giáo dục & Đào tạo.\n\n## Nguồn minh chứng và đối soát\n- **Báo cáo 3 Công khai (Biểu mẫu 20, Bộ GD&ĐT)**: STT 39, ký duyệt bởi Giám đốc TS. Hà Mai Hương.\n  Link văn bản: [https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf](https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf)\n- **Trang danh bạ khoa / cổng thông tin chính thức**:\n- [https://hocvienamnhachue.edu.vn/vi/khoa-sang-tac-ly-luan-chi-huy/](https://hocvienamnhachue.edu.vn/vi/khoa-sang-tac-ly-luan-chi-huy/)\n- [https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf](https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf)\n"
+    },
+    {
+      "id": "rag-prof-am-nhac-hue-hoang-thi-kim-oanh",
+      "title": "Học viện Âm nhạc Huế - Giảng viên: CN. Giảng viên Hoàng Thị Kim Oanh (Khoa Sáng tác - Lý luận - Chỉ huy)",
+      "category": "faculty_member",
+      "metadata": {
+        "university_id": "am-nhac-hue",
+        "university_name": "Học viện Âm nhạc Huế",
+        "lecturer_id": "prof-am-nhac-hue-hoang-thi-kim-oanh",
+        "name": "Hoàng Thị Kim Oanh",
+        "faculty": "Khoa Sáng tác - Lý luận - Chỉ huy",
+        "department": "Bộ môn Lý luận Âm nhạc",
+        "degree": "Cử nhân",
+        "academic_rank": null,
+        "position": "Giảng viên",
+        "specialty": "Lý luận",
+        "year_of_birth": 1987,
+        "gender": "Nữ",
+        "phone": null,
+        "source_urls": [
+          "https://hocvienamnhachue.edu.vn/vi/khoa-sang-tac-ly-luan-chi-huy/",
+          "https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf"
+        ],
+        "verification_status": "verified",
+        "last_updated": "2026-10-19T12:21:08Z"
+      },
+      "content": "# Hoàng Thị Kim Oanh - CN. Giảng viên\n\n**Cơ sở đào tạo**: Học viện Âm nhạc Huế (HVA)\n**Khoa / Phòng / Viện**: Khoa Sáng tác - Lý luận - Chỉ huy\n**Bộ môn / Chuyên ngành**: Bộ môn Lý luận Âm nhạc\n**Chức vụ hiện tại**: Giảng viên\n**Học vị**: Cử nhân\n**Học hàm**: Chưa phong tặng GS/PGS\n**Năm sinh**: 1987 (Nữ)\n\n## Tiểu sử & Hoạt động chuyên môn\nHoàng Thị Kim Oanh là CN. Giảng viên tại Học viện Âm nhạc Huế (HVA). Đơn vị công tác: Khoa Sáng tác - Lý luận - Chỉ huy. Bộ môn / Chuyên môn: Bộ môn Lý luận Âm nhạc. Chuyên ngành giảng dạy và hoạt động nghệ thuật: Lý luận. Hồ sơ giảng viên cơ hữu được đối soát theo Báo cáo Ba Công khai (Biểu mẫu 20, STT 40) của Học viện Âm nhạc Huế gửi Bộ Giáo dục & Đào tạo.\n\n## Nguồn minh chứng và đối soát\n- **Báo cáo 3 Công khai (Biểu mẫu 20, Bộ GD&ĐT)**: STT 40, ký duyệt bởi Giám đốc TS. Hà Mai Hương.\n  Link văn bản: [https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf](https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf)\n- **Trang danh bạ khoa / cổng thông tin chính thức**:\n- [https://hocvienamnhachue.edu.vn/vi/khoa-sang-tac-ly-luan-chi-huy/](https://hocvienamnhachue.edu.vn/vi/khoa-sang-tac-ly-luan-chi-huy/)\n- [https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf](https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf)\n"
+    },
+    {
+      "id": "rag-prof-am-nhac-hue-trinh-thi-thu-ha",
+      "title": "Học viện Âm nhạc Huế - Giảng viên: CN. Giảng viên Trịnh Thị Thu Hà (Khoa Sáng tác - Lý luận - Chỉ huy)",
+      "category": "faculty_member",
+      "metadata": {
+        "university_id": "am-nhac-hue",
+        "university_name": "Học viện Âm nhạc Huế",
+        "lecturer_id": "prof-am-nhac-hue-trinh-thi-thu-ha",
+        "name": "Trịnh Thị Thu Hà",
+        "faculty": "Khoa Sáng tác - Lý luận - Chỉ huy",
+        "department": "Bộ môn Lý luận Âm nhạc",
+        "degree": "Cử nhân",
+        "academic_rank": null,
+        "position": "Giảng viên",
+        "specialty": "Lý luận",
+        "year_of_birth": 1988,
+        "gender": "Nữ",
+        "phone": null,
+        "source_urls": [
+          "https://hocvienamnhachue.edu.vn/vi/khoa-sang-tac-ly-luan-chi-huy/",
+          "https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf"
+        ],
+        "verification_status": "verified",
+        "last_updated": "2026-10-19T12:21:08Z"
+      },
+      "content": "# Trịnh Thị Thu Hà - CN. Giảng viên\n\n**Cơ sở đào tạo**: Học viện Âm nhạc Huế (HVA)\n**Khoa / Phòng / Viện**: Khoa Sáng tác - Lý luận - Chỉ huy\n**Bộ môn / Chuyên ngành**: Bộ môn Lý luận Âm nhạc\n**Chức vụ hiện tại**: Giảng viên\n**Học vị**: Cử nhân\n**Học hàm**: Chưa phong tặng GS/PGS\n**Năm sinh**: 1988 (Nữ)\n\n## Tiểu sử & Hoạt động chuyên môn\nTrịnh Thị Thu Hà là CN. Giảng viên tại Học viện Âm nhạc Huế (HVA). Đơn vị công tác: Khoa Sáng tác - Lý luận - Chỉ huy. Bộ môn / Chuyên môn: Bộ môn Lý luận Âm nhạc. Chuyên ngành giảng dạy và hoạt động nghệ thuật: Lý luận. Hồ sơ giảng viên cơ hữu được đối soát theo Báo cáo Ba Công khai (Biểu mẫu 20, STT 41) của Học viện Âm nhạc Huế gửi Bộ Giáo dục & Đào tạo.\n\n## Nguồn minh chứng và đối soát\n- **Báo cáo 3 Công khai (Biểu mẫu 20, Bộ GD&ĐT)**: STT 41, ký duyệt bởi Giám đốc TS. Hà Mai Hương.\n  Link văn bản: [https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf](https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf)\n- **Trang danh bạ khoa / cổng thông tin chính thức**:\n- [https://hocvienamnhachue.edu.vn/vi/khoa-sang-tac-ly-luan-chi-huy/](https://hocvienamnhachue.edu.vn/vi/khoa-sang-tac-ly-luan-chi-huy/)\n- [https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf](https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf)\n"
+    },
+    {
+      "id": "rag-prof-am-nhac-hue-le-vu-thao-nguyen",
+      "title": "Học viện Âm nhạc Huế - Giảng viên: CN. Giảng viên Lê Vũ Thảo Nguyên (Khoa Sáng tác - Lý luận - Chỉ huy)",
+      "category": "faculty_member",
+      "metadata": {
+        "university_id": "am-nhac-hue",
+        "university_name": "Học viện Âm nhạc Huế",
+        "lecturer_id": "prof-am-nhac-hue-le-vu-thao-nguyen",
+        "name": "Lê Vũ Thảo Nguyên",
+        "faculty": "Khoa Sáng tác - Lý luận - Chỉ huy",
+        "department": "Bộ môn Lý luận Âm nhạc",
+        "degree": "Cử nhân",
+        "academic_rank": null,
+        "position": "Giảng viên",
+        "specialty": "Lý luận",
+        "year_of_birth": 1993,
+        "gender": "Nữ",
+        "phone": null,
+        "source_urls": [
+          "https://hocvienamnhachue.edu.vn/vi/khoa-sang-tac-ly-luan-chi-huy/",
+          "https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf"
+        ],
+        "verification_status": "verified",
+        "last_updated": "2026-10-19T12:21:08Z"
+      },
+      "content": "# Lê Vũ Thảo Nguyên - CN. Giảng viên\n\n**Cơ sở đào tạo**: Học viện Âm nhạc Huế (HVA)\n**Khoa / Phòng / Viện**: Khoa Sáng tác - Lý luận - Chỉ huy\n**Bộ môn / Chuyên ngành**: Bộ môn Lý luận Âm nhạc\n**Chức vụ hiện tại**: Giảng viên\n**Học vị**: Cử nhân\n**Học hàm**: Chưa phong tặng GS/PGS\n**Năm sinh**: 1993 (Nữ)\n\n## Tiểu sử & Hoạt động chuyên môn\nLê Vũ Thảo Nguyên là CN. Giảng viên tại Học viện Âm nhạc Huế (HVA). Đơn vị công tác: Khoa Sáng tác - Lý luận - Chỉ huy. Bộ môn / Chuyên môn: Bộ môn Lý luận Âm nhạc. Chuyên ngành giảng dạy và hoạt động nghệ thuật: Lý luận. Hồ sơ giảng viên cơ hữu được đối soát theo Báo cáo Ba Công khai (Biểu mẫu 20, STT 42) của Học viện Âm nhạc Huế gửi Bộ Giáo dục & Đào tạo.\n\n## Nguồn minh chứng và đối soát\n- **Báo cáo 3 Công khai (Biểu mẫu 20, Bộ GD&ĐT)**: STT 42, ký duyệt bởi Giám đốc TS. Hà Mai Hương.\n  Link văn bản: [https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf](https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf)\n- **Trang danh bạ khoa / cổng thông tin chính thức**:\n- [https://hocvienamnhachue.edu.vn/vi/khoa-sang-tac-ly-luan-chi-huy/](https://hocvienamnhachue.edu.vn/vi/khoa-sang-tac-ly-luan-chi-huy/)\n- [https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf](https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf)\n"
+    },
+    {
+      "id": "rag-prof-am-nhac-hue-phan-thi-nhu-y",
+      "title": "Học viện Âm nhạc Huế - Giảng viên: CN. Giáo vụ khoa Phan Thị Như Ý (Khoa Sáng tác - Lý luận - Chỉ huy)",
+      "category": "faculty_member",
+      "metadata": {
+        "university_id": "am-nhac-hue",
+        "university_name": "Học viện Âm nhạc Huế",
+        "lecturer_id": "prof-am-nhac-hue-phan-thi-nhu-y",
+        "name": "Phan Thị Như Ý",
+        "faculty": "Khoa Sáng tác - Lý luận - Chỉ huy",
+        "department": "Văn phòng Khoa",
+        "degree": "Cử nhân",
+        "academic_rank": null,
+        "position": "Giáo vụ khoa",
+        "specialty": "Quản lý Giáo vụ",
+        "year_of_birth": 1990,
+        "gender": "Nữ",
+        "phone": null,
+        "source_urls": [
+          "https://hocvienamnhachue.edu.vn/vi/khoa-sang-tac-ly-luan-chi-huy/"
+        ],
+        "verification_status": "verified",
+        "last_updated": "2026-10-19T12:21:08Z"
+      },
+      "content": "# Phan Thị Như Ý - CN. Giáo vụ khoa\n\n**Cơ sở đào tạo**: Học viện Âm nhạc Huế (HVA)\n**Khoa / Phòng / Viện**: Khoa Sáng tác - Lý luận - Chỉ huy\n**Bộ môn / Chuyên ngành**: Văn phòng Khoa\n**Chức vụ hiện tại**: Giáo vụ khoa\n**Học vị**: Cử nhân\n**Học hàm**: Chưa phong tặng GS/PGS\n**Năm sinh**: 1990 (Nữ)\n\n## Tiểu sử & Hoạt động chuyên môn\nPhan Thị Như Ý là CN. Giáo vụ khoa tại Học viện Âm nhạc Huế (HVA). Đơn vị công tác: Khoa Sáng tác - Lý luận - Chỉ huy. Bộ môn / Chuyên môn: Văn phòng Khoa. Hiện giữ chức vụ: Giáo vụ khoa. Chuyên ngành giảng dạy và hoạt động nghệ thuật: Quản lý Giáo vụ. Thông tin công tác được chứng thực từ trang thông tin điện tử chính thức của Học viện Âm nhạc Huế.\n\n## Nguồn minh chứng và đối soát\n- **Trang danh bạ khoa / cổng thông tin chính thức**:\n- [https://hocvienamnhachue.edu.vn/vi/khoa-sang-tac-ly-luan-chi-huy/](https://hocvienamnhachue.edu.vn/vi/khoa-sang-tac-ly-luan-chi-huy/)\n"
+    },
+    {
+      "id": "rag-prof-am-nhac-hue-nguyen-thi-lan-anh",
+      "title": "Học viện Âm nhạc Huế - Giảng viên: ThS. Giảng viên Nguyễn Thị Lan Anh (Khoa Thanh nhạc - Guitare)",
+      "category": "faculty_member",
+      "metadata": {
+        "university_id": "am-nhac-hue",
+        "university_name": "Học viện Âm nhạc Huế",
+        "lecturer_id": "prof-am-nhac-hue-nguyen-thi-lan-anh",
+        "name": "Nguyễn Thị Lan Anh",
+        "faculty": "Khoa Thanh nhạc - Guitare",
+        "department": "Bộ môn Thanh nhạc",
+        "degree": "Thạc sĩ",
+        "academic_rank": null,
+        "position": "Phụ trách khoa",
+        "specialty": "Thanh nhạc",
+        "year_of_birth": 1977,
+        "gender": "Nữ",
+        "phone": null,
+        "source_urls": [
+          "https://hocvienamnhachue.edu.vn/vi/khoa-thanh-nhac-guitare/",
+          "https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf"
+        ],
+        "verification_status": "verified",
+        "last_updated": "2026-10-19T12:21:08Z"
+      },
+      "content": "# Nguyễn Thị Lan Anh - ThS. Giảng viên\n\n**Cơ sở đào tạo**: Học viện Âm nhạc Huế (HVA)\n**Khoa / Phòng / Viện**: Khoa Thanh nhạc - Guitare\n**Bộ môn / Chuyên ngành**: Bộ môn Thanh nhạc\n**Chức vụ hiện tại**: Phụ trách khoa\n**Học vị**: Thạc sĩ\n**Học hàm**: Chưa phong tặng GS/PGS\n**Năm sinh**: 1977 (Nữ)\n\n## Tiểu sử & Hoạt động chuyên môn\nNguyễn Thị Lan Anh là ThS. Giảng viên tại Học viện Âm nhạc Huế (HVA). Đơn vị công tác: Khoa Thanh nhạc - Guitare. Bộ môn / Chuyên môn: Bộ môn Thanh nhạc. Hiện giữ chức vụ: Phụ trách khoa. Chuyên ngành giảng dạy và hoạt động nghệ thuật: Thanh nhạc. Hồ sơ giảng viên cơ hữu được đối soát theo Báo cáo Ba Công khai (Biểu mẫu 20, STT 43) của Học viện Âm nhạc Huế gửi Bộ Giáo dục & Đào tạo.\n\n## Nguồn minh chứng và đối soát\n- **Báo cáo 3 Công khai (Biểu mẫu 20, Bộ GD&ĐT)**: STT 43, ký duyệt bởi Giám đốc TS. Hà Mai Hương.\n  Link văn bản: [https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf](https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf)\n- **Trang danh bạ khoa / cổng thông tin chính thức**:\n- [https://hocvienamnhachue.edu.vn/vi/khoa-thanh-nhac-guitare/](https://hocvienamnhachue.edu.vn/vi/khoa-thanh-nhac-guitare/)\n- [https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf](https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf)\n"
+    },
+    {
+      "id": "rag-prof-am-nhac-hue-tran-hoai-phuong",
+      "title": "Học viện Âm nhạc Huế - Giảng viên: ThS. Giảng viên Trần Hoài Phương (Khoa Thanh nhạc - Guitare)",
+      "category": "faculty_member",
+      "metadata": {
+        "university_id": "am-nhac-hue",
+        "university_name": "Học viện Âm nhạc Huế",
+        "lecturer_id": "prof-am-nhac-hue-tran-hoai-phuong",
+        "name": "Trần Hoài Phương",
+        "faculty": "Khoa Thanh nhạc - Guitare",
+        "department": "Bộ môn Thanh nhạc",
+        "degree": "Thạc sĩ",
+        "academic_rank": null,
+        "position": "Giảng viên",
+        "specialty": "Thanh nhạc",
+        "year_of_birth": 1978,
+        "gender": "Nam",
+        "phone": null,
+        "source_urls": [
+          "https://hocvienamnhachue.edu.vn/vi/khoa-thanh-nhac-guitare/",
+          "https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf"
+        ],
+        "verification_status": "verified",
+        "last_updated": "2026-10-19T12:21:08Z"
+      },
+      "content": "# Trần Hoài Phương - ThS. Giảng viên\n\n**Cơ sở đào tạo**: Học viện Âm nhạc Huế (HVA)\n**Khoa / Phòng / Viện**: Khoa Thanh nhạc - Guitare\n**Bộ môn / Chuyên ngành**: Bộ môn Thanh nhạc\n**Chức vụ hiện tại**: Giảng viên\n**Học vị**: Thạc sĩ\n**Học hàm**: Chưa phong tặng GS/PGS\n**Năm sinh**: 1978 (Nam)\n\n## Tiểu sử & Hoạt động chuyên môn\nTrần Hoài Phương là ThS. Giảng viên tại Học viện Âm nhạc Huế (HVA). Đơn vị công tác: Khoa Thanh nhạc - Guitare. Bộ môn / Chuyên môn: Bộ môn Thanh nhạc. Chuyên ngành giảng dạy và hoạt động nghệ thuật: Thanh nhạc. Hồ sơ giảng viên cơ hữu được đối soát theo Báo cáo Ba Công khai (Biểu mẫu 20, STT 44) của Học viện Âm nhạc Huế gửi Bộ Giáo dục & Đào tạo.\n\n## Nguồn minh chứng và đối soát\n- **Báo cáo 3 Công khai (Biểu mẫu 20, Bộ GD&ĐT)**: STT 44, ký duyệt bởi Giám đốc TS. Hà Mai Hương.\n  Link văn bản: [https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf](https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf)\n- **Trang danh bạ khoa / cổng thông tin chính thức**:\n- [https://hocvienamnhachue.edu.vn/vi/khoa-thanh-nhac-guitare/](https://hocvienamnhachue.edu.vn/vi/khoa-thanh-nhac-guitare/)\n- [https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf](https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf)\n"
+    },
+    {
+      "id": "rag-prof-am-nhac-hue-tran-thi-thuy-linh",
+      "title": "Học viện Âm nhạc Huế - Giảng viên: ThS. Giảng viên Trần Thị Thùy Linh (Khoa Thanh nhạc - Guitare)",
+      "category": "faculty_member",
+      "metadata": {
+        "university_id": "am-nhac-hue",
+        "university_name": "Học viện Âm nhạc Huế",
+        "lecturer_id": "prof-am-nhac-hue-tran-thi-thuy-linh",
+        "name": "Trần Thị Thùy Linh",
+        "faculty": "Khoa Thanh nhạc - Guitare",
+        "department": "Bộ môn Thanh nhạc",
+        "degree": "Thạc sĩ",
+        "academic_rank": null,
+        "position": "Giảng viên",
+        "specialty": "Thanh nhạc",
+        "year_of_birth": 1980,
+        "gender": "Nữ",
+        "phone": null,
+        "source_urls": [
+          "https://hocvienamnhachue.edu.vn/vi/khoa-thanh-nhac-guitare/",
+          "https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf"
+        ],
+        "verification_status": "verified",
+        "last_updated": "2026-10-19T12:21:08Z"
+      },
+      "content": "# Trần Thị Thùy Linh - ThS. Giảng viên\n\n**Cơ sở đào tạo**: Học viện Âm nhạc Huế (HVA)\n**Khoa / Phòng / Viện**: Khoa Thanh nhạc - Guitare\n**Bộ môn / Chuyên ngành**: Bộ môn Thanh nhạc\n**Chức vụ hiện tại**: Giảng viên\n**Học vị**: Thạc sĩ\n**Học hàm**: Chưa phong tặng GS/PGS\n**Năm sinh**: 1980 (Nữ)\n\n## Tiểu sử & Hoạt động chuyên môn\nTrần Thị Thùy Linh là ThS. Giảng viên tại Học viện Âm nhạc Huế (HVA). Đơn vị công tác: Khoa Thanh nhạc - Guitare. Bộ môn / Chuyên môn: Bộ môn Thanh nhạc. Chuyên ngành giảng dạy và hoạt động nghệ thuật: Thanh nhạc. Hồ sơ giảng viên cơ hữu được đối soát theo Báo cáo Ba Công khai (Biểu mẫu 20, STT 45) của Học viện Âm nhạc Huế gửi Bộ Giáo dục & Đào tạo.\n\n## Nguồn minh chứng và đối soát\n- **Báo cáo 3 Công khai (Biểu mẫu 20, Bộ GD&ĐT)**: STT 45, ký duyệt bởi Giám đốc TS. Hà Mai Hương.\n  Link văn bản: [https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf](https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf)\n- **Trang danh bạ khoa / cổng thông tin chính thức**:\n- [https://hocvienamnhachue.edu.vn/vi/khoa-thanh-nhac-guitare/](https://hocvienamnhachue.edu.vn/vi/khoa-thanh-nhac-guitare/)\n- [https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf](https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf)\n"
+    },
+    {
+      "id": "rag-prof-am-nhac-hue-nguyen-thi-dieu-anh",
+      "title": "Học viện Âm nhạc Huế - Giảng viên: ThS. Giảng viên Nguyễn Thị Diệu Ánh (Khoa Thanh nhạc - Guitare)",
+      "category": "faculty_member",
+      "metadata": {
+        "university_id": "am-nhac-hue",
+        "university_name": "Học viện Âm nhạc Huế",
+        "lecturer_id": "prof-am-nhac-hue-nguyen-thi-dieu-anh",
+        "name": "Nguyễn Thị Diệu Ánh",
+        "faculty": "Khoa Thanh nhạc - Guitare",
+        "department": "Bộ môn Thanh nhạc",
+        "degree": "Thạc sĩ",
+        "academic_rank": null,
+        "position": "Giảng viên",
+        "specialty": "Thanh nhạc",
+        "year_of_birth": 1982,
+        "gender": "Nữ",
+        "phone": null,
+        "source_urls": [
+          "https://hocvienamnhachue.edu.vn/vi/khoa-thanh-nhac-guitare/",
+          "https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf"
+        ],
+        "verification_status": "verified",
+        "last_updated": "2026-10-19T12:21:08Z"
+      },
+      "content": "# Nguyễn Thị Diệu Ánh - ThS. Giảng viên\n\n**Cơ sở đào tạo**: Học viện Âm nhạc Huế (HVA)\n**Khoa / Phòng / Viện**: Khoa Thanh nhạc - Guitare\n**Bộ môn / Chuyên ngành**: Bộ môn Thanh nhạc\n**Chức vụ hiện tại**: Giảng viên\n**Học vị**: Thạc sĩ\n**Học hàm**: Chưa phong tặng GS/PGS\n**Năm sinh**: 1982 (Nữ)\n\n## Tiểu sử & Hoạt động chuyên môn\nNguyễn Thị Diệu Ánh là ThS. Giảng viên tại Học viện Âm nhạc Huế (HVA). Đơn vị công tác: Khoa Thanh nhạc - Guitare. Bộ môn / Chuyên môn: Bộ môn Thanh nhạc. Chuyên ngành giảng dạy và hoạt động nghệ thuật: Thanh nhạc. Hồ sơ giảng viên cơ hữu được đối soát theo Báo cáo Ba Công khai (Biểu mẫu 20, STT 46) của Học viện Âm nhạc Huế gửi Bộ Giáo dục & Đào tạo.\n\n## Nguồn minh chứng và đối soát\n- **Báo cáo 3 Công khai (Biểu mẫu 20, Bộ GD&ĐT)**: STT 46, ký duyệt bởi Giám đốc TS. Hà Mai Hương.\n  Link văn bản: [https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf](https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf)\n- **Trang danh bạ khoa / cổng thông tin chính thức**:\n- [https://hocvienamnhachue.edu.vn/vi/khoa-thanh-nhac-guitare/](https://hocvienamnhachue.edu.vn/vi/khoa-thanh-nhac-guitare/)\n- [https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf](https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf)\n"
+    },
+    {
+      "id": "rag-prof-am-nhac-hue-nguyen-thi-quynh-nhu",
+      "title": "Học viện Âm nhạc Huế - Giảng viên: ThS. Giảng viên Nguyễn Thị Quỳnh Như (Khoa Thanh nhạc - Guitare)",
+      "category": "faculty_member",
+      "metadata": {
+        "university_id": "am-nhac-hue",
+        "university_name": "Học viện Âm nhạc Huế",
+        "lecturer_id": "prof-am-nhac-hue-nguyen-thi-quynh-nhu",
+        "name": "Nguyễn Thị Quỳnh Như",
+        "faculty": "Khoa Thanh nhạc - Guitare",
+        "department": "Bộ môn Thanh nhạc",
+        "degree": "Thạc sĩ",
+        "academic_rank": null,
+        "position": "Giảng viên",
+        "specialty": "Thanh nhạc",
+        "year_of_birth": 1982,
+        "gender": "Nữ",
+        "phone": null,
+        "source_urls": [
+          "https://hocvienamnhachue.edu.vn/vi/khoa-thanh-nhac-guitare/",
+          "https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf"
+        ],
+        "verification_status": "verified",
+        "last_updated": "2026-10-19T12:21:08Z"
+      },
+      "content": "# Nguyễn Thị Quỳnh Như - ThS. Giảng viên\n\n**Cơ sở đào tạo**: Học viện Âm nhạc Huế (HVA)\n**Khoa / Phòng / Viện**: Khoa Thanh nhạc - Guitare\n**Bộ môn / Chuyên ngành**: Bộ môn Thanh nhạc\n**Chức vụ hiện tại**: Giảng viên\n**Học vị**: Thạc sĩ\n**Học hàm**: Chưa phong tặng GS/PGS\n**Năm sinh**: 1982 (Nữ)\n\n## Tiểu sử & Hoạt động chuyên môn\nNguyễn Thị Quỳnh Như là ThS. Giảng viên tại Học viện Âm nhạc Huế (HVA). Đơn vị công tác: Khoa Thanh nhạc - Guitare. Bộ môn / Chuyên môn: Bộ môn Thanh nhạc. Chuyên ngành giảng dạy và hoạt động nghệ thuật: Thanh nhạc. Hồ sơ giảng viên cơ hữu được đối soát theo Báo cáo Ba Công khai (Biểu mẫu 20, STT 47) của Học viện Âm nhạc Huế gửi Bộ Giáo dục & Đào tạo.\n\n## Nguồn minh chứng và đối soát\n- **Báo cáo 3 Công khai (Biểu mẫu 20, Bộ GD&ĐT)**: STT 47, ký duyệt bởi Giám đốc TS. Hà Mai Hương.\n  Link văn bản: [https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf](https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf)\n- **Trang danh bạ khoa / cổng thông tin chính thức**:\n- [https://hocvienamnhachue.edu.vn/vi/khoa-thanh-nhac-guitare/](https://hocvienamnhachue.edu.vn/vi/khoa-thanh-nhac-guitare/)\n- [https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf](https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf)\n"
+    },
+    {
+      "id": "rag-prof-am-nhac-hue-tran-nguyen-vu",
+      "title": "Học viện Âm nhạc Huế - Giảng viên: ThS. Giảng viên Trần Nguyên Vũ (Khoa Thanh nhạc - Guitare)",
+      "category": "faculty_member",
+      "metadata": {
+        "university_id": "am-nhac-hue",
+        "university_name": "Học viện Âm nhạc Huế",
+        "lecturer_id": "prof-am-nhac-hue-tran-nguyen-vu",
+        "name": "Trần Nguyên Vũ",
+        "faculty": "Khoa Thanh nhạc - Guitare",
+        "department": "Bộ môn Thanh nhạc",
+        "degree": "Thạc sĩ",
+        "academic_rank": null,
+        "position": "Giảng viên",
+        "specialty": "Thanh nhạc",
+        "year_of_birth": 1983,
+        "gender": "Nam",
+        "phone": null,
+        "source_urls": [
+          "https://hocvienamnhachue.edu.vn/vi/khoa-thanh-nhac-guitare/",
+          "https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf"
+        ],
+        "verification_status": "verified",
+        "last_updated": "2026-10-19T12:21:08Z"
+      },
+      "content": "# Trần Nguyên Vũ - ThS. Giảng viên\n\n**Cơ sở đào tạo**: Học viện Âm nhạc Huế (HVA)\n**Khoa / Phòng / Viện**: Khoa Thanh nhạc - Guitare\n**Bộ môn / Chuyên ngành**: Bộ môn Thanh nhạc\n**Chức vụ hiện tại**: Giảng viên\n**Học vị**: Thạc sĩ\n**Học hàm**: Chưa phong tặng GS/PGS\n**Năm sinh**: 1983 (Nam)\n\n## Tiểu sử & Hoạt động chuyên môn\nTrần Nguyên Vũ là ThS. Giảng viên tại Học viện Âm nhạc Huế (HVA). Đơn vị công tác: Khoa Thanh nhạc - Guitare. Bộ môn / Chuyên môn: Bộ môn Thanh nhạc. Chuyên ngành giảng dạy và hoạt động nghệ thuật: Thanh nhạc. Hồ sơ giảng viên cơ hữu được đối soát theo Báo cáo Ba Công khai (Biểu mẫu 20, STT 48) của Học viện Âm nhạc Huế gửi Bộ Giáo dục & Đào tạo.\n\n## Nguồn minh chứng và đối soát\n- **Báo cáo 3 Công khai (Biểu mẫu 20, Bộ GD&ĐT)**: STT 48, ký duyệt bởi Giám đốc TS. Hà Mai Hương.\n  Link văn bản: [https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf](https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf)\n- **Trang danh bạ khoa / cổng thông tin chính thức**:\n- [https://hocvienamnhachue.edu.vn/vi/khoa-thanh-nhac-guitare/](https://hocvienamnhachue.edu.vn/vi/khoa-thanh-nhac-guitare/)\n- [https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf](https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf)\n"
+    },
+    {
+      "id": "rag-prof-am-nhac-hue-nguyen-phuoc-thuy-long",
+      "title": "Học viện Âm nhạc Huế - Giảng viên: CN. Giảng viên Nguyễn Phước Thụy Long (Khoa Thanh nhạc - Guitare)",
+      "category": "faculty_member",
+      "metadata": {
+        "university_id": "am-nhac-hue",
+        "university_name": "Học viện Âm nhạc Huế",
+        "lecturer_id": "prof-am-nhac-hue-nguyen-phuoc-thuy-long",
+        "name": "Nguyễn Phước Thụy Long",
+        "faculty": "Khoa Thanh nhạc - Guitare",
+        "department": "Bộ môn Guitare",
+        "degree": "Cử nhân",
+        "academic_rank": null,
+        "position": "Giảng viên",
+        "specialty": "Guitare",
+        "year_of_birth": 1985,
+        "gender": "Nam",
+        "phone": null,
+        "source_urls": [
+          "https://hocvienamnhachue.edu.vn/vi/khoa-thanh-nhac-guitare/",
+          "https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf"
+        ],
+        "verification_status": "verified",
+        "last_updated": "2026-10-19T12:21:08Z"
+      },
+      "content": "# Nguyễn Phước Thụy Long - CN. Giảng viên\n\n**Cơ sở đào tạo**: Học viện Âm nhạc Huế (HVA)\n**Khoa / Phòng / Viện**: Khoa Thanh nhạc - Guitare\n**Bộ môn / Chuyên ngành**: Bộ môn Guitare\n**Chức vụ hiện tại**: Giảng viên\n**Học vị**: Cử nhân\n**Học hàm**: Chưa phong tặng GS/PGS\n**Năm sinh**: 1985 (Nam)\n\n## Tiểu sử & Hoạt động chuyên môn\nNguyễn Phước Thụy Long là CN. Giảng viên tại Học viện Âm nhạc Huế (HVA). Đơn vị công tác: Khoa Thanh nhạc - Guitare. Bộ môn / Chuyên môn: Bộ môn Guitare. Chuyên ngành giảng dạy và hoạt động nghệ thuật: Guitare. Hồ sơ giảng viên cơ hữu được đối soát theo Báo cáo Ba Công khai (Biểu mẫu 20, STT 49) của Học viện Âm nhạc Huế gửi Bộ Giáo dục & Đào tạo.\n\n## Nguồn minh chứng và đối soát\n- **Báo cáo 3 Công khai (Biểu mẫu 20, Bộ GD&ĐT)**: STT 49, ký duyệt bởi Giám đốc TS. Hà Mai Hương.\n  Link văn bản: [https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf](https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf)\n- **Trang danh bạ khoa / cổng thông tin chính thức**:\n- [https://hocvienamnhachue.edu.vn/vi/khoa-thanh-nhac-guitare/](https://hocvienamnhachue.edu.vn/vi/khoa-thanh-nhac-guitare/)\n- [https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf](https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf)\n"
+    },
+    {
+      "id": "rag-prof-am-nhac-hue-nguyen-hoang-hai",
+      "title": "Học viện Âm nhạc Huế - Giảng viên: CN. Giảng viên Nguyễn Hoàng Hải (Khoa Thanh nhạc - Guitare)",
+      "category": "faculty_member",
+      "metadata": {
+        "university_id": "am-nhac-hue",
+        "university_name": "Học viện Âm nhạc Huế",
+        "lecturer_id": "prof-am-nhac-hue-nguyen-hoang-hai",
+        "name": "Nguyễn Hoàng Hải",
+        "faculty": "Khoa Thanh nhạc - Guitare",
+        "department": "Bộ môn Guitare",
+        "degree": "Cử nhân",
+        "academic_rank": null,
+        "position": "Giảng viên",
+        "specialty": "Guitare",
+        "year_of_birth": 1986,
+        "gender": "Nam",
+        "phone": null,
+        "source_urls": [
+          "https://hocvienamnhachue.edu.vn/vi/khoa-thanh-nhac-guitare/",
+          "https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf"
+        ],
+        "verification_status": "verified",
+        "last_updated": "2026-10-19T12:21:08Z"
+      },
+      "content": "# Nguyễn Hoàng Hải - CN. Giảng viên\n\n**Cơ sở đào tạo**: Học viện Âm nhạc Huế (HVA)\n**Khoa / Phòng / Viện**: Khoa Thanh nhạc - Guitare\n**Bộ môn / Chuyên ngành**: Bộ môn Guitare\n**Chức vụ hiện tại**: Giảng viên\n**Học vị**: Cử nhân\n**Học hàm**: Chưa phong tặng GS/PGS\n**Năm sinh**: 1986 (Nam)\n\n## Tiểu sử & Hoạt động chuyên môn\nNguyễn Hoàng Hải là CN. Giảng viên tại Học viện Âm nhạc Huế (HVA). Đơn vị công tác: Khoa Thanh nhạc - Guitare. Bộ môn / Chuyên môn: Bộ môn Guitare. Chuyên ngành giảng dạy và hoạt động nghệ thuật: Guitare. Hồ sơ giảng viên cơ hữu được đối soát theo Báo cáo Ba Công khai (Biểu mẫu 20, STT 50) của Học viện Âm nhạc Huế gửi Bộ Giáo dục & Đào tạo.\n\n## Nguồn minh chứng và đối soát\n- **Báo cáo 3 Công khai (Biểu mẫu 20, Bộ GD&ĐT)**: STT 50, ký duyệt bởi Giám đốc TS. Hà Mai Hương.\n  Link văn bản: [https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf](https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf)\n- **Trang danh bạ khoa / cổng thông tin chính thức**:\n- [https://hocvienamnhachue.edu.vn/vi/khoa-thanh-nhac-guitare/](https://hocvienamnhachue.edu.vn/vi/khoa-thanh-nhac-guitare/)\n- [https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf](https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf)\n"
+    },
+    {
+      "id": "rag-prof-am-nhac-hue-nguyen-thi-anh-tuyet",
+      "title": "Học viện Âm nhạc Huế - Giảng viên: CN. Giáo vụ khoa Nguyễn Thị Ánh Tuyết (Khoa Thanh nhạc - Guitare)",
+      "category": "faculty_member",
+      "metadata": {
+        "university_id": "am-nhac-hue",
+        "university_name": "Học viện Âm nhạc Huế",
+        "lecturer_id": "prof-am-nhac-hue-nguyen-thi-anh-tuyet",
+        "name": "Nguyễn Thị Ánh Tuyết",
+        "faculty": "Khoa Thanh nhạc - Guitare",
+        "department": "Văn phòng Khoa",
+        "degree": "Cử nhân",
+        "academic_rank": null,
+        "position": "Giáo vụ khoa",
+        "specialty": "Quản lý Giáo vụ",
+        "year_of_birth": 1988,
+        "gender": "Nữ",
+        "phone": null,
+        "source_urls": [
+          "https://hocvienamnhachue.edu.vn/vi/khoa-thanh-nhac-guitare/"
+        ],
+        "verification_status": "verified",
+        "last_updated": "2026-10-19T12:21:08Z"
+      },
+      "content": "# Nguyễn Thị Ánh Tuyết - CN. Giáo vụ khoa\n\n**Cơ sở đào tạo**: Học viện Âm nhạc Huế (HVA)\n**Khoa / Phòng / Viện**: Khoa Thanh nhạc - Guitare\n**Bộ môn / Chuyên ngành**: Văn phòng Khoa\n**Chức vụ hiện tại**: Giáo vụ khoa\n**Học vị**: Cử nhân\n**Học hàm**: Chưa phong tặng GS/PGS\n**Năm sinh**: 1988 (Nữ)\n\n## Tiểu sử & Hoạt động chuyên môn\nNguyễn Thị Ánh Tuyết là CN. Giáo vụ khoa tại Học viện Âm nhạc Huế (HVA). Đơn vị công tác: Khoa Thanh nhạc - Guitare. Bộ môn / Chuyên môn: Văn phòng Khoa. Hiện giữ chức vụ: Giáo vụ khoa. Chuyên ngành giảng dạy và hoạt động nghệ thuật: Quản lý Giáo vụ. Thông tin công tác được chứng thực từ trang thông tin điện tử chính thức của Học viện Âm nhạc Huế.\n\n## Nguồn minh chứng và đối soát\n- **Trang danh bạ khoa / cổng thông tin chính thức**:\n- [https://hocvienamnhachue.edu.vn/vi/khoa-thanh-nhac-guitare/](https://hocvienamnhachue.edu.vn/vi/khoa-thanh-nhac-guitare/)\n"
+    },
+    {
+      "id": "rag-prof-am-nhac-hue-mai-anh",
+      "title": "Học viện Âm nhạc Huế - Giảng viên: ThS. Giảng viên chính Mai Anh (Phòng Đào tạo)",
+      "category": "faculty_member",
+      "metadata": {
+        "university_id": "am-nhac-hue",
+        "university_name": "Học viện Âm nhạc Huế",
+        "lecturer_id": "prof-am-nhac-hue-mai-anh",
+        "name": "Mai Anh",
+        "faculty": "Phòng Đào tạo",
+        "department": "Quản lý Đào tạo",
+        "degree": "Thạc sĩ",
+        "academic_rank": null,
+        "position": "Trưởng phòng Đào tạo",
+        "specialty": "Chỉ huy",
+        "year_of_birth": 1974,
+        "gender": "Nam",
+        "phone": null,
+        "source_urls": [
+          "https://hocvienamnhachue.edu.vn/vi/phong-dao-tao/",
+          "https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf"
+        ],
+        "verification_status": "verified",
+        "last_updated": "2026-10-19T12:21:08Z"
+      },
+      "content": "# Mai Anh - ThS. Giảng viên chính\n\n**Cơ sở đào tạo**: Học viện Âm nhạc Huế (HVA)\n**Khoa / Phòng / Viện**: Phòng Đào tạo\n**Bộ môn / Chuyên ngành**: Quản lý Đào tạo\n**Chức vụ hiện tại**: Trưởng phòng Đào tạo\n**Học vị**: Thạc sĩ\n**Học hàm**: Chưa phong tặng GS/PGS\n**Năm sinh**: 1974 (Nam)\n\n## Tiểu sử & Hoạt động chuyên môn\nMai Anh là ThS. Giảng viên chính tại Học viện Âm nhạc Huế (HVA). Đơn vị công tác: Phòng Đào tạo. Bộ môn / Chuyên môn: Quản lý Đào tạo. Hiện giữ chức vụ: Trưởng phòng Đào tạo. Chuyên ngành giảng dạy và hoạt động nghệ thuật: Chỉ huy. Hồ sơ giảng viên cơ hữu được đối soát theo Báo cáo Ba Công khai (Biểu mẫu 20, STT 10) của Học viện Âm nhạc Huế gửi Bộ Giáo dục & Đào tạo.\n\n## Nguồn minh chứng và đối soát\n- **Báo cáo 3 Công khai (Biểu mẫu 20, Bộ GD&ĐT)**: STT 10, ký duyệt bởi Giám đốc TS. Hà Mai Hương.\n  Link văn bản: [https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf](https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf)\n- **Trang danh bạ khoa / cổng thông tin chính thức**:\n- [https://hocvienamnhachue.edu.vn/vi/phong-dao-tao/](https://hocvienamnhachue.edu.vn/vi/phong-dao-tao/)\n- [https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf](https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf)\n"
+    },
+    {
+      "id": "rag-prof-am-nhac-hue-nguyen-thi-phuong-tu",
+      "title": "Học viện Âm nhạc Huế - Giảng viên: ThS. CVC. Phó Trưởng phòng Nguyễn Thị Phương Tú (Phòng Đào tạo)",
+      "category": "faculty_member",
+      "metadata": {
+        "university_id": "am-nhac-hue",
+        "university_name": "Học viện Âm nhạc Huế",
+        "lecturer_id": "prof-am-nhac-hue-nguyen-thi-phuong-tu",
+        "name": "Nguyễn Thị Phương Tú",
+        "faculty": "Phòng Đào tạo",
+        "department": "Quản lý Đào tạo",
+        "degree": "Thạc sĩ",
+        "academic_rank": null,
+        "position": "Phó Trưởng phòng Đào tạo",
+        "specialty": "Lý luận",
+        "year_of_birth": 1980,
+        "gender": "Nữ",
+        "phone": null,
+        "source_urls": [
+          "https://hocvienamnhachue.edu.vn/vi/phong-dao-tao/",
+          "https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf"
+        ],
+        "verification_status": "verified",
+        "last_updated": "2026-10-19T12:21:08Z"
+      },
+      "content": "# Nguyễn Thị Phương Tú - ThS. CVC. Phó Trưởng phòng\n\n**Cơ sở đào tạo**: Học viện Âm nhạc Huế (HVA)\n**Khoa / Phòng / Viện**: Phòng Đào tạo\n**Bộ môn / Chuyên ngành**: Quản lý Đào tạo\n**Chức vụ hiện tại**: Phó Trưởng phòng Đào tạo\n**Học vị**: Thạc sĩ\n**Học hàm**: Chưa phong tặng GS/PGS\n**Năm sinh**: 1980 (Nữ)\n\n## Tiểu sử & Hoạt động chuyên môn\nNguyễn Thị Phương Tú là ThS. CVC. Phó Trưởng phòng tại Học viện Âm nhạc Huế (HVA). Đơn vị công tác: Phòng Đào tạo. Bộ môn / Chuyên môn: Quản lý Đào tạo. Hiện giữ chức vụ: Phó Trưởng phòng Đào tạo. Chuyên ngành giảng dạy và hoạt động nghệ thuật: Lý luận. Hồ sơ giảng viên cơ hữu được đối soát theo Báo cáo Ba Công khai (Biểu mẫu 20, STT 52) của Học viện Âm nhạc Huế gửi Bộ Giáo dục & Đào tạo.\n\n## Nguồn minh chứng và đối soát\n- **Báo cáo 3 Công khai (Biểu mẫu 20, Bộ GD&ĐT)**: STT 52, ký duyệt bởi Giám đốc TS. Hà Mai Hương.\n  Link văn bản: [https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf](https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf)\n- **Trang danh bạ khoa / cổng thông tin chính thức**:\n- [https://hocvienamnhachue.edu.vn/vi/phong-dao-tao/](https://hocvienamnhachue.edu.vn/vi/phong-dao-tao/)\n- [https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf](https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf)\n"
+    },
+    {
+      "id": "rag-prof-am-nhac-hue-truong-thi-ly-sa",
+      "title": "Học viện Âm nhạc Huế - Giảng viên: ThS. Chuyên viên Trương Thị Ly Sa (Phòng Đào tạo)",
+      "category": "faculty_member",
+      "metadata": {
+        "university_id": "am-nhac-hue",
+        "university_name": "Học viện Âm nhạc Huế",
+        "lecturer_id": "prof-am-nhac-hue-truong-thi-ly-sa",
+        "name": "Trương Thị Ly Sa",
+        "faculty": "Phòng Đào tạo",
+        "department": "Tổ Đào tạo Đại học",
+        "degree": "Thạc sĩ",
+        "academic_rank": null,
+        "position": "Chuyên viên",
+        "specialty": "Quản lý Đào tạo",
+        "year_of_birth": 1985,
+        "gender": "Nữ",
+        "phone": null,
+        "source_urls": [
+          "https://hocvienamnhachue.edu.vn/vi/phong-dao-tao/"
+        ],
+        "verification_status": "verified",
+        "last_updated": "2026-10-19T12:21:08Z"
+      },
+      "content": "# Trương Thị Ly Sa - ThS. Chuyên viên\n\n**Cơ sở đào tạo**: Học viện Âm nhạc Huế (HVA)\n**Khoa / Phòng / Viện**: Phòng Đào tạo\n**Bộ môn / Chuyên ngành**: Tổ Đào tạo Đại học\n**Chức vụ hiện tại**: Chuyên viên\n**Học vị**: Thạc sĩ\n**Học hàm**: Chưa phong tặng GS/PGS\n**Năm sinh**: 1985 (Nữ)\n\n## Tiểu sử & Hoạt động chuyên môn\nTrương Thị Ly Sa là ThS. Chuyên viên tại Học viện Âm nhạc Huế (HVA). Đơn vị công tác: Phòng Đào tạo. Bộ môn / Chuyên môn: Tổ Đào tạo Đại học. Hiện giữ chức vụ: Chuyên viên. Chuyên ngành giảng dạy và hoạt động nghệ thuật: Quản lý Đào tạo. Thông tin công tác được chứng thực từ trang thông tin điện tử chính thức của Học viện Âm nhạc Huế.\n\n## Nguồn minh chứng và đối soát\n- **Trang danh bạ khoa / cổng thông tin chính thức**:\n- [https://hocvienamnhachue.edu.vn/vi/phong-dao-tao/](https://hocvienamnhachue.edu.vn/vi/phong-dao-tao/)\n"
+    },
+    {
+      "id": "rag-prof-am-nhac-hue-tran-manh-hung",
+      "title": "Học viện Âm nhạc Huế - Giảng viên: ThS. Giảng viên Trần Mạnh Hùng (Phòng Khảo thí và ĐBCLGD)",
+      "category": "faculty_member",
+      "metadata": {
+        "university_id": "am-nhac-hue",
+        "university_name": "Học viện Âm nhạc Huế",
+        "lecturer_id": "prof-am-nhac-hue-tran-manh-hung",
+        "name": "Trần Mạnh Hùng",
+        "faculty": "Phòng Khảo thí và ĐBCLGD",
+        "department": "Khảo thí & Đảm bảo Chất lượng",
+        "degree": "Thạc sĩ",
+        "academic_rank": null,
+        "position": "Phó Trưởng phòng phụ trách",
+        "specialty": "Piano",
+        "year_of_birth": 1978,
+        "gender": "Nam",
+        "phone": null,
+        "source_urls": [
+          "https://hocvienamnhachue.edu.vn/vi/phong-khao-thi-va-dam-bao-chat-luong-giao-duc/",
+          "https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf"
+        ],
+        "verification_status": "verified",
+        "last_updated": "2026-10-19T12:21:08Z"
+      },
+      "content": "# Trần Mạnh Hùng - ThS. Giảng viên\n\n**Cơ sở đào tạo**: Học viện Âm nhạc Huế (HVA)\n**Khoa / Phòng / Viện**: Phòng Khảo thí và ĐBCLGD\n**Bộ môn / Chuyên ngành**: Khảo thí & Đảm bảo Chất lượng\n**Chức vụ hiện tại**: Phó Trưởng phòng phụ trách\n**Học vị**: Thạc sĩ\n**Học hàm**: Chưa phong tặng GS/PGS\n**Năm sinh**: 1978 (Nam)\n\n## Tiểu sử & Hoạt động chuyên môn\nTrần Mạnh Hùng là ThS. Giảng viên tại Học viện Âm nhạc Huế (HVA). Đơn vị công tác: Phòng Khảo thí và ĐBCLGD. Bộ môn / Chuyên môn: Khảo thí & Đảm bảo Chất lượng. Hiện giữ chức vụ: Phó Trưởng phòng phụ trách. Chuyên ngành giảng dạy và hoạt động nghệ thuật: Piano. Hồ sơ giảng viên cơ hữu được đối soát theo Báo cáo Ba Công khai (Biểu mẫu 20, STT 51) của Học viện Âm nhạc Huế gửi Bộ Giáo dục & Đào tạo.\n\n## Nguồn minh chứng và đối soát\n- **Báo cáo 3 Công khai (Biểu mẫu 20, Bộ GD&ĐT)**: STT 51, ký duyệt bởi Giám đốc TS. Hà Mai Hương.\n  Link văn bản: [https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf](https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf)\n- **Trang danh bạ khoa / cổng thông tin chính thức**:\n- [https://hocvienamnhachue.edu.vn/vi/phong-khao-thi-va-dam-bao-chat-luong-giao-duc/](https://hocvienamnhachue.edu.vn/vi/phong-khao-thi-va-dam-bao-chat-luong-giao-duc/)\n- [https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf](https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf)\n"
+    },
+    {
+      "id": "rag-prof-am-nhac-hue-hoang-van-chinh",
+      "title": "Học viện Âm nhạc Huế - Giảng viên: CN. Chuyên viên Hoàng Văn Chính (Phòng Khảo thí và ĐBCLGD)",
+      "category": "faculty_member",
+      "metadata": {
+        "university_id": "am-nhac-hue",
+        "university_name": "Học viện Âm nhạc Huế",
+        "lecturer_id": "prof-am-nhac-hue-hoang-van-chinh",
+        "name": "Hoàng Văn Chính",
+        "faculty": "Phòng Khảo thí và ĐBCLGD",
+        "department": "Khảo thí & Đảm bảo Chất lượng",
+        "degree": "Cử nhân",
+        "academic_rank": null,
+        "position": "Chuyên viên",
+        "specialty": "Khảo thí & ĐBCL",
+        "year_of_birth": 1986,
+        "gender": "Nam",
+        "phone": null,
+        "source_urls": [
+          "https://hocvienamnhachue.edu.vn/vi/phong-khao-thi-va-dam-bao-chat-luong-giao-duc/"
+        ],
+        "verification_status": "verified",
+        "last_updated": "2026-10-19T12:21:08Z"
+      },
+      "content": "# Hoàng Văn Chính - CN. Chuyên viên\n\n**Cơ sở đào tạo**: Học viện Âm nhạc Huế (HVA)\n**Khoa / Phòng / Viện**: Phòng Khảo thí và ĐBCLGD\n**Bộ môn / Chuyên ngành**: Khảo thí & Đảm bảo Chất lượng\n**Chức vụ hiện tại**: Chuyên viên\n**Học vị**: Cử nhân\n**Học hàm**: Chưa phong tặng GS/PGS\n**Năm sinh**: 1986 (Nam)\n\n## Tiểu sử & Hoạt động chuyên môn\nHoàng Văn Chính là CN. Chuyên viên tại Học viện Âm nhạc Huế (HVA). Đơn vị công tác: Phòng Khảo thí và ĐBCLGD. Bộ môn / Chuyên môn: Khảo thí & Đảm bảo Chất lượng. Hiện giữ chức vụ: Chuyên viên. Chuyên ngành giảng dạy và hoạt động nghệ thuật: Khảo thí & ĐBCL. Thông tin công tác được chứng thực từ trang thông tin điện tử chính thức của Học viện Âm nhạc Huế.\n\n## Nguồn minh chứng và đối soát\n- **Trang danh bạ khoa / cổng thông tin chính thức**:\n- [https://hocvienamnhachue.edu.vn/vi/phong-khao-thi-va-dam-bao-chat-luong-giao-duc/](https://hocvienamnhachue.edu.vn/vi/phong-khao-thi-va-dam-bao-chat-luong-giao-duc/)\n"
+    },
+    {
+      "id": "rag-prof-am-nhac-hue-tran-trung-bac",
+      "title": "Học viện Âm nhạc Huế - Giảng viên: ThS. Chuyên viên Trần Trung Bắc (Phòng Khảo thí và ĐBCLGD)",
+      "category": "faculty_member",
+      "metadata": {
+        "university_id": "am-nhac-hue",
+        "university_name": "Học viện Âm nhạc Huế",
+        "lecturer_id": "prof-am-nhac-hue-tran-trung-bac",
+        "name": "Trần Trung Bắc",
+        "faculty": "Phòng Khảo thí và ĐBCLGD",
+        "department": "Khảo thí & Đảm bảo Chất lượng",
+        "degree": "Thạc sĩ",
+        "academic_rank": null,
+        "position": "Chuyên viên",
+        "specialty": "Khảo thí & ĐBCL",
+        "year_of_birth": 1982,
+        "gender": "Nam",
+        "phone": null,
+        "source_urls": [
+          "https://hocvienamnhachue.edu.vn/vi/phong-khao-thi-va-dam-bao-chat-luong-giao-duc/"
+        ],
+        "verification_status": "verified",
+        "last_updated": "2026-10-19T12:21:08Z"
+      },
+      "content": "# Trần Trung Bắc - ThS. Chuyên viên\n\n**Cơ sở đào tạo**: Học viện Âm nhạc Huế (HVA)\n**Khoa / Phòng / Viện**: Phòng Khảo thí và ĐBCLGD\n**Bộ môn / Chuyên ngành**: Khảo thí & Đảm bảo Chất lượng\n**Chức vụ hiện tại**: Chuyên viên\n**Học vị**: Thạc sĩ\n**Học hàm**: Chưa phong tặng GS/PGS\n**Năm sinh**: 1982 (Nam)\n\n## Tiểu sử & Hoạt động chuyên môn\nTrần Trung Bắc là ThS. Chuyên viên tại Học viện Âm nhạc Huế (HVA). Đơn vị công tác: Phòng Khảo thí và ĐBCLGD. Bộ môn / Chuyên môn: Khảo thí & Đảm bảo Chất lượng. Hiện giữ chức vụ: Chuyên viên. Chuyên ngành giảng dạy và hoạt động nghệ thuật: Khảo thí & ĐBCL. Thông tin công tác được chứng thực từ trang thông tin điện tử chính thức của Học viện Âm nhạc Huế.\n\n## Nguồn minh chứng và đối soát\n- **Trang danh bạ khoa / cổng thông tin chính thức**:\n- [https://hocvienamnhachue.edu.vn/vi/phong-khao-thi-va-dam-bao-chat-luong-giao-duc/](https://hocvienamnhachue.edu.vn/vi/phong-khao-thi-va-dam-bao-chat-luong-giao-duc/)\n"
+    },
+    {
+      "id": "rag-prof-am-nhac-hue-tran-dinh-khac-du",
+      "title": "Học viện Âm nhạc Huế - Giảng viên: ThS. Giảng viên Trần Đình Khắc Du (Phòng Hành chính Tổng hợp)",
+      "category": "faculty_member",
+      "metadata": {
+        "university_id": "am-nhac-hue",
+        "university_name": "Học viện Âm nhạc Huế",
+        "lecturer_id": "prof-am-nhac-hue-tran-dinh-khac-du",
+        "name": "Trần Đình Khắc Du",
+        "faculty": "Phòng Hành chính Tổng hợp",
+        "department": "Hành chính & Quản trị",
+        "degree": "Thạc sĩ",
+        "academic_rank": null,
+        "position": "Phó Trưởng phòng phụ trách",
+        "specialty": "Piano",
+        "year_of_birth": 1981,
+        "gender": "Nam",
+        "phone": null,
+        "source_urls": [
+          "https://hocvienamnhachue.edu.vn/vi/phong-hanh-chinh-tong-hop/",
+          "https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf"
+        ],
+        "verification_status": "verified",
+        "last_updated": "2026-10-19T12:21:08Z"
+      },
+      "content": "# Trần Đình Khắc Du - ThS. Giảng viên\n\n**Cơ sở đào tạo**: Học viện Âm nhạc Huế (HVA)\n**Khoa / Phòng / Viện**: Phòng Hành chính Tổng hợp\n**Bộ môn / Chuyên ngành**: Hành chính & Quản trị\n**Chức vụ hiện tại**: Phó Trưởng phòng phụ trách\n**Học vị**: Thạc sĩ\n**Học hàm**: Chưa phong tặng GS/PGS\n**Năm sinh**: 1981 (Nam)\n\n## Tiểu sử & Hoạt động chuyên môn\nTrần Đình Khắc Du là ThS. Giảng viên tại Học viện Âm nhạc Huế (HVA). Đơn vị công tác: Phòng Hành chính Tổng hợp. Bộ môn / Chuyên môn: Hành chính & Quản trị. Hiện giữ chức vụ: Phó Trưởng phòng phụ trách. Chuyên ngành giảng dạy và hoạt động nghệ thuật: Piano. Hồ sơ giảng viên cơ hữu được đối soát theo Báo cáo Ba Công khai (Biểu mẫu 20, STT 54) của Học viện Âm nhạc Huế gửi Bộ Giáo dục & Đào tạo.\n\n## Nguồn minh chứng và đối soát\n- **Báo cáo 3 Công khai (Biểu mẫu 20, Bộ GD&ĐT)**: STT 54, ký duyệt bởi Giám đốc TS. Hà Mai Hương.\n  Link văn bản: [https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf](https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf)\n- **Trang danh bạ khoa / cổng thông tin chính thức**:\n- [https://hocvienamnhachue.edu.vn/vi/phong-hanh-chinh-tong-hop/](https://hocvienamnhachue.edu.vn/vi/phong-hanh-chinh-tong-hop/)\n- [https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf](https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf)\n"
+    },
+    {
+      "id": "rag-prof-am-nhac-hue-truong-thi-le-thuong",
+      "title": "Học viện Âm nhạc Huế - Giảng viên: ThS. Giảng viên Trương Thị Lệ Thương (Phòng Hành chính Tổng hợp)",
+      "category": "faculty_member",
+      "metadata": {
+        "university_id": "am-nhac-hue",
+        "university_name": "Học viện Âm nhạc Huế",
+        "lecturer_id": "prof-am-nhac-hue-truong-thi-le-thuong",
+        "name": "Trương Thị Lệ Thương",
+        "faculty": "Phòng Hành chính Tổng hợp",
+        "department": "Hành chính & Quản trị",
+        "degree": "Thạc sĩ",
+        "academic_rank": null,
+        "position": "Phó Trưởng phòng",
+        "specialty": "Thanh nhạc",
+        "year_of_birth": 1981,
+        "gender": "Nữ",
+        "phone": null,
+        "source_urls": [
+          "https://hocvienamnhachue.edu.vn/vi/phong-hanh-chinh-tong-hop/",
+          "https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf"
+        ],
+        "verification_status": "verified",
+        "last_updated": "2026-10-19T12:21:08Z"
+      },
+      "content": "# Trương Thị Lệ Thương - ThS. Giảng viên\n\n**Cơ sở đào tạo**: Học viện Âm nhạc Huế (HVA)\n**Khoa / Phòng / Viện**: Phòng Hành chính Tổng hợp\n**Bộ môn / Chuyên ngành**: Hành chính & Quản trị\n**Chức vụ hiện tại**: Phó Trưởng phòng\n**Học vị**: Thạc sĩ\n**Học hàm**: Chưa phong tặng GS/PGS\n**Năm sinh**: 1981 (Nữ)\n\n## Tiểu sử & Hoạt động chuyên môn\nTrương Thị Lệ Thương là ThS. Giảng viên tại Học viện Âm nhạc Huế (HVA). Đơn vị công tác: Phòng Hành chính Tổng hợp. Bộ môn / Chuyên môn: Hành chính & Quản trị. Hiện giữ chức vụ: Phó Trưởng phòng. Chuyên ngành giảng dạy và hoạt động nghệ thuật: Thanh nhạc. Hồ sơ giảng viên cơ hữu được đối soát theo Báo cáo Ba Công khai (Biểu mẫu 20, STT 53) của Học viện Âm nhạc Huế gửi Bộ Giáo dục & Đào tạo.\n\n## Nguồn minh chứng và đối soát\n- **Báo cáo 3 Công khai (Biểu mẫu 20, Bộ GD&ĐT)**: STT 53, ký duyệt bởi Giám đốc TS. Hà Mai Hương.\n  Link văn bản: [https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf](https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf)\n- **Trang danh bạ khoa / cổng thông tin chính thức**:\n- [https://hocvienamnhachue.edu.vn/vi/phong-hanh-chinh-tong-hop/](https://hocvienamnhachue.edu.vn/vi/phong-hanh-chinh-tong-hop/)\n- [https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf](https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf)\n"
+    },
+    {
+      "id": "rag-prof-am-nhac-hue-nguyen-thi-minh-anh",
+      "title": "Học viện Âm nhạc Huế - Giảng viên: ThS. Chuyên viên Nguyễn Thị Minh Ánh (Phòng Hành chính Tổng hợp)",
+      "category": "faculty_member",
+      "metadata": {
+        "university_id": "am-nhac-hue",
+        "university_name": "Học viện Âm nhạc Huế",
+        "lecturer_id": "prof-am-nhac-hue-nguyen-thi-minh-anh",
+        "name": "Nguyễn Thị Minh Ánh",
+        "faculty": "Phòng Hành chính Tổng hợp",
+        "department": "Tổ Văn phòng",
+        "degree": "Thạc sĩ",
+        "academic_rank": null,
+        "position": "Chuyên viên",
+        "specialty": "Hành chính Tổng hợp",
+        "year_of_birth": 1985,
+        "gender": "Nữ",
+        "phone": null,
+        "source_urls": [
+          "https://hocvienamnhachue.edu.vn/vi/phong-hanh-chinh-tong-hop/"
+        ],
+        "verification_status": "verified",
+        "last_updated": "2026-10-19T12:21:08Z"
+      },
+      "content": "# Nguyễn Thị Minh Ánh - ThS. Chuyên viên\n\n**Cơ sở đào tạo**: Học viện Âm nhạc Huế (HVA)\n**Khoa / Phòng / Viện**: Phòng Hành chính Tổng hợp\n**Bộ môn / Chuyên ngành**: Tổ Văn phòng\n**Chức vụ hiện tại**: Chuyên viên\n**Học vị**: Thạc sĩ\n**Học hàm**: Chưa phong tặng GS/PGS\n**Năm sinh**: 1985 (Nữ)\n\n## Tiểu sử & Hoạt động chuyên môn\nNguyễn Thị Minh Ánh là ThS. Chuyên viên tại Học viện Âm nhạc Huế (HVA). Đơn vị công tác: Phòng Hành chính Tổng hợp. Bộ môn / Chuyên môn: Tổ Văn phòng. Hiện giữ chức vụ: Chuyên viên. Chuyên ngành giảng dạy và hoạt động nghệ thuật: Hành chính Tổng hợp. Thông tin công tác được chứng thực từ trang thông tin điện tử chính thức của Học viện Âm nhạc Huế.\n\n## Nguồn minh chứng và đối soát\n- **Trang danh bạ khoa / cổng thông tin chính thức**:\n- [https://hocvienamnhachue.edu.vn/vi/phong-hanh-chinh-tong-hop/](https://hocvienamnhachue.edu.vn/vi/phong-hanh-chinh-tong-hop/)\n"
+    },
+    {
+      "id": "rag-prof-am-nhac-hue-nguyen-thi-minh-phuong",
+      "title": "Học viện Âm nhạc Huế - Giảng viên: ThS. Chuyên viên Nguyễn Thị Minh Phương (Phòng Hành chính Tổng hợp)",
+      "category": "faculty_member",
+      "metadata": {
+        "university_id": "am-nhac-hue",
+        "university_name": "Học viện Âm nhạc Huế",
+        "lecturer_id": "prof-am-nhac-hue-nguyen-thi-minh-phuong",
+        "name": "Nguyễn Thị Minh Phương",
+        "faculty": "Phòng Hành chính Tổng hợp",
+        "department": "Tổ Văn phòng",
+        "degree": "Thạc sĩ",
+        "academic_rank": null,
+        "position": "Chuyên viên",
+        "specialty": "Hành chính Tổng hợp",
+        "year_of_birth": 1988,
+        "gender": "Nữ",
+        "phone": null,
+        "source_urls": [
+          "https://hocvienamnhachue.edu.vn/vi/phong-hanh-chinh-tong-hop/"
+        ],
+        "verification_status": "verified",
+        "last_updated": "2026-10-19T12:21:08Z"
+      },
+      "content": "# Nguyễn Thị Minh Phương - ThS. Chuyên viên\n\n**Cơ sở đào tạo**: Học viện Âm nhạc Huế (HVA)\n**Khoa / Phòng / Viện**: Phòng Hành chính Tổng hợp\n**Bộ môn / Chuyên ngành**: Tổ Văn phòng\n**Chức vụ hiện tại**: Chuyên viên\n**Học vị**: Thạc sĩ\n**Học hàm**: Chưa phong tặng GS/PGS\n**Năm sinh**: 1988 (Nữ)\n\n## Tiểu sử & Hoạt động chuyên môn\nNguyễn Thị Minh Phương là ThS. Chuyên viên tại Học viện Âm nhạc Huế (HVA). Đơn vị công tác: Phòng Hành chính Tổng hợp. Bộ môn / Chuyên môn: Tổ Văn phòng. Hiện giữ chức vụ: Chuyên viên. Chuyên ngành giảng dạy và hoạt động nghệ thuật: Hành chính Tổng hợp. Thông tin công tác được chứng thực từ trang thông tin điện tử chính thức của Học viện Âm nhạc Huế.\n\n## Nguồn minh chứng và đối soát\n- **Trang danh bạ khoa / cổng thông tin chính thức**:\n- [https://hocvienamnhachue.edu.vn/vi/phong-hanh-chinh-tong-hop/](https://hocvienamnhachue.edu.vn/vi/phong-hanh-chinh-tong-hop/)\n"
+    },
+    {
+      "id": "rag-prof-am-nhac-hue-nguyen-thi-thanh-huong",
+      "title": "Học viện Âm nhạc Huế - Giảng viên: ThS. Giảng viên Nguyễn Thị Thanh Hương (Viện Nghiên cứu - Ứng dụng âm nhạc)",
+      "category": "faculty_member",
+      "metadata": {
+        "university_id": "am-nhac-hue",
+        "university_name": "Học viện Âm nhạc Huế",
+        "lecturer_id": "prof-am-nhac-hue-nguyen-thi-thanh-huong",
+        "name": "Nguyễn Thị Thanh Hương",
+        "faculty": "Viện Nghiên cứu - Ứng dụng âm nhạc",
+        "department": "Nghiên cứu & Biểu diễn Âm nhạc",
+        "degree": "Thạc sĩ",
+        "academic_rank": null,
+        "position": "Viện trưởng",
+        "specialty": "Thanh nhạc",
+        "year_of_birth": 1982,
+        "gender": "Nữ",
+        "phone": null,
+        "source_urls": [
+          "https://hocvienamnhachue.edu.vn/vi/trung-tam-bieu-dien-nhac/",
+          "https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf"
+        ],
+        "verification_status": "verified",
+        "last_updated": "2026-10-19T12:21:08Z"
+      },
+      "content": "# Nguyễn Thị Thanh Hương - ThS. Giảng viên\n\n**Cơ sở đào tạo**: Học viện Âm nhạc Huế (HVA)\n**Khoa / Phòng / Viện**: Viện Nghiên cứu - Ứng dụng âm nhạc\n**Bộ môn / Chuyên ngành**: Nghiên cứu & Biểu diễn Âm nhạc\n**Chức vụ hiện tại**: Viện trưởng\n**Học vị**: Thạc sĩ\n**Học hàm**: Chưa phong tặng GS/PGS\n**Năm sinh**: 1982 (Nữ)\n\n## Tiểu sử & Hoạt động chuyên môn\nNguyễn Thị Thanh Hương là ThS. Giảng viên tại Học viện Âm nhạc Huế (HVA). Đơn vị công tác: Viện Nghiên cứu - Ứng dụng âm nhạc. Bộ môn / Chuyên môn: Nghiên cứu & Biểu diễn Âm nhạc. Hiện giữ chức vụ: Viện trưởng. Chuyên ngành giảng dạy và hoạt động nghệ thuật: Thanh nhạc. Hồ sơ giảng viên cơ hữu được đối soát theo Báo cáo Ba Công khai (Biểu mẫu 20, STT 55) của Học viện Âm nhạc Huế gửi Bộ Giáo dục & Đào tạo.\n\n## Nguồn minh chứng và đối soát\n- **Báo cáo 3 Công khai (Biểu mẫu 20, Bộ GD&ĐT)**: STT 55, ký duyệt bởi Giám đốc TS. Hà Mai Hương.\n  Link văn bản: [https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf](https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf)\n- **Trang danh bạ khoa / cổng thông tin chính thức**:\n- [https://hocvienamnhachue.edu.vn/vi/trung-tam-bieu-dien-nhac/](https://hocvienamnhachue.edu.vn/vi/trung-tam-bieu-dien-nhac/)\n- [https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf](https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf)\n"
+    },
+    {
+      "id": "rag-prof-am-nhac-hue-phan-thuan-thao",
+      "title": "Học viện Âm nhạc Huế - Giảng viên: TS. Giảng viên Phan Thuận Thảo (Viện Nghiên cứu - Ứng dụng âm nhạc)",
+      "category": "faculty_member",
+      "metadata": {
+        "university_id": "am-nhac-hue",
+        "university_name": "Học viện Âm nhạc Huế",
+        "lecturer_id": "prof-am-nhac-hue-phan-thuan-thao",
+        "name": "Phan Thuận Thảo",
+        "faculty": "Viện Nghiên cứu - Ứng dụng âm nhạc",
+        "department": "Nghiên cứu & Biểu diễn Âm nhạc",
+        "degree": "Tiến sĩ",
+        "academic_rank": null,
+        "position": "Chuyên viên nghiên cứu",
+        "specialty": "Lý luận",
+        "year_of_birth": 1984,
+        "gender": "Nữ",
+        "phone": null,
+        "source_urls": [
+          "https://hocvienamnhachue.edu.vn/vi/trung-tam-bieu-dien-nhac/",
+          "https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf"
+        ],
+        "verification_status": "verified",
+        "last_updated": "2026-10-19T12:21:08Z"
+      },
+      "content": "# Phan Thuận Thảo - TS. Giảng viên\n\n**Cơ sở đào tạo**: Học viện Âm nhạc Huế (HVA)\n**Khoa / Phòng / Viện**: Viện Nghiên cứu - Ứng dụng âm nhạc\n**Bộ môn / Chuyên ngành**: Nghiên cứu & Biểu diễn Âm nhạc\n**Chức vụ hiện tại**: Chuyên viên nghiên cứu\n**Học vị**: Tiến sĩ\n**Học hàm**: Chưa phong tặng GS/PGS\n**Năm sinh**: 1984 (Nữ)\n\n## Tiểu sử & Hoạt động chuyên môn\nPhan Thuận Thảo là TS. Giảng viên tại Học viện Âm nhạc Huế (HVA). Đơn vị công tác: Viện Nghiên cứu - Ứng dụng âm nhạc. Bộ môn / Chuyên môn: Nghiên cứu & Biểu diễn Âm nhạc. Hiện giữ chức vụ: Chuyên viên nghiên cứu. Chuyên ngành giảng dạy và hoạt động nghệ thuật: Lý luận. Hồ sơ giảng viên cơ hữu được đối soát theo Báo cáo Ba Công khai (Biểu mẫu 20, STT 56) của Học viện Âm nhạc Huế gửi Bộ Giáo dục & Đào tạo.\n\n## Nguồn minh chứng và đối soát\n- **Báo cáo 3 Công khai (Biểu mẫu 20, Bộ GD&ĐT)**: STT 56, ký duyệt bởi Giám đốc TS. Hà Mai Hương.\n  Link văn bản: [https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf](https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf)\n- **Trang danh bạ khoa / cổng thông tin chính thức**:\n- [https://hocvienamnhachue.edu.vn/vi/trung-tam-bieu-dien-nhac/](https://hocvienamnhachue.edu.vn/vi/trung-tam-bieu-dien-nhac/)\n- [https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf](https://hocvienamnhachue.edu.vn/wp-content/uploads/2022/12/Bi%E1%BB%83u-b%E1%BA%A3ng-20.pdf)\n"
+    },
+    {
+      "id": "rag-prof-am-nhac-hue-ngo-thi-thanh-binh",
+      "title": "Học viện Âm nhạc Huế - Giảng viên: ThS. Chuyên viên Ngô Thị Thanh Bình (Viện Nghiên cứu - Ứng dụng âm nhạc)",
+      "category": "faculty_member",
+      "metadata": {
+        "university_id": "am-nhac-hue",
+        "university_name": "Học viện Âm nhạc Huế",
+        "lecturer_id": "prof-am-nhac-hue-ngo-thi-thanh-binh",
+        "name": "Ngô Thị Thanh Bình",
+        "faculty": "Viện Nghiên cứu - Ứng dụng âm nhạc",
+        "department": "Nghiên cứu & Biểu diễn Âm nhạc",
+        "degree": "Thạc sĩ",
+        "academic_rank": null,
+        "position": "Chuyên viên",
+        "specialty": "Nghiên cứu & Ứng dụng",
+        "year_of_birth": 1986,
+        "gender": "Nữ",
+        "phone": null,
+        "source_urls": [
+          "https://hocvienamnhachue.edu.vn/vi/trung-tam-bieu-dien-nhac/"
+        ],
+        "verification_status": "verified",
+        "last_updated": "2026-10-19T12:21:08Z"
+      },
+      "content": "# Ngô Thị Thanh Bình - ThS. Chuyên viên\n\n**Cơ sở đào tạo**: Học viện Âm nhạc Huế (HVA)\n**Khoa / Phòng / Viện**: Viện Nghiên cứu - Ứng dụng âm nhạc\n**Bộ môn / Chuyên ngành**: Nghiên cứu & Biểu diễn Âm nhạc\n**Chức vụ hiện tại**: Chuyên viên\n**Học vị**: Thạc sĩ\n**Học hàm**: Chưa phong tặng GS/PGS\n**Năm sinh**: 1986 (Nữ)\n\n## Tiểu sử & Hoạt động chuyên môn\nNgô Thị Thanh Bình là ThS. Chuyên viên tại Học viện Âm nhạc Huế (HVA). Đơn vị công tác: Viện Nghiên cứu - Ứng dụng âm nhạc. Bộ môn / Chuyên môn: Nghiên cứu & Biểu diễn Âm nhạc. Hiện giữ chức vụ: Chuyên viên. Chuyên ngành giảng dạy và hoạt động nghệ thuật: Nghiên cứu & Ứng dụng. Thông tin công tác được chứng thực từ trang thông tin điện tử chính thức của Học viện Âm nhạc Huế.\n\n## Nguồn minh chứng và đối soát\n- **Trang danh bạ khoa / cổng thông tin chính thức**:\n- [https://hocvienamnhachue.edu.vn/vi/trung-tam-bieu-dien-nhac/](https://hocvienamnhachue.edu.vn/vi/trung-tam-bieu-dien-nhac/)\n"
+    },
+    {
+      "id": "rag-prof-am-nhac-hue-hoang-van-chien",
+      "title": "Học viện Âm nhạc Huế - Giảng viên: ThS. Chuyên viên Hoàng Văn Chiến (Viện Nghiên cứu - Ứng dụng âm nhạc)",
+      "category": "faculty_member",
+      "metadata": {
+        "university_id": "am-nhac-hue",
+        "university_name": "Học viện Âm nhạc Huế",
+        "lecturer_id": "prof-am-nhac-hue-hoang-van-chien",
+        "name": "Hoàng Văn Chiến",
+        "faculty": "Viện Nghiên cứu - Ứng dụng âm nhạc",
+        "department": "Nghiên cứu & Biểu diễn Âm nhạc",
+        "degree": "Thạc sĩ",
+        "academic_rank": null,
+        "position": "Chuyên viên",
+        "specialty": "Nghiên cứu & Biểu diễn",
+        "year_of_birth": 1984,
+        "gender": "Nam",
+        "phone": null,
+        "source_urls": [
+          "https://hocvienamnhachue.edu.vn/vi/trung-tam-bieu-dien-nhac/"
+        ],
+        "verification_status": "verified",
+        "last_updated": "2026-10-19T12:21:08Z"
+      },
+      "content": "# Hoàng Văn Chiến - ThS. Chuyên viên\n\n**Cơ sở đào tạo**: Học viện Âm nhạc Huế (HVA)\n**Khoa / Phòng / Viện**: Viện Nghiên cứu - Ứng dụng âm nhạc\n**Bộ môn / Chuyên ngành**: Nghiên cứu & Biểu diễn Âm nhạc\n**Chức vụ hiện tại**: Chuyên viên\n**Học vị**: Thạc sĩ\n**Học hàm**: Chưa phong tặng GS/PGS\n**Năm sinh**: 1984 (Nam)\n\n## Tiểu sử & Hoạt động chuyên môn\nHoàng Văn Chiến là ThS. Chuyên viên tại Học viện Âm nhạc Huế (HVA). Đơn vị công tác: Viện Nghiên cứu - Ứng dụng âm nhạc. Bộ môn / Chuyên môn: Nghiên cứu & Biểu diễn Âm nhạc. Hiện giữ chức vụ: Chuyên viên. Chuyên ngành giảng dạy và hoạt động nghệ thuật: Nghiên cứu & Biểu diễn. Thông tin công tác được chứng thực từ trang thông tin điện tử chính thức của Học viện Âm nhạc Huế.\n\n## Nguồn minh chứng và đối soát\n- **Trang danh bạ khoa / cổng thông tin chính thức**:\n- [https://hocvienamnhachue.edu.vn/vi/trung-tam-bieu-dien-nhac/](https://hocvienamnhachue.edu.vn/vi/trung-tam-bieu-dien-nhac/)\n"
+    }
+  ]
+}

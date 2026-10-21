@@ -3,7 +3,13 @@
 import React, { useState } from "react";
 import { submitCorrectionRequest } from "@/lib/dataService";
 import { useTranslation } from "@/locales/i18n";
-import { Flag, X, Send, AlertTriangle, CheckCircle2 } from "lucide-react";
+import {
+  PopArtFlag,
+  PopArtX,
+  PopArtSend,
+  PopArtAlertTriangle,
+  PopArtCheck,
+} from "@/components/icons/PopArtIcons";
 
 interface CorrectionModalProps {
   isOpen: boolean;
@@ -74,42 +80,43 @@ export const CorrectionModal: React.FC<CorrectionModalProps> = ({
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 animate-in fade-in duration-200">
-      <div className="bg-white border-2 border-gray-900 rounded-none w-full max-w-xl max-h-[90vh] flex flex-col">
+      <div className="bg-white border-3 border-black shadow-[8px_8px_0px_#000] rounded-none w-full max-w-xl max-h-[90vh] flex flex-col overflow-hidden">
         {/* Header */}
-        <div className="flex items-center justify-between p-5 border-b border-gray-200 bg-gray-50">
+        <div className="flex items-center justify-between p-5 border-b-2 border-black bg-white">
           <div className="flex items-center gap-2">
-            <Flag className="w-5 h-5 text-[#e03a3e]" />
+            <PopArtFlag className="w-5 h-5" />
             <div>
-              <h3 className="text-sm font-black uppercase tracking-tight text-gray-950">
+              <h3 className="text-sm font-mono font-black uppercase tracking-wider text-black">
                 {t("provenance.reportData")}
               </h3>
-              <p className="text-xs text-gray-500 font-medium">
-                Hồ sơ: <span className="text-gray-900 font-bold">{professorName}</span>
+              <p className="text-xs font-mono text-gray-700 font-medium">
+                Hồ sơ: <span className="text-black font-black">{professorName}</span>
               </p>
             </div>
           </div>
           <button
             onClick={onClose}
-            className="p-1 text-gray-400 hover:text-black hover:bg-gray-200 rounded-none transition-colors"
+            aria-label={t("common.close")}
+            className="p-1 border-2 border-black bg-white text-black shadow-[2px_2px_0px_#000] hover:bg-[#fee2e2] active:translate-x-[1px] active:translate-y-[1px] active:shadow-none transition-all cursor-pointer rounded-none"
           >
-            <X className="w-5 h-5" />
+            <PopArtX className="w-5 h-5" />
           </button>
         </div>
 
         {/* Form Body */}
-        <form onSubmit={handleSubmit} className="p-6 overflow-y-auto space-y-4 text-xs">
+        <form onSubmit={handleSubmit} className="p-6 overflow-y-auto space-y-4 text-xs font-mono bg-white">
           {statusMessage && (
             <div
-              className={`p-3 rounded-none text-xs font-bold flex items-center gap-2 ${
+              className={`p-3 rounded-none text-xs font-mono font-black flex items-center gap-2 border-2 border-black shadow-[2px_2px_0px_#000] ${
                 statusMessage.type === "success"
-                  ? "bg-emerald-50 text-emerald-800 border border-emerald-300"
-                  : "bg-red-50 text-red-800 border border-red-300"
+                  ? "bg-[#6ee7b7] text-black"
+                  : "bg-[#fee2e2] text-black"
               }`}
             >
               {statusMessage.type === "success" ? (
-                <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+                <PopArtCheck className="w-4 h-4" />
               ) : (
-                <AlertTriangle className="w-4 h-4 text-red-600" />
+                <PopArtAlertTriangle className="w-4 h-4" />
               )}
               <span>{statusMessage.text}</span>
             </div>
@@ -117,7 +124,7 @@ export const CorrectionModal: React.FC<CorrectionModalProps> = ({
 
           {/* Type of Request */}
           <div className="space-y-1.5">
-            <label className="font-bold text-gray-800 uppercase text-[10px] tracking-wider">
+            <label className="font-mono font-black text-black uppercase text-[10px] tracking-wider">
               Loại yêu cầu / Request Type:
             </label>
             <div className="grid grid-cols-3 gap-2">
@@ -130,10 +137,10 @@ export const CorrectionModal: React.FC<CorrectionModalProps> = ({
                   type="button"
                   key={opt.id}
                   onClick={() => setRequestType(opt.id as "correction" | "removal" | "conflict_report")}
-                  className={`p-2 border font-bold text-center rounded-none text-xs ${
+                  className={`p-2 border-2 border-black font-mono font-black text-center rounded-none text-xs transition-all cursor-pointer shadow-[2px_2px_0px_#000] active:translate-x-[1px] active:translate-y-[1px] active:shadow-none ${
                     requestType === opt.id
-                      ? "bg-black text-white border-black"
-                      : "bg-gray-50 text-gray-700 border-gray-200 hover:bg-gray-100"
+                      ? "bg-black text-[#fef9c3]"
+                      : "bg-white text-black hover:bg-[#fef9c3]"
                   }`}
                 >
                   {opt.label}
@@ -144,13 +151,13 @@ export const CorrectionModal: React.FC<CorrectionModalProps> = ({
 
           {/* Field selection */}
           <div className="space-y-1.5">
-            <label className="font-bold text-gray-800 uppercase text-[10px] tracking-wider">
+            <label className="font-mono font-black text-black uppercase text-[10px] tracking-wider">
               Trường thông tin cần xử lý:
             </label>
             <select
               value={targetField}
               onChange={(e) => setTargetField(e.target.value)}
-              className="w-full p-2.5 border border-gray-300 rounded-none bg-white font-medium focus:outline-none focus:border-black"
+              className="w-full p-2.5 border-2 border-black rounded-none bg-white font-mono font-bold text-xs shadow-[2px_2px_0px_#000] outline-none focus:outline-none focus-visible:outline-none focus:ring-0 focus-visible:ring-0 focus:bg-[#fef9c3]/30 text-black"
             >
               <option value="name">Họ và tên giảng viên</option>
               <option value="academicTitle">Học hàm / Học vị</option>
@@ -167,7 +174,7 @@ export const CorrectionModal: React.FC<CorrectionModalProps> = ({
           {requestType !== "removal" && (
             <div className="grid grid-cols-2 gap-3">
               <div className="space-y-1">
-                <label className="font-bold text-gray-700 text-[10px] uppercase">
+                <label className="font-mono font-black text-black text-[10px] uppercase">
                   Giá trị hiện tại trên web:
                 </label>
                 <input
@@ -175,11 +182,11 @@ export const CorrectionModal: React.FC<CorrectionModalProps> = ({
                   value={currentValue}
                   onChange={(e) => setCurrentValue(e.target.value)}
                   placeholder="Giá trị đang hiển thị..."
-                  className="w-full p-2 border border-gray-300 rounded-none font-medium focus:outline-none focus:border-black"
+                  className="w-full p-2.5 border-2 border-black rounded-none font-mono text-xs shadow-[2px_2px_0px_#000] outline-none focus:outline-none focus-visible:outline-none focus:ring-0 focus-visible:ring-0 focus:bg-[#fef9c3]/30 text-black bg-white"
                 />
               </div>
               <div className="space-y-1">
-                <label className="font-bold text-gray-700 text-[10px] uppercase">
+                <label className="font-mono font-black text-black text-[10px] uppercase">
                   Giá trị chính xác cần cập nhật:
                 </label>
                 <input
@@ -187,7 +194,7 @@ export const CorrectionModal: React.FC<CorrectionModalProps> = ({
                   value={proposedValue}
                   onChange={(e) => setProposedValue(e.target.value)}
                   placeholder="Giá trị chính xác..."
-                  className="w-full p-2 border border-gray-300 rounded-none font-medium focus:outline-none focus:border-black"
+                  className="w-full p-2.5 border-2 border-black rounded-none font-mono text-xs shadow-[2px_2px_0px_#000] outline-none focus:outline-none focus-visible:outline-none focus:ring-0 focus-visible:ring-0 focus:bg-[#fef9c3]/30 text-black bg-white"
                 />
               </div>
             </div>
@@ -195,23 +202,23 @@ export const CorrectionModal: React.FC<CorrectionModalProps> = ({
 
           {/* Evidence URL (Required) */}
           <div className="space-y-1">
-            <label className="font-bold text-gray-800 uppercase text-[10px] tracking-wider flex items-center justify-between">
+            <label className="font-mono font-black text-black uppercase text-[10px] tracking-wider flex items-center justify-between">
               <span>Liên kết nguồn minh chứng chính thức (*):</span>
-              <span className="text-gray-400 font-normal lowercase">(website trường, quyết định bổ nhiệm...)</span>
+              <span className="text-gray-500 font-normal lowercase">(website trường, quyết định...)</span>
             </label>
             <input
               type="url"
               required
               value={evidenceUrl}
               onChange={(e) => setEvidenceUrl(e.target.value)}
-              placeholder="https://... (URL trang khoa, phòng tổ chức cán bộ...)"
-              className="w-full p-2.5 border border-gray-300 rounded-none font-mono text-xs focus:outline-none focus:border-black"
+              placeholder="https://..."
+              className="w-full p-2.5 border-2 border-black rounded-none font-mono text-xs shadow-[2px_2px_0px_#000] outline-none focus:outline-none focus-visible:outline-none focus:ring-0 focus-visible:ring-0 focus:bg-[#fef9c3]/30 text-black bg-white"
             />
           </div>
 
           {/* Detailed explanation */}
           <div className="space-y-1">
-            <label className="font-bold text-gray-800 uppercase text-[10px] tracking-wider">
+            <label className="font-mono font-black text-black uppercase text-[10px] tracking-wider">
               Nội dung giải trình / Lý do:
             </label>
             <textarea
@@ -219,13 +226,13 @@ export const CorrectionModal: React.FC<CorrectionModalProps> = ({
               value={notes}
               onChange={(e) => setNotes(e.target.value)}
               placeholder="Vui lòng cung cấp bối cảnh hoặc đoạn văn bản chính thức đối chiếu..."
-              className="w-full p-2.5 border border-gray-300 rounded-none font-medium focus:outline-none focus:border-black"
+              className="w-full p-2.5 border-2 border-black rounded-none font-mono text-xs shadow-[2px_2px_0px_#000] outline-none focus:outline-none focus-visible:outline-none focus:ring-0 focus-visible:ring-0 focus:bg-[#fef9c3]/30 text-black bg-white"
             />
           </div>
 
           {/* Submitter Contact */}
           <div className="space-y-1">
-            <label className="font-bold text-gray-800 uppercase text-[10px] tracking-wider">
+            <label className="font-mono font-black text-black uppercase text-[10px] tracking-wider">
               Email liên hệ (để nhận thông báo kết quả thẩm định):
             </label>
             <input
@@ -233,25 +240,25 @@ export const CorrectionModal: React.FC<CorrectionModalProps> = ({
               value={contactEmail}
               onChange={(e) => setContactEmail(e.target.value)}
               placeholder="email@domain.edu.vn"
-              className="w-full p-2.5 border border-gray-300 rounded-none font-medium focus:outline-none focus:border-black"
+              className="w-full p-2.5 border-2 border-black rounded-none font-mono text-xs shadow-[2px_2px_0px_#000] outline-none focus:outline-none focus-visible:outline-none focus:ring-0 focus-visible:ring-0 focus:bg-[#fef9c3]/30 text-black bg-white"
             />
           </div>
 
           {/* Action buttons */}
-          <div className="pt-3 border-t border-gray-200 flex items-center justify-end gap-2">
+          <div className="pt-3 border-t-2 border-black flex items-center justify-end gap-3">
             <button
               type="button"
               onClick={onClose}
-              className="px-4 py-2 border border-gray-300 text-gray-700 font-bold uppercase rounded-none hover:bg-gray-100"
+              className="px-4 py-2 border-2 border-black shadow-[2px_2px_0px_#000] text-black font-mono font-black uppercase rounded-none bg-white hover:bg-black/5 active:translate-x-[1px] active:translate-y-[1px] active:shadow-none transition-all cursor-pointer"
             >
               Hủy
             </button>
             <button
               type="submit"
               disabled={loading}
-              className="px-5 py-2 bg-[#e03a3e] hover:bg-[#b91c1c] text-white font-bold uppercase rounded-none flex items-center gap-1.5"
+              className="px-5 py-2 bg-[#e03a3e] hover:bg-black text-white font-mono font-black uppercase rounded-none border-2 border-black shadow-[4px_4px_0px_#000] flex items-center gap-1.5 active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all cursor-pointer"
             >
-              <Send className="w-3.5 h-3.5" />
+              <PopArtSend className="w-3.5 h-3.5" />
               <span>{loading ? "Đang gửi..." : "Gửi yêu cầu xác minh"}</span>
             </button>
           </div>

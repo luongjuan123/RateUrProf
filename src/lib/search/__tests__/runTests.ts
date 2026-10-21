@@ -5,7 +5,7 @@ import { SearchFilters } from "@/types";
 
 async function main() {
   console.log("=================================================");
-  console.log(" RATEPROFCUABAN SEARCH & FILTER TEST SUITE");
+  console.log(" RATEURPROFS SEARCH & FILTER TEST SUITE");
   console.log("=================================================\n");
 
   // 1. Run 30 Correctness Scenarios

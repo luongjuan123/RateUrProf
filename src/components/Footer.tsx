@@ -3,43 +3,56 @@
 import React from "react";
 import Link from "next/link";
 import { useTranslation } from "@/locales/i18n";
+import { BrandLogo } from "./BrandLogo";
 
 export const Footer: React.FC = () => {
   const { locale, t } = useTranslation();
 
   return (
-    <footer className="bg-white text-gray-700 border-t border-gray-300 py-8">
+    <footer className="bg-white text-gray-800 border-t-2 border-black py-8 mt-auto">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-          <div className="flex items-center gap-2">
-            <div className="w-6 h-6 bg-black text-white flex items-center justify-center font-black text-xs">
-              RP
-            </div>
-            <span className="font-bold text-sm text-gray-950">RateProfCủaBạn</span>
-          </div>
+          <BrandLogo locale={locale} />
 
-          <nav className="flex flex-wrap items-center gap-x-6 gap-y-2 text-xs font-semibold">
-            <Link href={`/${locale}`} className="text-gray-700 hover:text-black">
-              {t("nav.home")}
+          <nav className="flex flex-wrap items-center gap-2.5 text-xs font-bold uppercase tracking-wider font-mono">
+            <Link
+              href={`/${locale}`}
+              className="px-2 py-0.5 bg-white text-black font-mono font-black text-[11px] uppercase tracking-wider border border-black shadow-[1px_1px_0px_#000] hover:bg-[#e03a3e] hover:text-white transition-all"
+            >
+              [{t("nav.home")}]
             </Link>
-            <Link href={`/${locale}/professors`} className="text-gray-700 hover:text-black">
-              {t("nav.professors")}
+            <Link
+              href={`/${locale}/guidelines`}
+              className="px-2 py-0.5 bg-[#fef9c3] text-black font-mono font-black text-[11px] uppercase tracking-wider border border-black shadow-[1px_1px_0px_#000] hover:bg-[#e03a3e] hover:text-white transition-all"
+            >
+              [Site Guidelines]
             </Link>
-            <Link href={`/${locale}/universities`} className="text-gray-700 hover:text-black">
-              {t("nav.universities")}
+            <Link
+              href={`/${locale}/terms`}
+              className="px-2 py-0.5 bg-white text-black font-mono font-black text-[11px] uppercase tracking-wider border border-black shadow-[1px_1px_0px_#000] hover:bg-[#e03a3e] hover:text-white transition-all"
+            >
+              [Terms of Use]
             </Link>
-            <Link href={`/${locale}/guidelines`} className="text-gray-700 hover:text-black">
-              {t("nav.guidelines")}
+            <Link
+              href={`/${locale}/privacy`}
+              className="px-2 py-0.5 bg-[#dbeafe] text-black font-mono font-black text-[11px] uppercase tracking-wider border border-black shadow-[1px_1px_0px_#000] hover:bg-[#e03a3e] hover:text-white transition-all"
+            >
+              [Privacy Policy]
             </Link>
-            <Link href={`/${locale}/admin`} className="text-gray-500 hover:text-black">
-              {t("nav.admin")}
+            <Link
+              href={`/${locale}/copyright`}
+              className="px-2 py-0.5 bg-[#fed7aa] text-black font-mono font-black text-[11px] uppercase tracking-wider border border-black shadow-[1px_1px_0px_#000] hover:bg-[#e03a3e] hover:text-white transition-all"
+            >
+              [Copyright Policy]
             </Link>
           </nav>
         </div>
 
-        <div className="pt-4 border-t border-gray-200 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs text-gray-500">
-          <p>{t("footer.disclaimerText")}</p>
-          <p className="shrink-0">{t("footer.copyright")}</p>
+        <div className="pt-4 border-t-2 border-black flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-[11px] font-medium text-gray-600 font-mono">
+          <p className="max-w-2xl leading-relaxed">
+            {t("footer.disclaimerText")}
+          </p>
+          <p className="shrink-0 font-bold text-black">{t("footer.copyright")}</p>
         </div>
       </div>
     </footer>

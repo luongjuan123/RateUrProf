@@ -40,9 +40,9 @@ class GenericAcademicAdapter(BaseAcademicAdapter):
             if professors:
                 return professors
 
-        # 2. Try HTML Card / Member components
+        # 2. Try HTML Card / Member components (div, article, li)
         card_pattern = re.compile(
-            r'<div[^>]*class=["\'][^"\']*(?:giang-vien|can-bo|nhan-su|faculty-item|member|staff|team-member|profile-item|card-teacher)[^"\']*["\'][^>]*>(.*?)</div>\s*</div>',
+            r'<(?:div|article|li)[^>]*class=["\'][^"\']*(?:giang-vien|can-bo|nhan-su|faculty|member|staff|person|profile|teacher|team-box|team-item|author-item)[^"\']*["\'][^>]*>(.*?)</(?:div|article|li)>',
             re.DOTALL | re.IGNORECASE,
         )
         cards = list(card_pattern.finditer(html))
@@ -59,11 +59,16 @@ class GenericAcademicAdapter(BaseAcademicAdapter):
                     profile_link = urllib.parse.urljoin(url, name_m.group(1))
                     raw_name = name_m.group(2).strip()
 
-                if not raw_name:
+                if not raw_name or len(raw_name) < 3:
                     continue
 
-                img_m = re.search(r'<img[^>]+src=["\']([^"\']+)["\']', card_html)
-                avatar_url = urllib.parse.urljoin(url, img_m.group(1)) if img_m else ""
+                # Photo extraction with multiple attributes
+                avatar_url = ""
+                img_m = re.search(r'<img[^>]+(?:src|data-src|data-lazy-src|data-original)=["\']([^"\']+)["\']', card_html, re.IGNORECASE)
+                if img_m:
+                    src_val = img_m.group(1).strip()
+                    if src_val and not any(bad in src_val.lower() for bad in ["logo", "icon", "blank", "pixel", "1x1", "avatar-default", "default"]):
+                        avatar_url = urllib.parse.urljoin(url, src_val)
 
                 text_snippet = re.sub(r"<[^>]+>", " ", card_html)
                 text_snippet = re.sub(r"\s+", " ", text_snippet).strip()
@@ -85,29 +90,75 @@ class GenericAcademicAdapter(BaseAcademicAdapter):
                 continue
             cells = re.findall(r'<td[^>]*>(.*?)</td>', row_html, re.DOTALL | re.IGNORECASE)
             if len(cells) >= 2:
-                name_cell = cells[1] if len(cells) >= 2 else cells[0]
-                name_clean = re.sub(r"<[^>]+>", " ", name_cell).strip()
-                link_m = re.search(r'href=["\']([^"\']+)["\']', name_cell)
-                profile_link = urllib.parse.urljoin(url, link_m.group(1)) if link_m else url
+                # Find cell with name vs cell with photo
+                avatar_url = ""
+                name_cell = ""
+                profile_link = url
+
+                for c in cells:
+                    if not avatar_url:
+                        c_img = re.search(r'<img[^>]+(?:src|data-src|data-lazy-src)=["\']([^"\']+)["\']', c, re.IGNORECASE)
+                        if c_img:
+                            src_val = c_img.group(1).strip()
+                            if src_val and not any(bad in src_val.lower() for bad in ["logo", "icon", "blank", "pixel", "1x1"]):
+                                avatar_url = urllib.parse.urljoin(url, src_val)
+
+                    link_m = re.search(r'href=["\']([^"\']+)["\']', c)
+                    c_clean = re.sub(r"<[^>]+>", " ", c).strip()
+                    if any(t in c_clean for t in ["GS", "PGS", "TS", "ThS", "CN", "BS"]) or len(c_clean.split()) >= 2:
+                        if not name_cell or len(c_clean) > len(name_cell):
+                            name_cell = c_clean
+                            if link_m:
+                                profile_link = urllib.parse.urljoin(url, link_m.group(1))
+
+                if not name_cell:
+                    name_cell = re.sub(r"<[^>]+>", " ", cells[1] if len(cells) > 2 else cells[0]).strip()
 
                 row_text = " ".join([re.sub(r"<[^>]+>", " ", c).strip() for c in cells])
-                prof = self._build_prof_record(name_clean, profile_link, url, university, snippet=row_text)
+                prof = self._build_prof_record(
+                    name_cell, profile_link, url, university, avatar_url=avatar_url, snippet=row_text
+                )
                 if prof:
                     professors.append(prof)
 
-        # 4. Fallback link list
+        # 4. Fallback link list with academic links and photos
         if not professors:
             link_pattern = re.compile(
-                r'<a[^>]+href=["\']([^"\']*(?:/can-bo/|/giang-vien/|/profile/)[^"\']*)["\'][^>]*>([^<]+)</a>',
-                re.IGNORECASE,
+                r'<a[^>]+href=["\']([^"\']*(?:/can-bo/|/giang-vien/|/profile/)[^"\']*)["\'][^>]*>(.*?)</a>',
+                re.DOTALL | re.IGNORECASE,
             )
             for m in link_pattern.finditer(html):
                 profile_link = urllib.parse.urljoin(url, m.group(1))
-                raw_name = m.group(2).strip()
-                if len(raw_name) > 3 and not raw_name.lower().startswith(("xem", "chi tiết")):
-                    prof = self._build_prof_record(raw_name, profile_link, url, university)
+                raw_name = re.sub(r"<[^>]+>", " ", m.group(2)).strip()
+                raw_name = re.sub(r"\s+", " ", raw_name)
+                if len(raw_name) > 3 and not raw_name.lower().startswith(("xem", "chi tiết", "đọc tiếp", "thông tin")):
+                    # Search for avatar image near the link
+                    pos = m.start()
+                    snippet_around = html[max(0, pos - 1500) : min(len(html), pos + 1500)]
+                    img_m = re.search(r'<img[^>]+(?:src|data-src|data-lazy-src)=["\']([^"\']+)["\']', snippet_around, re.I)
+                    avatar_url = ""
+                    if img_m:
+                        src_val = img_m.group(1).strip()
+                        if not any(bad in src_val.lower() for bad in ["logo", "icon", "arrow", "flag", "breadcrumb", "polylang", "1x1", "spacer", "pixel", "blank", ".svg"]):
+                            avatar_url = urllib.parse.urljoin(url, src_val)
+
+                    prof = self._build_prof_record(raw_name, profile_link, url, university, avatar_url=avatar_url)
                     if prof:
                         professors.append(prof)
+
+        # 5. Fallback text lines with academic titles
+        if not professors:
+            lines = [l.strip() for l in re.sub(r'<[^>]+>', '\n', html).splitlines() if l.strip()]
+            for l in lines:
+                m = re.match(r'^(?:(PGS\.?\s*TS|GS\.?\s*TS|TS|ThS)\.?\s+([A-ZÀ-Ỹ][\w\sÀ-ỹ]+))$', l)
+                if m:
+                    academic_title = m.group(1).strip()
+                    clean_name = m.group(2).strip()
+                    words = clean_name.split()
+                    if 2 <= len(words) <= 6 and not any(w in clean_name.lower() for w in ['khoa', 'ngành', 'học kỳ', 'thông tin', 'năm học', 'đại học', 'trường', 'phòng', 'ban', 'viện']):
+                        prof = self._build_prof_record(f"{academic_title} {clean_name}", url, url, university)
+                        if prof:
+                            professors.append(prof)
 
         return professors
 
@@ -179,6 +230,18 @@ class GenericAcademicAdapter(BaseAcademicAdapter):
         clean_name = raw_name.strip()
         academic_title = None
 
+        lower = clean_name.lower()
+        STOP_WORDS = [
+            "trường", "khoa", "viện", "bộ môn", "phòng", "ban", "trung tâm", "đoàn", "hội đồng",
+            "chi bộ", "đại học", "tin tức", "thông báo", "sự kiện", "website", "cổng thông tin",
+            "tuyển sinh", "đào tạo", "nghiên cứu khoa học", "hợp tác quốc tế", "liên hệ", "giới thiệu",
+            "chức danh", "chức vụ", "họ và tên", "họ tên", "học hàm", "học vị", "đơn vị", "ngày sinh",
+            "số thứ tự", "ghi chú", "thao tác", "chi tiết", "xem thêm", "đọc tiếp", "cán bộ", "giảng viên",
+            "nhiệm vụ", "quyền hạn", "cơ cấu", "tổ chức", "lãnh đạo"
+        ]
+        if any(bad in lower for bad in STOP_WORDS):
+            return None
+
         if re.search(r"\b(PGS\.?\s*TS|Phó Giáo sư)\b", clean_name, re.IGNORECASE):
             academic_title = "PGS. TS"
             clean_name = re.sub(r"^(PGS\.?\s*TS\.?|Phó Giáo sư,?\s*Tiến sĩ\.?)\s*", "", clean_name, flags=re.I).strip()
@@ -191,6 +254,10 @@ class GenericAcademicAdapter(BaseAcademicAdapter):
         elif re.search(r"\b(ThS|Thạc sĩ)\b", clean_name, re.IGNORECASE):
             academic_title = "ThS"
             clean_name = re.sub(r"^(ThS\.?|Thạc sĩ\.?)\s*", "", clean_name, flags=re.I).strip()
+
+        words = clean_name.split()
+        if len(words) < 2 or len(words) > 5:
+            return None
 
         if len(clean_name) < 3:
             return None

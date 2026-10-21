@@ -2,7 +2,11 @@
 
 import React from "react";
 import { FieldProvenance } from "@/types";
-import { CheckCircle2, AlertTriangle, HelpCircle } from "lucide-react";
+import {
+  PopArtCheck,
+  PopArtAlertTriangle,
+  PopArtHelpCircle,
+} from "@/components/icons/PopArtIcons";
 import { useTranslation } from "@/locales/i18n";
 
 interface ProvenanceBadgeProps {
@@ -24,9 +28,9 @@ export const ProvenanceBadge: React.FC<ProvenanceBadgeProps> = ({
     return (
       <span
         title={t("common.unverified")}
-        className="inline-flex items-center gap-1 text-[10px] text-gray-400 font-semibold"
+        className="inline-flex items-center gap-1 px-1.5 py-0.5 text-[10px] font-mono font-bold text-black border-2 border-black bg-white shadow-[1px_1px_0px_#000] rounded-none"
       >
-        <HelpCircle className="w-3 h-3 text-gray-400" />
+        <PopArtHelpCircle className="w-3 h-3" />
         {showText && <span>{t("common.unverified")}</span>}
       </span>
     );
@@ -44,18 +48,18 @@ export const ProvenanceBadge: React.FC<ProvenanceBadgeProps> = ({
           ? t("provenance.conflictAlert")
           : `${t("provenance.verifiedSource")}: ${provenance.sourceName || provenance.sourceUrl}`
       }
-      className={`inline-flex items-center gap-1 px-1.5 py-0.5 text-[10px] font-bold rounded-none border transition-colors ${
+      className={`inline-flex items-center gap-1 px-2 py-0.5 text-[10px] font-mono font-black rounded-none border-2 border-black shadow-[1px_1px_0px_#000] active:translate-x-[1px] active:translate-y-[1px] active:shadow-none transition-all cursor-pointer ${
         isConflict
-          ? "bg-amber-50 text-amber-800 border-amber-300 hover:bg-amber-100"
+          ? "bg-[#fee2e2] text-black hover:bg-[#fca5a5]"
           : isVerified
-          ? "bg-emerald-50 text-emerald-800 border-emerald-300 hover:bg-emerald-100"
-          : "bg-gray-50 text-gray-700 border-gray-300 hover:bg-gray-100"
+          ? "bg-[#6ee7b7] text-black hover:bg-[#34d399]"
+          : "bg-[#fef9c3] text-black hover:bg-[#fde047]"
       }`}
     >
       {isConflict ? (
-        <AlertTriangle className="w-3 h-3 text-amber-600 shrink-0" />
+        <PopArtAlertTriangle className="w-3 h-3 shrink-0" />
       ) : (
-        <CheckCircle2 className="w-3 h-3 text-emerald-600 shrink-0" />
+        <PopArtCheck className="w-3 h-3 shrink-0" />
       )}
       {showText && (
         <span className="truncate max-w-[120px]">

@@ -26,6 +26,29 @@ export function normalizeSearchString(str: string): string {
     .trim();
 }
 
+/**
+ * Detect language of query (Vietnamese vs English).
+ */
+export function detectQueryLanguage(query: string): "vi" | "en" {
+  const lower = query.toLowerCase();
+
+  const hasVietnameseDiacritics = /[àáảãạâầấẩẫậăằắẳẵặèéẻẽẹêềếểễệìíỉĩịòóỏõọôồốổỗộơờớởỡợùúủũụưừứửữựỳýỷỹỵđ]/i.test(lower);
+  if (hasVietnameseDiacritics) return "vi";
+
+  const viStopwords = [
+    "tim", "giang vien", "giao su", "pho giao su", "tien si", "truong",
+    "o dau", "nao", "nganh", "mon", "hoc", "thay", "co", "danh gia",
+    "tai", "ha noi", "tphcm", "da nang", "can tho", "mien bac", "mien nam", "mien trung"
+  ];
+  for (const sw of viStopwords) {
+    if (new RegExp(`\\b${sw}\\b`, "i").test(lower)) {
+      return "vi";
+    }
+  }
+
+  return "en";
+}
+
 export interface SearchOptions {
   query?: string;
   universityId?: string;

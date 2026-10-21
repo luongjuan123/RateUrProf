@@ -9,11 +9,19 @@ import hashlib
 import time
 import json
 import re
+import ssl
 from typing import Optional, Dict, Any, List, Tuple
 from urllib.request import Request, urlopen
 from urllib.error import HTTPError, URLError
 
-BOT_USER_AGENT = "RateProfCuaBanBot/1.0 (+https://rateprofcuaban-vn.web.app; contact@rateprofcuaban.vn)"
+import threading
+
+BOT_USER_AGENT = "RateUrProfs-Bot/1.0 (+https://rateurprofs.site/bot; contact@rateurprofs.site)"
+
+# SSL context for academic domains that may have incomplete intermediate CA certificates
+SSL_CONTEXT = ssl.create_default_context()
+SSL_CONTEXT.check_hostname = False
+SSL_CONTEXT.verify_mode = ssl.CERT_NONE
 
 
 class RobotsChecker:
@@ -32,7 +40,7 @@ class RobotsChecker:
             try:
                 # Polite fetch of robots.txt with short timeout
                 req = Request(robots_url, headers={"User-Agent": self.user_agent})
-                with urlopen(req, timeout=5) as resp:
+                with urlopen(req, timeout=5, context=SSL_CONTEXT) as resp:
                     if resp.status == 200:
                         content = resp.read().decode("utf-8", errors="ignore")
                         rp.parse(content.splitlines())
@@ -75,17 +83,21 @@ class PoliteFetcher:
         self.default_delay = default_delay
         self.max_retries = max_retries
         self.robots_checker = RobotsChecker(user_agent)
+        self._lock = threading.Lock()
         self._last_access: Dict[str, float] = {}
         self._cache_meta: Dict[str, Dict[str, str]] = {}  # url -> {etag, last_modified, hash}
 
     def _wait_for_rate_limit(self, domain: str):
-        crawl_delay = max(self.robots_checker.get_crawl_delay(domain), self.default_delay)
-        now = time.time()
-        last = self._last_access.get(domain, 0.0)
-        elapsed = now - last
-        if elapsed < crawl_delay:
-            time.sleep(crawl_delay - elapsed)
-        self._last_access[domain] = time.time()
+        with self._lock:
+            crawl_delay = max(self.robots_checker.get_crawl_delay(domain), self.default_delay)
+            now = time.time()
+            last = self._last_access.get(domain, 0.0)
+            elapsed = now - last
+            wait_time = crawl_delay - elapsed if elapsed < crawl_delay else 0.0
+            self._last_access[domain] = now + wait_time
+
+        if wait_time > 0:
+            time.sleep(wait_time)
 
     def fetch(
         self, url: str, check_robots: bool = True
@@ -119,10 +131,29 @@ class PoliteFetcher:
         retries = 0
         backoff = 1.0
 
+        request_data = None
+        if "qldiem.ctu.edu.vn" in url:
+            unit_code = "%%"
+            page_no = "1"
+            if "unit_" in url:
+                unit_code = url.split("unit_")[-1].split("&")[0]
+            if "page=" in url:
+                page_no = url.split("page=")[-1].split("&")[0]
+            headers["Content-Type"] = "application/x-www-form-urlencoded"
+            request_data = urllib.parse.urlencode({
+                'cmbDonVi': unit_code,
+                'cmbBoMon': '%%',
+                'cboHocHam': '',
+                'cboHocVi': '',
+                'txtHoTen': '',
+                'btnSearch': 'Tìm kiếm',
+                'curPage': page_no
+            }).encode('utf-8')
+
         while retries <= self.max_retries:
             try:
-                req = Request(url, headers=headers)
-                with urlopen(req, timeout=12) as resp:
+                req = Request(url, data=request_data, headers=headers)
+                with urlopen(req, timeout=15, context=SSL_CONTEXT) as resp:
                     status = resp.status
                     resp_headers = dict(resp.headers)
                     raw_data = resp.read()
@@ -138,8 +169,12 @@ class PoliteFetcher:
                         "hash": content_hash,
                     }
 
-                    charset = resp.headers.get_content_charset() or "utf-8"
-                    content = raw_data.decode(charset, errors="replace")
+                    raw_charset = resp.headers.get_content_charset() or "utf-8"
+                    charset = raw_charset.split(",")[0].strip() if "," in raw_charset else raw_charset.strip()
+                    try:
+                        content = raw_data.decode(charset, errors="replace")
+                    except (LookupError, UnicodeDecodeError):
+                        content = raw_data.decode("utf-8", errors="replace")
 
                     return content, status, {
                         "hash": content_hash,

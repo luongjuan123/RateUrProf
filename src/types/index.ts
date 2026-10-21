@@ -50,6 +50,7 @@ export interface SearchFilters {
   verificationStatus?: VerificationStatus;
   hasPhoto?: boolean;
   hasPublicProfile?: boolean;
+  institutionType?: 'university' | 'academy' | 'college';
   researchInterests?: string[];
 }
 
@@ -84,6 +85,19 @@ export interface SearchResult {
   appliedFilters: SearchFilters;
   activeFilterCount: number;
   executionTimeMs: number;
+}
+
+export interface AutocompleteSuggestion {
+  id: string;
+  type: "lecturer" | "university";
+  title: string;
+  subtitle: string;
+  universityShortName?: string;
+  avatar?: string | null;
+  photoUrl?: string | null;
+  photoStatus?: PhotoStatus;
+  ratingAverage?: number | null;
+  ratingCount?: number;
 }
 
 export interface University {
@@ -127,7 +141,47 @@ export interface University {
     descriptionSource?: string;
     verificationDate?: string;
   };
+  institutionType?: 'university' | 'academy' | 'college';
   translationStatus?: 'official' | 'verified_bilingual' | 'community_contributed' | 'fallback';
+  schoolCriteriaAverages?: SchoolCriteriaRatings | null;
+  officialCode?: string | null;
+  officialCodeSource?: string | null;
+  officialCodeVerifiedAt?: number | null;
+  officialCodeStatus?: 'verified' | 'unverified' | 'conflicting' | 'not_found' | 'needs_review';
+  commonAbbreviations?: string[];
+  externalIdentifiers?: Record<string, string>;
+  sourceUrl?: string;
+  sourceId?: string;
+  importBatchId?: string;
+}
+
+export interface SchoolCriteriaRatings {
+  reputation: number;    // 1-5 (Danh tiếng)
+  location: number;      // 1-5 (Vị trí)
+  opportunities: number; // 1-5 (Cơ hội)
+  facilities: number;    // 1-5 (Cơ sở vật chất)
+  internet: number;      // 1-5 (Internet)
+  food: number;          // 1-5 (Ẩm thực)
+  clubs: number;         // 1-5 (CLB)
+  social: number;        // 1-5 (Đời sống xã hội)
+  happiness: number;     // 1-5 (Hạnh phúc)
+  safety: number;        // 1-5 (An toàn)
+}
+
+export interface SchoolReview {
+  id: string;
+  universityId: string;
+  universityName?: string;
+  userId: string;
+  userDisplayName: string;
+  cohort?: string;
+  criteria: SchoolCriteriaRatings;
+  overallRating: number; // 1-5
+  comment: string;
+  helpfulCount: number;
+  helpfulUserIds?: string[];
+  status: 'published' | 'pending' | 'flagged' | 'hidden';
+  createdAt: number;
 }
 
 export interface Faculty {
@@ -189,7 +243,7 @@ export interface ImageAsset {
   storageUrl?: string;
   licenseCategory: 'official_academic_public' | 'open_license' | 'fair_use_educational' | 'restricted' | 'unknown';
   permissionStatus: 'approved' | 'pending_review' | 'rejected';
-  storageMode: 'firebase_storage' | 'source_url' | 'neutral_placeholder';
+  storageMode: 'gcp_storage' | 'source_url' | 'neutral_placeholder';
   verifiedAt?: number;
   sha256?: string;
 }
@@ -309,6 +363,8 @@ export interface Professor {
     googleScholar?: string;
     scopus?: string;
     institutionalEmail?: string;
+    staffCode?: string;
+    [key: string]: string | undefined;
   };
   imageRights?: {
     sourceUrl: string;
@@ -344,17 +400,22 @@ export interface Professor {
   featuredQuoteEn?: string | null;
   takeAgainPercent?: number | null;
   difficultyScore?: number | null;
+  difficultyAverage?: number | null;
   sourceUrls?: string[];
 }
 
 export interface Review {
   id: string;
   professorId: string;
+  lecturerId?: string;
   professorName: string;
   universityId: string;
   userId: string;
   userDisplayName: string; // Pseudonymous e.g. "Sinh viên K64 - CNTT"
   courseName: string;
+  isOnline?: boolean;
+  forCredit?: boolean;
+  textbookUsed?: boolean;
   gradeReceived?: string; // 'A', 'B+', 'B', 'C', 'Đạt', 'Qua môn'
   attendanceMandatory: boolean;
   takeAgain: boolean;
@@ -377,13 +438,26 @@ export interface Report {
   reviewId: string;
   professorId: string;
   professorName?: string;
+  universityName?: string;
+  universityShortName?: string;
   reviewCommentSnippet?: string;
+  reviewFullComment?: string;
+  courseName?: string;
+  overallRating?: number;
+  difficultyScore?: number;
+  takeAgain?: boolean;
+  gradeReceived?: string | null;
+  attendanceMandatory?: boolean;
+  reviewerName?: string;
+  reviewStatus?: string;
+  reviewCreatedAt?: number;
   reportedByUserId: string;
   reason: string;
   details?: string;
   createdAt: number;
   status: 'pending' | 'resolved' | 'dismissed';
 }
+export type AccountStatus = 'active' | 'locked' | 'suspended' | 'pending_deletion' | 'deleted';
 
 export interface UserProfile {
   uid: string;
@@ -391,9 +465,19 @@ export interface UserProfile {
   displayName: string | null;
   photoURL: string | null;
   isAnonymous: boolean;
-  role?: 'student' | 'admin' | 'moderator';
+  role?: 'student' | 'admin' | 'moderator' | 'super_admin' | 'support' | 'security';
+  status?: 'active' | 'locked' | 'suspended' | 'pending_deletion' | 'deleted';
+  lockReason?: string | null;
+  lockedAt?: number | null;
+  deletionRequestedAt?: number | null;
+  deletionScheduledAt?: number | null;
   university?: string;
   cohort?: string;
+  firstName?: string;
+  lastName?: string;
+  school?: string;
+  fieldOfStudy?: string;
+  expectedGraduationYear?: string | number;
 }
 
 export interface AcademicTerminologyItem {
@@ -481,6 +565,7 @@ export interface DataQualityReport {
     active: number;
     failed: number;
     rateLimited: number;
+    pending?: number;
   };
   bilingualCompletenessScore?: number;
   missingEnglishBiosCount?: number;

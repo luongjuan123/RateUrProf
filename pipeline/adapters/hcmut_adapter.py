@@ -1,5 +1,5 @@
 """Adapter for Ho Chi Minh City University of Technology (HCMUT - Bach Khoa TP.HCM).
-Handles CSE, DEE, and other faculties.
+Handles CSE departments, DEE, and other faculties.
 """
 
 from __future__ import annotations
@@ -18,6 +18,14 @@ from pipeline.dedup import IdentityResolutionEngine
 class HcmutAdapter(BaseAcademicAdapter):
     """Adapter for HCMUT faculties and directories."""
 
+    DEPARTMENTS_MAP = {
+        "bo-mon-khoa-hoc-may-tinh": "Bộ môn Khoa học Máy tính",
+        "bo-mon-cong-nghe-phan-mem": "Bộ môn Công nghệ Phần mềm",
+        "bo-mon-he-thong-thong-tin": "Bộ môn Hệ thống Thông tin",
+        "bo-mon-he-thong-va-mang-may-tinh": "Bộ môn Hệ thống & Mạng Máy tính",
+        "bo-mon-ky-thuat-may-tinh": "Bộ môn Kỹ thuật Máy tính",
+    }
+
     def can_handle(self, url: str) -> bool:
         domain = urllib.parse.urlparse(url).netloc.lower()
         return "hcmut.edu.vn" in domain
@@ -26,88 +34,56 @@ class HcmutAdapter(BaseAcademicAdapter):
         self, html: str, url: str, university: UniversityRecord
     ) -> List[ProfessorRecord]:
         professors: List[ProfessorRecord] = []
+        seen_names = set()
 
-        # Faculty card patterns (CSE / Joomla / Bootstrap grid)
-        card_pattern = re.compile(
-            r'<div[^>]*class=["\'][^"\']*(?:faculty-item|teacher-item|user-item|member-item|col-md-\d+)[^"\']*["\'][^>]*>(.*?)</div>\s*(?:</div>|\n\s*<div)',
-            re.DOTALL | re.IGNORECASE,
-        )
+        dept_name = "Khoa Khoa học & Kỹ thuật Máy tính"
+        for slug, dname in self.DEPARTMENTS_MAP.items():
+            if slug in url:
+                dept_name = dname
+                break
 
-        cards = list(card_pattern.finditer(html))
-
-        # Fallback to general user profile containers or table rows
-        if not cards:
-            table_row_pattern = re.compile(r'<tr[^>]*>(.*?)</tr>', re.DOTALL | re.IGNORECASE)
-            for row_m in table_row_pattern.finditer(html):
-                row_html = row_m.group(1)
-                if "<th" in row_html:
-                    continue
-                prof = self._extract_from_row(row_html, url, university)
-                if prof:
-                    professors.append(prof)
-            if professors:
-                return professors
-
-            # Link pattern fallback
-            link_pattern = re.compile(
-                r'<a[^>]+href=["\']([^"\']*(?:/people/|/faculty/|/giang-vien/)[^"\']*)["\'][^>]*>([^<]+)</a>',
-                re.IGNORECASE,
-            )
-            for m in link_pattern.finditer(html):
-                profile_link = urllib.parse.urljoin(url, m.group(1))
-                raw_name = m.group(2).strip()
-                if len(raw_name) > 3 and not raw_name.lower().startswith(("xem", "detail", "view")):
-                    prof = self._build_prof_record(raw_name, profile_link, url, university)
-                    if prof:
-                        professors.append(prof)
-            return professors
-
-        for card in cards:
-            card_html = card.group(1)
-
-            # Name and profile link
-            name_m = re.search(r'<a[^>]+href=["\']([^"\']+)["\'][^>]*>([^<]+)</a>', card_html)
-            if not name_m:
-                name_m = re.search(r'<h[345][^>]*>([^<]+)</h[345]>', card_html)
-                profile_link = url
-                raw_name = name_m.group(1).strip() if name_m else ""
-            else:
-                profile_link = urllib.parse.urljoin(url, name_m.group(1))
-                raw_name = name_m.group(2).strip()
-
-            if not raw_name:
+        table_row_pattern = re.compile(r'<tr[^>]*>(.*?)</tr>', re.DOTALL | re.IGNORECASE)
+        for row_m in table_row_pattern.finditer(html):
+            row_html = row_m.group(1)
+            if "<th" in row_html:
+                continue
+            cells = re.findall(r'<td[^>]*>(.*?)</td>', row_html, re.DOTALL | re.IGNORECASE)
+            if len(cells) < 2:
                 continue
 
-            # Avatar image
-            img_m = re.search(r'<img[^>]+src=["\']([^"\']+)["\']', card_html)
-            avatar_url = urllib.parse.urljoin(url, img_m.group(1)) if img_m else ""
+            name_cell = cells[1]
+            raw_name = re.sub(r'<[^>]+>|&nbsp;', ' ', name_cell).strip()
+            # Clean up whitespace
+            raw_name = re.sub(r'\s+', ' ', raw_name).strip()
 
-            # Text details
-            text_snippet = re.sub(r"<[^>]+>", " ", card_html)
-            text_snippet = re.sub(r"\s+", " ", text_snippet).strip()
+            position_cell = cells[2] if len(cells) > 2 else ""
+            pos_text = re.sub(r'<[^>]+>|&nbsp;', ' ', position_cell).strip()
+            pos_clean = re.sub(r'\s+', ' ', pos_text) if pos_text else None
+
+            # Image check across cells
+            avatar_url = ""
+            for c in cells:
+                c_img = re.search(r'<img[^>]+(?:src|data-src)=["\']([^"\']+)["\']', c, re.IGNORECASE)
+                if c_img:
+                    s_val = c_img.group(1).strip()
+                    if s_val and not any(bad in s_val.lower() for bad in ["logo", "icon", "blank", "default"]):
+                        avatar_url = urllib.parse.urljoin(url, s_val)
+                        break
 
             prof = self._build_prof_record(
-                raw_name, profile_link, url, university, avatar_url, text_snippet
+                raw_name=raw_name,
+                profile_url=url,
+                source_page_url=url,
+                university=university,
+                dept_name=dept_name,
+                position=pos_clean,
+                avatar_url=avatar_url,
             )
-            if prof:
+            if prof and prof.name not in seen_names:
+                seen_names.add(prof.name)
                 professors.append(prof)
 
         return professors
-
-    def _extract_from_row(
-        self, row_html: str, url: str, university: UniversityRecord
-    ) -> Optional[ProfessorRecord]:
-        cells = re.findall(r'<td[^>]*>(.*?)</td>', row_html, re.DOTALL | re.IGNORECASE)
-        if len(cells) < 2:
-            return None
-
-        name_cell = cells[1] if len(cells) >= 2 else cells[0]
-        name_clean = re.sub(r"<[^>]+>", " ", name_cell).strip()
-        link_m = re.search(r'href=["\']([^"\']+)["\']', name_cell)
-        profile_link = urllib.parse.urljoin(url, link_m.group(1)) if link_m else url
-
-        row_text = " ".join([re.sub(r"<[^>]+>", " ", c).strip() for c in cells])
-        return self._build_prof_record(name_clean, profile_link, url, university, snippet=row_text)
 
     def _build_prof_record(
         self,
@@ -115,50 +91,38 @@ class HcmutAdapter(BaseAcademicAdapter):
         profile_url: str,
         source_page_url: str,
         university: UniversityRecord,
+        dept_name: str = "Khoa Khoa học & Kỹ thuật Máy tính",
+        position: Optional[str] = None,
         avatar_url: str = "",
-        snippet: str = "",
     ) -> Optional[ProfessorRecord]:
         clean_name = raw_name.strip()
         academic_title = None
 
-        if re.search(r"\b(PGS\.?\s*TS|Phó Giáo sư)\b", clean_name, re.IGNORECASE):
+        # Check English and Vietnamese titles
+        if re.search(r"\b(?:assoc\.?\s*prof\.?\s*dr\.?|pgs\.?\s*ts\.?)\b", clean_name, re.IGNORECASE):
             academic_title = "PGS. TS"
-            clean_name = re.sub(r"^(PGS\.?\s*TS\.?|Phó Giáo sư,?\s*Tiến sĩ\.?)\s*", "", clean_name, flags=re.I).strip()
-        elif re.search(r"\b(GS\.?\s*TS|Giáo sư)\b", clean_name, re.IGNORECASE):
+            clean_name = re.sub(r"^(?:assoc\.?\s*prof\.?\s*dr\.?|pgs\.?\s*ts\.?)\s*", "", clean_name, flags=re.I).strip()
+        elif re.search(r"\b(?:prof\.?\s*dr\.?|gs\.?\s*ts\.?)\b", clean_name, re.IGNORECASE):
             academic_title = "GS. TS"
-            clean_name = re.sub(r"^(GS\.?\s*TS\.?|Giáo sư,?\s*Tiến sĩ\.?)\s*", "", clean_name, flags=re.I).strip()
-        elif re.search(r"\b(TS|Tiến sĩ)\b", clean_name, re.IGNORECASE):
+            clean_name = re.sub(r"^(?:prof\.?\s*dr\.?|gs\.?\s*ts\.?)\s*", "", clean_name, flags=re.I).strip()
+        elif re.search(r"\b(?:dr\.?|ts\.?|tiến sĩ)\b", clean_name, re.IGNORECASE):
             academic_title = "TS"
-            clean_name = re.sub(r"^(TS\.?|Tiến sĩ\.?)\s*", "", clean_name, flags=re.I).strip()
-        elif re.search(r"\b(ThS|Thạc sĩ)\b", clean_name, re.IGNORECASE):
+            clean_name = re.sub(r"^(?:dr\.?|ts\.?|tiến sĩ)\s*", "", clean_name, flags=re.I).strip()
+        elif re.search(r"\b(?:meng\.?|ths\.?|thạc sĩ)\b", clean_name, re.IGNORECASE):
             academic_title = "ThS"
-            clean_name = re.sub(r"^(ThS\.?|Thạc sĩ\.?)\s*", "", clean_name, flags=re.I).strip()
+            clean_name = re.sub(r"^(?:meng\.?|ths\.?|thạc sĩ)\s*", "", clean_name, flags=re.I).strip()
+        elif re.search(r"\b(?:beng\.?|eng\.?|ks\.?|kỹ sư)\b", clean_name, re.IGNORECASE):
+            academic_title = "KS"
+            clean_name = re.sub(r"^(?:beng\.?|eng\.?|ks\.?|kỹ sư)\s*", "", clean_name, flags=re.I).strip()
 
-        if len(clean_name) < 3:
+        clean_name = re.sub(r"^[,\-\.\s]+|[,\-\.\s]+$", "", clean_name).strip()
+        if len(clean_name) < 3 or clean_name.lower().startswith(("no.", "full name")):
             return None
+
+        clean_name = clean_name.title()
 
         norm_name = IdentityResolutionEngine.normalize_name(clean_name)
         prof_id = f"prof-hcmut-{norm_name.replace(' ', '-')}"
-
-        position = None
-        if "trưởng khoa" in snippet.lower():
-            position = "Trưởng khoa"
-        elif "phó trưởng khoa" in snippet.lower():
-            position = "Phó trưởng khoa"
-        elif "trưởng bộ môn" in snippet.lower():
-            position = "Trưởng bộ môn"
-
-        email_m = re.search(r'([a-zA-Z0-9_.+-]+@(?:[a-zA-Z0-9-]+\.)?hcmut\.edu\.vn)', snippet)
-        identifiers = {}
-        if email_m:
-            identifiers["institutionalEmail"] = email_m.group(1).lower()
-
-        interests = []
-        if "research:" in snippet.lower() or "nghiên cứu:" in snippet.lower():
-            parts = re.split(r"(?:research:|nghiên cứu:)", snippet, flags=re.I)
-            if len(parts) > 1:
-                tail = parts[1].split(".")[0]
-                interests = [t.strip() for t in tail.split(",") if len(t.strip()) > 2]
 
         record = ProfessorRecord(
             id=prof_id,
@@ -170,17 +134,16 @@ class HcmutAdapter(BaseAcademicAdapter):
             university_name="Trường ĐH Bách Khoa - ĐHQG TP.HCM",
             university_short_name="HCMUT",
             faculty="Khoa Khoa học & Kỹ thuật Máy tính",
+            department=dept_name,
             name_variants=[clean_name, norm_name],
             avatar=avatar_url,
-            bio=snippet if len(snippet) > 20 else "Giảng viên tại Trường ĐH Bách Khoa - ĐHQG TP.HCM.",
-            research_interests=interests,
-            official_profile_urls=[profile_url] if profile_url else [],
-            identifiers=identifiers,
+            official_profile_urls=[] if profile_url == source_page_url else [profile_url],
+            identifiers={},
             provenance=[
                 ProvenanceEvidence(
                     field="name",
                     source_url=source_page_url,
-                    confidence=0.95,
+                    confidence=1.0,
                     source_type="official_faculty_page",
                 ),
                 ProvenanceEvidence(
@@ -191,8 +154,10 @@ class HcmutAdapter(BaseAcademicAdapter):
                 ),
             ],
             verification_status="verified",
-            confidence_score=0.92,
-            source_urls=[source_page_url, profile_url],
+            confidence_score=1.0,
+            rating_average=None,
+            rating_count=0,
+            criteria_averages=None,
         )
 
         return record

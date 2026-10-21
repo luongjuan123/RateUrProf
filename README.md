@@ -63,7 +63,7 @@ RateProfCuaBan is an institutional-grade academic discovery platform that catalo
 - **Language Auto-Matching**: Automatically detects Vietnamese or English query intent and responds in the user's preferred language.
 
 ### 3. Polite & Legal Compliance Engine
-- **Polite Crawling**: Respects `robots.txt`, identifies via `RateProfCuaBan-Academic-Bot/1.0 (+https://rateprofcuaban.vn/bot)`, and enforces a minimum 1.5s polite delay with exponential backoff.
+- **Polite Crawling**: Respects `robots.txt`, identifies via `RateUrProfs-Academic-Bot/2.0 (+https://rateurprofs.site/bot)`, and enforces a minimum 1.5s polite delay with exponential backoff.
 - **No Anti-Bot Bypassing**: Social platforms (Facebook/LinkedIn) are never scraped behind authentication. Optional authorized manual exports are imported as unverified leads (`social_lead_unverified`) requiring administrative review.
 - **Image Rights & Neutral SVG Fallbacks**: Copyright classifier checks whether photographs are licensed for reuse. If rights are uncertain, the system generates neutral SVG initials avatars.
 - **Privacy Compliance**: Built to adhere to Vietnamese **Decree 13/2023/NĐ-CP** on Personal Data Protection, offering clear distinction between public institutional records and student opinions, accompanied by an administrative Right to Erasure / Correction protocol.

@@ -74,8 +74,12 @@ class NeuAdapter(BaseAcademicAdapter):
             if not raw_name:
                 continue
 
-            img_m = re.search(r'<img[^>]+src=["\']([^"\']+)["\']', card_html)
-            avatar_url = urllib.parse.urljoin(url, img_m.group(1)) if img_m else ""
+            img_m = re.search(r'<img[^>]+(?:src|data-src|data-lazy-src)=["\']([^"\']+)["\']', card_html, re.IGNORECASE)
+            avatar_url = ""
+            if img_m:
+                s_val = img_m.group(1).strip()
+                if s_val and not any(bad in s_val.lower() for bad in ["logo", "icon", "blank", "default"]):
+                    avatar_url = urllib.parse.urljoin(url, s_val)
 
             text_snippet = re.sub(r"<[^>]+>", " ", card_html)
             text_snippet = re.sub(r"\s+", " ", text_snippet).strip()
@@ -95,13 +99,22 @@ class NeuAdapter(BaseAcademicAdapter):
         if len(cells) < 2:
             return None
 
+        avatar_url = ""
+        for c in cells:
+            c_img = re.search(r'<img[^>]+(?:src|data-src)=["\']([^"\']+)["\']', c, re.IGNORECASE)
+            if c_img:
+                s_val = c_img.group(1).strip()
+                if s_val and not any(bad in s_val.lower() for bad in ["logo", "icon", "blank", "default"]):
+                    avatar_url = urllib.parse.urljoin(url, s_val)
+                    break
+
         name_cell = cells[1] if len(cells) >= 2 else cells[0]
         name_clean = re.sub(r"<[^>]+>", " ", name_cell).strip()
         link_m = re.search(r'href=["\']([^"\']+)["\']', name_cell)
         profile_link = urllib.parse.urljoin(url, link_m.group(1)) if link_m else url
 
         row_text = " ".join([re.sub(r"<[^>]+>", " ", c).strip() for c in cells])
-        return self._build_prof_record(name_clean, profile_link, url, university, snippet=row_text)
+        return self._build_prof_record(name_clean, profile_link, url, university, avatar_url=avatar_url, snippet=row_text)
 
     def _build_prof_record(
         self,

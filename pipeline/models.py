@@ -50,7 +50,7 @@ class ImageAssetRecord:
     ] = "official_academic_public"
     permission_status: Literal["approved", "pending_review", "rejected"] = "approved"
     storage_mode: Literal[
-        "firebase_storage", "source_url", "neutral_placeholder"
+        "gcp_storage", "source_url", "neutral_placeholder"
     ] = "source_url"
     verified_at: Optional[int] = None
     sha256: Optional[str] = None
@@ -79,6 +79,7 @@ class UniversityRecord:
     total_reviews: int = 0
     total_professors: int = 0
     source_urls: List[str] = field(default_factory=list)
+    institution_type: Optional[str] = "university"
 
 
 @dataclass
@@ -144,24 +145,16 @@ class ProfessorRecord:
     provenance: List[ProvenanceEvidence] = field(default_factory=list)
     previous_affiliations: List[Dict[str, str]] = field(default_factory=list)
     verification_status: Literal[
-        "verified", "unverified", "pending_review", "social_lead_unverified"
+        "verified", "partially_verified", "unverified", "pending_review", "social_lead_unverified"
     ] = "unverified"
     confidence_score: float = 0.5
     last_verified_at: int = field(default_factory=lambda: int(time.time() * 1000))
-    rating_average: float = 0.0
+    rating_average: Optional[float] = None
     rating_count: int = 0
     rating_distribution: Dict[int, int] = field(
         default_factory=lambda: {1: 0, 2: 0, 3: 0, 4: 0, 5: 0}
     )
-    criteria_averages: Dict[str, float] = field(
-        default_factory=lambda: {
-            "teachingQuality": 0.0,
-            "clarity": 0.0,
-            "gradingFairness": 0.0,
-            "difficulty": 0.0,
-            "communication": 0.0,
-        }
-    )
+    criteria_averages: Optional[Dict[str, float]] = None
     featured: bool = False
     trending: bool = False
     featured_quote: Optional[str] = None

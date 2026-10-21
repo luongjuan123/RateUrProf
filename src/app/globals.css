@@ -2,20 +2,52 @@
 
 @layer base {
   :root {
-    --radius-none: 0px;
-    --color-background: #ffffff;
-    --color-text: #111111;
-    --color-muted: #666666;
-    --color-border: #d9d9d9;
-    --color-primary: #e53945;
+    /* Neo-Brutalism Color Palette */
+    --bg-page: #ffffff;
+    --bg-header: #141414;
+    --bg-card-default: #ffffff;
+    --bg-card-featured: #fef9c3; /* Soft Highlighter Yellow */
+    --bg-button: #e0f2fe;        /* Soft Pastel Blue */
+    --bg-badge: #6ee7b7;         /* Mint Green */
+    --bg-coral: #fee2e2;         /* Soft Pastel Coral / Red */
+    --bg-lavender: #ede9fe;      /* Soft Pastel Lavender */
+    --bg-amber: #fef3c7;         /* Soft Amber */
 
-    --background: #ffffff;
-    --foreground: #111827;
+    --text-primary: #111111;
+    --text-heading: #111111;
+    --text-muted: #52525b;
+
+    /* Editorial / Brand Red preserved for identity and test integrity */
     --editorial-red: #e03a3e;
     --editorial-red-dark: #b91c1c;
-    --editorial-border: #e5e7eb;
-    --editorial-muted: #6b7280;
+    --editorial-border: #111111;
+    --editorial-muted: #52525b;
     --editorial-surface: #f9fafb;
+
+    --background: #ffffff;
+    --foreground: #111111;
+
+    /* Borders & Hard Shadows (Zero Blur Offset) */
+    --border-color: #111111;
+    --border-thick: 2px solid var(--border-color);
+    --border-thin: 1.5px solid var(--border-color);
+
+    /* STRICT MANDATORY DESIGN RULE — 100% SHARP CORNERS ONLY (0px) */
+    --radius: 0px;
+    --radius-none: 0px;
+    --radius-sm: 0px;
+    --radius-md: 0px;
+    --radius-lg: 0px;
+
+    --shadow-card: 4px 4px 0px var(--border-color);
+    --shadow-card-hover: 6px 6px 0px var(--border-color);
+    --shadow-btn: 3px 3px 0px var(--border-color);
+    --shadow-btn-hover: 4px 4px 0px var(--border-color);
+    --shadow-sm: 2px 2px 0px var(--border-color);
+    --shadow-modal: 8px 8px 0px var(--border-color);
+
+    /* Technical Grotesque / Monospace Typography Stack */
+    --font-mono: 'JetBrains Mono', 'Space Mono', 'SF Mono', Consolas, 'Courier New', monospace;
   }
 
   /* STRICT DESIGN RULE — SHARP CORNERS ONLY, 100% SQUARE UI */
@@ -27,7 +59,7 @@
 
   body {
     background-color: #ffffff;
-    color: #111827;
+    color: #111111;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -36,44 +68,247 @@
   h1, h2, h3, h4, h5, h6 {
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
     letter-spacing: -0.02em;
+    color: #111111;
   }
 
-  /* Clear accessible rectangular focus rings */
-  :focus-visible {
-    outline: 2px solid #111827 !important;
+  /* Accessible Rectangular Focus Rings for Non-Form Interactive Elements */
+  :focus-visible:not(input):not(textarea):not(select):not([contenteditable="true"]) {
+    outline: 2px solid #111111 !important;
     outline-offset: 2px !important;
+  }
+
+  /* ==========================================================================
+     GLOBAL FORM INPUT FOCUS RESET
+     Permanently eliminates all inner focus outlines, focus rings, and inner box-shadows.
+     Preserves outer container borders and hard drop shadows.
+     ========================================================================== */
+  input,
+  textarea,
+  select,
+  [contenteditable="true"] {
+    outline: none !important;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  input:not([class*="shadow-"]):not(.neo-input),
+  textarea:not([class*="shadow-"]):not(.neo-input),
+  select:not([class*="shadow-"]):not(.neo-input),
+  [contenteditable="true"] {
+    box-shadow: none !important;
+  }
+
+  input:focus,
+  input:focus-visible,
+  input:active,
+  textarea:focus,
+  textarea:focus-visible,
+  textarea:active,
+  select:focus,
+  select:focus-visible,
+  select:active,
+  [contenteditable="true"]:focus,
+  [contenteditable="true"]:focus-visible {
+    outline: none !important;
+    outline-offset: 0 !important;
+    --tw-ring-offset-shadow: 0 0 #0000 !important;
+    --tw-ring-shadow: 0 0 #0000 !important;
+    --tw-ring-color: transparent !important;
   }
 }
 
-/* Custom Editorial Utilities */
+/* ==========================================================================
+   NEO-BRUTALISM FOUNDATIONAL UTILITIES & MICRO-INTERACTIONS
+   ========================================================================== */
+
+/* Base Neo Card */
+.neo-card {
+  background: var(--bg-card-default);
+  border: var(--border-thick);
+  border-radius: 0 !important;
+  box-shadow: var(--shadow-card);
+  color: var(--text-primary);
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.neo-card-hover:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.neo-card--featured {
+  background: var(--bg-card-featured);
+}
+
+.neo-card--mint {
+  background: var(--bg-badge);
+}
+
+.neo-card--blue {
+  background: var(--bg-button);
+}
+
+/* Neo-Brutalist Buttons with Mechanical Press Effect */
+.neo-btn {
+  background: var(--bg-button);
+  color: #111111;
+  border: var(--border-thick);
+  border-radius: 0 !important;
+  box-shadow: var(--shadow-btn);
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: transform 0.1s ease, box-shadow 0.1s ease, background-color 0.1s ease;
+  user-select: none;
+}
+
+.neo-btn:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: var(--shadow-btn-hover);
+}
+
+.neo-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 0px 0px 0px var(--border-color);
+}
+
+.neo-btn-primary {
+  background: #111111;
+  color: #ffffff;
+  border: 2px solid #111111;
+}
+
+.neo-btn-primary:hover {
+  background: var(--editorial-red);
+  color: #ffffff;
+  border-color: #111111;
+}
+
+.neo-btn-accent {
+  background: var(--bg-card-featured);
+  color: #111111;
+}
+
+.neo-btn-mint {
+  background: var(--bg-badge);
+  color: #111111;
+}
+
+.neo-btn-coral {
+  background: var(--bg-coral);
+  color: #991b1b;
+}
+
+.neo-btn-white {
+  background: #ffffff;
+  color: #111111;
+}
+
+.neo-btn-white:hover {
+  background: #f4f4f5;
+}
+
+/* Neo-Brutalist Badges */
+.neo-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  border: var(--border-thin);
+  border-radius: 0 !important;
+  box-shadow: 1.5px 1.5px 0px var(--border-color);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: #ffffff;
+  color: #111111;
+}
+
+.neo-badge-mint {
+  background: var(--bg-badge);
+  color: #064e3b;
+}
+
+.neo-badge-yellow {
+  background: var(--bg-card-featured);
+  color: #713f12;
+}
+
+.neo-badge-blue {
+  background: var(--bg-button);
+  color: #0c4a6e;
+}
+
+.neo-badge-dark {
+  background: #111111;
+  color: #ffffff;
+}
+
+/* Neo-Brutalist Form Controls */
+.neo-input {
+  border: var(--border-thick);
+  border-radius: 0 !important;
+  box-shadow: var(--shadow-sm);
+  background: #ffffff;
+  color: #111111;
+  transition: box-shadow 0.1s ease, border-color 0.1s ease;
+}
+
+.neo-input:focus {
+  outline: none !important;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Neo-Brutalist Modal Surface */
+.neo-modal {
+  background: #ffffff;
+  border: 3px solid var(--border-color);
+  border-radius: 0 !important;
+  box-shadow: var(--shadow-modal);
+}
+
+/* Custom Editorial / Neo-Brutalist Tag */
 .eyebrow-tag {
   font-size: 0.6875rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  font-weight: 700;
+  font-weight: 800;
+  font-family: var(--font-mono);
 }
 
-/* Clean square editorial card transitions (crisp border change rather than floating shadow) */
+/* Clean square editorial card transitions */
 .editorial-card-hover {
-  transition: border-color 0.15s ease, background-color 0.15s ease;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
 }
 
 .editorial-card-hover:hover {
-  border-color: #111827;
+  transform: translate(-2px, -2px);
+  box-shadow: var(--shadow-card-hover);
 }
 
 /* Clean custom scrollbar with sharp square thumb */
 ::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+  width: 8px;
+  height: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: #f4f4f5;
+  border-left: 1.5px solid #111111;
 }
 ::-webkit-scrollbar-thumb {
-  background: #c1c1c1;
+  background: #111111;
   border-radius: 0 !important;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #a1a1a1;
+  background: #3f3f46;
+}
+
+/* Utility to hide scrollbar on horizontal scroll rows */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }

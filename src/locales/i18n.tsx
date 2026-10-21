@@ -74,7 +74,7 @@ export const I18nProvider: React.FC<{
       try {
         // Persist preference in cookie (1 year) & localStorage
         document.cookie = `NEXT_LOCALE=${newLocale}; path=/; max-age=31536000; SameSite=Lax`;
-        localStorage.setItem("rateprof_locale", newLocale);
+        localStorage.setItem("rateurprofs_locale", newLocale);
       } catch {
         // Safe in restricted storage environments
       }

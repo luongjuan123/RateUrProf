@@ -1,0 +1,31 @@
+# ==============================================================================
+# RateUrProfs Data Collection Worker for Google Cloud Run Jobs
+# ==============================================================================
+FROM python:3.12-slim AS runner
+
+WORKDIR /app
+
+ENV PYTHONUNBUFFERED=1
+ENV PYTHONDONTWRITEBYTECODE=1
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    ca-certificates \
+    curl \
+    && rm -rf /var/lib/apt/lists/*
+
+COPY requirements.txt ./
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Non-root security
+RUN useradd -m -u 1001 appuser && \
+    mkdir -p /app/logs /app/src/data && \
+    chown -R appuser:appuser /app
+
+COPY --chown=appuser:appuser data_collection ./data_collection
+COPY --chown=appuser:appuser pipeline ./pipeline
+COPY --chown=appuser:appuser src/data ./src/data
+
+USER appuser
+
+ENTRYPOINT ["python", "-m", "data_collection.main"]
+CMD ["run", "--batches", "10"]

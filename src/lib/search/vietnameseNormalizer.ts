@@ -19,17 +19,24 @@ export function stripVietnameseDiacritics(str: string): string {
     .trim();
 }
 
+const normCache = new Map<string, string>();
+
 /**
  * Normalizes text to lowercase, stripped of diacritics, and trimmed.
  * Suitable for indexed searching and fast equality/prefix comparisons.
  */
 export function normalizeSearchString(str: string): string {
   if (!str) return "";
-  return stripVietnameseDiacritics(str)
+  const cached = normCache.get(str);
+  if (cached !== undefined) return cached;
+  if (normCache.size > 10000) normCache.clear();
+  const normalized = stripVietnameseDiacritics(str)
     .toLowerCase()
     .replace(/[^a-z0-9\s]/g, " ")
     .replace(/\s+/g, " ")
     .trim();
+  normCache.set(str, normalized);
+  return normalized;
 }
 
 /**
@@ -92,6 +99,17 @@ function escapeRegex(str: string): string {
   return str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
 
+const phraseRegexCache = new Map<string, RegExp>();
+function getCachedPhraseRegex(norm: string): RegExp {
+  let reg = phraseRegexCache.get(norm);
+  if (!reg) {
+    if (phraseRegexCache.size > 2000) phraseRegexCache.clear();
+    reg = new RegExp(`(?:^|\\s)${escapeRegex(norm)}(?:\\s|$)`);
+    phraseRegexCache.set(norm, reg);
+  }
+  return reg;
+}
+
 /**
  * Tests whether target string matches the search query respecting word boundaries.
  * Prevents "Nguyễn Văn An" from falsely matching "Nguyễn Văn Anh".
@@ -110,7 +128,7 @@ export function matchesSearchQuery(target: string, query: string, allowPrefix: b
 
   // 2. Word boundary phrase match:
   // query appears as a full phrase surrounded by start/end or spaces
-  const phraseRegex = new RegExp(`(?:^|\\s)${escapeRegex(qNorm)}(?:\\s|$)`);
+  const phraseRegex = getCachedPhraseRegex(qNorm);
   if (phraseRegex.test(tNorm)) return true;
 
   // 3. Word token matching
@@ -189,13 +207,13 @@ export function computeRelevanceScore(
   if (!query || !query.trim()) return 0;
 
   const qNorm = normalizeSearchString(query);
-  const nameNorm = normalizeSearchString(data.fullName || "");
+  const nameNorm = data.normalizedName || normalizeSearchString(data.fullName || "");
   let score = 0;
 
   // 1. Name matching
   if (nameNorm === qNorm) {
     score += 100;
-  } else if (new RegExp(`(?:^|\\s)${escapeRegex(qNorm)}(?:\\s|$)`).test(nameNorm)) {
+  } else if (getCachedPhraseRegex(qNorm).test(nameNorm)) {
     score += 80;
   } else if (nameNorm.startsWith(qNorm)) {
     score += 60;

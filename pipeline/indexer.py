@@ -44,7 +44,7 @@ class AcademicSemanticIndexer:
         citation_url = (
             professor.official_profile_urls[0]
             if professor.official_profile_urls
-            else (professor.source_urls[0] if professor.source_urls else f"https://rateprofcuaban.vn/professors/{professor.id}")
+            else (professor.source_urls[0] if professor.source_urls else f"https://rateurprofs.site/professors/{professor.id}")
         )
 
         # Structured markdown chunk designed for direct LLM ingestion and grounding

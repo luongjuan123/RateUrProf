@@ -72,9 +72,25 @@ class IdentityResolutionEngine:
             if val1 and val2 and val1.lower() == val2.lower():
                 return key, val1
 
-        # Check exact official profile url match
-        urls1 = set(u.lower().rstrip("/") for u in prof1.official_profile_urls)
-        urls2 = set(u.lower().rstrip("/") for u in prof2.official_profile_urls)
+        # Check exact staff code match within same university
+        if prof1.university_id == prof2.university_id:
+            sc1 = prof1.identifiers.get("staffCode")
+            sc2 = prof2.identifiers.get("staffCode")
+            if sc1 and sc2 and sc1.lower() == sc2.lower():
+                return "staffCode", sc1
+
+        # Check exact individual profile url match (exclude directory/search listing URLs)
+        directory_keywords = ["can-bo", "giang-vien", "danhba", "unit_", "people", "faculty", "nhan-su", "doi-ngu"]
+        urls1 = set(
+            u.lower().rstrip("/")
+            for u in prof1.official_profile_urls
+            if u and not any(kw in u.lower() for kw in directory_keywords)
+        )
+        urls2 = set(
+            u.lower().rstrip("/")
+            for u in prof2.official_profile_urls
+            if u and not any(kw in u.lower() for kw in directory_keywords)
+        )
         shared_urls = urls1.intersection(urls2)
         if shared_urls:
             return "official_profile_url", list(shared_urls)[0]
@@ -100,12 +116,26 @@ class IdentityResolutionEngine:
         # 2. Normalized name comparison
         norm1 = cls.normalize_name(p1.name)
         norm2 = cls.normalize_name(p2.name)
+
+        # Exact normalized name match
+        is_exact_name = (norm1 == norm2)
+        words1 = norm1.split()
+        words2 = norm2.split()
+
+        # In Vietnamese, if the given name (last word) or family name (first word) differs,
+        # they are definitively distinct people
+        if words1 and words2 and (words1[-1] != words2[-1] or words1[0] != words2[0]):
+            return 0.0, ["Họ hoặc tên chính khác biệt"]
+
         name_sim = cls.compute_similarity(norm1, norm2)
 
-        if name_sim < 0.75:
-            return 0.0, ["Họ tên khác biệt rõ rệt"]
+        if not is_exact_name and name_sim < 0.92:
+            return 0.0, ["Họ tên khác biệt"]
 
-        reasons.append(f"Độ tương đồng họ tên chuẩn hóa: {name_sim:.2f}")
+        if is_exact_name:
+            reasons.append("Trùng khớp hoàn toàn họ tên chuẩn hóa")
+        else:
+            reasons.append(f"Độ tương đồng họ tên chuẩn hóa: {name_sim:.2f}")
 
         # 3. University affiliation
         same_univ = p1.university_id == p2.university_id
@@ -131,20 +161,23 @@ class IdentityResolutionEngine:
         if shared_interests:
             reasons.append(f"Chung hướng nghiên cứu: {', '.join(list(shared_interests)[:3])}")
 
-        # Score computation
-        score = name_sim * 0.5
-        if same_univ:
-            score += 0.35
-            if same_faculty:
-                score += 0.15
+        # Score computation:
+        # Require EXACT normalized name match to ever score >= 0.90
+        if is_exact_name:
+            if same_univ:
+                score = 0.98 if same_faculty else 0.92
+            else:
+                score = 0.75
+                if shared_interests:
+                    score += 0.15
+                if p1.academic_title == p2.academic_title and p1.academic_title:
+                    score += 0.05
         else:
-            # Different universities
-            if name_sim >= 0.9:
-                score += 0.25
-            if shared_interests:
-                score += 0.25
-            if p1.academic_title == p2.academic_title and p1.academic_title:
-                score += 0.1
+            # Minor spelling variation with exact same family name and given name
+            if same_univ:
+                score = 0.70
+            else:
+                score = 0.50
 
         return min(round(score, 2), 0.99 if not id_match else 1.0), reasons
 
@@ -160,15 +193,66 @@ class IdentityResolutionEngine:
         - High-similarity matches across different universities are added to candidates queue.
         - Distinct records are added as new.
         """
-        merged_or_new: Dict[str, ProfessorRecord] = {p.id: p for p in existing}
+        merged_or_new: Dict[str, ProfessorRecord] = {}
         candidates: List[EntityMatchCandidateRecord] = []
+
+        # Inverted index for O(1) candidate lookup
+        # key: (norm_family_name, norm_given_name) -> list of prof_ids
+        name_block_index: Dict[Tuple[str, str], List[str]] = {}
+        # key: identifier (e.g. email) -> prof_id
+        ident_index: Dict[str, str] = {}
+
+        def add_to_index(p: ProfessorRecord):
+            norm = cls.normalize_name(p.name)
+            words = norm.split()
+            if len(words) >= 2:
+                key = (words[0], words[-1])
+                name_block_index.setdefault(key, []).append(p.id)
+            elif len(words) == 1:
+                key = (words[0], words[0])
+                name_block_index.setdefault(key, []).append(p.id)
+
+            for ik in ["orcid", "institutionalEmail", "scopusId", "googleScholarId"]:
+                val = p.identifiers.get(ik)
+                if val:
+                    ident_index[val.lower().strip()] = p.id
+
+        # Seed existing records
+        for p in existing:
+            merged_or_new[p.id] = p
+            add_to_index(p)
 
         for new_prof in incoming:
             matched_id: Optional[str] = None
             highest_score = 0.0
             best_reasons: List[str] = []
 
-            for ex_id, ex_prof in merged_or_new.items():
+            # Find candidate IDs to check using inverted index
+            cand_ids = set()
+
+            # 1. Check identifiers
+            for ik in ["orcid", "institutionalEmail", "scopusId", "googleScholarId"]:
+                val = new_prof.identifiers.get(ik)
+                if val and val.lower().strip() in ident_index:
+                    cand_ids.add(ident_index[val.lower().strip()])
+
+            # 2. Check name block
+            new_norm = cls.normalize_name(new_prof.name)
+            new_words = new_norm.split()
+            if len(new_words) >= 2:
+                n_key = (new_words[0], new_words[-1])
+                if n_key in name_block_index:
+                    cand_ids.update(name_block_index[n_key])
+            elif len(new_words) == 1:
+                n_key = (new_words[0], new_words[0])
+                if n_key in name_block_index:
+                    cand_ids.update(name_block_index[n_key])
+
+            # Only compare against block candidates (mathematically, any other record scores 0.0)
+            for ex_id in cand_ids:
+                if ex_id not in merged_or_new:
+                    continue
+                ex_prof = merged_or_new[ex_id]
                 score, reasons = cls.compare_professors(new_prof, ex_prof)
                 if score > highest_score:
                     highest_score = score
@@ -182,6 +266,7 @@ class IdentityResolutionEngine:
                     # Safe to merge
                     merged = cls.merge_records(ex_prof, new_prof)
                     merged_or_new[matched_id] = merged
+                    add_to_index(merged)
                     continue
 
             # Case B: Potential duplicate across different universities (homonym or job transfer)
@@ -202,9 +287,11 @@ class IdentityResolutionEngine:
                 candidates.append(cand)
                 # Keep new record separate until reviewed by admin
                 merged_or_new[new_prof.id] = new_prof
+                add_to_index(new_prof)
             else:
                 # Case C: Distinct new professor
                 merged_or_new[new_prof.id] = new_prof
+                add_to_index(new_prof)
 
         return list(merged_or_new.values()), candidates
 

@@ -3,7 +3,7 @@
 import React from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useTranslation, Locale, supportedLocales } from "@/locales/i18n";
-import { Globe } from "lucide-react";
+import { PopArtGlobe } from "@/components/icons/PopArtIcons";
 
 interface LanguageSwitcherProps {
   className?: string;
@@ -47,10 +47,10 @@ export const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({ className = 
     <div
       role="radiogroup"
       aria-label={t("common.switchLanguage")}
-      className={`inline-flex items-center p-0.5 border border-gray-300 bg-gray-100 ${className}`}
+      className={`inline-flex items-center p-0.5 border-2 border-black bg-white shadow-[2px_2px_0px_0px_#000000] ${className}`}
     >
-      <div className="pl-1.5 pr-1 text-gray-500" aria-hidden="true">
-        <Globe className="w-3.5 h-3.5" />
+      <div className="pl-1.5 pr-1 text-black" aria-hidden="true">
+        <PopArtGlobe className="w-3.5 h-3.5" />
       </div>
 
       <button
@@ -59,10 +59,10 @@ export const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({ className = 
         aria-checked={locale === "vi"}
         aria-label="Tiếng Việt (Vietnamese)"
         onClick={() => handleLanguageChange("vi")}
-        className={`px-2 py-1 text-[11px] font-black uppercase tracking-wider transition-all focus:outline-none focus:ring-1 focus:ring-black ${
+        className={`px-2 py-0.5 text-[11px] font-black uppercase tracking-wider transition-all focus:outline-none ${
           locale === "vi"
-            ? "bg-[#e03a3e] text-white"
-            : "text-gray-700 hover:text-black hover:bg-gray-200"
+            ? "bg-[#e03a3e] text-white border border-black shadow-[1px_1px_0px_#000]"
+            : "text-gray-800 hover:text-black hover:bg-[#e0f2fe]"
         }`}
       >
         VI
@@ -74,10 +74,10 @@ export const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({ className = 
         aria-checked={locale === "en"}
         aria-label="English"
         onClick={() => handleLanguageChange("en")}
-        className={`px-2 py-1 text-[11px] font-black uppercase tracking-wider transition-all focus:outline-none focus:ring-1 focus:ring-black ${
+        className={`px-2 py-0.5 text-[11px] font-black uppercase tracking-wider transition-all focus:outline-none ${
           locale === "en"
-            ? "bg-[#e03a3e] text-white"
-            : "text-gray-700 hover:text-black hover:bg-gray-200"
+            ? "bg-[#e03a3e] text-white border border-black shadow-[1px_1px_0px_#000]"
+            : "text-gray-800 hover:text-black hover:bg-[#e0f2fe]"
         }`}
       >
         EN

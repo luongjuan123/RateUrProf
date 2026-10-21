@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { PopArtChevronLeft, PopArtChevronRight } from "@/components/icons/PopArtIcons";
 
 interface PaginationControlsProps {
   currentPage: number;
@@ -39,23 +39,23 @@ export const PaginationControls: React.FC<PaginationControlsProps> = ({
   }
 
   return (
-    <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8 border-t border-gray-200">
+    <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8 border-t-2 border-black">
       {/* Information text */}
-      <span className="text-xs text-gray-500 font-medium">
-        Hiển thị <span className="font-bold text-gray-900">{startItem} - {endItem}</span> trong tổng số{" "}
-        <span className="font-bold text-[#e03a3e]">{totalCount}</span> giảng viên
+      <span className="text-xs text-gray-700 font-bold">
+        Hiển thị <span className="font-black text-black bg-[#fef9c3] px-1 border border-black">{startItem} - {endItem}</span> trong tổng số{" "}
+        <span className="font-black text-black bg-[#6ee7b7] px-1 border border-black">{totalCount}</span> giảng viên
       </span>
 
       {/* Page navigation buttons */}
-      <div className="flex items-center gap-1.5">
+      <div className="flex items-center gap-2">
         <button
           type="button"
           onClick={() => onPageChange(currentPage - 1)}
           disabled={currentPage <= 1}
-          className="p-2 border border-gray-300 text-gray-700 hover:bg-gray-100 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+          className="p-2 border-2 border-black bg-white text-black shadow-[2px_2px_0px_0px_#000000] hover:bg-[#e0f2fe] active:translate-x-[1px] active:translate-y-[1px] active:shadow-none disabled:opacity-30 disabled:cursor-not-allowed disabled:shadow-none transition-all cursor-pointer"
           title="Trang trước"
         >
-          <ChevronLeft className="w-4 h-4" />
+          <PopArtChevronLeft className="w-4 h-4" />
         </button>
 
         {startPage > 1 && (
@@ -63,11 +63,11 @@ export const PaginationControls: React.FC<PaginationControlsProps> = ({
             <button
               type="button"
               onClick={() => onPageChange(1)}
-              className="px-3 py-1.5 border border-gray-300 text-xs font-bold text-gray-700 hover:bg-gray-100"
+              className="px-3 py-1.5 border-2 border-black bg-white text-xs font-black text-black shadow-[2px_2px_0px_0px_#000000] hover:bg-[#e0f2fe] active:translate-x-[1px] active:translate-y-[1px] active:shadow-none transition-all cursor-pointer"
             >
               1
             </button>
-            {startPage > 2 && <span className="px-1 text-gray-400">...</span>}
+            {startPage > 2 && <span className="px-1 font-black text-black">...</span>}
           </>
         )}
 
@@ -78,10 +78,10 @@ export const PaginationControls: React.FC<PaginationControlsProps> = ({
               key={p}
               type="button"
               onClick={() => onPageChange(p)}
-              className={`px-3 py-1.5 text-xs font-bold transition-colors ${
+              className={`px-3 py-1.5 text-xs transition-all cursor-pointer ${
                 isActive
-                  ? "bg-black text-white border-2 border-black"
-                  : "bg-white text-gray-800 border border-gray-300 hover:bg-gray-100"
+                  ? "bg-black text-[#fef9c3] border-2 border-black font-black shadow-none translate-x-[1px] translate-y-[1px]"
+                  : "bg-white text-black border-2 border-black font-black shadow-[2px_2px_0px_0px_#000000] hover:bg-[#e0f2fe] active:translate-x-[1px] active:translate-y-[1px] active:shadow-none"
               }`}
             >
               {p}
@@ -91,11 +91,11 @@ export const PaginationControls: React.FC<PaginationControlsProps> = ({
 
         {endPage < totalPages && (
           <>
-            {endPage < totalPages - 1 && <span className="px-1 text-gray-400">...</span>}
+            {endPage < totalPages - 1 && <span className="px-1 font-black text-black">...</span>}
             <button
               type="button"
               onClick={() => onPageChange(totalPages)}
-              className="px-3 py-1.5 border border-gray-300 text-xs font-bold text-gray-700 hover:bg-gray-100"
+              className="px-3 py-1.5 border-2 border-black bg-white text-xs font-black text-black shadow-[2px_2px_0px_0px_#000000] hover:bg-[#e0f2fe] active:translate-x-[1px] active:translate-y-[1px] active:shadow-none transition-all cursor-pointer"
             >
               {totalPages}
             </button>
@@ -106,10 +106,10 @@ export const PaginationControls: React.FC<PaginationControlsProps> = ({
           type="button"
           onClick={() => onPageChange(currentPage + 1)}
           disabled={currentPage >= totalPages}
-          className="p-2 border border-gray-300 text-gray-700 hover:bg-gray-100 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+          className="p-2 border-2 border-black bg-white text-black shadow-[2px_2px_0px_0px_#000000] hover:bg-[#e0f2fe] active:translate-x-[1px] active:translate-y-[1px] active:shadow-none disabled:opacity-30 disabled:cursor-not-allowed disabled:shadow-none transition-all cursor-pointer"
           title="Trang tiếp theo"
         >
-          <ChevronRight className="w-4 h-4" />
+          <PopArtChevronRight className="w-4 h-4" />
         </button>
       </div>
     </div>

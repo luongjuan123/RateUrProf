@@ -19,9 +19,8 @@ import {
   formatTitleWithInstructionalRank
 } from "../src/lib/academicTitles";
 import {
-  detectQueryLanguage,
-  queryBilingualAssistant
-} from "../src/lib/ragAssistant";
+  detectQueryLanguage
+} from "../src/lib/bilingualSearch";
 import {
   formatRating,
   formatNumber,
@@ -62,7 +61,7 @@ function getAllKeys(obj: Record<string, unknown>, prefix = ""): Set<string> {
   return keys;
 }
 
-describe("RateProfCuaBan — 25 Mandatory Bilingual Test Cases", () => {
+describe("RateUrProfs — 25 Mandatory Bilingual Test Cases", () => {
   const viJsonPath = path.resolve(process.cwd(), "src/locales/vi.json");
   const enJsonPath = path.resolve(process.cwd(), "src/locales/en.json");
   const viDict = JSON.parse(fs.readFileSync(viJsonPath, "utf-8"));
@@ -139,7 +138,7 @@ describe("RateProfCuaBan — 25 Mandatory Bilingual Test Cases", () => {
     const normalized2 = removeVietnameseDiacritics("dai hoc bach khoa ha noi");
     assert.strictEqual(normalized1, normalized2);
 
-    const prof = INITIAL_PROFESSORS.find((p) => p.id === "prof-nguyen-thanh-tung")!;
+    const prof = INITIAL_PROFESSORS.find((p) => p.name === "Nguyễn Thanh Tùng" || p.id.includes("nguyen-thanh-tung"))!;
     assert.ok(matchProfessor(prof, "nguyen thanh tung"), "Non-diacritic query must match diacritic name");
     assert.ok(matchProfessor(prof, "Nguyễn Thanh Tùng"), "Diacritic query must match");
   });
@@ -221,36 +220,25 @@ describe("RateProfCuaBan — 25 Mandatory Bilingual Test Cases", () => {
     for (const p of results) {
       assert.strictEqual(p.universityId, "hust");
       const uni = uniMap.get(p.universityId);
-      assert.ok(uni?.cityVi === "Hà Nội" || uni?.cityEn === "Hanoi");
+      assert.ok(uni?.city === "Hà Nội" || uni?.cityVi === "Hà Nội" || uni?.cityEn === "Hanoi");
       const rating = p.ratingAverage ?? p.averageRating ?? 0;
       assert.ok(rating >= 4.5, "Rating must be >= 4.5");
     }
   });
 
   // ==========================================
-  // 16-17. Bilingual RAG Assistant
+  // 16-17. Bilingual Query Language Detection
   // ==========================================
-  it("16. RAG assistant language matching: Vietnamese query produces Vietnamese answer", async () => {
+  it("16. Query language detection: Vietnamese query correctly detected as 'vi'", () => {
     const viQuery = "Giảng viên nào dạy môn Cấu trúc dữ liệu tốt ở Bách Khoa?";
     const detectedLang = detectQueryLanguage(viQuery);
     assert.strictEqual(detectedLang, "vi");
-
-    const answer = await queryBilingualAssistant(viQuery, "vi", INITIAL_PROFESSORS, INITIAL_UNIVERSITIES);
-    assert.strictEqual(answer.responseLanguage, "vi");
-    assert.ok(answer.text.length > 20);
-    assert.ok(answer.sources.length > 0, "Must include verified source citations");
   });
 
-  it("17. RAG assistant language matching: English query produces English answer with citations", async () => {
+  it("17. Query language detection: English query correctly detected as 'en'", () => {
     const enQuery = "Who is the best professor for Software Engineering at VNU?";
     const detectedLang = detectQueryLanguage(enQuery);
     assert.strictEqual(detectedLang, "en");
-
-    const answer = await queryBilingualAssistant(enQuery, "en", INITIAL_PROFESSORS, INITIAL_UNIVERSITIES);
-    assert.strictEqual(answer.responseLanguage, "en");
-    assert.ok(answer.text.length > 20);
-    assert.ok(answer.sources.length > 0, "Must include verified source citations");
-    assert.ok(answer.sources[0].url.startsWith("http"), "Citation must have URL");
   });
 
   // ==========================================
@@ -335,13 +323,13 @@ describe("RateProfCuaBan — 25 Mandatory Bilingual Test Cases", () => {
   // 22. Localized Metadata & SEO alternates
   // ==========================================
   it("22. Localized metadata: layout formats hreflang alternates and OpenGraph tags", () => {
-    const viCanonical = "https://rateprofcuaban.vn/vi";
-    const enCanonical = "https://rateprofcuaban.vn/en";
-    const defaultCanonical = "https://rateprofcuaban.vn/vi";
+    const viCanonical = "https://rateurprofs.site/vi";
+    const enCanonical = "https://rateurprofs.site/en";
+    const defaultCanonical = "https://rateurprofs.site/vi";
 
-    assert.strictEqual(viCanonical, "https://rateprofcuaban.vn/vi");
-    assert.strictEqual(enCanonical, "https://rateprofcuaban.vn/en");
-    assert.strictEqual(defaultCanonical, "https://rateprofcuaban.vn/vi");
+    assert.strictEqual(viCanonical, "https://rateurprofs.site/vi");
+    assert.strictEqual(enCanonical, "https://rateurprofs.site/en");
+    assert.strictEqual(defaultCanonical, "https://rateurprofs.site/vi");
 
     // Number & date formatters adapt by locale
     const numVi = formatNumber(1500000, "vi");

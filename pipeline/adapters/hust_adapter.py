@@ -10,9 +10,9 @@ from pipeline.adapters.base import BaseAcademicAdapter
 from pipeline.models import (
     UniversityRecord,
     ProfessorRecord,
-    AcademicPublicationRecord,
     ProvenanceEvidence,
 )
+from pipeline.dedup import IdentityResolutionEngine
 
 
 class HustAdapter(BaseAcademicAdapter):
@@ -26,67 +26,67 @@ class HustAdapter(BaseAcademicAdapter):
         self, html: str, url: str, university: UniversityRecord
     ) -> List[ProfessorRecord]:
         professors: List[ProfessorRecord] = []
+        seen_names = set()
 
-        # Common title regex: PGS. TS., GS. TS., TS., ThS., KS., CN.
-        title_regex = re.compile(
-            r"\b(GS\.?\s*TS|PGS\.?\s*TS|TS|ThS|KS|CN|Thạc sĩ|Tiến sĩ|Phó Giáo sư|Giáo sư)\b\.?",
-            re.IGNORECASE,
-        )
-
-        # 1. SoICT directory card pattern:
-        # <div class="soict-card"> or <h3><a href="...">Tên cán bộ</a></h3>
-        # <p class="title">Chức vụ / Học vị</p>
-        card_pattern = re.compile(
-            r'<div[^>]*class=["\'][^"\']*(?:can-bo|member|person|staff|lecturer|teacher)[^"\']*["\'][^>]*>(.*?)</div>\s*</div>',
-            re.DOTALL | re.IGNORECASE,
-        )
-
-        cards = list(card_pattern.finditer(html))
-
-        # Fallback to link/heading search if specific cards not found
+        # 1. First extract from rich officer/profile cards with photos (e.g. SoICT officer articles)
+        cards = list(re.finditer(r'<article[^>]*class=["\'][^"\']*officer[^\"\']*["\'][^>]*>(.*?)</article>', html, re.DOTALL | re.IGNORECASE))
         if not cards:
-            link_pattern = re.compile(
-                r'<a[^>]+href=["\']([^"\']*(?:/can-bo/|/giang-vien/|/profile/)[^"\']*)["\'][^>]*>([^<]+)</a>',
-                re.IGNORECASE,
-            )
-            for m in link_pattern.finditer(html):
-                profile_link = urllib.parse.urljoin(url, m.group(1))
-                raw_name = m.group(2).strip()
-                if len(raw_name) > 3 and not raw_name.lower().startswith(("xem", "chi tiết", "xem thêm")):
-                    prof = self._build_prof_record(raw_name, profile_link, url, university)
-                    if prof:
-                        professors.append(prof)
-            return professors
+            cards = list(re.finditer(r'<div[^>]*class=["\'][^"\']*(?:profile-box|member-item)[^"\']*["\'][^>]*>(.*?)</div>', html, re.DOTALL | re.IGNORECASE))
 
         for card in cards:
             card_html = card.group(1)
-
-            # Name and link
-            name_m = re.search(r'<a[^>]+href=["\']([^"\']+)["\'][^>]*>([^<]+)</a>', card_html)
-            if not name_m:
-                name_m = re.search(r'<h[345][^>]*>([^<]+)</h[345]>', card_html)
-                profile_link = url
-                raw_name = name_m.group(1).strip() if name_m else ""
+            name_m = re.search(r'<(?:h[1-6]|span|div)[^>]*class=["\'][^"\']*entry-title[^\"\']*[\"\'][^>]*><a[^>]*>([^<]+)</a>', card_html)
+            profile_link = url
+            if name_m:
+                raw_name = name_m.group(1).strip()
             else:
-                profile_link = urllib.parse.urljoin(url, name_m.group(1))
-                raw_name = name_m.group(2).strip()
+                a_m = re.search(r'<a[^>]+href=["\']([^"\']+\.html)["\'][^>]*>([^<]+)</a>', card_html)
+                if not a_m:
+                    continue
+                profile_link = urllib.parse.urljoin(url, a_m.group(1))
+                raw_name = a_m.group(2).strip()
 
-            if not raw_name:
-                continue
+            # Photo extraction: support data-lazy-src, data-src, and standard src (ignoring data: svg placeholders)
+            lazy_m = re.search(r'data-lazy-src=["\']([^"\']+)["\']', card_html, re.IGNORECASE)
+            avatar_url = lazy_m.group(1).strip() if lazy_m else ""
+            if not avatar_url:
+                data_m = re.search(r'data-src=["\']([^"\']+)["\']', card_html, re.IGNORECASE)
+                avatar_url = data_m.group(1).strip() if data_m else ""
+            if not avatar_url:
+                src_m = re.search(r'<img[^>]+src=["\']([^"\']+)["\']', card_html, re.IGNORECASE)
+                if src_m and not src_m.group(1).startswith("data:"):
+                    avatar_url = src_m.group(1).strip()
 
-            # Image
-            img_m = re.search(r'<img[^>]+src=["\']([^"\']+)["\']', card_html)
-            avatar_url = urllib.parse.urljoin(url, img_m.group(1)) if img_m else ""
+            if avatar_url:
+                avatar_url = urllib.parse.urljoin(url, avatar_url)
 
-            # Bio / Dept / Email text
-            text_snippet = re.sub(r"<[^>]+>", " ", card_html)
-            text_snippet = re.sub(r"\s+", " ", text_snippet).strip()
-
-            prof = self._build_prof_record(
-                raw_name, profile_link, url, university, avatar_url, text_snippet
-            )
-            if prof:
+            prof = self._build_prof_record(raw_name, profile_link, url, university, avatar_url=avatar_url)
+            if prof and prof.name not in seen_names:
+                seen_names.add(prof.name)
                 professors.append(prof)
+
+        if professors:
+            return professors
+
+        # 2. Fallback: Look for links containing academic titles (GS, PGS, TS, ThS)
+        link_pattern = re.compile(
+            r'<a[^>]+href=["\']([^"\']+)["\'][^>]*>(.*?)</a>',
+            re.DOTALL | re.IGNORECASE,
+        )
+
+        for m in link_pattern.finditer(html):
+            href = m.group(1).strip()
+            text = m.group(2)
+            clean_text = re.sub(r'<[^>]+>', '', text).strip()
+
+            if any(k in clean_text for k in ["TS.", "PGS.", "GS.", "ThS.", "TS ", "PGS ", "GS ", "ThS "]):
+                profile_link = urllib.parse.urljoin(url, href)
+                img_m = re.search(r'<img[^>]+(?:src|data-src|data-lazy-src)=["\']([^"\']+)["\']', text, re.IGNORECASE)
+                avatar_url = urllib.parse.urljoin(url, img_m.group(1).strip()) if img_m and not img_m.group(1).startswith("data:") else ""
+                prof = self._build_prof_record(clean_text, profile_link, url, university, avatar_url=avatar_url)
+                if prof and prof.name not in seen_names:
+                    seen_names.add(prof.name)
+                    professors.append(prof)
 
         return professors
 
@@ -102,7 +102,6 @@ class HustAdapter(BaseAcademicAdapter):
         clean_name = raw_name.strip()
         academic_title = None
 
-        # Detect and separate academic title
         if re.search(r"\b(PGS\.?\s*TS|Phó Giáo sư)\b", clean_name, re.IGNORECASE):
             academic_title = "PGS. TS"
             clean_name = re.sub(r"^(PGS\.?\s*TS\.?|Phó Giáo sư,?\s*Tiến sĩ\.?)\s*", "", clean_name, flags=re.I).strip()
@@ -116,60 +115,42 @@ class HustAdapter(BaseAcademicAdapter):
             academic_title = "ThS"
             clean_name = re.sub(r"^(ThS\.?|Thạc sĩ\.?)\s*", "", clean_name, flags=re.I).strip()
 
+        # Clean any remaining trailing or leading punctuation
+        clean_name = re.sub(r"^[,\-\.\s]+|[,\-\.\s]+$", "", clean_name)
         if len(clean_name) < 3:
             return None
 
-        # Slug generation
-        from pipeline.dedup import IdentityResolutionEngine
         norm_name = IdentityResolutionEngine.normalize_name(clean_name)
         prof_id = f"prof-hust-{norm_name.replace(' ', '-')}"
 
-        # Position detection from snippet
-        position = None
-        if "trưởng khoa" in snippet.lower():
-            position = "Trưởng khoa"
-        elif "phó trưởng khoa" in snippet.lower():
-            position = "Phó trưởng khoa"
-        elif "trưởng bộ môn" in snippet.lower():
-            position = "Trưởng bộ môn"
-        elif "giảng viên chính" in snippet.lower():
-            position = "Giảng viên chính"
-
-        # Email detection
-        email_m = re.search(r'([a-zA-Z0-9_.+-]+@(?:[a-zA-Z0-9-]+\.)?hust\.edu\.vn)', snippet)
-        identifiers = {}
-        if email_m:
-            identifiers["institutionalEmail"] = email_m.group(1).lower()
-
-        # Research interests extraction from snippet
-        interests = []
-        if "nghiên cứu:" in snippet.lower() or "research:" in snippet.lower():
-            parts = re.split(r"(?:nghiên cứu:|research:)", snippet, flags=re.I)
-            if len(parts) > 1:
-                tail = parts[1].split(".")[0]
-                interests = [t.strip() for t in tail.split(",") if len(t.strip()) > 2]
+        faculty = "Trường Công nghệ Thông tin & Truyền thông"
+        if "sme.hust" in source_page_url:
+            faculty = "Trường Cơ khí"
+        elif "seee.hust" in source_page_url:
+            faculty = "Trường Điện - Điện tử"
+        elif "fami.hust" in source_page_url:
+            faculty = "Khoa Toán - Tin"
 
         record = ProfessorRecord(
             id=prof_id,
             name=clean_name,
             academic_title=academic_title,
             title=academic_title or "Giảng viên",
-            position=position,
+            position=None,
             university_id="hust",
             university_name="Đại học Bách Khoa Hà Nội",
             university_short_name="HUST",
-            faculty="Trường Công nghệ Thông tin & Truyền thông",
+            faculty=faculty,
+            department=faculty,
             name_variants=[clean_name, norm_name],
             avatar=avatar_url,
-            bio=snippet if len(snippet) > 20 else f"Giảng viên tại Đại học Bách Khoa Hà Nội.",
-            research_interests=interests,
-            official_profile_urls=[profile_url] if profile_url else [],
-            identifiers=identifiers,
+            official_profile_urls=[profile_url] if profile_url else [source_page_url],
+            identifiers={},
             provenance=[
                 ProvenanceEvidence(
                     field="name",
                     source_url=source_page_url,
-                    confidence=0.95,
+                    confidence=1.0,
                     source_type="official_faculty_page",
                 ),
                 ProvenanceEvidence(
@@ -180,8 +161,10 @@ class HustAdapter(BaseAcademicAdapter):
                 ),
             ],
             verification_status="verified",
-            confidence_score=0.92,
-            source_urls=[source_page_url, profile_url],
+            confidence_score=1.0,
+            rating_average=None,
+            rating_count=0,
+            criteria_averages=None,
         )
 
         return record

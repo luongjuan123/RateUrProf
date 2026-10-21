@@ -142,9 +142,19 @@ export function expandQueryTerminology(query: string): string[] {
       ...item.aliasesEn.map(a => a.toLowerCase()),
     ];
 
-    const isMatch = allTokens.some(token => 
-      token.includes(qClean) || qClean.includes(token)
-    );
+    const isMatch = allTokens.some((token) => {
+      if (!token) return false;
+      if (token === qClean) return true;
+      if (qClean.length <= 3) {
+        const regex = new RegExp(`(^|\\s|[^a-z0-9])${qClean.replace(/[.*+?^${}()|[\\]\\\\]/g, "\\\\$&")}($|\\s|[^a-z0-9])`, "i");
+        return regex.test(token);
+      }
+      if (token.length <= 3) {
+        const regex = new RegExp(`(^|\\s|[^a-z0-9])${token.replace(/[.*+?^${}()|[\\]\\\\]/g, "\\\\$&")}($|\\s|[^a-z0-9])`, "i");
+        return regex.test(qClean);
+      }
+      return token.includes(qClean) || qClean.includes(token);
+    });
 
     if (isMatch) {
       matchedTerms.add(item.termVi);

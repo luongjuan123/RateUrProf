@@ -18,35 +18,42 @@ export async function generateMetadata({
   const isVi = lang === "vi";
 
   const title = isVi
-    ? "RateProfCuaBan — Nền tảng đánh giá giảng viên đại học Việt Nam"
-    : "RateProfCuaBan — Vietnam University Professor Ratings & Reviews";
-
-  const description = isVi
-    ? "Đánh giá giảng viên. Chia sẻ trải nghiệm. Chọn môn học thông minh. Nền tảng đánh giá và khám phá giảng viên uy tín tại các trường đại học trên toàn quốc."
-    : "Rate your professors. Share classroom experiences. Choose courses smartly. The trusted nationwide platform for university professor evaluations across Vietnam.";
+    ? "rateurprofs - Đánh giá giảng viên"
+    : "rateurprofs - Professor Ratings";
 
   const keywords = isVi
-    ? ["đánh giá giảng viên", "rate my professor vietnam", "bách khoa", "kinh tế quốc dân", "ngoại thương", "đại học quốc gia", "sinh viên việt nam"]
-    : ["rate my professor vietnam", "vietnam professors", "HUST", "NEU", "HCMUT", "VNU", "vietnam universities", "student reviews"];
+    ? ["rateurprofs", "RateUrProfs", "đánh giá giảng viên", "rate my professor vietnam", "bách khoa", "kinh tế quốc dân", "ngoại thương", "đại học quốc gia", "sinh viên việt nam"]
+    : ["rateurprofs", "RateUrProfs", "rate my professor vietnam", "vietnam professors", "HUST", "NEU", "HCMUT", "VNU", "vietnam universities", "student reviews"];
 
   return {
+    metadataBase: new URL("https://rateurprofs.site"),
     title,
-    description,
     keywords,
     alternates: {
-      canonical: `https://rateprofcuaban.vn/${lang}`,
+      canonical: `https://rateurprofs.site/${lang}`,
       languages: {
-        vi: "https://rateprofcuaban.vn/vi",
-        en: "https://rateprofcuaban.vn/en",
-        "x-default": "https://rateprofcuaban.vn/vi"
+        vi: "https://rateurprofs.site/vi",
+        en: "https://rateurprofs.site/en",
+        "x-default": "https://rateurprofs.site/vi"
       }
     },
     openGraph: {
       title,
-      description,
       type: "website",
       locale: isVi ? "vi_VN" : "en_US",
-      siteName: "RateProfCuaBan",
+      siteName: "rateurprofs",
+    },
+    twitter: {
+      card: "summary",
+      title,
+    },
+    icons: {
+      icon: [
+        { url: "/favicon.ico", sizes: "any" },
+        { url: "/icon", type: "image/png", sizes: "32x32" },
+      ],
+      shortcut: "/favicon.ico",
+      apple: [{ url: "/apple-icon", sizes: "180x180", type: "image/png" }],
     },
   };
 }

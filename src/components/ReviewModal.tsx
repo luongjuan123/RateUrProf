@@ -5,7 +5,13 @@ import { useAuth } from "@/context/AuthContext";
 import { submitReview } from "@/lib/dataService";
 import { Professor, CriteriaRatings } from "@/types";
 import { useTranslation } from "@/locales/i18n";
-import { Star, X, Check, AlertCircle } from "lucide-react";
+import {
+  PopArtStar,
+  PopArtX,
+  PopArtCheck,
+  PopArtAlertCircle,
+} from "@/components/icons/PopArtIcons";
+import { isAnonymousName, resolveReviewerDisplayName } from "@/lib/formatters";
 
 interface ReviewModalProps {
   isOpen: boolean;
@@ -82,10 +88,6 @@ export const ReviewModal: React.FC<ReviewModalProps> = ({
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!user) {
-      setError(t("reviewModal.errorLogin"));
-      return;
-    }
     if (!courseName.trim()) {
       setError(t("reviewModal.errorCourse"));
       return;
@@ -99,14 +101,26 @@ export const ReviewModal: React.FC<ReviewModalProps> = ({
       return;
     }
 
+    if (!user) {
+      setError(locale === "vi" ? "Vui lòng đăng nhập để đánh giá." : "Please sign in to rate.");
+      return;
+    }
+
+    if (cohortName.trim() && isAnonymousName(cohortName.trim())) {
+      setError(
+        t("reviewModal.errorAnonymous") ||
+          (locale === "vi"
+            ? "Không được sử dụng tên ẩn danh khi gửi đánh giá."
+            : "Cannot use an anonymous name when posting a review.")
+      );
+      return;
+    }
+
     try {
       setLoading(true);
       setError(null);
 
-      const defaultAnon = t("reviewModal.anonymousStudent");
-      const studentName = cohortName.trim()
-        ? `${defaultAnon} (${cohortName.trim()})`
-        : userProfile?.displayName || defaultAnon;
+      const studentName = resolveReviewerDisplayName(cohortName, user, userProfile);
 
       const res = await submitReview({
         professorId: professor.id,
@@ -146,57 +160,57 @@ export const ReviewModal: React.FC<ReviewModalProps> = ({
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 overflow-y-auto">
-      <div className="relative w-full max-w-2xl bg-white border-2 border-gray-900 my-8 overflow-hidden">
+      <div className="relative w-full max-w-2xl bg-white border-3 border-black my-8 overflow-hidden shadow-[8px_8px_0px_#000]">
         {/* Editorial Top Accent Stripe */}
-        <div className="h-1.5 bg-[#e03a3e] w-full" />
+        <div className="h-2 bg-[#e03a3e] border-b-2 border-black w-full" />
 
         {/* Modal Header */}
-        <div className="px-6 py-5 border-b border-gray-200 flex items-center justify-between bg-white">
+        <div className="px-6 py-5 border-b-2 border-black flex items-center justify-between bg-white">
           <div>
-            <span className="text-[10px] font-black uppercase tracking-widest text-[#e03a3e]">
+            <span className="text-[10px] font-mono font-black uppercase tracking-widest text-[#e03a3e]">
               {t("reviewModal.modalTag")}
             </span>
-            <h2 className="text-xl font-extrabold text-gray-900 tracking-tight">
+            <h2 className="text-xl font-mono font-black text-black tracking-tight">
               {professor.name}
             </h2>
-            <p className="text-xs text-gray-500">
+            <p className="text-xs font-mono text-gray-700">
               {uniName} • {faculty}
             </p>
           </div>
           <button
             onClick={onClose}
             aria-label={t("common.close")}
-            className="p-1 text-gray-400 hover:text-black hover:bg-gray-100 transition-colors"
+            className="p-1 text-black hover:bg-[#fee2e2] border-2 border-black shadow-[2px_2px_0px_#000] active:translate-x-[1px] active:translate-y-[1px] active:shadow-none transition-all"
           >
-            <X className="w-5 h-5" />
+            <PopArtX className="w-5 h-5" />
           </button>
         </div>
 
         {/* Success Banner */}
         {success ? (
           <div className="p-12 text-center space-y-4">
-            <div className="w-16 h-16 bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto">
-              <Check className="w-8 h-8 stroke-[3]" />
+            <div className="w-16 h-16 bg-[#6ee7b7] text-black border-2 border-black shadow-[2px_2px_0px_#000] flex items-center justify-center mx-auto">
+              <PopArtCheck className="w-8 h-8" />
             </div>
-            <h3 className="text-2xl font-extrabold text-gray-900">
+            <h3 className="text-2xl font-mono font-black text-black uppercase">
               {t("reviewModal.successTitle")}
             </h3>
-            <p className="text-sm text-gray-600 max-w-md mx-auto">
+            <p className="text-sm font-mono text-gray-700 max-w-md mx-auto">
               {t("reviewModal.successDesc")}
             </p>
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="p-6 space-y-6 max-h-[80vh] overflow-y-auto">
             {error && (
-              <div className="p-3 bg-red-50 border border-red-200 text-xs text-red-700 flex items-start gap-2">
-                <AlertCircle className="w-4 h-4 text-red-600 shrink-0 mt-0.5" />
+              <div className="p-3 bg-[#fee2e2] border-2 border-black text-xs font-mono font-bold text-black flex items-start gap-2 shadow-[2px_2px_0px_#000]">
+                <PopArtAlertCircle className="w-4 h-4 shrink-0 mt-0.5" />
                 <span>{error}</span>
               </div>
             )}
 
             {/* Overall Rating (1 - 5 Stars) */}
-            <div className="bg-gray-50 p-5 border border-gray-200 text-center space-y-2">
-              <label className="block text-xs font-black uppercase tracking-wider text-gray-900">
+            <div className="bg-white p-5 border-2 border-black shadow-[4px_4px_0px_#000] text-center space-y-2">
+              <label className="block text-xs font-mono font-black uppercase tracking-wider text-black">
                 {t("reviewModal.overallRatingLabel")}
               </label>
               <div className="flex items-center justify-center gap-2">
@@ -206,19 +220,16 @@ export const ReviewModal: React.FC<ReviewModalProps> = ({
                     type="button"
                     onClick={() => setOverallRating(star)}
                     aria-label={`${star} Stars`}
-                    className="p-1 text-gray-300 hover:scale-110 transition-transform"
+                    className="p-1 hover:scale-110 transition-transform"
                   >
-                    <Star
-                      className={`w-8 h-8 ${
-                        star <= overallRating
-                          ? "fill-[#e03a3e] text-[#e03a3e]"
-                          : "text-gray-300"
-                      }`}
+                    <PopArtStar
+                      className="w-8 h-8"
+                      filled={star <= overallRating}
                     />
                   </button>
                 ))}
               </div>
-              <p className="text-xs font-bold text-gray-700">
+              <p className="text-xs font-mono font-bold text-black">
                 {overallRating === 5 && t("reviewModal.ratingDesc5")}
                 {overallRating === 4 && t("reviewModal.ratingDesc4")}
                 {overallRating === 3 && t("reviewModal.ratingDesc3")}
@@ -229,16 +240,16 @@ export const ReviewModal: React.FC<ReviewModalProps> = ({
 
             {/* 5 Criteria Breakdown */}
             <div className="space-y-4">
-              <h4 className="text-xs font-black uppercase tracking-wider text-gray-900 border-l-2 border-[#e03a3e] pl-2">
+              <h4 className="text-xs font-mono font-black uppercase tracking-wider text-black border-l-4 border-[#e03a3e] pl-2">
                 {t("reviewModal.criteriaSectionTitle")}
               </h4>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {/* 1. Teaching Quality */}
-                <div className="p-3 bg-gray-50 border border-gray-200 space-y-1.5">
-                  <div className="flex justify-between text-xs font-bold text-gray-800">
+                <div className="p-3 bg-white border-2 border-black shadow-[2px_2px_0px_#000] space-y-1.5">
+                  <div className="flex justify-between text-xs font-mono font-bold text-black">
                     <span>{t("reviewModal.teachingQuality")}</span>
-                    <span className="text-[#e03a3e]">{criteria.teachingQuality} / 5</span>
+                    <span className="text-[#e03a3e] font-black">{criteria.teachingQuality} / 5</span>
                   </div>
                   <input
                     type="range"
@@ -249,17 +260,17 @@ export const ReviewModal: React.FC<ReviewModalProps> = ({
                     onChange={(e) => handleCriteriaChange("teachingQuality", Number(e.target.value))}
                     className="w-full accent-[#e03a3e]"
                   />
-                  <div className="flex justify-between text-[10px] text-gray-400">
+                  <div className="flex justify-between text-[10px] font-mono text-gray-500 font-bold">
                     <span>{t("reviewModal.teachingLow")}</span>
                     <span>{t("reviewModal.teachingHigh")}</span>
                   </div>
                 </div>
 
                 {/* 2. Clarity */}
-                <div className="p-3 bg-gray-50 border border-gray-200 space-y-1.5">
-                  <div className="flex justify-between text-xs font-bold text-gray-800">
+                <div className="p-3 bg-white border-2 border-black shadow-[2px_2px_0px_#000] space-y-1.5">
+                  <div className="flex justify-between text-xs font-mono font-bold text-black">
                     <span>{t("reviewModal.clarity")}</span>
-                    <span className="text-[#e03a3e]">{criteria.clarity} / 5</span>
+                    <span className="text-[#e03a3e] font-black">{criteria.clarity} / 5</span>
                   </div>
                   <input
                     type="range"
@@ -270,17 +281,17 @@ export const ReviewModal: React.FC<ReviewModalProps> = ({
                     onChange={(e) => handleCriteriaChange("clarity", Number(e.target.value))}
                     className="w-full accent-[#e03a3e]"
                   />
-                  <div className="flex justify-between text-[10px] text-gray-400">
+                  <div className="flex justify-between text-[10px] font-mono text-gray-500 font-bold">
                     <span>{t("reviewModal.clarityLow")}</span>
                     <span>{t("reviewModal.clarityHigh")}</span>
                   </div>
                 </div>
 
                 {/* 3. Grading Fairness */}
-                <div className="p-3 bg-gray-50 border border-gray-200 space-y-1.5">
-                  <div className="flex justify-between text-xs font-bold text-gray-800">
+                <div className="p-3 bg-white border-2 border-black shadow-[2px_2px_0px_#000] space-y-1.5">
+                  <div className="flex justify-between text-xs font-mono font-bold text-black">
                     <span>{t("reviewModal.gradingFairness")}</span>
-                    <span className="text-[#e03a3e]">{criteria.gradingFairness} / 5</span>
+                    <span className="text-[#e03a3e] font-black">{criteria.gradingFairness} / 5</span>
                   </div>
                   <input
                     type="range"
@@ -291,17 +302,17 @@ export const ReviewModal: React.FC<ReviewModalProps> = ({
                     onChange={(e) => handleCriteriaChange("gradingFairness", Number(e.target.value))}
                     className="w-full accent-[#e03a3e]"
                   />
-                  <div className="flex justify-between text-[10px] text-gray-400">
+                  <div className="flex justify-between text-[10px] font-mono text-gray-500 font-bold">
                     <span>{t("reviewModal.gradingLow")}</span>
                     <span>{t("reviewModal.gradingHigh")}</span>
                   </div>
                 </div>
 
                 {/* 4. Difficulty */}
-                <div className="p-3 bg-gray-50 border border-gray-200 space-y-1.5">
-                  <div className="flex justify-between text-xs font-bold text-gray-800">
+                <div className="p-3 bg-white border-2 border-black shadow-[2px_2px_0px_#000] space-y-1.5">
+                  <div className="flex justify-between text-xs font-mono font-bold text-black">
                     <span>{t("reviewModal.difficulty")}</span>
-                    <span className="text-[#e03a3e]">{criteria.difficulty} / 5</span>
+                    <span className="text-[#e03a3e] font-black">{criteria.difficulty} / 5</span>
                   </div>
                   <input
                     type="range"
@@ -312,17 +323,17 @@ export const ReviewModal: React.FC<ReviewModalProps> = ({
                     onChange={(e) => handleCriteriaChange("difficulty", Number(e.target.value))}
                     className="w-full accent-[#e03a3e]"
                   />
-                  <div className="flex justify-between text-[10px] text-gray-400">
+                  <div className="flex justify-between text-[10px] font-mono text-gray-500 font-bold">
                     <span>{t("reviewModal.difficultyLow")}</span>
                     <span>{t("reviewModal.difficultyHigh")}</span>
                   </div>
                 </div>
 
                 {/* 5. Communication */}
-                <div className="p-3 bg-gray-50 border border-gray-200 space-y-1.5 md:col-span-2">
-                  <div className="flex justify-between text-xs font-bold text-gray-800">
+                <div className="p-3 bg-white border-2 border-black shadow-[2px_2px_0px_#000] space-y-1.5 md:col-span-2">
+                  <div className="flex justify-between text-xs font-mono font-bold text-black">
                     <span>{t("reviewModal.communication")}</span>
-                    <span className="text-[#e03a3e]">{criteria.communication} / 5</span>
+                    <span className="text-[#e03a3e] font-black">{criteria.communication} / 5</span>
                   </div>
                   <input
                     type="range"
@@ -333,7 +344,7 @@ export const ReviewModal: React.FC<ReviewModalProps> = ({
                     onChange={(e) => handleCriteriaChange("communication", Number(e.target.value))}
                     className="w-full accent-[#e03a3e]"
                   />
-                  <div className="flex justify-between text-[10px] text-gray-400">
+                  <div className="flex justify-between text-[10px] font-mono text-gray-500 font-bold">
                     <span>{t("reviewModal.communicationLow")}</span>
                     <span>{t("reviewModal.communicationHigh")}</span>
                   </div>
@@ -344,7 +355,7 @@ export const ReviewModal: React.FC<ReviewModalProps> = ({
             {/* Course & Metadata */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label className="block text-[11px] font-bold text-gray-700 uppercase tracking-wider mb-1">
+                <label className="block text-[11px] font-mono font-bold text-black uppercase tracking-wider mb-1">
                   {t("reviewModal.courseLabel")}
                 </label>
                 <input
@@ -353,18 +364,18 @@ export const ReviewModal: React.FC<ReviewModalProps> = ({
                   value={courseName}
                   onChange={(e) => setCourseName(e.target.value)}
                   placeholder={t("reviewModal.coursePlaceholder")}
-                  className="w-full px-3 py-2 text-xs border border-gray-300 focus:outline-none focus:border-black"
+                  className="w-full px-3 py-2 text-xs border-2 border-black outline-none focus:outline-none focus-visible:outline-none focus:ring-0 focus-visible:ring-0 focus:bg-[#fef9c3]/20 font-mono text-black shadow-[2px_2px_0px_#000]"
                 />
               </div>
 
               <div>
-                <label className="block text-[11px] font-bold text-gray-700 uppercase tracking-wider mb-1">
+                <label className="block text-[11px] font-mono font-bold text-black uppercase tracking-wider mb-1">
                   {t("reviewModal.gradeLabel")}
                 </label>
                 <select
                   value={gradeReceived}
                   onChange={(e) => setGradeReceived(e.target.value)}
-                  className="w-full px-3 py-2 text-xs border border-gray-300 focus:outline-none focus:border-black bg-white"
+                  className="w-full px-3 py-2 text-xs border-2 border-black outline-none focus:outline-none focus-visible:outline-none focus:ring-0 focus-visible:ring-0 focus:bg-[#fef9c3]/20 font-mono text-black shadow-[2px_2px_0px_#000] bg-white cursor-pointer"
                 >
                   <option value="A">A (4.0)</option>
                   <option value="B+">B+ (3.5)</option>
@@ -378,10 +389,10 @@ export const ReviewModal: React.FC<ReviewModalProps> = ({
 
               {/* Attendance & Take Again */}
               <div className="space-y-1">
-                <span className="block text-[11px] font-bold text-gray-700 uppercase tracking-wider">
+                <span className="block text-[11px] font-mono font-bold text-black uppercase tracking-wider">
                   {t("reviewModal.attendanceLabel")}
                 </span>
-                <div className="flex gap-4 text-xs font-medium">
+                <div className="flex gap-4 text-xs font-mono font-bold">
                   <label className="flex items-center gap-1.5 cursor-pointer">
                     <input
                       type="radio"
@@ -406,10 +417,10 @@ export const ReviewModal: React.FC<ReviewModalProps> = ({
               </div>
 
               <div className="space-y-1">
-                <span className="block text-[11px] font-bold text-gray-700 uppercase tracking-wider">
+                <span className="block text-[11px] font-mono font-bold text-black uppercase tracking-wider">
                   {t("reviewModal.takeAgainLabel")}
                 </span>
-                <div className="flex gap-4 text-xs font-medium">
+                <div className="flex gap-4 text-xs font-mono font-bold">
                   <label className="flex items-center gap-1.5 cursor-pointer">
                     <input
                       type="radio"
@@ -418,7 +429,7 @@ export const ReviewModal: React.FC<ReviewModalProps> = ({
                       onChange={() => setTakeAgain(true)}
                       className="accent-[#e03a3e]"
                     />
-                    <span className="text-emerald-700 font-bold">{t("reviewModal.takeAgainYes")}</span>
+                    <span className="text-black bg-[#6ee7b7]/60 px-1.5 py-0.5 border border-black shadow-[1px_1px_0px_#000]">{t("reviewModal.takeAgainYes")}</span>
                   </label>
                   <label className="flex items-center gap-1.5 cursor-pointer">
                     <input
@@ -428,7 +439,7 @@ export const ReviewModal: React.FC<ReviewModalProps> = ({
                       onChange={() => setTakeAgain(false)}
                       className="accent-[#e03a3e]"
                     />
-                    <span className="text-gray-600">{t("reviewModal.takeAgainNo")}</span>
+                    <span className="text-black bg-[#fee2e2] px-1.5 py-0.5 border border-black shadow-[1px_1px_0px_#000]">{t("reviewModal.takeAgainNo")}</span>
                   </label>
                 </div>
               </div>
@@ -436,7 +447,7 @@ export const ReviewModal: React.FC<ReviewModalProps> = ({
 
             {/* Quick Tags */}
             <div className="space-y-2">
-              <label className="block text-[11px] font-bold text-gray-700 uppercase tracking-wider">
+              <label className="block text-[11px] font-mono font-bold text-black uppercase tracking-wider">
                 {t("reviewModal.tagsLabel")}
               </label>
               <div className="flex flex-wrap gap-1.5">
@@ -447,10 +458,10 @@ export const ReviewModal: React.FC<ReviewModalProps> = ({
                       key={tag}
                       type="button"
                       onClick={() => handleTagToggle(tag)}
-                      className={`px-2.5 py-1 text-xs border transition-colors ${
+                      className={`px-2.5 py-1 text-xs border-2 border-black font-mono font-bold transition-all shadow-[2px_2px_0px_#000] ${
                         isSelected
-                          ? "bg-black text-white border-black font-semibold"
-                          : "bg-gray-50 text-gray-700 border-gray-200 hover:bg-gray-100"
+                          ? "bg-black text-[#fef9c3]"
+                          : "bg-white text-black hover:bg-[#fef9c3] active:translate-x-[1px] active:translate-y-[1px] active:shadow-none"
                       }`}
                     >
                       {isSelected ? "✓ " : "+ "}
@@ -463,7 +474,7 @@ export const ReviewModal: React.FC<ReviewModalProps> = ({
 
             {/* Written Review */}
             <div>
-              <label className="block text-[11px] font-bold text-gray-700 uppercase tracking-wider mb-1">
+              <label className="block text-[11px] font-mono font-bold text-black uppercase tracking-wider mb-1">
                 {t("reviewModal.writtenReviewLabel")}
               </label>
               <textarea
@@ -472,17 +483,17 @@ export const ReviewModal: React.FC<ReviewModalProps> = ({
                 value={comment}
                 onChange={(e) => setComment(e.target.value)}
                 placeholder={t("reviewModal.writtenReviewPlaceholder")}
-                className="w-full px-3 py-2 text-xs border border-gray-300 focus:outline-none focus:border-black font-sans leading-relaxed"
+                className="w-full px-3 py-2 text-xs border-2 border-black outline-none focus:outline-none focus-visible:outline-none focus:ring-0 focus-visible:ring-0 focus:bg-[#fef9c3]/20 font-mono text-black leading-relaxed shadow-[2px_2px_0px_#000]"
               />
-              <div className="flex justify-between text-[11px] text-gray-400 mt-1">
+              <div className="flex justify-between text-[11px] font-mono text-gray-500 mt-1">
                 <span>{t("reviewModal.constructiveHint")}</span>
-                <span>{t("reviewModal.charCount", { count: comment.length })}</span>
+                <span className="font-bold text-black">{t("reviewModal.charCount", { count: comment.length })}</span>
               </div>
             </div>
 
             {/* Pseudonymous Cohort */}
             <div>
-              <label className="block text-[11px] font-bold text-gray-700 uppercase tracking-wider mb-1">
+              <label className="block text-[11px] font-mono font-bold text-black uppercase tracking-wider mb-1">
                 {t("reviewModal.cohortLabel")}
               </label>
               <input
@@ -490,20 +501,18 @@ export const ReviewModal: React.FC<ReviewModalProps> = ({
                 value={cohortName}
                 onChange={(e) => setCohortName(e.target.value)}
                 placeholder={t("reviewModal.cohortPlaceholder")}
-                className="w-full px-3 py-2 text-xs border border-gray-300 focus:outline-none focus:border-black bg-gray-50"
+                className="w-full px-3 py-2 text-xs border-2 border-black outline-none focus:outline-none focus-visible:outline-none focus:ring-0 focus-visible:ring-0 focus:bg-[#fef9c3]/20 font-mono text-black shadow-[2px_2px_0px_#000]"
               />
-              <p className="text-[10px] text-gray-500 mt-1">
+              <p className="text-[10px] font-mono text-gray-600 mt-1">
                 {t("reviewModal.cohortNote", {
-                  name: cohortName.trim()
-                    ? `${t("reviewModal.anonymousStudent")} (${cohortName.trim()})`
-                    : t("reviewModal.anonymousStudent")
+                  name: resolveReviewerDisplayName(cohortName, user, userProfile)
                 })}
               </p>
             </div>
 
             {/* Guidelines Checkbox */}
-            <div className="p-3 bg-amber-50 border border-amber-200 text-xs space-y-2">
-              <label className="flex items-start gap-2 cursor-pointer text-gray-800">
+            <div className="p-3 bg-[#fef9c3] border-2 border-black text-xs font-mono font-bold text-black shadow-[2px_2px_0px_#000] space-y-2">
+              <label className="flex items-start gap-2 cursor-pointer text-black">
                 <input
                   type="checkbox"
                   required
@@ -516,18 +525,18 @@ export const ReviewModal: React.FC<ReviewModalProps> = ({
             </div>
 
             {/* Submit Button */}
-            <div className="pt-2 flex items-center justify-end gap-3 border-t border-gray-100">
+            <div className="pt-3 flex items-center justify-end gap-3 border-t-2 border-black">
               <button
                 type="button"
                 onClick={onClose}
-                className="px-4 py-2 text-xs font-bold text-gray-600 hover:text-black uppercase tracking-wider"
+                className="px-4 py-2 text-xs font-mono font-bold text-black border-2 border-black hover:bg-gray-100 uppercase tracking-wider shadow-[2px_2px_0px_#000] active:translate-x-[1px] active:translate-y-[1px] active:shadow-none transition-all"
               >
                 {t("reviewModal.cancel")}
               </button>
               <button
                 type="submit"
                 disabled={loading}
-                className="px-6 py-2.5 bg-[#e03a3e] hover:bg-[#b91c1c] text-white font-bold text-xs uppercase tracking-wider transition-colors disabled:opacity-50"
+                className="px-6 py-2.5 bg-[#e03a3e] hover:bg-[#c93236] text-white font-mono font-black text-xs uppercase tracking-wider border-2 border-black shadow-[4px_4px_0px_#000] hover:shadow-[5px_5px_0px_#000] active:shadow-none active:translate-x-[3px] active:translate-y-[3px] transition-all disabled:opacity-50"
               >
                 {loading ? t("reviewModal.submitting") : t("reviewModal.submit")}
               </button>

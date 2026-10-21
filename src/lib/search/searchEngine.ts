@@ -6,6 +6,7 @@ import {
   SearchResult,
   SearchFacets,
   FacetOption,
+  AutocompleteSuggestion,
 } from "@/types";
 import {
   normalizeSearchString,
@@ -15,6 +16,7 @@ import {
   matchesProfessorName,
   computeRelevanceScore,
 } from "./vietnameseNormalizer";
+import { expandQueryTerminology } from "../terminologyRegistry";
 
 export class SearchEngine {
   private professors: Map<string, Professor> = new Map();
@@ -48,6 +50,10 @@ export class SearchEngine {
     this.titleIndex.clear();
     this.interestIndex.clear();
     this.verificationIndex.clear();
+  }
+
+  public getProfessor(id: string): Professor | undefined {
+    return this.professors.get(id);
   }
 
   /**
@@ -124,11 +130,13 @@ export class SearchEngine {
       enrichedProf.academicTitle || "",
       enrichedProf.professionalPosition || "",
       enrichedProf.universityName,
+      enrichedProf.universityNameEn || "",
       enrichedProf.universityShortName,
       enrichedProf.faculty,
       enrichedProf.department || "",
       ...(enrichedProf.courses || []),
       ...(enrichedProf.researchInterests || []),
+      ...(enrichedProf.majorIds || []),
       ...(enrichedProf.cityIds || []),
     ].join(" ");
 
@@ -286,55 +294,122 @@ export class SearchEngine {
     const query = filters.query?.trim();
     if (query) {
       const qTokens = tokenizeVietnamese(query);
+      const expansions = expandQueryTerminology(query);
       const queryMatchSet = new Set<string>();
 
-      // Check all professors for free-text match
-      for (const [id, prof] of this.professors.entries()) {
-        const fullName = prof.fullName || prof.name || "";
-        const variants = prof.nameVariants || [];
-        const uniName = prof.universityName || "";
-        const uniShort = prof.universityShortName || "";
-        const faculty = prof.faculty || "";
-        const dept = prof.department || "";
-        const courses = prof.courses || [];
-        const interests = prof.researchInterests || [];
-
-        // Full text match
-        const isMatch =
-          matchesSearchQuery(fullName, query) ||
-          variants.some((v) => matchesSearchQuery(v, query)) ||
-          matchesSearchQuery(uniName, query) ||
-          matchesSearchQuery(uniShort, query) ||
-          matchesSearchQuery(faculty, query) ||
-          matchesSearchQuery(dept, query) ||
-          courses.some((c) => matchesSearchQuery(c, query)) ||
-          interests.some((ri) => matchesSearchQuery(ri, query));
-
-        if (isMatch) {
-          queryMatchSet.add(id);
-        } else if (qTokens.length > 0) {
-          // Token intersection match
-          const allTokensFound = qTokens.every((tok) => {
-            const tokenMatches = this.tokenIndex.get(tok);
-            if (tokenMatches && tokenMatches.has(id)) return true;
-            for (const [indexedTok, ids] of this.tokenIndex.entries()) {
-              if (indexedTok.startsWith(tok) && ids.has(id)) return true;
+      if (qTokens.length > 0) {
+        // Collect candidate sets for each token
+        const tokenSets: Set<string>[] = [];
+        for (const tok of qTokens) {
+          let s = this.tokenIndex.get(tok);
+          if (!s) {
+            // Check prefix / partial matching if exact token not found
+            const prefixSet = new Set<string>();
+            for (const [k, pSet] of this.tokenIndex) {
+              if (k.startsWith(tok)) {
+                for (const id of pSet) prefixSet.add(id);
+              }
             }
-            return false;
-          });
-          if (allTokensFound) {
+            s = prefixSet;
+          }
+          tokenSets.push(s);
+          if (s.size === 0) break;
+        }
+
+        // Intersect token sets starting from the smallest
+        tokenSets.sort((a, b) => a.size - b.size);
+        let candidateSet: Set<string> | null = null;
+        for (const s of tokenSets) {
+          if (candidateSet === null) {
+            candidateSet = new Set(s);
+          } else {
+            const next = new Set<string>();
+            for (const id of candidateSet) {
+              if (s.has(id)) next.add(id);
+            }
+            candidateSet = next;
+          }
+          if (candidateSet.size === 0) break;
+        }
+
+        if (candidateSet && candidateSet.size > 0) {
+          for (const id of candidateSet) {
             queryMatchSet.add(id);
           }
         }
       }
+
+      // If query yielded 0 matches (e.g. English query "Computer Science" on Vietnamese records), use terminology expansions via tokenIndex
+      if (queryMatchSet.size === 0 && expansions.length > 0) {
+        for (const exp of expansions) {
+          const expTokens = tokenizeVietnamese(exp);
+          if (expTokens.length === 0) continue;
+          let expCandidateSet: Set<string> | null = null;
+          for (const tok of expTokens) {
+            const s = this.tokenIndex.get(tok);
+            if (!s) {
+              expCandidateSet = null;
+              break;
+            }
+            if (expCandidateSet === null) {
+              expCandidateSet = new Set(s);
+            } else {
+              const next = new Set<string>();
+              for (const id of expCandidateSet) {
+                if (s.has(id)) next.add(id);
+              }
+              expCandidateSet = next;
+            }
+            if (expCandidateSet.size === 0) break;
+          }
+          if (expCandidateSet && expCandidateSet.size > 0) {
+            for (const candId of expCandidateSet) {
+              queryMatchSet.add(candId);
+              if (queryMatchSet.size >= 50) break;
+            }
+          }
+          if (queryMatchSet.size >= 50) break;
+        }
+      }
+
       intersect(queryMatchSet);
     }
 
     // 2. Specific Professor Name Filter (`name`)
     const nameFilter = filters.name?.trim();
     if (nameFilter) {
+      const nameTokens = tokenizeVietnamese(nameFilter);
+      let candidateIdsForName: Set<string> | null = null;
+      if (nameTokens.length > 0) {
+        for (const tok of nameTokens) {
+          let s = this.tokenIndex.get(tok);
+          if (!s) {
+            const prefixSet = new Set<string>();
+            for (const [k, pSet] of this.tokenIndex) {
+              if (k.startsWith(tok)) {
+                for (const id of pSet) prefixSet.add(id);
+              }
+            }
+            s = prefixSet;
+          }
+          if (candidateIdsForName === null) {
+            candidateIdsForName = new Set(s);
+          } else {
+            const next = new Set<string>();
+            for (const id of candidateIdsForName) {
+              if (s.has(id)) next.add(id);
+            }
+            candidateIdsForName = next;
+          }
+          if (candidateIdsForName.size === 0) break;
+        }
+      }
+
       const nameMatchSet = new Set<string>();
-      for (const [id, prof] of this.professors.entries()) {
+      const candidateList = candidateIdsForName ? candidateIdsForName : this.professors.keys();
+      for (const id of candidateList) {
+        const prof = this.professors.get(id);
+        if (!prof) continue;
         const fullName = prof.fullName || prof.name || "";
         const variants = prof.nameVariants || [];
         if (matchesProfessorName(fullName, variants, nameFilter)) {
@@ -347,14 +422,10 @@ export class SearchEngine {
     // 3. University Filter (`universityIds` - OR within category)
     if (filters.universityIds && filters.universityIds.length > 0) {
       const uniMatches = new Set<string>();
-      for (const [id, prof] of this.professors.entries()) {
-        const profUnis = prof.universityIds || [prof.universityId];
-        const matchesUni = filters.universityIds.some((uId) => {
-          const uNorm = uId.toLowerCase();
-          return profUnis.some((pU) => pU.toLowerCase() === uNorm);
-        });
-        if (matchesUni) {
-          uniMatches.add(id);
+      for (const uId of filters.universityIds) {
+        const s = this.universityIndex.get(uId.toLowerCase());
+        if (s) {
+          for (const id of s) uniMatches.add(id);
         }
       }
       intersect(uniMatches);
@@ -363,14 +434,10 @@ export class SearchEngine {
     // 4. Major Filter (`majorIds` - OR within category)
     if (filters.majorIds && filters.majorIds.length > 0) {
       const majorMatches = new Set<string>();
-      for (const [id, prof] of this.professors.entries()) {
-        const profMajors = prof.majorIds || [];
-        const matchesMajor = filters.majorIds.some((mId) => {
-          const mNorm = mId.toLowerCase();
-          return profMajors.some((pM) => pM.toLowerCase() === mNorm);
-        });
-        if (matchesMajor) {
-          majorMatches.add(id);
+      for (const mId of filters.majorIds) {
+        const s = this.majorIndex.get(mId.toLowerCase());
+        if (s) {
+          for (const id of s) majorMatches.add(id);
         }
       }
       intersect(majorMatches);
@@ -789,6 +856,88 @@ export class SearchEngine {
       researchInterests: toFacetList(interestsMap),
       verificationStatuses: [],
     };
+  }
+
+  /**
+   * Returns fast, ranked autocomplete suggestions for typeahead search.
+   * Disambiguates identical names using institutional short names and faculties.
+   */
+  public getAutocompleteSuggestions(query: string, limit: number = 8): AutocompleteSuggestion[] {
+    const rawQ = query?.trim();
+    if (!rawQ || rawQ.length < 2) return [];
+
+    const normQ = normalizeSearchString(rawQ);
+    const scoredResults: { suggestion: AutocompleteSuggestion; score: number }[] = [];
+
+    for (const prof of this.professors.values()) {
+      const name = prof.name || prof.fullName || "";
+      const normName = prof.normalizedName || normalizeSearchString(name);
+      const uniShort = prof.universityShortName || "";
+      const uniNorm = normalizeSearchString(prof.universityName || "");
+      const faculty = prof.faculty || "";
+
+      let score = 0;
+
+      // Exact prefix match on normalized name
+      if (normName.startsWith(normQ)) {
+        score = 100 - (normName.length - normQ.length) * 0.5;
+      } else if (normName.includes(" " + normQ)) {
+        // Word boundary match (e.g. matching last name / given name)
+        score = 80;
+      } else if (normName.includes(normQ)) {
+        score = 60;
+      } else if (normalizeSearchString(uniShort).startsWith(normQ)) {
+        // University acronym match
+        score = 50;
+      } else if (uniNorm.includes(normQ)) {
+        score = 40;
+      } else if (normalizeSearchString(faculty).includes(normQ)) {
+        score = 30;
+      }
+
+      if (score > 0) {
+        // Boost verified professors with genuine ratings
+        if (prof.ratingCount && prof.ratingCount > 0) {
+          score += Math.min(15, prof.ratingCount * 2);
+        }
+
+        const subtitleParts: string[] = [];
+        if (prof.title || prof.academicTitle) subtitleParts.push(prof.title || prof.academicTitle || "");
+        if (prof.universityShortName) subtitleParts.push(prof.universityShortName);
+        if (prof.faculty) subtitleParts.push(prof.faculty);
+
+        const revCount = prof.publishedReviewCount ?? prof.ratingCount ?? 0;
+        const avg = revCount > 0 && typeof prof.ratingAverage === "number" && prof.ratingAverage > 0
+          ? prof.ratingAverage
+          : (revCount > 0 && typeof prof.averageRating === "number" && prof.averageRating > 0 ? prof.averageRating : null);
+
+        const rawPhoto = prof.photoUrl || prof.avatar || null;
+        const isRealPhoto = typeof rawPhoto === "string" &&
+          rawPhoto.trim().length > 0 &&
+          !rawPhoto.startsWith("data:") &&
+          !rawPhoto.toLowerCase().includes("no-image") &&
+          (rawPhoto.startsWith("http://") || rawPhoto.startsWith("https://") || rawPhoto.startsWith("/"));
+
+        scoredResults.push({
+          score,
+          suggestion: {
+            id: prof.id,
+            type: "lecturer",
+            title: name,
+            subtitle: subtitleParts.join(" • ") || prof.universityName || "",
+            universityShortName: prof.universityShortName,
+            avatar: isRealPhoto ? rawPhoto : null,
+            photoUrl: isRealPhoto ? rawPhoto : null,
+            photoStatus: prof.photoStatus || (isRealPhoto ? "verified_photo" : "default_avatar"),
+            ratingAverage: avg,
+            ratingCount: revCount,
+          },
+        });
+      }
+    }
+
+    scoredResults.sort((a, b) => b.score - a.score);
+    return scoredResults.slice(0, limit).map((r) => r.suggestion);
   }
 
   /**

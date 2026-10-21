@@ -9,6 +9,7 @@ Usage:
 from __future__ import annotations
 import argparse
 import sys
+import os
 import json
 from pipeline.orchestrator import IngestionOrchestrator
 from pipeline.discovery import UniversityDiscoveryService
@@ -39,6 +40,28 @@ def main():
         help="Run end-to-end web crawling, extraction, dedup, and Firestore persistence",
     )
     parser.add_argument(
+        "--worker",
+        action="store_true",
+        help="Run durable background crawler queue worker",
+    )
+    parser.add_argument(
+        "--once",
+        action="store_true",
+        help="Run a single sweep in worker mode and exit",
+    )
+    parser.add_argument(
+        "--batch-size",
+        type=int,
+        default=15,
+        help="Batch size for worker sweep",
+    )
+    parser.add_argument(
+        "--interval",
+        type=int,
+        default=5,
+        help="Worker poll interval in seconds",
+    )
+    parser.add_argument(
         "--university",
         type=str,
         default=None,
@@ -57,6 +80,18 @@ def main():
     )
 
     args = parser.parse_args()
+
+    if args.worker:
+        from pipeline.worker import CollectionWorker
+        worker = CollectionWorker()
+        if args.once:
+            print("[Worker] Running single collection sweep...")
+            worker.run_sweep(batch_size=args.batch_size)
+            stats = worker.storage.get_stats()
+            print(f"[Worker] Sweep done. Database state: {stats['verified_lecturers']} verified lecturers.")
+        else:
+            worker.start_loop(poll_interval=args.interval, batch_size=args.batch_size)
+        sys.exit(0)
 
     orchestrator = IngestionOrchestrator(data_output_path=args.output)
 
@@ -109,7 +144,6 @@ def main():
         sys.exit(0)
 
     if args.stats:
-        # Load from output file
         target_path = orchestrator.data_output_path
         try:
             with open(target_path, "r", encoding="utf-8") as f:
@@ -121,39 +155,106 @@ def main():
             candidates = data.get("entity_candidates", [])
             ingestion_run = data.get("ingestion_run", {})
 
-            total_unis = qa.get("totalUniversities") or qa.get("total_universities") or len(unis)
-            unis_domains = qa.get("universitiesWithRegisteredDomains") or qa.get("universities_with_registered_domains", 0)
-            total_faculties = qa.get("totalFaculties") or qa.get("total_faculties", 0)
-            total_profs = qa.get("totalProfessors") or qa.get("total_professors") or len(profs)
-            verified_profs = qa.get("verifiedProfessorsCount") or qa.get("verified_professors_count", 0)
-            unverified_profs = qa.get("unverifiedProfessorsCount") or qa.get("unverified_professors_count", 0)
-            dup_candidates = qa.get("duplicateCandidatesCount") or qa.get("duplicate_candidates_count") or len(candidates)
-            sources_health = qa.get("sourcesHealth") or qa.get("sources_health", {})
-            active_sources = sources_health.get("active", len([s for s in sources if s.get("status") in ["active", "crawled"]]))
-            failed_sources = sources_health.get("failed", 0)
-            pending_sources = sources_health.get("pending", 0)
-            last_crawl = qa.get("lastSuccessfulIngestionDate") or ingestion_run.get("completedAt") or ingestion_run.get("completed_at", 0)
+            # 1. Lecturer Counts
+            total_profs = len(profs)
+            verified_profs = sum(1 for p in profs if p.get("verificationStatus") == "verified")
+            unverified_profs = sum(1 for p in profs if p.get("verificationStatus") != "verified")
+            synthetic_profs = sum(1 for p in profs if "giữ chức vụ" in (p.get("bioVi") or "") or "giữ chức vụ" in (p.get("bio") or ""))
+            real_verified_profs = verified_profs - synthetic_profs
 
-            print("[*] Nationwide Academic Data Ingestion Operational Report:")
-            print(f"    - Discovered Universities:                {total_unis}")
-            print(f"    - Universities with Verified Domains:     {unis_domains}")
-            print(f"    - Discovered Faculty/Dept Sources:        {total_faculties} faculties, {len(sources)} registry targets")
-            print(f"    - Sources Successfully Crawled / Active:  {active_sources}")
-            print(f"    - Sources Pending Crawl:                  {pending_sources}")
-            print(f"    - Sources Failed:                         {failed_sources}")
-            print(f"    - Lecturer Records Extracted:             {total_profs}")
-            print(f"    - Lecturer Records Saved / Verified:      {verified_profs}")
-            print(f"    - Records Awaiting Verification:          {unverified_profs}")
-            print(f"    - Duplicates / Candidates In Review:      {dup_candidates}")
-            print(f"    - Last Ingestion Timestamp:               {last_crawl}")
-            
+            # 2. University Breakdown
+            profs_by_uni = {}
+            for p in profs:
+                profs_by_uni.setdefault(p.get("universityId"), []).append(p)
+
+            total_unis = len(unis)
+            unis_with_sources = sum(1 for u in unis if u.get("facultyDirectoryUrls") or u.get("officialWebsite") or u.get("officialDomain"))
+            unis_attempted = len(profs_by_uni)
+            unis_successfully_processed = sum(1 for uid, u_profs in profs_by_uni.items() if len(u_profs) > 0)
+            unis_fully_covered = sum(1 for uid, u_profs in profs_by_uni.items() if len(u_profs) >= 50)
+            unis_partially_covered = unis_successfully_processed - unis_fully_covered
+            unis_awaiting = total_unis - unis_successfully_processed
+
+            # 3. Source Registry Metrics
+            crawled_sources = [s for s in sources if s.get("status") in ["crawled", "active"]]
+            failed_sources = [s for s in sources if s.get("status") == "failed"]
+            pending_sources = [s for s in sources if s.get("status") in ["pending_crawl", "pending"]]
+
+            # Failure reasons breakdown
+            failure_reasons = {}
+            for s in failed_sources:
+                msg = s.get("lastErrorMessage") or "Unknown error"
+                reason_key = "HTTP 404 (Not Found)" if "404" in msg else ("HTTP 403 / Robots" if "403" in msg or "robots" in msg.lower() else ("Timeout" if "time" in msg.lower() else "Connection/DNS"))
+                failure_reasons[reason_key] = failure_reasons.get(reason_key, 0) + 1
+
+            # 4. National Benchmark Coverage
+            NATIONAL_BENCHMARK = 90700  # Ministry of Education and Training (Bộ GD&ĐT) HEMIS official statistic
+            coverage_pct = (real_verified_profs / NATIONAL_BENCHMARK) * 100
+
+            print("=" * 80)
+            print(" RATEPROFCUABAN NATIONWIDE LECTURER COLLECTION AUDIT REPORT")
+            print("=" * 80)
+            print("\n[1] LECTURER POPULATION & VERIFICATION STATUS:")
+            print(f"    - Current Total Unique Lecturer Records:   {total_profs:,}")
+            print(f"    - Verified Authentic Lecturer Records:     {real_verified_profs:,}")
+            print(f"    - Synthetic / Fabricated Records:          {synthetic_profs} (STRICT ZERO-TOLERANCE)")
+            print(f"    - Records Awaiting Institutional Review:   {unverified_profs:,}")
+            print(f"    - Duplicate Records Merged:                {ingestion_run.get('duplicatesResolved', 0)}")
+            print(f"    - Cross-Institution Candidates in Review:  {len(candidates):,}")
+
+            print("\n[2] INSTITUTIONAL DISCOVERY & COVERAGE DEPTH:")
+            print(f"    - Universities & Institutions Discovered:  {total_unis:,}")
+            print(f"    - Universities with Official Sources:      {unis_with_sources:,}")
+            print(f"    - Universities Attempted:                  {unis_attempted:,}")
+            print(f"    - Universities Successfully Processed:     {unis_successfully_processed:,}")
+            print(f"        * Broad / Fully Processed (>= 50 staff): {unis_fully_covered:,}")
+            print(f"        * Focused / Partially Processed (<50):  {unis_partially_covered:,}")
+            print(f"    - Universities Awaiting Directory Intake:  {unis_awaiting:,}")
+
+            print("\n[3] SOURCE REGISTRY & DIRECTORY HEALTH:")
+            print(f"    - Total Identified Sources in Registry:    {len(sources):,}")
+            print(f"    - Sources Successfully Crawled / Active:   {len(crawled_sources):,}")
+            print(f"    - Sources Pending Crawl Queue:             {len(pending_sources):,}")
+            print(f"    - Sources Inaccessible / Failed:           {len(failed_sources):,}")
+            if failure_reasons:
+                print("      * Breakdown of Source Failures:")
+                for r_name, r_cnt in sorted(failure_reasons.items(), key=lambda x: -x[1]):
+                    print(f"        - {r_name}: {r_cnt} sources")
+
+            print("\n[4] NATIONAL BENCHMARK ASSESSMENT:")
+            print(f"    - MOET/HEMIS National Lecturer Benchmark:  {NATIONAL_BENCHMARK:,} permanent university lecturers")
+            print(f"    - Higher Education System Total (with CD): ~94,000–95,000 lecturers")
+            print(f"    - Verified Database Coverage Achieved:     {coverage_pct:.2f}% of national total")
+            print(f"    - Total Unique Institutions Represented:   {unis_successfully_processed} across all 3 regions (North, Central, South)")
+
             cov = qa.get("coverageByRegion") or qa.get("coverage_by_region", {})
             if cov:
-                print("\n[*] Regional Breakdown:")
+                print("\n[5] REGIONAL COVERAGE BREAKDOWN:")
                 for reg, st in cov.items():
-                    print(f"    - {reg.capitalize()}: {st.get('universities', 0)} universities, {st.get('professors', 0)} professors")
+                    print(f"    - {reg.capitalize():<8}: {st.get('universities', 0):>3} institutions, {st.get('professors', 0):>5} lecturers")
+
+            # 6. SQLite Relational Persistence Metrics
+            db_path = getattr(orchestrator, "db_path", "src/data/rateprof.db")
+            if os.path.exists(db_path):
+                import sqlite3
+                print("\n[6] SQL RELATIONAL DATABASE (rateprof.db):")
+                try:
+                    conn = sqlite3.connect(db_path)
+                    c = conn.cursor()
+                    tables = ["universities", "faculties", "departments", "lecturers", "affiliations", "sources", "crawl_jobs", "crawl_logs", "reviews"]
+                    for tbl in tables:
+                        try:
+                            c.execute(f"SELECT COUNT(*) FROM {tbl}")
+                            cnt = c.fetchone()[0]
+                            print(f"    - {tbl:<16}: {cnt:,} rows")
+                        except sqlite3.OperationalError:
+                            pass
+                    conn.close()
+                except Exception as dbe:
+                    print(f"    - DB connection error: {dbe}")
+            print("=" * 80)
         except FileNotFoundError:
-            print(f"[-] Data file {target_path} not found. Run with --pilot first.")
+            print(f"[-] Data file {target_path} not found. Run ingestion first.")
             sys.exit(1)
         sys.exit(0)
 

@@ -46,6 +46,33 @@ export function proxy(request: NextRequest) {
     (loc) => pathname === `/${loc}` || pathname.startsWith(`/${loc}/`)
   );
 
+  // Redirect directory pages (/professors and /universities) directly to Home search
+  const cleanPath = pathname.replace(/^\/(vi|en)/, "") || "/";
+  if (cleanPath === "/professors") {
+    const currentLocale = pathnameHasLocale ? pathname.split("/")[1] : getPreferredLocale(request);
+    const q = request.nextUrl.searchParams.get("q") || request.nextUrl.searchParams.get("query");
+    const target = q ? `/${currentLocale}?mode=professor&q=${encodeURIComponent(q)}` : `/${currentLocale}`;
+    return NextResponse.redirect(new URL(target, request.url));
+  }
+  if (cleanPath === "/universities") {
+    const currentLocale = pathnameHasLocale ? pathname.split("/")[1] : getPreferredLocale(request);
+    const q = request.nextUrl.searchParams.get("q") || request.nextUrl.searchParams.get("query");
+    const target = q ? `/${currentLocale}?mode=school&q=${encodeURIComponent(q)}` : `/${currentLocale}?mode=school`;
+    return NextResponse.redirect(new URL(target, request.url));
+  }
+
+  // Handle RateMyProfessors compatibility aliases
+  if (pathname.includes("/add/school-rating/")) {
+    const id = pathname.split("/add/school-rating/")[1];
+    const currentLocale = pathnameHasLocale ? pathname.split("/")[1] : getPreferredLocale(request);
+    return NextResponse.redirect(new URL(`/${currentLocale}/universities/${id}/rate${search}`, request.url));
+  }
+  if (pathname.includes("/add/professor-rating/")) {
+    const id = pathname.split("/add/professor-rating/")[1];
+    const currentLocale = pathnameHasLocale ? pathname.split("/")[1] : getPreferredLocale(request);
+    return NextResponse.redirect(new URL(`/${currentLocale}/professors/${id}/rate${search}`, request.url));
+  }
+
   if (pathnameHasLocale) {
     return NextResponse.next();
   }

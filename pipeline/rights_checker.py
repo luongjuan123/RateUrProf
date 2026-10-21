@@ -18,15 +18,32 @@ class ImageRightsChecker:
         "vnu.edu.vn",
         "udn.vn",
         "hueuni.edu.vn",
+        "tnu.edu.vn",
         "rmit.edu.vn",
+        "fpt.edu.vn",
+        "phenikaa-uni.edu.vn",
+        "tdtu.edu.vn",
+        "iuh.edu.vn",
+        "hutech.edu.vn",
+        "vanlanguni.edu.vn",
+        "hoasen.edu.vn",
+        "ueh.edu.vn",
+        "ctu.edu.vn",
+        "dlu.edu.vn",
+        "vinhuni.edu.vn",
+        "qnu.edu.vn",
+        "ntu.edu.vn",
         "ac.uk",
         "edu",
+        "gov.vn",
+        "org.vn",
     ]
 
     OPEN_LICENSE_DOMAINS = [
         "wikimedia.org",
         "wikipedia.org",
         "creativecommons.org",
+        "githubusercontent.com",
     ]
 
     RESTRICTED_DOMAINS = [
@@ -45,7 +62,19 @@ class ImageRightsChecker:
         Evaluates an image URL.
         Returns (license_category, permission_status, storage_mode).
         """
-        if not image_url or not image_url.startswith("http"):
+        if not image_url or not isinstance(image_url, str):
+            return "unknown", "rejected", "neutral_placeholder"
+
+        image_url = image_url.strip().strip("'\"")
+        if image_url.startswith("//"):
+            image_url = "https:" + image_url
+
+        if not image_url.startswith(("http://", "https://")):
+            return "unknown", "rejected", "neutral_placeholder"
+
+        # Filter out obvious spacers/icons/UI assets
+        lower_url = image_url.lower()
+        if any(bad in lower_url for bad in ["1x1", "spacer", "pixel", "blank", "icon", "logo", "favicon", "pdf.gif", "printer", "button", "arrow", "bullet"]):
             return "unknown", "rejected", "neutral_placeholder"
 
         parsed = urllib.parse.urlparse(image_url)
@@ -88,7 +117,7 @@ class ImageRightsChecker:
     def generate_svg_avatar(cls, full_name: str, academic_title: Optional[str] = None) -> str:
         """
         Generates a clean, accessible SVG avatar placeholder with the professor's initials
-        and an academic navy/indigo gradient.
+        and solid flat Neo-Brutalist color (zero gradients).
         """
         words = [w for w in full_name.strip().split() if w]
         if len(words) >= 2:
@@ -98,28 +127,25 @@ class ImageRightsChecker:
         else:
             initials = "GV"
 
-        # Academic color palette based on initials hash
+        # Academic solid flat color palette based on initials hash
         colors = [
-            ("#1e3a8a", "#3b82f6"),  # Navy to Royal
-            ("#0f766e", "#14b8a6"),  # Teal to Cyan
-            ("#4338ca", "#6366f1"),  # Indigo
-            ("#701a75", "#a855f7"),  # Plum to Purple
-            ("#1e293b", "#475569"),  # Slate
+            "#1e3a8a",  # Navy
+            "#0f766e",  # Teal
+            "#4338ca",  # Indigo
+            "#701a75",  # Plum
+            "#1e293b",  # Slate
+            "#047857",  # Dark Green
+            "#c2410c",  # Orange Rust
+            "#b91c1c",  # Red
         ]
         color_idx = sum(ord(c) for c in initials) % len(colors)
-        c1, c2 = colors[color_idx]
+        bg = colors[color_idx]
 
         svg = (
             f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">'
-            f'<defs>'
-            f'<linearGradient id="grad-{color_idx}" x1="0%" y1="0%" x2="100%" y2="100%">'
-            f'<stop offset="0%" stop-color="{c1}"/>'
-            f'<stop offset="100%" stop-color="{c2}"/>'
-            f'</linearGradient>'
-            f'</defs>'
-            f'<circle cx="60" cy="60" r="58" fill="url(#grad-{color_idx})" stroke="#ffffff" stroke-width="2"/>'
+            f'<rect width="120" height="120" fill="{bg}"/>'
             f'<text x="60" y="68" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, \'Segoe UI\', Roboto, sans-serif" '
-            f'font-size="40" font-weight="600" fill="#ffffff" letter-spacing="1">{initials}</text>'
+            f'font-size="40" font-weight="700" fill="#ffffff" letter-spacing="1">{initials}</text>'
             f'</svg>'
         )
         return svg

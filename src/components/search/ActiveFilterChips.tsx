@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { X, RotateCcw } from "lucide-react";
+import { PopArtX, PopArtRotateCcw } from "@/components/icons/PopArtIcons";
 import { ActiveChip } from "@/lib/search/useProfessorSearch";
 
 interface ActiveFilterChipsProps {
@@ -14,23 +14,23 @@ export const ActiveFilterChips: React.FC<ActiveFilterChipsProps> = ({ chips, onC
 
   return (
     <div className="flex flex-wrap items-center gap-2 pt-2">
-      <span className="text-[11px] font-bold uppercase tracking-wider text-gray-500">
+      <span className="text-[11px] font-black uppercase tracking-wider text-black">
         Bộ lọc đang chọn:
       </span>
 
       {chips.map((chip) => (
         <span
           key={chip.key}
-          className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-red-50 border border-red-200 text-xs font-semibold text-gray-900 animate-in fade-in duration-100"
+          className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-[#fef9c3] border-2 border-black shadow-[2px_2px_0px_0px_#000000] text-xs font-bold text-black animate-in fade-in duration-100"
         >
           <span>{chip.label}</span>
           <button
             type="button"
             onClick={chip.onRemove}
-            className="p-0.5 hover:bg-red-200 text-[#e03a3e] transition-colors"
+            className="p-0.5 hover:bg-black hover:text-white text-black transition-colors cursor-pointer"
             title={`Bỏ lọc: ${chip.label}`}
           >
-            <X className="w-3 h-3" />
+            <PopArtX className="w-3.5 h-3.5" />
           </button>
         </span>
       ))}
@@ -38,9 +38,9 @@ export const ActiveFilterChips: React.FC<ActiveFilterChipsProps> = ({ chips, onC
       <button
         type="button"
         onClick={onClearAll}
-        className="inline-flex items-center gap-1 text-[11px] font-bold text-gray-500 hover:text-black hover:underline uppercase tracking-wider ml-1"
+        className="inline-flex items-center gap-1 text-[11px] font-black text-black bg-[#fee2e2] px-2 py-1 border-2 border-black shadow-[1.5px_1.5px_0px_0px_#000000] hover:bg-[#fca5a5] active:translate-x-[1px] active:translate-y-[1px] active:shadow-none uppercase tracking-wider ml-1 transition-all cursor-pointer"
       >
-        <RotateCcw className="w-3 h-3" />
+        <PopArtRotateCcw className="w-3.5 h-3.5" />
         <span>Xóa tất cả</span>
       </button>
     </div>
