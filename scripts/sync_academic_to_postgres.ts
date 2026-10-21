@@ -18,7 +18,10 @@ async function main() {
   const dbPath = path.join(process.cwd(), "src", "data", "rateprof.db");
   const sqlite = new DatabaseSync(dbPath);
 
-  const databaseUrl = process.env.DATABASE_URL || "postgresql://rateurprofs_app:RateUrProfs_Secure_2026_xK9@34.126.151.220:5432/rateurprofs";
+  const databaseUrl = process.env.DATABASE_URL;
+  if (!databaseUrl) {
+    throw new Error("DATABASE_URL environment variable is required");
+  }
 
   const pgPool = new Pool({
     connectionString: databaseUrl,
