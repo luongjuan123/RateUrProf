@@ -1,12 +1,31 @@
-# RateProfCuaBan (Đánh Giá Giảng Viên Của Bạn)
+# RateProfCuaBan / RateUrProf (Đánh Giá Giảng Viên Của Bạn)
 
-> **Comprehensive Nationwide Academic Information Platform & Bilingual RAG Search Engine for Vietnam**
+> **Comprehensive Nationwide Academic Information Platform & Bilingual Search Engine for Vietnam**
 
-RateProfCuaBan is an institutional-grade academic discovery platform that catalogs universities, faculties, departments, and professors across Vietnam. It combines an automated, polite data acquisition and enrichment pipeline with a citation-grounded bilingual (Vietnamese/English) Retrieval-Augmented Generation (RAG) assistant, while preserving community student reviews and ratings.
+RateProfCuaBan is an institutional-grade academic discovery platform that catalogs universities, faculties, departments, and professors across Vietnam. It combines an automated, polite data acquisition and enrichment pipeline with a high-performance bilingual (Vietnamese/English) search engine, while preserving community student reviews and ratings.
 
 ---
 
-## 🏛️ Platform Architecture
+## Screenshots
+
+### Home & Search Portal
+![Home & Search Portal](docs/screenshots/home.png)
+
+### Nationwide Professor Search
+![Nationwide Professor Search](docs/screenshots/professor_search.png)
+
+### Professor Profile & Student Ratings
+![Professor Profile & Student Ratings](docs/screenshots/professor_detail.png)
+
+### University Directory Search
+![University Directory Search](docs/screenshots/university_search.png)
+
+### University Profile & Evaluation
+![University Profile & Evaluation](docs/screenshots/university_detail.png)
+
+---
+
+## Platform Architecture
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
@@ -27,7 +46,7 @@ RateProfCuaBan is an institutional-grade academic discovery platform that catalo
                                        │ Generates JSON & Synced to DB
                                        ▼
   ┌─────────────────────────────────────────────────────────────────────────┐
-  │ 2. CLOUD FIRESTORE PERSISTENCE & HARDENED SECURITY RULES                │
+  │ 2. CLOUD DATABASE PERSISTENCE & HARDENED ACCESS CONTROL                 │
   │                                                                         │
   │  • Public Academic Catalogs: universities, faculties, professors,      │
   │    departments, courses, academicPublications, sourceDocuments         │
@@ -38,25 +57,25 @@ RateProfCuaBan is an institutional-grade academic discovery platform that catalo
                                        │ Indexed for Retrieval
                                        ▼
   ┌─────────────────────────────────────────────────────────────────────────┐
-  │ 3. NEXT.JS 16 WEB PLATFORM & BILINGUAL RAG SEARCH ASSISTANT             │
+  │ 3. NEXT.JS 16 WEB PLATFORM & BILINGUAL SEARCH ENGINE                    │
   │                                                                         │
   │  • App Router (Next.js 16.4.1) with Cache Components & Partial Prefetch  │
   │  • Full Bilingual Routing (/vi and /en) with Search Param Preservation  │
-  │  • RAG Assistant with Clickable Source Citations & Anti-Hallucination    │
+  │  • Citation-Grounded Search with Verified University Source Links       │
   │  • Sub-millisecond In-Memory Search (p95 = 0.22ms over 1,000 queries)    │
   └─────────────────────────────────────────────────────────────────────────┘
 ```
 
 ---
 
-## 🚀 Key Features
+## Key Features
 
 ### 1. Nationwide Academic Coverage
 - **Geographic Balance**: Seeded across Northern (Hà Nội, Thái Nguyên), Central (Đà Nẵng, Huế, Quy Nhơn), and Southern (TP. Hồ Chí Minh, Cần Thơ) Vietnam.
 - **Academic Hierarchy**: Institutions $\rightarrow$ Faculties/Schools $\rightarrow$ Departments $\rightarrow$ Teaching Staff $\rightarrow$ Courses & Publications.
 - **Instructional Rank Integrity**: Strictly distinguishes statutory instructional ranks (**GS** / **PGS**) from academic degrees (**TS** / **ThS**) in compliance with the State Council for Professorship (*Hội đồng Giáo sư Nhà nước*).
 
-### 2. Bilingual Citation-Grounded RAG Assistant
+### 2. Bilingual Citation-Grounded Search
 - **Strict Anti-Hallucination Policy**: Grounded exclusively in verified `.edu.vn` official records. If institutional evidence is unavailable (e.g., narrow subfields without indexed staff), the engine explicitly abstains rather than inventing faculty records.
 - **Clickable Markdown Citations**: Every factual statement provides clickable source links to official university faculty directories.
 - **Identity Disambiguation**: Detects cross-university identical or near-identical names and presents clear disambiguation notices.
@@ -70,7 +89,7 @@ RateProfCuaBan is an institutional-grade academic discovery platform that catalo
 
 ---
 
-## 🛠️ CLI Runbook & Data Pipeline Commands
+## CLI Runbook & Data Pipeline Commands
 
 The Python ingestion pipeline is located in the `pipeline/` directory.
 
@@ -99,30 +118,25 @@ python3 -m pipeline.cli --dedup
 # 5. Run automated Quality Assurance & Completeness scoring
 python3 -m pipeline.cli --qa
 
-# 6. Generate semantic RAG search index
+# 6. Generate semantic search index
 python3 -m pipeline.cli --build-index
 
 # 7. Import authorized social export (flagged as unverified leads)
 python3 -m pipeline.cli --import-social path/to/export.json --platform facebook
-
-# 8. Synchronize verified records to Firebase Firestore (Dry-run or Live)
-python3 -m pipeline.cli --sync-firestore --dry-run
-python3 -m pipeline.cli --sync-firestore
 ```
 
 ---
 
-## 🧪 Testing & Verification
+## Testing & Verification
 
 The project includes an exhaustive testing suite across Python and TypeScript layers:
 
 ```bash
-# Run all Next.js bilingual, RAG, and search benchmark suites
+# Run all Next.js bilingual and search benchmark suites
 npm test
 
 # Run individual test suites
 npm run test:bilingual    # 25 bilingual routing, diacritics, and terminology tests
-npm run test:rag          # 6 mandatory RAG scenarios (Grounding, Disambiguation, etc.)
 npm run test:pipeline     # Python pipeline unit tests (Deduplication, Adapters, QA)
 
 # Run full production build
@@ -131,7 +145,7 @@ npm run build
 
 ### Test Suite Summary
 - **25 Bilingual Integration Tests**: Route switching, diacritic-insensitive search, terminology mapping, translation key parity.
-- **6 Mandatory RAG Scenarios**:
+- **Search & Verification Scenarios**:
   1. *Cross-university research interest search* (e.g., AI/Machine Learning).
   2. *Regional faculty search* (e.g., IT professors in TP. Hồ Chí Minh).
   3. *Multilingual English queries* with English synthesis and source citations.
@@ -139,34 +153,29 @@ npm run build
   5. *Identity disambiguation* across professors with identical names.
   6. *Strict grounding abstention* (no hallucination on unindexed disciplines).
 - **30 Search & Filtering Scenarios**: Sub-millisecond performance benchmark (`p95 = 0.22ms`, well under the 500ms target).
-- **5 Python Pipeline Tests**: Unit tests for name normalization, image rights checking, and QA scoring.
+- **Python Pipeline Tests**: Unit tests for name normalization, image rights checking, and QA scoring.
 
 ---
 
-## 🔒 Firestore Security Rules & Permissions
+## Access Control & Permissions
 
-`firestore.rules` enforces granular access control across 15 collections:
+Granular access control across schema collections:
 
 | Collection Category | Collections | Permissions |
 | :--- | :--- | :--- |
-| **Public Academic Catalog** | `universities`, `faculties`, `departments`, `professors`, `courses`, `professorCourses`, `academicPublications`, `imageAssets`, `sourceDocuments` | Public Read (`allow read: if true`), Admin Write |
+| **Public Academic Catalog** | `universities`, `faculties`, `departments`, `professors`, `courses`, `professorCourses`, `academicPublications`, `imageAssets`, `sourceDocuments` | Public Read, Admin Write |
 | **Community Reviews** | `reviews`, `reports`, `users` | Authenticated users create/edit own reviews and vote on helpfulness; Admins moderate |
-| **Review Aggregation** | `professors` (rating rollups) | Controlled write via `isProfessorRatingUpdate` preserving atomic rating counts |
+| **Review Aggregation** | `professors` (rating rollups) | Controlled write preserving atomic rating counts |
 | **Administrative Pipeline** | `sourceRegistry`, `entityMatchCandidates`, `ingestionJobs`, `ingestionRuns`, `dataQualityReports` | Admin Only Read & Write |
-
-To validate security rules against Firebase:
-```bash
-firebase deploy --only firestore:rules --dry-run
-```
 
 ---
 
-## 🌐 Next.js Web Application
+## Next.js Web Application
 
 The frontend is built on **Next.js 16.4.1** using React 19, Tailwind CSS v4, and Partial Prefetching.
 
 ### Key Pages
-- `/` or `/[lang]`: Landing page featuring nationwide statistics, university shortcuts, and the interactive RAG Assistant.
+- `/` or `/[lang]`: Landing page featuring nationwide statistics, university shortcuts, and instant search.
 - `/[lang]/professors`: Nationwide faculty search with multi-dimensional filtering (University, Region, Academic Rank, Minimum Rating).
 - `/[lang]/professors/[id]`: Detailed professor profile with official institutional credentials, verified source citations, and student reviews.
 - `/[lang]/universities/[id]`: University overview with accredited faculties, campuses, and faculty rosters.
@@ -175,7 +184,7 @@ The frontend is built on **Next.js 16.4.1** using React 19, Tailwind CSS v4, and
 
 ---
 
-## 📜 Ethical & Legal Policy
+## Ethical & Legal Policy
 
 RateProfCuaBan maintains an absolute boundary between **verified institutional facts** and **subjective student reviews**:
 1. **Institutional Facts**: Sourced exclusively from public `.edu.vn` university websites and official government registries. Verified by administrators.
