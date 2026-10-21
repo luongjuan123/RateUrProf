@@ -24,9 +24,10 @@ const CONCURRENCY = parseInt(
   10
 );
 
-const DATABASE_URL =
-  process.env.DATABASE_URL ||
-  "postgresql://rateurprofs_app:RateUrProfs_Secure_2026_xK9@34.126.151.220:5432/rateurprofs";
+const DATABASE_URL = process.env.DATABASE_URL;
+if (!DATABASE_URL) {
+  throw new Error("DATABASE_URL environment variable is required");
+}
 
 const pool = new Pool({
   connectionString: DATABASE_URL,
