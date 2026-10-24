@@ -116,7 +116,7 @@ export const AcademicDoodleSpots: React.FC<AcademicDoodleSpotsProps> = ({ classN
                 size="sm"
                 onClick={randomizeSpots}
                 title="Nhấn để đổi hình ngẫu nhiên / Click to shuffle doodles"
-                className="drop-shadow-[3px_3px_0px_rgba(0,0,0,0.15)]"
+                className=""
               />
             </div>
           )}
@@ -136,7 +136,7 @@ export const AcademicDoodleSpots: React.FC<AcademicDoodleSpotsProps> = ({ classN
                 size="sm"
                 onClick={randomizeSpots}
                 title="Nhấn để đổi hình ngẫu nhiên / Click to shuffle doodles"
-                className="sm:hidden drop-shadow-[3px_3px_0px_rgba(0,0,0,0.15)]"
+                className="sm:hidden"
               />
               <DoodleSpotGraphic
                 key={`${spotTopRight.key}-md`}
@@ -144,7 +144,7 @@ export const AcademicDoodleSpots: React.FC<AcademicDoodleSpotsProps> = ({ classN
                 size="md"
                 onClick={randomizeSpots}
                 title="Nhấn để đổi hình ngẫu nhiên / Click to shuffle doodles"
-                className="hidden sm:inline-block drop-shadow-[4px_4px_0px_rgba(0,0,0,0.18)]"
+                className="hidden sm:inline-block"
               />
             </div>
           )}
@@ -165,7 +165,7 @@ export const AcademicDoodleSpots: React.FC<AcademicDoodleSpotsProps> = ({ classN
               size="lg"
               onClick={randomizeSpots}
               title="Nhấn để đổi hình ngẫu nhiên / Click to shuffle doodles"
-              className="drop-shadow-[4px_4px_0px_rgba(0,0,0,0.18)]"
+              className=""
             />
           </div>
         </div>
@@ -185,7 +185,7 @@ export const AcademicDoodleSpots: React.FC<AcademicDoodleSpotsProps> = ({ classN
               size="lg"
               onClick={randomizeSpots}
               title="Nhấn để đổi hình ngẫu nhiên / Click to shuffle doodles"
-              className="drop-shadow-[4px_4px_0px_rgba(0,0,0,0.18)]"
+              className=""
             />
           </div>
         </div>

@@ -39,14 +39,14 @@ export const SchoolResultCard: React.FC<SchoolResultCardProps> = ({ university }
 
   return (
     <div
-      className="bg-white border-2 border-black border-l-8 transition-all rounded-none p-4 sm:p-5 shadow-[4px_4px_0px_#000] hover:shadow-[6px_6px_0px_#000] hover:-translate-x-[2px] hover:-translate-y-[2px]"
+      className="bg-white border border-gray-200 border-l-4 transition-colors p-4 sm:p-5 hover:border-gray-400"
       style={{ borderLeftColor: leftBorderColor }}
     >
       <div className="flex items-start justify-between gap-4">
         {/* Left: Quality Badge & Ratings count */}
         <div className="flex flex-col items-center shrink-0 w-20 sm:w-24">
           <div
-            className="w-full py-2 px-1 text-center rounded-none select-none border-2 border-black shadow-[2px_2px_0px_#000]"
+            className="w-full py-2 px-1 text-center select-none border border-black"
             style={{ backgroundColor: badgeBg, color: badgeTextColor }}
           >
             <div className="text-[9px] font-mono font-black tracking-wider uppercase opacity-85">
@@ -81,7 +81,7 @@ export const SchoolResultCard: React.FC<SchoolResultCardProps> = ({ university }
 
             {/* Top Right: Location (e.g. Palo Alto, CA / Hà Nội) */}
             {city && (
-              <span className="text-xs font-mono font-bold text-black bg-[#e0f2fe] px-2 py-0.5 border border-black shadow-[1px_1px_0px_#000] shrink-0">
+              <span className="text-xs font-mono font-bold text-black bg-[#e0f2fe] px-2 py-0.5 border border-sky-300 shrink-0">
                 {city}
               </span>
             )}
@@ -89,12 +89,12 @@ export const SchoolResultCard: React.FC<SchoolResultCardProps> = ({ university }
 
           <div className="flex items-center gap-2 text-xs font-mono font-bold text-gray-700 flex-wrap">
             {university.shortName && (
-              <span className="bg-[#fef9c3] text-black px-1.5 py-0.5 border border-black shadow-[1px_1px_0px_#000]">
+              <span className="bg-[#fef9c3] text-black px-1.5 py-0.5 border border-yellow-300">
                 {university.shortName}
               </span>
             )}
             {university.totalProfessors ? (
-              <span className="bg-[#dcfce7] text-black px-2 py-0.5 border border-black shadow-[1px_1px_0px_#000]">
+              <span className="bg-[#dcfce7] text-green-950 px-2 py-0.5 border border-green-300">
                 {university.totalProfessors} {locale === "en" ? "professors" : "giảng viên"}
               </span>
             ) : null}

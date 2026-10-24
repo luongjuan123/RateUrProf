@@ -72,22 +72,22 @@ export const ReportModal: React.FC<ReportModalProps> = ({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 animate-in fade-in duration-150">
-      <div className="relative w-full max-w-md bg-white border-3 border-black shadow-[8px_8px_0px_#000] rounded-none overflow-hidden">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 animate-in fade-in duration-150">
+      <div className="relative w-full max-w-md bg-white border border-gray-200 overflow-hidden">
         {/* Editorial red top stripe */}
-        <div className="h-2 bg-[#e03a3e] w-full border-b-2 border-black" />
+        <div className="h-1 bg-[#e03a3e] w-full" />
 
-        <div className="p-5 border-b-2 border-black flex items-center justify-between bg-white">
+        <div className="p-5 border-b border-gray-200 flex items-center justify-between bg-white">
           <div className="flex items-center gap-2">
             <PopArtShieldAlert className="w-5 h-5" />
-            <h3 className="font-mono font-black text-base uppercase text-black tracking-wider">
+            <h3 className="font-mono font-bold text-base uppercase text-black tracking-wider">
               {t("reportModal.title")}
             </h3>
           </div>
           <button
             onClick={onClose}
             aria-label={t("common.close")}
-            className="p-1 border-2 border-black bg-white text-black shadow-[2px_2px_0px_#000] hover:bg-[#fee2e2] active:translate-x-[1px] active:translate-y-[1px] active:shadow-none transition-all cursor-pointer"
+            className="p-1 border border-gray-200 text-gray-500 hover:text-black hover:bg-gray-100 transition-colors cursor-pointer"
           >
             <PopArtX className="w-5 h-5" />
           </button>
@@ -95,10 +95,10 @@ export const ReportModal: React.FC<ReportModalProps> = ({
 
         {success ? (
           <div className="p-8 text-center space-y-4 bg-white">
-            <div className="w-12 h-12 bg-[#6ee7b7] text-black border-2 border-black shadow-[2px_2px_0px_#000] flex items-center justify-center mx-auto">
+            <div className="w-12 h-12 bg-[#dcfce7] text-[#166534] border border-green-200 flex items-center justify-center mx-auto">
               <PopArtCheck className="w-7 h-7" />
             </div>
-            <h4 className="font-mono font-black text-black text-base uppercase tracking-tight">{t("reportModal.successTitle")}</h4>
+            <h4 className="font-mono font-bold text-black text-base uppercase tracking-tight">{t("reportModal.successTitle")}</h4>
             <p className="font-mono text-xs text-gray-700">
               {t("reportModal.successDesc")}
             </p>
@@ -106,23 +106,23 @@ export const ReportModal: React.FC<ReportModalProps> = ({
         ) : (
           <form onSubmit={handleSubmit} className="p-5 space-y-4 bg-white">
             {error && (
-              <div className="p-3 bg-[#fee2e2] text-black font-mono text-xs border-2 border-black shadow-[2px_2px_0px_#000]">
+              <div className="p-3 bg-[#fee2e2] text-black font-mono text-xs border border-red-200">
                 {error}
               </div>
             )}
 
-            <div className="p-3 bg-[#fef9c3]/50 border-2 border-black shadow-[2px_2px_0px_#000] font-mono text-xs text-black italic">
+            <div className="p-3 bg-gray-50 border border-gray-200 font-mono text-xs text-gray-700 italic">
               “{review.comment.slice(0, 120)}...”
             </div>
 
             <div>
-              <label className="block text-xs font-mono font-black text-black uppercase tracking-wider mb-1.5">
+              <label className="block text-xs font-mono font-bold text-black uppercase tracking-wider mb-1.5">
                 {t("reportModal.reasonLabel")}
               </label>
               <select
                 value={reason}
                 onChange={(e) => setReason(e.target.value)}
-                className="w-full p-2.5 text-xs font-mono font-bold border-2 border-black shadow-[2px_2px_0px_#000] outline-none focus:outline-none focus-visible:outline-none focus:ring-0 focus-visible:ring-0 focus:bg-[#fef9c3]/30 bg-white text-black rounded-none"
+                className="w-full p-2.5 text-xs font-mono font-bold border border-gray-200 outline-none focus:outline-none focus:border-black bg-white text-black"
               >
                 {reasons.map((r) => (
                   <option key={r.key} value={r.label}>
@@ -133,7 +133,7 @@ export const ReportModal: React.FC<ReportModalProps> = ({
             </div>
 
             <div>
-              <label className="block text-xs font-mono font-black text-black uppercase tracking-wider mb-1.5">
+              <label className="block text-xs font-mono font-bold text-black uppercase tracking-wider mb-1.5">
                 {t("reportModal.detailsLabel")}
               </label>
               <textarea
@@ -141,22 +141,22 @@ export const ReportModal: React.FC<ReportModalProps> = ({
                 value={details}
                 onChange={(e) => setDetails(e.target.value)}
                 placeholder={t("reportModal.detailsPlaceholder")}
-                className="w-full p-2.5 text-xs font-mono border-2 border-black shadow-[2px_2px_0px_#000] outline-none focus:outline-none focus-visible:outline-none focus:ring-0 focus-visible:ring-0 focus:bg-[#fef9c3]/30 bg-white text-black rounded-none"
+                className="w-full p-2.5 text-xs font-mono border border-gray-200 outline-none focus:outline-none focus:border-black bg-white text-black"
               />
             </div>
 
-            <div className="flex items-center justify-end gap-3 pt-3 border-t-2 border-black">
+            <div className="flex items-center justify-end gap-3 pt-3 border-t border-gray-200">
               <button
                 type="button"
                 onClick={onClose}
-                className="px-4 py-2 text-xs font-mono font-black text-black uppercase border-2 border-black shadow-[2px_2px_0px_#000] bg-white hover:bg-black/5 active:translate-x-[1px] active:translate-y-[1px] active:shadow-none transition-all cursor-pointer rounded-none"
+                className="px-4 py-2 text-xs font-mono font-bold text-black uppercase border border-gray-200 bg-white hover:bg-gray-50 transition-colors cursor-pointer"
               >
                 {t("reportModal.cancel")}
               </button>
               <button
                 type="submit"
                 disabled={loading}
-                className="px-5 py-2 bg-[#e03a3e] hover:bg-black text-white font-mono font-black text-xs uppercase tracking-wider border-2 border-black shadow-[4px_4px_0px_#000] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all disabled:opacity-50 cursor-pointer rounded-none"
+                className="px-5 py-2 bg-[#e03a3e] hover:bg-[#b91c1c] text-white font-mono font-bold text-xs uppercase tracking-wider border border-[#e03a3e] transition-colors disabled:opacity-50 cursor-pointer"
               >
                 {loading ? t("reportModal.submitting") : t("reportModal.submit")}
               </button>

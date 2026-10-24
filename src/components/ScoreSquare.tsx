@@ -61,7 +61,7 @@ export const ScoreSquare: React.FC<ScoreSquareProps> = ({
   if (size === "xl") {
     return (
       <div
-        className={`w-20 h-20 sm:w-24 sm:h-24 shrink-0 border-2 border-black shadow-[3px_3px_0px_#000] flex flex-col items-center justify-center p-1 select-none rounded-none text-center ${className}`}
+        className={`w-20 h-20 sm:w-24 sm:h-24 shrink-0 border border-black flex flex-col items-center justify-center p-1 select-none text-center ${className}`}
         style={{ backgroundColor: bg, color: textColor }}
         role="img"
         aria-label={`Điểm: ${scoreDisplay}`}
@@ -86,7 +86,7 @@ export const ScoreSquare: React.FC<ScoreSquareProps> = ({
   if (size === "lg") {
     return (
       <div
-        className={`w-14 h-14 sm:w-16 sm:h-16 shrink-0 border-2 border-black shadow-[2px_2px_0px_#000] flex flex-col items-center justify-center p-1 select-none rounded-none text-center ${className}`}
+        className={`w-14 h-14 sm:w-16 sm:h-16 shrink-0 border border-black flex flex-col items-center justify-center p-1 select-none text-center ${className}`}
         style={{ backgroundColor: bg, color: textColor }}
         role="img"
         aria-label={`Điểm: ${scoreDisplay}`}
@@ -106,7 +106,7 @@ export const ScoreSquare: React.FC<ScoreSquareProps> = ({
   if (size === "sm") {
     return (
       <div
-        className={`w-8 h-8 shrink-0 border-2 border-black shadow-[1px_1px_0px_#000] flex items-center justify-center select-none rounded-none text-center ${className}`}
+        className={`w-8 h-8 shrink-0 border border-black flex items-center justify-center select-none text-center ${className}`}
         style={{ backgroundColor: bg, color: textColor }}
         role="img"
         aria-label={`Điểm: ${scoreDisplay}`}
@@ -121,7 +121,7 @@ export const ScoreSquare: React.FC<ScoreSquareProps> = ({
   // Default: size === 'md' (w-10 h-10 to w-12 h-12)
   return (
     <div
-      className={`w-10 h-10 sm:w-12 sm:h-12 shrink-0 border-2 border-black shadow-[1.5px_1.5px_0px_#000] flex flex-col items-center justify-center p-0.5 select-none rounded-none text-center ${className}`}
+      className={`w-10 h-10 sm:w-12 sm:h-12 shrink-0 border border-black flex flex-col items-center justify-center p-0.5 select-none text-center ${className}`}
       style={{ backgroundColor: bg, color: textColor }}
       role="img"
       aria-label={`Điểm: ${scoreDisplay}`}

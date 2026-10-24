@@ -21,13 +21,13 @@ export const ActiveFilterChips: React.FC<ActiveFilterChipsProps> = ({ chips, onC
       {chips.map((chip) => (
         <span
           key={chip.key}
-          className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-[#fef9c3] border-2 border-black shadow-[2px_2px_0px_0px_#000000] text-xs font-bold text-black animate-in fade-in duration-100"
+          className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-gray-100 border border-[#111111] text-xs font-medium text-black animate-in fade-in duration-100"
         >
           <span>{chip.label}</span>
           <button
             type="button"
             onClick={chip.onRemove}
-            className="p-0.5 hover:bg-black hover:text-white text-black transition-colors cursor-pointer"
+            className="p-0.5 hover:bg-[#111111] hover:text-white text-black transition-colors cursor-pointer"
             title={`Bỏ lọc: ${chip.label}`}
           >
             <PopArtX className="w-3.5 h-3.5" />
@@ -38,7 +38,7 @@ export const ActiveFilterChips: React.FC<ActiveFilterChipsProps> = ({ chips, onC
       <button
         type="button"
         onClick={onClearAll}
-        className="inline-flex items-center gap-1 text-[11px] font-black text-black bg-[#fee2e2] px-2 py-1 border-2 border-black shadow-[1.5px_1.5px_0px_0px_#000000] hover:bg-[#fca5a5] active:translate-x-[1px] active:translate-y-[1px] active:shadow-none uppercase tracking-wider ml-1 transition-all cursor-pointer"
+        className="inline-flex items-center gap-1 text-[11px] font-bold text-black bg-gray-100 px-2.5 py-1 border border-[#111111] hover:bg-gray-200 uppercase tracking-wider ml-1 transition-colors cursor-pointer"
       >
         <PopArtRotateCcw className="w-3.5 h-3.5" />
         <span>Xóa tất cả</span>

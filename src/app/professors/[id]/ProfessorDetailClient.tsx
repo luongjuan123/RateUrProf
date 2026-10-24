@@ -331,7 +331,7 @@ export default function ProfessorDetailClient({ professorId }: { professorId: st
         <AcademicDoodleSpots />
 
         {/* The Main Professor Card */}
-        <div className="bg-white border-2 border-black shadow-[6px_6px_0px_0px_#000000] p-6 sm:p-8 relative">
+        <div className="bg-white border border-gray-200 p-6 sm:p-8 relative">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           {/* Left Column: Overall Quality, Professor Info, Metrics, Rate CTA */}
           <div className="lg:col-span-7 space-y-5">
@@ -346,12 +346,12 @@ export default function ProfessorDetailClient({ professorId }: { professorId: st
               <div className="space-y-1.5 min-w-0 flex-1">
                 <div className="flex items-center gap-2 flex-wrap">
                   {verifiedAcademicTitle && (
-                    <span className="px-2 py-0.5 bg-[#fef9c3] text-black font-mono font-black text-xs uppercase border border-black shadow-[1.5px_1.5px_0px_#000]">
+                    <span className="px-2 py-0.5 bg-[#fef9c3] text-black font-mono font-bold text-xs uppercase border border-gray-200">
                       {verifiedAcademicTitle}
                     </span>
                   )}
                   {uniShort && (
-                    <span className="px-2 py-0.5 bg-[#fee2e2] text-[#991b1b] font-mono font-black text-xs uppercase border border-black shadow-[1.5px_1.5px_0px_#000]">
+                    <span className="px-2 py-0.5 bg-[#fee2e2] text-[#991b1b] font-mono font-bold text-xs uppercase border border-gray-200">
                       {uniShort}
                     </span>
                   )}
@@ -386,31 +386,31 @@ export default function ProfessorDetailClient({ professorId }: { professorId: st
               </div>
             </div>
 
-            {/* Quick Metrics: Would take again %, Difficulty, Total Ratings (Flat Solid Colors, No Icons) */}
+            {/* Quick Metrics: Would take again %, Difficulty, Total Ratings (Flat Solid Colors) */}
             <div className="flex items-center gap-3 sm:gap-4 pt-1 flex-wrap">
-              <div className="p-3 sm:p-3.5 bg-[#dcfce7] border-2 border-black shadow-[3px_3px_0px_#000] min-w-[125px] flex-1">
+              <div className="p-3 sm:p-3.5 bg-[#f0fdf4] border border-gray-200 min-w-[125px] flex-1">
                 <div className="text-2xl sm:text-3xl font-black text-black">
                   {hasReviews && authoritativeTakeAgain != null ? `${Math.round(authoritativeTakeAgain)}%` : "N/A"}
                 </div>
-                <div className="text-[10px] font-mono font-black uppercase tracking-wider text-[#166534] mt-0.5">
+                <div className="text-[10px] font-mono font-bold uppercase tracking-wider text-[#166534] mt-0.5">
                   {t("professorDetail.takeAgainPercent") || "Muốn học lại"}
                 </div>
               </div>
 
-              <div className="p-3 sm:p-3.5 bg-[#ffedd5] border-2 border-black shadow-[3px_3px_0px_#000] min-w-[125px] flex-1">
+              <div className="p-3 sm:p-3.5 bg-[#fff7ed] border border-gray-200 min-w-[125px] flex-1">
                 <div className="text-2xl sm:text-3xl font-black text-black">
                   {hasReviews && authoritativeDifficulty != null ? `${authoritativeDifficulty.toFixed(1)}` : "N/A"}
                 </div>
-                <div className="text-[10px] font-mono font-black uppercase tracking-wider text-[#9a3412] mt-0.5">
+                <div className="text-[10px] font-mono font-bold uppercase tracking-wider text-[#9a3412] mt-0.5">
                   {t("professorDetail.difficultyScore") || "Mức độ khó"}
                 </div>
               </div>
 
-              <div className="p-3 sm:p-3.5 bg-[#ede9fe] border-2 border-black shadow-[3px_3px_0px_#000] min-w-[125px] flex-1">
+              <div className="p-3 sm:p-3.5 bg-[#faf5ff] border border-gray-200 min-w-[125px] flex-1">
                 <div className="text-2xl sm:text-3xl font-black text-black">
                   {reviewCount}
                 </div>
-                <div className="text-[10px] font-mono font-black uppercase tracking-wider text-[#5b21b6] mt-0.5">
+                <div className="text-[10px] font-mono font-bold uppercase tracking-wider text-[#5b21b6] mt-0.5">
                   {locale === "vi" ? "Lượt đánh giá" : "Total Ratings"}
                 </div>
               </div>
@@ -426,10 +426,10 @@ export default function ProfessorDetailClient({ professorId }: { professorId: st
                     setIsAuthModalOpen(true);
                   }
                 }}
-                className={`inline-flex items-center justify-center gap-2 px-8 py-3.5 text-xs font-black uppercase tracking-wider border-2 border-black shadow-[3px_3px_0px_0px_#000000] hover:shadow-[4px_4px_0px_0px_#000000] hover:-translate-x-[1px] hover:-translate-y-[1px] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all cursor-pointer ${
+                className={`inline-flex items-center justify-center gap-2 px-8 py-3.5 text-xs font-black uppercase tracking-wider border transition-colors cursor-pointer ${
                   hasUserReviewed
-                    ? "bg-[#fef9c3] hover:bg-[#fde047] text-black"
-                    : "bg-[#e03a3e] hover:bg-[#b91c1c] text-white"
+                    ? "bg-[#fef9c3] hover:bg-[#fde047] text-black border-gray-300"
+                    : "bg-[#e03a3e] hover:bg-[#b91c1c] text-white border-[#e03a3e]"
                 }`}
               >
                 <PopArtPencil className="w-4 h-4" />
@@ -441,10 +441,10 @@ export default function ProfessorDetailClient({ professorId }: { professorId: st
               <button
                 type="button"
                 onClick={handleToggleBookmark}
-                className={`inline-flex items-center justify-center gap-2 px-6 py-3.5 text-xs font-black uppercase tracking-wider border-2 border-black shadow-[3px_3px_0px_0px_#000000] hover:shadow-[4px_4px_0px_0px_#000000] hover:-translate-x-[1px] hover:-translate-y-[1px] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all cursor-pointer ${
+                className={`inline-flex items-center justify-center gap-2 px-6 py-3.5 text-xs font-bold uppercase tracking-wider border transition-colors cursor-pointer ${
                   bookmarked
-                    ? "bg-[#fef08a] text-black"
-                    : "bg-white hover:bg-gray-100 text-black"
+                    ? "bg-[#fef08a] text-black border-yellow-400"
+                    : "bg-white hover:bg-gray-100 text-black border-gray-300"
                 }`}
               >
                 <PopArtBookmark className="w-4 h-4" filled={bookmarked} color="#facc15" />
@@ -458,13 +458,13 @@ export default function ProfessorDetailClient({ professorId }: { professorId: st
           </div>
 
           {/* Right Column: Rating Distribution */}
-          <div className="lg:col-span-5 bg-[#fef9c3] p-6 border-2 border-black shadow-[4px_4px_0px_0px_#000000] space-y-4">
-            <div className="flex items-center justify-between border-b-2 border-black/10 pb-2">
-              <h3 className="text-xs font-mono font-black uppercase tracking-wider text-black flex items-center gap-1.5">
+          <div className="lg:col-span-5 bg-gray-50 p-6 border border-gray-200 space-y-4">
+            <div className="flex items-center justify-between border-b border-gray-200 pb-2">
+              <h3 className="text-xs font-mono font-bold uppercase tracking-wider text-black flex items-center gap-1.5">
                 <PopArtStar className="w-3.5 h-3.5" />
                 <span>{t("professorDetail.ratingDistribution") || "Phân bố đánh giá"}</span>
               </h3>
-              <span className="px-1.5 py-0.5 bg-black text-[#fef9c3] font-mono font-black text-[9px] uppercase border border-black shadow-[1px_1px_0px_#000]">
+              <span className="px-2 py-0.5 bg-black text-white font-mono font-bold text-[9px] uppercase border border-black">
                 {reviewCount} REVIEWS
               </span>
             </div>
@@ -492,7 +492,7 @@ export default function ProfessorDetailClient({ professorId }: { professorId: st
                       <span className="w-24 text-black shrink-0 font-mono text-[11px]">
                         {label}
                       </span>
-                      <div className="flex-1 h-4 bg-white border-2 border-black shadow-[1.5px_1.5px_0px_#000] overflow-hidden">
+                      <div className="flex-1 h-3 bg-white border border-gray-200 overflow-hidden">
                         <div
                           className="h-full transition-all duration-300"
                           style={{ width: `${percent}%`, backgroundColor: color }}
@@ -519,7 +519,7 @@ export default function ProfessorDetailClient({ professorId }: { professorId: st
 
       {/* 2. STUDENT RATINGS & REVIEWS SECTION */}
       <div className="space-y-6">
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between border-b-2 border-black pb-3 gap-4">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between border-b border-gray-200 pb-3 gap-4">
           <h2 className="text-xl sm:text-2xl font-black uppercase tracking-tight text-black">
             {t("professorDetail.publishedReviewsTitle", { count: filteredReviews.length }) || `Đánh giá từ sinh viên (${filteredReviews.length})`}
           </h2>
@@ -529,7 +529,7 @@ export default function ProfessorDetailClient({ professorId }: { professorId: st
             <div className="flex flex-wrap items-center gap-3 text-xs font-bold">
               {uniqueCourses.length > 1 && (
                 <div className="flex items-center gap-1.5">
-                  <span className="text-black font-black uppercase text-[10px]">
+                  <span className="text-black font-bold uppercase text-[10px]">
                     {t("professorDetail.course") || "Môn:"}
                   </span>
                   <select
@@ -538,7 +538,7 @@ export default function ProfessorDetailClient({ professorId }: { professorId: st
                       setSelectedCourse(e.target.value);
                       setDisplayCount(5);
                     }}
-                    className="p-1.5 bg-white border-2 border-black shadow-[2px_2px_0px_#000] outline-none focus:outline-none focus-visible:outline-none focus:ring-0 focus-visible:ring-0 font-bold text-black text-xs cursor-pointer"
+                    className="p-1.5 bg-white border border-gray-200 outline-none focus:outline-none focus-visible:outline-none focus:ring-0 font-bold text-black text-xs cursor-pointer"
                   >
                     <option value="all">{t("professorDetail.allCourses") || "Tất cả môn học"}</option>
                     {uniqueCourses.map((c) => (
@@ -549,7 +549,7 @@ export default function ProfessorDetailClient({ professorId }: { professorId: st
               )}
 
               <div className="flex items-center gap-1.5">
-                <span className="text-black font-black uppercase text-[10px]">
+                <span className="text-black font-bold uppercase text-[10px]">
                   {t("professorDetail.sortBy") || "Sắp xếp theo:"}
                 </span>
                 <select
@@ -558,7 +558,7 @@ export default function ProfessorDetailClient({ professorId }: { professorId: st
                     setSortReviews(e.target.value as "newest" | "highest" | "lowest" | "helpful");
                     setDisplayCount(5);
                   }}
-                  className="p-1.5 bg-white border-2 border-black shadow-[2px_2px_0px_#000] outline-none focus:outline-none focus-visible:outline-none focus:ring-0 focus-visible:ring-0 font-bold text-black text-xs cursor-pointer"
+                  className="p-1.5 bg-white border border-gray-200 outline-none focus:outline-none focus-visible:outline-none focus:ring-0 font-bold text-black text-xs cursor-pointer"
                 >
                   <option value="newest">{t("professorDetail.sortNewest") || "Mới nhất"}</option>
                   <option value="highest">{t("professorDetail.sortHighest") || "Đánh giá cao nhất"}</option>
@@ -571,17 +571,17 @@ export default function ProfessorDetailClient({ professorId }: { professorId: st
         </div>
 
         {filteredReviews.length === 0 ? (
-          <div className="p-8 sm:p-12 text-center bg-white border-2 border-black shadow-[4px_4px_0px_#000] space-y-3">
-            <div className="w-12 h-12 bg-black text-[#fef9c3] border-2 border-black shadow-[2px_2px_0px_#000] flex items-center justify-center mx-auto">
+          <div className="p-8 sm:p-12 text-center bg-white border border-gray-200 space-y-3">
+            <div className="w-12 h-12 bg-black text-white border border-black flex items-center justify-center mx-auto">
               <PopArtMessageSquare className="w-6 h-6" />
             </div>
-            <h4 className="font-mono font-black text-black text-base uppercase">
+            <h4 className="font-mono font-bold text-black text-base uppercase">
               {t("professorDetail.noReviewsTitle") || (locale === "vi" ? "Chưa có đánh giá nào" : "No ratings yet")}
             </h4>
             <div className="pt-2">
               <Link
                 href={`/${locale}/professors/${professor.id}/rate`}
-                className="inline-flex items-center gap-2 px-6 py-2.5 bg-[#e03a3e] hover:bg-[#b91c1c] text-white text-xs font-mono font-black uppercase tracking-wider border-2 border-black shadow-[3px_3px_0px_#000] active:translate-x-[1px] active:translate-y-[1px] active:shadow-none transition-all cursor-pointer rounded-none"
+                className="inline-flex items-center gap-2 px-6 py-2.5 bg-[#e03a3e] hover:bg-[#b91c1c] text-white text-xs font-mono font-bold uppercase tracking-wider border border-[#e03a3e] transition-colors cursor-pointer"
               >
                 <PopArtPencil className="w-4 h-4" />
                 <span>{t("professorDetail.writeFirstReview") || (locale === "vi" ? "Viết đánh giá đầu tiên" : "Write First Review")}</span>
@@ -594,19 +594,19 @@ export default function ProfessorDetailClient({ professorId }: { professorId: st
               const hasUpvoted = user && rev.helpfulUserIds?.includes(user.uid);
               const cardAccent =
                 rev.overallRating >= 4.0
-                  ? "border-l-8 border-l-[#4ade80]"
+                  ? "border-l-4 border-l-[#16a34a]"
                   : rev.overallRating >= 3.0
-                  ? "border-l-8 border-l-[#facc15]"
-                  : "border-l-8 border-l-[#f87171]";
+                  ? "border-l-4 border-l-[#ca8a04]"
+                  : "border-l-4 border-l-[#dc2626]";
 
               return (
                 <div
                   key={rev.id}
                   id={`review-${rev.id}`}
-                  className={`bg-white border-2 border-black shadow-[4px_4px_0px_0px_#000000] hover:shadow-[6px_6px_0px_0px_#000000] hover:-translate-x-[1px] hover:-translate-y-[1px] transition-all p-6 space-y-4 ${cardAccent}`}
+                  className={`bg-white border border-gray-200 transition-colors p-6 space-y-4 ${cardAccent}`}
                 >
                   {/* Top Bar of Review */}
-                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b-2 border-black/10 pb-3">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-gray-100 pb-3">
                     <div className="flex items-center gap-3">
                       {(() => {
                         const level = getRatingLevel(rev.overallRating);
@@ -616,28 +616,28 @@ export default function ProfessorDetailClient({ professorId }: { professorId: st
                           <div className="flex items-center gap-1.5 shrink-0">
                             {/* Quality Score Box */}
                             <div
-                              className="flex flex-col items-center justify-center px-2.5 sm:px-3 py-1 text-black border-2 border-black shadow-[2px_2px_0px_#000] min-w-[64px] sm:min-w-[70px]"
+                              className="flex flex-col items-center justify-center px-2.5 sm:px-3 py-1 text-black border border-gray-300 min-w-[64px] sm:min-w-[70px]"
                               style={{ backgroundColor: level.color }}
                               title={`${locale === "vi" ? "Chất lượng" : "Quality"}: ${rev.overallRating.toFixed(1)}/5`}
                             >
-                              <span className="text-[8px] sm:text-[9px] uppercase tracking-wider font-mono font-black text-black/80">
+                              <span className="text-[8px] sm:text-[9px] uppercase tracking-wider font-mono font-bold text-black/80">
                                 {locale === "vi" ? level.labelVi : level.labelEn}
                               </span>
-                              <span className="text-sm sm:text-base font-mono font-black text-black leading-none">
+                              <span className="text-sm sm:text-base font-mono font-bold text-black leading-none">
                                 {rev.overallRating.toFixed(1)}
                               </span>
                             </div>
 
                             {/* Difficulty Score Box */}
                             <div
-                              className="flex flex-col items-center justify-center px-2 sm:px-2.5 py-1 text-black border-2 border-black shadow-[2px_2px_0px_#000] min-w-[60px] sm:min-w-[65px]"
+                              className="flex flex-col items-center justify-center px-2 sm:px-2.5 py-1 text-black border border-gray-300 min-w-[60px] sm:min-w-[65px]"
                               style={{ backgroundColor: diffLevel.color }}
                               title={`${locale === "vi" ? "Độ khó" : "Difficulty"}: ${diffVal}/5 (${locale === "vi" ? diffLevel.labelVi : diffLevel.labelEn})`}
                             >
-                              <span className="text-[8px] sm:text-[9px] uppercase tracking-wider font-mono font-black text-black/80">
+                              <span className="text-[8px] sm:text-[9px] uppercase tracking-wider font-mono font-bold text-black/80">
                                 {locale === "vi" ? "ĐỘ KHÓ" : "DIFFICULTY"}
                               </span>
-                              <span className="text-sm sm:text-base font-mono font-black text-black leading-none">
+                              <span className="text-sm sm:text-base font-mono font-bold text-black leading-none">
                                 {diffVal.toFixed(1)}
                               </span>
                             </div>
@@ -645,10 +645,10 @@ export default function ProfessorDetailClient({ professorId }: { professorId: st
                         );
                       })()}
                       <div className="min-w-0">
-                        <div className="font-black text-base text-black truncate">
+                        <div className="font-bold text-base text-black truncate">
                           {rev.courseName}
                         </div>
-                        <div className="text-[11px] text-gray-600 font-bold flex items-center gap-2">
+                        <div className="text-[11px] text-gray-500 font-medium flex items-center gap-2">
                           <span>{formatReviewerName(rev.userDisplayName, locale as "vi" | "en")}</span>
                           <span>•</span>
                           <span>{new Date(rev.createdAt).toLocaleDateString(locale === "vi" ? "vi-VN" : "en-US")}</span>
@@ -660,7 +660,7 @@ export default function ProfessorDetailClient({ professorId }: { professorId: st
                     {user?.uid && rev.userId === user.uid && (
                       <Link
                         href={`/${locale}/professors/${professor.id}/rate`}
-                        className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#fef9c3] hover:bg-[#fde047] text-black border-2 border-black shadow-[2px_2px_0px_#000] text-xs font-mono font-black uppercase tracking-wider transition-all self-start sm:self-center"
+                        className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-gray-50 hover:bg-gray-100 text-black border border-gray-300 text-xs font-mono font-bold uppercase tracking-wider transition-colors self-start sm:self-center"
                       >
                         <PopArtPencil className="w-3.5 h-3.5" />
                         <span>{locale === "vi" ? "Sửa đánh giá" : "Edit Review"}</span>
@@ -675,32 +675,32 @@ export default function ProfessorDetailClient({ professorId }: { professorId: st
                       const diffLevel = getDifficultyLevelByValue(diffVal);
                       return (
                         <span
-                          className="px-2 py-0.5 border border-black shadow-[1px_1px_0px_#000] font-bold"
+                          className="px-2 py-0.5 border border-gray-200 font-medium"
                           style={{ backgroundColor: diffLevel.lightBg, color: diffLevel.textColor }}
                         >
                           {locale === "vi" ? "Độ khó:" : "Difficulty:"}{" "}
-                          <span className="font-black text-black">{diffVal}/5</span>
+                          <span className="font-bold text-black">{diffVal}/5</span>
                           {" "}
-                          <span className="text-[11px] font-bold opacity-90">
+                          <span className="text-[11px] opacity-90">
                             ({locale === "vi" ? diffLevel.labelVi : diffLevel.labelEn})
                           </span>
                         </span>
                       );
                     })()}
                     {rev.gradeReceived && (
-                      <span className="px-2 py-0.5 bg-[#fef9c3] font-black text-black border border-black shadow-[1px_1px_0px_#000]">
+                      <span className="px-2 py-0.5 bg-[#fef9c3] font-bold text-black border border-yellow-200">
                         {t("professorDetail.grade") || "Điểm:"} {rev.gradeReceived}
                       </span>
                     )}
-                    <span className="px-2 py-0.5 bg-white text-black font-bold border border-black shadow-[1px_1px_0px_#000]">
+                    <span className="px-2 py-0.5 bg-gray-50 text-black font-medium border border-gray-200">
                       {rev.attendanceMandatory
                         ? t("professorDetail.attendanceMandatory") || "Điểm danh: Bắt buộc"
                         : t("professorDetail.attendanceOptional") || "Điểm danh: Tự do"}
                     </span>
-                    <span className={`px-2 py-0.5 border border-black shadow-[1px_1px_0px_#000] font-bold ${
+                    <span className={`px-2 py-0.5 border font-medium ${
                       rev.takeAgain
-                        ? "bg-[#6ee7b7] text-black"
-                        : "bg-[#fee2e2] text-black"
+                        ? "bg-[#dcfce7] text-[#166534] border-green-200"
+                        : "bg-[#fee2e2] text-[#991b1b] border-red-200"
                     }`}>
                       {rev.takeAgain
                         ? t("professorDetail.takeAgainYes") || "Muốn học lại: Có"
@@ -709,7 +709,7 @@ export default function ProfessorDetailClient({ professorId }: { professorId: st
                   </div>
 
                   {/* Comment Body */}
-                  <p className="text-sm text-gray-900 font-medium leading-relaxed whitespace-pre-line">
+                  <p className="text-sm text-gray-800 font-normal leading-relaxed whitespace-pre-line">
                     {rev.comment}
                   </p>
 
@@ -719,7 +719,7 @@ export default function ProfessorDetailClient({ professorId }: { professorId: st
                       {rev.tags.map((tag) => (
                         <span
                           key={tag}
-                          className="px-2 py-0.5 bg-[#fef9c3] text-black border border-black shadow-[1px_1px_0px_#000] text-xs font-black"
+                          className="px-2 py-0.5 bg-gray-50 text-gray-700 border border-gray-200 text-xs font-semibold"
                         >
                           #{tag}
                         </span>
@@ -728,13 +728,13 @@ export default function ProfessorDetailClient({ professorId }: { professorId: st
                   )}
 
                   {/* Bottom Actions: Helpful & Report */}
-                  <div className="flex items-center justify-between pt-3 border-t-2 border-black/10 text-xs">
+                  <div className="flex items-center justify-between pt-3 border-t border-gray-100 text-xs">
                     <button
                       onClick={() => handleUpvote(rev.id)}
-                      className={`flex items-center gap-2 px-3 py-1.5 border-2 border-black font-black text-xs transition-all cursor-pointer ${
+                      className={`flex items-center gap-2 px-3 py-1.5 border font-bold text-xs transition-colors cursor-pointer ${
                         hasUpvoted
-                          ? "bg-[#fee2e2] text-black shadow-none translate-x-[1px] translate-y-[1px]"
-                          : "bg-white hover:bg-[#e0f2fe] text-black shadow-[2px_2px_0px_#000] active:translate-x-[1px] active:translate-y-[1px] active:shadow-none"
+                          ? "bg-[#fee2e2] text-black border-red-300"
+                          : "bg-white hover:bg-gray-50 text-black border-gray-200"
                       }`}
                     >
                       <PopArtThumbsUp className="w-4 h-4" active={Boolean(hasUpvoted)} />
@@ -743,7 +743,7 @@ export default function ProfessorDetailClient({ professorId }: { professorId: st
 
                     <button
                       onClick={() => handleOpenReport(rev)}
-                      className="flex items-center gap-1.5 px-2.5 py-1 text-gray-700 hover:text-black hover:bg-[#fee2e2] border border-black/40 font-bold transition-all cursor-pointer"
+                      className="flex items-center gap-1.5 px-2.5 py-1 text-gray-600 hover:text-black hover:bg-gray-50 border border-gray-200 font-medium transition-colors cursor-pointer"
                       title={t("professorDetail.reportTitle") || "Báo cáo bình luận vi phạm"}
                     >
                       <PopArtShieldAlert className="w-3.5 h-3.5" />
@@ -759,7 +759,7 @@ export default function ProfessorDetailClient({ professorId }: { professorId: st
               <div className="text-center pt-4">
                 <button
                   onClick={() => setDisplayCount((prev) => prev + 5)}
-                  className="px-8 py-3 bg-[#e0f2fe] hover:bg-[#bae6fd] text-black border-2 border-black shadow-[3px_3px_0px_#000] hover:shadow-[4px_4px_0px_#000] font-black text-xs uppercase active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all cursor-pointer"
+                  className="px-8 py-3 bg-white hover:bg-gray-50 text-black border border-gray-300 font-bold text-xs uppercase transition-colors cursor-pointer"
                 >
                   {t("professorDetail.loadMore") || "Tải thêm đánh giá"}
                 </button>

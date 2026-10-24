@@ -84,14 +84,14 @@ export const ProfessorResultCard: React.FC<ProfessorResultCardProps> = ({ profes
 
   return (
     <div
-      className="bg-white border-2 border-black border-l-8 transition-all rounded-none p-4 sm:p-5 shadow-[4px_4px_0px_#000] hover:shadow-[6px_6px_0px_#000] hover:-translate-x-[2px] hover:-translate-y-[2px]"
+      className="bg-white border border-gray-200 border-l-4 transition-colors p-4 sm:p-5 hover:border-gray-400"
       style={{ borderLeftColor: leftBorderColor }}
     >
       <div className="flex items-start justify-between gap-4">
         {/* Left: Quality Badge & Ratings count */}
         <div className="flex flex-col items-center shrink-0 w-20 sm:w-24">
           <div
-            className="w-full py-2 px-1 text-center rounded-none select-none border-2 border-black shadow-[2px_2px_0px_#000]"
+            className="w-full py-2 px-1 text-center select-none border border-black"
             style={{ backgroundColor: badgeBg, color: badgeTextColor }}
           >
             <div className="text-[9px] font-mono font-black tracking-wider uppercase opacity-85">
@@ -125,7 +125,7 @@ export const ProfessorResultCard: React.FC<ProfessorResultCardProps> = ({ profes
 
           <div className="flex items-center gap-2 flex-wrap">
             {department && (
-              <span className="text-xs font-mono font-bold text-black bg-[#e0f2fe] px-2 py-0.5 border border-black shadow-[1px_1px_0px_#000] truncate max-w-xs">
+              <span className="text-xs font-mono font-bold text-black bg-[#e0f2fe] px-2 py-0.5 border border-sky-300 truncate max-w-xs">
                 {department}
               </span>
             )}
@@ -135,10 +135,10 @@ export const ProfessorResultCard: React.FC<ProfessorResultCardProps> = ({ profes
           </div>
 
           <div className="text-xs font-mono text-black font-bold pt-1 flex items-center gap-2 flex-wrap">
-            <span className="bg-[#dcfce7] px-2 py-0.5 border border-black shadow-[1px_1px_0px_#000]">
+            <span className="bg-[#dcfce7] px-2 py-0.5 border border-green-300 text-green-900">
               {takeAgainDisplay} {locale === "en" ? "would take again" : "muốn học lại"}
             </span>
-            <span className="bg-[#ffedd5] px-2 py-0.5 border border-black shadow-[1px_1px_0px_#000]">
+            <span className="bg-[#ffedd5] px-2 py-0.5 border border-orange-300 text-orange-950">
               {difficultyDisplay} {locale === "en" ? "difficulty" : "độ khó"}
             </span>
           </div>
@@ -151,7 +151,7 @@ export const ProfessorResultCard: React.FC<ProfessorResultCardProps> = ({ profes
             onClick={handleToggleBookmark}
             aria-label={bookmarked ? "Remove bookmark" : "Bookmark professor"}
             title={bookmarked ? "Đã lưu" : "Lưu giảng viên"}
-            className="p-1.5 bg-white hover:bg-[#fef9c3] border-2 border-black shadow-[2px_2px_0px_#000] active:translate-x-[1px] active:translate-y-[1px] active:shadow-none transition-all rounded-none"
+            className="p-1.5 bg-white hover:bg-gray-100 border border-gray-300 hover:border-black transition-colors cursor-pointer"
           >
             <PopArtBookmark className="w-4 h-4" filled={bookmarked} color="#facc15" />
           </button>

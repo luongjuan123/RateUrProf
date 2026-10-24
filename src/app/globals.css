@@ -2,9 +2,9 @@
 
 @layer base {
   :root {
-    /* Neo-Brutalism Color Palette */
+    /* Super Flat Color Palette */
     --bg-page: #ffffff;
-    --bg-header: #141414;
+    --bg-header: #ffffff;
     --bg-card-default: #ffffff;
     --bg-card-featured: #fef9c3; /* Soft Highlighter Yellow */
     --bg-button: #e0f2fe;        /* Soft Pastel Blue */
@@ -20,17 +20,18 @@
     /* Editorial / Brand Red preserved for identity and test integrity */
     --editorial-red: #e03a3e;
     --editorial-red-dark: #b91c1c;
-    --editorial-border: #111111;
+    --editorial-border: #e5e7eb;
     --editorial-muted: #52525b;
     --editorial-surface: #f9fafb;
 
     --background: #ffffff;
     --foreground: #111111;
 
-    /* Borders & Hard Shadows (Zero Blur Offset) */
-    --border-color: #111111;
-    --border-thick: 2px solid var(--border-color);
-    --border-thin: 1.5px solid var(--border-color);
+    /* Super Flat Borders — Clean 1px Geometric Architecture */
+    --border-color: #e5e7eb;
+    --border-dark: #111111;
+    --border-thick: 1px solid #111111;
+    --border-thin: 1px solid #e5e7eb;
 
     /* STRICT MANDATORY DESIGN RULE — 100% SHARP CORNERS ONLY (0px) */
     --radius: 0px;
@@ -39,22 +40,25 @@
     --radius-md: 0px;
     --radius-lg: 0px;
 
-    --shadow-card: 4px 4px 0px var(--border-color);
-    --shadow-card-hover: 6px 6px 0px var(--border-color);
-    --shadow-btn: 3px 3px 0px var(--border-color);
-    --shadow-btn-hover: 4px 4px 0px var(--border-color);
-    --shadow-sm: 2px 2px 0px var(--border-color);
-    --shadow-modal: 8px 8px 0px var(--border-color);
+    /* STRICT SUPER FLAT RULE — ZERO SHADOWS (0px OFFSET / 0px BLUR) */
+    --shadow-card: none;
+    --shadow-card-hover: none;
+    --shadow-btn: none;
+    --shadow-btn-hover: none;
+    --shadow-sm: none;
+    --shadow-modal: none;
 
     /* Technical Grotesque / Monospace Typography Stack */
     --font-mono: 'JetBrains Mono', 'Space Mono', 'SF Mono', Consolas, 'Courier New', monospace;
   }
 
-  /* STRICT DESIGN RULE — SHARP CORNERS ONLY, 100% SQUARE UI */
+  /* STRICT DESIGN RULE — SHARP CORNERS & ZERO SHADOWS ACROSS ENTIRE UI */
   *,
   *::before,
   *::after {
     border-radius: 0 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
   }
 
   body {
@@ -78,23 +82,16 @@
   }
 
   /* ==========================================================================
-     GLOBAL FORM INPUT FOCUS RESET
-     Permanently eliminates all inner focus outlines, focus rings, and inner box-shadows.
-     Preserves outer container borders and hard drop shadows.
+     GLOBAL FORM INPUT FOCUS RESET (SUPER FLAT)
+     Eliminates all inner focus rings, outlines, and box-shadows.
      ========================================================================== */
   input,
   textarea,
   select,
   [contenteditable="true"] {
     outline: none !important;
-    -webkit-tap-highlight-color: transparent;
-  }
-
-  input:not([class*="shadow-"]):not(.neo-input),
-  textarea:not([class*="shadow-"]):not(.neo-input),
-  select:not([class*="shadow-"]):not(.neo-input),
-  [contenteditable="true"] {
     box-shadow: none !important;
+    -webkit-tap-highlight-color: transparent;
   }
 
   input:focus,
@@ -113,111 +110,140 @@
     --tw-ring-offset-shadow: 0 0 #0000 !important;
     --tw-ring-shadow: 0 0 #0000 !important;
     --tw-ring-color: transparent !important;
+    box-shadow: none !important;
   }
 }
 
 /* ==========================================================================
-   NEO-BRUTALISM FOUNDATIONAL UTILITIES & MICRO-INTERACTIONS
+   SUPER FLAT UTILITIES & MICRO-INTERACTIONS
+   Clean 1px borders, solid fills, zero transforms, instant flat color states
    ========================================================================== */
 
-/* Base Neo Card */
+/* Flat Card */
 .neo-card {
   background: var(--bg-card-default);
-  border: var(--border-thick);
+  border: 1px solid var(--border-color);
   border-radius: 0 !important;
-  box-shadow: var(--shadow-card);
+  box-shadow: none !important;
   color: var(--text-primary);
-  transition: transform 0.12s ease, box-shadow 0.12s ease;
+  transition: border-color 0.15s ease, background-color 0.15s ease;
 }
 
 .neo-card-hover:hover {
-  transform: translate(-2px, -2px);
-  box-shadow: var(--shadow-card-hover);
+  border-color: #9ca3af;
+  box-shadow: none !important;
+  transform: none !important;
 }
 
 .neo-card--featured {
   background: var(--bg-card-featured);
+  border-color: #fde047;
 }
 
 .neo-card--mint {
   background: var(--bg-badge);
+  border-color: #34d399;
 }
 
 .neo-card--blue {
   background: var(--bg-button);
+  border-color: #bae6fd;
 }
 
-/* Neo-Brutalist Buttons with Mechanical Press Effect */
+/* Super Flat Buttons with Instant Flat Color Shift */
 .neo-btn {
   background: var(--bg-button);
   color: #111111;
-  border: var(--border-thick);
+  border: 1px solid #111111;
   border-radius: 0 !important;
-  box-shadow: var(--shadow-btn);
+  box-shadow: none !important;
   font-weight: 700;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  transition: transform 0.1s ease, box-shadow 0.1s ease, background-color 0.1s ease;
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
   user-select: none;
+  transform: none !important;
 }
 
 .neo-btn:hover {
-  transform: translate(-1px, -1px);
-  box-shadow: var(--shadow-btn-hover);
+  background: #111111;
+  color: #ffffff;
+  box-shadow: none !important;
+  transform: none !important;
 }
 
 .neo-btn:active {
-  transform: translate(2px, 2px);
-  box-shadow: 0px 0px 0px var(--border-color);
+  background: #27272a;
+  color: #ffffff;
+  box-shadow: none !important;
+  transform: none !important;
 }
 
 .neo-btn-primary {
   background: #111111;
   color: #ffffff;
-  border: 2px solid #111111;
+  border: 1px solid #111111;
 }
 
 .neo-btn-primary:hover {
   background: var(--editorial-red);
   color: #ffffff;
-  border-color: #111111;
+  border-color: var(--editorial-red);
 }
 
 .neo-btn-accent {
   background: var(--bg-card-featured);
+  color: #111111;
+  border: 1px solid #111111;
+}
+
+.neo-btn-accent:hover {
+  background: #fde047;
   color: #111111;
 }
 
 .neo-btn-mint {
   background: var(--bg-badge);
   color: #111111;
+  border: 1px solid #111111;
+}
+
+.neo-btn-mint:hover {
+  background: #34d399;
 }
 
 .neo-btn-coral {
   background: var(--bg-coral);
   color: #991b1b;
+  border: 1px solid #f87171;
+}
+
+.neo-btn-coral:hover {
+  background: #fecaca;
 }
 
 .neo-btn-white {
   background: #ffffff;
   color: #111111;
+  border: 1px solid #e5e7eb;
 }
 
 .neo-btn-white:hover {
   background: #f4f4f5;
+  border-color: #111111;
 }
 
-/* Neo-Brutalist Badges */
+/* Super Flat Badges */
 .neo-badge {
   display: inline-flex;
   align-items: center;
   gap: 0.25rem;
-  border: var(--border-thin);
+  border: 1px solid currentColor;
   border-radius: 0 !important;
-  box-shadow: 1.5px 1.5px 0px var(--border-color);
+  box-shadow: none !important;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -228,47 +254,52 @@
 .neo-badge-mint {
   background: var(--bg-badge);
   color: #064e3b;
+  border-color: #064e3b;
 }
 
 .neo-badge-yellow {
   background: var(--bg-card-featured);
   color: #713f12;
+  border-color: #713f12;
 }
 
 .neo-badge-blue {
   background: var(--bg-button);
   color: #0c4a6e;
+  border-color: #0c4a6e;
 }
 
 .neo-badge-dark {
   background: #111111;
   color: #ffffff;
+  border-color: #111111;
 }
 
-/* Neo-Brutalist Form Controls */
+/* Super Flat Form Controls */
 .neo-input {
-  border: var(--border-thick);
+  border: 1px solid #d1d5db;
   border-radius: 0 !important;
-  box-shadow: var(--shadow-sm);
+  box-shadow: none !important;
   background: #ffffff;
   color: #111111;
-  transition: box-shadow 0.1s ease, border-color 0.1s ease;
+  transition: border-color 0.15s ease;
 }
 
 .neo-input:focus {
   outline: none !important;
-  box-shadow: var(--shadow-sm);
+  border-color: #111111 !important;
+  box-shadow: none !important;
 }
 
-/* Neo-Brutalist Modal Surface */
+/* Super Flat Modal Surface */
 .neo-modal {
   background: #ffffff;
-  border: 3px solid var(--border-color);
+  border: 1px solid #111111;
   border-radius: 0 !important;
-  box-shadow: var(--shadow-modal);
+  box-shadow: none !important;
 }
 
-/* Custom Editorial / Neo-Brutalist Tag */
+/* Custom Editorial / Super Flat Eyebrow Tag */
 .eyebrow-tag {
   font-size: 0.6875rem;
   letter-spacing: 0.12em;
@@ -279,29 +310,30 @@
 
 /* Clean square editorial card transitions */
 .editorial-card-hover {
-  transition: transform 0.12s ease, box-shadow 0.12s ease;
+  transition: border-color 0.15s ease, background-color 0.15s ease;
 }
 
 .editorial-card-hover:hover {
-  transform: translate(-2px, -2px);
-  box-shadow: var(--shadow-card-hover);
+  border-color: #111111;
+  transform: none !important;
+  box-shadow: none !important;
 }
 
 /* Clean custom scrollbar with sharp square thumb */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
 }
 ::-webkit-scrollbar-track {
   background: #f4f4f5;
-  border-left: 1.5px solid #111111;
+  border-left: 1px solid #e5e7eb;
 }
 ::-webkit-scrollbar-thumb {
-  background: #111111;
+  background: #a1a1aa;
   border-radius: 0 !important;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #3f3f46;
+  background: #52525b;
 }
 
 /* Utility to hide scrollbar on horizontal scroll rows */

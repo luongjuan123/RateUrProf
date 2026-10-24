@@ -326,15 +326,15 @@ export default function RateProfessorClient({ professorId }: { professorId: stri
         {/* Back Link */}
         <Link
           href={`/${locale}/professors/${professorId}`}
-          className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white text-black font-mono font-bold text-xs uppercase tracking-wider border-2 border-black shadow-[2px_2px_0px_#000] hover:bg-[#fef9c3] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all"
+          className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white text-black font-mono font-bold text-xs uppercase tracking-wider border border-gray-200 hover:bg-gray-50 transition-colors"
         >
           <PopArtArrowLeft className="w-4 h-4" />
           <span>{t("ratePage.backToProf") || (locale === "vi" ? "Trở về trang giảng viên" : "Back to Professor")}</span>
         </Link>
 
         {/* Header Title Section */}
-        <div className="border-b-2 border-black pb-4">
-          <span className="inline-block px-2.5 py-1 text-[11px] font-mono font-black uppercase tracking-widest bg-[#fef9c3] text-black border-2 border-black shadow-[2px_2px_0px_#000] mb-2">
+        <div className="border-b border-gray-200 pb-4">
+          <span className="inline-block px-2.5 py-1 text-[11px] font-mono font-bold uppercase tracking-widest bg-gray-100 text-black border border-gray-200 mb-2">
             Đánh giá giảng viên
           </span>
           <h1 className="text-3xl sm:text-4xl font-mono font-black text-black tracking-tight">
@@ -344,7 +344,7 @@ export default function RateProfessorClient({ professorId }: { professorId: stri
             {t("ratePage.pageTitle") || "Thêm đánh giá mới"}
           </h2>
           {affiliationLine && (
-            <p className="text-xs sm:text-sm font-mono text-gray-700 font-bold mt-1">
+            <p className="text-xs sm:text-sm font-mono text-gray-700 font-medium mt-1">
               {affiliationLine}
             </p>
           )}
@@ -352,11 +352,11 @@ export default function RateProfessorClient({ professorId }: { professorId: stri
 
         {/* Success Banner */}
         {success ? (
-          <div className="bg-white border-3 border-black p-10 text-center space-y-4 shadow-[8px_8px_0px_#000]">
-            <div className="w-14 h-14 bg-[#6ee7b7] text-black border-2 border-black shadow-[2px_2px_0px_#000] flex items-center justify-center mx-auto">
+          <div className="bg-white border border-gray-200 p-8 sm:p-10 text-center space-y-4">
+            <div className="w-14 h-14 bg-[#dcfce7] text-[#166534] border border-green-200 flex items-center justify-center mx-auto">
               <PopArtCheck className="w-8 h-8" />
             </div>
-            <h3 className="text-2xl font-mono font-black text-black uppercase">
+            <h3 className="text-2xl font-mono font-bold text-black uppercase">
               {t("ratePage.successTitle") || (locale === "vi" ? "Cảm ơn bạn đã đánh giá!" : "Thank you for rating!")}
             </h3>
             <p className="text-sm font-mono text-gray-700 max-w-md mx-auto">
@@ -367,18 +367,18 @@ export default function RateProfessorClient({ professorId }: { professorId: stri
             </p>
             <Link
               href={`/${locale}/professors/${professorId}`}
-              className="inline-block mt-4 px-6 py-2.5 bg-black text-[#fef9c3] text-xs font-mono font-bold uppercase tracking-wider border-2 border-black shadow-[2px_2px_0px_#000] hover:bg-[#e03a3e] hover:text-white transition-colors"
+              className="inline-block mt-4 px-6 py-2.5 bg-black text-white text-xs font-mono font-bold uppercase tracking-wider border border-black hover:bg-[#e03a3e] hover:border-[#e03a3e] transition-colors"
             >
               {t("ratePage.backToProfile") || (locale === "vi" ? "Quay lại hồ sơ ngay" : "Return to Profile")}
             </Link>
           </div>
         ) : !user ? (
-          <div className="bg-white p-8 border-3 border-black shadow-[6px_6px_0px_#000] text-center space-y-6">
-            <div className="w-16 h-16 bg-[#fee2e2] border-2 border-black shadow-[3px_3px_0px_#000] flex items-center justify-center mx-auto text-[#e03a3e]">
+          <div className="bg-white p-8 border border-gray-200 text-center space-y-6">
+            <div className="w-16 h-16 bg-[#fee2e2] border border-red-200 flex items-center justify-center mx-auto text-[#e03a3e]">
               <PopArtLock className="w-8 h-8" />
             </div>
             <div className="space-y-2">
-              <span className="inline-block px-3 py-1 bg-[#fef9c3] border-2 border-black font-mono font-black text-[11px] uppercase tracking-wider shadow-[2px_2px_0px_#000]">
+              <span className="inline-block px-3 py-1 bg-gray-100 border border-gray-200 font-mono font-bold text-[11px] uppercase tracking-wider">
                 {t("ratePage.authPrompt") || "Yêu cầu đăng nhập"}
               </span>
               <h2 className="text-2xl font-mono font-black uppercase text-black">
@@ -393,13 +393,13 @@ export default function RateProfessorClient({ professorId }: { professorId: stri
               <button
                 type="button"
                 onClick={() => setIsAuthModalOpen(true)}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-[#e03a3e] hover:bg-[#b91c1c] text-white font-mono font-black text-xs uppercase tracking-wider border-2 border-black shadow-[4px_4px_0px_#000] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all cursor-pointer"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-[#e03a3e] hover:bg-[#b91c1c] text-white font-mono font-bold text-xs uppercase tracking-wider border border-[#e03a3e] transition-colors cursor-pointer"
               >
                 {t("ratePage.signInButton") || "Đăng nhập để đánh giá"}
               </button>
               <Link
                 href={`/${locale}/professors/${professorId}`}
-                className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3.5 bg-white hover:bg-gray-100 text-black font-mono font-black text-xs uppercase tracking-wider border-2 border-black shadow-[4px_4px_0px_#000] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all cursor-pointer"
+                className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3.5 bg-white hover:bg-gray-50 text-black font-mono font-bold text-xs uppercase tracking-wider border border-gray-200 transition-colors cursor-pointer"
               >
                 {t("ratePage.backToProf") || "Quay lại hồ sơ"}
               </Link>
@@ -410,10 +410,10 @@ export default function RateProfessorClient({ professorId }: { professorId: stri
 
             {/* Edit Mode Alert Banner */}
             {isEditMode && (
-              <div className="p-4 bg-[#dcfce7] border-2 border-black shadow-[4px_4px_0px_#000] flex items-start gap-3">
-                <PopArtInfo className="w-5 h-5 shrink-0 mt-0.5" />
+              <div className="p-4 bg-[#f0fdf4] border border-green-200 flex items-start gap-3">
+                <PopArtInfo className="w-5 h-5 shrink-0 mt-0.5 text-[#166534]" />
                 <div>
-                  <p className="font-mono font-black text-xs uppercase tracking-wider text-[#166534]">
+                  <p className="font-mono font-bold text-xs uppercase tracking-wider text-[#166534]">
                     {t("ratePage.editModeTitle") || "Chỉnh sửa đánh giá của bạn"}
                   </p>
                   <p className="font-mono text-xs text-gray-800 mt-0.5">
@@ -425,15 +425,15 @@ export default function RateProfessorClient({ professorId }: { professorId: stri
             )}
 
             {error && (
-              <div className="p-4 bg-[#fee2e2] border-2 border-black text-xs sm:text-sm text-black font-mono font-bold flex items-start gap-2.5 shadow-[2px_2px_0px_#000]">
-                <PopArtAlertCircle className="w-5 h-5 shrink-0 mt-0.5" />
+              <div className="p-4 bg-[#fee2e2] border border-red-200 text-xs sm:text-sm text-black font-mono font-bold flex items-start gap-2.5">
+                <PopArtAlertCircle className="w-5 h-5 shrink-0 mt-0.5 text-red-600" />
                 <span>{error}</span>
               </div>
             )}
 
             {/* 1. Select Course Code */}
-            <div className="bg-white p-6 border-2 border-black shadow-[4px_4px_0px_#000] space-y-4">
-              <label className="block text-sm font-mono font-black text-black uppercase">
+            <div className="bg-white p-6 border border-gray-200 space-y-4">
+              <label className="block text-sm font-mono font-bold text-black uppercase">
                 {t("ratePage.selectCourseCode") || "Mã môn học / Tên học phần *"}
               </label>
 
@@ -445,7 +445,7 @@ export default function RateProfessorClient({ professorId }: { professorId: stri
                   value={courseCode}
                   onChange={(e) => setCourseCode(e.target.value)}
                   placeholder={t("ratePage.selectCoursePlaceholder") || "Nhập hoặc chọn mã môn..."}
-                  className="w-full px-4 py-2.5 text-sm bg-white border-2 border-black outline-none focus:outline-none focus-visible:outline-none focus:ring-0 focus-visible:ring-0 focus:bg-[#fef9c3]/20 font-mono font-bold text-black shadow-[2px_2px_0px_#000] transition-colors"
+                  className="w-full px-4 py-2.5 text-sm bg-white border border-gray-200 outline-none focus:outline-none focus:border-black font-mono font-bold text-black transition-colors"
                 />
                 {professor.courses && professor.courses.length > 0 && (
                   <datalist id="known-courses">
@@ -462,21 +462,21 @@ export default function RateProfessorClient({ professorId }: { professorId: stri
                   type="checkbox"
                   checked={isOnlineCourse}
                   onChange={(e) => setIsOnlineCourse(e.target.checked)}
-                  className="w-4 h-4 accent-black rounded-none cursor-pointer"
+                  className="w-4 h-4 accent-black cursor-pointer"
                 />
                 <span>{t("ratePage.isOnlineCourse") || "Đây là môn học trực tuyến (Online)"}</span>
               </label>
             </div>
 
             {/* 2. Rate your professor (5 Levels with Distinct Colors) */}
-            <div className="bg-white p-6 border-2 border-black shadow-[4px_4px_0px_#000] space-y-3">
+            <div className="bg-white p-6 border border-gray-200 space-y-3">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
-                <label className="block text-sm font-mono font-black text-black uppercase">
+                <label className="block text-sm font-mono font-bold text-black uppercase">
                   {t("ratePage.rateYourProfessor") || "Đánh giá chung về giảng viên *"}
                 </label>
                 {(hoveredRating || overallRating) && (
                   <div
-                    className="inline-flex items-center gap-1.5 px-2.5 py-0.5 border-2 border-black text-xs font-mono font-black uppercase tracking-wider shadow-[2px_2px_0px_#000] transition-colors"
+                    className="inline-flex items-center gap-1.5 px-2.5 py-0.5 border border-gray-300 text-xs font-mono font-bold uppercase tracking-wider transition-colors"
                     style={{
                       backgroundColor: getRatingLevelByValue(hoveredRating || overallRating!).color,
                       color: "#000000",
@@ -521,12 +521,12 @@ export default function RateProfessorClient({ professorId }: { professorId: stri
                         backgroundColor: bg,
                         color: textColor,
                       }}
-                      className={`py-3.5 sm:py-4 text-center font-mono font-black text-base sm:text-xl border-2 border-black transition-all cursor-pointer rounded-none select-none ${
+                      className={`py-3.5 sm:py-4 text-center font-mono font-bold text-base sm:text-xl border transition-colors cursor-pointer select-none ${
                         isSelected
-                          ? "shadow-[3px_3px_0px_#000] scale-[1.02] -translate-y-0.5"
+                          ? "border-black font-black"
                           : isHovered
-                          ? "shadow-[3px_3px_0px_#000] -translate-y-0.5"
-                          : "shadow-[2px_2px_0px_#000] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none"
+                          ? "border-gray-400"
+                          : "border-gray-200"
                       }`}
                     >
                       {lvl.level}
@@ -535,21 +535,21 @@ export default function RateProfessorClient({ professorId }: { professorId: stri
                 })}
               </div>
 
-              <div className="flex justify-between text-xs font-mono font-bold text-gray-600 px-1 pt-0.5">
+              <div className="flex justify-between text-xs font-mono font-medium text-gray-500 px-1 pt-0.5">
                 <span>{t("ratePage.ratingAwful") || (locale === "vi" ? "1 - Kém" : "1 - Awful")}</span>
                 <span>{t("ratePage.ratingAwesome") || (locale === "vi" ? "5 - Xuất sắc" : "5 - Awesome")}</span>
               </div>
             </div>
 
             {/* 3. How difficult was this professor? (5 Levels with Distinct Semantic Colors) */}
-            <div className="bg-white p-6 border-2 border-black shadow-[4px_4px_0px_#000] space-y-3">
+            <div className="bg-white p-6 border border-gray-200 space-y-3">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
-                <label className="block text-sm font-mono font-black text-black uppercase">
+                <label className="block text-sm font-mono font-bold text-black uppercase">
                   {t("ratePage.howDifficult") || "Mức độ khó của giảng viên? *"}
                 </label>
                 {(hoveredDifficulty || difficultyScore) && (
                   <div
-                    className="inline-flex items-center gap-1.5 px-2.5 py-0.5 border-2 border-black text-xs font-mono font-black uppercase tracking-wider shadow-[2px_2px_0px_#000] transition-colors"
+                    className="inline-flex items-center gap-1.5 px-2.5 py-0.5 border border-gray-300 text-xs font-mono font-bold uppercase tracking-wider transition-colors"
                     style={{
                       backgroundColor: getDifficultyLevelByValue(hoveredDifficulty || difficultyScore!).color,
                       color: "#000000",
@@ -594,12 +594,12 @@ export default function RateProfessorClient({ professorId }: { professorId: stri
                         backgroundColor: bg,
                         color: textColor,
                       }}
-                      className={`py-3.5 sm:py-4 text-center font-mono font-black text-base sm:text-xl border-2 border-black transition-all cursor-pointer rounded-none select-none ${
+                      className={`py-3.5 sm:py-4 text-center font-mono font-bold text-base sm:text-xl border transition-colors cursor-pointer select-none ${
                         isSelected
-                          ? "shadow-[3px_3px_0px_#000] scale-[1.02] -translate-y-0.5"
+                          ? "border-black font-black"
                           : isHovered
-                          ? "shadow-[3px_3px_0px_#000] -translate-y-0.5"
-                          : "shadow-[2px_2px_0px_#000] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none"
+                          ? "border-gray-400"
+                          : "border-gray-200"
                       }`}
                     >
                       {lvl.level}
@@ -608,15 +608,15 @@ export default function RateProfessorClient({ professorId }: { professorId: stri
                 })}
               </div>
 
-              <div className="flex justify-between text-xs font-mono font-bold text-gray-600 px-1 pt-0.5">
+              <div className="flex justify-between text-xs font-mono font-medium text-gray-500 px-1 pt-0.5">
                 <span>{t("ratePage.diffVeryEasy") || (locale === "vi" ? "1 - Rất dễ" : "1 - Very Easy")}</span>
                 <span>{t("ratePage.diffVeryDifficult") || (locale === "vi" ? "5 - Rất khó" : "5 - Very Difficult")}</span>
               </div>
             </div>
 
             {/* 4. Would you take this professor again? */}
-            <div className="bg-white p-6 border-2 border-black shadow-[4px_4px_0px_#000] space-y-3">
-              <label className="block text-sm font-mono font-black text-black uppercase">
+            <div className="bg-white p-6 border border-gray-200 space-y-3">
+              <label className="block text-sm font-mono font-bold text-black uppercase">
                 {t("ratePage.wouldTakeAgain") || "Sẵn sàng học lại môn của thầy/cô này? *"}
               </label>
               <div className="flex items-center gap-8 pt-1">
@@ -628,7 +628,7 @@ export default function RateProfessorClient({ professorId }: { professorId: stri
                     onChange={() => setTakeAgain(true)}
                     className="w-4 h-4 accent-black cursor-pointer"
                   />
-                  <span className="bg-[#6ee7b7]/50 px-2 py-0.5 border border-black shadow-[1px_1px_0px_#000]">{t("ratePage.yes") || "Có (Yes)"}</span>
+                  <span className="bg-[#dcfce7] text-[#166534] px-2 py-0.5 border border-green-200 font-medium">{t("ratePage.yes") || "Có (Yes)"}</span>
                 </label>
                 <label className="flex items-center gap-2 cursor-pointer text-sm font-mono font-bold text-black">
                   <input
@@ -638,14 +638,14 @@ export default function RateProfessorClient({ professorId }: { professorId: stri
                     onChange={() => setTakeAgain(false)}
                     className="w-4 h-4 accent-black cursor-pointer"
                   />
-                  <span className="bg-[#fee2e2] px-2 py-0.5 border border-black shadow-[1px_1px_0px_#000]">{t("ratePage.no") || "Không (No)"}</span>
+                  <span className="bg-[#fee2e2] text-[#991b1b] px-2 py-0.5 border border-red-200 font-medium">{t("ratePage.no") || "Không (No)"}</span>
                 </label>
               </div>
             </div>
 
             {/* 5. Was this class taken for credit? */}
-            <div className="bg-white p-6 border-2 border-black shadow-[4px_4px_0px_#000] space-y-3">
-              <label className="block text-sm font-mono font-black text-black uppercase">
+            <div className="bg-white p-6 border border-gray-200 space-y-3">
+              <label className="block text-sm font-mono font-bold text-black uppercase">
                 {t("ratePage.takenForCredit") || "Học để lấy tín chỉ tích lũy?"}
               </label>
               <div className="flex items-center gap-8 pt-1">
@@ -673,8 +673,8 @@ export default function RateProfessorClient({ professorId }: { professorId: stri
             </div>
 
             {/* 6. Did this professor use textbooks? */}
-            <div className="bg-white p-6 border-2 border-black shadow-[4px_4px_0px_#000] space-y-3">
-              <label className="block text-sm font-mono font-black text-black uppercase">
+            <div className="bg-white p-6 border border-gray-200 space-y-3">
+              <label className="block text-sm font-mono font-bold text-black uppercase">
                 {t("ratePage.usedTextbooks") || "Có yêu cầu giáo trình / tài liệu bắt buộc?"}
               </label>
               <div className="flex items-center gap-8 pt-1">
@@ -702,8 +702,8 @@ export default function RateProfessorClient({ professorId }: { professorId: stri
             </div>
 
             {/* 7. Was attendance mandatory? */}
-            <div className="bg-white p-6 border-2 border-black shadow-[4px_4px_0px_#000] space-y-3">
-              <label className="block text-sm font-mono font-black text-black uppercase">
+            <div className="bg-white p-6 border border-gray-200 space-y-3">
+              <label className="block text-sm font-mono font-bold text-black uppercase">
                 {t("ratePage.attendanceMandatory") || "Điểm danh có bắt buộc không?"}
               </label>
               <div className="flex items-center gap-8 pt-1">
@@ -731,14 +731,14 @@ export default function RateProfessorClient({ professorId }: { professorId: stri
             </div>
 
             {/* 8. Select grade received */}
-            <div className="bg-white p-6 border-2 border-black shadow-[4px_4px_0px_#000] space-y-3">
-              <label className="block text-sm font-mono font-black text-black uppercase">
+            <div className="bg-white p-6 border border-gray-200 space-y-3">
+              <label className="block text-sm font-mono font-bold text-black uppercase">
                 {t("ratePage.selectGrade") || "Điểm số đạt được"}
               </label>
               <select
                 value={gradeReceived}
                 onChange={(e) => setGradeReceived(e.target.value)}
-                className="w-full px-4 py-2.5 text-sm bg-white border-2 border-black outline-none focus:outline-none focus-visible:outline-none focus:ring-0 focus-visible:ring-0 focus:bg-[#fef9c3]/20 font-mono font-bold text-black shadow-[2px_2px_0px_#000] cursor-pointer"
+                className="w-full px-4 py-2.5 text-sm bg-white border border-gray-200 outline-none focus:outline-none focus:border-black font-mono font-bold text-black cursor-pointer"
               >
                 <option value="">{t("ratePage.selectGradePlaceholder") || "Chọn điểm số"}</option>
                 <option value="A">A (4.0)</option>
@@ -756,12 +756,12 @@ export default function RateProfessorClient({ professorId }: { professorId: stri
             </div>
 
             {/* 9. Select up to 3 tags */}
-            <div className="bg-white p-6 border-2 border-black shadow-[4px_4px_0px_#000] space-y-3">
+            <div className="bg-white p-6 border border-gray-200 space-y-3">
               <div className="flex items-center justify-between">
-                <label className="block text-sm font-mono font-black text-black uppercase">
+                <label className="block text-sm font-mono font-bold text-black uppercase">
                   {t("ratePage.selectTags") || "Chọn tối đa 3 nhãn đặc trưng"}
                 </label>
-                <span className="text-xs font-mono font-bold text-black bg-[#fef9c3] px-2 py-0.5 border border-black">
+                <span className="text-xs font-mono font-bold text-black bg-gray-100 px-2 py-0.5 border border-gray-200">
                   {selectedTags.length} / 3
                 </span>
               </div>
@@ -777,12 +777,12 @@ export default function RateProfessorClient({ professorId }: { professorId: stri
                       type="button"
                       disabled={isLimitReached}
                       onClick={() => handleTagToggle(tag)}
-                      className={`px-3 py-1.5 text-xs font-mono font-bold border-2 border-black rounded-none shadow-[2px_2px_0px_#000] transition-all cursor-pointer ${
+                      className={`px-3 py-1.5 text-xs font-mono font-bold border transition-colors cursor-pointer ${
                         isSelected
-                          ? "bg-black text-[#fef9c3]"
+                          ? "bg-black text-white border-black"
                           : isLimitReached
-                          ? "bg-gray-100 text-gray-400 border-gray-400 cursor-not-allowed opacity-60 shadow-none"
-                          : "bg-white text-black hover:bg-[#fef9c3] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none"
+                          ? "bg-gray-100 text-gray-400 border-gray-200 cursor-not-allowed opacity-60"
+                          : "bg-white text-black border-gray-200 hover:bg-gray-50"
                       }`}
                     >
                       {isSelected ? "✓ " : "+ "}
@@ -794,23 +794,23 @@ export default function RateProfessorClient({ professorId }: { professorId: stri
             </div>
 
             {/* 10. Write a Review */}
-            <div className="bg-white p-6 border-2 border-black shadow-[4px_4px_0px_#000] space-y-4">
+            <div className="bg-white p-6 border border-gray-200 space-y-4">
               <div>
-                <label className="block text-sm font-mono font-black text-black uppercase">
+                <label className="block text-sm font-mono font-bold text-black uppercase">
                   {t("ratePage.writeReview") || "Nhận xét chi tiết *"}
                 </label>
-                <p className="text-xs font-mono text-gray-700 mt-1">
+                <p className="text-xs font-mono text-gray-600 mt-1">
                   {t("ratePage.writeReviewSubtitle") ||
                     "Chia sẻ về phong cách giảng dạy, cách truyền tải bài giảng và sự hỗ trợ sinh viên của giảng viên."}
                 </p>
               </div>
 
               {/* Collapsible Guidelines Box */}
-              <div className="border-2 border-black bg-[#fef9c3]/40 text-xs font-mono text-black shadow-[2px_2px_0px_#000]">
+              <div className="border border-gray-200 bg-gray-50 text-xs font-mono text-black">
                 <button
                   type="button"
                   onClick={() => setGuidelinesOpen((prev) => !prev)}
-                  className="w-full px-4 py-2.5 flex items-center justify-between font-bold text-black hover:bg-[#fef9c3] transition-colors cursor-pointer"
+                  className="w-full px-4 py-2.5 flex items-center justify-between font-bold text-black hover:bg-gray-100 transition-colors cursor-pointer"
                 >
                   <div className="flex items-center">
                     <span>{t("ratePage.guidelinesTitle") || "Quy chuẩn đánh giá văn minh"}</span>
@@ -823,7 +823,7 @@ export default function RateProfessorClient({ professorId }: { professorId: stri
                 </button>
 
                 {guidelinesOpen && (
-                  <div className="px-4 pb-3 pt-1 space-y-1.5 border-t-2 border-black text-gray-800">
+                  <div className="px-4 pb-3 pt-1 space-y-1.5 border-t border-gray-200 text-gray-800">
                     <ul className="list-disc pl-5 space-y-1">
                       <li>{t("ratePage.guideline1") || "Nhận xét sẽ bị gỡ bỏ nếu chứa từ ngữ thô tục hoặc lăng mạ."}</li>
                       <li>{t("ratePage.guideline2") || "Không vu khống hoặc công kích cá nhân, bảo vệ sự tôn trọng lẫn nhau."}</li>
@@ -853,7 +853,7 @@ export default function RateProfessorClient({ professorId }: { professorId: stri
                     t("ratePage.reviewPlaceholder") ||
                     "Bạn muốn chia sẻ điều gì với các bạn sinh viên khóa sau về thầy/cô này?"
                   }
-                  className="w-full p-3.5 text-sm bg-white border-2 border-black outline-none focus:outline-none focus-visible:outline-none focus:ring-0 focus-visible:ring-0 focus:bg-[#fef9c3]/20 font-mono text-black leading-relaxed shadow-[2px_2px_0px_#000]"
+                  className="w-full p-3.5 text-sm bg-white border border-gray-200 outline-none focus:outline-none focus:border-black font-mono text-black leading-relaxed"
                 />
                 <div className="flex items-center justify-between text-xs font-mono text-gray-500">
                   <span>
@@ -871,7 +871,7 @@ export default function RateProfessorClient({ professorId }: { professorId: stri
               </div>
 
               {/* Student Identity / Cohort (Optional) */}
-              <div className="pt-2 border-t-2 border-black">
+              <div className="pt-2 border-t border-gray-200">
                 <label className="block text-xs font-mono font-bold text-black uppercase tracking-wider mb-1">
                   {t("ratePage.cohortLabel") || (locale === "vi" ? "Niên khóa / Tên hiển thị (Tùy chọn)" : "Student Cohort / Display Name (Optional)")}
                 </label>
@@ -880,7 +880,7 @@ export default function RateProfessorClient({ professorId }: { professorId: stri
                   value={cohortName}
                   onChange={(e) => setCohortName(e.target.value)}
                   placeholder={t("ratePage.cohortPlaceholder") || "Niên khóa / Chuyên ngành..."}
-                  className="w-full px-3 py-2 text-xs bg-white border-2 border-black outline-none focus:outline-none focus-visible:outline-none focus:ring-0 focus-visible:ring-0 focus:bg-[#fef9c3]/20 font-mono font-bold text-black shadow-[2px_2px_0px_#000]"
+                  className="w-full px-3 py-2 text-xs bg-white border border-gray-200 outline-none focus:outline-none focus:border-black font-mono font-bold text-black"
                 />
               </div>
             </div>
@@ -896,7 +896,7 @@ export default function RateProfessorClient({ professorId }: { professorId: stri
                 <button
                   type="submit"
                   disabled={submitting || isDeleting}
-                  className="w-full sm:w-auto px-10 py-3.5 bg-[#e03a3e] hover:bg-[#c93236] text-white text-sm font-mono font-black uppercase tracking-wider border-2 border-black shadow-[4px_4px_0px_#000] hover:shadow-[6px_6px_0px_#000] active:shadow-none active:translate-x-[4px] active:translate-y-[4px] transition-all disabled:opacity-50 cursor-pointer"
+                  className="w-full sm:w-auto px-10 py-3.5 bg-[#e03a3e] hover:bg-[#b91c1c] text-white text-sm font-mono font-bold uppercase tracking-wider border border-[#e03a3e] transition-colors disabled:opacity-50 cursor-pointer"
                 >
                   {submitting
                     ? isEditMode
@@ -912,7 +912,7 @@ export default function RateProfessorClient({ professorId }: { professorId: stri
                     type="button"
                     disabled={submitting || isDeleting}
                     onClick={() => setShowDeleteConfirm(true)}
-                    className="w-full sm:w-auto px-6 py-3.5 bg-[#fee2e2] hover:bg-[#fca5a5] text-[#991b1b] text-sm font-mono font-black uppercase tracking-wider border-2 border-black shadow-[4px_4px_0px_#000] hover:shadow-[6px_6px_0px_#000] active:shadow-none active:translate-x-[4px] active:translate-y-[4px] transition-all disabled:opacity-50 cursor-pointer flex items-center justify-center gap-2"
+                    className="w-full sm:w-auto px-6 py-3.5 bg-gray-50 hover:bg-red-50 text-[#991b1b] text-sm font-mono font-bold uppercase tracking-wider border border-gray-200 hover:border-red-200 transition-colors disabled:opacity-50 cursor-pointer flex items-center justify-center gap-2"
                   >
                     <PopArtTrash className="w-4 h-4" />
                     <span>{t("ratePage.deleteButton") || "Xóa đánh giá"}</span>
@@ -926,14 +926,14 @@ export default function RateProfessorClient({ professorId }: { professorId: stri
 
       {/* Delete Confirmation Modal */}
       {showDeleteConfirm && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-xs p-4">
-          <div className="bg-white border-3 border-black shadow-[8px_8px_0px_#000] p-6 sm:p-8 max-w-md w-full space-y-5 rounded-none animate-in fade-in zoom-in-95 duration-150">
-            <div className="w-12 h-12 bg-[#fee2e2] text-[#991b1b] border-2 border-black shadow-[2px_2px_0px_#000] flex items-center justify-center">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-xs p-4">
+          <div className="bg-white border border-gray-200 p-6 sm:p-8 max-w-md w-full space-y-5 animate-in fade-in duration-150">
+            <div className="w-12 h-12 bg-[#fee2e2] text-[#991b1b] border border-red-200 flex items-center justify-center">
               <PopArtTrash className="w-6 h-6" />
             </div>
 
             <div className="space-y-1.5">
-              <h3 className="text-xl font-mono font-black text-black uppercase tracking-tight">
+              <h3 className="text-xl font-mono font-bold text-black uppercase tracking-tight">
                 {t("ratePage.deleteConfirmTitle") || "Xóa đánh giá này?"}
               </h3>
               <p className="text-xs font-mono text-gray-700 leading-relaxed">
@@ -947,7 +947,7 @@ export default function RateProfessorClient({ professorId }: { professorId: stri
                 type="button"
                 disabled={isDeleting}
                 onClick={() => setShowDeleteConfirm(false)}
-                className="w-full sm:w-auto px-5 py-2.5 bg-white hover:bg-gray-100 text-black font-mono font-bold text-xs uppercase tracking-wider border-2 border-black shadow-[2px_2px_0px_#000] active:shadow-none active:translate-x-[2px] active:translate-y-[2px] transition-all cursor-pointer"
+                className="w-full sm:w-auto px-5 py-2.5 bg-white hover:bg-gray-50 text-black font-mono font-bold text-xs uppercase tracking-wider border border-gray-200 transition-colors cursor-pointer"
               >
                 {t("ratePage.cancel") || (locale === "vi" ? "Hủy" : "Cancel")}
               </button>
@@ -955,7 +955,7 @@ export default function RateProfessorClient({ professorId }: { professorId: stri
                 type="button"
                 disabled={isDeleting}
                 onClick={handleDelete}
-                className="w-full sm:w-auto px-6 py-2.5 bg-[#e03a3e] hover:bg-[#b91c1c] text-white font-mono font-black text-xs uppercase tracking-wider border-2 border-black shadow-[3px_3px_0px_#000] active:shadow-none active:translate-x-[3px] active:translate-y-[3px] transition-all disabled:opacity-50 cursor-pointer"
+                className="w-full sm:w-auto px-6 py-2.5 bg-[#e03a3e] hover:bg-[#b91c1c] text-white font-mono font-bold text-xs uppercase tracking-wider border border-[#e03a3e] transition-colors disabled:opacity-50 cursor-pointer"
               >
                 {isDeleting
                   ? t("ratePage.deleting") || "Đang xóa..."

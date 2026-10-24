@@ -236,17 +236,17 @@ export default function UniversityDetailClient({ universityId }: { universityId:
         <AcademicDoodleSpots />
 
         {/* The Main School Card */}
-        <div className="bg-white border-2 border-black shadow-[6px_6px_0px_#000] p-6 sm:p-8 space-y-6 rounded-none relative">
+        <div className="bg-white border border-gray-200 p-6 sm:p-8 space-y-6 relative">
 
         {/* Top identity & CTA actions */}
-        <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4 border-b-2 border-black pb-6">
+        <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4 border-b border-gray-200 pb-6">
           <div className="space-y-3">
             <div className="flex items-center gap-2 flex-wrap">
-              <span className="px-3 py-1 bg-[#e03a3e] text-white font-mono font-black text-xs uppercase tracking-wider border-2 border-black shadow-[2px_2px_0px_#000] rounded-none">
+              <span className="px-3 py-1 bg-[#e03a3e] text-white font-mono font-bold text-xs uppercase tracking-wider border border-[#e03a3e]">
                 {university.shortName}
               </span>
               {locationText && (
-                <span className="px-2.5 py-1 bg-[#e0f2fe] text-black text-xs font-mono font-bold flex items-center gap-1.5 border border-black shadow-[1.5px_1.5px_0px_#000]">
+                <span className="px-2.5 py-1 bg-[#e0f2fe] text-black text-xs font-mono font-bold flex items-center gap-1.5 border border-sky-200">
                   <PopArtMapPin className="w-3.5 h-3.5 text-[#0284c7]" />
                   <span>{locationText}</span>
                 </span>
@@ -263,7 +263,7 @@ export default function UniversityDetailClient({ universityId }: { universityId:
                   href={university.officialWebsite}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 px-3 py-1 bg-[#fef9c3] hover:bg-[#fde047] text-black text-xs font-mono font-bold border border-black shadow-[1.5px_1.5px_0px_#000] hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-none transition-all"
+                  className="inline-flex items-center gap-1.5 px-3 py-1 bg-gray-50 hover:bg-gray-100 text-black text-xs font-mono font-bold border border-gray-200 transition-colors"
                 >
                   <PopArtGlobe className="w-3.5 h-3.5" />
                   <span>{university.officialDomain || university.officialWebsite}</span>
@@ -282,10 +282,10 @@ export default function UniversityDetailClient({ universityId }: { universityId:
                   setIsAuthModalOpen(true);
                 }
               }}
-              className={`inline-flex items-center justify-center gap-2 px-8 py-3.5 text-xs font-mono font-black uppercase tracking-wider transition-all border-2 border-black shadow-[4px_4px_0px_#000] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none cursor-pointer rounded-none ${
+              className={`inline-flex items-center justify-center gap-2 px-8 py-3.5 text-xs font-mono font-black uppercase tracking-wider transition-colors border cursor-pointer ${
                 hasUserReviewed
-                  ? "bg-[#fef9c3] hover:bg-[#fde047] text-black"
-                  : "bg-[#e03a3e] hover:bg-black text-white"
+                  ? "bg-[#fef9c3] hover:bg-[#fde047] text-black border-gray-300"
+                  : "bg-[#e03a3e] hover:bg-[#b91c1c] text-white border-[#e03a3e]"
               }`}
             >
               <PopArtPencil className="w-4 h-4" />
@@ -299,10 +299,10 @@ export default function UniversityDetailClient({ universityId }: { universityId:
         {/* Rating Breakdown Grid matching RateMyProfessors school page layout */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center pt-2">
           {/* Big Score: Overall Quality */}
-          <div className="lg:col-span-4 p-5 sm:p-6 border-2 border-black shadow-[4px_4px_0px_#000] space-y-3 text-center lg:text-left bg-[#fef9c3]">
+          <div className="lg:col-span-4 p-5 sm:p-6 border border-gray-200 space-y-3 text-center lg:text-left bg-gray-50">
             <div className="flex items-center justify-center lg:justify-start gap-2">
-              <span className="px-2.5 py-0.5 bg-black text-[#facc15] font-mono font-black text-[10px] uppercase tracking-wider border border-black shadow-[1.5px_1.5px_0px_#000] flex items-center gap-1">
-                <PopArtStar className="w-3 h-3" />
+              <span className="px-2.5 py-0.5 bg-black text-white font-mono font-bold text-[10px] uppercase tracking-wider border border-black flex items-center gap-1">
+                <PopArtStar className="w-3 h-3 text-[#facc15]" />
                 <span>OVERALL QUALITY</span>
               </span>
             </div>
@@ -315,10 +315,10 @@ export default function UniversityDetailClient({ universityId }: { universityId:
             </div>
 
             <div className="space-y-1">
-              <div className="text-xs font-mono font-black uppercase tracking-wider text-black">
+              <div className="text-xs font-mono font-bold uppercase tracking-wider text-black">
                 {t("universityDetail.overallQuality") || (locale === "vi" ? "Chất lượng tổng thể" : "Overall Quality")}
               </div>
-              <div className="inline-block px-2.5 py-0.5 bg-[#e03a3e] text-white text-xs font-mono font-black shadow-[1.5px_1.5px_0px_#000]">
+              <div className="inline-block px-2.5 py-0.5 bg-[#e03a3e] text-white text-xs font-mono font-bold">
                 {schoolStats.total > 0 && schoolStats.ratingAverage != null
                   ? getQualityLabel(schoolStats.ratingAverage, locale)
                   : (locale === "vi" ? "Chưa có đánh giá" : "No ratings yet")}
@@ -336,10 +336,10 @@ export default function UniversityDetailClient({ universityId }: { universityId:
           </div>
 
           {/* 10 Criteria in 2 Columns with Colorful Badges & 5-Segment Meters */}
-          <div className="lg:col-span-8 bg-[#f8fafc] p-5 sm:p-6 border-2 border-black shadow-[4px_4px_0px_#000] rounded-none">
-            <div className="flex items-center justify-between border-b-2 border-black/10 pb-2.5 mb-4">
-              <span className="text-xs font-mono font-black uppercase tracking-wider text-black flex items-center gap-1.5">
-                <span className="w-2.5 h-2.5 bg-[#facc15] border border-black inline-block" />
+          <div className="lg:col-span-8 bg-white p-5 sm:p-6 border border-gray-200">
+            <div className="flex items-center justify-between border-b border-gray-200 pb-2.5 mb-4">
+              <span className="text-xs font-mono font-bold uppercase tracking-wider text-black flex items-center gap-1.5">
+                <span className="w-2.5 h-2.5 bg-[#facc15] border border-gray-300 inline-block" />
                 <span>Tiêu chí đánh giá cơ sở ({col1.length + col2.length})</span>
               </span>
               <span className="text-[10px] font-mono font-bold text-gray-500 uppercase">Thang điểm 5.0</span>
@@ -354,7 +354,7 @@ export default function UniversityDetailClient({ universityId }: { universityId:
                   return (
                     <div key={item.key} className="flex items-center justify-between text-xs font-mono font-bold text-gray-900 gap-2">
                       <div className="flex items-center gap-2 min-w-0">
-                        <span className={`w-6 h-6 flex items-center justify-center border border-black shadow-[1px_1px_0px_#000] shrink-0 ${cTheme.pillBg}`}>
+                        <span className={`w-6 h-6 flex items-center justify-center border border-gray-200 shrink-0 ${cTheme.pillBg}`}>
                           <Icon className={`w-3.5 h-3.5 ${cTheme.text}`} />
                         </span>
                         <span className="truncate text-[11px] sm:text-xs">{item.label}</span>
@@ -367,14 +367,14 @@ export default function UniversityDetailClient({ universityId }: { universityId:
                             return (
                               <div
                                 key={seg}
-                                className={`w-2.5 h-3 border border-black ${
-                                  active ? cTheme.barColor : "bg-gray-200"
+                                className={`w-2.5 h-3 border border-gray-300 ${
+                                  active ? cTheme.barColor : "bg-gray-100"
                                 }`}
                               />
                             );
                           })}
                         </div>
-                        <span className={`px-2 py-0.5 text-xs rounded-none font-mono font-black shadow-[1.5px_1.5px_0px_#000] min-w-[32px] text-center ${getCriteriaScoreBadge(item.score)}`}>
+                        <span className={`px-2 py-0.5 text-xs font-mono font-bold min-w-[32px] text-center border border-gray-200 ${getCriteriaScoreBadge(item.score)}`}>
                           {item.score != null ? item.score.toFixed(1) : "—"}
                         </span>
                       </div>
@@ -391,7 +391,7 @@ export default function UniversityDetailClient({ universityId }: { universityId:
                   return (
                     <div key={item.key} className="flex items-center justify-between text-xs font-mono font-bold text-gray-900 gap-2">
                       <div className="flex items-center gap-2 min-w-0">
-                        <span className={`w-6 h-6 flex items-center justify-center border border-black shadow-[1px_1px_0px_#000] shrink-0 ${cTheme.pillBg}`}>
+                        <span className={`w-6 h-6 flex items-center justify-center border border-gray-200 shrink-0 ${cTheme.pillBg}`}>
                           <Icon className={`w-3.5 h-3.5 ${cTheme.text}`} />
                         </span>
                         <span className="truncate text-[11px] sm:text-xs">{item.label}</span>
@@ -404,14 +404,14 @@ export default function UniversityDetailClient({ universityId }: { universityId:
                             return (
                               <div
                                 key={seg}
-                                className={`w-2.5 h-3 border border-black ${
-                                  active ? cTheme.barColor : "bg-gray-200"
+                                className={`w-2.5 h-3 border border-gray-300 ${
+                                  active ? cTheme.barColor : "bg-gray-100"
                                 }`}
                               />
                             );
                           })}
                         </div>
-                        <span className={`px-2 py-0.5 text-xs rounded-none font-mono font-black shadow-[1.5px_1.5px_0px_#000] min-w-[32px] text-center ${getCriteriaScoreBadge(item.score)}`}>
+                        <span className={`px-2 py-0.5 text-xs font-mono font-bold min-w-[32px] text-center border border-gray-200 ${getCriteriaScoreBadge(item.score)}`}>
                           {item.score != null ? item.score.toFixed(1) : "—"}
                         </span>
                       </div>
@@ -428,7 +428,7 @@ export default function UniversityDetailClient({ universityId }: { universityId:
       {/* 2. SIMPLE SEARCH PROFESSOR AT THIS SCHOOL BAR */}
       <form onSubmit={handleProfSearch} className="flex items-center gap-2 w-full">
         <div className="relative flex-1">
-          <PopArtSearch className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-black" />
+          <PopArtSearch className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-gray-500" />
           <input
             type="text"
             value={profSearchQuery}
@@ -437,12 +437,12 @@ export default function UniversityDetailClient({ universityId }: { universityId:
               t("universityDetail.searchProfPlaceholder") ||
               (locale === "vi" ? "Nhập tên giảng viên..." : "Search by name...")
             }
-            className="w-full pl-9 pr-3 py-2.5 bg-white border-2 border-black text-xs sm:text-sm font-mono font-bold text-black outline-none focus:outline-none focus-visible:outline-none focus:ring-0 focus-visible:ring-0 rounded-none shadow-[2px_2px_0px_#000]"
+            className="w-full pl-9 pr-3 py-2.5 bg-white border border-gray-200 text-xs sm:text-sm font-mono font-bold text-black outline-none focus:outline-none focus-visible:outline-none focus:ring-0 focus:border-black"
           />
         </div>
         <button
           type="submit"
-          className="px-5 py-2.5 bg-black hover:bg-[#e03a3e] text-white text-xs sm:text-sm font-mono font-black uppercase border-2 border-black shadow-[2px_2px_0px_#000] active:translate-x-[1px] active:translate-y-[1px] active:shadow-none transition-all shrink-0 cursor-pointer rounded-none"
+          className="px-5 py-2.5 bg-black hover:bg-[#e03a3e] text-white text-xs sm:text-sm font-mono font-bold uppercase border border-black transition-colors shrink-0 cursor-pointer"
         >
           {t("universityDetail.searchProfButton") || (locale === "vi" ? "Tìm kiếm" : "Search")}
         </button>
@@ -450,9 +450,9 @@ export default function UniversityDetailClient({ universityId }: { universityId:
 
       {/* 3. STUDENT RATINGS & REVIEWS SECTION */}
       <div className="space-y-6">
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b-2 border-black pb-3">
-          <h2 className="text-xl sm:text-2xl font-mono font-black uppercase tracking-tight text-black flex items-center gap-2">
-            <span className="w-3 h-3 bg-[#e03a3e] border border-black inline-block" />
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-gray-200 pb-3">
+          <h2 className="text-xl sm:text-2xl font-mono font-bold uppercase tracking-tight text-black flex items-center gap-2">
+            <span className="w-3 h-3 bg-[#e03a3e] inline-block" />
             <span>
               {t("universityDetail.schoolRatingsTitle", { count: schoolStats.total }) ||
                 (locale === "vi"
@@ -465,14 +465,14 @@ export default function UniversityDetailClient({ universityId }: { universityId:
             {/* Sort Dropdown */}
             {schoolReviews.length > 0 && (
               <div className="flex items-center gap-2 text-xs">
-                <span className="font-mono font-black text-black flex items-center gap-1 uppercase">
+                <span className="font-mono font-bold text-black flex items-center gap-1 uppercase">
                   <PopArtArrowUpDown className="w-3.5 h-3.5" />
                   {t("universityDetail.sortBy") || (locale === "vi" ? "Sắp xếp theo:" : "Sort by:")}
                 </span>
                 <select
                   value={sortBy}
                   onChange={(e) => setSortBy(e.target.value as SortOption)}
-                  className="bg-white border-2 border-black text-xs font-mono font-bold px-2.5 py-1.5 outline-none focus:outline-none focus-visible:outline-none focus:ring-0 focus-visible:ring-0 focus:bg-[#fef9c3]/30 cursor-pointer rounded-none shadow-[2px_2px_0px_#000]"
+                  className="bg-white border border-gray-200 text-xs font-mono font-bold px-2.5 py-1.5 outline-none focus:outline-none focus-visible:outline-none focus:ring-0 focus:border-black cursor-pointer"
                 >
                   <option value="newest">{t("universityDetail.sortNewest") || (locale === "vi" ? "Mới nhất" : "Newest")}</option>
                   <option value="highest">{t("universityDetail.sortHighest") || (locale === "vi" ? "Điểm cao nhất" : "Highest Rating")}</option>
@@ -484,7 +484,7 @@ export default function UniversityDetailClient({ universityId }: { universityId:
 
             <Link
               href={`/${locale}/universities/${university.id}/rate`}
-              className="text-xs font-mono font-black uppercase tracking-wider text-[#e03a3e] hover:underline inline-flex items-center gap-1"
+              className="text-xs font-mono font-bold uppercase tracking-wider text-[#e03a3e] hover:underline inline-flex items-center gap-1"
             >
               <span>{hasUserReviewed
                 ? (locale === "vi" ? "Sửa đánh giá trường" : "Edit School Review")
@@ -495,18 +495,18 @@ export default function UniversityDetailClient({ universityId }: { universityId:
         </div>
 
         {schoolReviews.length === 0 ? (
-          <div className="p-8 sm:p-12 text-center bg-white border-2 border-black shadow-[4px_4px_0px_#000] space-y-3 rounded-none">
-            <div className="w-12 h-12 bg-black text-[#fef9c3] border-2 border-black shadow-[2px_2px_0px_#000] flex items-center justify-center mx-auto">
+          <div className="p-8 sm:p-12 text-center bg-white border border-gray-200 space-y-3">
+            <div className="w-12 h-12 bg-black text-white border border-black flex items-center justify-center mx-auto">
               <PopArtBuilding className="w-6 h-6" />
             </div>
-            <h4 className="font-mono font-black text-black text-base uppercase tracking-tight">
+            <h4 className="font-mono font-bold text-black text-base uppercase tracking-tight">
               {t("universityDetail.noSchoolRatingsYet") ||
                 (locale === "vi" ? "Chưa có đánh giá nào cho trường này" : "No ratings yet for this school")}
             </h4>
             <div className="pt-2">
               <Link
                 href={`/${locale}/universities/${university.id}/rate`}
-                className="inline-flex items-center gap-2 px-6 py-2.5 bg-[#e03a3e] hover:bg-black text-white text-xs font-mono font-black uppercase tracking-wider transition-all shadow-[3px_3px_0px_#000] border-2 border-black active:translate-x-[1px] active:translate-y-[1px] active:shadow-none rounded-none"
+                className="inline-flex items-center gap-2 px-6 py-2.5 bg-[#e03a3e] hover:bg-[#b91c1c] text-white text-xs font-mono font-bold uppercase tracking-wider transition-colors border border-[#e03a3e]"
               >
                 <PopArtPencil className="w-4 h-4" />
                 <span>{t("universityDetail.rateSchool") || (locale === "vi" ? "Đánh giá trường" : "Rate School")}</span>
@@ -534,24 +534,24 @@ export default function UniversityDetailClient({ universityId }: { universityId:
 
               const cardAccent =
                 rev.overallRating >= 4.0
-                  ? "border-l-8 border-l-[#4ade80]"
+                  ? "border-l-4 border-l-[#16a34a]"
                   : rev.overallRating >= 3.0
-                  ? "border-l-8 border-l-[#facc15]"
-                  : "border-l-8 border-l-[#f87171]";
+                  ? "border-l-4 border-l-[#ca8a04]"
+                  : "border-l-4 border-l-[#dc2626]";
 
               return (
                 <div
                   key={rev.id}
-                  className={`bg-white border-2 border-black p-6 space-y-4 shadow-[4px_4px_0px_#000] hover:shadow-[6px_6px_0px_#000] hover:-translate-x-[1px] hover:-translate-y-[1px] rounded-none transition-all ${cardAccent}`}
+                  className={`bg-white border border-gray-200 p-6 space-y-4 transition-colors ${cardAccent}`}
                 >
                   <div className="flex flex-col sm:flex-row sm:items-start gap-4">
                     {/* Big overall rating block on the left */}
                     <div className="shrink-0 text-center">
-                      <div className="text-[10px] font-mono font-black uppercase tracking-wider text-black mb-1">
+                      <div className="text-[10px] font-mono font-bold uppercase tracking-wider text-black mb-1">
                         Overall
                       </div>
                       <div
-                        className={`w-14 h-14 flex items-center justify-center font-mono font-black text-xl rounded-none shadow-[2px_2px_0px_#000] ${getScoreBgColor(
+                        className={`w-14 h-14 flex items-center justify-center font-mono font-bold text-xl border border-gray-200 ${getScoreBgColor(
                           rev.overallRating
                         )}`}
                       >
@@ -563,11 +563,11 @@ export default function UniversityDetailClient({ universityId }: { universityId:
                     <div className="flex-1 space-y-3 min-w-0">
                       <div className="flex items-center justify-between text-xs text-gray-500 flex-wrap gap-2">
                         <div className="flex items-center gap-2">
-                          <span className="font-mono font-black text-black">
+                          <span className="font-mono font-bold text-black">
                             {formatReviewerName(rev.userDisplayName, locale as "vi" | "en")}
                           </span>
                           {rev.cohort && formatReviewerName(rev.userDisplayName, locale as "vi" | "en") !== rev.cohort && (
-                            <span className="px-2 py-0.5 bg-[#fef9c3] text-black text-[11px] font-mono font-bold border border-black rounded-none shadow-[1px_1px_0px_#000]">
+                            <span className="px-2 py-0.5 bg-gray-100 text-gray-800 text-[11px] font-mono font-medium border border-gray-200">
                               {rev.cohort}
                             </span>
                           )}
@@ -576,12 +576,12 @@ export default function UniversityDetailClient({ universityId }: { universityId:
                       </div>
 
                       {/* Comment text */}
-                      <p className="text-sm text-black leading-relaxed whitespace-pre-line font-sans font-medium">
+                      <p className="text-sm text-gray-800 leading-relaxed whitespace-pre-line font-sans font-medium">
                         {rev.comment}
                       </p>
 
                       {/* 10 Criteria mini-bars in 2 columns */}
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5 pt-2 border-t-2 border-black">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5 pt-2 border-t border-gray-100">
                         {reviewCriteriaList.map((item, idx) => (
                           <div key={idx} className="flex items-center justify-between text-xs">
                             <span className="text-[11px] font-mono font-bold text-black truncate mr-2">
@@ -594,14 +594,14 @@ export default function UniversityDetailClient({ universityId }: { universityId:
                                 return (
                                   <div
                                     key={seg}
-                                    className={`w-3.5 h-2 rounded-none border border-black ${
+                                    className={`w-3.5 h-2 border border-gray-200 ${
                                       active
                                         ? item.score && item.score >= 4
                                           ? "bg-[#6ee7b7]"
                                           : item.score && item.score >= 3
                                           ? "bg-[#fef9c3]"
                                           : "bg-[#fee2e2]"
-                                        : "bg-gray-200"
+                                        : "bg-gray-100"
                                     }`}
                                   />
                                 );
@@ -612,13 +612,13 @@ export default function UniversityDetailClient({ universityId }: { universityId:
                       </div>
 
                       {/* Bottom action: Upvote helpful */}
-                      <div className="flex items-center justify-between pt-3 border-t border-black text-xs">
+                      <div className="flex items-center justify-between pt-3 border-t border-gray-100 text-xs">
                         <button
                           onClick={() => handleUpvote(rev.id)}
-                          className={`flex items-center gap-1.5 px-3 py-1.5 border-2 border-black rounded-none text-xs font-mono font-bold uppercase shadow-[1px_1px_0px_#000] active:translate-x-[1px] active:translate-y-[1px] active:shadow-none transition-all cursor-pointer ${
+                          className={`flex items-center gap-1.5 px-3 py-1.5 border border-gray-200 text-xs font-mono font-bold uppercase transition-colors cursor-pointer ${
                             hasUpvoted
-                              ? "bg-black text-[#fef9c3]"
-                              : "bg-white text-black hover:bg-[#fef9c3]"
+                              ? "bg-black text-white"
+                              : "bg-white text-black hover:bg-gray-50"
                           }`}
                         >
                           <PopArtThumbsUp className="w-3.5 h-3.5" active={Boolean(hasUpvoted)} />

@@ -69,7 +69,7 @@ export const ProfessorCard: React.FC<ProfessorCardProps> = ({
     return (
       <Link
         href={profileHref}
-        className="group flex items-center justify-between p-3.5 bg-white border-2 border-black shadow-[3px_3px_0px_0px_#000000] hover:shadow-[5px_5px_0px_0px_#000000] hover:-translate-x-[1px] hover:-translate-y-[1px] transition-all"
+        className="group flex items-center justify-between p-3.5 bg-white border border-gray-200 hover:border-black transition-colors"
       >
         <div className="flex items-center gap-3 min-w-0">
           <ScoreSquare
@@ -93,14 +93,14 @@ export const ProfessorCard: React.FC<ProfessorCardProps> = ({
         <div className="shrink-0 flex items-center gap-2 pl-3">
           {hasReviews && ratingDisplay ? (
             <div
-              className="inline-flex items-center gap-1 px-2 py-0.5 text-black border-2 border-black shadow-[1.5px_1.5px_0px_0px_#000000] text-xs font-black"
+              className="inline-flex items-center gap-1 px-2 py-0.5 text-black border border-black text-xs font-black"
               style={{ backgroundColor: level ? level.color : "#4ade80" }}
             >
               <PopArtStar className="w-3.5 h-3.5" filled={true} />
               <span>{ratingDisplay}/5</span>
             </div>
           ) : (
-            <span className="text-[11px] text-gray-600 font-bold uppercase bg-gray-100 px-1.5 py-0.5 border border-black">
+            <span className="text-[11px] text-gray-600 font-bold uppercase bg-gray-100 px-1.5 py-0.5 border border-gray-300">
               {locale === "en" ? "Not yet rated" : "Chưa có đánh giá"}
             </span>
           )}
@@ -110,8 +110,8 @@ export const ProfessorCard: React.FC<ProfessorCardProps> = ({
             onClick={handleToggleBookmark}
             title={bookmarked ? (locale === "vi" ? "Bỏ lưu giảng viên" : "Remove bookmark") : (locale === "vi" ? "Lưu giảng viên" : "Save professor")}
             aria-label={bookmarked ? "Remove bookmark" : "Save professor"}
-            className={`p-1.5 border-2 border-black shadow-[1.5px_1.5px_0px_0px_#000000] active:translate-x-[1px] active:translate-y-[1px] active:shadow-none transition-all cursor-pointer ${
-              bookmarked ? "bg-[#fef08a] text-black" : "bg-white hover:bg-[#fef9c3] text-black"
+            className={`p-1.5 border border-gray-300 hover:border-black transition-colors cursor-pointer ${
+              bookmarked ? "bg-[#fef08a] text-black" : "bg-white hover:bg-gray-100 text-black"
             }`}
           >
             <PopArtBookmark className="w-3.5 h-3.5" filled={bookmarked} color="#facc15" />
@@ -121,12 +121,12 @@ export const ProfessorCard: React.FC<ProfessorCardProps> = ({
     );
   }
 
-  // Standard Neo-Brutalist Card (used on Homepage and Directory)
+  // Standard Super Flat Card (used on Homepage and Directory)
   const isFeatured = variant === "spotlight";
 
   return (
     <div
-      className={`group flex flex-col justify-between border-2 border-black p-5 transition-all shadow-[4px_4px_0px_0px_#000000] hover:shadow-[6px_6px_0px_0px_#000000] hover:-translate-x-[2px] hover:-translate-y-[2px] ${
+      className={`group flex flex-col justify-between border border-gray-200 hover:border-gray-400 p-5 transition-colors ${
         isFeatured ? "bg-[#fef9c3]" : "bg-white"
       }`}
     >
@@ -142,7 +142,7 @@ export const ProfessorCard: React.FC<ProfessorCardProps> = ({
 
             <div className="min-w-0 flex-1">
               <div className="flex items-center gap-1.5 flex-wrap">
-                <span className="px-2 py-0.5 text-[10px] font-black uppercase tracking-wider bg-[#fef9c3] text-black border-2 border-black shadow-[1.5px_1.5px_0px_0px_#000000]">
+                <span className="px-2 py-0.5 text-[10px] font-black uppercase tracking-wider bg-[#fef9c3] text-black border border-black">
                   {professor.universityShortName}
                 </span>
                 <span className="text-[11px] text-gray-700 font-semibold truncate" title={uniName}>
@@ -166,8 +166,8 @@ export const ProfessorCard: React.FC<ProfessorCardProps> = ({
             onClick={handleToggleBookmark}
             title={bookmarked ? (locale === "vi" ? "Bỏ lưu giảng viên" : "Remove bookmark") : (locale === "vi" ? "Lưu giảng viên" : "Save professor")}
             aria-label={bookmarked ? "Remove bookmark" : "Save professor"}
-            className={`p-1.5 border-2 border-black shadow-[2px_2px_0px_0px_#000000] active:translate-x-[1px] active:translate-y-[1px] active:shadow-none transition-all cursor-pointer shrink-0 ${
-              bookmarked ? "bg-[#fef08a] text-black" : "bg-white hover:bg-[#fef9c3] text-black"
+            className={`p-1.5 border border-gray-300 hover:border-black transition-colors cursor-pointer shrink-0 ${
+              bookmarked ? "bg-[#fef08a] text-black" : "bg-white hover:bg-gray-100 text-black"
             }`}
           >
             <PopArtBookmark className="w-4 h-4" filled={bookmarked} color="#facc15" />
@@ -175,7 +175,7 @@ export const ProfessorCard: React.FC<ProfessorCardProps> = ({
         </div>
 
         {/* Muted solid divider */}
-        <div className="my-4 border-t-2 border-black/10" />
+        <div className="my-4 border-t border-gray-100" />
       </div>
 
       {/* Bottom: Rating & Profile Action */}
@@ -184,7 +184,7 @@ export const ProfessorCard: React.FC<ProfessorCardProps> = ({
           {hasReviews && ratingDisplay ? (
             <div className="flex items-center gap-2">
               <div
-                className="inline-flex items-center gap-1 px-2 py-0.5 text-black border-2 border-black shadow-[1.5px_1.5px_0px_0px_#000000] font-black text-xs"
+                className="inline-flex items-center gap-1 px-2 py-0.5 text-black border border-black font-black text-xs"
                 style={{ backgroundColor: level ? level.color : "#4ade80" }}
               >
                 <PopArtStar className="w-3.5 h-3.5" filled={true} />
@@ -195,7 +195,7 @@ export const ProfessorCard: React.FC<ProfessorCardProps> = ({
               </span>
             </div>
           ) : (
-            <span className="text-[11px] text-gray-600 font-bold uppercase bg-gray-100 px-1.5 py-0.5 border border-black">
+            <span className="text-[11px] text-gray-600 font-bold uppercase bg-gray-100 px-1.5 py-0.5 border border-gray-300">
               {locale === "en" ? "Not yet rated" : "Chưa có đánh giá"}
             </span>
           )}
@@ -203,7 +203,7 @@ export const ProfessorCard: React.FC<ProfessorCardProps> = ({
 
         <Link
           href={profileHref}
-          className="inline-flex items-center gap-1 px-3 py-1.5 bg-[#e0f2fe] hover:bg-[#bae6fd] text-black text-xs font-black uppercase tracking-wider border-2 border-black shadow-[2px_2px_0px_0px_#000000] hover:shadow-[3px_3px_0px_0px_#000000] hover:-translate-x-[1px] hover:-translate-y-[1px] active:translate-x-[1px] active:translate-y-[1px] active:shadow-none transition-all"
+          className="inline-flex items-center gap-1 px-3 py-1.5 bg-[#e0f2fe] hover:bg-[#bae6fd] text-black text-xs font-black uppercase tracking-wider border border-black transition-colors"
         >
           <span>{locale === "en" ? "View profile" : "Xem hồ sơ"}</span>
           <PopArtArrowRight className="w-3.5 h-3.5" />

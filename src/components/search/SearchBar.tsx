@@ -158,7 +158,7 @@ export const SearchBar: React.FC<SearchBarProps> = ({
     <div className="space-y-3 w-full">
       <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5">
         {/* Main Search Input */}
-        <div ref={containerRef} className="relative flex-1 bg-white border-2 border-black shadow-[3px_3px_0px_0px_#000000] focus-within:shadow-[5px_5px_0px_0px_#000000] transition-all flex items-center">
+        <div ref={containerRef} className="relative flex-1 bg-white border border-[#111111] transition-colors flex items-center">
           <div className="pl-3.5 pr-2 text-black">
             {isSuggesting || loading ? (
               <Loader2 className="w-5 h-5 animate-spin text-[#e03a3e]" />
@@ -178,7 +178,7 @@ export const SearchBar: React.FC<SearchBarProps> = ({
             }}
             onKeyDown={handleKeyDown}
             placeholder="Tìm giảng viên, trường đại học, ngành học, môn học..."
-            className="w-full py-2.5 pr-10 text-sm font-semibold placeholder-gray-400 text-black border-0 border-none outline-none focus:outline-none focus-visible:outline-none focus:ring-0 focus-visible:ring-0 shadow-none focus:shadow-none bg-transparent"
+            className="w-full py-2.5 pr-10 text-sm font-medium placeholder-gray-400 text-black border-0 border-none outline-none focus:outline-none focus-visible:outline-none focus:ring-0 focus-visible:ring-0 shadow-none focus:shadow-none bg-transparent"
           />
           {localValue && (
             <button
@@ -193,16 +193,16 @@ export const SearchBar: React.FC<SearchBarProps> = ({
 
           {/* Autocomplete Dropdown */}
           {showDropdown && (
-            <div className="absolute left-0 right-0 top-full mt-2 bg-white border-2 border-black shadow-[6px_6px_0px_0px_#000000] z-50 max-h-80 overflow-y-auto">
+            <div className="absolute left-0 right-0 top-full mt-1 bg-white border border-[#111111] z-50 max-h-80 overflow-y-auto">
               {suggestions.length > 0 ? (
-                <ul className="divide-y-2 divide-black/10">
+                <ul className="divide-y divide-gray-200">
                   {suggestions.map((item, idx) => (
                     <li
                       key={item.id}
                       onClick={() => handleSelectSuggestion(item)}
                       onMouseEnter={() => setSelectedIndex(idx)}
                       className={`flex items-center justify-between p-3 cursor-pointer transition-colors ${
-                        selectedIndex === idx ? "bg-[#e0f2fe] text-black" : "hover:bg-[#f4f4f5] text-black"
+                        selectedIndex === idx ? "bg-gray-100 text-black" : "hover:bg-gray-50 text-black"
                       }`}
                     >
                       <div className="flex items-center gap-2.5 min-w-0">
@@ -213,19 +213,19 @@ export const SearchBar: React.FC<SearchBarProps> = ({
                         />
                         <div className="min-w-0">
                           <div className="flex items-center gap-1.5">
-                            <span className="font-black text-xs truncate text-black">{item.title}</span>
+                            <span className="font-bold text-xs truncate text-black">{item.title}</span>
                             {item.universityShortName && (
-                              <span className="px-1.5 py-0.5 bg-[#fef9c3] text-black text-[9px] font-black uppercase border border-black shadow-[1px_1px_0px_#000] shrink-0">
+                              <span className="px-1.5 py-0.5 bg-gray-100 text-black text-[9px] font-bold uppercase border border-gray-300 shrink-0">
                                 {item.universityShortName}
                               </span>
                             )}
                           </div>
-                          <p className="text-[11px] text-gray-600 font-medium truncate">{item.subtitle}</p>
+                          <p className="text-[11px] text-gray-600 font-normal truncate">{item.subtitle}</p>
                         </div>
                       </div>
 
                       {item.ratingAverage != null && (item.ratingCount || 0) > 0 && (
-                        <div className="flex items-center gap-1 text-xs font-black text-black shrink-0 pl-2 bg-[#6ee7b7] px-1.5 py-0.5 border border-black shadow-[1px_1px_0px_#000]">
+                        <div className="flex items-center gap-1 text-xs font-bold text-emerald-800 shrink-0 pl-2 bg-emerald-50 px-1.5 py-0.5 border border-emerald-300">
                           <PopArtStar className="w-3.5 h-3.5" filled={true} />
                           <span>{item.ratingAverage.toFixed(1)}</span>
                         </div>
@@ -235,7 +235,7 @@ export const SearchBar: React.FC<SearchBarProps> = ({
                 </ul>
               ) : (
                 localValue.trim().length >= 2 && !isSuggesting && (
-                  <div className="p-4 text-center text-xs font-bold text-gray-600 bg-[#fef9c3]">
+                  <div className="p-4 text-center text-xs font-medium text-gray-600 bg-gray-50">
                     Không tìm thấy giảng viên phù hợp với từ khóa &quot;{localValue}&quot;
                   </div>
                 )
@@ -247,7 +247,7 @@ export const SearchBar: React.FC<SearchBarProps> = ({
         {/* Submit Search Button */}
         <button
           type="submit"
-          className="px-5 py-2.5 bg-[#e03a3e] hover:bg-[#b91c1c] text-white text-xs font-black uppercase tracking-wider border-2 border-black shadow-[3px_3px_0px_0px_#000000] hover:shadow-[4px_4px_0px_0px_#000000] hover:-translate-x-[1px] hover:-translate-y-[1px] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all cursor-pointer flex items-center justify-center gap-1.5"
+          className="px-5 py-2.5 bg-[#e03a3e] hover:bg-[#c93236] text-white text-xs font-bold uppercase tracking-wider border border-[#e03a3e] transition-colors cursor-pointer flex items-center justify-center gap-1.5"
         >
           <span>{locale === "en" ? "Search" : "Tìm kiếm"}</span>
         </button>
@@ -257,16 +257,16 @@ export const SearchBar: React.FC<SearchBarProps> = ({
           <button
             type="button"
             onClick={onToggleFilterPanel}
-            className={`px-4 py-2.5 text-xs font-black uppercase tracking-wider border-2 border-black transition-all cursor-pointer flex items-center justify-center gap-1.5 ${
+            className={`px-4 py-2.5 text-xs font-bold uppercase tracking-wider border border-[#111111] transition-colors cursor-pointer flex items-center justify-center gap-1.5 ${
               isFilterPanelOpen
-                ? "bg-black text-[#fef9c3] shadow-none translate-x-[2px] translate-y-[2px]"
-                : "bg-[#fef9c3] hover:bg-[#fef08a] text-black shadow-[3px_3px_0px_0px_#000000] hover:shadow-[4px_4px_0px_0px_#000000] hover:-translate-x-[1px] hover:-translate-y-[1px] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none"
+                ? "bg-[#111111] text-white"
+                : "bg-white hover:bg-gray-100 text-black"
             }`}
           >
             <PopArtSliders className="w-4 h-4" />
             <span>{locale === "en" ? "Filter" : "Bộ lọc"}</span>
             {activeFilterCount > 0 && (
-              <span className="ml-1 px-1.5 py-0.2 bg-[#6ee7b7] text-black border border-black text-[10px] font-black">
+              <span className="ml-1 px-1.5 py-0.2 bg-[#0f2b48] text-white text-[10px] font-bold">
                 {activeFilterCount}
               </span>
             )}

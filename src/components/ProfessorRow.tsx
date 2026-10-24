@@ -81,13 +81,13 @@ export const ProfessorRow: React.FC<ProfessorRowProps> = ({ professor }) => {
   const scoreTextColor = level ? level.textColor : "#52525b";
 
   return (
-    <div className="group border-2 border-black bg-white shadow-[4px_4px_0px_0px_#000000] hover:shadow-[6px_6px_0px_0px_#000000] hover:-translate-x-[2px] hover:-translate-y-[2px] transition-all p-4 sm:p-5">
+    <div className="group border border-gray-200 bg-white hover:border-gray-400 transition-colors p-4 sm:p-5">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         {/* Left Side: Score Box & Main Information */}
         <div className="flex items-start sm:items-center gap-4 min-w-0 flex-1">
           {/* Quality Score Box in a Square */}
           <div
-            className="w-20 sm:w-24 shrink-0 p-2 text-center select-none border-2 border-black shadow-[2px_2px_0px_0px_#000000]"
+            className="w-20 sm:w-24 shrink-0 p-2 text-center select-none border border-black"
             style={{ backgroundColor: scoreBg, color: scoreTextColor }}
           >
             <div className="text-[9px] font-mono font-black uppercase tracking-widest opacity-80">
@@ -121,7 +121,7 @@ export const ProfessorRow: React.FC<ProfessorRowProps> = ({ professor }) => {
                 {name}
               </Link>
               {universityShort && (
-                <span className="px-2 py-0.5 text-[10px] font-black uppercase tracking-wider bg-[#fef9c3] text-black border-2 border-black shadow-[1.5px_1.5px_0px_0px_#000000] shrink-0">
+                <span className="px-2 py-0.5 text-[10px] font-black uppercase tracking-wider bg-[#fef9c3] text-black border border-black shrink-0">
                   {universityShort}
                 </span>
               )}
@@ -136,14 +136,14 @@ export const ProfessorRow: React.FC<ProfessorRowProps> = ({ professor }) => {
             <div className="flex items-center gap-3 text-xs text-gray-600 flex-wrap pt-0.5">
               {hasReviews && professor.takeAgainPercent !== null && professor.takeAgainPercent !== undefined && (
                 <span className="inline-flex items-center gap-1">
-                  <strong className="text-black font-black bg-[#e0f2fe] px-1 border border-black">{professor.takeAgainPercent}%</strong>{" "}
+                  <strong className="text-black font-black bg-[#e0f2fe] px-1 border border-sky-300">{professor.takeAgainPercent}%</strong>{" "}
                   {locale === "en" ? "would take again" : "muốn học lại"}
                 </span>
               )}
               {hasReviews && professor.difficultyScore !== null && professor.difficultyScore !== undefined && (
                 <span className="inline-flex items-center gap-1">
                   {locale === "en" ? "Difficulty:" : "Độ khó:"}{" "}
-                  <strong className="text-black font-black bg-[#fef9c3] px-1 border border-black">{professor.difficultyScore}/5</strong>
+                  <strong className="text-black font-black bg-[#fef9c3] px-1 border border-yellow-300">{professor.difficultyScore}/5</strong>
                 </span>
               )}
               {!hasReviews && professor.courses && professor.courses.length > 0 && (
@@ -157,21 +157,21 @@ export const ProfessorRow: React.FC<ProfessorRowProps> = ({ professor }) => {
         </div>
 
         {/* Right Side: View Profile & Bookmark Affordance */}
-        <div className="shrink-0 flex items-center justify-end sm:self-center gap-2 border-t-2 sm:border-t-0 pt-3 sm:pt-0 border-black/10">
+        <div className="shrink-0 flex items-center justify-end sm:self-center gap-2 border-t sm:border-t-0 pt-3 sm:pt-0 border-gray-200">
           <button
             type="button"
             onClick={handleToggleBookmark}
             title={bookmarked ? (locale === "vi" ? "Bỏ lưu giảng viên" : "Remove bookmark") : (locale === "vi" ? "Lưu giảng viên" : "Save professor")}
             aria-label={bookmarked ? "Remove bookmark" : "Save professor"}
-            className={`p-2 border-2 border-black shadow-[3px_3px_0px_0px_#000000] active:translate-x-[1px] active:translate-y-[1px] active:shadow-none transition-all cursor-pointer ${
-              bookmarked ? "bg-[#fef08a] text-black" : "bg-white hover:bg-[#fef9c3] text-black"
+            className={`p-2 border border-gray-300 hover:border-black transition-colors cursor-pointer ${
+              bookmarked ? "bg-[#fef08a] text-black" : "bg-white hover:bg-gray-100 text-black"
             }`}
           >
             <PopArtBookmark className="w-4 h-4" filled={bookmarked} color="#facc15" />
           </button>
           <Link
             href={profileHref}
-            className="inline-flex items-center gap-1.5 px-4 py-2 bg-[#e0f2fe] hover:bg-[#bae6fd] text-black text-xs font-black uppercase tracking-wider border-2 border-black shadow-[3px_3px_0px_0px_#000000] hover:shadow-[4px_4px_0px_0px_#000000] hover:-translate-x-[1px] hover:-translate-y-[1px] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all"
+            className="inline-flex items-center gap-1.5 px-4 py-2 bg-[#e0f2fe] hover:bg-[#bae6fd] text-black text-xs font-black uppercase tracking-wider border border-black transition-colors"
           >
             <span>{locale === "en" ? "View Profile" : "Xem hồ sơ"}</span>
             <PopArtArrowRight className="w-3.5 h-3.5" />

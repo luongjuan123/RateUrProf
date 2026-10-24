@@ -44,25 +44,25 @@ export const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, returnUrl
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 animate-in fade-in duration-200">
-      <div className="relative w-full max-w-md bg-white border-3 border-black overflow-hidden shadow-[8px_8px_0px_#000]">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 animate-in fade-in duration-150">
+      <div className="relative w-full max-w-md bg-white border border-gray-200 overflow-hidden">
         {/* Editorial Top Accent Stripe */}
-        <div className="h-2 bg-[#e03a3e] border-b-2 border-black w-full" />
+        <div className="h-1 bg-[#e03a3e] w-full" />
 
         {/* Header */}
-        <div className="px-6 pt-5 pb-4 flex items-center justify-between border-b-2 border-black bg-white">
+        <div className="px-6 pt-5 pb-4 flex items-center justify-between border-b border-gray-200 bg-white">
           <div>
-            <span className="text-[10px] font-mono font-black uppercase tracking-widest text-[#e03a3e]">
+            <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-[#e03a3e]">
               {t("authModal.communityTag")}
             </span>
-            <h2 className="text-xl font-mono font-black text-black tracking-tight">
+            <h2 className="text-xl font-mono font-bold text-black tracking-tight">
               {t("authModal.title")}
             </h2>
           </div>
           <button
             onClick={onClose}
             aria-label={t("common.close")}
-            className="p-1 text-black hover:bg-[#fee2e2] border-2 border-black shadow-[2px_2px_0px_#000] active:translate-x-[1px] active:translate-y-[1px] active:shadow-none transition-all"
+            className="p-1 text-gray-500 hover:text-black hover:bg-gray-100 border border-gray-200 transition-colors"
           >
             <PopArtX className="w-5 h-5" />
           </button>
@@ -70,7 +70,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, returnUrl
 
         <div className="p-6 space-y-5">
           {error && (
-            <div className="p-3 bg-[#fee2e2] border-2 border-black text-xs font-mono font-bold text-black shadow-[2px_2px_0px_#000]">
+            <div className="p-3 bg-[#fee2e2] border border-red-200 text-xs font-mono font-bold text-black">
               {error}
             </div>
           )}
@@ -84,7 +84,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, returnUrl
             type="button"
             onClick={handleGoogleSignIn}
             disabled={loading}
-            className="w-full flex items-center justify-center gap-3 py-3 px-4 bg-white hover:bg-[#fef9c3] border-2 border-black text-black font-mono font-black text-xs uppercase tracking-wider transition-all shadow-[4px_4px_0px_#000] hover:shadow-[5px_5px_0px_#000] hover:-translate-x-[1px] hover:-translate-y-[1px] active:shadow-none active:translate-x-[4px] active:translate-y-[4px] disabled:opacity-50 cursor-pointer"
+            className="w-full flex items-center justify-center gap-3 py-3 px-4 bg-white hover:bg-gray-50 border border-gray-300 text-black font-mono font-bold text-xs uppercase tracking-wider transition-colors disabled:opacity-50 cursor-pointer"
           >
             <svg className="w-4 h-4 shrink-0" viewBox="0 0 24 24" aria-hidden="true">
               <path
@@ -107,8 +107,8 @@ export const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, returnUrl
             <span>{loading ? t("authModal.processing") : t("authModal.googleBtn")}</span>
           </button>
 
-          <div className="pt-4 border-t-2 border-black flex items-start gap-2 text-[11px] font-mono text-gray-700 leading-normal">
-            <PopArtCheck className="w-4 h-4 shrink-0 mt-0.5" />
+          <div className="pt-4 border-t border-gray-200 flex items-start gap-2 text-[11px] font-mono text-gray-700 leading-normal">
+            <PopArtCheck className="w-4 h-4 shrink-0 mt-0.5 text-green-600" />
             <span>{t("authModal.trustNotice")}</span>
           </div>
         </div>

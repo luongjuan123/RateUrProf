@@ -125,19 +125,19 @@ export const FilterPanel: React.FC<FilterPanelProps> = ({
   const content = (
     <div className="space-y-6">
       {/* Header */}
-      <div className="flex items-center justify-between pb-3 border-b-2 border-black">
+      <div className="flex items-center justify-between pb-3 border-b border-[#111111]">
         <div className="flex items-center gap-2">
-          <div className="w-6 h-6 bg-black text-[#fef9c3] border border-black flex items-center justify-center font-black">
+          <div className="w-6 h-6 bg-[#111111] text-white border border-[#111111] flex items-center justify-center font-bold">
             <PopArtFilter className="w-3.5 h-3.5" />
           </div>
-          <h3 className="font-black text-sm uppercase tracking-wider text-black">
+          <h3 className="font-bold text-sm uppercase tracking-wider text-black">
             Bộ lọc nâng cao
           </h3>
         </div>
         <button
           type="button"
           onClick={onClose}
-          className="p-1 border border-black text-black hover:bg-[#fee2e2] cursor-pointer"
+          className="p-1 border border-[#111111] text-black hover:bg-gray-100 transition-colors cursor-pointer"
         >
           <PopArtX className="w-5 h-5" />
         </button>
@@ -474,11 +474,11 @@ export const FilterPanel: React.FC<FilterPanelProps> = ({
       </div>
 
       {/* Action Footer */}
-      <div className="flex items-center justify-between pt-4 border-t-2 border-black">
+      <div className="flex items-center justify-between pt-4 border-t border-[#111111]">
         <button
           type="button"
           onClick={handleReset}
-          className="flex items-center gap-1.5 px-3 py-1.5 bg-[#fee2e2] text-black border-2 border-black shadow-[2px_2px_0px_#000] text-xs font-black uppercase tracking-wider hover:bg-[#fca5a5] active:translate-x-[1px] active:translate-y-[1px] active:shadow-none transition-all cursor-pointer"
+          className="flex items-center gap-1.5 px-3 py-1.5 bg-gray-100 text-black border border-[#111111] text-xs font-bold uppercase tracking-wider hover:bg-gray-200 transition-colors cursor-pointer"
         >
           <PopArtRotateCcw className="w-3.5 h-3.5" />
           <span>Xóa bộ lọc</span>
@@ -488,14 +488,14 @@ export const FilterPanel: React.FC<FilterPanelProps> = ({
           <button
             type="button"
             onClick={onClose}
-            className="px-4 py-2 border-2 border-black bg-white hover:bg-gray-100 text-black text-xs font-black uppercase tracking-wider shadow-[2px_2px_0px_#000] active:translate-x-[1px] active:translate-y-[1px] active:shadow-none transition-all cursor-pointer"
+            className="px-4 py-2 border border-[#111111] bg-white hover:bg-gray-50 text-black text-xs font-bold uppercase tracking-wider transition-colors cursor-pointer"
           >
             Đóng
           </button>
           <button
             type="button"
             onClick={handleApply}
-            className="flex items-center gap-1.5 px-6 py-2 bg-[#e03a3e] hover:bg-[#b91c1c] text-white text-xs font-black uppercase tracking-wider border-2 border-black shadow-[3px_3px_0px_#000] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all cursor-pointer"
+            className="flex items-center gap-1.5 px-6 py-2 bg-[#e03a3e] hover:bg-[#c93236] text-white text-xs font-bold uppercase tracking-wider border border-[#e03a3e] transition-colors cursor-pointer"
           >
             <PopArtCheck className="w-4 h-4" />
             <span>Áp dụng bộ lọc</span>
@@ -509,7 +509,7 @@ export const FilterPanel: React.FC<FilterPanelProps> = ({
   if (isMobileDrawer) {
     return (
       <div className="fixed inset-0 z-50 overflow-hidden bg-black/60 flex justify-end animate-in fade-in duration-200">
-        <div className="w-full max-w-lg bg-white h-full overflow-y-auto p-6 border-l-2 border-black shadow-[-6px_0px_0px_0px_#000000] animate-in slide-in-from-right duration-250">
+        <div className="w-full max-w-lg bg-white h-full overflow-y-auto p-6 border-l border-[#111111] animate-in slide-in-from-right duration-250">
           {content}
         </div>
       </div>
@@ -518,7 +518,7 @@ export const FilterPanel: React.FC<FilterPanelProps> = ({
 
   // Desktop Collapsible Card
   return (
-    <div className="bg-white border-2 border-black shadow-[6px_6px_0px_0px_#000000] p-6 transition-all animate-in fade-in duration-150">
+    <div className="bg-white border border-[#111111] p-6 transition-all animate-in fade-in duration-150">
       {content}
     </div>
   );

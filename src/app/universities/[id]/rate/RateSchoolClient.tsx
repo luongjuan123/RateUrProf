@@ -238,34 +238,34 @@ export default function RateSchoolClient({ universityId }: { universityId: strin
         {/* Back Link */}
         <Link
           href={`/${locale}/universities/${universityId}`}
-          className="inline-flex items-center gap-1.5 text-xs font-mono font-black text-black hover:text-[#e03a3e] uppercase tracking-wider transition-colors"
+          className="inline-flex items-center gap-1.5 text-xs font-mono font-bold text-black hover:text-[#e03a3e] uppercase tracking-wider transition-colors"
         >
           <PopArtArrowLeft className="w-4 h-4" />
           <span>{t("rateSchoolPage.backToSchool") || (locale === "vi" ? "Trở về trang trường" : "Back to School")}</span>
         </Link>
 
-        {/* Header Title Section matching Neo-Brutalism */}
-        <div className="border-b-2 border-black pb-4">
+        {/* Header Title Section */}
+        <div className="border-b border-gray-200 pb-4">
           {locationText && (
-            <p className="text-xs font-mono font-bold uppercase tracking-wider text-gray-700">
+            <p className="text-xs font-mono font-bold uppercase tracking-wider text-gray-500">
               {locationText}
             </p>
           )}
           <h1 className="text-3xl sm:text-4xl font-mono font-black text-black tracking-tight mt-1">
             {university.name}
           </h1>
-          <h2 className="text-xl sm:text-2xl font-mono font-black text-black mt-1 uppercase">
+          <h2 className="text-xl sm:text-2xl font-mono font-bold text-black mt-1 uppercase">
             {t("rateSchoolPage.pageTitle") || "Add Rating"}
           </h2>
         </div>
 
         {/* Success Banner */}
         {success ? (
-          <div className="bg-white border-2 border-black p-10 text-center space-y-4 shadow-[6px_6px_0px_#000] rounded-none">
-            <div className="w-14 h-14 bg-[#6ee7b7] text-black border-2 border-black shadow-[2px_2px_0px_#000] flex items-center justify-center mx-auto rounded-none">
+          <div className="bg-white border border-gray-200 p-8 sm:p-10 text-center space-y-4">
+            <div className="w-14 h-14 bg-[#dcfce7] text-[#166534] border border-green-200 flex items-center justify-center mx-auto">
               <PopArtCheck className="w-8 h-8" />
             </div>
-            <h3 className="text-2xl font-mono font-black text-black uppercase">
+            <h3 className="text-2xl font-mono font-bold text-black uppercase">
               {t("rateSchoolPage.successTitle") || (locale === "vi" ? "Cảm ơn bạn đã đánh giá!" : "Thank you for rating!")}
             </h3>
             <p className="text-sm font-mono text-gray-700 max-w-md mx-auto">
@@ -276,18 +276,18 @@ export default function RateSchoolClient({ universityId }: { universityId: strin
             </p>
             <Link
               href={`/${locale}/universities/${universityId}`}
-              className="inline-block mt-4 px-6 py-2.5 bg-black hover:bg-[#e03a3e] text-[#fef9c3] hover:text-white text-xs font-mono font-black uppercase tracking-wider border-2 border-black shadow-[4px_4px_0px_#000] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all rounded-none"
+              className="inline-block mt-4 px-6 py-2.5 bg-black hover:bg-[#e03a3e] text-white text-xs font-mono font-bold uppercase tracking-wider border border-black hover:border-[#e03a3e] transition-colors"
             >
               {t("rateSchoolPage.backToProfile") || (locale === "vi" ? "Quay lại hồ sơ ngay" : "Return to Profile")}
             </Link>
           </div>
         ) : !user ? (
-          <div className="bg-white p-8 border-3 border-black shadow-[6px_6px_0px_#000] text-center space-y-6">
-            <div className="w-16 h-16 bg-[#fee2e2] border-2 border-black shadow-[3px_3px_0px_#000] flex items-center justify-center mx-auto text-[#e03a3e]">
+          <div className="bg-white p-8 border border-gray-200 text-center space-y-6">
+            <div className="w-16 h-16 bg-[#fee2e2] border border-red-200 flex items-center justify-center mx-auto text-[#e03a3e]">
               <PopArtLock className="w-8 h-8" />
             </div>
             <div className="space-y-2">
-              <span className="inline-block px-3 py-1 bg-[#fef9c3] border-2 border-black font-mono font-black text-[11px] uppercase tracking-wider shadow-[2px_2px_0px_#000]">
+              <span className="inline-block px-3 py-1 bg-gray-100 border border-gray-200 font-mono font-bold text-[11px] uppercase tracking-wider">
                 {locale === "vi" ? "Yêu cầu đăng nhập" : "Sign In Required"}
               </span>
               <h2 className="text-2xl font-mono font-black uppercase text-black">
@@ -304,13 +304,13 @@ export default function RateSchoolClient({ universityId }: { universityId: strin
               <button
                 type="button"
                 onClick={() => setIsAuthModalOpen(true)}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-[#e03a3e] hover:bg-[#b91c1c] text-white font-mono font-black text-xs uppercase tracking-wider border-2 border-black shadow-[4px_4px_0px_#000] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all cursor-pointer"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-[#e03a3e] hover:bg-[#b91c1c] text-white font-mono font-bold text-xs uppercase tracking-wider border border-[#e03a3e] transition-colors cursor-pointer"
               >
                 {t("rateSchoolPage.signInButton") || (locale === "vi" ? "Đăng nhập để đánh giá" : "Sign In to Rate")}
               </button>
               <Link
                 href={`/${locale}/universities/${universityId}`}
-                className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3.5 bg-white hover:bg-gray-100 text-black font-mono font-black text-xs uppercase tracking-wider border-2 border-black shadow-[4px_4px_0px_#000] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all cursor-pointer"
+                className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3.5 bg-white hover:bg-gray-50 text-black font-mono font-bold text-xs uppercase tracking-wider border border-gray-200 transition-colors cursor-pointer"
               >
                 {t("rateSchoolPage.backToSchool") || (locale === "vi" ? "Trở về trang trường" : "Back to University")}
               </Link>
@@ -321,10 +321,10 @@ export default function RateSchoolClient({ universityId }: { universityId: strin
 
             {/* Edit Mode Alert Banner */}
             {isEditMode && (
-              <div className="p-4 bg-[#dcfce7] border-2 border-black shadow-[4px_4px_0px_#000] flex items-start gap-3">
-                <PopArtInfo className="w-5 h-5 shrink-0 mt-0.5" />
+              <div className="p-4 bg-[#f0fdf4] border border-green-200 flex items-start gap-3">
+                <PopArtInfo className="w-5 h-5 shrink-0 mt-0.5 text-[#166534]" />
                 <div>
-                  <p className="font-mono font-black text-xs uppercase tracking-wider text-[#166534]">
+                  <p className="font-mono font-bold text-xs uppercase tracking-wider text-[#166534]">
                     {t("rateSchoolPage.editModeTitle") || (locale === "vi" ? "Chỉnh sửa đánh giá trường" : "Edit School Rating")}
                   </p>
                   <p className="font-mono text-xs text-gray-800 mt-0.5">
@@ -338,8 +338,8 @@ export default function RateSchoolClient({ universityId }: { universityId: strin
             )}
 
             {error && (
-              <div className="p-4 bg-[#fee2e2] border-2 border-black shadow-[4px_4px_0px_#000] text-xs sm:text-sm font-mono font-black text-black flex items-start gap-2.5 rounded-none">
-                <PopArtAlertCircle className="w-5 h-5 shrink-0 mt-0.5" />
+              <div className="p-4 bg-[#fee2e2] border border-red-200 text-xs sm:text-sm font-mono font-bold text-black flex items-start gap-2.5">
+                <PopArtAlertCircle className="w-5 h-5 shrink-0 mt-0.5 text-red-600" />
                 <span>{error}</span>
               </div>
             )}
@@ -354,15 +354,15 @@ export default function RateSchoolClient({ universityId }: { universityId: strin
               return (
                 <div
                   key={item.key}
-                  className="bg-white p-6 border-2 border-black rounded-none shadow-[4px_4px_0px_#000] space-y-3"
+                  className="bg-white p-6 border border-gray-200 space-y-3"
                 >
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
-                    <label className="block text-xs font-mono font-black text-black uppercase tracking-wider">
+                    <label className="block text-xs font-mono font-bold text-black uppercase tracking-wider">
                       {item.label}
                     </label>
                     {displayLevel && (
                       <div
-                        className="inline-flex items-center gap-1.5 px-2 py-0.5 border-2 border-black text-[11px] font-mono font-black uppercase tracking-wider shadow-[2px_2px_0px_#000] transition-colors"
+                        className="inline-flex items-center gap-1.5 px-2 py-0.5 border border-gray-300 text-[11px] font-mono font-bold uppercase tracking-wider transition-colors"
                         style={{
                           backgroundColor: displayLevel.color,
                           color: "#000000",
@@ -409,18 +409,18 @@ export default function RateSchoolClient({ universityId }: { universityId: strin
                             backgroundColor: bg,
                             color: textColor,
                           }}
-                          className={`py-3 sm:py-3.5 text-center border-2 border-black rounded-none transition-all cursor-pointer flex flex-col items-center justify-center select-none ${
+                          className={`py-3 sm:py-3.5 text-center border transition-colors cursor-pointer flex flex-col items-center justify-center select-none ${
                             isSelected
-                              ? "shadow-[3px_3px_0px_#000] scale-[1.02] -translate-y-0.5 font-black"
+                              ? "border-black font-black"
                               : isHovered
-                              ? "shadow-[3px_3px_0px_#000] -translate-y-0.5 font-bold"
-                              : "shadow-[2px_2px_0px_#000] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none font-bold"
+                              ? "border-gray-400 font-bold"
+                              : "border-gray-200 font-bold"
                           }`}
                         >
                           <span className="font-mono font-black text-lg sm:text-xl leading-none">
                             {lvl.level}
                           </span>
-                          <span className="font-mono font-black text-[10px] sm:text-xs uppercase tracking-tight mt-1">
+                          <span className="font-mono font-bold text-[10px] sm:text-xs uppercase tracking-tight mt-1">
                             {locale === "vi" ? lvl.labelVi : lvl.labelEn}
                           </span>
                         </button>
@@ -428,7 +428,7 @@ export default function RateSchoolClient({ universityId }: { universityId: strin
                     })}
                   </div>
 
-                  <div className="flex justify-between text-xs font-mono font-bold text-gray-600 px-1 pt-0.5">
+                  <div className="flex justify-between text-xs font-mono font-medium text-gray-500 px-1 pt-0.5">
                     <span>{t("rateSchoolPage.scaleAwful") || (locale === "vi" ? "1 - Kém" : "1 - Awful")}</span>
                     <span>{t("rateSchoolPage.scaleAwesome") || (locale === "vi" ? "5 - Xuất sắc" : "5 - Awesome")}</span>
                   </div>
@@ -437,23 +437,23 @@ export default function RateSchoolClient({ universityId }: { universityId: strin
             })}
 
             {/* Write a Review Card */}
-            <div className="bg-white p-6 border-2 border-black rounded-none shadow-[4px_4px_0px_#000] space-y-4">
+            <div className="bg-white p-6 border border-gray-200 space-y-4">
               <div>
-                <label className="block text-xs font-mono font-black text-black uppercase tracking-wider">
+                <label className="block text-xs font-mono font-bold text-black uppercase tracking-wider">
                   {t("rateSchoolPage.writeReview") || "Write a Review"}
                 </label>
-                <p className="text-xs font-mono text-gray-700 mt-1">
+                <p className="text-xs font-mono text-gray-600 mt-1">
                   {t("rateSchoolPage.writeReviewSubtitle") ||
                     "Discuss your personal experience on this school. What's great about it? What could use improvement?"}
                 </p>
               </div>
 
               {/* Collapsible Guidelines Box */}
-              <div className="border-2 border-black bg-[#fef9c3]/40 rounded-none shadow-[2px_2px_0px_#000] text-xs font-mono text-black">
+              <div className="border border-gray-200 bg-gray-50 text-xs font-mono text-black">
                 <button
                   type="button"
                   onClick={() => setGuidelinesOpen((prev) => !prev)}
-                  className="w-full px-4 py-2.5 flex items-center justify-between font-mono font-black text-black hover:bg-[#fef9c3]/60 transition-colors cursor-pointer rounded-none"
+                  className="w-full px-4 py-2.5 flex items-center justify-between font-mono font-bold text-black hover:bg-gray-100 transition-colors cursor-pointer"
                 >
                   <div className="flex items-center">
                     <span>{t("rateSchoolPage.guidelinesTitle") || "Guidelines"}</span>
@@ -466,7 +466,7 @@ export default function RateSchoolClient({ universityId }: { universityId: strin
                 </button>
 
                 {guidelinesOpen && (
-                  <div className="px-4 pb-3 pt-1 space-y-1.5 border-t-2 border-black">
+                  <div className="px-4 pb-3 pt-1 space-y-1.5 border-t border-gray-200">
                     <ul className="list-disc pl-5 space-y-1 text-gray-800">
                       <li>{t("rateSchoolPage.guideline1") || "Your rating could be removed if you use profanity or derogatory terms."}</li>
                       <li>{t("rateSchoolPage.guideline2") || "Relate to the rating categories to help you better elaborate your comments."}</li>
@@ -476,7 +476,7 @@ export default function RateSchoolClient({ universityId }: { universityId: strin
                       <Link
                         href={`/${locale}/guidelines`}
                         target="_blank"
-                        className="text-black underline hover:text-[#e03a3e] font-black"
+                        className="text-black underline hover:text-[#e03a3e] font-bold"
                       >
                         {t("rateSchoolPage.viewAllGuidelines") || "View all guidelines"}
                       </Link>
@@ -496,12 +496,12 @@ export default function RateSchoolClient({ universityId }: { universityId: strin
                     t("rateSchoolPage.reviewPlaceholder") ||
                     "What do you want other students to know about this school?"
                   }
-                  className="w-full p-3.5 text-sm font-mono border-2 border-black rounded-none shadow-[2px_2px_0px_#000] outline-none focus:outline-none focus-visible:outline-none focus:ring-0 focus-visible:ring-0 focus:bg-[#fef9c3]/30 text-black leading-relaxed"
+                  className="w-full p-3.5 text-sm font-mono border border-gray-200 outline-none focus:outline-none focus:border-black text-black leading-relaxed"
                 />
                 <div className="flex items-center justify-between text-xs font-mono text-gray-500">
                   <span>
                     {reviewComment.length < 25 && (
-                      <span className="text-[#e03a3e] font-black">
+                      <span className="text-[#e03a3e] font-bold">
                         {t("rateSchoolPage.minCharNotice", { current: reviewComment.length }) ||
                           `Min 25 chars (${reviewComment.length}/350)`}
                       </span>
@@ -514,8 +514,8 @@ export default function RateSchoolClient({ universityId }: { universityId: strin
               </div>
 
               {/* Student Identity / Cohort (Optional) */}
-              <div className="pt-2 border-t-2 border-black">
-                <label className="block text-xs font-mono font-black text-black uppercase tracking-wider mb-1">
+              <div className="pt-2 border-t border-gray-200">
+                <label className="block text-xs font-mono font-bold text-black uppercase tracking-wider mb-1">
                   {t("rateSchoolPage.cohortLabel") || (locale === "vi" ? "Khóa học / Tên hiển thị (Tùy chọn)" : "Student Cohort / Display Name (Optional)")}
                 </label>
                 <input
@@ -523,14 +523,14 @@ export default function RateSchoolClient({ universityId }: { universityId: strin
                   value={cohortName}
                   onChange={(e) => setCohortName(e.target.value)}
                   placeholder={t("rateSchoolPage.cohortPlaceholder") || (locale === "vi" ? "Niên khóa / Chuyên ngành (VD: K64 - CNTT)..." : "Cohort / Major (e.g. K64 - CS)...")}
-                  className="w-full px-3 py-2 text-xs font-mono border-2 border-black rounded-none shadow-[2px_2px_0px_#000] outline-none focus:outline-none focus-visible:outline-none focus:ring-0 focus-visible:ring-0 focus:bg-[#fef9c3]/30 bg-white text-black"
+                  className="w-full px-3 py-2 text-xs font-mono border border-gray-200 outline-none focus:outline-none focus:border-black bg-white text-black"
                 />
               </div>
             </div>
 
             {/* Disclaimer & Submit Button */}
             <div className="space-y-4 pt-2 text-center sm:text-left">
-              <p className="text-[11px] font-mono text-gray-700 leading-normal">
+              <p className="text-[11px] font-mono text-gray-600 leading-normal">
                 {t("rateSchoolPage.disclaimer") ||
                   "By clicking the \"Submit Rating\" button, I acknowledge that I have read and agreed to the Site Guidelines, Terms of Use and Privacy Policy."}
               </p>
@@ -539,7 +539,7 @@ export default function RateSchoolClient({ universityId }: { universityId: strin
                 <button
                   type="submit"
                   disabled={submitting || isDeleting}
-                  className="w-full sm:w-auto px-10 py-3.5 bg-[#e03a3e] hover:bg-[#c93236] text-white text-sm font-mono font-black uppercase tracking-wider border-2 border-black shadow-[4px_4px_0px_#000] hover:shadow-[6px_6px_0px_#000] active:shadow-none active:translate-x-[4px] active:translate-y-[4px] transition-all disabled:opacity-50 cursor-pointer rounded-none"
+                  className="w-full sm:w-auto px-10 py-3.5 bg-[#e03a3e] hover:bg-[#b91c1c] text-white text-sm font-mono font-bold uppercase tracking-wider border border-[#e03a3e] transition-colors disabled:opacity-50 cursor-pointer"
                 >
                   {submitting
                     ? isEditMode
@@ -555,7 +555,7 @@ export default function RateSchoolClient({ universityId }: { universityId: strin
                     type="button"
                     disabled={submitting || isDeleting}
                     onClick={() => setShowDeleteConfirm(true)}
-                    className="w-full sm:w-auto px-6 py-3.5 bg-[#fee2e2] hover:bg-[#fca5a5] text-[#991b1b] text-sm font-mono font-black uppercase tracking-wider border-2 border-black shadow-[4px_4px_0px_#000] hover:shadow-[6px_6px_0px_#000] active:shadow-none active:translate-x-[4px] active:translate-y-[4px] transition-all disabled:opacity-50 cursor-pointer flex items-center justify-center gap-2 rounded-none"
+                    className="w-full sm:w-auto px-6 py-3.5 bg-gray-50 hover:bg-red-50 text-[#991b1b] text-sm font-mono font-bold uppercase tracking-wider border border-gray-200 hover:border-red-200 transition-colors disabled:opacity-50 cursor-pointer flex items-center justify-center gap-2"
                   >
                     <PopArtTrash className="w-4 h-4" />
                     <span>{t("rateSchoolPage.deleteButton") || (locale === "vi" ? "Xóa đánh giá" : "Delete Rating")}</span>
@@ -569,14 +569,14 @@ export default function RateSchoolClient({ universityId }: { universityId: strin
 
       {/* Delete Confirmation Modal */}
       {showDeleteConfirm && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-xs p-4">
-          <div className="bg-white border-3 border-black shadow-[8px_8px_0px_#000] p-6 sm:p-8 max-w-md w-full space-y-5 rounded-none animate-in fade-in zoom-in-95 duration-150">
-            <div className="w-12 h-12 bg-[#fee2e2] text-[#991b1b] border-2 border-black shadow-[2px_2px_0px_#000] flex items-center justify-center">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-xs p-4">
+          <div className="bg-white border border-gray-200 p-6 sm:p-8 max-w-md w-full space-y-5 animate-in fade-in duration-150">
+            <div className="w-12 h-12 bg-[#fee2e2] text-[#991b1b] border border-red-200 flex items-center justify-center">
               <PopArtTrash className="w-6 h-6" />
             </div>
 
             <div className="space-y-1.5">
-              <h3 className="text-xl font-mono font-black text-black uppercase tracking-tight">
+              <h3 className="text-xl font-mono font-bold text-black uppercase tracking-tight">
                 {t("rateSchoolPage.deleteConfirmTitle") || (locale === "vi" ? "Xóa đánh giá này?" : "Delete School Rating?")}
               </h3>
               <p className="text-xs font-mono text-gray-700 leading-relaxed">
@@ -592,7 +592,7 @@ export default function RateSchoolClient({ universityId }: { universityId: strin
                 type="button"
                 disabled={isDeleting}
                 onClick={() => setShowDeleteConfirm(false)}
-                className="w-full sm:w-auto px-5 py-2.5 bg-white hover:bg-gray-100 text-black font-mono font-bold text-xs uppercase tracking-wider border-2 border-black shadow-[2px_2px_0px_#000] active:shadow-none active:translate-x-[2px] active:translate-y-[2px] transition-all cursor-pointer rounded-none"
+                className="w-full sm:w-auto px-5 py-2.5 bg-white hover:bg-gray-50 text-black font-mono font-bold text-xs uppercase tracking-wider border border-gray-200 transition-colors cursor-pointer"
               >
                 {t("rateSchoolPage.cancel") || t("ratePage.cancel") || (locale === "vi" ? "Hủy" : "Cancel")}
               </button>
@@ -600,7 +600,7 @@ export default function RateSchoolClient({ universityId }: { universityId: strin
                 type="button"
                 disabled={isDeleting}
                 onClick={handleDelete}
-                className="w-full sm:w-auto px-6 py-2.5 bg-[#e03a3e] hover:bg-[#b91c1c] text-white font-mono font-black text-xs uppercase tracking-wider border-2 border-black shadow-[3px_3px_0px_#000] active:shadow-none active:translate-x-[3px] active:translate-y-[3px] transition-all disabled:opacity-50 cursor-pointer rounded-none"
+                className="w-full sm:w-auto px-6 py-2.5 bg-[#e03a3e] hover:bg-[#b91c1c] text-white font-mono font-bold text-xs uppercase tracking-wider border border-[#e03a3e] transition-colors disabled:opacity-50 cursor-pointer"
               >
                 {isDeleting
                   ? t("rateSchoolPage.deleting") || (locale === "vi" ? "Đang xóa..." : "Deleting...")
