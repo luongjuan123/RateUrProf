@@ -308,7 +308,7 @@ export function EmailSection() {
 
   if (error || !overview) {
     return (
-      <div className="p-6 bg-red-50 border-2 border-black shadow-[4px_4px_0px_#000]">
+      <div className="p-6 bg-red-50 border border-red-200">
         <div className="flex items-center gap-2 font-bold text-red-950 mb-2">
           <AlertTriangle className="w-5 h-5 text-red-600" />
           <span>Lỗi tải Bảng điều khiển Email</span>
@@ -316,7 +316,7 @@ export function EmailSection() {
         <p className="text-xs text-red-800 font-mono mb-4">{error}</p>
         <button
           onClick={fetchOverview}
-          className="px-4 py-2 bg-black text-white font-mono font-black text-xs uppercase tracking-wider border-2 border-black"
+          className="px-4 py-2 bg-[#1d4ed8] hover:bg-[#1e40af] text-white font-mono font-bold text-xs uppercase tracking-wider transition-colors cursor-pointer"
         >
           Thử lại
         </button>
@@ -329,16 +329,16 @@ export function EmailSection() {
   return (
     <div className="space-y-6">
       {/* SECTION HEADER */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b-2 border-black">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-gray-200">
         <div>
-          <div className="inline-block px-2.5 py-0.5 bg-[#fef9c3] border border-black shadow-[1.5px_1.5px_0px_#000] text-[10px] font-mono font-black uppercase tracking-wider text-black mb-1">
+          <div className="inline-block px-2.5 py-0.5 bg-blue-50 border border-blue-200 text-[10px] font-mono font-bold uppercase tracking-wider text-[#1d4ed8] mb-1">
             GCP Cloud-Native Transactional Mailer
           </div>
-          <h2 className="text-2xl font-black uppercase tracking-tight text-black flex items-center gap-2">
-            <Mail className="w-6 h-6 text-[#e03a3e]" />
+          <h2 className="text-2xl font-bold uppercase tracking-tight text-slate-900 flex items-center gap-2">
+            <Mail className="w-6 h-6 text-[#1d4ed8]" />
             Quản trị Hệ thống Email (rateurprofs.site)
           </h2>
-          <p className="text-xs text-gray-600 mt-0.5">
+          <p className="text-xs text-slate-600 mt-0.5">
             Phát hành email giao dịch tự động, hàng đợi bền vững Outbox, nhật ký phân phối và kiểm tra xác thực DNS.
           </p>
         </div>
@@ -347,15 +347,15 @@ export function EmailSection() {
         <div className="flex flex-wrap items-center gap-2">
           <button
             onClick={() => setTestModalOpen(true)}
-            className="px-3.5 py-2 bg-black hover:bg-neutral-800 text-white font-mono font-bold text-xs uppercase tracking-wider border-2 border-black shadow-[2px_2px_0px_#000] active:translate-x-[1px] active:translate-y-[1px] active:shadow-none flex items-center gap-1.5 cursor-pointer"
+            className="px-3.5 py-2 bg-[#1d4ed8] hover:bg-[#1e40af] text-white font-mono font-bold text-xs uppercase tracking-wider border border-[#1d4ed8] flex items-center gap-1.5 cursor-pointer transition-colors"
           >
-            <Send className="w-3.5 h-3.5 text-[#fef9c3]" />
+            <Send className="w-3.5 h-3.5 text-white" />
             <span>Gửi Thử nghiệm</span>
           </button>
 
           <button
             onClick={() => setPreviewModalOpen(true)}
-            className="px-3.5 py-2 bg-[#fef9c3] hover:bg-yellow-200 text-black font-mono font-bold text-xs uppercase tracking-wider border-2 border-black shadow-[2px_2px_0px_#000] active:translate-x-[1px] active:translate-y-[1px] active:shadow-none flex items-center gap-1.5 cursor-pointer"
+            className="px-3.5 py-2 bg-blue-50 hover:bg-blue-100 text-[#1d4ed8] font-mono font-bold text-xs uppercase tracking-wider border border-blue-200 flex items-center gap-1.5 cursor-pointer transition-colors"
           >
             <Eye className="w-3.5 h-3.5" />
             <span>Xem trước Mẫu</span>
@@ -364,7 +364,7 @@ export function EmailSection() {
           <button
             onClick={handleWorkerTick}
             disabled={workerRunning}
-            className="px-3.5 py-2 bg-white hover:bg-gray-100 text-black font-mono font-bold text-xs uppercase tracking-wider border-2 border-black shadow-[2px_2px_0px_#000] active:translate-x-[1px] active:translate-y-[1px] active:shadow-none flex items-center gap-1.5 cursor-pointer disabled:opacity-50"
+            className="px-3.5 py-2 bg-white hover:bg-slate-50 text-slate-700 font-mono font-bold text-xs uppercase tracking-wider border border-gray-200 flex items-center gap-1.5 cursor-pointer transition-colors disabled:opacity-50"
           >
             <RotateCw className={`w-3.5 h-3.5 ${workerRunning ? "animate-spin" : ""}`} />
             <span>Xử lý Outbox</span>
@@ -374,11 +374,11 @@ export function EmailSection() {
 
       {/* WORKER TICK ALERT FEEDBACK */}
       {workerFeedback && (
-        <div className="p-3 bg-[#e0f2fe] border-2 border-black shadow-[2px_2px_0px_#000] text-xs font-mono text-blue-950 flex items-center justify-between">
+        <div className="p-3 bg-blue-50 border border-blue-200 text-xs font-mono text-blue-950 flex items-center justify-between">
           <span>{workerFeedback}</span>
           <button
             onClick={() => setWorkerFeedback(null)}
-            className="font-black text-black ml-4 hover:underline"
+            className="font-bold text-[#1d4ed8] ml-4 hover:underline"
           >
             [ĐÓNG]
           </button>
@@ -387,67 +387,67 @@ export function EmailSection() {
 
       {/* METRICS OVERVIEW CARDS */}
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
-        <div className="bg-white p-3.5 border-2 border-black shadow-[3px_3px_0px_#000]">
-          <div className="text-[10px] font-mono font-black uppercase text-gray-500">Đang chờ (Queued)</div>
-          <div className="text-2xl font-black font-mono text-black mt-1">{stats.queued}</div>
-          <div className="text-[10px] font-mono text-amber-600 mt-1">Đang chờ worker</div>
+        <div className="bg-white p-3.5 border border-gray-200">
+          <div className="text-[10px] font-mono font-bold uppercase text-slate-500">Đang chờ (Queued)</div>
+          <div className="text-2xl font-black font-mono text-slate-900 mt-1">{stats.queued}</div>
+          <div className="text-[10px] font-mono text-[#1d4ed8] mt-1">Đang chờ worker</div>
         </div>
 
-        <div className="bg-white p-3.5 border-2 border-black shadow-[3px_3px_0px_#000]">
-          <div className="text-[10px] font-mono font-black uppercase text-gray-500">Đang gửi (Processing)</div>
-          <div className="text-2xl font-black font-mono text-blue-700 mt-1">{stats.processing}</div>
-          <div className="text-[10px] font-mono text-blue-600 mt-1">Đang phát hành</div>
+        <div className="bg-white p-3.5 border border-gray-200">
+          <div className="text-[10px] font-mono font-bold uppercase text-slate-500">Đang gửi (Processing)</div>
+          <div className="text-2xl font-black font-mono text-[#1d4ed8] mt-1">{stats.processing}</div>
+          <div className="text-[10px] font-mono text-[#1d4ed8] mt-1">Đang phát hành</div>
         </div>
 
-        <div className="bg-white p-3.5 border-2 border-black shadow-[3px_3px_0px_#000]">
-          <div className="text-[10px] font-mono font-black uppercase text-gray-500">Đã phát (Sent)</div>
-          <div className="text-2xl font-black font-mono text-black mt-1">{stats.sent}</div>
-          <div className="text-[10px] font-mono text-emerald-600 mt-1">Gửi tới provider</div>
+        <div className="bg-white p-3.5 border border-gray-200">
+          <div className="text-[10px] font-mono font-bold uppercase text-slate-500">Đã phát (Sent)</div>
+          <div className="text-2xl font-black font-mono text-slate-900 mt-1">{stats.sent}</div>
+          <div className="text-[10px] font-mono text-[#1d4ed8] mt-1">Gửi tới provider</div>
         </div>
 
-        <div className="bg-white p-3.5 border-2 border-black shadow-[3px_3px_0px_#000]">
-          <div className="text-[10px] font-mono font-black uppercase text-gray-500">Đã tới hòm (Delivered)</div>
-          <div className="text-2xl font-black font-mono text-emerald-700 mt-1">{stats.delivered}</div>
-          <div className="text-[10px] font-mono text-emerald-600 mt-1">Webhook xác nhận</div>
+        <div className="bg-white p-3.5 border border-gray-200">
+          <div className="text-[10px] font-mono font-bold uppercase text-slate-500">Đã tới hòm (Delivered)</div>
+          <div className="text-2xl font-black font-mono text-[#1d4ed8] mt-1">{stats.delivered}</div>
+          <div className="text-[10px] font-mono text-[#1d4ed8] mt-1">Webhook xác nhận</div>
         </div>
 
-        <div className="bg-white p-3.5 border-2 border-black shadow-[3px_3px_0px_#000]">
-          <div className="text-[10px] font-mono font-black uppercase text-gray-500">Thất bại / Dead-letter</div>
-          <div className="text-2xl font-black font-mono text-red-600 mt-1">{stats.failed}</div>
-          <div className="text-[10px] font-mono text-red-500 mt-1">{stats.bounced} trả về (bounce)</div>
+        <div className="bg-white p-3.5 border border-gray-200">
+          <div className="text-[10px] font-mono font-bold uppercase text-slate-500">Thất bại / Dead-letter</div>
+          <div className="text-2xl font-black font-mono text-slate-900 mt-1">{stats.failed}</div>
+          <div className="text-[10px] font-mono text-slate-500 mt-1">{stats.bounced} trả về (bounce)</div>
         </div>
 
         <div
           onClick={handleOpenSuppressions}
-          className="bg-[#fee2e2] p-3.5 border-2 border-black shadow-[3px_3px_0px_#000] cursor-pointer hover:bg-red-200 transition-colors"
+          className="bg-red-50 p-3.5 border border-red-200 cursor-pointer hover:bg-red-100 transition-colors"
         >
-          <div className="text-[10px] font-mono font-black uppercase text-red-900 flex items-center justify-between">
+          <div className="text-[10px] font-mono font-bold uppercase text-red-900 flex items-center justify-between">
             <span>Danh sách chặn</span>
             <Ban className="w-3.5 h-3.5" />
           </div>
           <div className="text-2xl font-black font-mono text-red-950 mt-1">{stats.suppressionsCount}</div>
-          <div className="text-[10px] font-mono text-red-800 underline mt-1">Xem & gỡ chặn &rarr;</div>
+          <div className="text-[10px] font-mono text-red-700 underline mt-1">Xem & gỡ chặn &rarr;</div>
         </div>
       </div>
 
       {/* TWO COLUMN GRID: PROVIDER CONFIG & DNS VALIDATION */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* CARD 1: PROVIDER CONFIGURATION */}
-        <div className="bg-white border-2 border-black shadow-[4px_4px_0px_#000] p-5 space-y-4">
-          <div className="flex items-center justify-between border-b-2 border-black pb-3">
+        <div className="bg-white border border-gray-200 p-5 space-y-4">
+          <div className="flex items-center justify-between border-b border-gray-200 pb-3">
             <div className="flex items-center gap-2">
-              <Server className="w-4 h-4 text-black" />
-              <h3 className="font-black uppercase text-xs tracking-wider text-black">
+              <Server className="w-4 h-4 text-slate-700" />
+              <h3 className="font-bold uppercase text-xs tracking-wider text-slate-900">
                 Cấu hình Nhà phân phối (Delivery Provider)
               </h3>
             </div>
             <span
-              className={`px-2 py-0.5 text-[10px] font-mono font-black uppercase tracking-wider border border-black ${
+              className={`px-2 py-0.5 text-[10px] font-mono font-bold uppercase tracking-wider border ${
                 provider.isSandbox
-                  ? "bg-[#fef9c3] text-black"
+                  ? "bg-blue-50 text-[#1d4ed8] border-blue-200"
                   : provider.configured
-                  ? "bg-[#6ee7b7] text-black"
-                  : "bg-red-100 text-red-900"
+                  ? "bg-blue-50 text-[#1d4ed8] border-blue-200"
+                  : "bg-red-50 text-red-700 border-red-200"
               }`}
             >
               {provider.isSandbox ? "Sandbox / Mock Mode" : `Live: ${provider.provider.toUpperCase()}`}
@@ -477,21 +477,21 @@ export function EmailSection() {
                 Danh tính gửi tin (Sender Identities)
               </span>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-[11px] font-mono">
-                <div className="p-2 bg-gray-50 border border-black">
-                  <div className="text-gray-500 text-[10px]">Tự động giao dịch:</div>
-                  <div className="font-bold text-black truncate">{provider.senderIdentities.noReply}</div>
+                <div className="p-2 bg-slate-50 border border-gray-200">
+                  <div className="text-slate-500 text-[10px]">Tự động giao dịch:</div>
+                  <div className="font-bold text-slate-900 truncate">{provider.senderIdentities.noReply}</div>
                 </div>
-                <div className="p-2 bg-gray-50 border border-black">
-                  <div className="text-gray-500 text-[10px]">Hỗ trợ sinh viên:</div>
-                  <div className="font-bold text-black truncate">{provider.senderIdentities.support}</div>
+                <div className="p-2 bg-slate-50 border border-gray-200">
+                  <div className="text-slate-500 text-[10px]">Hỗ trợ sinh viên:</div>
+                  <div className="font-bold text-slate-900 truncate">{provider.senderIdentities.support}</div>
                 </div>
-                <div className="p-2 bg-gray-50 border border-black">
-                  <div className="text-gray-500 text-[10px]">Cảnh báo bảo mật:</div>
-                  <div className="font-bold text-black truncate">{provider.senderIdentities.security}</div>
+                <div className="p-2 bg-slate-50 border border-gray-200">
+                  <div className="text-slate-500 text-[10px]">Cảnh báo bảo mật:</div>
+                  <div className="font-bold text-slate-900 truncate">{provider.senderIdentities.security}</div>
                 </div>
-                <div className="p-2 bg-gray-50 border border-black">
-                  <div className="text-gray-500 text-[10px]">Quản trị & Báo cáo:</div>
-                  <div className="font-bold text-black truncate">{provider.senderIdentities.admin}</div>
+                <div className="p-2 bg-slate-50 border border-gray-200">
+                  <div className="text-slate-500 text-[10px]">Quản trị & Báo cáo:</div>
+                  <div className="font-bold text-slate-900 truncate">{provider.senderIdentities.admin}</div>
                 </div>
               </div>
             </div>
@@ -499,17 +499,17 @@ export function EmailSection() {
         </div>
 
         {/* CARD 2: DNS AUTHENTICATION & DELIVERABILITY STATUS */}
-        <div className="bg-white border-2 border-black shadow-[4px_4px_0px_#000] p-5 space-y-4">
-          <div className="flex items-center justify-between border-b-2 border-black pb-3">
+        <div className="bg-white border border-gray-200 p-5 space-y-4">
+          <div className="flex items-center justify-between border-b border-gray-200 pb-3">
             <div className="flex items-center gap-2">
-              <ShieldCheck className="w-4 h-4 text-black" />
-              <h3 className="font-black uppercase text-xs tracking-wider text-black">
+              <ShieldCheck className="w-4 h-4 text-[#1d4ed8]" />
+              <h3 className="font-bold uppercase text-xs tracking-wider text-slate-900">
                 Kiểm tra Bản ghi DNS (Cloudflare)
               </h3>
             </div>
             <button
               onClick={fetchOverview}
-              className="text-[10px] font-mono font-bold text-black hover:underline flex items-center gap-1 cursor-pointer"
+              className="text-[10px] font-mono font-bold text-[#1d4ed8] hover:underline flex items-center gap-1 cursor-pointer"
             >
               <RotateCw className="w-3 h-3" />
               Làm mới DNS
@@ -518,75 +518,75 @@ export function EmailSection() {
 
           <div className="space-y-2.5 text-xs">
             {/* SPF RECORD */}
-            <div className="p-2.5 bg-gray-50 border border-black space-y-1">
+            <div className="p-2.5 bg-slate-50 border border-slate-200 space-y-1">
               <div className="flex items-center justify-between">
-                <span className="font-mono font-black text-black">1. SPF Record (TXT)</span>
+                <span className="font-mono font-bold text-slate-900">1. SPF Record (TXT)</span>
                 <span
-                  className={`px-1.5 py-0.2 text-[9px] font-mono font-black uppercase ${
+                  className={`px-1.5 py-0.2 text-[9px] font-mono font-bold uppercase ${
                     dns.spf.status === "verified"
-                      ? "bg-emerald-100 text-emerald-900 border border-emerald-400"
-                      : "bg-amber-100 text-amber-900 border border-amber-400"
+                      ? "bg-blue-50 text-[#1d4ed8] border border-blue-200"
+                      : "bg-slate-100 text-slate-700 border border-slate-300"
                   }`}
                 >
                   {dns.spf.status === "verified" ? "Đã liên kết" : "Cần gộp bản ghi"}
                 </span>
               </div>
-              <p className="text-[11px] font-mono text-gray-600 break-all">{dns.spf.details || dns.spf.expectedValue}</p>
+              <p className="text-[11px] font-mono text-slate-600 break-all">{dns.spf.details || dns.spf.expectedValue}</p>
               <button
                 onClick={() => copyToClipboard(dns.spf.expectedValue, "spf")}
-                className="text-[10px] font-mono text-black font-bold flex items-center gap-1 hover:underline cursor-pointer pt-0.5"
+                className="text-[10px] font-mono text-[#1d4ed8] font-bold flex items-center gap-1 hover:underline cursor-pointer pt-0.5"
               >
-                {copiedKey === "spf" ? <Check className="w-3 h-3 text-emerald-600" /> : <Copy className="w-3 h-3" />}
+                {copiedKey === "spf" ? <Check className="w-3 h-3 text-[#1d4ed8]" /> : <Copy className="w-3 h-3" />}
                 <span>Sao chép bản ghi SPF chuẩn</span>
               </button>
             </div>
 
             {/* DKIM RECORD */}
-            <div className="p-2.5 bg-gray-50 border border-black space-y-1">
+            <div className="p-2.5 bg-slate-50 border border-slate-200 space-y-1">
               <div className="flex items-center justify-between">
-                <span className="font-mono font-black text-black">2. DKIM Selector (TXT / CNAME)</span>
+                <span className="font-mono font-bold text-slate-900">2. DKIM Selector (TXT / CNAME)</span>
                 <span
-                  className={`px-1.5 py-0.2 text-[9px] font-mono font-black uppercase ${
+                  className={`px-1.5 py-0.2 text-[9px] font-mono font-bold uppercase ${
                     dns.dkim.status === "verified"
-                      ? "bg-emerald-100 text-emerald-900 border border-emerald-400"
-                      : "bg-amber-100 text-amber-900 border border-amber-400"
+                      ? "bg-blue-50 text-[#1d4ed8] border border-blue-200"
+                      : "bg-slate-100 text-slate-700 border border-slate-300"
                   }`}
                 >
                   {dns.dkim.status === "verified" ? "Đã xác thực" : "Chờ kích hoạt Resend"}
                 </span>
               </div>
-              <p className="text-[11px] font-mono text-gray-600 break-all">
+              <p className="text-[11px] font-mono text-slate-600 break-all">
                 Host: <code className="font-bold">resend._domainkey.rateurprofs.site</code>
               </p>
             </div>
 
             {/* DMARC RECORD */}
-            <div className="p-2.5 bg-gray-50 border border-black space-y-1">
+            <div className="p-2.5 bg-slate-50 border border-slate-200 space-y-1">
               <div className="flex items-center justify-between">
-                <span className="font-mono font-black text-black">3. DMARC Policy (TXT)</span>
+                <span className="font-mono font-bold text-slate-900">3. DMARC Policy (TXT)</span>
                 <span
-                  className={`px-1.5 py-0.2 text-[9px] font-mono font-black uppercase ${
+                  className={`px-1.5 py-0.2 text-[9px] font-mono font-bold uppercase ${
                     dns.dmarc.status === "verified"
-                      ? "bg-emerald-100 text-emerald-900 border border-emerald-400"
-                      : "bg-amber-100 text-amber-900 border border-amber-400"
+                      ? "bg-blue-50 text-[#1d4ed8] border border-blue-200"
+                      : "bg-slate-100 text-slate-700 border border-slate-300"
                   }`}
                 >
                   {dns.dmarc.status === "verified" ? "Hoạt động" : "Chưa gắn"}
                 </span>
               </div>
-              <p className="text-[11px] font-mono text-gray-600 break-all">{dns.dmarc.details || dns.dmarc.expectedValue}</p>
+              <p className="text-[11px] font-mono text-slate-600 break-all">{dns.dmarc.details || dns.dmarc.expectedValue}</p>
               <button
                 onClick={() => copyToClipboard(dns.dmarc.expectedValue, "dmarc")}
-                className="text-[10px] font-mono text-black font-bold flex items-center gap-1 hover:underline cursor-pointer pt-0.5"
+                className="text-[10px] font-mono text-[#1d4ed8] font-bold flex items-center gap-1 hover:underline cursor-pointer pt-0.5"
               >
-                {copiedKey === "dmarc" ? <Check className="w-3 h-3 text-emerald-600" /> : <Copy className="w-3 h-3" />}
+                {copiedKey === "dmarc" ? <Check className="w-3 h-3 text-[#1d4ed8]" /> : <Copy className="w-3 h-3" />}
                 <span>Sao chép bản ghi DMARC</span>
               </button>
             </div>
 
             {/* MX RECORDS FOR INBOUND FORWARDING */}
-            <div className="p-2.5 bg-emerald-50 border border-emerald-300 text-[11px] font-mono text-emerald-950 flex items-center gap-2">
-              <CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0" />
+            <div className="p-2.5 bg-blue-50 border border-blue-200 text-[11px] font-mono text-blue-950 flex items-center gap-2">
+              <CheckCircle2 className="w-4 h-4 text-[#1d4ed8] shrink-0" />
               <span>{dns.mx.details || "Bản ghi Namecheap MX Email Forwarding được bảo toàn 100%."}</span>
             </div>
           </div>
@@ -594,26 +594,26 @@ export function EmailSection() {
       </div>
 
       {/* OUTBOX JOBS LOG TABLE */}
-      <div className="bg-white border-2 border-black shadow-[4px_4px_0px_#000] p-5 space-y-4">
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b-2 border-black pb-3">
+      <div className="bg-white border border-gray-200 p-5 space-y-4">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-gray-200 pb-3">
           <div className="flex items-center gap-2">
-            <Clock className="w-4 h-4 text-black" />
-            <h3 className="font-black uppercase text-xs tracking-wider text-black">
+            <Clock className="w-4 h-4 text-slate-700" />
+            <h3 className="font-bold uppercase text-xs tracking-wider text-slate-900">
               Nhật ký Hàng đợi Giao vận (Outbox Queue Log)
             </h3>
-            <span className="text-xs font-mono font-bold text-gray-500">({jobsTotal} thư)</span>
+            <span className="text-xs font-mono font-bold text-slate-500">({jobsTotal} thư)</span>
           </div>
 
           {/* Filters */}
           <div className="flex flex-wrap items-center gap-2">
             <div className="relative">
-              <Search className="w-3.5 h-3.5 text-gray-400 absolute left-2.5 top-2.5" />
+              <Search className="w-3.5 h-3.5 text-slate-400 absolute left-2.5 top-2.5" />
               <input
                 type="text"
                 placeholder="Tìm email hoặc chủ đề..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="pl-8 pr-3 py-1.5 text-xs font-mono border border-black bg-white focus:outline-none w-48 sm:w-56"
+                className="pl-8 pr-3 py-1.5 text-xs font-mono border border-gray-300 focus:border-[#1d4ed8] bg-white focus:outline-none w-48 sm:w-56"
               />
             </div>
 
@@ -623,7 +623,7 @@ export function EmailSection() {
                 setStatusFilter(e.target.value);
                 setPage(1);
               }}
-              className="py-1.5 px-2 text-xs font-mono border border-black bg-white focus:outline-none cursor-pointer"
+              className="py-1.5 px-2 text-xs font-mono border border-gray-300 focus:border-[#1d4ed8] bg-white focus:outline-none cursor-pointer"
             >
               <option value="">Tất cả trạng thái</option>
               <option value="queued">Queued (Chờ)</option>
@@ -639,7 +639,7 @@ export function EmailSection() {
                 setTemplateFilter(e.target.value);
                 setPage(1);
               }}
-              className="py-1.5 px-2 text-xs font-mono border border-black bg-white focus:outline-none cursor-pointer"
+              className="py-1.5 px-2 text-xs font-mono border border-gray-300 focus:border-[#1d4ed8] bg-white focus:outline-none cursor-pointer"
             >
               <option value="">Tất cả mẫu</option>
               <option value="password_reset">Đặt lại Mật khẩu</option>
@@ -656,42 +656,42 @@ export function EmailSection() {
         <div className="overflow-x-auto">
           <table className="w-full text-left text-xs font-mono border-collapse">
             <thead>
-              <tr className="bg-[#fef9c3] border-b-2 border-black text-[11px] font-black uppercase text-black">
-                <th className="p-2.5 border-r border-black">Thời gian</th>
-                <th className="p-2.5 border-r border-black">Người nhận</th>
-                <th className="p-2.5 border-r border-black">Mẫu (Template)</th>
-                <th className="p-2.5 border-r border-black">Chủ đề</th>
-                <th className="p-2.5 border-r border-black text-center">Trạng thái</th>
-                <th className="p-2.5 border-r border-black text-center">Thử lại</th>
+              <tr className="bg-slate-50 border-b border-gray-200 text-[11px] font-bold uppercase text-slate-700">
+                <th className="p-2.5 border-r border-gray-200">Thời gian</th>
+                <th className="p-2.5 border-r border-gray-200">Người nhận</th>
+                <th className="p-2.5 border-r border-gray-200">Mẫu (Template)</th>
+                <th className="p-2.5 border-r border-gray-200">Chủ đề</th>
+                <th className="p-2.5 border-r border-gray-200 text-center">Trạng thái</th>
+                <th className="p-2.5 border-r border-gray-200 text-center">Thử lại</th>
                 <th className="p-2.5 text-center">Hành động</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-gray-200">
               {jobs.length === 0 ? (
                 <tr>
-                  <td colSpan={7} className="p-8 text-center text-gray-500 font-mono">
+                  <td colSpan={7} className="p-8 text-center text-slate-500 font-mono">
                     Chưa có tác vụ gửi email nào trong bộ lọc hiện tại.
                   </td>
                 </tr>
               ) : (
                 jobs.map((job) => (
-                  <tr key={job.id} className="hover:bg-gray-50 transition-colors">
-                    <td className="p-2.5 border-r border-gray-200 text-gray-600 whitespace-nowrap">
+                  <tr key={job.id} className="hover:bg-slate-50 transition-colors">
+                    <td className="p-2.5 border-r border-gray-200 text-slate-600 whitespace-nowrap">
                       {new Date(job.created_at).toLocaleTimeString("vi-VN", {
                         hour: "2-digit",
                         minute: "2-digit",
                         second: "2-digit",
                       })}
                     </td>
-                    <td className="p-2.5 border-r border-gray-200 font-bold text-black truncate max-w-[160px]">
+                    <td className="p-2.5 border-r border-gray-200 font-bold text-slate-900 truncate max-w-[160px]">
                       {job.recipient}
                     </td>
                     <td className="p-2.5 border-r border-gray-200">
-                      <span className="px-1.5 py-0.5 bg-gray-100 border border-gray-300 text-[10px] font-bold">
+                      <span className="px-1.5 py-0.5 bg-slate-100 border border-slate-200 text-[10px] font-bold text-slate-700">
                         {job.template_id}
                       </span>
                     </td>
-                    <td className="p-2.5 border-r border-gray-200 text-gray-800 truncate max-w-[200px]" title={job.subject}>
+                    <td className="p-2.5 border-r border-gray-200 text-slate-800 truncate max-w-[200px]" title={job.subject}>
                       {job.subject}
                     </td>
                     <td className="p-2.5 border-r border-gray-200 text-center">
@@ -699,25 +699,21 @@ export function EmailSection() {
                         <span
                           className={`inline-block px-2 py-0.5 text-[10px] font-bold uppercase border ${
                             job.status === "delivered"
-                              ? "bg-emerald-100 text-emerald-900 border-emerald-400"
+                              ? "bg-blue-50 text-[#1d4ed8] border-blue-200"
                               : job.status === "sent"
-                              ? "bg-blue-100 text-blue-900 border-blue-400"
+                              ? "bg-blue-50 text-[#1d4ed8] border-blue-200"
                               : job.status === "queued"
-                              ? "bg-amber-100 text-amber-900 border-amber-400"
+                              ? "bg-slate-100 text-slate-700 border-slate-200"
                               : job.status === "processing"
-                              ? "bg-purple-100 text-purple-900 border-purple-400"
-                              : "bg-red-100 text-red-900 border-red-400"
+                              ? "bg-blue-100 text-[#1d4ed8] border-blue-300"
+                              : "bg-red-50 text-red-700 border-red-200"
                           }`}
                         >
                           {job.status}
                         </span>
                         {job.provider && (
                           <span
-                            className={`text-[9px] px-1 font-mono uppercase border ${
-                              job.provider === "sandbox"
-                                ? "bg-amber-50 text-amber-800 border-amber-300"
-                                : "bg-emerald-50 text-emerald-800 border-emerald-300"
-                            }`}
+                            className="text-[9px] px-1 font-mono uppercase border bg-slate-50 text-slate-600 border-slate-200"
                             title={`Nhà phân phối: ${job.provider}${job.provider_message_id ? ` (ID: ${job.provider_message_id})` : ""}`}
                           >
                             {job.provider === "sandbox" ? "sandbox (mock)" : job.provider}
@@ -725,7 +721,7 @@ export function EmailSection() {
                         )}
                       </div>
                     </td>
-                    <td className="p-2.5 border-r border-gray-200 text-center">
+                    <td className="p-2.5 border-r border-gray-200 text-center text-slate-700">
                       {job.retry_count}/{job.max_retries}
                     </td>
                     <td className="p-2.5 text-center">
@@ -733,7 +729,7 @@ export function EmailSection() {
                         <button
                           onClick={() => handleRetryJob(job.id)}
                           disabled={retryingId === job.id}
-                          className="px-2 py-1 bg-black text-white hover:bg-neutral-800 text-[10px] font-bold uppercase border border-black cursor-pointer"
+                          className="px-2 py-1 bg-[#1d4ed8] text-white hover:bg-[#1e40af] text-[10px] font-bold uppercase transition-colors cursor-pointer"
                         >
                           {retryingId === job.id ? "Đang gửi..." : "Thử lại"}
                         </button>
@@ -750,21 +746,21 @@ export function EmailSection() {
 
         {/* PAGINATION */}
         <div className="flex items-center justify-between pt-3 border-t border-gray-200 text-xs font-mono">
-          <span className="text-gray-500">
+          <span className="text-slate-500">
             Trang {page} / {totalPages} (Tổng {jobsTotal} tác vụ)
           </span>
           <div className="flex items-center gap-1.5">
             <button
               onClick={() => setPage((p) => Math.max(1, p - 1))}
               disabled={page <= 1}
-              className="p-1 border border-black bg-white hover:bg-gray-100 disabled:opacity-30 cursor-pointer"
+              className="p-1 border border-gray-300 bg-white hover:bg-slate-50 disabled:opacity-30 cursor-pointer text-slate-700"
             >
               <ChevronLeft className="w-4 h-4" />
             </button>
             <button
               onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
               disabled={page >= totalPages}
-              className="p-1 border border-black bg-white hover:bg-gray-100 disabled:opacity-30 cursor-pointer"
+              className="p-1 border border-gray-300 bg-white hover:bg-slate-50 disabled:opacity-30 cursor-pointer text-slate-700"
             >
               <ChevronRight className="w-4 h-4" />
             </button>
@@ -774,41 +770,41 @@ export function EmailSection() {
 
       {/* MODAL 1: TEST EMAIL DISPATCH */}
       {testModalOpen && (
-        <div className="fixed inset-0 z-50 bg-black/60 flex items-center justify-center p-4">
-          <div className="bg-white border-3 border-black shadow-[8px_8px_0px_#000] max-w-md w-full p-6 space-y-4 font-sans">
-            <div className="flex items-center justify-between border-b-2 border-black pb-3">
-              <h3 className="font-black uppercase text-sm tracking-tight text-black flex items-center gap-2">
-                <Send className="w-4 h-4 text-[#e03a3e]" />
+        <div className="fixed inset-0 z-50 bg-black/50 flex items-center justify-center p-4">
+          <div className="bg-white border border-gray-200 max-w-md w-full p-6 space-y-4 font-sans">
+            <div className="flex items-center justify-between border-b border-gray-200 pb-3">
+              <h3 className="font-bold uppercase text-sm tracking-tight text-slate-900 flex items-center gap-2">
+                <Send className="w-4 h-4 text-[#1d4ed8]" />
                 Phát hành Thư Thử nghiệm (Test Email)
               </h3>
               <button
                 onClick={() => setTestModalOpen(false)}
-                className="text-black font-black font-mono text-sm hover:underline"
+                className="text-slate-400 hover:text-slate-700 font-mono text-sm cursor-pointer"
               >
-                [X]
+                ✕
               </button>
             </div>
 
             <form onSubmit={handleSendTest} className="space-y-3.5 text-xs font-mono">
               <div>
-                <label className="block font-bold text-black mb-1">ĐỊA CHỈ NHẬN THỬ NGHIỆM:</label>
+                <label className="block font-bold text-slate-900 mb-1">ĐỊA CHỈ NHẬN THỬ NGHIỆM:</label>
                 <input
                   type="email"
                   required
                   value={testRecipient}
                   onChange={(e) => setTestRecipient(e.target.value)}
-                  className="w-full p-2 border-2 border-black text-xs font-mono bg-white focus:outline-none"
+                  className="w-full p-2 border border-gray-300 focus:border-[#1d4ed8] text-xs font-mono bg-white focus:outline-none"
                   placeholder="admin@rateurprofs.site"
                 />
               </div>
 
               <div className="grid grid-cols-2 gap-2">
                 <div>
-                  <label className="block font-bold text-black mb-1">MẪU EMAIL:</label>
+                  <label className="block font-bold text-slate-900 mb-1">MẪU EMAIL:</label>
                   <select
                     value={testTemplate}
                     onChange={(e) => setTestTemplate(e.target.value)}
-                    className="w-full p-2 border-2 border-black text-xs font-mono bg-white focus:outline-none cursor-pointer"
+                    className="w-full p-2 border border-gray-300 focus:border-[#1d4ed8] text-xs font-mono bg-white focus:outline-none cursor-pointer"
                   >
                     <option value="test_email">Chẩn đoán hệ thống (Diagnostic)</option>
                     <option value="password_reset">Đặt lại mật khẩu</option>
@@ -820,11 +816,11 @@ export function EmailSection() {
                 </div>
 
                 <div>
-                  <label className="block font-bold text-black mb-1">NGÔN NGỮ:</label>
+                  <label className="block font-bold text-slate-900 mb-1">NGÔN NGỮ:</label>
                   <select
                     value={testLocale}
                     onChange={(e) => setTestLocale(e.target.value)}
-                    className="w-full p-2 border-2 border-black text-xs font-mono bg-white focus:outline-none cursor-pointer"
+                    className="w-full p-2 border border-gray-300 focus:border-[#1d4ed8] text-xs font-mono bg-white focus:outline-none cursor-pointer"
                   >
                     <option value="vi">Tiếng Việt (vi)</option>
                     <option value="en">English (en)</option>
@@ -833,12 +829,12 @@ export function EmailSection() {
               </div>
 
               {overview?.provider.isSandbox && (
-                <div className="p-3 bg-[#fef9c3] border-2 border-black text-black font-mono text-[11px] space-y-1">
-                  <div className="font-bold flex items-center gap-1.5 text-amber-900 uppercase">
-                    <AlertTriangle className="w-3.5 h-3.5 text-amber-600 shrink-0" />
+                <div className="p-3 bg-blue-50 border border-blue-200 text-blue-950 font-mono text-[11px] space-y-1">
+                  <div className="font-bold flex items-center gap-1.5 text-[#1d4ed8] uppercase">
+                    <AlertTriangle className="w-3.5 h-3.5 text-[#1d4ed8] shrink-0" />
                     <span>Hệ thống đang chạy ở chế độ Sandbox (Mô phỏng)</span>
                   </div>
-                  <p className="text-[10px] text-gray-700 leading-relaxed">
+                  <p className="text-[10px] text-slate-700 leading-relaxed">
                     Chưa có API Key (<code>RESEND_API_KEY</code> hoặc <code>SENDGRID_API_KEY</code>). Thư sẽ được ghi vào Outbox nội bộ để kiểm tra giao diện/quy trình nhưng <strong>không chuyển phát thực tế tới hộp thư Gmail</strong>.
                   </p>
                 </div>
@@ -846,10 +842,10 @@ export function EmailSection() {
 
               {testSuccessMessage && (
                 <div
-                  className={`p-3 border-2 font-mono text-[11px] ${
+                  className={`p-3 border font-mono text-[11px] ${
                     overview?.provider.isSandbox
-                      ? "bg-amber-50 border-amber-500 text-amber-950"
-                      : "bg-emerald-50 border-emerald-500 text-emerald-950"
+                      ? "bg-blue-50 border-blue-200 text-blue-950"
+                      : "bg-blue-50 border-blue-200 text-blue-950"
                   }`}
                 >
                   {testSuccessMessage}
@@ -860,14 +856,14 @@ export function EmailSection() {
                 <button
                   type="button"
                   onClick={() => setTestModalOpen(false)}
-                  className="px-4 py-2 bg-gray-100 hover:bg-gray-200 font-bold uppercase text-black border-2 border-black"
+                  className="px-4 py-2 bg-white hover:bg-slate-50 font-bold uppercase text-slate-700 border border-gray-200 cursor-pointer"
                 >
                   Đóng
                 </button>
                 <button
                   type="submit"
                   disabled={testSending}
-                  className="px-4 py-2 bg-black hover:bg-neutral-800 font-bold uppercase text-white border-2 border-black shadow-[2px_2px_0px_#000] flex items-center gap-1.5"
+                  className="px-4 py-2 bg-[#1d4ed8] hover:bg-[#1e40af] font-bold uppercase text-white border border-[#1d4ed8] flex items-center gap-1.5 cursor-pointer transition-colors"
                 >
                   {testSending ? <RotateCw className="w-3.5 h-3.5 animate-spin" /> : <Send className="w-3.5 h-3.5" />}
                   <span>{testSending ? "Đang gửi..." : "Xác nhận gửi"}</span>
@@ -880,29 +876,29 @@ export function EmailSection() {
 
       {/* MODAL 2: TEMPLATE PREVIEW */}
       {previewModalOpen && (
-        <div className="fixed inset-0 z-50 bg-black/60 flex items-center justify-center p-4">
-          <div className="bg-white border-3 border-black shadow-[8px_8px_0px_#000] max-w-3xl w-full h-[90vh] flex flex-col p-6 font-sans">
-            <div className="flex items-center justify-between border-b-2 border-black pb-3 shrink-0">
-              <h3 className="font-black uppercase text-sm tracking-tight text-black flex items-center gap-2">
-                <Eye className="w-4 h-4 text-[#e03a3e]" />
+        <div className="fixed inset-0 z-50 bg-black/50 flex items-center justify-center p-4">
+          <div className="bg-white border border-gray-200 max-w-3xl w-full h-[90vh] flex flex-col p-6 font-sans">
+            <div className="flex items-center justify-between border-b border-gray-200 pb-3 shrink-0">
+              <h3 className="font-bold uppercase text-sm tracking-tight text-slate-900 flex items-center gap-2">
+                <Eye className="w-4 h-4 text-[#1d4ed8]" />
                 Xem trước Giao diện Email (Email Template Preview)
               </h3>
               <button
                 onClick={() => setPreviewModalOpen(false)}
-                className="text-black font-black font-mono text-sm hover:underline"
+                className="text-slate-400 hover:text-slate-700 font-mono text-sm cursor-pointer"
               >
-                [X]
+                ✕
               </button>
             </div>
 
             {/* Template & Locale Pickers */}
             <div className="py-3 flex flex-wrap items-center justify-between gap-2 border-b border-gray-200 shrink-0 font-mono text-xs">
               <div className="flex items-center gap-2">
-                <span className="font-bold text-black">Mẫu:</span>
+                <span className="font-bold text-slate-900">Mẫu:</span>
                 <select
                   value={previewTemplate}
                   onChange={(e) => setPreviewTemplate(e.target.value)}
-                  className="p-1.5 border border-black bg-white focus:outline-none"
+                  className="p-1.5 border border-gray-300 focus:border-[#1d4ed8] bg-white focus:outline-none cursor-pointer"
                 >
                   <option value="review_moderated">Kiểm duyệt đánh giá (Moderation)</option>
                   <option value="password_reset">Đặt lại mật khẩu (Password Reset)</option>
@@ -915,26 +911,26 @@ export function EmailSection() {
                 <select
                   value={previewLocale}
                   onChange={(e) => setPreviewLocale(e.target.value)}
-                  className="p-1.5 border border-black bg-white focus:outline-none ml-1"
+                  className="p-1.5 border border-gray-300 focus:border-[#1d4ed8] bg-white focus:outline-none ml-1 cursor-pointer"
                 >
                   <option value="vi">Tiếng Việt</option>
                   <option value="en">English</option>
                 </select>
               </div>
 
-              <div className="flex items-center border border-black">
+              <div className="flex items-center border border-gray-200">
                 <button
                   onClick={() => setPreviewTab("html")}
-                  className={`px-3 py-1 font-bold ${
-                    previewTab === "html" ? "bg-black text-white" : "bg-white text-black"
+                  className={`px-3 py-1 font-bold cursor-pointer ${
+                    previewTab === "html" ? "bg-[#1d4ed8] text-white" : "bg-white text-slate-700 hover:bg-slate-50"
                   }`}
                 >
                   HTML View
                 </button>
                 <button
                   onClick={() => setPreviewTab("text")}
-                  className={`px-3 py-1 font-bold ${
-                    previewTab === "text" ? "bg-black text-white" : "bg-white text-black"
+                  className={`px-3 py-1 font-bold cursor-pointer ${
+                    previewTab === "text" ? "bg-[#1d4ed8] text-white" : "bg-white text-slate-700 hover:bg-slate-50"
                   }`}
                 >
                   Plain Text
@@ -943,20 +939,20 @@ export function EmailSection() {
             </div>
 
             {/* Subject preview */}
-            <div className="py-2 text-xs font-mono border-b border-gray-200 shrink-0 text-gray-700">
-              <span className="font-bold text-black">Chủ đề:</span> {previewSubject}
+            <div className="py-2 text-xs font-mono border-b border-gray-200 shrink-0 text-slate-600">
+              <span className="font-bold text-slate-900">Chủ đề:</span> {previewSubject}
             </div>
 
             {/* Render Area */}
-            <div className="flex-1 overflow-auto p-4 bg-gray-100 mt-2 border border-black">
+            <div className="flex-1 overflow-auto p-4 bg-slate-50 mt-2 border border-gray-200">
               {previewTab === "html" ? (
                 <iframe
                   title="Email HTML Preview"
                   srcDoc={previewHtml}
-                  className="w-full h-full min-h-[500px] bg-white border border-gray-300"
+                  className="w-full h-full min-h-[500px] bg-white border border-gray-200"
                 />
               ) : (
-                <pre className="p-4 bg-white border border-gray-300 font-mono text-xs whitespace-pre-wrap text-black">
+                <pre className="p-4 bg-white border border-gray-200 font-mono text-xs whitespace-pre-wrap text-slate-800">
                   {previewText}
                 </pre>
               )}
@@ -967,38 +963,38 @@ export function EmailSection() {
 
       {/* MODAL 3: SUPPRESSION LIST */}
       {suppressionModalOpen && (
-        <div className="fixed inset-0 z-50 bg-black/60 flex items-center justify-center p-4">
-          <div className="bg-white border-3 border-black shadow-[8px_8px_0px_#000] max-w-lg w-full p-6 space-y-4 font-sans">
-            <div className="flex items-center justify-between border-b-2 border-black pb-3">
-              <h3 className="font-black uppercase text-sm tracking-tight text-black flex items-center gap-2">
+        <div className="fixed inset-0 z-50 bg-black/50 flex items-center justify-center p-4">
+          <div className="bg-white border border-gray-200 max-w-lg w-full p-6 space-y-4 font-sans">
+            <div className="flex items-center justify-between border-b border-gray-200 pb-3">
+              <h3 className="font-bold uppercase text-sm tracking-tight text-slate-900 flex items-center gap-2">
                 <Ban className="w-4 h-4 text-red-600" />
                 Danh sách Chặn Email (Suppression List)
               </h3>
               <button
                 onClick={() => setSuppressionModalOpen(false)}
-                className="text-black font-black font-mono text-sm hover:underline"
+                className="text-slate-400 hover:text-slate-700 font-mono text-sm cursor-pointer"
               >
-                [X]
+                ✕
               </button>
             </div>
 
-            <p className="text-xs text-gray-600">
+            <p className="text-xs text-slate-600">
               Các địa chỉ trong danh sách này bị chặn gửi tự động nhằm bảo vệ uy tín tên miền (Hard Bounces, Complaints, Hủy đăng ký).
             </p>
 
-            <div className="max-h-60 overflow-y-auto border border-black divide-y divide-gray-200 text-xs font-mono">
+            <div className="max-h-60 overflow-y-auto border border-gray-200 divide-y divide-gray-200 text-xs font-mono">
               {suppressions.length === 0 ? (
-                <div className="p-4 text-center text-gray-500">Danh sách chặn hiện đang trống.</div>
+                <div className="p-4 text-center text-slate-500">Danh sách chặn hiện đang trống.</div>
               ) : (
                 suppressions.map((s) => (
-                  <div key={s.email} className="p-2.5 flex items-center justify-between hover:bg-gray-50">
+                  <div key={s.email} className="p-2.5 flex items-center justify-between hover:bg-slate-50">
                     <div>
-                      <div className="font-bold text-black">{s.email}</div>
-                      <div className="text-[10px] text-gray-500">Lý do: {s.reason}</div>
+                      <div className="font-bold text-slate-900">{s.email}</div>
+                      <div className="text-[10px] text-slate-500">Lý do: {s.reason}</div>
                     </div>
                     <button
                       onClick={() => handleRemoveSuppression(s.email)}
-                      className="p-1 text-red-600 hover:text-red-900 border border-red-300 bg-red-50 hover:bg-red-100 cursor-pointer"
+                      className="p-1 text-red-600 hover:text-red-900 border border-red-200 bg-red-50 hover:bg-red-100 cursor-pointer"
                       title="Gỡ chặn"
                     >
                       <Trash2 className="w-3.5 h-3.5" />
@@ -1011,7 +1007,7 @@ export function EmailSection() {
             <div className="pt-2 flex justify-end">
               <button
                 onClick={() => setSuppressionModalOpen(false)}
-                className="px-4 py-2 bg-black text-white font-mono font-bold text-xs uppercase"
+                className="px-4 py-2 bg-[#1d4ed8] hover:bg-[#1e40af] text-white font-mono font-bold text-xs uppercase cursor-pointer transition-colors"
               >
                 Đóng
               </button>

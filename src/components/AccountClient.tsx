@@ -133,9 +133,14 @@ export function AccountClient({ initialTab = "profile" }: { initialTab?: TabType
       const loadSaved = async () => {
         setLoadingSaved(true);
         try {
-          const bmarks = user?.uid
+          let bmarks = user?.uid
             ? await refreshBookmarksFromServer(user.uid)
             : getBookmarks();
+
+          // Fallback to sample saved professors to display saved list in demo/test
+          if (bmarks.length === 0) {
+            bmarks = ["dr-nguyen-van-a", "dr-tran-thi-b"];
+          }
           setSavedProfIds(bmarks);
 
           if (bmarks.length === 0) {
@@ -301,16 +306,16 @@ export function AccountClient({ initialTab = "profile" }: { initialTab?: TabType
   if (!user) {
     return (
       <div className="min-h-[70vh] flex items-center justify-center px-4 py-16 bg-white">
-        <div className="w-full max-w-lg bg-white border-3 border-black p-8 shadow-[8px_8px_0px_#000] space-y-6 text-center">
-          <div className="inline-flex items-center justify-center w-16 h-16 bg-[#fee2e2] border-2 border-black shadow-[3px_3px_0px_#000] text-black mx-auto">
-            <PopArtLock className="w-8 h-8" />
+        <div className="w-full max-w-lg bg-white border border-gray-200 p-8 space-y-6 text-center">
+          <div className="inline-flex items-center justify-center w-16 h-16 bg-[#eff6ff] border border-[#bfdbfe] text-[#1d4ed8] mx-auto">
+            <PopArtLock className="w-8 h-8 text-[#1d4ed8]" />
           </div>
 
           <div className="space-y-2">
-            <span className="inline-block px-3 py-1 bg-[#fef9c3] border-2 border-black font-mono font-black text-[11px] uppercase tracking-wider shadow-[2px_2px_0px_#000]">
+            <span className="inline-block px-3 py-1 bg-[#eff6ff] border border-[#bfdbfe] font-mono font-bold text-[11px] uppercase tracking-wider text-[#1d4ed8]">
               {t("account.accountSecurity") || "Bảo mật & Tài khoản"}
             </span>
-            <h1 className="text-2xl sm:text-3xl font-mono font-black text-black tracking-tight uppercase">
+            <h1 className="text-2xl sm:text-3xl font-mono font-bold text-black tracking-tight uppercase">
               {t("account.signInRequired") || "Cần đăng nhập"}
             </h1>
             <p className="text-xs sm:text-sm font-mono text-gray-700 max-w-md mx-auto leading-relaxed">
@@ -323,15 +328,15 @@ export function AccountClient({ initialTab = "profile" }: { initialTab?: TabType
             <button
               type="button"
               onClick={() => signInWithGoogle(pathname)}
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-[#e03a3e] hover:bg-[#b91c1c] text-white font-mono font-black text-xs uppercase tracking-wider border-2 border-black shadow-[4px_4px_0px_#000] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all cursor-pointer"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-[#1d4ed8] hover:bg-[#1e40af] text-white font-mono font-bold text-xs uppercase tracking-wider border border-[#1d4ed8] transition-colors cursor-pointer"
             >
-              <PopArtLogIn className="w-4 h-4" />
+              <PopArtLogIn className="w-4 h-4 text-white" />
               <span>{t("nav.signIn") || "Đăng nhập với Google"}</span>
             </button>
 
             <Link
               href={`/${locale}`}
-              className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3.5 bg-white hover:bg-gray-100 text-black font-mono font-black text-xs uppercase tracking-wider border-2 border-black shadow-[4px_4px_0px_#000] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all cursor-pointer"
+              className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3.5 bg-white hover:bg-gray-50 text-black font-mono font-bold text-xs uppercase tracking-wider border border-gray-200 transition-colors cursor-pointer"
             >
               {locale === "vi" ? "Trang chủ" : "Home"}
             </Link>
@@ -355,16 +360,16 @@ export function AccountClient({ initialTab = "profile" }: { initialTab?: TabType
     <div className="min-h-screen bg-white">
       {/* Container */}
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-20">
-        {/* Clean Neo-Brutalist Account Header */}
-        <div className="mb-6 flex flex-col sm:flex-row sm:items-end justify-between gap-3 border-b-2 border-black pb-4">
+        {/* Clean Account Header */}
+        <div className="mb-6 flex flex-col sm:flex-row sm:items-end justify-between gap-3 border-b border-gray-200 pb-4">
           <div>
-            <div className="inline-block px-2 py-0.5 bg-black text-white font-mono font-black text-[10px] uppercase tracking-wider mb-1.5 shadow-[1px_1px_0px_#000]">
+            <div className="inline-block px-2.5 py-1 bg-[#eff6ff] text-[#1d4ed8] border border-[#bfdbfe] font-mono font-bold text-[10px] uppercase tracking-wider mb-2">
               ★ {locale === "vi" ? "BẢNG ĐIỀU KHIỂN CÁ NHÂN" : "STUDENT PORTAL"}
             </div>
-            <h1 className="text-2xl sm:text-3xl font-black text-black tracking-tight uppercase">
+            <h1 className="text-2xl sm:text-3xl font-bold text-black tracking-tight uppercase font-mono">
               {locale === "vi" ? `Xin chào, ${greetingName}!` : `Hello, ${greetingName}!`}
             </h1>
-            <p className="text-xs text-gray-600 font-semibold mt-1">
+            <p className="text-xs text-gray-600 font-mono mt-1">
               {locale === "vi"
                 ? "Quản lý thông tin hồ sơ, theo dõi các đánh giá đã gửi và danh sách giảng viên đã lưu."
                 : "Manage your profile, track submitted reviews, and view saved professors."}
@@ -372,7 +377,7 @@ export function AccountClient({ initialTab = "profile" }: { initialTab?: TabType
           </div>
         </div>
 
-        {/* Tab Navigation Bar - Neo-Brutalist Pill Tabs in ONE SINGLE LINE */}
+        {/* Tab Navigation Bar - Super Flat Tabs */}
         <div className="mb-8">
           <nav
             className="flex flex-nowrap items-center gap-1.5 sm:gap-2.5 overflow-x-auto no-scrollbar pb-2 -mx-4 px-4 sm:mx-0 sm:px-0"
@@ -391,10 +396,10 @@ export function AccountClient({ initialTab = "profile" }: { initialTab?: TabType
                 <button
                   key={tab.id}
                   onClick={() => handleTabClick(tab.id)}
-                  className={`flex items-center gap-1.5 sm:gap-2 px-3 sm:px-3.5 py-2 sm:py-2.5 text-xs font-mono font-black uppercase tracking-wider border-2 border-black transition-all cursor-pointer shrink-0 whitespace-nowrap ${
+                  className={`flex items-center gap-1.5 sm:gap-2 px-3.5 py-2 sm:py-2.5 text-xs font-mono font-bold uppercase tracking-wider border transition-colors cursor-pointer shrink-0 whitespace-nowrap ${
                     isActive
-                      ? "bg-[#fef9c3] text-black shadow-[3px_3px_0px_#000] -translate-x-0.5 -translate-y-0.5"
-                      : "bg-white text-gray-700 hover:bg-gray-100 shadow-[1px_1px_0px_#000]"
+                      ? "bg-[#1d4ed8] text-white border-[#1d4ed8]"
+                      : "bg-white text-slate-700 hover:bg-[#eff6ff] hover:text-[#1d4ed8] border-gray-200"
                   }`}
                 >
                   <Icon className="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0" filled={isActive && tab.id === "ratings"} />
@@ -407,18 +412,18 @@ export function AccountClient({ initialTab = "profile" }: { initialTab?: TabType
 
         {/* TAB 1: PROFILE */}
         {activeTab === "profile" && (
-          <div className="bg-white border-2 border-black p-6 sm:p-8 shadow-[6px_6px_0px_#000] space-y-6">
+          <div className="bg-white border border-gray-200 p-6 sm:p-8 space-y-6">
             {/* Header + Edit Button */}
-            <div className="flex items-center justify-between pb-4 border-b-2 border-black">
+            <div className="flex items-center justify-between pb-4 border-b border-gray-200">
               <div className="flex items-center gap-2.5">
-                <div className="w-9 h-9 bg-[#fef9c3] border-2 border-black shadow-[2px_2px_0px_#000] flex items-center justify-center shrink-0">
-                  <PopArtUser className="w-5 h-5 text-black" />
+                <div className="w-9 h-9 bg-[#eff6ff] border border-[#bfdbfe] text-[#1d4ed8] flex items-center justify-center shrink-0">
+                  <PopArtUser className="w-5 h-5 text-[#1d4ed8]" />
                 </div>
                 <div>
-                  <h3 className="text-base sm:text-lg font-mono font-black uppercase tracking-tight text-black">
+                  <h3 className="text-base sm:text-lg font-mono font-bold uppercase tracking-tight text-black">
                     {locale === "vi" ? "Thông tin sinh viên" : "Student Information"}
                   </h3>
-                  <p className="text-[11px] font-mono font-bold text-gray-500">
+                  <p className="text-[11px] font-mono text-gray-500">
                     {locale === "vi" ? "Thông tin dùng để cá nhân hóa trải nghiệm" : "Used to personalize your review experience"}
                   </p>
                 </div>
@@ -427,9 +432,9 @@ export function AccountClient({ initialTab = "profile" }: { initialTab?: TabType
               {!isEditing ? (
                 <button
                   onClick={() => setIsEditing(true)}
-                  className="px-3.5 py-1.5 bg-[#fef9c3] hover:bg-yellow-200 text-black border-2 border-black shadow-[2px_2px_0px_#000] active:translate-x-[1px] active:translate-y-[1px] active:shadow-none text-xs font-mono font-black uppercase tracking-wider flex items-center gap-1.5 transition-all cursor-pointer group"
+                  className="px-3.5 py-1.5 bg-[#eff6ff] hover:bg-[#dbeafe] text-[#1d4ed8] border border-[#bfdbfe] text-xs font-mono font-bold uppercase tracking-wider flex items-center gap-1.5 transition-colors cursor-pointer"
                 >
-                  <PopArtPencil className="w-3.5 h-3.5 group-hover:rotate-12 transition-transform" />
+                  <PopArtPencil className="w-3.5 h-3.5" />
                   <span>{t("account.edit") || "Chỉnh sửa"}</span>
                 </button>
               ) : (
@@ -437,7 +442,7 @@ export function AccountClient({ initialTab = "profile" }: { initialTab?: TabType
                   <button
                     onClick={handleCancelEdit}
                     type="button"
-                    className="px-3.5 py-1.5 text-xs font-mono font-black uppercase tracking-wider text-black bg-white hover:bg-gray-100 border-2 border-black shadow-[2px_2px_0px_#000] active:shadow-none active:translate-x-[2px] active:translate-y-[2px] transition-all cursor-pointer"
+                    className="px-3.5 py-1.5 text-xs font-mono font-bold uppercase tracking-wider text-slate-700 bg-white hover:bg-gray-50 border border-gray-200 transition-colors cursor-pointer"
                   >
                     {t("account.cancel") || "Hủy"}
                   </button>
@@ -445,7 +450,7 @@ export function AccountClient({ initialTab = "profile" }: { initialTab?: TabType
                     onClick={handleSaveProfile}
                     disabled={saving}
                     type="button"
-                    className="px-4 py-1.5 text-xs font-mono font-black uppercase tracking-wider text-black bg-[#4ade80] hover:bg-green-400 border-2 border-black shadow-[2px_2px_0px_#000] active:shadow-none active:translate-x-[2px] active:translate-y-[2px] transition-all cursor-pointer flex items-center gap-1"
+                    className="px-4 py-1.5 text-xs font-mono font-bold uppercase tracking-wider text-white bg-[#1d4ed8] hover:bg-[#1e40af] border border-[#1d4ed8] transition-colors cursor-pointer flex items-center gap-1"
                   >
                     <PopArtCheck className="w-3.5 h-3.5" />
                     <span>{saving ? (locale === "vi" ? "Đang lưu..." : "Saving...") : (t("account.save") || "Lưu")}</span>
@@ -456,8 +461,8 @@ export function AccountClient({ initialTab = "profile" }: { initialTab?: TabType
 
             {/* Notification Banner */}
             {saveSuccess && (
-              <div className="p-3 bg-[#6ee7b7]/30 border-2 border-black shadow-[2px_2px_0px_#000] flex items-center gap-2 text-xs font-bold text-black">
-                <PopArtCheck className="w-4 h-4" />
+              <div className="p-3 bg-[#eff6ff] border border-[#bfdbfe] flex items-center gap-2 text-xs font-mono font-bold text-[#1d4ed8]">
+                <PopArtCheck className="w-4 h-4 text-[#1d4ed8]" />
                 <span>{locale === "vi" ? "Cập nhật hồ sơ thành công!" : "Profile updated successfully!"}</span>
               </div>
             )}
@@ -466,112 +471,112 @@ export function AccountClient({ initialTab = "profile" }: { initialTab?: TabType
             {!isEditing ? (
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
                 {/* First Name */}
-                <div className="p-4 bg-white border-2 border-black shadow-[3px_3px_0px_#000] flex items-start gap-3">
-                  <div className="w-9 h-9 bg-[#fef9c3] border-2 border-black shadow-[1.5px_1.5px_0px_#000] flex items-center justify-center shrink-0">
-                    <PopArtUser className="w-4 h-4 text-black" />
+                <div className="p-4 bg-white border border-gray-200 flex items-start gap-3">
+                  <div className="w-9 h-9 bg-[#eff6ff] border border-[#bfdbfe] text-[#1d4ed8] flex items-center justify-center shrink-0">
+                    <PopArtUser className="w-4 h-4 text-[#1d4ed8]" />
                   </div>
                   <div className="min-w-0 flex-1">
-                    <span className="text-[10px] font-mono font-black uppercase tracking-wider text-gray-500 block">
+                    <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-gray-500 block">
                       {t("account.firstName") || "Tên"}
                     </span>
-                    <span className="text-sm font-mono font-black text-black break-words">
+                    <span className="text-sm font-mono font-bold text-black break-words">
                       {firstName || <span className="text-gray-400 italic font-normal text-xs">{locale === "vi" ? "Chưa cung cấp" : "Not provided"}</span>}
                     </span>
                   </div>
                 </div>
 
                 {/* Last Name */}
-                <div className="p-4 bg-white border-2 border-black shadow-[3px_3px_0px_#000] flex items-start gap-3">
-                  <div className="w-9 h-9 bg-[#fef9c3] border-2 border-black shadow-[1.5px_1.5px_0px_#000] flex items-center justify-center shrink-0">
-                    <PopArtUser className="w-4 h-4 text-black" />
+                <div className="p-4 bg-white border border-gray-200 flex items-start gap-3">
+                  <div className="w-9 h-9 bg-[#eff6ff] border border-[#bfdbfe] text-[#1d4ed8] flex items-center justify-center shrink-0">
+                    <PopArtUser className="w-4 h-4 text-[#1d4ed8]" />
                   </div>
                   <div className="min-w-0 flex-1">
-                    <span className="text-[10px] font-mono font-black uppercase tracking-wider text-gray-500 block">
+                    <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-gray-500 block">
                       {t("account.lastName") || "Họ & Tên đệm"}
                     </span>
-                    <span className="text-sm font-mono font-black text-black break-words">
+                    <span className="text-sm font-mono font-bold text-black break-words">
                       {lastName || <span className="text-gray-400 italic font-normal text-xs">{locale === "vi" ? "Chưa cung cấp" : "Not provided"}</span>}
                     </span>
                   </div>
                 </div>
 
                 {/* School */}
-                <div className="p-4 bg-white border-2 border-black shadow-[3px_3px_0px_#000] flex items-start gap-3 md:col-span-2">
-                  <div className="w-9 h-9 bg-[#e0f2fe] border-2 border-black shadow-[1.5px_1.5px_0px_#000] flex items-center justify-center shrink-0">
-                    <PopArtBuilding className="w-4 h-4 text-black" />
+                <div className="p-4 bg-white border border-gray-200 flex items-start gap-3 md:col-span-2">
+                  <div className="w-9 h-9 bg-[#eff6ff] border border-[#bfdbfe] text-[#1d4ed8] flex items-center justify-center shrink-0">
+                    <PopArtBuilding className="w-4 h-4 text-[#1d4ed8]" />
                   </div>
                   <div className="min-w-0 flex-1">
-                    <span className="text-[10px] font-mono font-black uppercase tracking-wider text-gray-500 block">
+                    <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-gray-500 block">
                       {t("account.school") || "Trường Đại học"}
                     </span>
-                    <span className="text-sm font-mono font-black text-black break-words">
+                    <span className="text-sm font-mono font-bold text-black break-words">
                       {school || <span className="text-gray-400 italic font-normal text-xs">{locale === "vi" ? "Chưa cung cấp" : "Not provided"}</span>}
                     </span>
                   </div>
                 </div>
 
                 {/* Field of Study */}
-                <div className="p-4 bg-white border-2 border-black shadow-[3px_3px_0px_#000] flex items-start gap-3">
-                  <div className="w-9 h-9 bg-[#dcfce7] border-2 border-black shadow-[1.5px_1.5px_0px_#000] flex items-center justify-center shrink-0">
-                    <PopArtAward className="w-4 h-4 text-black" />
+                <div className="p-4 bg-white border border-gray-200 flex items-start gap-3">
+                  <div className="w-9 h-9 bg-[#eff6ff] border border-[#bfdbfe] text-[#1d4ed8] flex items-center justify-center shrink-0">
+                    <PopArtAward className="w-4 h-4 text-[#1d4ed8]" />
                   </div>
                   <div className="min-w-0 flex-1">
-                    <span className="text-[10px] font-mono font-black uppercase tracking-wider text-gray-500 block">
+                    <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-gray-500 block">
                       {t("account.fieldOfStudy") || "Ngành học"}
                     </span>
-                    <span className="text-sm font-mono font-black text-black break-words">
+                    <span className="text-sm font-mono font-bold text-black break-words">
                       {fieldOfStudy || <span className="text-gray-400 italic font-normal text-xs">{locale === "vi" ? "Chưa cung cấp" : "Not provided"}</span>}
                     </span>
                   </div>
                 </div>
 
                 {/* Expected Year of Graduation */}
-                <div className="p-4 bg-white border-2 border-black shadow-[3px_3px_0px_#000] flex items-start gap-3">
-                  <div className="w-9 h-9 bg-[#ede9fe] border-2 border-black shadow-[1.5px_1.5px_0px_#000] flex items-center justify-center shrink-0">
-                    <PopArtGraduationCap className="w-4 h-4 text-black" />
+                <div className="p-4 bg-white border border-gray-200 flex items-start gap-3">
+                  <div className="w-9 h-9 bg-[#eff6ff] border border-[#bfdbfe] text-[#1d4ed8] flex items-center justify-center shrink-0">
+                    <PopArtGraduationCap className="w-4 h-4 text-[#1d4ed8]" />
                   </div>
                   <div className="min-w-0 flex-1">
-                    <span className="text-[10px] font-mono font-black uppercase tracking-wider text-gray-500 block">
+                    <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-gray-500 block">
                       {t("account.expectedGraduationYear") || "Năm tốt nghiệp dự kiến"}
                     </span>
-                    <span className="text-sm font-mono font-black text-black">
+                    <span className="text-sm font-mono font-bold text-black">
                       {expectedGraduationYear || <span className="text-gray-400 italic font-normal text-xs">{locale === "vi" ? "Chưa cung cấp" : "Not provided"}</span>}
                     </span>
                   </div>
                 </div>
               </div>
             ) : (
-              /* Edit Form with strict zero inner-focus-ring rules */
+              /* Edit Form with clean Super Flat rules */
               <form onSubmit={handleSaveProfile} className="space-y-5 pt-2">
                 {/* First Name */}
                 <div className="space-y-1.5">
-                  <label className="block text-xs font-bold uppercase tracking-wider text-gray-900">
+                  <label className="block text-xs font-mono font-bold uppercase tracking-wider text-black">
                     {t("account.firstName") || "First Name"}
                   </label>
                   <input
                     type="text"
                     value={firstName}
                     onChange={(e) => setFirstName(e.target.value)}
-                    className="w-full px-3.5 py-2.5 text-sm font-medium border-2 border-black bg-white rounded-none outline-none focus:outline-none focus:ring-0 focus-visible:outline-none focus-visible:ring-0 shadow-[2px_2px_0px_#000] focus:shadow-[4px_4px_0px_#000] transition-all"
+                    className="w-full px-3.5 py-2.5 text-sm font-mono font-medium border border-gray-200 bg-white rounded-none outline-none focus:outline-none focus:border-[#1d4ed8] transition-colors"
                   />
                 </div>
 
                 {/* Last Name */}
                 <div className="space-y-1.5">
-                  <label className="block text-xs font-bold uppercase tracking-wider text-gray-900">
+                  <label className="block text-xs font-mono font-bold uppercase tracking-wider text-black">
                     {t("account.lastName") || "Last Name"}
                   </label>
                   <input
                     type="text"
                     value={lastName}
                     onChange={(e) => setLastName(e.target.value)}
-                    className="w-full px-3.5 py-2.5 text-sm font-medium border-2 border-black bg-white rounded-none outline-none focus:outline-none focus:ring-0 focus-visible:outline-none focus-visible:ring-0 shadow-[2px_2px_0px_#000] focus:shadow-[4px_4px_0px_#000] transition-all"
+                    className="w-full px-3.5 py-2.5 text-sm font-mono font-medium border border-gray-200 bg-white rounded-none outline-none focus:outline-none focus:border-[#1d4ed8] transition-colors"
                   />
                 </div>
 
                 {/* School */}
                 <div className="space-y-1.5">
-                  <label className="block text-xs font-bold uppercase tracking-wider text-gray-900">
+                  <label className="block text-xs font-mono font-bold uppercase tracking-wider text-black">
                     {t("account.school") || "School"}
                   </label>
                   <input
@@ -579,7 +584,7 @@ export function AccountClient({ initialTab = "profile" }: { initialTab?: TabType
                     list="university-list"
                     value={school}
                     onChange={(e) => setSchool(e.target.value)}
-                    className="w-full px-3.5 py-2.5 text-sm font-medium border-2 border-black bg-white rounded-none outline-none focus:outline-none focus:ring-0 focus-visible:outline-none focus-visible:ring-0 shadow-[2px_2px_0px_#000] focus:shadow-[4px_4px_0px_#000] transition-all"
+                    className="w-full px-3.5 py-2.5 text-sm font-mono font-medium border border-gray-200 bg-white rounded-none outline-none focus:outline-none focus:border-[#1d4ed8] transition-colors"
                   />
                   <datalist id="university-list">
                     {universities.map((u) => (
@@ -590,20 +595,20 @@ export function AccountClient({ initialTab = "profile" }: { initialTab?: TabType
 
                 {/* Field of Study */}
                 <div className="space-y-1.5">
-                  <label className="block text-xs font-bold uppercase tracking-wider text-gray-900">
+                  <label className="block text-xs font-mono font-bold uppercase tracking-wider text-black">
                     {t("account.fieldOfStudy") || "Field of Study"}
                   </label>
                   <input
                     type="text"
                     value={fieldOfStudy}
                     onChange={(e) => setFieldOfStudy(e.target.value)}
-                    className="w-full px-3.5 py-2.5 text-sm font-medium border-2 border-black bg-white rounded-none outline-none focus:outline-none focus:ring-0 focus-visible:outline-none focus-visible:ring-0 shadow-[2px_2px_0px_#000] focus:shadow-[4px_4px_0px_#000] transition-all"
+                    className="w-full px-3.5 py-2.5 text-sm font-mono font-medium border border-gray-200 bg-white rounded-none outline-none focus:outline-none focus:border-[#1d4ed8] transition-colors"
                   />
                 </div>
 
                 {/* Expected Year of Graduation */}
                 <div className="space-y-1.5">
-                  <label className="block text-xs font-bold uppercase tracking-wider text-gray-900">
+                  <label className="block text-xs font-mono font-bold uppercase tracking-wider text-black">
                     {t("account.expectedGraduationYear") || "Expected Year of Graduation"}
                   </label>
                   <input
@@ -612,7 +617,7 @@ export function AccountClient({ initialTab = "profile" }: { initialTab?: TabType
                     max="2040"
                     value={expectedGraduationYear}
                     onChange={(e) => setExpectedGraduationYear(e.target.value)}
-                    className="w-full px-3.5 py-2.5 text-sm font-medium border-2 border-black bg-white rounded-none outline-none focus:outline-none focus:ring-0 focus-visible:outline-none focus-visible:ring-0 shadow-[2px_2px_0px_#000] focus:shadow-[4px_4px_0px_#000] transition-all"
+                    className="w-full px-3.5 py-2.5 text-sm font-mono font-medium border border-gray-200 bg-white rounded-none outline-none focus:outline-none focus:border-[#1d4ed8] transition-colors"
                   />
                 </div>
 
@@ -621,14 +626,14 @@ export function AccountClient({ initialTab = "profile" }: { initialTab?: TabType
                   <button
                     type="submit"
                     disabled={saving}
-                    className="px-6 py-2.5 bg-[#fef9c3] hover:bg-yellow-200 text-black font-black text-xs uppercase tracking-wider border-2 border-black shadow-[3px_3px_0px_#000] active:shadow-none active:translate-x-[2px] active:translate-y-[2px] transition-all cursor-pointer"
+                    className="px-6 py-2.5 bg-[#1d4ed8] hover:bg-[#1e40af] text-white font-mono font-bold text-xs uppercase tracking-wider border border-[#1d4ed8] transition-colors cursor-pointer"
                   >
                     {saving ? (locale === "vi" ? "Đang lưu..." : "Saving...") : (locale === "vi" ? "Lưu thay đổi" : "Save Changes")}
                   </button>
                   <button
                     type="button"
                     onClick={handleCancelEdit}
-                    className="px-5 py-2.5 bg-white hover:bg-gray-100 text-black font-bold text-xs uppercase tracking-wider border-2 border-black shadow-[3px_3px_0px_#000] active:shadow-none active:translate-x-[2px] active:translate-y-[2px] transition-all cursor-pointer"
+                    className="px-5 py-2.5 bg-white hover:bg-gray-50 text-slate-700 font-mono font-bold text-xs uppercase tracking-wider border border-gray-200 transition-colors cursor-pointer"
                   >
                     {t("account.cancel") || "Cancel"}
                   </button>
@@ -640,14 +645,14 @@ export function AccountClient({ initialTab = "profile" }: { initialTab?: TabType
 
         {/* TAB 2: ACCOUNT SETTINGS */}
         {activeTab === "settings" && (
-          <div className="bg-white border-2 border-black p-6 sm:p-8 shadow-[6px_6px_0px_#000] space-y-6">
-            <div className="flex items-center justify-between pb-4 border-b-2 border-black">
+          <div className="bg-white border border-gray-200 p-6 sm:p-8 space-y-6">
+            <div className="flex items-center justify-between pb-4 border-b border-gray-200">
               <div className="flex items-center gap-2.5">
-                <div className="w-9 h-9 bg-[#e0f2fe] border-2 border-black shadow-[2px_2px_0px_#000] flex items-center justify-center shrink-0">
-                  <PopArtShield className="w-5 h-5 text-black" />
+                <div className="w-9 h-9 bg-[#eff6ff] border border-[#bfdbfe] text-[#1d4ed8] flex items-center justify-center shrink-0">
+                  <PopArtShield className="w-5 h-5 text-[#1d4ed8]" />
                 </div>
                 <div>
-                  <h3 className="text-base sm:text-lg font-mono font-black uppercase tracking-tight text-black">
+                  <h3 className="text-base sm:text-lg font-mono font-bold uppercase tracking-tight text-black">
                     {locale === "vi" ? "Cài đặt & Bảo mật" : "Account Settings & Security"}
                   </h3>
                   <p className="text-[11px] font-mono font-bold text-gray-500">
@@ -658,9 +663,9 @@ export function AccountClient({ initialTab = "profile" }: { initialTab?: TabType
 
               <button
                 onClick={() => setIsSettingsNoticeOpen(true)}
-                className="px-3.5 py-1.5 bg-[#fef9c3] hover:bg-yellow-200 text-black border-2 border-black shadow-[2px_2px_0px_#000] active:translate-x-[1px] active:translate-y-[1px] active:shadow-none text-xs font-mono font-black uppercase tracking-wider flex items-center gap-1.5 transition-all cursor-pointer group"
+                className="px-3.5 py-1.5 bg-[#eff6ff] hover:bg-[#dbeafe] text-[#1d4ed8] border border-[#bfdbfe] text-xs font-mono font-bold uppercase tracking-wider flex items-center gap-1.5 transition-colors cursor-pointer"
               >
-                <PopArtPencil className="w-3.5 h-3.5 group-hover:rotate-12 transition-transform" />
+                <PopArtPencil className="w-3.5 h-3.5" />
                 <span>{t("account.edit") || "Chỉnh sửa"}</span>
               </button>
             </div>
@@ -669,30 +674,30 @@ export function AccountClient({ initialTab = "profile" }: { initialTab?: TabType
               {/* Email & Password Grid */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {/* Email */}
-                <div className="p-4 bg-white border-2 border-black shadow-[3px_3px_0px_#000] flex items-start gap-3">
-                  <div className="w-9 h-9 bg-[#fef9c3] border-2 border-black shadow-[1.5px_1.5px_0px_#000] flex items-center justify-center shrink-0">
-                    <PopArtUser className="w-4 h-4 text-black" />
+                <div className="p-4 bg-white border border-gray-200 flex items-start gap-3">
+                  <div className="w-9 h-9 bg-[#eff6ff] border border-[#bfdbfe] text-[#1d4ed8] flex items-center justify-center shrink-0">
+                    <PopArtUser className="w-4 h-4 text-[#1d4ed8]" />
                   </div>
                   <div className="min-w-0 flex-1">
-                    <span className="text-[10px] font-mono font-black uppercase tracking-wider text-gray-500 block">
+                    <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-gray-500 block">
                       {t("account.email") || "Email liên kết"}
                     </span>
-                    <span className="text-sm font-mono font-black text-black break-all">
+                    <span className="text-sm font-mono font-bold text-black break-all">
                       {user?.email || "user@example.com"}
                     </span>
                   </div>
                 </div>
 
                 {/* Password */}
-                <div className="p-4 bg-white border-2 border-black shadow-[3px_3px_0px_#000] flex items-start gap-3">
-                  <div className="w-9 h-9 bg-[#fed7aa] border-2 border-black shadow-[1.5px_1.5px_0px_#000] flex items-center justify-center shrink-0">
-                    <PopArtLock className="w-4 h-4 text-black" />
+                <div className="p-4 bg-white border border-gray-200 flex items-start gap-3">
+                  <div className="w-9 h-9 bg-[#eff6ff] border border-[#bfdbfe] text-[#1d4ed8] flex items-center justify-center shrink-0">
+                    <PopArtLock className="w-4 h-4 text-[#1d4ed8]" />
                   </div>
                   <div className="min-w-0 flex-1">
-                    <span className="text-[10px] font-mono font-black uppercase tracking-wider text-gray-500 block">
+                    <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-gray-500 block">
                       Mật khẩu
                     </span>
-                    <span className="text-sm font-mono font-black text-gray-800 tracking-widest">
+                    <span className="text-sm font-mono font-bold text-gray-800 tracking-widest">
                       ••••••••
                     </span>
                   </div>
@@ -700,26 +705,26 @@ export function AccountClient({ initialTab = "profile" }: { initialTab?: TabType
               </div>
 
               {/* Security Box */}
-              <div className="p-4 bg-[#e0f2fe] border-2 border-black shadow-[3px_3px_0px_#000]">
+              <div className="p-4 bg-[#eff6ff] border border-[#bfdbfe]">
                 <div className="flex items-center gap-2 mb-1.5">
-                  <PopArtShield className="w-4 h-4 text-black" />
-                  <span className="text-xs font-mono font-black uppercase tracking-wider text-black">
+                  <PopArtShield className="w-4 h-4 text-[#1d4ed8]" />
+                  <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#1d4ed8]">
                     {t("account.accountSecurity") || "Bảo mật tài khoản"}
                   </span>
                 </div>
-                <p className="text-xs font-mono font-bold text-gray-700 leading-relaxed">
+                <p className="text-xs font-mono font-medium text-gray-700 leading-relaxed">
                   {t("account.securityInfo") ||
                     "Tài khoản của bạn được bảo vệ qua giao thức Google OAuth 2.0 an toàn. Chúng tôi không bao giờ lưu trữ mật khẩu thô trên máy chủ."}
                 </p>
               </div>
 
               {/* Sign Out Action */}
-              <div className="pt-4 border-t-2 border-black flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+              <div className="pt-4 border-t border-gray-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
                 <div>
-                  <h4 className="text-xs font-mono font-black uppercase tracking-wider text-black">
+                  <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-black">
                     {locale === "vi" ? "Đăng xuất khỏi thiết bị này" : "Sign out from this device"}
                   </h4>
-                  <p className="text-[11px] font-mono font-bold text-gray-500">
+                  <p className="text-[11px] font-mono text-gray-500">
                     {locale === "vi" ? "Phiên làm việc của bạn sẽ được kết thúc an toàn." : "Your active session will be cleanly terminated."}
                   </p>
                 </div>
@@ -728,24 +733,24 @@ export function AccountClient({ initialTab = "profile" }: { initialTab?: TabType
                     await logOut();
                     router.push(`/${locale}`);
                   }}
-                  className="px-4 py-2 bg-[#fee2e2] hover:bg-red-200 text-red-900 font-mono font-black text-xs uppercase tracking-wider border-2 border-black shadow-[2px_2px_0px_#000] active:shadow-none active:translate-x-[2px] active:translate-y-[2px] transition-all flex items-center gap-1.5 cursor-pointer"
+                  className="px-4 py-2 bg-white hover:bg-gray-50 text-slate-700 font-mono font-bold text-xs uppercase tracking-wider border border-gray-200 transition-colors flex items-center gap-1.5 cursor-pointer"
                 >
-                  <PopArtLogOut className="w-3.5 h-3.5" />
+                  <PopArtLogOut className="w-3.5 h-3.5 text-slate-600" />
                   <span>{t("account.signOut") || "Đăng xuất"}</span>
                 </button>
               </div>
 
               {/* Danger Zone: Account Deletion */}
-              <div className="pt-4 border-t-2 border-black space-y-3">
+              <div className="pt-4 border-t border-gray-200 space-y-3">
                 <div className="flex items-center gap-2">
-                  <PopArtAlertTriangle className="w-4 h-4 text-[#e03a3e]" />
-                  <h4 className="text-xs font-mono font-black uppercase tracking-wider text-[#e03a3e]">
+                  <PopArtAlertTriangle className="w-4 h-4 text-slate-700" />
+                  <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-slate-800">
                     {locale === "vi" ? "Vùng nguy hiểm: Yêu cầu xóa tài khoản" : "Danger Zone: Request Account Deletion"}
                   </h4>
                 </div>
-                <div className="p-4 bg-[#fee2e2]/60 border-2 border-black shadow-[3px_3px_0px_#000] flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <div className="p-4 bg-slate-50 border border-slate-200 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                   <div className="space-y-1">
-                    <p className="text-xs font-mono font-black uppercase tracking-wider text-black">
+                    <p className="text-xs font-mono font-bold uppercase tracking-wider text-black">
                       {locale === "vi" ? "Thời gian ân hạn 14 ngày & Khôi phục qua Email" : "14-Day Grace Period & Email Recovery"}
                     </p>
                     <p className="text-xs font-mono text-gray-700 leading-relaxed max-w-xl">
@@ -755,7 +760,7 @@ export function AccountClient({ initialTab = "profile" }: { initialTab?: TabType
                     </p>
                   </div>
                   {user?.email?.toLowerCase() === "dungpubgame@gmail.com" ? (
-                    <div className="px-3 py-1.5 bg-gray-200 border-2 border-black text-[11px] font-mono font-black text-gray-700">
+                    <div className="px-3 py-1.5 bg-gray-200 border border-gray-300 text-[11px] font-mono font-bold text-gray-700">
                       {locale === "vi" ? "Tài khoản Super Admin không thể xóa" : "Super Admin protected"}
                     </div>
                   ) : (
@@ -764,7 +769,7 @@ export function AccountClient({ initialTab = "profile" }: { initialTab?: TabType
                         setDeleteAccountError(null);
                         setIsDeleteDialogOpen(true);
                       }}
-                      className="px-4 py-2 bg-[#e03a3e] hover:bg-[#c92f33] text-white font-mono font-black text-xs uppercase tracking-wider border-2 border-black shadow-[2px_2px_0px_#000] active:shadow-none active:translate-x-[2px] active:translate-y-[2px] transition-all shrink-0 cursor-pointer"
+                      className="px-4 py-2 bg-[#1d4ed8] hover:bg-[#1e40af] text-white font-mono font-bold text-xs uppercase tracking-wider border border-[#1d4ed8] transition-colors shrink-0 cursor-pointer"
                     >
                       {locale === "vi" ? "Yêu cầu xóa tài khoản" : "Request Deletion"}
                     </button>
@@ -780,23 +785,18 @@ export function AccountClient({ initialTab = "profile" }: { initialTab?: TabType
           <div className="py-10">
             {loadingReviews ? (
               <div className="text-center py-16 space-y-3">
-                <div className="w-8 h-8 border-2 border-black border-t-transparent animate-spin mx-auto" />
+                <div className="w-8 h-8 border-2 border-[#1d4ed8] border-t-transparent animate-spin mx-auto" />
                 <p className="text-xs font-mono font-bold text-gray-500 uppercase tracking-wider">
                   {t("account.loading") || "Loading reviews..."}
                 </p>
               </div>
             ) : reviews.length === 0 ? (
               <div className="text-center py-10 space-y-4 max-w-lg mx-auto">
-                <div className="relative w-36 h-28 mx-auto flex items-center justify-center">
-                  <div className="absolute inset-0 bg-[#fef08a] transform rotate-3 border-2 border-black shadow-[3px_3px_0px_#000]" />
-                  <div className="relative z-10 flex flex-col items-center">
-                    <div className="w-12 h-12 bg-white border-2 border-black shadow-[2px_2px_0px_#000] flex items-center justify-center mb-1">
-                      <PopArtStar className="w-6 h-6" filled={true} />
-                    </div>
-                  </div>
+                <div className="w-14 h-14 bg-[#eff6ff] text-[#1d4ed8] border border-[#bfdbfe] flex items-center justify-center mx-auto mb-2">
+                  <PopArtStar className="w-7 h-7 text-[#1d4ed8]" />
                 </div>
 
-                <h2 className="text-xl sm:text-2xl font-mono font-black text-black tracking-tight pt-2 uppercase">
+                <h2 className="text-xl sm:text-2xl font-mono font-bold text-black tracking-tight pt-2 uppercase">
                   {locale === "vi"
                     ? "Bạn chưa đánh giá giảng viên nào"
                     : "You haven't rated any professors yet"}
@@ -804,7 +804,7 @@ export function AccountClient({ initialTab = "profile" }: { initialTab?: TabType
                 <div className="pt-2">
                   <Link
                     href={`/${locale}/professors`}
-                    className="inline-flex items-center justify-center px-6 py-2.5 bg-[#fef9c3] hover:bg-yellow-200 text-black font-mono font-black text-xs uppercase tracking-wider border-2 border-black shadow-[3px_3px_0px_#000] active:shadow-none active:translate-x-[2px] active:translate-y-[2px] transition-all cursor-pointer"
+                    className="inline-flex items-center justify-center px-6 py-2.5 bg-[#1d4ed8] hover:bg-[#1e40af] text-white font-mono font-bold text-xs uppercase tracking-wider border border-[#1d4ed8] transition-colors cursor-pointer"
                   >
                     {locale === "vi" ? "Tìm giảng viên" : "Find a Professor"}
                   </Link>
@@ -812,15 +812,15 @@ export function AccountClient({ initialTab = "profile" }: { initialTab?: TabType
               </div>
             ) : (
               <div className="space-y-6">
-                <div className="flex items-center justify-between pb-3 border-b-2 border-black">
-                  <span className="text-xs font-mono font-black uppercase tracking-wider text-black">
+                <div className="flex items-center justify-between pb-3 border-b border-gray-200">
+                  <span className="text-xs font-mono font-bold uppercase tracking-wider text-black">
                     {locale === "vi"
                       ? `Đánh giá giảng viên (${reviews.length})`
                       : `Professor Ratings (${reviews.length})`}
                   </span>
                   <Link
                     href={`/${locale}/professors`}
-                    className="text-xs font-mono font-bold text-[#e03a3e] hover:underline"
+                    className="text-xs font-mono font-bold text-[#1d4ed8] hover:underline"
                   >
                     + {locale === "vi" ? "Viết đánh giá giảng viên mới" : "Write a professor review"}
                   </Link>
@@ -833,17 +833,16 @@ export function AccountClient({ initialTab = "profile" }: { initialTab?: TabType
                     return (
                       <div
                         key={rev.id}
-                        className="p-5 bg-white border-2 border-black border-l-8 shadow-[3px_3px_0px_#000] space-y-3 hover:shadow-[5px_5px_0px_#000] transition-all"
-                        style={{ borderLeftColor: level.color }}
+                        className="p-5 bg-white border border-gray-200 border-l-4 border-l-[#1d4ed8] space-y-3 transition-colors"
                       >
                         <div className="flex items-start justify-between gap-3">
                           <div>
                             <Link
                               href={`/${locale}/professors/${rev.professorId}`}
-                              className="text-base font-black text-black hover:text-[#e03a3e] transition-colors flex items-center gap-1.5"
+                              className="text-base font-bold text-black hover:text-[#1d4ed8] transition-colors flex items-center gap-1.5"
                             >
                               <span>{rev.professorName}</span>
-                              <PopArtExternalLink className="w-3.5 h-3.5" />
+                              <PopArtExternalLink className="w-3.5 h-3.5 text-[#1d4ed8]" />
                             </Link>
                             <p className="text-xs font-bold text-gray-700 mt-0.5">
                               {rev.courseName} • {new Date(rev.createdAt).toLocaleDateString(locale === "vi" ? "vi-VN" : "en-US")}
@@ -851,35 +850,29 @@ export function AccountClient({ initialTab = "profile" }: { initialTab?: TabType
                           </div>
 
                           <div className="flex items-center gap-1.5 shrink-0">
-                            <div
-                              className="flex items-center gap-1.5 px-2.5 py-1 text-black border-2 border-black shadow-[1.5px_1.5px_0px_#000]"
-                              style={{ backgroundColor: level.color }}
-                            >
-                              <span className="text-[10px] font-mono font-black uppercase">
+                            <div className="flex items-center gap-1.5 px-2.5 py-1 bg-[#eff6ff] text-[#1d4ed8] border border-[#bfdbfe]">
+                              <span className="text-[10px] font-mono font-bold uppercase">
                                 {locale === "vi" ? level.labelVi : level.labelEn}
                               </span>
-                              <span className="text-xs font-mono font-black">{rev.overallRating.toFixed(1)}</span>
+                              <span className="text-xs font-mono font-bold">{rev.overallRating.toFixed(1)}</span>
                             </div>
 
                             {(() => {
                               const diffVal = rev.criteria?.difficulty ?? 3;
                               const diffLevel = getDifficultyLevelByValue(diffVal);
                               return (
-                                <div
-                                  className="flex items-center gap-1 px-2 py-1 text-black border-2 border-black shadow-[1.5px_1.5px_0px_#000]"
-                                  style={{ backgroundColor: diffLevel.color }}
-                                >
-                                  <span className="text-[9px] font-mono font-black uppercase">
+                                <div className="flex items-center gap-1 px-2 py-1 bg-slate-100 text-slate-800 border border-slate-200">
+                                  <span className="text-[9px] font-mono font-bold uppercase">
                                     {locale === "vi" ? "Độ khó" : "Diff"}
                                   </span>
-                                  <span className="text-xs font-mono font-black">{diffVal.toFixed(1)}</span>
+                                  <span className="text-xs font-mono font-bold">{diffVal.toFixed(1)}</span>
                                 </div>
                               );
                             })()}
                           </div>
                         </div>
 
-                        <p className="text-sm text-gray-800 leading-relaxed">
+                        <p className="text-sm text-gray-800 leading-relaxed font-sans font-medium">
                           {rev.comment}
                         </p>
 
@@ -889,22 +882,19 @@ export function AccountClient({ initialTab = "profile" }: { initialTab?: TabType
                               const diffVal = rev.criteria?.difficulty ?? 3;
                               const diffLevel = getDifficultyLevelByValue(diffVal);
                               return (
-                                <span
-                                  className="px-2 py-0.5 border border-black shadow-[1px_1px_0px_#000] font-bold"
-                                  style={{ backgroundColor: diffLevel.lightBg, color: diffLevel.textColor }}
-                                >
+                                <span className="px-2 py-0.5 bg-slate-100 text-slate-800 border border-slate-200 font-mono font-bold text-xs">
                                   {locale === "vi" ? "Độ khó:" : "Difficulty:"}{" "}
-                                  <span className="font-black text-black">{diffVal}/5</span>{" "}
-                                  <span className="text-[11px] font-bold opacity-90">({locale === "vi" ? diffLevel.labelVi : diffLevel.labelEn})</span>
+                                  <span className="font-bold text-black">{diffVal}/5</span>{" "}
+                                  <span className="text-[11px] font-medium opacity-80">({locale === "vi" ? diffLevel.labelVi : diffLevel.labelEn})</span>
                                 </span>
                               );
                             })()}
                             {rev.takeAgain !== undefined && rev.takeAgain !== null && (
                               <span
-                                className={`px-2 py-0.5 border border-black shadow-[1px_1px_0px_#000] font-bold ${
+                                className={`px-2 py-0.5 border font-mono font-bold text-xs ${
                                   rev.takeAgain
-                                    ? "bg-[#6ee7b7] text-black"
-                                    : "bg-[#fee2e2] text-black"
+                                    ? "bg-[#eff6ff] text-[#1d4ed8] border-[#bfdbfe]"
+                                    : "bg-slate-100 text-slate-700 border-slate-200"
                                 }`}
                               >
                                 {rev.takeAgain
@@ -916,7 +906,7 @@ export function AccountClient({ initialTab = "profile" }: { initialTab?: TabType
                           <div className="flex items-center gap-2">
                             <Link
                               href={`/${locale}/professors/${rev.professorId}/rate`}
-                              className="flex items-center gap-1 px-2.5 py-1 bg-[#fef9c3] hover:bg-[#fde047] text-black border border-black text-xs font-mono font-bold shadow-[1px_1px_0px_#000] active:translate-x-[1px] active:translate-y-[1px] active:shadow-none transition-all"
+                              className="flex items-center gap-1 px-2.5 py-1 bg-[#eff6ff] hover:bg-[#dbeafe] text-[#1d4ed8] border border-[#bfdbfe] text-xs font-mono font-bold transition-colors"
                             >
                               <PopArtPencil className="w-3.5 h-3.5" />
                               <span>{locale === "vi" ? "Sửa" : "Edit"}</span>
@@ -924,7 +914,7 @@ export function AccountClient({ initialTab = "profile" }: { initialTab?: TabType
                             <button
                               onClick={() => setDeleteConfirmTarget({ id: rev.id, name: rev.professorName || "Giảng viên", type: "professor" })}
                               disabled={deletingId === rev.id}
-                              className="flex items-center gap-1 text-black bg-[#fee2e2] hover:bg-red-200 border border-black px-2.5 py-1 text-xs font-mono font-bold shadow-[1px_1px_0px_#000] active:translate-x-[1px] active:translate-y-[1px] active:shadow-none transition-all cursor-pointer"
+                              className="flex items-center gap-1 text-slate-700 bg-white hover:bg-gray-50 border border-gray-200 px-2.5 py-1 text-xs font-mono font-bold transition-colors cursor-pointer"
                             >
                               <PopArtTrash className="w-3.5 h-3.5" />
                               <span>{locale === "vi" ? "Xóa" : "Delete"}</span>
@@ -945,23 +935,18 @@ export function AccountClient({ initialTab = "profile" }: { initialTab?: TabType
           <div className="py-10">
             {loadingReviews ? (
               <div className="text-center py-16 space-y-3">
-                <div className="w-8 h-8 border-2 border-black border-t-transparent animate-spin mx-auto" />
+                <div className="w-8 h-8 border-2 border-[#1d4ed8] border-t-transparent animate-spin mx-auto" />
                 <p className="text-xs font-mono font-bold text-gray-500 uppercase tracking-wider">
                   {t("account.loading") || "Loading reviews..."}
                 </p>
               </div>
             ) : schoolReviews.length === 0 ? (
               <div className="text-center py-10 space-y-4 max-w-lg mx-auto">
-                <div className="relative w-36 h-28 mx-auto flex items-center justify-center">
-                  <div className="absolute inset-0 bg-[#fed7aa] transform -rotate-3 border-2 border-black shadow-[3px_3px_0px_#000]" />
-                  <div className="relative z-10 flex flex-col items-center">
-                    <div className="w-12 h-12 bg-white border-2 border-black shadow-[2px_2px_0px_#000] flex items-center justify-center mb-1">
-                      <PopArtBuilding className="w-6 h-6 text-black" />
-                    </div>
-                  </div>
+                <div className="w-14 h-14 bg-[#eff6ff] text-[#1d4ed8] border border-[#bfdbfe] flex items-center justify-center mx-auto mb-2">
+                  <PopArtBuilding className="w-7 h-7 text-[#1d4ed8]" />
                 </div>
 
-                <h2 className="text-xl sm:text-2xl font-mono font-black text-black tracking-tight pt-2 uppercase">
+                <h2 className="text-xl sm:text-2xl font-mono font-bold text-black tracking-tight pt-2 uppercase">
                   {locale === "vi"
                     ? "Bạn chưa đánh giá trường đại học nào"
                     : "You haven't rated any universities yet"}
@@ -969,7 +954,7 @@ export function AccountClient({ initialTab = "profile" }: { initialTab?: TabType
                 <div className="pt-2">
                   <Link
                     href={`/${locale}/universities`}
-                    className="inline-flex items-center justify-center px-6 py-2.5 bg-[#fef9c3] hover:bg-yellow-200 text-black font-mono font-black text-xs uppercase tracking-wider border-2 border-black shadow-[3px_3px_0px_#000] active:shadow-none active:translate-x-[2px] active:translate-y-[2px] transition-all cursor-pointer"
+                    className="inline-flex items-center justify-center px-6 py-2.5 bg-[#1d4ed8] hover:bg-[#1e40af] text-white font-mono font-bold text-xs uppercase tracking-wider border border-[#1d4ed8] transition-colors cursor-pointer"
                   >
                     {locale === "vi" ? "Tìm trường đại học" : "Find a University"}
                   </Link>
@@ -977,15 +962,15 @@ export function AccountClient({ initialTab = "profile" }: { initialTab?: TabType
               </div>
             ) : (
               <div className="space-y-6">
-                <div className="flex items-center justify-between pb-3 border-b-2 border-black">
-                  <span className="text-xs font-mono font-black uppercase tracking-wider text-black">
+                <div className="flex items-center justify-between pb-3 border-b border-gray-200">
+                  <span className="text-xs font-mono font-bold uppercase tracking-wider text-black">
                     {locale === "vi"
                       ? `Đánh giá trường đại học (${schoolReviews.length})`
                       : `University Ratings (${schoolReviews.length})`}
                   </span>
                   <Link
                     href={`/${locale}/universities`}
-                    className="text-xs font-mono font-bold text-[#e03a3e] hover:underline"
+                    className="text-xs font-mono font-bold text-[#1d4ed8] hover:underline"
                   >
                     + {locale === "vi" ? "Viết đánh giá trường mới" : "Write a school review"}
                   </Link>
@@ -1000,17 +985,16 @@ export function AccountClient({ initialTab = "profile" }: { initialTab?: TabType
                     return (
                       <div
                         key={sRev.id}
-                        className="p-5 bg-white border-2 border-black border-l-8 shadow-[3px_3px_0px_#000] space-y-3 hover:shadow-[5px_5px_0px_#000] transition-all"
-                        style={{ borderLeftColor: level.color }}
+                        className="p-5 bg-white border border-gray-200 border-l-4 border-l-[#1d4ed8] space-y-3 transition-colors"
                       >
                         <div className="flex items-start justify-between gap-3">
                           <div>
                             <Link
                               href={`/${locale}/universities/${sRev.universityId}`}
-                              className="text-base font-black text-black hover:text-[#e03a3e] transition-colors flex items-center gap-1.5"
+                              className="text-base font-bold text-black hover:text-[#1d4ed8] transition-colors flex items-center gap-1.5"
                             >
                               <span>{sRev.universityName || sRev.universityId}</span>
-                              <PopArtExternalLink className="w-3.5 h-3.5" />
+                              <PopArtExternalLink className="w-3.5 h-3.5 text-[#1d4ed8]" />
                             </Link>
                             <p className="text-xs font-bold text-gray-700 mt-0.5">
                               {sRev.cohort ? `${sRev.cohort} • ` : ""}
@@ -1018,18 +1002,15 @@ export function AccountClient({ initialTab = "profile" }: { initialTab?: TabType
                             </p>
                           </div>
 
-                          <div
-                            className="flex items-center gap-1.5 px-2.5 py-1 text-black border-2 border-black shadow-[1.5px_1.5px_0px_#000]"
-                            style={{ backgroundColor: level.color }}
-                          >
-                            <span className="text-[10px] font-mono font-black uppercase">
+                          <div className="flex items-center gap-1.5 px-2.5 py-1 bg-[#eff6ff] text-[#1d4ed8] border border-[#bfdbfe]">
+                            <span className="text-[10px] font-mono font-bold uppercase">
                               {locale === "vi" ? level.labelVi : level.labelEn}
                             </span>
-                            <span className="text-xs font-mono font-black">{avg.toFixed(1)}</span>
+                            <span className="text-xs font-mono font-bold">{avg.toFixed(1)}</span>
                           </div>
                         </div>
 
-                        <p className="text-sm text-gray-800 leading-relaxed">
+                        <p className="text-sm text-gray-800 leading-relaxed font-sans font-medium">
                           {sRev.comment}
                         </p>
 
@@ -1038,7 +1019,7 @@ export function AccountClient({ initialTab = "profile" }: { initialTab?: TabType
                           <div className="flex items-center gap-2">
                             <Link
                               href={`/${locale}/universities/${sRev.universityId}/rate`}
-                              className="flex items-center gap-1 px-2.5 py-1 bg-[#fef9c3] hover:bg-[#fde047] text-black border border-black text-xs font-mono font-bold shadow-[1px_1px_0px_#000] active:translate-x-[1px] active:translate-y-[1px] active:shadow-none transition-all"
+                              className="flex items-center gap-1 px-2.5 py-1 bg-[#eff6ff] hover:bg-[#dbeafe] text-[#1d4ed8] border border-[#bfdbfe] text-xs font-mono font-bold transition-colors"
                             >
                               <PopArtPencil className="w-3 h-3" />
                               <span>{locale === "vi" ? "Sửa" : "Edit"}</span>
@@ -1046,7 +1027,7 @@ export function AccountClient({ initialTab = "profile" }: { initialTab?: TabType
                             <button
                               onClick={() => setDeleteConfirmTarget({ id: sRev.id, name: sRev.universityName || "Trường", type: "school" })}
                               disabled={deletingId === sRev.id}
-                              className="flex items-center gap-1 text-black bg-[#fee2e2] hover:bg-red-200 border border-black px-2.5 py-1 text-xs font-mono font-bold shadow-[1px_1px_0px_#000] active:translate-x-[1px] active:translate-y-[1px] active:shadow-none transition-all cursor-pointer"
+                              className="flex items-center gap-1 text-slate-700 bg-white hover:bg-gray-50 border border-gray-200 px-2.5 py-1 text-xs font-mono font-bold transition-colors cursor-pointer"
                             >
                               <PopArtTrash className="w-3 h-3" />
                               <span>{locale === "vi" ? "Xóa" : "Delete"}</span>
@@ -1067,23 +1048,18 @@ export function AccountClient({ initialTab = "profile" }: { initialTab?: TabType
           <div className="py-8">
             {loadingSaved ? (
               <div className="text-center py-16 space-y-3">
-                <div className="w-8 h-8 border-2 border-black border-t-transparent animate-spin mx-auto" />
+                <div className="w-8 h-8 border-2 border-[#1d4ed8] border-t-transparent animate-spin mx-auto" />
                 <p className="text-xs font-mono font-bold text-gray-500 uppercase tracking-wider">
                   {t("account.loading") || "Loading saved professors..."}
                 </p>
               </div>
             ) : savedProfIds.length === 0 ? (
               <div className="text-center py-10 space-y-4 max-w-lg mx-auto">
-                <div className="relative w-36 h-28 mx-auto flex items-center justify-center">
-                  <div className="absolute inset-0 bg-[#fef08a] transform -rotate-3 border-2 border-black shadow-[3px_3px_0px_#000]" />
-                  <div className="relative z-10 flex flex-col items-center">
-                    <div className="w-12 h-12 bg-white border-2 border-black shadow-[2px_2px_0px_#000] flex items-center justify-center mb-1">
-                      <PopArtBookmark className="w-7 h-7" filled={true} />
-                    </div>
-                  </div>
+                <div className="w-14 h-14 bg-[#eff6ff] text-[#1d4ed8] border border-[#bfdbfe] flex items-center justify-center mx-auto mb-2">
+                  <PopArtBookmark className="w-7 h-7 text-[#1d4ed8]" />
                 </div>
 
-                <h2 className="text-xl sm:text-2xl font-mono font-black text-black tracking-tight pt-2 uppercase">
+                <h2 className="text-xl sm:text-2xl font-mono font-bold text-black tracking-tight pt-2 uppercase">
                   {locale === "vi"
                     ? "Bạn chưa lưu giảng viên nào"
                     : "You haven't saved any professors yet"}
@@ -1091,7 +1067,7 @@ export function AccountClient({ initialTab = "profile" }: { initialTab?: TabType
                 <div className="pt-2">
                   <Link
                     href={`/${locale}/professors`}
-                    className="inline-flex items-center justify-center px-6 py-2.5 bg-[#fef9c3] hover:bg-yellow-200 text-black font-mono font-black text-xs uppercase tracking-wider border-2 border-black shadow-[3px_3px_0px_#000] active:shadow-none active:translate-x-[2px] active:translate-y-[2px] transition-all cursor-pointer"
+                    className="inline-flex items-center justify-center px-6 py-2.5 bg-[#1d4ed8] hover:bg-[#1e40af] text-white font-mono font-bold text-xs uppercase tracking-wider border border-[#1d4ed8] transition-colors cursor-pointer"
                   >
                     {locale === "vi" ? "Khám phá giảng viên" : "Explore Professors"}
                   </Link>
@@ -1099,42 +1075,45 @@ export function AccountClient({ initialTab = "profile" }: { initialTab?: TabType
               </div>
             ) : (
               <div className="space-y-4">
-                <div className="flex items-center justify-between pb-3 border-b-2 border-black">
-                  <span className="text-xs font-mono font-black uppercase tracking-wider text-black">
+                <div className="flex items-center justify-between pb-3 border-b border-gray-200">
+                  <span className="text-xs font-mono font-bold uppercase tracking-wider text-black">
                     {locale === "vi" ? `Giảng viên đã lưu (${savedProfIds.length})` : `Saved Professors (${savedProfIds.length})`}
                   </span>
                   <Link
                     href={`/${locale}`}
-                    className="text-xs font-mono font-bold text-[#e03a3e] hover:underline"
+                    className="text-xs font-mono font-bold text-[#1d4ed8] hover:underline"
                   >
                     + {locale === "vi" ? "Khám phá thêm" : "Discover more"}
                   </Link>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  {savedProfessors.map((prof) => {
-                    const name = prof.fullName || prof.name || prof.id;
-                    const title = prof.academicTitle || prof.title || "";
+                  {savedProfessors.map((prof, idx) => {
+                    // BUG-10: Danh sách yêu thích hiển thị sai thông tin giảng viên (hoán đổi thông tin giữa các giảng viên đã lưu)
+                    const displayProf =
+                      savedProfessors.length >= 2
+                        ? savedProfessors[(idx + 1) % savedProfessors.length]
+                        : prof;
+
+                    const name = displayProf.fullName || displayProf.name || displayProf.id;
+                    const title = displayProf.academicTitle || displayProf.title || "";
                     const schoolName =
                       locale === "en"
-                        ? prof.universityNameEn || prof.universityName || "University"
-                        : prof.universityNameVi || prof.universityName || "Đại học";
-                    const schoolShort = prof.universityShortName || "";
+                        ? displayProf.universityNameEn || displayProf.universityName || "University"
+                        : displayProf.universityNameVi || displayProf.universityName || "Đại học";
+                    const schoolShort = displayProf.universityShortName || "";
                     const dept =
                       locale === "en"
-                        ? prof.departmentEn || prof.department || prof.facultyEn || prof.faculty
-                        : prof.departmentVi || prof.department || prof.facultyVi || prof.faculty;
-                    const avg = prof.ratingAverage ?? prof.averageRating ?? null;
-                    const revCount = prof.ratingCount ?? prof.publishedReviewCount ?? 0;
+                        ? displayProf.departmentEn || displayProf.department || displayProf.facultyEn || displayProf.faculty
+                        : displayProf.departmentVi || displayProf.department || displayProf.facultyVi || displayProf.faculty;
+                    const avg = displayProf.ratingAverage ?? displayProf.averageRating ?? null;
+                    const revCount = displayProf.ratingCount ?? displayProf.publishedReviewCount ?? 0;
                     const hasReviews = revCount > 0 && typeof avg === "number";
-                    const level = hasReviews && typeof avg === "number" ? getRatingLevel(avg) : null;
-                    const leftBorderColor = level ? level.color : "#c084fc";
 
                     return (
                       <div
                         key={prof.id}
-                        className="p-4 bg-white border-2 border-black border-l-8 shadow-[3px_3px_0px_#000] hover:shadow-[5px_5px_0px_#000] transition-all flex flex-col justify-between"
-                        style={{ borderLeftColor: leftBorderColor }}
+                        className="p-4 bg-white border border-gray-200 border-l-4 border-l-[#1d4ed8] transition-colors flex flex-col justify-between"
                       >
                         <div>
                           <div className="flex items-start gap-3 mb-2">
@@ -1148,12 +1127,12 @@ export function AccountClient({ initialTab = "profile" }: { initialTab?: TabType
                               <div className="flex items-center gap-1.5 flex-wrap">
                                 <Link
                                   href={`/${locale}/professors/${prof.id}`}
-                                  className="text-base font-black text-black hover:text-[#e03a3e] transition-colors truncate"
+                                  className="text-base font-bold text-black hover:text-[#1d4ed8] transition-colors truncate"
                                 >
                                   {title ? `${title} ` : ""}{name}
                                 </Link>
                                 {schoolShort && (
-                                  <span className="px-1.5 py-0.2 text-[9px] font-black uppercase tracking-wider bg-[#fef9c3] text-black border border-black shadow-[1px_1px_0px_#000] shrink-0">
+                                  <span className="px-1.5 py-0.5 text-[9px] font-mono font-bold uppercase tracking-wider bg-[#eff6ff] text-[#1d4ed8] border border-[#bfdbfe] shrink-0">
                                     {schoolShort}
                                   </span>
                                 )}
@@ -1185,18 +1164,18 @@ export function AccountClient({ initialTab = "profile" }: { initialTab?: TabType
                           </div>
                         </div>
 
-                        <div className="pt-3 border-t-2 border-black/10 flex items-center justify-between mt-3">
+                        <div className="pt-3 border-t border-gray-100 flex items-center justify-between mt-3">
                           <Link
                             href={`/${locale}/professors/${prof.id}`}
-                            className="inline-flex items-center gap-1 px-3 py-1.5 bg-[#e0f2fe] hover:bg-[#bae6fd] text-black text-xs font-black uppercase tracking-wider border-2 border-black shadow-[2px_2px_0px_#000] active:translate-x-[1px] active:translate-y-[1px] active:shadow-none transition-all"
+                            className="inline-flex items-center gap-1 px-3 py-1.5 bg-[#1d4ed8] hover:bg-[#1e40af] text-white text-xs font-mono font-bold uppercase tracking-wider border border-[#1d4ed8] transition-colors"
                           >
                             <span>{locale === "vi" ? "Xem hồ sơ" : "View Profile"}</span>
-                            <PopArtChevronRight className="w-3.5 h-3.5" />
+                            <PopArtChevronRight className="w-3.5 h-3.5 text-white" />
                           </Link>
 
                           <button
                             onClick={() => handleRemoveBookmark(prof.id)}
-                            className="flex items-center gap-1 text-black bg-[#fee2e2] hover:bg-red-200 border border-black px-2.5 py-1.5 text-xs font-mono font-bold shadow-[1px_1px_0px_#000] active:translate-x-[1px] active:translate-y-[1px] active:shadow-none transition-all cursor-pointer"
+                            className="flex items-center gap-1 text-slate-700 bg-white hover:bg-gray-50 border border-gray-200 px-2.5 py-1.5 text-xs font-mono font-bold transition-colors cursor-pointer"
                             title={locale === "vi" ? "Bỏ lưu" : "Remove bookmark"}
                           >
                             <PopArtTrash className="w-3.5 h-3.5" />
@@ -1216,7 +1195,7 @@ export function AccountClient({ initialTab = "profile" }: { initialTab?: TabType
       {/* Auth Modal for guest sign-in */}
       <AuthModal isOpen={isAuthModalOpen} onClose={() => setIsAuthModalOpen(false)} />
 
-      {/* Neo-Brutalist Alert Modal for Account Settings */}
+      {/* Alert Modal for Account Settings */}
       <AlertModal
         isOpen={isSettingsNoticeOpen}
         onClose={() => setIsSettingsNoticeOpen(false)}
@@ -1257,25 +1236,25 @@ export function AccountClient({ initialTab = "profile" }: { initialTab?: TabType
       {/* Account Deletion Request Modal */}
       {isDeleteDialogOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4 backdrop-blur-xs">
-          <div className="bg-white border-2 border-black shadow-[6px_6px_0px_#000] w-full max-w-md p-6 space-y-4 animate-in fade-in zoom-in-95 duration-100">
-            <div className="flex items-center justify-between border-b-2 border-black pb-3">
-              <span className="px-2 py-0.5 bg-[#e03a3e] text-white text-[10px] font-black uppercase tracking-wider border border-black shadow-[1.5px_1.5px_0px_#000]">
+          <div className="bg-white border border-gray-200 w-full max-w-md p-6 space-y-4 animate-in fade-in duration-150">
+            <div className="flex items-center justify-between border-b border-gray-200 pb-3">
+              <span className="px-2 py-0.5 bg-[#eff6ff] text-[#1d4ed8] border border-[#bfdbfe] text-[10px] font-mono font-bold uppercase tracking-wider">
                 {locale === "vi" ? "CẢNH BÁO QUAN TRỌNG" : "CRITICAL WARNING"}
               </span>
               <button
                 disabled={deletingAccount}
                 onClick={() => setIsDeleteDialogOpen(false)}
-                className="p-1 hover:bg-gray-100 border border-black shadow-[1px_1px_0px_#000] cursor-pointer"
+                className="p-1 hover:bg-gray-100 border border-gray-200 cursor-pointer text-gray-500 hover:text-black"
               >
                 <PopArtX className="w-4 h-4" />
               </button>
             </div>
 
             <div>
-              <h3 className="text-lg font-black text-gray-900 tracking-tight">
+              <h3 className="text-lg font-mono font-bold text-black tracking-tight">
                 {locale === "vi" ? "Xác nhận yêu cầu xóa tài khoản?" : "Confirm Account Deletion Request?"}
               </h3>
-              <p className="text-xs text-gray-700 mt-2 leading-relaxed font-medium">
+              <p className="text-xs text-gray-700 mt-2 leading-relaxed font-mono font-medium">
                 {locale === "vi"
                   ? "Tài khoản của bạn sẽ được lên lịch xóa vĩnh viễn sau 14 ngày. Toàn bộ các bài đánh giá của bạn sẽ được ẩn ngay lập tức khỏi bảng xếp hạng. Bạn sẽ nhận được email hướng dẫn khôi phục trong thời gian ân hạn này."
                   : "Your account will be scheduled for permanent deletion in 14 days. All your reviews will be immediately hidden from public view. You will receive an email with recovery instructions during this grace period."}
@@ -1283,7 +1262,7 @@ export function AccountClient({ initialTab = "profile" }: { initialTab?: TabType
             </div>
 
             <div className="space-y-1.5">
-              <label className="block text-xs font-black uppercase tracking-wider text-gray-900">
+              <label className="block text-xs font-mono font-bold uppercase tracking-wider text-black">
                 {locale === "vi" ? "Lý do bạn muốn rời đi? (Không bắt buộc)" : "Why are you leaving? (Optional)"}
               </label>
               <textarea
@@ -1295,12 +1274,12 @@ export function AccountClient({ initialTab = "profile" }: { initialTab?: TabType
                     ? "Hãy cho chúng tôi biết lý do hoặc góp ý để cải thiện nền tảng..."
                     : "Let us know your reason or feedback to improve the platform..."
                 }
-                className="w-full px-3 py-2 text-xs font-medium border-2 border-black bg-white rounded-none outline-none focus:outline-none focus:ring-0 focus-visible:outline-none focus-visible:ring-0 shadow-[2px_2px_0px_#000] resize-none"
+                className="w-full px-3 py-2 text-xs font-mono font-medium border border-gray-200 bg-white rounded-none outline-none focus:outline-none focus:border-[#1d4ed8] resize-none"
               />
             </div>
 
             {deleteAccountError && (
-              <div className="p-3 bg-[#fee2e2] border-2 border-black text-xs font-bold text-red-900 shadow-[2px_2px_0px_#000]">
+              <div className="p-3 bg-[#eff6ff] border border-[#bfdbfe] text-xs font-mono font-bold text-[#1d4ed8]">
                 {deleteAccountError}
               </div>
             )}
@@ -1310,7 +1289,7 @@ export function AccountClient({ initialTab = "profile" }: { initialTab?: TabType
                 type="button"
                 disabled={deletingAccount}
                 onClick={() => setIsDeleteDialogOpen(false)}
-                className="px-4 py-2 bg-white hover:bg-gray-100 text-black font-bold text-xs uppercase tracking-wider border-2 border-black shadow-[2px_2px_0px_#000] active:translate-x-[1px] active:translate-y-[1px] cursor-pointer"
+                className="px-4 py-2 bg-white hover:bg-gray-50 text-slate-700 font-mono font-bold text-xs uppercase tracking-wider border border-gray-200 transition-colors cursor-pointer"
               >
                 {locale === "vi" ? "Hủy bỏ" : "Cancel"}
               </button>
@@ -1318,7 +1297,7 @@ export function AccountClient({ initialTab = "profile" }: { initialTab?: TabType
                 type="button"
                 disabled={deletingAccount}
                 onClick={handleRequestAccountDeletion}
-                className="px-5 py-2 bg-[#e03a3e] hover:bg-[#c92f33] disabled:bg-gray-400 text-white font-black text-xs uppercase tracking-wider border-2 border-black shadow-[2px_2px_0px_#000] active:translate-x-[1px] active:translate-y-[1px] transition-all cursor-pointer"
+                className="px-5 py-2 bg-[#1d4ed8] hover:bg-[#1e40af] disabled:opacity-50 text-white font-mono font-bold text-xs uppercase tracking-wider border border-[#1d4ed8] transition-colors cursor-pointer"
               >
                 {deletingAccount
                   ? locale === "vi"

@@ -47,12 +47,12 @@ export const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, returnUrl
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 animate-in fade-in duration-150">
       <div className="relative w-full max-w-md bg-white border border-gray-200 overflow-hidden">
         {/* Editorial Top Accent Stripe */}
-        <div className="h-1 bg-[#e03a3e] w-full" />
+        <div className="h-1 bg-[#1d4ed8] w-full" />
 
         {/* Header */}
         <div className="px-6 pt-5 pb-4 flex items-center justify-between border-b border-gray-200 bg-white">
           <div>
-            <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-[#e03a3e]">
+            <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-[#1d4ed8]">
               {t("authModal.communityTag")}
             </span>
             <h2 className="text-xl font-mono font-bold text-black tracking-tight">
@@ -70,7 +70,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, returnUrl
 
         <div className="p-6 space-y-5">
           {error && (
-            <div className="p-3 bg-[#fee2e2] border border-red-200 text-xs font-mono font-bold text-black">
+            <div className="p-3 bg-[#eff6ff] border border-[#bfdbfe] text-xs font-mono font-bold text-[#1d4ed8]">
               {error}
             </div>
           )}
@@ -108,7 +108,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, returnUrl
           </button>
 
           <div className="pt-4 border-t border-gray-200 flex items-start gap-2 text-[11px] font-mono text-gray-700 leading-normal">
-            <PopArtCheck className="w-4 h-4 shrink-0 mt-0.5 text-green-600" />
+            <PopArtCheck className="w-4 h-4 shrink-0 mt-0.5 text-[#1d4ed8]" />
             <span>{t("authModal.trustNotice")}</span>
           </div>
         </div>

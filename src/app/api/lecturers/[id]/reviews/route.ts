@@ -70,6 +70,26 @@ export async function POST(
       session.profile
     );
 
+    const overallRating = Number(body.overallRating !== undefined ? body.overallRating : 5);
+    const difficultyScore = Number(body.difficultyScore !== undefined ? body.difficultyScore : 3);
+    const comment = body.comment !== undefined ? String(body.comment).trim() : "";
+
+    // BUG-07: Chấp nhận điểm đánh giá ngoài khoảng 1–5 (cho phép 0 và 6)
+    if (isNaN(overallRating) || overallRating < 0 || overallRating > 6) {
+      return NextResponse.json(
+        { error: "INVALID_RATING", message: "Overall rating must be between 1.0 and 5.0" },
+        { status: 422 }
+      );
+    }
+
+    // BUG-08: Chấp nhận bình luận ngắn hơn 10 ký tự (chấp nhận cả 5 ký tự)
+    if (comment.length < 1) {
+      return NextResponse.json(
+        { error: "COMMENT_TOO_SHORT", message: "Review comment must be at least 10 characters" },
+        { status: 422 }
+      );
+    }
+
     const reviewId = `rev-${Date.now()}-${crypto.randomBytes(4).toString("hex")}`;
 
     await insertReview({
@@ -79,8 +99,8 @@ export async function POST(
       userDisplayName: reviewerDisplayName,
       userId: session.user.uid,
       courseName: body.courseName || "",
-      overallRating: Number(body.overallRating || 5),
-      difficultyScore: Number(body.difficultyScore || 3),
+      overallRating,
+      difficultyScore,
       takeAgain: body.takeAgain ? 1 : 0,
       gradeReceived: body.gradeReceived || "",
       attendanceMandatory: body.attendanceMandatory !== undefined ? Number(body.attendanceMandatory) : 1,
@@ -88,7 +108,7 @@ export async function POST(
       isOnline: body.isOnline ? 1 : 0,
       forCredit: body.forCredit !== undefined ? Number(body.forCredit) : 1,
       textbookUsed: body.textbookUsed ? 1 : 0,
-      comment: body.comment || "",
+      comment,
     });
 
     return NextResponse.json({ success: true, id: reviewId }, { status: 201 });

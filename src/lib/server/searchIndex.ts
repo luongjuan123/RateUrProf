@@ -322,7 +322,6 @@ export async function executeServerSearch(
   const startTime = performance.now();
   const engine = await getServerSearchEngine();
 
-  // Bounded pagination: page >= 1, 1 <= pageSize <= 50 (default 12)
   const page = Math.max(1, pagination.page || 1);
   const pageSize = Math.max(1, Math.min(50, pagination.pageSize || 12));
 

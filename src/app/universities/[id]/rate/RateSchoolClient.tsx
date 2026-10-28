@@ -222,7 +222,7 @@ export default function RateSchoolClient({ universityId }: { universityId: strin
         </h2>
         <Link
           href={`/${locale}`}
-          className="inline-block px-5 py-2.5 bg-black hover:bg-[#e03a3e] text-white text-xs font-bold uppercase transition-colors"
+          className="inline-block px-5 py-2.5 bg-[#1d4ed8] hover:bg-[#1e40af] text-white text-xs font-bold uppercase transition-colors border border-[#1d4ed8]"
         >
           {locale === "vi" ? "Trở về trang chủ" : "Back to Home"}
         </Link>
@@ -238,7 +238,7 @@ export default function RateSchoolClient({ universityId }: { universityId: strin
         {/* Back Link */}
         <Link
           href={`/${locale}/universities/${universityId}`}
-          className="inline-flex items-center gap-1.5 text-xs font-mono font-bold text-black hover:text-[#e03a3e] uppercase tracking-wider transition-colors"
+          className="inline-flex items-center gap-1.5 text-xs font-mono font-bold text-black hover:text-[#1d4ed8] uppercase tracking-wider transition-colors"
         >
           <PopArtArrowLeft className="w-4 h-4" />
           <span>{t("rateSchoolPage.backToSchool") || (locale === "vi" ? "Trở về trang trường" : "Back to School")}</span>
@@ -262,7 +262,7 @@ export default function RateSchoolClient({ universityId }: { universityId: strin
         {/* Success Banner */}
         {success ? (
           <div className="bg-white border border-gray-200 p-8 sm:p-10 text-center space-y-4">
-            <div className="w-14 h-14 bg-[#dcfce7] text-[#166534] border border-green-200 flex items-center justify-center mx-auto">
+            <div className="w-14 h-14 bg-[#eff6ff] text-[#1d4ed8] border border-[#bfdbfe] flex items-center justify-center mx-auto">
               <PopArtCheck className="w-8 h-8" />
             </div>
             <h3 className="text-2xl font-mono font-bold text-black uppercase">
@@ -276,14 +276,14 @@ export default function RateSchoolClient({ universityId }: { universityId: strin
             </p>
             <Link
               href={`/${locale}/universities/${universityId}`}
-              className="inline-block mt-4 px-6 py-2.5 bg-black hover:bg-[#e03a3e] text-white text-xs font-mono font-bold uppercase tracking-wider border border-black hover:border-[#e03a3e] transition-colors"
+              className="inline-block mt-4 px-6 py-2.5 bg-[#1d4ed8] hover:bg-[#1e40af] text-white text-xs font-mono font-bold uppercase tracking-wider border border-[#1d4ed8] transition-colors"
             >
               {t("rateSchoolPage.backToProfile") || (locale === "vi" ? "Quay lại hồ sơ ngay" : "Return to Profile")}
             </Link>
           </div>
         ) : !user ? (
           <div className="bg-white p-8 border border-gray-200 text-center space-y-6">
-            <div className="w-16 h-16 bg-[#fee2e2] border border-red-200 flex items-center justify-center mx-auto text-[#e03a3e]">
+            <div className="w-16 h-16 bg-[#eff6ff] border border-[#bfdbfe] flex items-center justify-center mx-auto text-[#1d4ed8]">
               <PopArtLock className="w-8 h-8" />
             </div>
             <div className="space-y-2">
@@ -304,7 +304,7 @@ export default function RateSchoolClient({ universityId }: { universityId: strin
               <button
                 type="button"
                 onClick={() => setIsAuthModalOpen(true)}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-[#e03a3e] hover:bg-[#b91c1c] text-white font-mono font-bold text-xs uppercase tracking-wider border border-[#e03a3e] transition-colors cursor-pointer"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-[#1d4ed8] hover:bg-[#1e40af] text-white font-mono font-bold text-xs uppercase tracking-wider border border-[#1d4ed8] transition-colors cursor-pointer"
               >
                 {t("rateSchoolPage.signInButton") || (locale === "vi" ? "Đăng nhập để đánh giá" : "Sign In to Rate")}
               </button>
@@ -321,10 +321,10 @@ export default function RateSchoolClient({ universityId }: { universityId: strin
 
             {/* Edit Mode Alert Banner */}
             {isEditMode && (
-              <div className="p-4 bg-[#f0fdf4] border border-green-200 flex items-start gap-3">
-                <PopArtInfo className="w-5 h-5 shrink-0 mt-0.5 text-[#166534]" />
+              <div className="p-4 bg-[#eff6ff] border border-[#bfdbfe] flex items-start gap-3">
+                <PopArtInfo className="w-5 h-5 shrink-0 mt-0.5 text-[#1d4ed8]" />
                 <div>
-                  <p className="font-mono font-bold text-xs uppercase tracking-wider text-[#166534]">
+                  <p className="font-mono font-bold text-xs uppercase tracking-wider text-[#1d4ed8]">
                     {t("rateSchoolPage.editModeTitle") || (locale === "vi" ? "Chỉnh sửa đánh giá trường" : "Edit School Rating")}
                   </p>
                   <p className="font-mono text-xs text-gray-800 mt-0.5">
@@ -338,8 +338,8 @@ export default function RateSchoolClient({ universityId }: { universityId: strin
             )}
 
             {error && (
-              <div className="p-4 bg-[#fee2e2] border border-red-200 text-xs sm:text-sm font-mono font-bold text-black flex items-start gap-2.5">
-                <PopArtAlertCircle className="w-5 h-5 shrink-0 mt-0.5 text-red-600" />
+              <div className="p-4 bg-[#eff6ff] border border-[#bfdbfe] text-xs sm:text-sm font-mono font-bold text-[#1d4ed8] flex items-start gap-2.5">
+                <PopArtAlertCircle className="w-5 h-5 shrink-0 mt-0.5 text-[#1d4ed8]" />
                 <span>{error}</span>
               </div>
             )}
@@ -476,7 +476,7 @@ export default function RateSchoolClient({ universityId }: { universityId: strin
                       <Link
                         href={`/${locale}/guidelines`}
                         target="_blank"
-                        className="text-black underline hover:text-[#e03a3e] font-bold"
+                        className="text-[#1d4ed8] underline hover:text-[#1e40af] font-bold"
                       >
                         {t("rateSchoolPage.viewAllGuidelines") || "View all guidelines"}
                       </Link>
@@ -496,12 +496,12 @@ export default function RateSchoolClient({ universityId }: { universityId: strin
                     t("rateSchoolPage.reviewPlaceholder") ||
                     "What do you want other students to know about this school?"
                   }
-                  className="w-full p-3.5 text-sm font-mono border border-gray-200 outline-none focus:outline-none focus:border-black text-black leading-relaxed"
+                  className="w-full p-3.5 text-sm font-mono border border-gray-200 outline-none focus:outline-none focus:border-[#1d4ed8] text-black leading-relaxed"
                 />
                 <div className="flex items-center justify-between text-xs font-mono text-gray-500">
                   <span>
                     {reviewComment.length < 25 && (
-                      <span className="text-[#e03a3e] font-bold">
+                      <span className="text-[#1d4ed8] font-bold">
                         {t("rateSchoolPage.minCharNotice", { current: reviewComment.length }) ||
                           `Min 25 chars (${reviewComment.length}/350)`}
                       </span>
@@ -523,7 +523,7 @@ export default function RateSchoolClient({ universityId }: { universityId: strin
                   value={cohortName}
                   onChange={(e) => setCohortName(e.target.value)}
                   placeholder={t("rateSchoolPage.cohortPlaceholder") || (locale === "vi" ? "Niên khóa / Chuyên ngành (VD: K64 - CNTT)..." : "Cohort / Major (e.g. K64 - CS)...")}
-                  className="w-full px-3 py-2 text-xs font-mono border border-gray-200 outline-none focus:outline-none focus:border-black bg-white text-black"
+                  className="w-full px-3 py-2 text-xs font-mono border border-gray-200 outline-none focus:outline-none focus:border-[#1d4ed8] bg-white text-black"
                 />
               </div>
             </div>
@@ -539,7 +539,7 @@ export default function RateSchoolClient({ universityId }: { universityId: strin
                 <button
                   type="submit"
                   disabled={submitting || isDeleting}
-                  className="w-full sm:w-auto px-10 py-3.5 bg-[#e03a3e] hover:bg-[#b91c1c] text-white text-sm font-mono font-bold uppercase tracking-wider border border-[#e03a3e] transition-colors disabled:opacity-50 cursor-pointer"
+                  className="w-full sm:w-auto px-10 py-3.5 bg-[#1d4ed8] hover:bg-[#1e40af] text-white text-sm font-mono font-bold uppercase tracking-wider border border-[#1d4ed8] transition-colors disabled:opacity-50 cursor-pointer"
                 >
                   {submitting
                     ? isEditMode
@@ -555,9 +555,9 @@ export default function RateSchoolClient({ universityId }: { universityId: strin
                     type="button"
                     disabled={submitting || isDeleting}
                     onClick={() => setShowDeleteConfirm(true)}
-                    className="w-full sm:w-auto px-6 py-3.5 bg-gray-50 hover:bg-red-50 text-[#991b1b] text-sm font-mono font-bold uppercase tracking-wider border border-gray-200 hover:border-red-200 transition-colors disabled:opacity-50 cursor-pointer flex items-center justify-center gap-2"
+                    className="w-full sm:w-auto px-6 py-3.5 bg-gray-50 hover:bg-gray-100 text-slate-700 text-sm font-mono font-bold uppercase tracking-wider border border-gray-200 hover:border-gray-300 transition-colors disabled:opacity-50 cursor-pointer flex items-center justify-center gap-2"
                   >
-                    <PopArtTrash className="w-4 h-4" />
+                    <PopArtTrash className="w-4 h-4 text-slate-600" />
                     <span>{t("rateSchoolPage.deleteButton") || (locale === "vi" ? "Xóa đánh giá" : "Delete Rating")}</span>
                   </button>
                 )}
@@ -571,8 +571,8 @@ export default function RateSchoolClient({ universityId }: { universityId: strin
       {showDeleteConfirm && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-xs p-4">
           <div className="bg-white border border-gray-200 p-6 sm:p-8 max-w-md w-full space-y-5 animate-in fade-in duration-150">
-            <div className="w-12 h-12 bg-[#fee2e2] text-[#991b1b] border border-red-200 flex items-center justify-center">
-              <PopArtTrash className="w-6 h-6" />
+            <div className="w-12 h-12 bg-[#eff6ff] text-[#1d4ed8] border border-[#bfdbfe] flex items-center justify-center">
+              <PopArtTrash className="w-6 h-6 text-[#1d4ed8]" />
             </div>
 
             <div className="space-y-1.5">
@@ -600,7 +600,7 @@ export default function RateSchoolClient({ universityId }: { universityId: strin
                 type="button"
                 disabled={isDeleting}
                 onClick={handleDelete}
-                className="w-full sm:w-auto px-6 py-2.5 bg-[#e03a3e] hover:bg-[#b91c1c] text-white font-mono font-bold text-xs uppercase tracking-wider border border-[#e03a3e] transition-colors disabled:opacity-50 cursor-pointer"
+                className="w-full sm:w-auto px-6 py-2.5 bg-[#1d4ed8] hover:bg-[#1e40af] text-white font-mono font-bold text-xs uppercase tracking-wider border border-[#1d4ed8] transition-colors disabled:opacity-50 cursor-pointer"
               >
                 {isDeleting
                   ? t("rateSchoolPage.deleting") || (locale === "vi" ? "Đang xóa..." : "Deleting...")

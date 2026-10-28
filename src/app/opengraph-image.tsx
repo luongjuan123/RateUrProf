@@ -19,7 +19,7 @@ export default function Image() {
           alignItems: "center",
           justifyContent: "center",
           fontFamily: "sans-serif",
-          border: "20px solid #000000",
+          border: "12px solid #1d4ed8",
         }}
       >
         <div
@@ -34,30 +34,28 @@ export default function Image() {
             style={{
               width: 80,
               height: 80,
-              background: "#fef9c3",
-              border: "3px solid #000000",
-              color: "#000000",
+              background: "#1d4ed8",
+              color: "#ffffff",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
               fontSize: 36,
-              fontWeight: 900,
+              fontWeight: 800,
             }}
           >
-            <span>RU</span>
-            <span style={{ color: "#e03a3e" }}>P</span>
+            <span>RUP</span>
           </div>
           <div
             style={{
               fontSize: 72,
-              fontWeight: 900,
-              color: "#000000",
+              fontWeight: 800,
+              color: "#0f172a",
               letterSpacing: "-2px",
               display: "flex",
             }}
           >
             <span>RateUr</span>
-            <span style={{ color: "#e03a3e" }}>Profs</span>
+            <span style={{ color: "#1d4ed8" }}>Profs</span>
           </div>
         </div>
         <div

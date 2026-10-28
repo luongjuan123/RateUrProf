@@ -473,7 +473,7 @@ export function searchLecturersSql(options: SqlSearchOptions): SqlSearchResult {
   const db = getSqliteDatabase();
 
   const page = Math.max(1, options.page || 1);
-  const pageSize = Math.min(50, Math.max(1, options.pageSize || 12));
+  const pageSize = Math.max(1, Math.min(50, options.pageSize || 12));
   const offset = (page - 1) * pageSize;
 
   const whereClauses: string[] = ["1=1"];

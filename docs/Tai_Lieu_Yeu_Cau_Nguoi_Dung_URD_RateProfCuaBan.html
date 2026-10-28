@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<title>Tài liệu yêu cầu người dùng</title>
+<style>
+
+@font-face {
+  font-family: 'Times New Roman';
+  src: url('/home/juan/.local/share/fonts/times/Tinos-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Times New Roman';
+  src: url('/home/juan/.local/share/fonts/times/Tinos-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Times New Roman';
+  src: url('/home/juan/.local/share/fonts/times/Tinos-Italic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Times New Roman';
+  src: url('/home/juan/.local/share/fonts/times/Tinos-BoldItalic.ttf') format('truetype');
+  font-weight: bold;
+  font-style: italic;
+}
+
+* {
+  box-sizing: border-box;
+  color: #000000 !important;
+}
+
+body {
+  font-family: 'Times New Roman', Times, 'Tinos', serif;
+  font-size: 11pt;
+  line-height: 1.4;
+  color: #000000;
+  background-color: #ffffff;
+  margin: 0;
+  padding: 0;
+}
+
+.doc-header {
+  text-align: center;
+  border-bottom: 1.5px solid #000000;
+  padding-bottom: 8px;
+  margin-bottom: 14px;
+}
+
+.doc-title {
+  font-size: 15pt;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 0 0 4px 0;
+}
+
+.doc-subtitle {
+  font-size: 11.5pt;
+  font-weight: bold;
+  margin: 0 0 6px 0;
+}
+
+.doc-meta {
+  font-size: 10pt;
+  margin: 0;
+}
+
+h1 {
+  font-size: 12.5pt;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-bottom: 1px solid #000000;
+  padding-bottom: 2px;
+  margin-top: 14px;
+  margin-bottom: 6px;
+  page-break-after: avoid;
+  break-after: avoid;
+}
+
+h2 {
+  font-size: 11.5pt;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 4px;
+  page-break-after: avoid;
+  break-after: avoid;
+}
+
+h3 {
+  font-size: 11pt;
+  font-weight: bold;
+  font-style: italic;
+  margin-top: 8px;
+  margin-bottom: 3px;
+  page-break-after: avoid;
+  break-after: avoid;
+}
+
+p {
+  margin: 0 0 6px 0;
+  text-align: justify;
+}
+
+ul, ol {
+  margin: 0 0 6px 0;
+  padding-left: 20px;
+}
+
+li {
+  margin-bottom: 2px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 6px 0 10px 0;
+  font-size: 9.5pt;
+  page-break-inside: auto;
+}
+
+tr {
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+
+th {
+  background-color: #f2f2f2;
+  color: #000000;
+  font-weight: bold;
+  border: 1px solid #000000;
+  padding: 4px 6px;
+  text-align: left;
+}
+
+td {
+  border: 1px solid #000000;
+  padding: 3.5px 6px;
+  vertical-align: top;
+}
+
+.text-center {
+  text-align: center;
+}
+
+pre {
+  background-color: #fafafa;
+  border: 1px solid #000000;
+  padding: 5px 8px;
+  font-family: 'Times New Roman', Courier, monospace;
+  font-size: 9pt;
+  line-height: 1.3;
+  white-space: pre-wrap;
+  word-break: break-all;
+  margin: 5px 0;
+}
+
+code {
+  font-family: 'Times New Roman', Courier, monospace;
+  font-size: 9.5pt;
+}
+
+.endpoint-block {
+  margin-bottom: 12px;
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+
+.endpoint-title {
+  font-weight: bold;
+  margin-bottom: 3px;
+}
+
+</style>
+</head>
+<body>
+
+<div class="doc-header">
+  <div class="doc-title">TÀI LIỆU YÊU CẦU NGƯỜI DÙNG</div>
+  <div class="doc-subtitle">Hệ thống Đánh giá Giảng viên và Tra cứu Học thuật Toàn quốc (RateProfCuaBan / RateUrProf)</div>
+  <div class="doc-meta">Phiên bản 1.1 • Ngày 27/10/2026 &nbsp;|&nbsp; Website: https://rateurprofs.site &nbsp;|&nbsp; Tác giả: Lương Chí Dũng / MSSV: 24110215 / Lớp: BCSE2024</div>
+</div>
+
+<h1>1. Định nghĩa tài liệu & Phiên bản</h1>
+<p><strong>Tên ứng dụng:</strong> Hệ thống Đánh giá Giảng viên và Tra cứu Học thuật Toàn quốc (RateProfCuaBan / RateUrProf).<br>
+<strong>Phiên bản:</strong> v1.1 — Ngày: 27/10/2026.<br>
+<strong>Website:</strong> https://rateurprofs.site — Phiên bản ứng dụng: production-v1.1-20261024.<br>
+<strong>Tác giả:</strong> Lương Chí Dũng / MSSV: 24110215 / Lớp: BCSE2024.</p>
+
+<h1>2. Bài toán thực tế và Mục tiêu</h1>
+<p><strong>Bài toán:</strong> Sinh viên các trường đại học tại Việt Nam cần công cụ khách quan để tra cứu thông tin môn học, tìm hiểu phong cách giảng dạy, mức độ khó bài tập và tính công bằng trong chấm điểm của giảng viên mà không sợ lộ danh tính. Thông tin giảng viên hiện tại phân tán, khó tìm kiếm tập trung và thiếu nguồn dẫn chứng chính thống.</p>
+<p><strong>Mục tiêu:</strong> Xây dựng nền tảng danh bạ học thuật toàn quốc và đánh giá môn học đúng hành vi kỳ vọng: bảo mật phiên qua cookie HttpOnly, đăng nhập Google OAuth, hỗ trợ song ngữ (Vi/En), phân định chính xác học hàm (GS/PGS) và học vị (TS/ThS), bảo vệ bản quyền ảnh bằng avatar SVG trung tính, lưu vết nguồn minh chứng .edu.vn, và quy trình tiếp nhận đính chính / gỡ bỏ theo Nghị định 13/2023/NĐ-CP.</p>
+
+<h1>3. Phạm vi và Loại trừ</h1>
+<p><strong>Trong phạm vi:</strong> Đăng nhập Google, tìm kiếm không dấu tiếng Việt, lọc đa chiều (trường, miền, khoa, học hàm, điểm tối thiểu), xem hồ sơ và minh chứng cổng trường, đánh giá 5 tiêu chí ẩn danh, đánh giá trường 10 tiêu chí, upvote hữu ích, báo cáo vi phạm, đính chính theo Nghị định 13, lưu Bookmarks, chuyển đổi song ngữ, và pipeline cào dữ liệu lịch sự.</p>
+<p><strong>Loại trừ:</strong> Không hỗ trợ tự đặt mật khẩu riêng (chỉ dùng Google OAuth chống spam), không can thiệp điểm số học tập tại trường, không cào quét dữ liệu trái phép từ mạng xã hội có bảo vệ đăng nhập.</p>
+
+<h1>4. Các bên liên quan và Bốn vai trò sử dụng</h1>
+<p><strong>Khách (Guest):</strong> Chưa đăng nhập; tra cứu giảng viên, trường học, đọc đánh giá công khai, đổi ngôn ngữ giao diện (Vi/En) và gửi yêu cầu đính chính theo Nghị định 13.</p>
+<p><strong>Sinh viên (Student):</strong> Đã đăng nhập bằng Google; đánh giá môn học 5 tiêu chí (với danh tính ẩn danh bảo vệ người học), đánh giá trường 10 tiêu chí, upvote nhận xét hữu ích, lưu giảng viên quan tâm và báo cáo vi phạm.</p>
+<p><strong>Giảng viên / Nhà trường:</strong> Đối tượng được đề cập trên danh bạ; theo dõi phản hồi học thuật, có quyền gửi biểu mẫu yêu cầu đính chính học hàm hoặc xóa dữ liệu cá nhân theo Nghị định 13.</p>
+<p><strong>Quản trị viên & Kiểm duyệt viên (Admin / Moderator):</strong> Duyệt đánh giá trong hàng đợi, ẩn nhận xét vi phạm, kích hoạt chiến dịch cào dữ liệu lịch sự, đối soát trùng lặp và xem nhật ký kiểm toán.</p>
+
+<h1>5. Danh sách Câu chuyện Người dùng (US01 – US12)</h1>
+<p><strong>1. US01 (Đăng nhập Google OAuth) [Must]:</strong> Là người dùng, tôi muốn đăng nhập bằng tài khoản Google để sử dụng tính năng đánh giá và lưu giảng viên quan tâm.<br>
+<em>Tiêu chí:</em> (1) Đăng nhập Google 1 cú nhấp chuột; (2) Cấp cookie phiên HttpOnly rateurprofs_session 30 ngày; (3) Hỗ trợ đăng xuất an toàn xóa sạch phiên.</p>
+
+<p><strong>2. US02 (Tra cứu đa tiêu chí & Không dấu) [Must]:</strong> Là sinh viên, tôi muốn tìm kiếm giảng viên bằng cách gõ tên có dấu hoặc không dấu, kèm bộ lọc theo trường và học hàm để nhanh chóng tìm thấy thầy cô cần xem.<br>
+<em>Tiêu chí:</em> (1) Tự động chuẩn hóa tiếng Việt không dấu; (2) Lọc đa chiều theo trường, khu vực Bắc/Trung/Nam, học hàm GS/PGS; (3) Phản hồi dưới 100ms.</p>
+
+<p><strong>3. US03 (Hồ sơ học thuật & Dẫn chứng minh bạch) [Must]:</strong> Là người dùng, tôi muốn xem hồ sơ chi tiết gồm học hàm, học vị, môn học phụ trách và liên kết nguồn trích dẫn .edu.vn để xác thực thông tin.<br>
+<em>Tiêu chí:</em> (1) Phân định rõ huy hiệu GS, PGS độc lập với TS, ThS; (2) Có link bấm trực tiếp tới cổng thông tin trường; (3) Hiển thị ảnh đại diện SVG trung tính khi ảnh chưa rõ bản quyền.</p>
+
+<p><strong>4. US04 (Đánh giá giảng viên 5 tiêu chí ẩn danh) [Must]:</strong> Là sinh viên đã học xong môn, tôi muốn gửi đánh giá theo 5 tiêu chí sư phạm kèm nhận xét chi tiết mà không lộ danh tính cá nhân để giúp đỡ các bạn khóa sau.<br>
+<em>Tiêu chí:</em> (1) Điểm 5 tiêu chí 1–5 sao (chất lượng giảng dạy, rõ ràng, công bằng, độ khó, hỗ trợ); (2) Nhận xét 10–2000 ký tự; (3) Tác giả ẩn danh dạng "Sinh viên K[Năm]"; (4) Mỗi sinh viên chỉ gửi 1 đánh giá cho mỗi môn học của giảng viên.</p>
+
+<p><strong>5. US05 (Bình chọn nhận xét hữu ích) [Should]:</strong> Là người đọc, tôi muốn bấm nút Hữu ích cho những bài nhận xét chi tiết để làm nổi bật các thông tin có giá trị.<br>
+<em>Tiêu chí:</em> (1) Upvote tăng điểm hữu ích; (2) Mỗi tài khoản chỉ vote 1 lần duy nhất cho mỗi bài đánh giá.</p>
+
+<p><strong>6. US06 (Tra cứu & Đánh giá trường đại học) [Must]:</strong> Là sinh viên, tôi muốn đánh giá môi trường sống và học tập của trường theo 10 tiêu chí để chia sẻ trải nghiệm với học sinh khóa dưới.<br>
+<em>Tiêu chí:</em> (1) Đánh giá 10 tiêu chí (danh tiếng, vị trí, cơ hội, cơ sở vật chất, internet, ẩm thực, CLB, xã hội, hạnh phúc, an toàn); (2) Hiển thị điểm trường trung bình và cơ cấu khoa đào tạo.</p>
+
+<p><strong>7. US07 (Báo cáo đánh giá vi phạm cộng đồng) [Must]:</strong> Là người dùng, tôi muốn báo cáo các nhận xét chứa từ ngữ thô tục, công kích cá nhân để ban quản trị gỡ bỏ.<br>
+<em>Tiêu chí:</em> (1) Nút Báo cáo cạnh mỗi bài viết với lý do cụ thể; (2) Bài viết được chuyển vào hàng đợi kiểm duyệt để xử lý.</p>
+
+<p><strong>8. US08 (Đính chính / Gỡ bỏ theo Nghị định 13) [Must]:</strong> Là giảng viên, tôi muốn gửi yêu cầu đính chính học hàm hoặc yêu cầu xóa dữ liệu cá nhân để bảo vệ quyền riêng tư.<br>
+<em>Tiêu chí:</em> (1) Biểu mẫu trực tuyến tiếp nhận yêu cầu đính chính / gỡ bỏ; (2) Cung cấp email trường (.edu.vn) và minh chứng; (3) Hệ thống cấp mã theo dõi và xử lý trong 72 giờ.</p>
+
+<p><strong>9. US09 (Chuyển đổi song ngữ Việt - Anh) [Must]:</strong> Là người dùng, tôi muốn đổi ngôn ngữ hiển thị giữa Tiếng Việt và Tiếng Anh để dễ sử dụng.<br>
+<em>Tiêu chí:</em> (1) Chuyển đổi ngôn ngữ tức thì, đổi toàn bộ nhãn và tiêu đề; (2) Giữ nguyên trang và các tham số bộ lọc tìm kiếm hiện tại.</p>
+
+<p><strong>10. US10 (Lưu danh sách quan tâm) [Should]:</strong> Là sinh viên, tôi muốn đánh dấu lưu các giảng viên cần theo dõi vào Bookmarks để tiện xem lại trước mỗi kỳ đăng ký tín chỉ.<br>
+<em>Tiêu chí:</em> (1) Nút bookmark trên thẻ giảng viên lưu/bỏ lưu 1 chạm; (2) Trang quản lý cá nhân hiển thị đầy đủ danh sách đã lưu.</p>
+
+<p><strong>11. US11 (Kiểm duyệt & Quản trị danh bạ) [Must]:</strong> Là quản trị viên, tôi muốn duyệt bài hoặc ẩn các nhận xét vi phạm để giữ gìn môi trường học thuật văn minh.<br>
+<em>Tiêu chí:</em> (1) Hàng đợi kiểm duyệt hiển thị các bài bị báo cáo; (2) Ẩn bài vi phạm sẽ tự động khấu trừ điểm của bài đó khỏi điểm trung bình giảng viên; (3) Lưu nhật ký kiểm toán (Audit Logs).</p>
+
+<p><strong>12. US12 (Cào dữ liệu lịch sự & Chống trùng lặp) [Must]:</strong> Là quản trị viên, tôi muốn chạy tác vụ cào dữ liệu danh bạ trường học tự động và lịch sự để cập nhật thông tin.<br>
+<em>Tiêu chí:</em> (1) Tuân thủ robots.txt và độ trễ tối thiểu 1.5 giây giữa các yêu cầu; (2) Thuật toán đối soát phát hiện các hồ sơ trùng lặp để hợp nhất an toàn.</p>
+
+<h1>6. Ba Luồng Nghiệp vụ Chính</h1>
+<p><strong>Luồng 1: Đăng nhập &rarr; Tra cứu Giảng viên &rarr; Đọc Đánh giá &rarr; Gửi Đánh giá Mới</strong><br>
+<em>Điều kiện đầu:</em> Người dùng mở ứng dụng, có nhu cầu tìm hiểu và đánh giá môn học.<br>
+<em>Các bước chính:</em> 1. Gõ tên giảng viên hoặc môn học vào thanh tìm kiếm; 2. Nhấp vào thẻ giảng viên để xem chi tiết học hàm, đơn vị công tác, minh chứng .edu.vn và các nhận xét; 3. Bấm "Viết đánh giá" và đăng nhập Google OAuth nếu chưa đăng nhập; 4. Điền điểm 5 tiêu chí (1–5 sao), độ khó bài tập, môn học và nhận xét; 5. Bấm gửi, hệ thống kiểm tra tính hợp lệ và tự động cập nhật điểm rollup nguyên tử.<br>
+<em>Ngoại lệ:</em> Đánh giá trùng môn học trả lỗi 409; nhận xét dưới 10 ký tự trả lỗi 422.<br>
+<em>Điều kiện cuối:</em> Bài đánh giá hiển thị ở chế độ ẩn danh an toàn, điểm trung bình của giảng viên được cập nhật ngay lập tức.</p>
+
+<p><strong>Luồng 2: Báo cáo Vi phạm &rarr; Kiểm duyệt Đánh giá &rarr; Tiếp nhận Yêu cầu NĐ 13</strong><br>
+<em>Điều kiện đầu:</em> Xuất hiện nhận xét vi phạm hoặc giảng viên có yêu cầu đính chính dữ liệu.<br>
+<em>Các bước chính:</em> 1. Người dùng bấm "Báo cáo" trên bài đánh giá vi phạm; hoặc giảng viên gửi yêu cầu qua biểu mẫu /api/correction-requests; 2. Kiểm duyệt viên mở Hàng đợi kiểm duyệt (/admin), xem xét nội dung; 3. Nếu vi phạm, bấm "Ẩn đánh giá", hệ thống tự động gỡ bài và khấu trừ điểm khỏi rollup; 4. Quản trị viên thẩm định yêu cầu của giảng viên qua email trường (.edu.vn) và tiến hành cập nhật hoặc gỡ bỏ thông tin.<br>
+<em>Điều kiện cuối:</em> Nhận xét vi phạm bị ẩn; thông tin học hàm của giảng viên được cập nhật chuẩn xác.</p>
+
+<p><strong>Luồng 3: Thu thập Danh bạ Trường &rarr; Chuẩn hóa Học hàm/Học vị &rarr; Đối soát Trùng lặp</strong><br>
+<em>Điều kiện đầu:</em> Quản trị viên cần cập nhật danh bạ học thuật cho cơ sở đào tạo mới.<br>
+<em>Các bước chính:</em> 1. Admin chọn trường mục tiêu và kích hoạt cào dữ liệu; 2. Pipeline kiểm tra robots.txt của trường và cào lịch sự với độ trễ 1.5 giây; 3. Bóc tách họ tên, phân định học hàm GS/PGS độc lập với học vị TS/ThS, tạo ảnh đại diện SVG trung tính; 4. Hệ thống phát hiện hồ sơ trùng lặp và đưa vào danh sách đối soát; 5. Admin duyệt hợp nhất dữ liệu chính thức.<br>
+<em>Điều kiện cuối:</em> Danh bạ học thuật toàn quốc được cập nhật đầy đủ, chính xác và có đầy đủ nguồn minh chứng.</p>
+
+<h1>7. Tổng quan Dữ liệu & Ma trận Phân quyền</h1>
+<p><strong>Dữ liệu chính:</strong> Users, Universities, Faculties, Lecturers, Reviews, ReviewVotes, SchoolReviews, CorrectionRequests, Reports, AdminAuditLogs.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="width: 32%;">Thao tác / Tài nguyên</th>
+      <th style="width: 17%;" class="text-center">Khách (Guest)</th>
+      <th style="width: 17%;" class="text-center">Sinh viên (Student)</th>
+      <th style="width: 17%;" class="text-center">Giảng viên / Trường</th>
+      <th style="width: 17%;" class="text-center">Quản trị viên (Admin)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Đăng nhập Google OAuth</td><td class="text-center">Cho phép</td><td class="text-center">Đã đăng nhập</td><td class="text-center">Cho phép</td><td class="text-center">Đã đăng nhập</td></tr>
+    <tr><td>Tra cứu giảng viên, trường học</td><td class="text-center">Cho phép</td><td class="text-center">Cho phép</td><td class="text-center">Cho phép</td><td class="text-center">Cho phép</td></tr>
+    <tr><td>Xem hồ sơ & minh chứng .edu.vn</td><td class="text-center">Cho phép</td><td class="text-center">Cho phép</td><td class="text-center">Cho phép</td><td class="text-center">Cho phép</td></tr>
+    <tr><td>Gửi đánh giá môn học (ẩn danh)</td><td class="text-center">Chặn (Cần login)</td><td class="text-center">Cho phép</td><td class="text-center">Không khả dụng</td><td class="text-center">Cho phép</td></tr>
+    <tr><td>Bình chọn nhận xét hữu ích</td><td class="text-center">Chặn (Cần login)</td><td class="text-center">Cho phép</td><td class="text-center">Không khả dụng</td><td class="text-center">Cho phép</td></tr>
+    <tr><td>Báo cáo vi phạm cộng đồng</td><td class="text-center">Chặn (Cần login)</td><td class="text-center">Cho phép</td><td class="text-center">Cho phép</td><td class="text-center">Cho phép</td></tr>
+    <tr><td>Yêu cầu đính chính / gỡ bỏ (NĐ 13)</td><td class="text-center">Cho phép</td><td class="text-center">Cho phép</td><td class="text-center">Toàn quyền yêu cầu</td><td class="text-center">Tiếp nhận & Xử lý</td></tr>
+    <tr><td>Kiểm duyệt và ẩn/hiện nhận xét</td><td class="text-center">Không</td><td class="text-center">Không</td><td class="text-center">Không</td><td class="text-center">Toàn quyền</td></tr>
+    <tr><td>Quản lý crawler & đối soát trùng lặp</td><td class="text-center">Không</td><td class="text-center">Không</td><td class="text-center">Không</td><td class="text-center">Toàn quyền</td></tr>
+  </tbody>
+</table>
+
+<h1>8. Truy vết yêu cầu</h1>
+<table>
+  <thead>
+    <tr>
+      <th style="width: 25%;">Câu chuyện</th>
+      <th style="width: 75%;">Yêu cầu chức năng</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>US01</td><td>AUTH-01, AUTH-02, AUTH-03</td></tr>
+    <tr><td>US02</td><td>SEARCH-01, SEARCH-02, SEARCH-04</td></tr>
+    <tr><td>US03</td><td>PROF-01, PROF-02, LEGAL-02</td></tr>
+    <tr><td>US04</td><td>REVIEW-01, REVIEW-02</td></tr>
+    <tr><td>US05</td><td>REVIEW-03</td></tr>
+    <tr><td>US06</td><td>SCHOOL-01, SCHOOL-02</td></tr>
+    <tr><td>US07</td><td>MOD-02, MOD-03</td></tr>
+    <tr><td>US08</td><td>LEGAL-01, USER-03</td></tr>
+    <tr><td>US09</td><td>LANG-01, UI-01</td></tr>
+    <tr><td>US10</td><td>USER-02</td></tr>
+    <tr><td>US11</td><td>MOD-01, NFR-S01</td></tr>
+    <tr><td>US12</td><td>CRAWL-01, CRAWL-02, PROF-03</td></tr>
+  </tbody>
+</table>
+
+</body>
+</html>

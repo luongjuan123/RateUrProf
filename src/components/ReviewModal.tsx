@@ -162,12 +162,12 @@ export const ReviewModal: React.FC<ReviewModalProps> = ({
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 overflow-y-auto">
       <div className="relative w-full max-w-2xl bg-white border border-[#111111] my-8 overflow-hidden">
         {/* Editorial Top Accent Stripe */}
-        <div className="h-1.5 bg-[#e03a3e] border-b border-[#111111] w-full" />
+        <div className="h-1.5 bg-[#1d4ed8] border-b border-[#111111] w-full" />
 
         {/* Modal Header */}
         <div className="px-6 py-5 border-b border-[#111111] flex items-center justify-between bg-white">
           <div>
-            <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-[#e03a3e]">
+            <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-[#1d4ed8]">
               {t("reviewModal.modalTag")}
             </span>
             <h2 className="text-xl font-mono font-bold text-black tracking-tight">
@@ -189,7 +189,7 @@ export const ReviewModal: React.FC<ReviewModalProps> = ({
         {/* Success Banner */}
         {success ? (
           <div className="p-12 text-center space-y-4">
-            <div className="w-14 h-14 bg-emerald-50 text-emerald-800 border border-emerald-300 flex items-center justify-center mx-auto">
+            <div className="w-14 h-14 bg-[#eff6ff] text-[#1d4ed8] border border-[#bfdbfe] flex items-center justify-center mx-auto">
               <PopArtCheck className="w-7 h-7" />
             </div>
             <h3 className="text-2xl font-mono font-bold text-black uppercase">
@@ -202,8 +202,8 @@ export const ReviewModal: React.FC<ReviewModalProps> = ({
         ) : (
           <form onSubmit={handleSubmit} className="p-6 space-y-6 max-h-[80vh] overflow-y-auto">
             {error && (
-              <div className="p-3 bg-red-50 border border-red-200 text-xs font-mono font-medium text-red-800 flex items-start gap-2">
-                <PopArtAlertCircle className="w-4 h-4 shrink-0 mt-0.5" />
+              <div className="p-3 bg-[#eff6ff] border border-[#bfdbfe] text-xs font-mono font-medium text-[#1d4ed8] flex items-start gap-2">
+                <PopArtAlertCircle className="w-4 h-4 shrink-0 mt-0.5 text-[#1d4ed8]" />
                 <span>{error}</span>
               </div>
             )}
@@ -240,7 +240,7 @@ export const ReviewModal: React.FC<ReviewModalProps> = ({
 
             {/* 5 Criteria Breakdown */}
             <div className="space-y-4">
-              <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-black border-l-2 border-[#e03a3e] pl-2">
+              <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-black border-l-2 border-[#1d4ed8] pl-2">
                 {t("reviewModal.criteriaSectionTitle")}
               </h4>
 
@@ -249,7 +249,7 @@ export const ReviewModal: React.FC<ReviewModalProps> = ({
                 <div className="p-3 bg-white border border-[#111111] space-y-1.5">
                   <div className="flex justify-between text-xs font-mono font-bold text-black">
                     <span>{t("reviewModal.teachingQuality")}</span>
-                    <span className="text-[#e03a3e] font-bold">{criteria.teachingQuality} / 5</span>
+                    <span className="text-[#1d4ed8] font-bold">{criteria.teachingQuality} / 5</span>
                   </div>
                   <input
                     type="range"
@@ -258,7 +258,7 @@ export const ReviewModal: React.FC<ReviewModalProps> = ({
                     step="1"
                     value={criteria.teachingQuality}
                     onChange={(e) => handleCriteriaChange("teachingQuality", Number(e.target.value))}
-                    className="w-full accent-[#e03a3e]"
+                    className="w-full accent-[#1d4ed8]"
                   />
                   <div className="flex justify-between text-[10px] font-mono text-gray-500 font-medium">
                     <span>{t("reviewModal.teachingLow")}</span>
@@ -270,7 +270,7 @@ export const ReviewModal: React.FC<ReviewModalProps> = ({
                 <div className="p-3 bg-white border border-[#111111] space-y-1.5">
                   <div className="flex justify-between text-xs font-mono font-bold text-black">
                     <span>{t("reviewModal.clarity")}</span>
-                    <span className="text-[#e03a3e] font-bold">{criteria.clarity} / 5</span>
+                    <span className="text-[#1d4ed8] font-bold">{criteria.clarity} / 5</span>
                   </div>
                   <input
                     type="range"
@@ -279,7 +279,7 @@ export const ReviewModal: React.FC<ReviewModalProps> = ({
                     step="1"
                     value={criteria.clarity}
                     onChange={(e) => handleCriteriaChange("clarity", Number(e.target.value))}
-                    className="w-full accent-[#e03a3e]"
+                    className="w-full accent-[#1d4ed8]"
                   />
                   <div className="flex justify-between text-[10px] font-mono text-gray-500 font-medium">
                     <span>{t("reviewModal.clarityLow")}</span>
@@ -291,7 +291,7 @@ export const ReviewModal: React.FC<ReviewModalProps> = ({
                 <div className="p-3 bg-white border border-[#111111] space-y-1.5">
                   <div className="flex justify-between text-xs font-mono font-bold text-black">
                     <span>{t("reviewModal.gradingFairness")}</span>
-                    <span className="text-[#e03a3e] font-bold">{criteria.gradingFairness} / 5</span>
+                    <span className="text-[#1d4ed8] font-bold">{criteria.gradingFairness} / 5</span>
                   </div>
                   <input
                     type="range"
@@ -300,7 +300,7 @@ export const ReviewModal: React.FC<ReviewModalProps> = ({
                     step="1"
                     value={criteria.gradingFairness}
                     onChange={(e) => handleCriteriaChange("gradingFairness", Number(e.target.value))}
-                    className="w-full accent-[#e03a3e]"
+                    className="w-full accent-[#1d4ed8]"
                   />
                   <div className="flex justify-between text-[10px] font-mono text-gray-500 font-medium">
                     <span>{t("reviewModal.gradingLow")}</span>
@@ -312,7 +312,7 @@ export const ReviewModal: React.FC<ReviewModalProps> = ({
                 <div className="p-3 bg-white border border-[#111111] space-y-1.5">
                   <div className="flex justify-between text-xs font-mono font-bold text-black">
                     <span>{t("reviewModal.difficulty")}</span>
-                    <span className="text-[#e03a3e] font-bold">{criteria.difficulty} / 5</span>
+                    <span className="text-[#1d4ed8] font-bold">{criteria.difficulty} / 5</span>
                   </div>
                   <input
                     type="range"
@@ -321,7 +321,7 @@ export const ReviewModal: React.FC<ReviewModalProps> = ({
                     step="1"
                     value={criteria.difficulty}
                     onChange={(e) => handleCriteriaChange("difficulty", Number(e.target.value))}
-                    className="w-full accent-[#e03a3e]"
+                    className="w-full accent-[#1d4ed8]"
                   />
                   <div className="flex justify-between text-[10px] font-mono text-gray-500 font-medium">
                     <span>{t("reviewModal.difficultyLow")}</span>
@@ -333,7 +333,7 @@ export const ReviewModal: React.FC<ReviewModalProps> = ({
                 <div className="p-3 bg-white border border-[#111111] space-y-1.5 md:col-span-2">
                   <div className="flex justify-between text-xs font-mono font-bold text-black">
                     <span>{t("reviewModal.communication")}</span>
-                    <span className="text-[#e03a3e] font-bold">{criteria.communication} / 5</span>
+                    <span className="text-[#1d4ed8] font-bold">{criteria.communication} / 5</span>
                   </div>
                   <input
                     type="range"
@@ -342,7 +342,7 @@ export const ReviewModal: React.FC<ReviewModalProps> = ({
                     step="1"
                     value={criteria.communication}
                     onChange={(e) => handleCriteriaChange("communication", Number(e.target.value))}
-                    className="w-full accent-[#e03a3e]"
+                    className="w-full accent-[#1d4ed8]"
                   />
                   <div className="flex justify-between text-[10px] font-mono text-gray-500 font-medium">
                     <span>{t("reviewModal.communicationLow")}</span>
@@ -399,7 +399,7 @@ export const ReviewModal: React.FC<ReviewModalProps> = ({
                       name="attendance"
                       checked={attendanceMandatory}
                       onChange={() => setAttendanceMandatory(true)}
-                      className="accent-[#e03a3e]"
+                      className="accent-[#1d4ed8]"
                     />
                     <span>{t("reviewModal.attendanceMandatory")}</span>
                   </label>
@@ -409,7 +409,7 @@ export const ReviewModal: React.FC<ReviewModalProps> = ({
                       name="attendance"
                       checked={!attendanceMandatory}
                       onChange={() => setAttendanceMandatory(false)}
-                      className="accent-[#e03a3e]"
+                      className="accent-[#1d4ed8]"
                     />
                     <span>{t("reviewModal.attendanceOptional")}</span>
                   </label>
@@ -427,9 +427,9 @@ export const ReviewModal: React.FC<ReviewModalProps> = ({
                       name="takeAgain"
                       checked={takeAgain}
                       onChange={() => setTakeAgain(true)}
-                      className="accent-[#e03a3e]"
+                      className="accent-[#1d4ed8]"
                     />
-                    <span className="text-black bg-gray-100 px-1.5 py-0.5 border border-gray-300">{t("reviewModal.takeAgainYes")}</span>
+                    <span className="text-[#1d4ed8] bg-[#eff6ff] px-1.5 py-0.5 border border-[#bfdbfe]">{t("reviewModal.takeAgainYes")}</span>
                   </label>
                   <label className="flex items-center gap-1.5 cursor-pointer">
                     <input
@@ -437,9 +437,9 @@ export const ReviewModal: React.FC<ReviewModalProps> = ({
                       name="takeAgain"
                       checked={!takeAgain}
                       onChange={() => setTakeAgain(false)}
-                      className="accent-[#e03a3e]"
+                      className="accent-[#1d4ed8]"
                     />
-                    <span className="text-black bg-gray-100 px-1.5 py-0.5 border border-gray-300">{t("reviewModal.takeAgainNo")}</span>
+                    <span className="text-slate-700 bg-gray-100 px-1.5 py-0.5 border border-gray-300">{t("reviewModal.takeAgainNo")}</span>
                   </label>
                 </div>
               </div>
@@ -458,10 +458,10 @@ export const ReviewModal: React.FC<ReviewModalProps> = ({
                       key={tag}
                       type="button"
                       onClick={() => handleTagToggle(tag)}
-                      className={`px-2.5 py-1 text-xs border border-[#111111] font-mono font-medium transition-colors cursor-pointer ${
+                      className={`px-2.5 py-1 text-xs border font-mono font-medium transition-colors cursor-pointer ${
                         isSelected
-                          ? "bg-[#111111] text-white"
-                          : "bg-white text-black hover:bg-gray-100"
+                          ? "bg-[#1d4ed8] text-white border-[#1d4ed8]"
+                          : "bg-white text-black border-gray-300 hover:bg-[#eff6ff] hover:text-[#1d4ed8]"
                       }`}
                     >
                       {isSelected ? "✓ " : "+ "}
@@ -483,7 +483,7 @@ export const ReviewModal: React.FC<ReviewModalProps> = ({
                 value={comment}
                 onChange={(e) => setComment(e.target.value)}
                 placeholder={t("reviewModal.writtenReviewPlaceholder")}
-                className="w-full px-3 py-2 text-xs border border-gray-300 focus:border-[#111111] outline-none font-mono text-black leading-relaxed"
+                className="w-full px-3 py-2 text-xs border border-gray-300 focus:border-[#1d4ed8] outline-none font-mono text-black leading-relaxed"
               />
               <div className="flex justify-between text-[11px] font-mono text-gray-500 mt-1">
                 <span>{t("reviewModal.constructiveHint")}</span>
@@ -501,7 +501,7 @@ export const ReviewModal: React.FC<ReviewModalProps> = ({
                 value={cohortName}
                 onChange={(e) => setCohortName(e.target.value)}
                 placeholder={t("reviewModal.cohortPlaceholder")}
-                className="w-full px-3 py-2 text-xs border border-gray-300 focus:border-[#111111] outline-none font-mono text-black"
+                className="w-full px-3 py-2 text-xs border border-gray-300 focus:border-[#1d4ed8] outline-none font-mono text-black"
               />
               <p className="text-[10px] font-mono text-gray-600 mt-1">
                 {t("reviewModal.cohortNote", {
@@ -518,7 +518,7 @@ export const ReviewModal: React.FC<ReviewModalProps> = ({
                   required
                   checked={agreeGuidelines}
                   onChange={(e) => setAgreeGuidelines(e.target.checked)}
-                  className="mt-0.5 accent-[#e03a3e]"
+                  className="mt-0.5 accent-[#1d4ed8]"
                 />
                 <span>{t("reviewModal.guidelinesCheckbox")}</span>
               </label>
@@ -536,7 +536,7 @@ export const ReviewModal: React.FC<ReviewModalProps> = ({
               <button
                 type="submit"
                 disabled={loading}
-                className="px-6 py-2.5 bg-[#e03a3e] hover:bg-[#c93236] text-white font-mono font-bold text-xs uppercase tracking-wider border border-[#e03a3e] transition-colors disabled:opacity-50 cursor-pointer"
+                className="px-6 py-2.5 bg-[#1d4ed8] hover:bg-[#1e40af] text-white font-mono font-bold text-xs uppercase tracking-wider border border-[#1d4ed8] transition-colors disabled:opacity-50 cursor-pointer"
               >
                 {loading ? t("reviewModal.submitting") : t("reviewModal.submit")}
               </button>

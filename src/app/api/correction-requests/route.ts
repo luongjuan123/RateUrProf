@@ -20,6 +20,12 @@ export async function POST(req: NextRequest) {
     const id = `req-${Date.now()}-${crypto.randomBytes(3).toString("hex")}`;
 
     const targetEmail = body.contactEmail || body.requesterEmail;
+    if (targetEmail && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(targetEmail)) {
+      return NextResponse.json(
+        { error: "VALIDATION_ERROR", message: "Invalid contact email address" },
+        { status: 422 }
+      );
+    }
     await createCorrectionRequest({
       id,
       professorId: body.professorId || "",

@@ -84,23 +84,23 @@ export const ProvenanceModal: React.FC<ProvenanceModalProps> = ({
                     key={key}
                     className={`p-4 border border-[#111111] rounded-none space-y-3 transition-colors ${
                       isConflict
-                        ? "bg-red-50/40"
+                        ? "bg-slate-50"
                         : "bg-white"
                     }`}
                   >
                     <div className="flex items-center justify-between border-b border-gray-200 pb-2">
                       <div className="flex items-center gap-2">
                         <span className="font-mono font-bold text-black uppercase text-[11px] tracking-wider">
-                          Trường dữ liệu: <span className="text-[#e03a3e]">{prov.field}</span>
+                          Trường dữ liệu: <span className="text-[#1d4ed8]">{prov.field}</span>
                         </span>
                         {isConflict ? (
-                          <span className="px-2 py-0.5 bg-red-100 text-red-900 font-mono font-bold text-[10px] rounded-none border border-red-300 flex items-center gap-1">
-                            <PopArtAlertTriangle className="w-3 h-3" />
+                          <span className="px-2 py-0.5 bg-slate-100 text-slate-800 font-mono font-bold text-[10px] rounded-none border border-slate-300 flex items-center gap-1">
+                            <PopArtAlertTriangle className="w-3 h-3 text-[#1d4ed8]" />
                             {t("provenance.conflictAlert")}
                           </span>
                         ) : (
-                          <span className="px-2 py-0.5 bg-emerald-100 text-emerald-900 font-mono font-bold text-[10px] rounded-none border border-emerald-300 flex items-center gap-1">
-                            <PopArtShield className="w-3 h-3" />
+                          <span className="px-2 py-0.5 bg-[#eff6ff] text-[#1d4ed8] font-mono font-bold text-[10px] rounded-none border border-[#bfdbfe] flex items-center gap-1">
+                            <PopArtShield className="w-3 h-3 text-[#1d4ed8]" />
                             {t("provenance.verifiedSource")}
                           </span>
                         )}
@@ -114,14 +114,14 @@ export const ProvenanceModal: React.FC<ProvenanceModalProps> = ({
                     {/* Source URL & Name */}
                     <div className="space-y-1">
                       <div className="font-mono font-bold text-black flex items-center gap-1">
-                        <PopArtFileText className="w-3.5 h-3.5" />
+                        <PopArtFileText className="w-3.5 h-3.5 text-[#1d4ed8]" />
                         <span>Nguồn: {prov.sourceName || "Cổng thông tin đại học chính thức"}</span>
                       </div>
                       <a
                         href={prov.sourceUrl}
                         target="_blank"
                         rel="noreferrer"
-                        className="inline-flex items-center gap-1 text-[11px] text-[#e03a3e] hover:underline font-mono font-medium break-all"
+                        className="inline-flex items-center gap-1 text-[11px] text-[#1d4ed8] hover:underline font-mono font-medium break-all"
                       >
                         <span>{prov.sourceUrl}</span>
                         <PopArtExternalLink className="w-3 h-3" />
@@ -130,16 +130,16 @@ export const ProvenanceModal: React.FC<ProvenanceModalProps> = ({
 
                     {/* Supporting Text Excerpt */}
                     {prov.extractedTextExcerpt && (
-                      <div className="p-3 bg-gray-50 border-l-2 border-[#e03a3e] border-y border-r border-gray-200 font-mono text-xs text-black italic leading-relaxed">
+                      <div className="p-3 bg-gray-50 border-l-2 border-[#1d4ed8] border-y border-r border-gray-200 font-mono text-xs text-black italic leading-relaxed">
                         “{prov.extractedTextExcerpt}”
                       </div>
                     )}
 
                     {/* Conflicting Evidence if any */}
                     {prov.conflictingEvidence && prov.conflictingEvidence.length > 0 && (
-                      <div className="p-3 bg-white border border-red-300 rounded-none space-y-2">
-                        <div className="font-mono font-bold text-red-900 flex items-center gap-1">
-                          <PopArtAlertTriangle className="w-3.5 h-3.5" />
+                      <div className="p-3 bg-white border border-slate-300 rounded-none space-y-2">
+                        <div className="font-mono font-bold text-slate-900 flex items-center gap-1">
+                          <PopArtAlertTriangle className="w-3.5 h-3.5 text-[#1d4ed8]" />
                           <span>Dữ liệu xung đột từ nguồn khác:</span>
                         </div>
                         {prov.conflictingEvidence.map((conf, ci) => (
@@ -149,7 +149,7 @@ export const ProvenanceModal: React.FC<ProvenanceModalProps> = ({
                               href={conf.sourceUrl}
                               target="_blank"
                               rel="noreferrer"
-                              className="inline-flex items-center gap-1 text-[#e03a3e] hover:underline font-medium"
+                              className="inline-flex items-center gap-1 text-[#1d4ed8] hover:underline font-medium"
                             >
                               <span>{conf.sourceName || conf.sourceUrl}</span>
                               <PopArtExternalLink className="w-3 h-3" />
@@ -182,7 +182,7 @@ export const ProvenanceModal: React.FC<ProvenanceModalProps> = ({
               onClose();
               if (onRequestCorrection) onRequestCorrection(activeField);
             }}
-            className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-mono font-medium text-[#e03a3e] hover:bg-red-50 rounded-none transition-colors border border-gray-300 cursor-pointer"
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-mono font-medium text-[#1d4ed8] hover:bg-[#eff6ff] rounded-none transition-colors border border-gray-300 cursor-pointer"
           >
             <PopArtFlag className="w-3.5 h-3.5" />
             <span>{t("provenance.reportData")}</span>
@@ -191,7 +191,7 @@ export const ProvenanceModal: React.FC<ProvenanceModalProps> = ({
           <button
             type="button"
             onClick={onClose}
-            className="px-5 py-2 bg-[#111111] text-white hover:bg-black text-xs font-mono font-bold uppercase rounded-none border border-[#111111] transition-colors cursor-pointer"
+            className="px-5 py-2 bg-[#1d4ed8] text-white hover:bg-[#1e40af] text-xs font-mono font-bold uppercase rounded-none border border-[#1d4ed8] transition-colors cursor-pointer"
           >
             {t("common.close")}
           </button>

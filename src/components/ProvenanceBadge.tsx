@@ -50,10 +50,10 @@ export const ProvenanceBadge: React.FC<ProvenanceBadgeProps> = ({
       }
       className={`inline-flex items-center gap-1 px-2 py-0.5 text-[10px] font-mono font-bold border transition-colors cursor-pointer ${
         isConflict
-          ? "bg-red-50 text-red-800 border-red-300 hover:bg-red-100"
+          ? "bg-slate-100 text-slate-800 border-slate-300 hover:bg-slate-200"
           : isVerified
-          ? "bg-emerald-50 text-emerald-800 border-emerald-300 hover:bg-emerald-100"
-          : "bg-amber-50 text-amber-800 border-amber-300 hover:bg-amber-100"
+          ? "bg-[#eff6ff] text-[#1d4ed8] border-[#bfdbfe] hover:bg-[#dbeafe]"
+          : "bg-gray-50 text-gray-700 border-gray-300 hover:bg-gray-100"
       }`}
     >
       {isConflict ? (

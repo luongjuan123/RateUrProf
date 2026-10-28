@@ -86,11 +86,11 @@ export default function MyReviewsPage() {
 
   if (!user) {
     return (
-      <div className="max-w-xl mx-auto px-4 py-12 text-center space-y-5 bg-white border-2 border-black shadow-[6px_6px_0px_#000] my-10 p-8">
-        <div className="w-14 h-14 bg-[#fef9c3] border-2 border-black shadow-[2px_2px_0px_#000] flex items-center justify-center mx-auto text-black">
-          <PopArtMessageSquare className="w-6 h-6" />
+      <div className="max-w-xl mx-auto px-4 py-12 text-center space-y-5 bg-white border border-gray-200 my-10 p-8">
+        <div className="w-14 h-14 bg-[#eff6ff] text-[#1d4ed8] border border-[#bfdbfe] flex items-center justify-center mx-auto">
+          <PopArtMessageSquare className="w-6 h-6 text-[#1d4ed8]" />
         </div>
-        <h1 className="text-2xl font-mono font-black uppercase tracking-tight text-black">
+        <h1 className="text-2xl font-mono font-bold uppercase tracking-tight text-black">
           Quản lý Đánh giá của bạn
         </h1>
         <p className="text-xs font-mono text-gray-700 max-w-md mx-auto leading-relaxed">
@@ -98,7 +98,7 @@ export default function MyReviewsPage() {
         </p>
         <button
           onClick={() => setIsAuthModalOpen(true)}
-          className="px-6 py-2.5 bg-[#e03a3e] hover:bg-[#c93236] text-white font-mono font-black text-xs uppercase tracking-wider border-2 border-black shadow-[4px_4px_0px_#000] hover:shadow-[5px_5px_0px_#000] active:shadow-none active:translate-x-[4px] active:translate-y-[4px] transition-all"
+          className="px-6 py-2.5 bg-[#1d4ed8] hover:bg-[#1e40af] text-white font-mono font-bold text-xs uppercase tracking-wider border border-[#1d4ed8] transition-colors cursor-pointer"
         >
           Đăng nhập ngay
         </button>
@@ -112,16 +112,16 @@ export default function MyReviewsPage() {
 
   return (
     <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8">
-      {/* Editorial Header */}
-      <div className="border-b-2 border-black pb-4">
-        <span className="inline-block px-2.5 py-1 text-[11px] font-mono font-black uppercase tracking-widest bg-[#fef9c3] text-black border-2 border-black shadow-[2px_2px_0px_#000] mb-2">
+      {/* Header */}
+      <div className="border-b border-gray-200 pb-4">
+        <span className="inline-block px-2.5 py-1 text-[11px] font-mono font-bold uppercase tracking-widest bg-[#eff6ff] text-[#1d4ed8] border border-[#bfdbfe] mb-2">
           Tài khoản sinh viên
         </span>
-        <h1 className="text-3xl font-mono font-black uppercase tracking-tight text-black mt-1">
+        <h1 className="text-3xl font-mono font-bold uppercase tracking-tight text-black mt-1">
           Lịch sử Đánh giá của tôi
         </h1>
         <p className="text-xs font-mono text-gray-700 mt-2">
-          Đang xem với tư cách: <span className="font-bold text-black bg-[#e0f2fe] px-1.5 py-0.5 border border-black">{userProfile?.displayName || user.email || "Sinh viên ẩn danh"}</span>
+          Đang xem với tư cách: <span className="font-bold text-[#1d4ed8] bg-[#eff6ff] px-1.5 py-0.5 border border-[#bfdbfe]">{userProfile?.displayName || user.email || "Sinh viên ẩn danh"}</span>
         </p>
       </div>
 
@@ -130,9 +130,11 @@ export default function MyReviewsPage() {
           Đang tải danh sách đánh giá...
         </div>
       ) : reviews.length === 0 ? (
-        <div className="p-12 text-center bg-white border-2 border-black shadow-[4px_4px_0px_#000] space-y-3">
-          <PopArtMessageSquare className="w-10 h-10 mx-auto" />
-          <h3 className="font-mono font-black text-base text-black uppercase">
+        <div className="p-12 text-center bg-white border border-gray-200 space-y-3">
+          <div className="w-12 h-12 bg-[#eff6ff] text-[#1d4ed8] border border-[#bfdbfe] flex items-center justify-center mx-auto mb-2">
+            <PopArtMessageSquare className="w-6 h-6 text-[#1d4ed8]" />
+          </div>
+          <h3 className="font-mono font-bold text-base text-black uppercase">
             Bạn chưa gửi đánh giá nào
           </h3>
           <p className="text-xs font-mono text-gray-600 max-w-sm mx-auto">
@@ -140,7 +142,7 @@ export default function MyReviewsPage() {
           </p>
           <Link
             href="/"
-            className="inline-block px-5 py-2.5 bg-black text-[#fef9c3] text-xs font-mono font-bold uppercase tracking-wider border-2 border-black shadow-[2px_2px_0px_#000] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none"
+            className="inline-block px-5 py-2.5 bg-[#1d4ed8] hover:bg-[#1e40af] text-white text-xs font-mono font-bold uppercase tracking-wider border border-[#1d4ed8] transition-colors cursor-pointer"
           >
             Tìm giảng viên để đánh giá
           </Link>
@@ -150,16 +152,16 @@ export default function MyReviewsPage() {
           {reviews.map((rev) => (
             <div
               key={rev.id}
-              className="bg-white border-2 border-black shadow-[4px_4px_0px_#000] hover:shadow-[6px_6px_0px_#000] transition-all p-6 space-y-4"
+              className="bg-white border border-gray-200 border-l-4 border-l-[#1d4ed8] transition-colors p-6 space-y-4"
             >
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b-2 border-black pb-3">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-gray-200 pb-3">
                 <div>
                   <Link
                     href={`/professors/${rev.professorId}`}
-                    className="text-base font-black text-black hover:text-[#e03a3e] transition-colors flex items-center gap-1.5"
+                    className="text-base font-bold text-black hover:text-[#1d4ed8] transition-colors flex items-center gap-1.5"
                   >
                     <span>{rev.professorName}</span>
-                    <PopArtExternalLink className="w-3.5 h-3.5" />
+                    <PopArtExternalLink className="w-3.5 h-3.5 text-[#1d4ed8]" />
                   </Link>
                   <p className="text-xs font-mono text-gray-600 mt-1">
                     Môn: <span className="font-bold text-black">{rev.courseName}</span> • Ngày gửi: {new Date(rev.createdAt).toLocaleDateString("vi-VN")}
@@ -173,10 +175,7 @@ export default function MyReviewsPage() {
                     const diffLevel = getDifficultyLevelByValue(diffVal);
                     return (
                       <>
-                        <div
-                          className="flex items-center gap-1.5 px-3 py-1 text-black text-xs font-mono font-black border-2 border-black shadow-[2px_2px_0px_#000]"
-                          style={{ backgroundColor: level.color }}
-                        >
+                        <div className="flex items-center gap-1.5 px-3 py-1 bg-[#eff6ff] text-[#1d4ed8] text-xs font-mono font-bold border border-[#bfdbfe]">
                           <span className="text-[10px] uppercase tracking-wider">
                             {level.labelVi}
                           </span>
@@ -185,8 +184,7 @@ export default function MyReviewsPage() {
                         </div>
 
                         <div
-                          className="flex items-center gap-1 px-2.5 py-1 text-black text-xs font-mono font-black border-2 border-black shadow-[2px_2px_0px_#000]"
-                          style={{ backgroundColor: diffLevel.color }}
+                          className="flex items-center gap-1 px-2.5 py-1 bg-slate-100 text-slate-800 text-xs font-mono font-bold border border-slate-200"
                           title={`Độ khó: ${diffVal}/5 (${diffLevel.labelVi})`}
                         >
                           <span className="text-[10px] uppercase tracking-wider">
@@ -202,36 +200,33 @@ export default function MyReviewsPage() {
               </div>
 
               {/* Badges / Course Meta */}
-              <div className="flex flex-wrap items-center gap-2 text-xs">
+              <div className="flex flex-wrap items-center gap-2 text-xs font-mono">
                 {(() => {
                   const diffVal = rev.criteria?.difficulty ?? 3;
                   const diffLevel = getDifficultyLevelByValue(diffVal);
                   return (
-                    <span
-                      className="px-2 py-0.5 border border-black shadow-[1px_1px_0px_#000] font-bold"
-                      style={{ backgroundColor: diffLevel.lightBg, color: diffLevel.textColor }}
-                    >
-                      Độ khó: <span className="font-black text-black">{diffVal}/5</span>{" "}
-                      <span className="text-[11px] font-bold opacity-90">({diffLevel.labelVi})</span>
+                    <span className="px-2 py-0.5 bg-slate-100 text-slate-800 border border-slate-200 font-bold">
+                      Độ khó: <span className="font-bold text-black">{diffVal}/5</span>{" "}
+                      <span className="text-[11px] font-medium opacity-80">({diffLevel.labelVi})</span>
                     </span>
                   );
                 })()}
                 {rev.gradeReceived && (
-                  <span className="px-2 py-0.5 bg-[#fef9c3] font-black text-black border border-black shadow-[1px_1px_0px_#000]">
+                  <span className="px-2 py-0.5 bg-[#eff6ff] text-[#1d4ed8] font-bold border border-[#bfdbfe]">
                     Điểm: {rev.gradeReceived}
                   </span>
                 )}
-                <span className="px-2 py-0.5 bg-white text-black font-bold border border-black shadow-[1px_1px_0px_#000]">
+                <span className="px-2 py-0.5 bg-white text-slate-700 font-medium border border-gray-200">
                   {rev.attendanceMandatory ? "Điểm danh: Bắt buộc" : "Điểm danh: Tự do"}
                 </span>
-                <span className={`px-2 py-0.5 border border-black shadow-[1px_1px_0px_#000] font-bold ${
-                  rev.takeAgain ? "bg-[#6ee7b7] text-black" : "bg-[#fee2e2] text-black"
+                <span className={`px-2 py-0.5 border font-bold ${
+                  rev.takeAgain ? "bg-[#eff6ff] text-[#1d4ed8] border-[#bfdbfe]" : "bg-slate-100 text-slate-700 border-slate-200"
                 }`}>
                   {rev.takeAgain ? "Muốn học lại: Có" : "Muốn học lại: Không"}
                 </span>
               </div>
 
-              <p className="text-xs sm:text-sm text-gray-900 leading-relaxed font-sans">
+              <p className="text-xs sm:text-sm text-gray-900 leading-relaxed font-sans font-medium">
                 {rev.comment}
               </p>
 
@@ -240,7 +235,7 @@ export default function MyReviewsPage() {
                   {rev.tags.map((t) => (
                     <span
                       key={t}
-                      className="px-2 py-0.5 bg-[#fef9c3] text-black border border-black shadow-[1px_1px_0px_#000] text-xs font-mono font-bold"
+                      className="px-2 py-0.5 bg-[#eff6ff] text-[#1d4ed8] border border-[#bfdbfe] text-xs font-mono font-bold"
                     >
                       #{t}
                     </span>
@@ -248,14 +243,14 @@ export default function MyReviewsPage() {
                 </div>
               )}
 
-              <div className="pt-3 border-t-2 border-black flex flex-wrap items-center justify-between gap-2 text-xs font-mono">
+              <div className="pt-3 border-t border-gray-100 flex flex-wrap items-center justify-between gap-2 text-xs font-mono">
                 <div className="flex items-center gap-3 text-gray-700">
                   <span className="flex items-center gap-1">
-                    <PopArtThumbsUp className="w-3.5 h-3.5" />
+                    <PopArtThumbsUp className="w-3.5 h-3.5 text-[#1d4ed8]" />
                     {rev.helpfulCount} lượt thấy hữu ích
                   </span>
                   <span>•</span>
-                  <span className="font-bold text-black bg-[#6ee7b7]/40 px-2 py-0.5 border border-black">
+                  <span className="font-bold text-[#1d4ed8] bg-[#eff6ff] px-2 py-0.5 border border-[#bfdbfe]">
                     {rev.status === "published" ? "Đã công bố" : rev.status}
                   </span>
                 </div>
@@ -263,7 +258,7 @@ export default function MyReviewsPage() {
                 <div className="flex items-center gap-2">
                   <Link
                     href={`/professors/${rev.professorId}/rate`}
-                    className="flex items-center gap-1 px-2.5 py-1 bg-[#fef9c3] hover:bg-[#fde047] text-black border border-black text-xs font-mono font-bold shadow-[1px_1px_0px_#000] active:translate-x-[1px] active:translate-y-[1px] active:shadow-none transition-all"
+                    className="flex items-center gap-1 px-2.5 py-1 bg-[#eff6ff] hover:bg-[#dbeafe] text-[#1d4ed8] border border-[#bfdbfe] text-xs font-mono font-bold transition-colors"
                   >
                     <PopArtPencil className="w-3.5 h-3.5" />
                     <span>Sửa đánh giá</span>
@@ -272,7 +267,7 @@ export default function MyReviewsPage() {
                   <button
                     onClick={() => handleDelete(rev.id, rev.professorId)}
                     disabled={deletingId === rev.id}
-                    className="flex items-center gap-1 text-black bg-[#fee2e2] hover:bg-red-200 border border-black px-2.5 py-1 text-xs font-mono font-bold shadow-[1px_1px_0px_#000] active:translate-x-[1px] active:translate-y-[1px] active:shadow-none transition-all cursor-pointer"
+                    className="flex items-center gap-1 text-slate-700 bg-white hover:bg-gray-50 border border-gray-200 px-2.5 py-1 text-xs font-mono font-bold transition-colors cursor-pointer"
                   >
                     <PopArtTrash className="w-3.5 h-3.5" />
                     <span>Xóa đánh giá</span>

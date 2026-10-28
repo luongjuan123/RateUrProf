@@ -1,11 +1,10 @@
 "use client";
 
-import React, { useState, useEffect, useRef, useCallback, Suspense } from "react";
+import React, { useState, useEffect, useRef, useCallback, useMemo, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Professor, AutocompleteSuggestion, University } from "@/types";
 import { ProfessorResultCard } from "@/components/search/ProfessorResultCard";
 import { SchoolResultCard } from "@/components/search/SchoolResultCard";
-import { CampusIllustrationBanner } from "@/components/home/CampusIllustrationBanner";
 import { HomeFeatureCards } from "@/components/home/HomeFeatureCards";
 import { useTranslation } from "@/locales/i18n";
 import { Loader2 } from "lucide-react";
@@ -69,6 +68,8 @@ function HomePageContent() {
 
   // Dropdown for switching mode in search results bar
   const [isModeDropdownOpen, setIsModeDropdownOpen] = useState(false);
+  const initialUniParam = searchParams.get("university") || (searchParams.has("demo_bug05") ? "hust" : "all");
+  const [selectedUniversityFilter, setSelectedUniversityFilter] = useState<string>(initialUniParam);
 
   const containerRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -250,6 +251,22 @@ function HomePageContent() {
       }
     }
   }, [searchParams, performSearch]);
+
+  // Filtered professors for BUG-05 (University filter returns incorrect results)
+  const displayedProfessors = useMemo(() => {
+    if (selectedUniversityFilter === "all") return professorResults;
+    // BUG-05: University filter includes professors from non-matching universities
+    const matching = professorResults.filter(
+      (p) => p.universityId === selectedUniversityFilter || p.universityIds?.includes(selectedUniversityFilter)
+    );
+    const nonMatching = professorResults.filter(
+      (p) => p.universityId !== selectedUniversityFilter && !p.universityIds?.includes(selectedUniversityFilter)
+    );
+    if (nonMatching.length > 0) {
+      return [...matching, nonMatching[0]];
+    }
+    return matching;
+  }, [professorResults, selectedUniversityFilter]);
 
   // Debounced autocomplete (prioritizing active mode)
   useEffect(() => {
@@ -451,35 +468,35 @@ function HomePageContent() {
           <div className="max-w-4xl w-full mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6 z-10 my-auto">
           {/* Rate My Professors Iconic Badge & Brand */}
           <div className="space-y-3">
-            <div className="inline-flex items-center gap-2 border border-gray-300 px-3 py-1 bg-white">
-              <div className="w-5 h-5 bg-[#fef9c3] border border-black text-black flex items-center justify-center font-black text-[10px] tracking-wider">
-                <span className="text-black">RU</span><span className="text-[#e03a3e]">P</span>
+            <div className="inline-flex items-center gap-2 border border-gray-200 px-3 py-1 bg-white">
+              <div className="w-5 h-5 bg-blue-50 border border-blue-200 text-[#1d4ed8] flex items-center justify-center font-black text-[10px] tracking-wider">
+                <span className="text-[#1d4ed8]">RU</span><span className="text-[#1e40af]">P</span>
               </div>
-              <span className="font-black text-sm tracking-widest uppercase text-black">
-                <span>RATEUR</span><span className="text-[#e03a3e]">PROFS</span>
+              <span className="font-bold text-sm tracking-widest uppercase text-slate-900">
+                <span>RATEUR</span><span className="text-[#1d4ed8]">PROFS</span>
               </span>
             </div>
 
-            {/* Dynamic Headline matching Screenshot 1 & 2 */}
+            {/* Dynamic Headline matching Super Flat Blue & White */}
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-normal tracking-tight text-gray-900 select-none sm:whitespace-nowrap">
               {searchMode === "school" ? (
                 locale === "en" ? (
                   <>
-                    Enter your <span className="font-black text-[#e03a3e]">school</span> to get started
+                    Enter your <span className="font-bold text-[#1d4ed8]">school</span> to get started
                   </>
                 ) : (
                   <>
-                    Nhập tên <span className="font-black text-[#e03a3e]">trường</span> của bạn để bắt đầu
+                    Nhập tên <span className="font-bold text-[#1d4ed8]">trường</span> của bạn để bắt đầu
                   </>
                 )
               ) : (
                 locale === "en" ? (
                   <>
-                    Find a <span className="font-black text-[#e03a3e]">professor</span>
+                    Find a <span className="font-bold text-[#1d4ed8]">professor</span>
                   </>
                 ) : (
                   <>
-                    Tìm <span className="font-black text-[#e03a3e]">giảng viên</span>
+                    Tìm <span className="font-bold text-[#1d4ed8]">giảng viên</span>
                   </>
                 )
               )}
@@ -490,10 +507,10 @@ function HomePageContent() {
           <div ref={containerRef} className="relative max-w-xl mx-auto text-left">
             <form
               onSubmit={handleSearchSubmit}
-              className="flex items-center border border-gray-300 focus-within:border-black bg-white transition-colors px-4 py-2 sm:py-2.5"
+              className="flex items-center border border-gray-300 focus-within:border-[#1d4ed8] bg-white transition-colors px-4 py-2 sm:py-2.5"
             >
               {/* Left Icon (GraduationCap for school, Search/User for professor) */}
-              <div className="text-black mr-3 shrink-0">
+              <div className="text-[#1d4ed8] mr-3 shrink-0">
                 {searchMode === "school" ? (
                   <PopArtGraduationCap className="w-5 h-5" />
                 ) : (
@@ -529,7 +546,7 @@ function HomePageContent() {
               />
 
               {isSuggesting && (
-                <Loader2 className="w-4 h-4 text-black animate-spin shrink-0 mr-2" />
+                <Loader2 className="w-4 h-4 text-[#1d4ed8] animate-spin shrink-0 mr-2" />
               )}
 
               {searchInput && (
@@ -540,7 +557,7 @@ function HomePageContent() {
                     setSuggestions([]);
                     setShowDropdown(false);
                   }}
-                  className="p-1 text-gray-500 hover:text-black shrink-0 mr-1 cursor-pointer"
+                  className="p-1 text-gray-400 hover:text-black shrink-0 mr-1 cursor-pointer"
                   aria-label="Clear input"
                 >
                   <PopArtX className="w-4 h-4" />
@@ -550,7 +567,7 @@ function HomePageContent() {
               <button
                 type="submit"
                 onClick={handleSearchSubmit}
-                className="w-8 h-8 bg-black text-[#fef9c3] hover:bg-[#1d4ed8] hover:text-white border border-black flex items-center justify-center shrink-0 transition-colors cursor-pointer"
+                className="w-8 h-8 bg-[#1d4ed8] text-white hover:bg-[#1e40af] border border-[#1d4ed8] flex items-center justify-center shrink-0 transition-colors cursor-pointer"
                 aria-label="Submit search"
               >
                 <PopArtSearch className="w-4 h-4" />
@@ -560,7 +577,7 @@ function HomePageContent() {
             {/* Typeahead Suggestions Dropdown (Super Flat) */}
             {showDropdown && suggestions.length > 0 && (
               <div className="absolute left-0 right-0 top-full mt-2 bg-white border border-gray-300 z-50 overflow-hidden">
-                <div className="px-4 py-2 bg-gray-100 border-b border-gray-200 text-[10px] font-mono font-black uppercase tracking-wider text-black">
+                <div className="px-4 py-2 bg-[#eff6ff] border-b border-[#bfdbfe] text-[10px] font-mono font-bold uppercase tracking-wider text-[#1d4ed8]">
                   {locale === "en" ? "Suggestions" : "Gợi ý tìm kiếm"}
                 </div>
                 <ul className="divide-y divide-gray-200 max-h-80 overflow-y-auto">
@@ -572,11 +589,11 @@ function HomePageContent() {
                         key={`${item.type}-${item.id}`}
                         onMouseDown={() => handleSelectSuggestion(item)}
                         className={`px-4 py-3 flex items-center justify-between cursor-pointer transition-colors ${
-                          isSelected ? "bg-[#fef9c3]/50" : "hover:bg-gray-50"
+                          isSelected ? "bg-[#eff6ff]" : "hover:bg-gray-50"
                         }`}
                       >
                         <div className="flex items-center gap-3 min-w-0 pr-3">
-                          <div className="w-7 h-7 border border-gray-300 bg-[#fef9c3] text-black flex items-center justify-center shrink-0 font-mono font-black text-xs">
+                          <div className="w-7 h-7 border border-[#bfdbfe] bg-[#eff6ff] text-[#1d4ed8] flex items-center justify-center shrink-0 font-mono font-bold text-xs">
                             {isUni ? (
                               <PopArtBuilding className="w-4 h-4" />
                             ) : (
@@ -584,16 +601,16 @@ function HomePageContent() {
                             )}
                           </div>
                           <div className="min-w-0">
-                            <div className="text-sm font-mono font-black text-black truncate">
+                            <div className="text-sm font-mono font-bold text-black truncate">
                               {item.title}
                             </div>
-                            <div className="text-xs font-mono text-gray-700 truncate">
+                            <div className="text-xs font-mono text-gray-600 truncate">
                               {item.subtitle}
                             </div>
                           </div>
                         </div>
 
-                        <span className="shrink-0 px-2 py-0.5 text-[9px] font-mono font-black uppercase tracking-wider bg-gray-100 text-black border border-gray-300">
+                        <span className="shrink-0 px-2 py-0.5 text-[9px] font-mono font-bold uppercase tracking-wider bg-white text-[#1d4ed8] border border-[#bfdbfe]">
                           {isUni
                             ? locale === "en"
                               ? "School"
@@ -611,12 +628,12 @@ function HomePageContent() {
           </div>
 
           {/* Under-link Toggle Button matching Screenshot 1 & 2 */}
-          <div className="pt-1">
+          <div className="pt-2">
             {searchMode === "school" ? (
               <button
                 type="button"
                 onClick={() => handleSwitchMode("professor")}
-                className="text-xs sm:text-sm text-gray-700 hover:text-black underline underline-offset-2 font-medium transition-colors cursor-pointer"
+                className="text-xs sm:text-sm text-gray-600 hover:text-[#1d4ed8] underline underline-offset-2 font-medium transition-colors cursor-pointer"
               >
                 {locale === "en"
                   ? "I'd like to look up a professor by name"
@@ -626,7 +643,7 @@ function HomePageContent() {
               <button
                 type="button"
                 onClick={() => handleSwitchMode("school")}
-                className="text-xs sm:text-sm text-gray-700 hover:text-black underline underline-offset-2 font-medium transition-colors cursor-pointer"
+                className="text-xs sm:text-sm text-gray-600 hover:text-[#1d4ed8] underline underline-offset-2 font-medium transition-colors cursor-pointer"
               >
                 {locale === "en"
                   ? "I want to find a professor at a school"
@@ -634,11 +651,6 @@ function HomePageContent() {
               </button>
             )}
           </div>
-        </div>
-
-        {/* Campus Community Illustration Banner anchoring bottom of viewport */}
-        <div className="w-full mt-auto pt-6">
-          <CampusIllustrationBanner />
         </div>
       </section>
     )}
@@ -744,16 +756,16 @@ function HomePageContent() {
           </div>
 
           {/* Results Summary Title */}
-          <div className="mb-6 p-4 bg-[#f8fafc] border border-gray-200 flex items-center justify-between gap-3 flex-wrap">
+          <div className="mb-6 p-4 bg-[#eff6ff] border border-[#bfdbfe] flex items-center justify-between gap-3 flex-wrap">
             <div className="flex items-center gap-2.5">
-              <div className="w-8 h-8 bg-black text-white flex items-center justify-center font-mono font-black text-sm shrink-0">
+              <div className="w-8 h-8 bg-[#1d4ed8] text-white flex items-center justify-center font-mono font-bold text-sm shrink-0">
                 {submittedMode === "professor" ? (
                   <PopArtUser className="w-4 h-4 text-white" />
                 ) : (
                   <PopArtBuilding className="w-4 h-4 text-white" />
                 )}
               </div>
-              <h2 className="text-sm sm:text-base font-mono font-black uppercase text-black tracking-wider">
+              <h2 className="text-sm sm:text-base font-mono font-black uppercase text-slate-900 tracking-wider">
                 {submittedMode === "professor" ? (
                   locale === "en" ? (
                     `${totalCount} ${
@@ -775,15 +787,42 @@ function HomePageContent() {
             </div>
 
             <div className="flex items-center gap-2">
-              <span className="px-2.5 py-0.5 bg-white border border-gray-300 text-[10px] font-mono font-bold uppercase tracking-wider text-black">
+              <span className="px-2.5 py-0.5 bg-white border border-[#bfdbfe] text-[10px] font-mono font-bold uppercase tracking-wider text-[#1d4ed8]">
                 {submittedMode === "professor" ? (locale === "en" ? "PROFESSOR SEARCH" : "TÌM GIẢNG VIÊN") : (locale === "en" ? "SCHOOL SEARCH" : "TÌM TRƯỜNG ĐH")}
               </span>
             </div>
           </div>
 
+          {/* University Filter Toolbar (BUG-05) */}
+          {submittedMode === "professor" && !loading && professorResults.length > 0 && (
+            <div className="mb-6 p-3 bg-white border border-gray-200 flex items-center justify-between gap-3 flex-wrap">
+              <div className="flex items-center gap-2">
+                <span className="text-xs font-mono font-bold uppercase text-slate-700">
+                  {locale === "en" ? "Filter by University:" : "Bộ lọc trường đại học:"}
+                </span>
+                <select
+                  id="university-filter-select"
+                  value={selectedUniversityFilter}
+                  onChange={(e) => setSelectedUniversityFilter(e.target.value)}
+                  className="text-xs font-mono font-medium border border-gray-300 px-2.5 py-1.5 bg-white text-slate-900 focus:outline-none focus:border-[#1d4ed8]"
+                >
+                  <option value="all">{locale === "en" ? "All Universities" : "Tất cả các trường"}</option>
+                  <option value="hust">{locale === "en" ? "Hanoi University of Science and Technology (HUST)" : "Đại học Bách Khoa Hà Nội (HUST)"}</option>
+                  <option value="vnu-uet">{locale === "en" ? "VNU University of Engineering and Technology (VNU-UET)" : "Trường ĐH Công nghệ - ĐHQG Hà Nội (VNU-UET)"}</option>
+                  <option value="ctu">{locale === "en" ? "Can Tho University (CTU)" : "Trường Đại học Cần Thơ (CTU)"}</option>
+                </select>
+              </div>
+              {selectedUniversityFilter !== "all" && (
+                <span className="text-[11px] font-mono text-slate-500">
+                  {locale === "en" ? "Filtered results" : "Đang áp dụng bộ lọc trường"}
+                </span>
+              )}
+            </div>
+          )}
+
           {/* Error Message */}
           {error && (
-            <div className="p-4 bg-[#fee2e2] border border-[#f87171] text-center text-xs font-mono font-bold text-red-900 mb-6">
+            <div className="p-4 bg-[#eff6ff] border border-[#bfdbfe] text-center text-xs font-mono font-bold text-[#1d4ed8] mb-6">
               {error}
             </div>
           )}
@@ -806,7 +845,7 @@ function HomePageContent() {
             ((submittedMode === "professor" && professorResults.length === 0) ||
               (submittedMode === "school" && schoolResults.length === 0)) && (
               <div className="p-8 sm:p-12 text-center bg-white border border-gray-200 space-y-3">
-                <div className="w-12 h-12 bg-gray-100 text-gray-800 border border-gray-300 flex items-center justify-center mx-auto">
+                <div className="w-12 h-12 bg-[#eff6ff] text-[#1d4ed8] border border-[#bfdbfe] flex items-center justify-center mx-auto">
                   <PopArtSearch className="w-6 h-6" />
                 </div>
                 <h3 className="text-base sm:text-lg font-mono font-black uppercase text-black">
@@ -853,9 +892,9 @@ function HomePageContent() {
           {!loading &&
             !error &&
             submittedMode === "professor" &&
-            professorResults.length > 0 && (
+            displayedProfessors.length > 0 && (
               <div className="space-y-3.5">
-                {professorResults.map((prof) => (
+                {displayedProfessors.map((prof) => (
                   <ProfessorResultCard key={prof.id} professor={prof} />
                 ))}
 

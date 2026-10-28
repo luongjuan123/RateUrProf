@@ -109,8 +109,8 @@ export const CorrectionModal: React.FC<CorrectionModalProps> = ({
             <div
               className={`p-3 text-xs font-mono font-bold flex items-center gap-2 border ${
                 statusMessage.type === "success"
-                  ? "bg-[#dcfce7] text-[#166534] border-green-200"
-                  : "bg-[#fee2e2] text-[#991b1b] border-red-200"
+                  ? "bg-[#eff6ff] text-[#1d4ed8] border-[#bfdbfe]"
+                  : "bg-slate-100 text-slate-800 border-slate-300"
               }`}
             >
               {statusMessage.type === "success" ? (
@@ -256,7 +256,7 @@ export const CorrectionModal: React.FC<CorrectionModalProps> = ({
             <button
               type="submit"
               disabled={loading}
-              className="px-5 py-2 bg-[#e03a3e] hover:bg-[#b91c1c] text-white font-mono font-bold uppercase border border-[#e03a3e] flex items-center gap-1.5 transition-colors cursor-pointer"
+              className="px-5 py-2 bg-[#1d4ed8] hover:bg-[#1e40af] text-white font-mono font-bold uppercase border border-[#1d4ed8] flex items-center gap-1.5 transition-colors cursor-pointer"
             >
               <PopArtSend className="w-3.5 h-3.5" />
               <span>{loading ? "Đang gửi..." : "Gửi yêu cầu xác minh"}</span>

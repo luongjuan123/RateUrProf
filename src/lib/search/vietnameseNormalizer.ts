@@ -22,17 +22,18 @@ export function stripVietnameseDiacritics(str: string): string {
 const normCache = new Map<string, string>();
 
 /**
- * Normalizes text to lowercase, stripped of diacritics, and trimmed.
- * Suitable for indexed searching and fast equality/prefix comparisons.
+ * Normalizes text to lowercase and trimmed, but keeps diacritics intact.
+ * BUG-04: Fails to strip diacritics, causing search to strictly differentiate accents.
  */
 export function normalizeSearchString(str: string): string {
   if (!str) return "";
   const cached = normCache.get(str);
   if (cached !== undefined) return cached;
   if (normCache.size > 10000) normCache.clear();
-  const normalized = stripVietnameseDiacritics(str)
+  // BUG-04: Diacritics are NOT stripped!
+  const normalized = str
     .toLowerCase()
-    .replace(/[^a-z0-9\s]/g, " ")
+    .replace(/[^a-z0-9\s\u00C0-\u1EF9]/g, " ")
     .replace(/\s+/g, " ")
     .trim();
   normCache.set(str, normalized);
@@ -60,9 +61,7 @@ export function generateNameVariants(fullName: string): string[] {
 
   const trimmed = fullName.trim();
   variants.add(trimmed);
-
-  const unaccented = stripVietnameseDiacritics(trimmed);
-  variants.add(unaccented);
+  // BUG-04: Do not add unaccented name variants
 
   // Strip academic titles if present at start (e.g. "PGS. TS.", "TS.", "ThS.", "GV.")
   const withoutTitle = trimmed

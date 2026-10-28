@@ -33,30 +33,26 @@ import {
 import { AcademicDoodleSpots } from "@/components/illustrations/AcademicDoodleSpots";
 
 const CRITERIA_COLORS: Record<string, { pillBg: string; text: string; barColor: string }> = {
-  safety: { pillBg: "bg-[#dbeafe]", text: "text-[#1e40af]", barColor: "bg-[#38bdf8]" },
-  location: { pillBg: "bg-[#fef3c7]", text: "text-[#92400e]", barColor: "bg-[#f59e0b]" },
-  opportunities: { pillBg: "bg-[#dcfce7]", text: "text-[#166534]", barColor: "bg-[#22c55e]" },
-  reputation: { pillBg: "bg-[#ede9fe]", text: "text-[#5b21b6]", barColor: "bg-[#a855f7]" },
-  facilities: { pillBg: "bg-[#ffedd5]", text: "text-[#9a3412]", barColor: "bg-[#fb923c]" },
-  happiness: { pillBg: "bg-[#fef9c3]", text: "text-[#854d0e]", barColor: "bg-[#facc15]" },
-  clubs: { pillBg: "bg-[#fee2e2]", text: "text-[#991b1b]", barColor: "bg-[#ef4444]" },
-  internet: { pillBg: "bg-[#e0f2fe]", text: "text-[#075985]", barColor: "bg-[#0ea5e9]" },
-  social: { pillBg: "bg-[#f3e8ff]", text: "text-[#6b21a8]", barColor: "bg-[#c084fc]" },
-  food: { pillBg: "bg-[#fce7f3]", text: "text-[#9d174d]", barColor: "bg-[#ec4899]" },
+  safety: { pillBg: "bg-[#eff6ff]", text: "text-[#1d4ed8]", barColor: "bg-[#1d4ed8]" },
+  location: { pillBg: "bg-[#eff6ff]", text: "text-[#1d4ed8]", barColor: "bg-[#1d4ed8]" },
+  opportunities: { pillBg: "bg-[#eff6ff]", text: "text-[#1d4ed8]", barColor: "bg-[#1d4ed8]" },
+  reputation: { pillBg: "bg-[#eff6ff]", text: "text-[#1d4ed8]", barColor: "bg-[#1d4ed8]" },
+  facilities: { pillBg: "bg-[#eff6ff]", text: "text-[#1d4ed8]", barColor: "bg-[#1d4ed8]" },
+  happiness: { pillBg: "bg-[#eff6ff]", text: "text-[#1d4ed8]", barColor: "bg-[#1d4ed8]" },
+  clubs: { pillBg: "bg-[#eff6ff]", text: "text-[#1d4ed8]", barColor: "bg-[#1d4ed8]" },
+  internet: { pillBg: "bg-[#eff6ff]", text: "text-[#1d4ed8]", barColor: "bg-[#1d4ed8]" },
+  social: { pillBg: "bg-[#eff6ff]", text: "text-[#1d4ed8]", barColor: "bg-[#1d4ed8]" },
+  food: { pillBg: "bg-[#eff6ff]", text: "text-[#1d4ed8]", barColor: "bg-[#1d4ed8]" },
 };
 
 function getScoreBgColor(score: number | null | undefined): string {
-  if (score == null) return "bg-gray-100 text-gray-700 border-2 border-black";
-  if (score >= 4.0) return "bg-[#6ee7b7] text-black font-black border-2 border-black";
-  if (score >= 3.0) return "bg-[#fef9c3] text-black font-black border-2 border-black";
-  return "bg-[#fee2e2] text-black font-black border-2 border-black";
+  if (score == null) return "bg-gray-100 text-gray-700 border border-gray-200";
+  return "bg-[#eff6ff] text-[#1d4ed8] font-bold border border-[#bfdbfe]";
 }
 
 function getCriteriaScoreBadge(score: number | null | undefined): string {
-  if (score == null) return "bg-gray-200 text-gray-700 border-2 border-black";
-  if (score >= 4.0) return "bg-[#6ee7b7] text-black font-black border-2 border-black";
-  if (score >= 3.0) return "bg-[#fef9c3] text-black font-black border-2 border-black";
-  return "bg-[#fee2e2] text-black font-black border-2 border-black";
+  if (score == null) return "bg-gray-100 text-gray-700 border border-gray-200";
+  return "bg-[#eff6ff] text-[#1d4ed8] font-bold border border-[#bfdbfe]";
 }
 
 function getQualityLabel(score: number | null | undefined, locale: string): string {
@@ -173,7 +169,7 @@ export default function UniversityDetailClient({ universityId }: { universityId:
   if (loading) {
     return (
       <div className="max-w-6xl mx-auto px-4 py-20 text-center">
-        <div className="w-12 h-12 border-4 border-[#e03a3e] border-t-transparent animate-spin mx-auto" />
+        <div className="w-12 h-12 border-4 border-[#1d4ed8] border-t-transparent animate-spin mx-auto" />
         <p className="text-xs font-bold uppercase tracking-wider text-gray-500 mt-4">
           {locale === "vi" ? "Đang tải thông tin trường đại học..." : "Loading university profile..."}
         </p>
@@ -242,12 +238,12 @@ export default function UniversityDetailClient({ universityId }: { universityId:
         <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4 border-b border-gray-200 pb-6">
           <div className="space-y-3">
             <div className="flex items-center gap-2 flex-wrap">
-              <span className="px-3 py-1 bg-[#e03a3e] text-white font-mono font-bold text-xs uppercase tracking-wider border border-[#e03a3e]">
+              <span className="px-3 py-1 bg-[#eff6ff] text-[#1d4ed8] font-mono font-bold text-xs uppercase tracking-wider border border-[#bfdbfe]">
                 {university.shortName}
               </span>
               {locationText && (
-                <span className="px-2.5 py-1 bg-[#e0f2fe] text-black text-xs font-mono font-bold flex items-center gap-1.5 border border-sky-200">
-                  <PopArtMapPin className="w-3.5 h-3.5 text-[#0284c7]" />
+                <span className="px-2.5 py-1 bg-[#eff6ff] text-[#1d4ed8] text-xs font-mono font-bold flex items-center gap-1.5 border border-[#bfdbfe]">
+                  <PopArtMapPin className="w-3.5 h-3.5 text-[#1d4ed8]" />
                   <span>{locationText}</span>
                 </span>
               )}
@@ -263,7 +259,7 @@ export default function UniversityDetailClient({ universityId }: { universityId:
                   href={university.officialWebsite}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 px-3 py-1 bg-gray-50 hover:bg-gray-100 text-black text-xs font-mono font-bold border border-gray-200 transition-colors"
+                  className="inline-flex items-center gap-1.5 px-3 py-1 bg-gray-50 hover:bg-[#eff6ff] hover:text-[#1d4ed8] text-slate-800 text-xs font-mono font-bold border border-gray-200 transition-colors"
                 >
                   <PopArtGlobe className="w-3.5 h-3.5" />
                   <span>{university.officialDomain || university.officialWebsite}</span>
@@ -284,8 +280,8 @@ export default function UniversityDetailClient({ universityId }: { universityId:
               }}
               className={`inline-flex items-center justify-center gap-2 px-8 py-3.5 text-xs font-mono font-black uppercase tracking-wider transition-colors border cursor-pointer ${
                 hasUserReviewed
-                  ? "bg-[#fef9c3] hover:bg-[#fde047] text-black border-gray-300"
-                  : "bg-[#e03a3e] hover:bg-[#b91c1c] text-white border-[#e03a3e]"
+                  ? "bg-[#eff6ff] hover:bg-[#dbeafe] text-[#1d4ed8] border-[#bfdbfe]"
+                  : "bg-[#1d4ed8] hover:bg-[#1e40af] text-white border-[#1d4ed8]"
               }`}
             >
               <PopArtPencil className="w-4 h-4" />
@@ -301,8 +297,8 @@ export default function UniversityDetailClient({ universityId }: { universityId:
           {/* Big Score: Overall Quality */}
           <div className="lg:col-span-4 p-5 sm:p-6 border border-gray-200 space-y-3 text-center lg:text-left bg-gray-50">
             <div className="flex items-center justify-center lg:justify-start gap-2">
-              <span className="px-2.5 py-0.5 bg-black text-white font-mono font-bold text-[10px] uppercase tracking-wider border border-black flex items-center gap-1">
-                <PopArtStar className="w-3 h-3 text-[#facc15]" />
+              <span className="px-2.5 py-0.5 bg-[#1d4ed8] text-white font-mono font-bold text-[10px] uppercase tracking-wider border border-[#1d4ed8] flex items-center gap-1">
+                <PopArtStar className="w-3 h-3 text-white" />
                 <span>OVERALL QUALITY</span>
               </span>
             </div>
@@ -318,7 +314,7 @@ export default function UniversityDetailClient({ universityId }: { universityId:
               <div className="text-xs font-mono font-bold uppercase tracking-wider text-black">
                 {t("universityDetail.overallQuality") || (locale === "vi" ? "Chất lượng tổng thể" : "Overall Quality")}
               </div>
-              <div className="inline-block px-2.5 py-0.5 bg-[#e03a3e] text-white text-xs font-mono font-bold">
+              <div className="inline-block px-2.5 py-0.5 bg-[#1d4ed8] text-white text-xs font-mono font-bold">
                 {schoolStats.total > 0 && schoolStats.ratingAverage != null
                   ? getQualityLabel(schoolStats.ratingAverage, locale)
                   : (locale === "vi" ? "Chưa có đánh giá" : "No ratings yet")}
@@ -335,11 +331,11 @@ export default function UniversityDetailClient({ universityId }: { universityId:
             </p>
           </div>
 
-          {/* 10 Criteria in 2 Columns with Colorful Badges & 5-Segment Meters */}
+          {/* 10 Criteria in 2 Columns with Blue & White 5-Segment Meters */}
           <div className="lg:col-span-8 bg-white p-5 sm:p-6 border border-gray-200">
             <div className="flex items-center justify-between border-b border-gray-200 pb-2.5 mb-4">
               <span className="text-xs font-mono font-bold uppercase tracking-wider text-black flex items-center gap-1.5">
-                <span className="w-2.5 h-2.5 bg-[#facc15] border border-gray-300 inline-block" />
+                <span className="w-2.5 h-2.5 bg-[#1d4ed8] border border-[#1d4ed8] inline-block" />
                 <span>Tiêu chí đánh giá cơ sở ({col1.length + col2.length})</span>
               </span>
               <span className="text-[10px] font-mono font-bold text-gray-500 uppercase">Thang điểm 5.0</span>
@@ -350,7 +346,7 @@ export default function UniversityDetailClient({ universityId }: { universityId:
               <div className="space-y-3">
                 {col1.map((item) => {
                   const Icon = item.icon;
-                  const cTheme = CRITERIA_COLORS[item.key] || { pillBg: "bg-white", text: "text-black", barColor: "bg-[#facc15]" };
+                  const cTheme = CRITERIA_COLORS[item.key] || { pillBg: "bg-white", text: "text-black", barColor: "bg-[#1d4ed8]" };
                   return (
                     <div key={item.key} className="flex items-center justify-between text-xs font-mono font-bold text-gray-900 gap-2">
                       <div className="flex items-center gap-2 min-w-0">
@@ -387,7 +383,7 @@ export default function UniversityDetailClient({ universityId }: { universityId:
               <div className="space-y-3">
                 {col2.map((item) => {
                   const Icon = item.icon;
-                  const cTheme = CRITERIA_COLORS[item.key] || { pillBg: "bg-white", text: "text-black", barColor: "bg-[#facc15]" };
+                  const cTheme = CRITERIA_COLORS[item.key] || { pillBg: "bg-white", text: "text-black", barColor: "bg-[#1d4ed8]" };
                   return (
                     <div key={item.key} className="flex items-center justify-between text-xs font-mono font-bold text-gray-900 gap-2">
                       <div className="flex items-center gap-2 min-w-0">
@@ -442,7 +438,7 @@ export default function UniversityDetailClient({ universityId }: { universityId:
         </div>
         <button
           type="submit"
-          className="px-5 py-2.5 bg-black hover:bg-[#e03a3e] text-white text-xs sm:text-sm font-mono font-bold uppercase border border-black transition-colors shrink-0 cursor-pointer"
+          className="px-5 py-2.5 bg-[#1d4ed8] hover:bg-[#1e40af] text-white text-xs sm:text-sm font-mono font-bold uppercase border border-[#1d4ed8] transition-colors shrink-0 cursor-pointer"
         >
           {t("universityDetail.searchProfButton") || (locale === "vi" ? "Tìm kiếm" : "Search")}
         </button>
@@ -452,7 +448,7 @@ export default function UniversityDetailClient({ universityId }: { universityId:
       <div className="space-y-6">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-gray-200 pb-3">
           <h2 className="text-xl sm:text-2xl font-mono font-bold uppercase tracking-tight text-black flex items-center gap-2">
-            <span className="w-3 h-3 bg-[#e03a3e] inline-block" />
+            <span className="w-3 h-3 bg-[#1d4ed8] inline-block" />
             <span>
               {t("universityDetail.schoolRatingsTitle", { count: schoolStats.total }) ||
                 (locale === "vi"
@@ -484,7 +480,7 @@ export default function UniversityDetailClient({ universityId }: { universityId:
 
             <Link
               href={`/${locale}/universities/${university.id}/rate`}
-              className="text-xs font-mono font-bold uppercase tracking-wider text-[#e03a3e] hover:underline inline-flex items-center gap-1"
+              className="text-xs font-mono font-bold uppercase tracking-wider text-[#1d4ed8] hover:underline inline-flex items-center gap-1"
             >
               <span>{hasUserReviewed
                 ? (locale === "vi" ? "Sửa đánh giá trường" : "Edit School Review")
@@ -496,7 +492,7 @@ export default function UniversityDetailClient({ universityId }: { universityId:
 
         {schoolReviews.length === 0 ? (
           <div className="p-8 sm:p-12 text-center bg-white border border-gray-200 space-y-3">
-            <div className="w-12 h-12 bg-black text-white border border-black flex items-center justify-center mx-auto">
+            <div className="w-12 h-12 bg-[#eff6ff] text-[#1d4ed8] border border-[#bfdbfe] flex items-center justify-center mx-auto">
               <PopArtBuilding className="w-6 h-6" />
             </div>
             <h4 className="font-mono font-bold text-black text-base uppercase tracking-tight">
@@ -506,7 +502,7 @@ export default function UniversityDetailClient({ universityId }: { universityId:
             <div className="pt-2">
               <Link
                 href={`/${locale}/universities/${university.id}/rate`}
-                className="inline-flex items-center gap-2 px-6 py-2.5 bg-[#e03a3e] hover:bg-[#b91c1c] text-white text-xs font-mono font-bold uppercase tracking-wider transition-colors border border-[#e03a3e]"
+                className="inline-flex items-center gap-2 px-6 py-2.5 bg-[#1d4ed8] hover:bg-[#1e40af] text-white text-xs font-mono font-bold uppercase tracking-wider transition-colors border border-[#1d4ed8]"
               >
                 <PopArtPencil className="w-4 h-4" />
                 <span>{t("universityDetail.rateSchool") || (locale === "vi" ? "Đánh giá trường" : "Rate School")}</span>
@@ -532,12 +528,7 @@ export default function UniversityDetailClient({ universityId }: { universityId:
                 { label: t("universityDetail.critSafety") || (locale === "vi" ? "An ninh" : "Safety"), score: c?.safety },
               ];
 
-              const cardAccent =
-                rev.overallRating >= 4.0
-                  ? "border-l-4 border-l-[#16a34a]"
-                  : rev.overallRating >= 3.0
-                  ? "border-l-4 border-l-[#ca8a04]"
-                  : "border-l-4 border-l-[#dc2626]";
+              const cardAccent = "border-l-4 border-l-[#1d4ed8]";
 
               return (
                 <div
@@ -551,9 +542,7 @@ export default function UniversityDetailClient({ universityId }: { universityId:
                         Overall
                       </div>
                       <div
-                        className={`w-14 h-14 flex items-center justify-center font-mono font-bold text-xl border border-gray-200 ${getScoreBgColor(
-                          rev.overallRating
-                        )}`}
+                        className={`w-14 h-14 flex items-center justify-center font-mono font-bold text-xl border border-[#bfdbfe] bg-[#eff6ff] text-[#1d4ed8]`}
                       >
                         {rev.overallRating.toFixed(1)}
                       </div>
@@ -596,11 +585,7 @@ export default function UniversityDetailClient({ universityId }: { universityId:
                                     key={seg}
                                     className={`w-3.5 h-2 border border-gray-200 ${
                                       active
-                                        ? item.score && item.score >= 4
-                                          ? "bg-[#6ee7b7]"
-                                          : item.score && item.score >= 3
-                                          ? "bg-[#fef9c3]"
-                                          : "bg-[#fee2e2]"
+                                        ? "bg-[#1d4ed8]"
                                         : "bg-gray-100"
                                     }`}
                                   />
@@ -617,7 +602,7 @@ export default function UniversityDetailClient({ universityId }: { universityId:
                           onClick={() => handleUpvote(rev.id)}
                           className={`flex items-center gap-1.5 px-3 py-1.5 border border-gray-200 text-xs font-mono font-bold uppercase transition-colors cursor-pointer ${
                             hasUpvoted
-                              ? "bg-black text-white"
+                              ? "bg-[#eff6ff] text-[#1d4ed8] border-[#1d4ed8]"
                               : "bg-white text-black hover:bg-gray-50"
                           }`}
                         >
@@ -633,7 +618,7 @@ export default function UniversityDetailClient({ universityId }: { universityId:
                             }
                             // open report action
                           }}
-                          className="flex items-center gap-1 text-gray-500 hover:text-[#e03a3e] font-mono text-xs uppercase transition-colors cursor-pointer"
+                          className="flex items-center gap-1 text-gray-500 hover:text-[#1d4ed8] font-mono text-xs uppercase transition-colors cursor-pointer"
                           title="Report"
                         >
                           <PopArtShieldAlert className="w-3.5 h-3.5" />

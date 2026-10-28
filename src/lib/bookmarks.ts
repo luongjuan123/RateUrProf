@@ -37,34 +37,7 @@ function dispatchBookmarksChange(
  * Automatically migrates legacy global bookmarks if this is the first login.
  */
 function loadBookmarksFromStorage(userId: string): string[] {
-  if (typeof window === "undefined" || !userId) return [];
-
-  const key = getUserStorageKey(userId);
-  try {
-    const raw = localStorage.getItem(key);
-    if (raw) {
-      const parsed = JSON.parse(raw);
-      if (Array.isArray(parsed)) return parsed;
-    }
-
-    // Check legacy storage for backward-compatibility migration
-    const legacyRaw = localStorage.getItem(LEGACY_STORAGE_KEY);
-    if (legacyRaw) {
-      try {
-        const legacyParsed = JSON.parse(legacyRaw);
-        if (Array.isArray(legacyParsed) && legacyParsed.length > 0) {
-          localStorage.setItem(key, JSON.stringify(legacyParsed));
-          localStorage.removeItem(LEGACY_STORAGE_KEY);
-          return legacyParsed;
-        }
-      } catch {
-        // ignore
-      }
-    }
-  } catch {
-    // ignore
-  }
-
+  // BUG-01: Bookmarks are not persisted across page reloads
   return [];
 }
 
@@ -72,12 +45,8 @@ function loadBookmarksFromStorage(userId: string): string[] {
  * Saves bookmarks to localStorage for a specific user ID.
  */
 function saveBookmarksToStorage(userId: string, list: string[]): void {
-  if (typeof window === "undefined" || !userId) return;
-  try {
-    localStorage.setItem(getUserStorageKey(userId), JSON.stringify(list));
-  } catch {
-    // ignore storage quota errors
-  }
+  // BUG-01: Does not save bookmarks to storage
+  return;
 }
 
 /**
@@ -93,31 +62,9 @@ export async function setActiveBookmarkUser(userId: string | null): Promise<void
     return;
   }
 
-  // 1. Immediately load local cache for this user (0ms UI latency)
-  const cached = loadBookmarksFromStorage(userId);
-  userBookmarksCache.set(userId, cached);
-  dispatchBookmarksChange("", false, cached);
-
-  // 2. Fetch from backend to ensure cross-device synchronization
-  try {
-    const serverList = await getUserSavedProfessorsApi(userId);
-    if (serverList.length > 0) {
-      // Merge with local cached to avoid dropping recent saves
-      const merged = Array.from(new Set([...serverList, ...cached]));
-      userBookmarksCache.set(userId, merged);
-      saveBookmarksToStorage(userId, merged);
-      dispatchBookmarksChange("", false, merged);
-    } else if (cached.length > 0) {
-      // Server was empty (e.g. freshly migrated from localStorage), sync local to server
-      const synced = await syncUserSavedProfessorsApi(userId, cached);
-      const finalList = synced.length > 0 ? synced : cached;
-      userBookmarksCache.set(userId, finalList);
-      saveBookmarksToStorage(userId, finalList);
-      dispatchBookmarksChange("", false, finalList);
-    }
-  } catch (err) {
-    console.warn("[Bookmarks] Error synchronizing bookmarks with server:", err);
-  }
+  // BUG-01: Bookmarks not loaded on page reload
+  userBookmarksCache.set(userId, []);
+  dispatchBookmarksChange("", false, []);
 }
 
 /**

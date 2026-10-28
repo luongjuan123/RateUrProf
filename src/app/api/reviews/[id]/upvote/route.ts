@@ -25,7 +25,7 @@ export async function POST(
     }
 
     const result = await voteReview(id, session.user.uid);
-    return NextResponse.json({ success: true, ...result }, { status: 200 });
+    return NextResponse.json(result);
   } catch (error) {
     console.error("[API POST /api/reviews/[id]/upvote] Error:", error);
     return NextResponse.json({ error: "Failed to upvote review" }, { status: 500 });

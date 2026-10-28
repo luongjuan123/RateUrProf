@@ -37,10 +37,10 @@ function AdminPageContent({ lang = "vi" }: { lang?: string }) {
 
   if (authLoading) {
     return (
-      <div className="min-h-screen bg-[#fcfcfc] flex items-center justify-center p-6 font-sans">
+      <div className="min-h-screen bg-slate-50 flex items-center justify-center p-6 font-sans">
         <div className="flex flex-col items-center gap-3">
-          <RotateCw className="w-8 h-8 animate-spin text-gray-950" />
-          <p className="text-xs uppercase font-mono font-bold tracking-widest text-gray-500">
+          <RotateCw className="w-8 h-8 animate-spin text-[#1d4ed8]" />
+          <p className="text-xs uppercase font-mono font-bold tracking-widest text-slate-500">
             Đang xác thực phiên quản trị viên Google OAuth...
           </p>
         </div>
@@ -51,26 +51,26 @@ function AdminPageContent({ lang = "vi" }: { lang?: string }) {
   // Case 1: Unauthenticated -> Sign In with Google Screen
   if (!user) {
     return (
-      <div className="min-h-screen bg-[#fcfcfc] flex items-center justify-center p-6 font-sans">
-        <div className="max-w-md w-full bg-white border-2 border-gray-900 p-8 shadow-2xl">
-          <div className="h-1.5 bg-[#e03a3e] -mt-8 -mx-8 mb-6" />
-          <div className="w-12 h-12 bg-red-50 flex items-center justify-center mb-4 border border-red-200 shadow-[2px_2px_0px_#111]">
+      <div className="min-h-screen bg-slate-50 flex items-center justify-center p-6 font-sans">
+        <div className="max-w-md w-full bg-white border border-gray-200 p-8">
+          <div className="h-1 bg-[#1d4ed8] -mt-8 -mx-8 mb-6" />
+          <div className="w-12 h-12 bg-blue-50 flex items-center justify-center mb-4 border border-blue-200 text-[#1d4ed8]">
             <PopArtLock className="w-6 h-6" />
           </div>
-          <h1 className="text-xl font-black uppercase text-gray-950 tracking-tight mb-2">
+          <h1 className="text-xl font-bold uppercase text-slate-900 tracking-tight mb-2">
             Yêu cầu Đăng nhập Quản trị
           </h1>
-          <p className="text-xs text-gray-600 leading-relaxed mb-6">
+          <p className="text-xs text-slate-600 leading-relaxed mb-6">
             Bảng điều khiển Quản trị RateUrProfs được bảo vệ nghiêm ngặt. Vui lòng đăng nhập bằng tài khoản Google được cấp thẩm quyền quản trị hệ thống.
           </p>
 
           {authErrorParam === "google_credentials_missing" && (
-            <div className="mb-6 p-4 bg-amber-50 border-2 border-amber-300 text-xs text-amber-950 space-y-1.5">
-              <div className="flex items-center gap-2 font-bold text-amber-900">
+            <div className="mb-6 p-4 bg-blue-50 border border-blue-200 text-xs text-blue-950 space-y-1.5">
+              <div className="flex items-center gap-2 font-bold text-[#1d4ed8]">
                 <PopArtAlertTriangle className="w-4 h-4 shrink-0" />
                 <span>Chưa liên kết Google OAuth Credentials</span>
               </div>
-              <p className="text-[11px] text-amber-800 leading-relaxed">
+              <p className="text-[11px] text-slate-700 leading-relaxed">
                 Cần cấu hình biến môi trường GOOGLE_CLIENT_ID và GOOGLE_CLIENT_SECRET trên Google Cloud Platform.
               </p>
             </div>
@@ -78,7 +78,7 @@ function AdminPageContent({ lang = "vi" }: { lang?: string }) {
 
           <button
             onClick={() => signInWithGoogle("/admin")}
-            className="w-full flex items-center justify-center gap-3 py-3 px-4 bg-gray-900 hover:bg-black text-white font-bold text-xs uppercase tracking-wider transition-colors cursor-pointer"
+            className="w-full flex items-center justify-center gap-3 py-3 px-4 bg-[#1d4ed8] hover:bg-[#1e40af] text-white font-bold text-xs uppercase tracking-wider transition-colors cursor-pointer"
           >
             <svg className="w-4 h-4" viewBox="0 0 24 24">
               <path
@@ -108,28 +108,28 @@ function AdminPageContent({ lang = "vi" }: { lang?: string }) {
   // Case 2: Authenticated but unauthorized (Role = student / not in admin matrix)
   if (!isAuthorizedAdmin) {
     return (
-      <div className="min-h-screen bg-[#fcfcfc] flex items-center justify-center p-6 font-sans">
-        <div className="max-w-md w-full bg-white border-2 border-red-600 p-8 shadow-2xl">
-          <div className="h-1.5 bg-red-600 -mt-8 -mx-8 mb-6" />
-          <div className="w-12 h-12 bg-red-100 flex items-center justify-center mb-4 border border-red-200 shadow-[2px_2px_0px_#111]">
+      <div className="min-h-screen bg-slate-50 flex items-center justify-center p-6 font-sans">
+        <div className="max-w-md w-full bg-white border border-gray-200 p-8">
+          <div className="h-1 bg-slate-700 -mt-8 -mx-8 mb-6" />
+          <div className="w-12 h-12 bg-slate-100 flex items-center justify-center mb-4 border border-slate-200 text-slate-700">
             <PopArtAlertCircle className="w-6 h-6" />
           </div>
-          <h1 className="text-xl font-black uppercase text-gray-950 tracking-tight mb-2">
+          <h1 className="text-xl font-bold uppercase text-slate-900 tracking-tight mb-2">
             Truy cập bị từ chối (403 Forbidden)
           </h1>
-          <p className="text-xs text-gray-600 leading-relaxed mb-4">
-            Tài khoản <span className="font-bold text-gray-900">{user.email}</span> hiện đang ở vai trò{" "}
-            <span className="font-mono uppercase font-bold text-gray-800">{user.role || "student"}</span> và không có thẩm quyền truy cập hệ thống quản trị.
+          <p className="text-xs text-slate-600 leading-relaxed mb-4">
+            Tài khoản <span className="font-bold text-slate-900">{user.email}</span> hiện đang ở vai trò{" "}
+            <span className="font-mono uppercase font-bold text-slate-800">{user.role || "student"}</span> và không có thẩm quyền truy cập hệ thống quản trị.
           </p>
 
-          <div className="p-3 bg-red-50 border border-red-200 text-[11px] text-red-900 font-semibold mb-6">
+          <div className="p-3 bg-slate-50 border border-slate-200 text-[11px] text-slate-700 font-semibold mb-6">
             Nếu bạn là quản trị viên hoặc kiểm duyệt viên được phân quyền, vui lòng liên hệ Super Administrator (<span className="underline">dungpubgame@gmail.com</span>) để kích hoạt vai trò.
           </div>
 
           <div className="flex flex-col gap-2">
             <Link
               href="/"
-              className="inline-flex items-center justify-center gap-2 w-full py-2.5 px-4 bg-gray-900 hover:bg-black text-white text-xs font-bold uppercase tracking-wider transition-colors"
+              className="inline-flex items-center justify-center gap-2 w-full py-2.5 px-4 bg-[#1d4ed8] hover:bg-[#1e40af] text-white text-xs font-bold uppercase tracking-wider transition-colors"
             >
               <PopArtArrowLeft className="w-4 h-4" />
               <span>Quay lại Trang chủ</span>
@@ -137,7 +137,7 @@ function AdminPageContent({ lang = "vi" }: { lang?: string }) {
 
             <button
               onClick={() => logOut()}
-              className="inline-flex items-center justify-center gap-2 w-full py-2.5 px-4 bg-gray-100 hover:bg-gray-200 text-gray-800 text-xs font-bold uppercase tracking-wider transition-colors"
+              className="inline-flex items-center justify-center gap-2 w-full py-2.5 px-4 bg-white hover:bg-slate-50 text-slate-700 text-xs font-bold uppercase tracking-wider border border-gray-200 transition-colors cursor-pointer"
             >
               <PopArtLogOut className="w-4 h-4" />
               <span>Đổi tài khoản khác</span>
@@ -167,10 +167,10 @@ export default function AdminPage() {
   return (
     <Suspense
       fallback={
-        <div className="min-h-screen bg-[#fcfcfc] flex items-center justify-center p-6">
+        <div className="min-h-screen bg-slate-50 flex items-center justify-center p-6">
           <div className="flex flex-col items-center gap-3">
-            <RotateCw className="w-8 h-8 animate-spin text-gray-950" />
-            <span className="text-xs uppercase font-mono font-bold tracking-widest text-gray-500">
+            <RotateCw className="w-8 h-8 animate-spin text-[#1d4ed8]" />
+            <span className="text-xs uppercase font-mono font-bold tracking-widest text-slate-500">
               Đang khởi tạo không gian quản trị...
             </span>
           </div>

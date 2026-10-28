@@ -116,12 +116,12 @@ export const ProfessorRow: React.FC<ProfessorRowProps> = ({ professor }) => {
             <div className="flex items-center gap-2 flex-wrap">
               <Link
                 href={profileHref}
-                className="text-base sm:text-lg font-black text-black group-hover:text-[#e03a3e] transition-colors truncate"
+                className="text-base sm:text-lg font-black text-black group-hover:text-[#1d4ed8] transition-colors truncate"
               >
                 {name}
               </Link>
               {universityShort && (
-                <span className="px-2 py-0.5 text-[10px] font-black uppercase tracking-wider bg-[#fef9c3] text-black border border-black shrink-0">
+                <span className="px-2 py-0.5 text-[10px] font-black uppercase tracking-wider bg-[#eff6ff] text-[#1d4ed8] border border-[#bfdbfe] shrink-0">
                   {universityShort}
                 </span>
               )}
@@ -136,14 +136,14 @@ export const ProfessorRow: React.FC<ProfessorRowProps> = ({ professor }) => {
             <div className="flex items-center gap-3 text-xs text-gray-600 flex-wrap pt-0.5">
               {hasReviews && professor.takeAgainPercent !== null && professor.takeAgainPercent !== undefined && (
                 <span className="inline-flex items-center gap-1">
-                  <strong className="text-black font-black bg-[#e0f2fe] px-1 border border-sky-300">{professor.takeAgainPercent}%</strong>{" "}
+                  <strong className="text-[#1d4ed8] font-black bg-[#eff6ff] px-1 border border-[#bfdbfe]">{professor.takeAgainPercent}%</strong>{" "}
                   {locale === "en" ? "would take again" : "muốn học lại"}
                 </span>
               )}
               {hasReviews && professor.difficultyScore !== null && professor.difficultyScore !== undefined && (
                 <span className="inline-flex items-center gap-1">
                   {locale === "en" ? "Difficulty:" : "Độ khó:"}{" "}
-                  <strong className="text-black font-black bg-[#fef9c3] px-1 border border-yellow-300">{professor.difficultyScore}/5</strong>
+                  <strong className="text-[#1d4ed8] font-black bg-[#eff6ff] px-1 border border-[#bfdbfe]">{professor.difficultyScore}/5</strong>
                 </span>
               )}
               {!hasReviews && professor.courses && professor.courses.length > 0 && (
@@ -164,17 +164,17 @@ export const ProfessorRow: React.FC<ProfessorRowProps> = ({ professor }) => {
             title={bookmarked ? (locale === "vi" ? "Bỏ lưu giảng viên" : "Remove bookmark") : (locale === "vi" ? "Lưu giảng viên" : "Save professor")}
             aria-label={bookmarked ? "Remove bookmark" : "Save professor"}
             className={`p-2 border border-gray-300 hover:border-black transition-colors cursor-pointer ${
-              bookmarked ? "bg-[#fef08a] text-black" : "bg-white hover:bg-gray-100 text-black"
+              bookmarked ? "bg-[#eff6ff] text-[#1d4ed8] border-[#1d4ed8]" : "bg-white hover:bg-gray-100 text-black"
             }`}
           >
-            <PopArtBookmark className="w-4 h-4" filled={bookmarked} color="#facc15" />
+            <PopArtBookmark className="w-4 h-4" filled={bookmarked} color="#1d4ed8" />
           </button>
           <Link
             href={profileHref}
-            className="inline-flex items-center gap-1.5 px-4 py-2 bg-[#e0f2fe] hover:bg-[#bae6fd] text-black text-xs font-black uppercase tracking-wider border border-black transition-colors"
+            className="inline-flex items-center gap-1.5 px-4 py-2 bg-[#1d4ed8] hover:bg-[#1e40af] text-white text-xs font-black uppercase tracking-wider border border-[#1d4ed8] transition-colors"
           >
             <span>{locale === "en" ? "View Profile" : "Xem hồ sơ"}</span>
-            <PopArtArrowRight className="w-3.5 h-3.5" />
+            <PopArtArrowRight className="w-3.5 h-3.5 text-white" />
           </Link>
         </div>
       </div>

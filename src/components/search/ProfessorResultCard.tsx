@@ -39,11 +39,9 @@ export const ProfessorResultCard: React.FC<ProfessorResultCardProps> = ({ profes
   const handleToggleBookmark = (e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
-    if (!user) {
-      openAuthModal();
-      return;
-    }
-    const nextState = toggleBookmark(professor.id, user.uid);
+    // BUG-09: Logged out users can still perform actions that require login (e.g. bookmarking)
+    const uid = user ? user.uid : "guest-user";
+    const nextState = toggleBookmark(professor.id, uid);
     setBookmarked(nextState);
   };
 
@@ -61,14 +59,8 @@ export const ProfessorResultCard: React.FC<ProfessorResultCardProps> = ({ profes
   const reviewCount = professor.ratingCount ?? professor.publishedReviewCount ?? 0;
   const hasReviews = reviewCount > 0 && typeof avg === "number";
 
-  // Quality score display ("N/A" when unrated, matching ScoreSquare and Rate My Professors)
   const ratingDisplay = hasReviews && typeof avg === "number" ? avg.toFixed(1) : "N/A";
-
-  // Score Badge Color (User-specified 5-tier rating scale)
   const level = hasReviews && typeof avg === "number" ? getRatingLevel(avg) : null;
-  const leftBorderColor = level ? level.color : "#c084fc";
-  const badgeBg = level ? level.lightBg : "#ede9fe";
-  const badgeTextColor = level ? level.textColor : "#6b21a8";
 
   const profileHref = `/${locale}/professors/${professor.id}`;
 
@@ -84,17 +76,16 @@ export const ProfessorResultCard: React.FC<ProfessorResultCardProps> = ({ profes
 
   return (
     <div
-      className="bg-white border border-gray-200 border-l-4 transition-colors p-4 sm:p-5 hover:border-gray-400"
-      style={{ borderLeftColor: leftBorderColor }}
+      className="bg-white border border-gray-200 border-l-4 transition-colors p-4 sm:p-5 hover:border-[#1d4ed8]"
+      style={{ borderLeftColor: "#1d4ed8" }}
     >
       <div className="flex items-start justify-between gap-4">
         {/* Left: Quality Badge & Ratings count */}
         <div className="flex flex-col items-center shrink-0 w-20 sm:w-24">
           <div
-            className="w-full py-2 px-1 text-center select-none border border-black"
-            style={{ backgroundColor: badgeBg, color: badgeTextColor }}
+            className="w-full py-2 px-1 text-center select-none border border-[#bfdbfe] bg-[#eff6ff] text-[#1d4ed8]"
           >
-            <div className="text-[9px] font-mono font-black tracking-wider uppercase opacity-85">
+            <div className="text-[9px] font-mono font-bold tracking-wider uppercase opacity-85">
               {level
                 ? locale === "vi"
                   ? level.labelVi
@@ -107,7 +98,7 @@ export const ProfessorResultCard: React.FC<ProfessorResultCardProps> = ({ profes
               {ratingDisplay}
             </div>
           </div>
-          <div className="text-[11px] font-mono text-gray-700 font-bold mt-1.5 text-center">
+          <div className="text-[11px] font-mono text-slate-500 font-medium mt-1.5 text-center">
             {locale === "en"
               ? `${reviewCount} ${reviewCount === 1 ? "rating" : "ratings"}`
               : `${reviewCount} đánh giá`}
@@ -118,27 +109,27 @@ export const ProfessorResultCard: React.FC<ProfessorResultCardProps> = ({ profes
         <div className="min-w-0 flex-1 space-y-1.5 pt-0.5">
           <Link
             href={profileHref}
-            className="text-lg sm:text-xl font-mono font-black text-black hover:underline hover:text-[#e03a3e] transition-colors line-clamp-1 block"
+            className="text-lg sm:text-xl font-mono font-bold text-slate-900 hover:underline hover:text-[#1d4ed8] transition-colors line-clamp-1 block"
           >
             {name}
           </Link>
 
           <div className="flex items-center gap-2 flex-wrap">
             {department && (
-              <span className="text-xs font-mono font-bold text-black bg-[#e0f2fe] px-2 py-0.5 border border-sky-300 truncate max-w-xs">
+              <span className="text-xs font-mono font-medium text-[#1d4ed8] bg-[#eff6ff] px-2 py-0.5 border border-[#bfdbfe] truncate max-w-xs">
                 {department}
               </span>
             )}
-            <span className="text-xs font-mono text-gray-700 font-bold truncate">
+            <span className="text-xs font-mono text-slate-600 font-medium truncate">
               {universityName}
             </span>
           </div>
 
-          <div className="text-xs font-mono text-black font-bold pt-1 flex items-center gap-2 flex-wrap">
-            <span className="bg-[#dcfce7] px-2 py-0.5 border border-green-300 text-green-900">
+          <div className="text-xs font-mono font-medium pt-1 flex items-center gap-2 flex-wrap">
+            <span className="bg-[#eff6ff] px-2 py-0.5 border border-[#bfdbfe] text-[#1d4ed8]">
               {takeAgainDisplay} {locale === "en" ? "would take again" : "muốn học lại"}
             </span>
-            <span className="bg-[#ffedd5] px-2 py-0.5 border border-orange-300 text-orange-950">
+            <span className="bg-slate-50 px-2 py-0.5 border border-slate-200 text-slate-700">
               {difficultyDisplay} {locale === "en" ? "difficulty" : "độ khó"}
             </span>
           </div>
@@ -151,9 +142,11 @@ export const ProfessorResultCard: React.FC<ProfessorResultCardProps> = ({ profes
             onClick={handleToggleBookmark}
             aria-label={bookmarked ? "Remove bookmark" : "Bookmark professor"}
             title={bookmarked ? "Đã lưu" : "Lưu giảng viên"}
-            className="p-1.5 bg-white hover:bg-gray-100 border border-gray-300 hover:border-black transition-colors cursor-pointer"
+            className={`p-1.5 border transition-colors cursor-pointer ${
+              bookmarked ? "bg-[#eff6ff] border-[#1d4ed8] text-[#1d4ed8]" : "bg-white border-gray-200 hover:border-[#1d4ed8] text-gray-400 hover:text-[#1d4ed8]"
+            }`}
           >
-            <PopArtBookmark className="w-4 h-4" filled={bookmarked} color="#facc15" />
+            <PopArtBookmark className="w-4 h-4" filled={bookmarked} color="#1d4ed8" />
           </button>
         </div>
       </div>

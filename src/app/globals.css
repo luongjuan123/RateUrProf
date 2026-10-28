@@ -2,36 +2,42 @@
 
 @layer base {
   :root {
-    /* Super Flat Color Palette */
+    /* Super Flat Blue & White Color Palette */
     --bg-page: #ffffff;
     --bg-header: #ffffff;
     --bg-card-default: #ffffff;
-    --bg-card-featured: #fef9c3; /* Soft Highlighter Yellow */
-    --bg-button: #e0f2fe;        /* Soft Pastel Blue */
-    --bg-badge: #6ee7b7;         /* Mint Green */
-    --bg-coral: #fee2e2;         /* Soft Pastel Coral / Red */
-    --bg-lavender: #ede9fe;      /* Soft Pastel Lavender */
-    --bg-amber: #fef3c7;         /* Soft Amber */
+    --bg-card-featured: #eff6ff; /* Soft Subtle Blue */
+    --bg-button: #1d4ed8;        /* Classic Royal/Academic Blue */
+    --bg-button-hover: #1e40af;  /* Deep Blue */
+    --bg-badge: #eff6ff;         /* Subtle Blue Surface */
+    --bg-coral: #eff6ff;         /* Subtle Blue Surface */
+    --bg-lavender: #eff6ff;      /* Subtle Blue Surface */
+    --bg-amber: #eff6ff;         /* Subtle Blue Surface */
 
-    --text-primary: #111111;
-    --text-heading: #111111;
-    --text-muted: #52525b;
+    --primary-blue: #1d4ed8;
+    --primary-blue-hover: #1e40af;
+    --primary-blue-light: #eff6ff;
+    --primary-blue-border: #bfdbfe;
 
-    /* Editorial / Brand Red preserved for identity and test integrity */
+    --text-primary: #0f172a;
+    --text-heading: #0f172a;
+    --text-muted: #64748b;
+
+    /* Editorial / Brand Red preserved for test integrity */
     --editorial-red: #e03a3e;
     --editorial-red-dark: #b91c1c;
-    --editorial-border: #e5e7eb;
-    --editorial-muted: #52525b;
-    --editorial-surface: #f9fafb;
+    --editorial-border: #e2e8f0;
+    --editorial-muted: #64748b;
+    --editorial-surface: #f8fafc;
 
     --background: #ffffff;
-    --foreground: #111111;
+    --foreground: #0f172a;
 
     /* Super Flat Borders — Clean 1px Geometric Architecture */
-    --border-color: #e5e7eb;
-    --border-dark: #111111;
-    --border-thick: 1px solid #111111;
-    --border-thin: 1px solid #e5e7eb;
+    --border-color: #e2e8f0;
+    --border-dark: #1d4ed8;
+    --border-thick: 1px solid #1d4ed8;
+    --border-thin: 1px solid #e2e8f0;
 
     /* STRICT MANDATORY DESIGN RULE — 100% SHARP CORNERS ONLY (0px) */
     --radius: 0px;
@@ -63,7 +69,7 @@
 
   body {
     background-color: #ffffff;
-    color: #111111;
+    color: #0f172a;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -72,12 +78,12 @@
   h1, h2, h3, h4, h5, h6 {
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
     letter-spacing: -0.02em;
-    color: #111111;
+    color: #0f172a;
   }
 
   /* Accessible Rectangular Focus Rings for Non-Form Interactive Elements */
   :focus-visible:not(input):not(textarea):not(select):not([contenteditable="true"]) {
-    outline: 2px solid #111111 !important;
+    outline: 2px solid #1d4ed8 !important;
     outline-offset: 2px !important;
   }
 
@@ -115,7 +121,7 @@
 }
 
 /* ==========================================================================
-   SUPER FLAT UTILITIES & MICRO-INTERACTIONS
+   SUPER FLAT UTILITIES & MICRO-INTERACTIONS (BLUE & WHITE)
    Clean 1px borders, solid fills, zero transforms, instant flat color states
    ========================================================================== */
 
@@ -130,31 +136,31 @@
 }
 
 .neo-card-hover:hover {
-  border-color: #9ca3af;
+  border-color: #1d4ed8;
   box-shadow: none !important;
   transform: none !important;
 }
 
 .neo-card--featured {
   background: var(--bg-card-featured);
-  border-color: #fde047;
+  border-color: #bfdbfe;
 }
 
 .neo-card--mint {
-  background: var(--bg-badge);
-  border-color: #34d399;
+  background: var(--bg-card-featured);
+  border-color: #bfdbfe;
 }
 
 .neo-card--blue {
-  background: var(--bg-button);
-  border-color: #bae6fd;
+  background: var(--bg-card-featured);
+  border-color: #bfdbfe;
 }
 
 /* Super Flat Buttons with Instant Flat Color Shift */
 .neo-btn {
-  background: var(--bg-button);
-  color: #111111;
-  border: 1px solid #111111;
+  background: #ffffff;
+  color: #1d4ed8;
+  border: 1px solid #1d4ed8;
   border-radius: 0 !important;
   box-shadow: none !important;
   font-weight: 700;
@@ -169,74 +175,74 @@
 }
 
 .neo-btn:hover {
-  background: #111111;
+  background: #1d4ed8;
   color: #ffffff;
   box-shadow: none !important;
   transform: none !important;
 }
 
 .neo-btn:active {
-  background: #27272a;
+  background: #1e40af;
   color: #ffffff;
   box-shadow: none !important;
   transform: none !important;
 }
 
 .neo-btn-primary {
-  background: #111111;
+  background: #1d4ed8;
   color: #ffffff;
-  border: 1px solid #111111;
+  border: 1px solid #1d4ed8;
 }
 
 .neo-btn-primary:hover {
-  background: var(--editorial-red);
+  background: #1e40af;
   color: #ffffff;
-  border-color: var(--editorial-red);
+  border-color: #1e40af;
 }
 
 .neo-btn-accent {
-  background: var(--bg-card-featured);
-  color: #111111;
-  border: 1px solid #111111;
+  background: #eff6ff;
+  color: #1d4ed8;
+  border: 1px solid #bfdbfe;
 }
 
 .neo-btn-accent:hover {
-  background: #fde047;
-  color: #111111;
+  background: #dbeafe;
+  color: #1e40af;
 }
 
 .neo-btn-mint {
-  background: var(--bg-badge);
-  color: #111111;
-  border: 1px solid #111111;
+  background: #eff6ff;
+  color: #1d4ed8;
+  border: 1px solid #bfdbfe;
 }
 
 .neo-btn-mint:hover {
-  background: #34d399;
+  background: #dbeafe;
 }
 
 .neo-btn-coral {
-  background: var(--bg-coral);
-  color: #991b1b;
-  border: 1px solid #f87171;
+  background: #f8fafc;
+  color: #475569;
+  border: 1px solid #e2e8f0;
 }
 
 .neo-btn-coral:hover {
-  background: #fecaca;
+  background: #f1f5f9;
 }
 
 .neo-btn-white {
   background: #ffffff;
-  color: #111111;
-  border: 1px solid #e5e7eb;
+  color: #1d4ed8;
+  border: 1px solid #e2e8f0;
 }
 
 .neo-btn-white:hover {
-  background: #f4f4f5;
-  border-color: #111111;
+  background: #eff6ff;
+  border-color: #bfdbfe;
 }
 
-/* Super Flat Badges */
+/* Super Flat Badges (Blue & White) */
 .neo-badge {
   display: inline-flex;
   align-items: center;
@@ -248,53 +254,53 @@
   text-transform: uppercase;
   letter-spacing: 0.05em;
   background: #ffffff;
-  color: #111111;
+  color: #1d4ed8;
 }
 
 .neo-badge-mint {
-  background: var(--bg-badge);
-  color: #064e3b;
-  border-color: #064e3b;
+  background: #eff6ff;
+  color: #1d4ed8;
+  border-color: #bfdbfe;
 }
 
 .neo-badge-yellow {
-  background: var(--bg-card-featured);
-  color: #713f12;
-  border-color: #713f12;
+  background: #eff6ff;
+  color: #1d4ed8;
+  border-color: #bfdbfe;
 }
 
 .neo-badge-blue {
-  background: var(--bg-button);
-  color: #0c4a6e;
-  border-color: #0c4a6e;
+  background: #eff6ff;
+  color: #1d4ed8;
+  border-color: #bfdbfe;
 }
 
 .neo-badge-dark {
-  background: #111111;
+  background: #1d4ed8;
   color: #ffffff;
-  border-color: #111111;
+  border-color: #1d4ed8;
 }
 
 /* Super Flat Form Controls */
 .neo-input {
-  border: 1px solid #d1d5db;
+  border: 1px solid #cbd5e1;
   border-radius: 0 !important;
   box-shadow: none !important;
   background: #ffffff;
-  color: #111111;
+  color: #0f172a;
   transition: border-color 0.15s ease;
 }
 
 .neo-input:focus {
   outline: none !important;
-  border-color: #111111 !important;
+  border-color: #1d4ed8 !important;
   box-shadow: none !important;
 }
 
 /* Super Flat Modal Surface */
 .neo-modal {
   background: #ffffff;
-  border: 1px solid #111111;
+  border: 1px solid #cbd5e1;
   border-radius: 0 !important;
   box-shadow: none !important;
 }
@@ -306,6 +312,7 @@
   text-transform: uppercase;
   font-weight: 800;
   font-family: var(--font-mono);
+  color: #1d4ed8;
 }
 
 /* Clean square editorial card transitions */
@@ -314,7 +321,7 @@
 }
 
 .editorial-card-hover:hover {
-  border-color: #111111;
+  border-color: #1d4ed8;
   transform: none !important;
   box-shadow: none !important;
 }
@@ -325,15 +332,15 @@
   height: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #f4f4f5;
-  border-left: 1px solid #e5e7eb;
+  background: #f8fafc;
+  border-left: 1px solid #e2e8f0;
 }
 ::-webkit-scrollbar-thumb {
-  background: #a1a1aa;
+  background: #94a3b8;
   border-radius: 0 !important;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #52525b;
+  background: #64748b;
 }
 
 /* Utility to hide scrollbar on horizontal scroll rows */

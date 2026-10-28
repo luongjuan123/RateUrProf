@@ -3,9 +3,9 @@ export interface RatingLevel {
   key: "awful" | "ok" | "good" | "great" | "awesome";
   labelEn: string;
   labelVi: string;
-  color: string;         // Solid vibrant color (for active button, distribution bar fill)
-  lightBg: string;       // Pastel background (for inactive button, light badge)
-  textColor: string;     // Deep contrasting text color
+  color: string;         // Solid blue accent (for active button, distribution bar fill)
+  lightBg: string;       // Subtle ice-blue background (for inactive button, light badge)
+  textColor: string;     // Contrasting blue text color
   minScore: number;      // For mapping average floating scores (e.g. 4.8 -> Awesome)
   maxScore: number;
 }
@@ -16,9 +16,9 @@ export const RATING_LEVELS: RatingLevel[] = [
     key: "awful",
     labelEn: "Awful",
     labelVi: "Kém",
-    color: "#f87171",     // Red
-    lightBg: "#fee2e2",
-    textColor: "#991b1b",
+    color: "#93c5fd",     // Soft blue
+    lightBg: "#f8fafc",
+    textColor: "#1e3a8a",
     minScore: 0.0,
     maxScore: 1.99,
   },
@@ -27,9 +27,9 @@ export const RATING_LEVELS: RatingLevel[] = [
     key: "ok",
     labelEn: "OK",
     labelVi: "Tạm ổn",
-    color: "#fb923c",     // Orange
-    lightBg: "#ffedd5",
-    textColor: "#9a3412",
+    color: "#60a5fa",     // Sky blue
+    lightBg: "#eff6ff",
+    textColor: "#1e3a8a",
     minScore: 2.0,
     maxScore: 2.99,
   },
@@ -38,9 +38,9 @@ export const RATING_LEVELS: RatingLevel[] = [
     key: "good",
     labelEn: "Good",
     labelVi: "Khá",
-    color: "#facc15",     // Yellow
-    lightBg: "#fef9c3",
-    textColor: "#854d0e",
+    color: "#3b82f6",     // Medium blue
+    lightBg: "#eff6ff",
+    textColor: "#1e3a8a",
     minScore: 3.0,
     maxScore: 3.79,
   },
@@ -49,9 +49,9 @@ export const RATING_LEVELS: RatingLevel[] = [
     key: "great",
     labelEn: "Great",
     labelVi: "Tốt",
-    color: "#a3e635",     // Lime green
-    lightBg: "#ecfccb",
-    textColor: "#3f6212",
+    color: "#2563eb",     // Royal blue
+    lightBg: "#eff6ff",
+    textColor: "#1e3a8a",
     minScore: 3.8,
     maxScore: 4.49,
   },
@@ -60,9 +60,9 @@ export const RATING_LEVELS: RatingLevel[] = [
     key: "awesome",
     labelEn: "Awesome",
     labelVi: "Xuất sắc",
-    color: "#4ade80",     // Vibrant green
-    lightBg: "#dcfce7",
-    textColor: "#166534",
+    color: "#1d4ed8",     // Deep academic blue
+    lightBg: "#dbeafe",
+    textColor: "#1e3a8a",
     minScore: 4.5,
     maxScore: 5.0,
   },
@@ -103,20 +103,15 @@ export interface DifficultyLevel {
   key: "very_easy" | "easy" | "average" | "difficult" | "very_difficult";
   labelEn: string;
   labelVi: string;
-  color: string;         // Solid vibrant color (for selected button, dark badge)
-  lightBg: string;       // Pastel background (for hovered button, light badge)
-  textColor: string;     // Deep contrasting text color
+  color: string;         // Solid blue accent
+  lightBg: string;       // Subtle background
+  textColor: string;     // Blue text color
   minScore: number;      // For mapping average floating scores
   maxScore: number;
 }
 
 /**
- * Standard Semantic Difficulty Scale (Rate My Professors standard)
- * 1 (Very Easy) -> Green (#4ade80)
- * 2 (Easy) -> Lime (#a3e635)
- * 3 (Average) -> Yellow (#facc15)
- * 4 (Difficult) -> Orange (#fb923c)
- * 5 (Very Difficult) -> Red (#f87171)
+ * Minimalist & Elegant Difficulty Scale (Blue & White Palette)
  */
 export const DIFFICULTY_LEVELS: DifficultyLevel[] = [
   {
@@ -124,9 +119,9 @@ export const DIFFICULTY_LEVELS: DifficultyLevel[] = [
     key: "very_easy",
     labelEn: "Very Easy",
     labelVi: "Rất dễ",
-    color: "#4ade80",     // Vibrant Green
-    lightBg: "#dcfce7",
-    textColor: "#166534",
+    color: "#1d4ed8",     // Deep blue
+    lightBg: "#eff6ff",
+    textColor: "#1e3a8a",
     minScore: 0.0,
     maxScore: 1.99,
   },
@@ -135,9 +130,9 @@ export const DIFFICULTY_LEVELS: DifficultyLevel[] = [
     key: "easy",
     labelEn: "Easy",
     labelVi: "Dễ",
-    color: "#a3e635",     // Lime Green
-    lightBg: "#ecfccb",
-    textColor: "#3f6212",
+    color: "#2563eb",     // Royal blue
+    lightBg: "#eff6ff",
+    textColor: "#1e3a8a",
     minScore: 2.0,
     maxScore: 2.99,
   },
@@ -146,9 +141,9 @@ export const DIFFICULTY_LEVELS: DifficultyLevel[] = [
     key: "average",
     labelEn: "Average",
     labelVi: "Vừa phải",
-    color: "#facc15",     // Golden Yellow
-    lightBg: "#fef9c3",
-    textColor: "#854d0e",
+    color: "#3b82f6",     // Medium blue
+    lightBg: "#eff6ff",
+    textColor: "#1e3a8a",
     minScore: 3.0,
     maxScore: 3.79,
   },
@@ -157,9 +152,9 @@ export const DIFFICULTY_LEVELS: DifficultyLevel[] = [
     key: "difficult",
     labelEn: "Difficult",
     labelVi: "Khó",
-    color: "#fb923c",     // Warm Orange
-    lightBg: "#ffedd5",
-    textColor: "#9a3412",
+    color: "#60a5fa",     // Soft blue
+    lightBg: "#f8fafc",
+    textColor: "#1e3a8a",
     minScore: 3.8,
     maxScore: 4.49,
   },
@@ -168,9 +163,9 @@ export const DIFFICULTY_LEVELS: DifficultyLevel[] = [
     key: "very_difficult",
     labelEn: "Very Difficult",
     labelVi: "Rất khó",
-    color: "#f87171",     // Coral Red
-    lightBg: "#fee2e2",
-    textColor: "#991b1b",
+    color: "#93c5fd",     // Muted blue
+    lightBg: "#f8fafc",
+    textColor: "#1e3a8a",
     minScore: 4.5,
     maxScore: 5.0,
   },
@@ -205,4 +200,3 @@ export function getDifficultyLabel(score: number, locale: string): string {
   const level = getDifficultyLevel(score);
   return locale === "vi" ? level.labelVi : level.labelEn;
 }
-

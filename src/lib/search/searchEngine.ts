@@ -711,6 +711,13 @@ export class SearchEngine {
         return a.id.localeCompare(b.id);
       }
 
+      if (sort === "difficulty_asc") {
+        const aDiff = a.difficultyScore ?? a.difficultyAverage ?? 0;
+        const bDiff = b.difficultyScore ?? b.difficultyAverage ?? 0;
+        if (aDiff !== bDiff) return aDiff - bDiff;
+        return a.id.localeCompare(b.id);
+      }
+
       if (sort === "name_asc") {
         const nameA = a.fullName || a.name || "";
         const nameB = b.fullName || b.name || "";

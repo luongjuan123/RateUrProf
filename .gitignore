@@ -56,5 +56,7 @@ backups/
 logs/
 data_collection/checkpoint.json
 checkpoint.json
+templates_drive/
+
 
 

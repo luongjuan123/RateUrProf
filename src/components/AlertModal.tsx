@@ -39,14 +39,7 @@ export const AlertModal: React.FC<AlertModalProps> = ({
 }) => {
   if (!isOpen) return null;
 
-  const stripeColor =
-    type === "danger"
-      ? "bg-[#e03a3e]"
-      : type === "success"
-      ? "bg-[#6ee7b7]"
-      : type === "warning"
-      ? "bg-[#fef9c3]"
-      : "bg-[#e0f2fe]";
+  const stripeColor = "bg-[#1d4ed8]";
 
   const IconComponent =
     type === "danger"
@@ -123,11 +116,7 @@ export const AlertModal: React.FC<AlertModalProps> = ({
                   onConfirm();
                   onClose();
                 }}
-                className={`px-5 py-2 ${
-                  type === "danger"
-                    ? "bg-[#e03a3e] hover:bg-red-700 text-white border border-[#e03a3e]"
-                    : "bg-black hover:bg-gray-800 text-white border border-black"
-                } font-bold text-xs uppercase tracking-wider transition-colors cursor-pointer`}
+                className="px-5 py-2 bg-[#1d4ed8] hover:bg-[#1e40af] text-white border border-[#1d4ed8] font-bold text-xs uppercase tracking-wider transition-colors cursor-pointer"
               >
                 {confirmText || "Xác nhận"}
               </button>
@@ -136,7 +125,7 @@ export const AlertModal: React.FC<AlertModalProps> = ({
             <button
               type="button"
               onClick={onClose}
-              className="px-6 py-2 bg-black hover:bg-gray-800 text-white font-bold text-xs uppercase tracking-wider border border-black transition-colors cursor-pointer"
+              className="px-6 py-2 bg-[#1d4ed8] hover:bg-[#1e40af] text-white font-bold text-xs uppercase tracking-wider border border-[#1d4ed8] transition-colors cursor-pointer"
             >
               {confirmText || "Đã hiểu"}
             </button>

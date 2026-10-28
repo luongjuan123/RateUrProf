@@ -135,21 +135,21 @@ export function MoetRegistrySection() {
   return (
     <div className="space-y-6">
       {/* Header Banner */}
-      <div className="bg-white border-2 border-black p-6 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+      <div className="bg-white border border-gray-200 p-6">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div>
             <div className="flex items-center gap-2 mb-1">
-              <span className="px-2.5 py-0.5 text-xs font-mono font-black uppercase bg-[#e03a3e] text-white">
+              <span className="px-2.5 py-0.5 text-xs font-mono font-bold uppercase bg-[#1d4ed8] text-white">
                 Official Directory
               </span>
-              <span className="px-2.5 py-0.5 text-xs font-mono font-bold bg-emerald-100 text-emerald-800 border border-emerald-300 flex items-center gap-1">
+              <span className="px-2.5 py-0.5 text-xs font-mono font-bold bg-blue-50 text-[#1d4ed8] border border-blue-200 flex items-center gap-1">
                 <ShieldCheck className="w-3.5 h-3.5" /> 100% MOET Verified
               </span>
             </div>
-            <h1 className="text-2xl font-black uppercase tracking-tight text-gray-900">
+            <h1 className="text-2xl font-bold uppercase tracking-tight text-slate-900">
               Danh mục Cơ sở Giáo dục Chính thức (MOET)
             </h1>
-            <p className="text-sm text-gray-600 mt-1 max-w-2xl">
+            <p className="text-sm text-slate-600 mt-1 max-w-2xl">
               Nguồn dữ liệu chuẩn hoá từ Bộ Giáo dục và Đào tạo Việt Nam với 327 cơ sở giáo dục đại học, viện nghiên cứu đào tạo tiến sĩ và cao đẳng sư phạm. Đảm bảo toàn vẹn quan hệ giảng viên và mã trường chính thức.
             </p>
           </div>
@@ -158,15 +158,15 @@ export function MoetRegistrySection() {
             <button
               onClick={() => handleTriggerSync("dry-run")}
               disabled={syncing}
-              className="px-3 py-2 text-xs font-bold border-2 border-black bg-white hover:bg-gray-100 disabled:opacity-50 transition-colors flex items-center gap-1.5"
+              className="px-3 py-2 text-xs font-bold border border-gray-200 bg-white hover:bg-slate-50 disabled:opacity-50 transition-colors flex items-center gap-1.5 cursor-pointer text-slate-700"
             >
-              <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
+              <CheckCircle2 className="w-3.5 h-3.5 text-[#1d4ed8]" />
               Kiểm toán (Dry-run)
             </button>
             <button
               onClick={() => handleTriggerSync("execute")}
               disabled={syncing}
-              className="px-4 py-2 text-xs font-bold border-2 border-black bg-[#e03a3e] text-white hover:bg-red-700 disabled:opacity-50 transition-colors shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] flex items-center gap-1.5"
+              className="px-4 py-2 text-xs font-bold border border-[#1d4ed8] bg-[#1d4ed8] text-white hover:bg-[#1e40af] disabled:opacity-50 transition-colors flex items-center gap-1.5 cursor-pointer"
             >
               <RefreshCw className={`w-3.5 h-3.5 ${syncing ? "animate-spin" : ""}`} />
               Đồng bộ MOET
@@ -176,7 +176,7 @@ export function MoetRegistrySection() {
 
         {syncMessage && (
           <div className="mt-4 p-3 bg-blue-50 border border-blue-200 text-blue-900 text-xs font-mono flex items-center gap-2">
-            <AlertCircle className="w-4 h-4 flex-shrink-0 text-blue-600" />
+            <AlertCircle className="w-4 h-4 flex-shrink-0 text-[#1d4ed8]" />
             <span>{syncMessage}</span>
           </div>
         )}
@@ -185,55 +185,55 @@ export function MoetRegistrySection() {
       {/* Metrics Row */}
       {telemetry && (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          <div className="bg-white border-2 border-black p-4 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
-            <div className="flex items-center justify-between text-gray-500 mb-2">
+          <div className="bg-white border border-gray-200 p-4">
+            <div className="flex items-center justify-between text-slate-500 mb-2">
               <span className="text-xs font-bold uppercase tracking-wider">Cơ sở Giáo dục</span>
-              <Building2 className="w-4 h-4 text-gray-700" />
+              <Building2 className="w-4 h-4 text-slate-600" />
             </div>
-            <div className="text-2xl font-black text-gray-900">
+            <div className="text-2xl font-black text-slate-900">
               {telemetry.totalInstitutions}{" "}
-              <span className="text-xs font-normal text-emerald-700">/ {telemetry.officialSourceTarget}</span>
+              <span className="text-xs font-normal text-[#1d4ed8]">/ {telemetry.officialSourceTarget}</span>
             </div>
-            <div className="text-[11px] text-emerald-600 font-bold mt-1">
+            <div className="text-[11px] text-[#1d4ed8] font-bold mt-1">
               ✓ Chuẩn hoá 100% nguồn MOET
             </div>
           </div>
 
-          <div className="bg-white border-2 border-black p-4 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
-            <div className="flex items-center justify-between text-gray-500 mb-2">
+          <div className="bg-white border border-gray-200 p-4">
+            <div className="flex items-center justify-between text-slate-500 mb-2">
               <span className="text-xs font-bold uppercase tracking-wider">Mã trường Chính thức</span>
-              <Award className="w-4 h-4 text-gray-700" />
+              <Award className="w-4 h-4 text-slate-600" />
             </div>
-            <div className="text-2xl font-black text-gray-900">
+            <div className="text-2xl font-black text-slate-900">
               {telemetry.verifiedCodesCount}
             </div>
-            <div className="text-[11px] text-emerald-600 font-bold mt-1">
+            <div className="text-[11px] text-[#1d4ed8] font-bold mt-1">
               ✓ 100% có mã duy nhất (BKA, VJU, ...)
             </div>
           </div>
 
-          <div className="bg-white border-2 border-black p-4 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
-            <div className="flex items-center justify-between text-gray-500 mb-2">
+          <div className="bg-white border border-gray-200 p-4">
+            <div className="flex items-center justify-between text-slate-500 mb-2">
               <span className="text-xs font-bold uppercase tracking-wider">Giảng viên Khớp trường</span>
-              <Users className="w-4 h-4 text-gray-700" />
+              <Users className="w-4 h-4 text-slate-600" />
             </div>
-            <div className="text-2xl font-black text-gray-900">
+            <div className="text-2xl font-black text-slate-900">
               {telemetry.totalAffiliatedProfessors.toLocaleString("vi-VN")}
             </div>
-            <div className="text-[11px] text-gray-500 font-mono mt-1">
+            <div className="text-[11px] text-slate-500 font-mono mt-1">
               {telemetry.institutionsWithFaculty} trường có dữ liệu
             </div>
           </div>
 
-          <div className="bg-white border-2 border-black p-4 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
-            <div className="flex items-center justify-between text-gray-500 mb-2">
+          <div className="bg-white border border-gray-200 p-4">
+            <div className="flex items-center justify-between text-slate-500 mb-2">
               <span className="text-xs font-bold uppercase tracking-wider">Bí danh &amp; Viết tắt</span>
-              <Layers className="w-4 h-4 text-gray-700" />
+              <Layers className="w-4 h-4 text-slate-600" />
             </div>
-            <div className="text-2xl font-black text-gray-900">
+            <div className="text-2xl font-black text-slate-900">
               {telemetry.totalAliases}
             </div>
-            <div className="text-[11px] text-gray-500 font-mono mt-1">
+            <div className="text-[11px] text-slate-500 font-mono mt-1">
               Tra cứu tức thì bằng mã / tên viết tắt
             </div>
           </div>
@@ -243,17 +243,17 @@ export function MoetRegistrySection() {
       {/* Regional & Type Breakdown */}
       {telemetry && (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div className="bg-white border-2 border-black p-4 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
-            <h3 className="text-xs font-black uppercase tracking-wider text-gray-700 mb-3 flex items-center gap-1.5">
-              <MapPin className="w-3.5 h-3.5 text-red-600" /> Phân bố Vùng miền
+          <div className="bg-white border border-gray-200 p-4">
+            <h3 className="text-xs font-bold uppercase tracking-wider text-slate-700 mb-3 flex items-center gap-1.5">
+              <MapPin className="w-3.5 h-3.5 text-[#1d4ed8]" /> Phân bố Vùng miền
             </h3>
             <div className="space-y-2">
               {telemetry.regionBreakdown.map((r) => (
                 <div key={r.region} className="flex items-center justify-between text-xs">
-                  <span className="font-medium text-gray-700">{r.region}</span>
+                  <span className="font-medium text-slate-700">{r.region}</span>
                   <div className="flex items-center gap-2">
-                    <span className="font-mono font-bold text-gray-900">{r.count} cơ sở</span>
-                    <span className="text-[10px] text-gray-400 font-mono">
+                    <span className="font-mono font-bold text-slate-900">{r.count} cơ sở</span>
+                    <span className="text-[10px] text-slate-400 font-mono">
                       ({Math.round((parseInt(r.count, 10) / telemetry.totalInstitutions) * 100)}%)
                     </span>
                   </div>
@@ -262,9 +262,9 @@ export function MoetRegistrySection() {
             </div>
           </div>
 
-          <div className="bg-white border-2 border-black p-4 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
-            <h3 className="text-xs font-black uppercase tracking-wider text-gray-700 mb-3 flex items-center gap-1.5">
-              <Building2 className="w-3.5 h-3.5 text-blue-600" /> Phân loại Cơ sở Giáo dục
+          <div className="bg-white border border-gray-200 p-4">
+            <h3 className="text-xs font-bold uppercase tracking-wider text-slate-700 mb-3 flex items-center gap-1.5">
+              <Building2 className="w-3.5 h-3.5 text-[#1d4ed8]" /> Phân loại Cơ sở Giáo dục
             </h3>
             <div className="space-y-2">
               {telemetry.typeBreakdown.map((t) => {
@@ -278,10 +278,10 @@ export function MoetRegistrySection() {
                     : "Học viện";
                 return (
                   <div key={t.institution_type} className="flex items-center justify-between text-xs">
-                    <span className="font-medium text-gray-700">{label}</span>
+                    <span className="font-medium text-slate-700">{label}</span>
                     <div className="flex items-center gap-2">
-                      <span className="font-mono font-bold text-gray-900">{t.count}</span>
-                      <span className="text-[10px] text-gray-400 font-mono">
+                      <span className="font-mono font-bold text-slate-900">{t.count}</span>
+                      <span className="text-[10px] text-slate-400 font-mono">
                         ({Math.round((parseInt(t.count, 10) / telemetry.totalInstitutions) * 100)}%)
                       </span>
                     </div>
@@ -294,7 +294,7 @@ export function MoetRegistrySection() {
       )}
 
       {/* Filter and Table Card */}
-      <div className="bg-white border-2 border-black p-4 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+      <div className="bg-white border border-gray-200 p-4">
         <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 mb-4">
           <div className="relative flex-1 max-w-md">
             <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
@@ -306,7 +306,7 @@ export function MoetRegistrySection() {
                 setSearchQuery(e.target.value);
                 setPage(1);
               }}
-              className="w-full pl-9 pr-3 py-2 text-xs border-2 border-black font-sans focus:outline-none focus:ring-2 focus:ring-black"
+              className="w-full pl-9 pr-3 py-2 text-xs border border-gray-300 focus:border-[#1d4ed8] font-sans focus:outline-none focus:ring-1 focus:ring-[#1d4ed8]"
             />
           </div>
 
@@ -317,7 +317,7 @@ export function MoetRegistrySection() {
                 setRegionFilter(e.target.value);
                 setPage(1);
               }}
-              className="px-3 py-2 text-xs border-2 border-black bg-white font-sans focus:outline-none"
+              className="px-3 py-2 text-xs border border-gray-300 focus:border-[#1d4ed8] bg-white font-sans focus:outline-none focus:ring-1 focus:ring-[#1d4ed8]"
             >
               <option value="all">Tất cả vùng miền</option>
               <option value="Miền Bắc">Miền Bắc</option>
@@ -329,16 +329,16 @@ export function MoetRegistrySection() {
 
         {/* Institutions Table */}
         {loading ? (
-          <div className="p-8 text-center text-xs text-gray-500 font-mono">Đang tải danh mục MOET...</div>
+          <div className="p-8 text-center text-xs text-slate-500 font-mono">Đang tải danh mục MOET...</div>
         ) : error ? (
           <div className="p-4 bg-red-50 text-red-800 text-xs font-mono">{error}</div>
         ) : institutions.length === 0 ? (
-          <div className="p-8 text-center text-xs text-gray-500 font-mono">Không tìm thấy cơ sở giáo dục nào.</div>
+          <div className="p-8 text-center text-xs text-slate-500 font-mono">Không tìm thấy cơ sở giáo dục nào.</div>
         ) : (
           <div className="overflow-x-auto">
             <table className="w-full text-left border-collapse">
               <thead>
-                <tr className="border-b-2 border-black bg-gray-50 text-[11px] font-black uppercase text-gray-700">
+                <tr className="border-b border-gray-200 bg-slate-50 text-[11px] font-bold uppercase text-slate-700">
                   <th className="py-2.5 px-3">Mã MOET</th>
                   <th className="py-2.5 px-3">Tên Cơ sở Giáo dục</th>
                   <th className="py-2.5 px-3">Viết tắt / ID</th>
@@ -350,23 +350,23 @@ export function MoetRegistrySection() {
               </thead>
               <tbody className="divide-y divide-gray-200 text-xs">
                 {institutions.map((u) => (
-                  <tr key={u.id} className="hover:bg-gray-50 transition-colors">
-                    <td className="py-2.5 px-3 font-mono font-bold text-gray-900">
-                      <span className="px-2 py-0.5 bg-gray-100 border border-gray-300 rounded font-black text-[#e03a3e]">
+                  <tr key={u.id} className="hover:bg-slate-50 transition-colors">
+                    <td className="py-2.5 px-3 font-mono font-bold text-slate-900">
+                      <span className="px-2 py-0.5 bg-blue-50 border border-blue-200 rounded font-bold text-[#1d4ed8]">
                         {u.official_code}
                       </span>
                     </td>
-                    <td className="py-2.5 px-3 font-medium text-gray-900">
+                    <td className="py-2.5 px-3 font-medium text-slate-900">
                       <div>{u.name}</div>
-                      <div className="text-[10px] text-gray-400 capitalize">{u.institution_type}</div>
+                      <div className="text-[10px] text-slate-400 capitalize">{u.institution_type}</div>
                     </td>
-                    <td className="py-2.5 px-3 font-mono text-gray-600">
-                      <span className="font-bold text-gray-800">{u.short_name}</span>
-                      <div className="text-[10px] text-gray-400">/{u.id}</div>
+                    <td className="py-2.5 px-3 font-mono text-slate-600">
+                      <span className="font-bold text-slate-800">{u.short_name}</span>
+                      <div className="text-[10px] text-slate-400">/{u.id}</div>
                     </td>
-                    <td className="py-2.5 px-3 text-gray-600">
+                    <td className="py-2.5 px-3 text-slate-600">
                       <div>{u.city}</div>
-                      <div className="text-[10px] text-gray-400">{u.region}</div>
+                      <div className="text-[10px] text-slate-400">{u.region}</div>
                     </td>
                     <td className="py-2.5 px-3 font-mono text-[11px]">
                       {u.official_website ? (
@@ -374,7 +374,7 @@ export function MoetRegistrySection() {
                           href={u.official_website}
                           target="_blank"
                           rel="noreferrer"
-                          className="text-blue-600 hover:underline flex items-center gap-1"
+                          className="text-[#1d4ed8] hover:underline flex items-center gap-1"
                         >
                           {u.official_domain || "Link"}
                           <ExternalLink className="w-3 h-3" />
@@ -383,7 +383,7 @@ export function MoetRegistrySection() {
                         <span className="text-gray-400">-</span>
                       )}
                     </td>
-                    <td className="py-2.5 px-3 text-right font-mono font-bold text-gray-900">
+                    <td className="py-2.5 px-3 text-right font-mono font-bold text-slate-900">
                       {u.total_professors > 0 ? (
                         u.total_professors.toLocaleString("vi-VN")
                       ) : (
@@ -392,7 +392,7 @@ export function MoetRegistrySection() {
                     </td>
                     <td className="py-2.5 px-3 text-right">
                       {u.total_reviews > 0 ? (
-                        <span className="font-mono font-bold text-amber-700">
+                        <span className="font-mono font-bold text-[#1d4ed8]">
                           ★ {u.rating_average} ({u.total_reviews})
                         </span>
                       ) : (
@@ -408,24 +408,24 @@ export function MoetRegistrySection() {
 
         {/* Pagination */}
         <div className="flex items-center justify-between pt-4 border-t border-gray-200 text-xs">
-          <div className="text-gray-500 font-mono">
+          <div className="text-slate-500 font-mono">
             Hiển thị {institutions.length} / {totalItems} cơ sở giáo dục
           </div>
           <div className="flex items-center gap-1">
             <button
               onClick={() => setPage((p) => Math.max(1, p - 1))}
               disabled={page <= 1}
-              className="px-2.5 py-1 border border-black font-mono font-bold disabled:opacity-40"
+              className="px-2.5 py-1 border border-gray-300 bg-white hover:bg-slate-50 font-mono font-medium disabled:opacity-40 cursor-pointer"
             >
               Prev
             </button>
-            <span className="px-3 py-1 font-mono text-gray-700">
+            <span className="px-3 py-1 font-mono text-slate-700">
               Trang {page} / {totalPages}
             </span>
             <button
               onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
               disabled={page >= totalPages}
-              className="px-2.5 py-1 border border-black font-mono font-bold disabled:opacity-40"
+              className="px-2.5 py-1 border border-gray-300 bg-white hover:bg-slate-50 font-mono font-medium disabled:opacity-40 cursor-pointer"
             >
               Next
             </button>

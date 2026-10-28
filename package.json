@@ -23,7 +23,8 @@
     "collect:run": "./run_pipeline.sh run",
     "collect:status": "./run_pipeline.sh status",
     "collect:report": "./run_pipeline.sh report",
-    "crawler:daemon": "tsx scripts/continuous_nationwide_crawler.ts"
+    "crawler:daemon": "tsx scripts/continuous_nationwide_crawler.ts",
+    "db:allow-ip": "bash scripts/allow_current_ip.sh"
   },
   "dependencies": {
     "cheerio": "^1.2.0",

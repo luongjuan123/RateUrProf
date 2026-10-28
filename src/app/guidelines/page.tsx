@@ -25,15 +25,15 @@ export default function GuidelinesPage() {
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-10 font-mono">
       {/* 1. EDITORIAL HEADER & LANGUAGE TOGGLE */}
-      <div className="border-b-2 border-black pb-6 space-y-4">
+      <div className="border-b border-gray-200 pb-6 space-y-4">
         <div className="flex flex-wrap items-center justify-between gap-3">
-          <span className="inline-flex items-center px-3 py-1 text-[11px] font-black uppercase tracking-widest bg-[#fef9c3] text-black border-2 border-black shadow-[2px_2px_0px_#000]">
+          <span className="inline-flex items-center px-3 py-1 text-[11px] font-black uppercase tracking-widest bg-[#eff6ff] text-[#1d4ed8] border border-[#bfdbfe]">
             {isEn ? "Official Posting Guidelines" : "Quy định Đăng bài Chính thức"}
           </span>
 
           {/* Quick In-Page Language Switcher */}
-          <div className="inline-flex items-center border-2 border-black bg-white shadow-[2px_2px_0px_#000]">
-            <div className="px-2 py-1 bg-black text-[#fef9c3] text-[10px] font-black uppercase flex items-center">
+          <div className="inline-flex items-center border border-gray-200 bg-white">
+            <div className="px-2 py-1 bg-[#1d4ed8] text-white text-[10px] font-black uppercase flex items-center">
               <span>Lang</span>
             </div>
             <button
@@ -41,8 +41,8 @@ export default function GuidelinesPage() {
               onClick={() => switchLang("vi")}
               className={`px-3 py-1 text-xs font-black uppercase transition-all ${
                 activeLang === "vi"
-                  ? "bg-[#e03a3e] text-white"
-                  : "bg-white text-black hover:bg-[#fef9c3]"
+                  ? "bg-[#1d4ed8] text-white"
+                  : "bg-white text-gray-700 hover:bg-[#eff6ff]"
               }`}
             >
               Tiếng Việt
@@ -50,10 +50,10 @@ export default function GuidelinesPage() {
             <button
               type="button"
               onClick={() => switchLang("en")}
-              className={`px-3 py-1 text-xs font-black uppercase transition-all border-l border-black ${
+              className={`px-3 py-1 text-xs font-black uppercase transition-all border-l border-gray-200 ${
                 activeLang === "en"
-                  ? "bg-[#e03a3e] text-white"
-                  : "bg-white text-black hover:bg-[#fef9c3]"
+                  ? "bg-[#1d4ed8] text-white"
+                  : "bg-white text-gray-700 hover:bg-[#eff6ff]"
               }`}
             >
               English
@@ -62,12 +62,12 @@ export default function GuidelinesPage() {
         </div>
 
         <div>
-          <h1 className="text-2xl sm:text-4xl font-black uppercase tracking-tight text-black">
+          <h1 className="text-2xl sm:text-4xl font-black uppercase tracking-tight text-gray-900">
             {isEn
               ? "RateUrProfs Official Posting Guidelines (\"Site Guidelines\")"
               : "Quy định Đăng bài & Quy chuẩn Cộng đồng (\"Site Guidelines\")"}
           </h1>
-          <p className="text-xs sm:text-sm text-gray-700 mt-2 leading-relaxed">
+          <p className="text-xs sm:text-sm text-gray-600 mt-2 leading-relaxed">
             {isEn
               ? "These are the official posting guidelines (\"Site Guidelines\") for the RateUrProfs website (rateurprofs.site), application, and interactive services. RateUrProfs is owned and operated by RateUrProfs (\"we,\" \"us,\" or \"our\"), and these Site Guidelines are a part of, and Additional Terms under, our Terms of Use Agreement."
               : "Đây là quy định đăng bài chính thức (\"Site Guidelines\") áp dụng cho website RateUrProfs (rateurprofs.site), ứng dụng và các dịch vụ tương tác liên quan. Nền tảng được sở hữu và vận hành bởi RateUrProfs (\"chúng tôi\"), và Quy định này là một bộ phận không thể tách rời thuộc Điều khoản Sử dụng (Terms of Use Agreement) của RateUrProfs."}
@@ -76,11 +76,11 @@ export default function GuidelinesPage() {
       </div>
 
       {/* 2. OUR MISSION */}
-      <div className="p-6 bg-[#fef9c3] border-2 border-black shadow-[4px_4px_0px_#000] space-y-2">
-        <div className="flex items-center text-black font-black text-sm uppercase tracking-wider">
+      <div className="p-6 bg-[#eff6ff] border border-[#bfdbfe] space-y-2">
+        <div className="flex items-center text-[#1d4ed8] font-black text-sm uppercase tracking-wider">
           <span>{isEn ? "Our Mission" : "Sứ mệnh của Chúng tôi"}</span>
         </div>
-        <p className="text-xs sm:text-sm text-gray-900 leading-relaxed font-medium">
+        <p className="text-xs sm:text-sm text-gray-800 leading-relaxed font-medium">
           {isEn
             ? "RateUrProfs is the nationwide academic evaluation platform for students to research, rate, and discuss university professors and higher education institutions across Vietnam. Our mission is to provide a safe, respectful, and constructive forum for sharing authentic classroom experiences, empowering students to make informed academic choices."
             : "RateUrProfs là nền tảng đánh giá học thuật toàn quốc dành cho sinh viên để tra cứu, đánh giá và chia sẻ trải nghiệm về giảng viên cũng như các trường đại học, học viện trên khắp Việt Nam. Sứ mệnh của chúng tôi là mang đến một diễn đàn an toàn, minh bạch và xây dựng để lan tỏa những trải nghiệm giảng dạy thực tế, hỗ trợ sinh viên đưa ra những quyết định học tập quan trọng."}
@@ -88,33 +88,33 @@ export default function GuidelinesPage() {
       </div>
 
       {/* 3. THE SITE / APP & ELIGIBILITY */}
-      <div className="p-6 bg-white border-2 border-black shadow-[4px_4px_0px_#000] space-y-4">
-        <div className="flex items-center text-black font-black text-sm uppercase tracking-wider">
+      <div className="p-6 bg-white border border-gray-200 space-y-4">
+        <div className="flex items-center text-gray-900 font-black text-sm uppercase tracking-wider">
           <span>{isEn ? "The Platform & Eligibility" : "Nền tảng & Điều kiện Đăng bài"}</span>
         </div>
-        <p className="text-xs sm:text-sm text-gray-800 leading-relaxed">
+        <p className="text-xs sm:text-sm text-gray-700 leading-relaxed">
           {isEn
             ? "The RateUrProfs website (rateurprofs.site) and platform provide user-generated feedback on professors' teaching methods, course difficulty, grading fairness, and academic accessibility, as well as user-generated evaluations of university facilities, campus life, and educational environments."
             : "Trang web và ứng dụng RateUrProfs (rateurprofs.site) cung cấp phản hồi do sinh viên đóng góp về phương pháp sư phạm, độ khó học phần, tính công bằng trong chấm điểm và sự hỗ trợ của giảng viên, cũng như các đánh giá về đời sống học đường, môi trường học thuật và cơ sở vật chất của các trường đại học."}
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-1">
-          <div className="p-4 bg-[#f8fafc] border-2 border-black shadow-[2px_2px_0px_#000] space-y-1.5">
-            <span className="font-black text-xs uppercase text-black block">
+          <div className="p-4 bg-[#f8fafc] border border-gray-200 space-y-1.5">
+            <span className="font-black text-xs uppercase text-gray-900 block">
               {isEn ? "1. Who Can Post & Review Limits" : "1. Ai được đăng & Giới hạn đánh giá"}
             </span>
-            <p className="text-xs text-gray-700 leading-relaxed">
+            <p className="text-xs text-gray-600 leading-relaxed">
               {isEn
                 ? "Professor ratings should only be posted by users who have taken a class from the professor or who are currently taking a class with the professor. For each course a professor teaches, users are strictly limited to posting one (1) comment. Campus ratings should only be posted by students who have attended or are currently attending the specific university being rated."
                 : "Đánh giá giảng viên chỉ được thực hiện bởi người dùng đã từng theo học hoặc đang trực tiếp theo học học phần do giảng viên đó phụ trách. Với mỗi môn học do một giảng viên giảng dạy, người dùng chỉ được phép gửi tối đa một (1) nhận xét. Đánh giá trường đại học chỉ dành cho sinh viên đã hoặc đang theo học tại trường đại học đó."}
             </p>
           </div>
 
-          <div className="p-4 bg-[#fee2e2] border-2 border-black shadow-[2px_2px_0px_#000] space-y-1.5">
-            <span className="font-black text-xs uppercase text-red-700 block">
+          <div className="p-4 bg-[#eff6ff] border border-[#bfdbfe] space-y-1.5">
+            <span className="font-black text-xs uppercase text-[#1d4ed8] block">
               {isEn ? "2. Emergency & Safety Notice" : "2. Cảnh báo Khẩn cấp & An toàn"}
             </span>
-            <p className="text-xs text-gray-800 leading-relaxed">
+            <p className="text-xs text-gray-700 leading-relaxed">
               {isEn
                 ? "RateUrProfs is NOT the place to report dangerous, illegal, or illicit behaviors. If you believe that you, another student, or a professor is in danger, we strongly advise you to report such incidences directly to your university administration, campus security, or local law enforcement authorities."
                 : "RateUrProfs KHÔNG PHẢI là nơi để thông báo hay báo cáo các hành vi nguy hiểm, đe dọa bạo lực hoặc vi phạm pháp luật hình sự. Nếu bạn tin rằng bản thân, một sinh viên khác hoặc thầy cô đang gặp nguy hiểm, hãy liên hệ ngay với ban giám hiệu nhà trường, phòng an ninh hoặc cơ quan công an / chính quyền địa phương."}
@@ -124,33 +124,33 @@ export default function GuidelinesPage() {
       </div>
 
       {/* 4. HOW MODERATION WORKS */}
-      <div className="p-6 bg-white border-2 border-black shadow-[4px_4px_0px_#000] space-y-4">
-        <div className="flex items-center text-black font-black text-sm uppercase tracking-wider">
+      <div className="p-6 bg-white border border-gray-200 space-y-4">
+        <div className="flex items-center text-gray-900 font-black text-sm uppercase tracking-wider">
           <span>{isEn ? "How Moderation Works" : "Quy trình Kiểm duyệt của Chúng tôi"}</span>
         </div>
-        <p className="text-xs sm:text-sm text-gray-800 leading-relaxed">
+        <p className="text-xs sm:text-sm text-gray-700 leading-relaxed">
           {isEn
             ? "RateUrProfs maintains a dedicated team of moderators and automated filters to evaluate every rating submitted. We have defined site guidelines to help reinforce our mission and, most importantly, to ensure our moderation decisions are 100% consistent, regardless of student or professor."
             : "RateUrProfs duy trì đội ngũ kiểm duyệt viên chuyên trách kết hợp cùng hệ thống lọc tự động để rà soát mọi đánh giá được gửi lên. Chúng tôi thiết lập các quy chuẩn này nhằm củng cố sứ mệnh của nền tảng và quan trọng nhất là bảo đảm các quyết định kiểm duyệt luôn nhất quán 100%, bảo đảm tính khách quan, công bằng cho cả sinh viên và giảng viên."}
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
-          <div className="p-3.5 bg-[#e0f2fe] border-2 border-black shadow-[2px_2px_0px_#000] space-y-1">
-            <span className="font-black text-black uppercase block">
+          <div className="p-3.5 bg-[#eff6ff] border border-[#bfdbfe] space-y-1">
+            <span className="font-black text-[#1d4ed8] uppercase block">
               {isEn ? "Zero Content Alteration" : "Không tự ý can thiệp nội dung"}
             </span>
-            <p className="text-gray-800 leading-relaxed">
+            <p className="text-gray-700 leading-relaxed">
               {isEn
                 ? "Our moderators will NEVER edit the wording of a rating to make it comply. Comments either meet site standards or are removed entirely."
                 : "Ban kiểm duyệt TUYỆT ĐỐI KHÔNG BAO GIỜ chỉnh sửa câu từ trong nhận xét của người dùng để làm cho nó hợp lệ. Nhận xét chỉ có thể được duyệt nguyên bản hoặc bị xóa bỏ."}
             </p>
           </div>
 
-          <div className="p-3.5 bg-[#6ee7b7]/30 border-2 border-black shadow-[2px_2px_0px_#000] space-y-1">
-            <span className="font-black text-black uppercase block">
+          <div className="p-3.5 bg-[#eff6ff] border border-[#bfdbfe] space-y-1">
+            <span className="font-black text-[#1d4ed8] uppercase block">
               {isEn ? "Negative Reviews Protected" : "Bảo vệ đánh giá tiêu cực"}
             </span>
-            <p className="text-gray-800 leading-relaxed">
+            <p className="text-gray-700 leading-relaxed">
               {isEn
                 ? "Our moderators will NEVER remove a rating simply because it is a low score or negative review. Constructive criticism regarding course rigor and teaching methodology is protected."
                 : "Ban kiểm duyệt KHÔNG BAO GIỜ xóa một đánh giá chỉ vì điểm số thấp hoặc đánh giá không tích cực. Mọi phản biện mang tính xây dựng về học phần đều được tôn trọng."}
@@ -158,7 +158,7 @@ export default function GuidelinesPage() {
           </div>
         </div>
 
-        <div className="p-3 bg-[#fef9c3]/50 border border-black text-xs text-gray-800 leading-relaxed">
+        <div className="p-3 bg-[#f8fafc] border border-gray-200 text-xs text-gray-700 leading-relaxed">
           <span>
             {isEn
               ? "Did we miss something? If you feel an inappropriate comment should be removed from the site, you can flag it for re-review. It will immediately be escalated to our moderation queue for evaluation."
@@ -168,8 +168,8 @@ export default function GuidelinesPage() {
       </div>
 
       {/* 5. STUDENT GUIDELINES */}
-      <div className="p-6 bg-white border-2 border-black shadow-[4px_4px_0px_#000] space-y-4">
-        <div className="flex items-center text-black font-black text-sm uppercase tracking-wider">
+      <div className="p-6 bg-white border border-gray-200 space-y-4">
+        <div className="flex items-center text-gray-900 font-black text-sm uppercase tracking-wider">
           <span>{isEn ? "Student Guidelines" : "Quy định dành cho Sinh viên"}</span>
         </div>
 
@@ -247,8 +247,8 @@ export default function GuidelinesPage() {
       </div>
 
       {/* 6. PROHIBITED CONTENT */}
-      <div className="p-6 bg-[#fee2e2] border-2 border-black shadow-[4px_4px_0px_#000] space-y-4">
-        <div className="flex items-center text-red-700 font-black text-sm uppercase tracking-wider">
+      <div className="p-6 bg-[#eff6ff] border border-[#bfdbfe] space-y-4">
+        <div className="flex items-center text-[#1d4ed8] font-black text-sm uppercase tracking-wider">
           <span>{isEn ? "Prohibited Content (Removed Immediately)" : "Nội dung Nghiêm cấm Đăng tải"}</span>
         </div>
         <p className="text-xs sm:text-sm text-gray-800 leading-relaxed font-medium">
@@ -257,7 +257,7 @@ export default function GuidelinesPage() {
             : "Căn cứ Điều 8, Điều 16 Luật An ninh mạng 2018 (Luật số 24/2018/QH14), các Điều 32, 34, 38 Bộ luật Dân sự 2015 và Nghị định số 147/2024/NĐ-CP, các bình luận chứa bất kỳ nội dung nào sau đây bị nghiêm cấm tuyệt đối và sẽ bị gỡ bỏ ngay lập tức:"}
         </p>
 
-        <ul className="space-y-2.5 text-xs text-gray-900">
+        <ul className="space-y-2.5 text-xs text-gray-800">
           <li className="leading-relaxed">
             {isEn
               ? "Profanity, name-calling, and/or vulgarity, derogatory remarks about religion, ethnicity or race, gender, physical appearance, age, mental and/or physical disabilities."
@@ -321,12 +321,12 @@ export default function GuidelinesPage() {
       </div>
 
       {/* 7. PROFESSOR GUIDELINES */}
-      <div className="p-6 bg-white border-2 border-black shadow-[4px_4px_0px_#000] space-y-4">
-        <div className="flex items-center text-black font-black text-sm uppercase tracking-wider">
+      <div className="p-6 bg-white border border-gray-200 space-y-4">
+        <div className="flex items-center text-gray-900 font-black text-sm uppercase tracking-wider">
           <span>{isEn ? "Professor Guidelines" : "Quy định dành cho Giảng viên"}</span>
         </div>
 
-        <ul className="space-y-3 text-xs sm:text-sm text-gray-800">
+        <ul className="space-y-3 text-xs sm:text-sm text-gray-700">
           <li className="leading-relaxed">
             <strong>{isEn ? "Anonymous platform:" : "Diễn đàn chia sẻ ẩn danh của sinh viên:"}</strong>{" "}
             {isEn
@@ -386,11 +386,11 @@ export default function GuidelinesPage() {
       </div>
 
       {/* 8. FLAGGING A RATING */}
-      <div className="p-6 bg-white border-2 border-black shadow-[4px_4px_0px_#000] space-y-3">
-        <div className="flex items-center text-black font-black text-sm uppercase tracking-wider">
+      <div className="p-6 bg-white border border-gray-200 space-y-3">
+        <div className="flex items-center text-gray-900 font-black text-sm uppercase tracking-wider">
           <span>{isEn ? "Flagging a Rating" : "Báo cáo Đánh giá Vi phạm"}</span>
         </div>
-        <p className="text-xs sm:text-sm text-gray-800 leading-relaxed">
+        <p className="text-xs sm:text-sm text-gray-700 leading-relaxed">
           {isEn
             ? "If you see a rating that you believe violates these Site Guidelines, please click the \"Report this rating\" button at the bottom of the comment and state the specific problem. Such comments will be evaluated by site personnel. Please do not flag a rating just because you disagree with it."
             : "Nếu bạn thấy một nhận xét mà bạn cho rằng vi phạm Quy định Đăng bài này, vui lòng bấm nút \"Báo cáo đánh giá\" ở chân nhận xét và nêu rõ lý do. Ban kiểm duyệt sẽ đánh giá cẩn trọng. Xin đừng báo cáo một nhận xét chỉ vì bạn không đồng tình với ý kiến đó."}
@@ -398,43 +398,43 @@ export default function GuidelinesPage() {
       </div>
 
       {/* 9. LEGAL INFORMATION & PLATFORM PROTECTIONS */}
-      <div className="p-6 bg-[#e0f2fe] border-2 border-black shadow-[4px_4px_0px_#000] space-y-4">
-        <div className="flex items-center text-black font-black text-sm uppercase tracking-wider">
+      <div className="p-6 bg-[#eff6ff] border border-[#bfdbfe] space-y-4">
+        <div className="flex items-center text-[#1d4ed8] font-black text-sm uppercase tracking-wider">
           <span>{isEn ? "Legal Information & Intermediary Protections" : "Thông tin Pháp lý & Cơ chế Miễn trừ Nền tảng Trung gian"}</span>
         </div>
 
-        <p className="text-xs sm:text-sm text-gray-900 leading-relaxed">
+        <p className="text-xs sm:text-sm text-gray-800 leading-relaxed">
           {isEn
             ? "RateUrProfs occasionally receives removal demands that include threats of lawsuits. Under applicable statutory frameworks governing internet information services (including Vietnamese Decree No. 72/2013/ND-CP, Decree No. 27/2018/ND-CP, Decree No. 147/2024/ND-CP, Article 198a of the Intellectual Property Law, and international safe-harbor standards), RateUrProfs operates as an intermediary hosting provider and is legally protected from liability for subjective evaluations and reviews submitted by third-party users."
             : "RateUrProfs thỉnh thoảng nhận được các yêu cầu gỡ bài kèm theo lời đe dọa kiện tụng. Pháp luật bảo vệ RateUrProfs khỏi trách nhiệm pháp lý đối với nội dung do người dùng tự đăng tải. Cụ thể, căn cứ quy định pháp luật hiện hành về dịch vụ mạng và thông tin trên mạng (bao gồm Nghị định số 72/2013/NĐ-CP, Nghị định số 27/2018/NĐ-CP, Nghị định số 147/2024/NĐ-CP của Chính phủ, Điều 198a Luật Sở hữu trí tuệ, cũng như nguyên tắc miễn trừ trách nhiệm của nền tảng trung gian theo chuẩn mực quốc tế), RateUrProfs là bên cung cấp dịch vụ lưu trữ thông tin trung gian và được miễn trừ trách nhiệm đối với các nhận định, đánh giá cá nhân do người dùng khởi tạo."}
         </p>
 
-        <p className="text-xs sm:text-sm text-gray-900 leading-relaxed">
+        <p className="text-xs sm:text-sm text-gray-800 leading-relaxed">
           {isEn
             ? "The law is clear on this. Anyone who wishes to sue RateUrProfs for reviews posted by community members risks penalties and sanctions imposed by the court. These may include financial sanctions and reimbursement of attorney fees and expenses incurred in defending against lawsuits that ignore statutory protections."
             : "Pháp luật đã quy định rất rõ về điều này. Bất kỳ bên nào có ý định kiện RateUrProfs về các nhận xét do thành viên đăng tải có nguy cơ phải chịu các chế tài tố tụng của tòa án, bao gồm nghĩa vụ bồi hoàn toàn bộ chi phí luật sư và án phí phát sinh cho việc bảo vệ trước các vụ kiện phớt lờ cơ chế miễn trừ pháp lý của nền tảng."}
         </p>
 
-        <div className="p-4 bg-white border-2 border-black shadow-[2px_2px_0px_#000] space-y-1.5 text-xs">
-          <span className="font-black text-black uppercase block">
+        <div className="p-4 bg-white border border-[#bfdbfe] space-y-1.5 text-xs">
+          <span className="font-black text-[#1d4ed8] uppercase block">
             {isEn ? "Service of Legal Process & Official Inquiries" : "Địa chỉ Tiếp nhận Văn bản Pháp lý Chính thức"}
           </span>
-          <p className="text-gray-800 leading-relaxed">
+          <p className="text-gray-700 leading-relaxed">
             {isEn
               ? "If you intend to serve formal legal process or statutory notices on RateUrProfs, please direct inquiries to our designated legal administration desk at: "
               : "Nếu quý vị có ý định tống đạt văn bản tố tụng hoặc yêu cầu pháp lý chính thức tới RateUrProfs, xin vui lòng gửi về bộ phận pháp chế và quản trị của chúng tôi tại: "}
-            <a href="mailto:admin@rateurprofs.site" className="font-bold underline text-[#e03a3e]">admin@rateurprofs.site</a>
+            <a href="mailto:admin@rateurprofs.site" className="font-bold underline text-[#1d4ed8]">admin@rateurprofs.site</a>
             {isEn
               ? " (for community moderation and review disputes, please contact "
               : " (đối với khiếu nại đánh giá và hỗ trợ cộng đồng, vui lòng liên hệ "}
-            <a href="mailto:support@rateurprofs.site" className="font-bold underline text-black">support@rateurprofs.site</a>).
+            <a href="mailto:support@rateurprofs.site" className="font-bold underline text-gray-900">support@rateurprofs.site</a>).
             {isEn
               ? " Formal notices must strictly comply with all applicable procedural service rules under the laws of Vietnam. We are not obligated to respond if service is invalid."
               : " Mọi tống đạt phải tuân thủ đúng quy định tố tụng của pháp luật Việt Nam. Chúng tôi không có nghĩa vụ phản hồi các yêu cầu không hợp lệ."}
           </p>
         </div>
 
-        <p className="text-[11px] text-gray-700 italic">
+        <p className="text-[11px] text-gray-500 italic">
           {isEn
             ? "These guidelines are provided for informational purposes only and do not constitute legal advice. While we stand by our guidelines, you are encouraged to seek independent counsel from an attorney competent in the relevant field of law."
             : "Các quy định này được công bố nhằm mục đích thông tin minh bạch và không cấu thành lời tư vấn pháp lý. Quý vị được khuyến khích tham vấn luật sư có chuyên môn về lĩnh vực pháp luật liên quan."}
@@ -442,16 +442,16 @@ export default function GuidelinesPage() {
       </div>
 
       {/* 10. RESERVATION OF RIGHTS */}
-      <div className="p-6 bg-white border-2 border-black shadow-[4px_4px_0px_#000] space-y-3">
-        <div className="flex items-center text-black font-black text-sm uppercase tracking-wider">
+      <div className="p-6 bg-white border border-gray-200 space-y-3">
+        <div className="flex items-center text-gray-900 font-black text-sm uppercase tracking-wider">
           <span>{isEn ? "Reservation of Rights" : "Bảo lưu Quyền hạn của Ban Quản trị"}</span>
         </div>
-        <p className="text-xs sm:text-sm text-gray-800 leading-relaxed">
+        <p className="text-xs sm:text-sm text-gray-700 leading-relaxed">
           {isEn
             ? "RateUrProfs reserves the right to remove any comments deemed inappropriate, libelous, defamatory, indecent, vulgar, obscene, pornographic, sexually explicit, racially or ethnically offensive, harmful, harassing, intimidating, threatening, hateful, discriminatory, or abusive, or that otherwise violate our Terms of Use Agreement."
             : "RateUrProfs bảo lưu toàn quyền gỡ bỏ bất kỳ nhận xét nào bị coi là không phù hợp, phỉ báng, vu khống, khiếm nhã, thô tục, khiêu dâm, xúc phạm dân tộc/văn hóa, gây hại, quấy rối, đe dọa, thù địch, phân biệt đối xử hoặc vi phạm Điều khoản Sử dụng."}
         </p>
-        <p className="text-xs sm:text-sm text-gray-800 leading-relaxed">
+        <p className="text-xs sm:text-sm text-gray-700 leading-relaxed">
           {isEn
             ? "RateUrProfs reserves the right to remove content, provide records to authorities, or otherwise take appropriate legal action regarding comments that threaten violence or bodily harm to another user or professor, including notifying authorities of your IP address, where available, and timestamps."
             : "RateUrProfs bảo lưu quyền gỡ bỏ, cung cấp chứng cứ cho cơ quan chức năng hoặc tiến hành các biện pháp pháp lý cần thiết đối với các bình luận đe dọa bạo lực hoặc xâm phạm thân thể đối với người dùng khác hoặc giảng viên, bao gồm việc chuyển giao địa chỉ IP và dấu thời gian cho cơ quan công an có thẩm quyền."}
@@ -459,12 +459,12 @@ export default function GuidelinesPage() {
       </div>
 
       {/* 11. BOTTOM ACTION BAR WITH [Site Guidelines] BADGE */}
-      <div className="p-6 bg-black text-white border-2 border-black shadow-[6px_6px_0px_#000] flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div className="p-6 bg-[#1d4ed8] text-white border border-[#1d4ed8] flex flex-col sm:flex-row items-center justify-between gap-4">
         <div className="flex items-center gap-3">
-          <span className="px-3 py-1 bg-[#fef9c3] text-black text-xs font-mono font-black uppercase tracking-wider border-2 border-black shadow-[2px_2px_0px_#fff]">
+          <span className="px-3 py-1 bg-white text-[#1d4ed8] text-xs font-mono font-black uppercase tracking-wider border border-white">
             [Site Guidelines]
           </span>
-          <span className="text-xs text-gray-300 font-mono">
+          <span className="text-xs text-blue-100 font-mono">
             {isEn ? "RateUrProfs Civility & Review Standards" : "Quy chuẩn Văn minh & Đánh giá RateUrProfs"}
           </span>
         </div>
@@ -473,13 +473,13 @@ export default function GuidelinesPage() {
           <button
             type="button"
             onClick={scrollToTop}
-            className="flex items-center px-3 py-1.5 bg-white text-black hover:bg-[#fef9c3] text-xs font-mono font-black uppercase tracking-wider border-2 border-black transition-all cursor-pointer"
+            className="flex items-center px-3 py-1.5 bg-white text-[#1d4ed8] hover:bg-[#eff6ff] text-xs font-mono font-black uppercase tracking-wider border border-white transition-all cursor-pointer"
           >
             <span>{isEn ? "Back to Top" : "Lên đầu trang"}</span>
           </button>
           <Link
             href={`/${locale}`}
-            className="px-4 py-1.5 bg-[#e03a3e] hover:bg-white hover:text-black text-white text-xs font-mono font-black uppercase tracking-wider border-2 border-black transition-all"
+            className="px-4 py-1.5 bg-[#1e40af] hover:bg-white hover:text-[#1d4ed8] text-white text-xs font-mono font-black uppercase tracking-wider border border-white transition-all"
           >
             {isEn ? "Search on Home →" : "Tìm kiếm tại trang chủ →"}
           </Link>

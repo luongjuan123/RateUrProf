@@ -125,19 +125,19 @@ export const FilterPanel: React.FC<FilterPanelProps> = ({
   const content = (
     <div className="space-y-6">
       {/* Header */}
-      <div className="flex items-center justify-between pb-3 border-b border-[#111111]">
+      <div className="flex items-center justify-between pb-3 border-b border-gray-200">
         <div className="flex items-center gap-2">
-          <div className="w-6 h-6 bg-[#111111] text-white border border-[#111111] flex items-center justify-center font-bold">
+          <div className="w-6 h-6 bg-[#1d4ed8] text-white border border-[#1d4ed8] flex items-center justify-center font-bold">
             <PopArtFilter className="w-3.5 h-3.5" />
           </div>
-          <h3 className="font-bold text-sm uppercase tracking-wider text-black">
+          <h3 className="font-bold text-sm uppercase tracking-wider text-slate-900">
             Bộ lọc nâng cao
           </h3>
         </div>
         <button
           type="button"
           onClick={onClose}
-          className="p-1 border border-[#111111] text-black hover:bg-gray-100 transition-colors cursor-pointer"
+          className="p-1 border border-gray-300 text-slate-700 hover:text-[#1d4ed8] hover:border-[#1d4ed8] hover:bg-[#eff6ff] transition-colors cursor-pointer"
         >
           <PopArtX className="w-5 h-5" />
         </button>
@@ -164,7 +164,7 @@ export const FilterPanel: React.FC<FilterPanelProps> = ({
                         type="checkbox"
                         checked={isChecked}
                         onChange={() => toggleItem(universityIds, setUniversityIds, u.id)}
-                        className="border-gray-300 text-[#e03a3e] focus:ring-0"
+                        className="border-gray-300 text-[#1d4ed8] focus:ring-0"
                       />
                       <span className="font-bold">{u.label}</span>
                       {u.sublabel && (
@@ -219,7 +219,7 @@ export const FilterPanel: React.FC<FilterPanelProps> = ({
                         type="checkbox"
                         checked={isChecked}
                         onChange={() => toggleItem(majorIds, setMajorIds, m.id)}
-                        className="border-gray-300 text-[#e03a3e] focus:ring-0"
+                        className="border-gray-300 text-[#1d4ed8] focus:ring-0"
                       />
                       <span className="font-medium truncate">{m.label}</span>
                     </div>
@@ -254,7 +254,7 @@ export const FilterPanel: React.FC<FilterPanelProps> = ({
                         type="checkbox"
                         checked={isChecked}
                         onChange={() => toggleItem(facultyIds, setFacultyIds, f.id)}
-                        className="border-gray-300 text-[#e03a3e] focus:ring-0"
+                        className="border-gray-300 text-[#1d4ed8] focus:ring-0"
                       />
                       <span className="font-medium truncate">{f.label}</span>
                     </div>
@@ -289,7 +289,7 @@ export const FilterPanel: React.FC<FilterPanelProps> = ({
                         type="checkbox"
                         checked={isChecked}
                         onChange={() => toggleItem(departmentIds, setDepartmentIds, d.id)}
-                        className="border-gray-300 text-[#e03a3e] focus:ring-0"
+                        className="border-gray-300 text-[#1d4ed8] focus:ring-0"
                       />
                       <span className="font-medium truncate">{d.label}</span>
                     </div>
@@ -325,7 +325,7 @@ export const FilterPanel: React.FC<FilterPanelProps> = ({
                         type="checkbox"
                         checked={isChecked}
                         onChange={() => toggleItem(courseIds, setCourseIds, c.id)}
-                        className="border-gray-300 text-[#e03a3e] focus:ring-0"
+                        className="border-gray-300 text-[#1d4ed8] focus:ring-0"
                       />
                       <span className="font-medium truncate">{c.label}</span>
                     </div>
@@ -452,7 +452,7 @@ export const FilterPanel: React.FC<FilterPanelProps> = ({
               type="checkbox"
               checked={includeUnrated}
               onChange={(e) => setIncludeUnrated(e.target.checked)}
-              className="border-gray-300 text-[#e03a3e] focus:ring-0"
+              className="border-gray-300 text-[#1d4ed8] focus:ring-0"
             />
             <span className="font-semibold text-xs">
               Bao gồm giảng viên chưa có đánh giá
@@ -464,7 +464,7 @@ export const FilterPanel: React.FC<FilterPanelProps> = ({
               type="checkbox"
               checked={hasPhoto}
               onChange={(e) => setHasPhoto(e.target.checked)}
-              className="border-gray-300 text-[#e03a3e] focus:ring-0"
+              className="border-gray-300 text-[#1d4ed8] focus:ring-0"
             />
             <span className="font-semibold text-xs">
               Chỉ hiện giảng viên có ảnh hồ sơ
@@ -474,11 +474,11 @@ export const FilterPanel: React.FC<FilterPanelProps> = ({
       </div>
 
       {/* Action Footer */}
-      <div className="flex items-center justify-between pt-4 border-t border-[#111111]">
+      <div className="flex items-center justify-between pt-4 border-t border-gray-200">
         <button
           type="button"
           onClick={handleReset}
-          className="flex items-center gap-1.5 px-3 py-1.5 bg-gray-100 text-black border border-[#111111] text-xs font-bold uppercase tracking-wider hover:bg-gray-200 transition-colors cursor-pointer"
+          className="flex items-center gap-1.5 px-3 py-1.5 bg-gray-50 text-slate-700 border border-gray-300 text-xs font-bold uppercase tracking-wider hover:bg-[#eff6ff] hover:text-[#1d4ed8] hover:border-[#1d4ed8] transition-colors cursor-pointer"
         >
           <PopArtRotateCcw className="w-3.5 h-3.5" />
           <span>Xóa bộ lọc</span>
@@ -488,14 +488,14 @@ export const FilterPanel: React.FC<FilterPanelProps> = ({
           <button
             type="button"
             onClick={onClose}
-            className="px-4 py-2 border border-[#111111] bg-white hover:bg-gray-50 text-black text-xs font-bold uppercase tracking-wider transition-colors cursor-pointer"
+            className="px-4 py-2 border border-gray-300 bg-white hover:bg-gray-50 text-slate-700 text-xs font-bold uppercase tracking-wider transition-colors cursor-pointer"
           >
             Đóng
           </button>
           <button
             type="button"
             onClick={handleApply}
-            className="flex items-center gap-1.5 px-6 py-2 bg-[#e03a3e] hover:bg-[#c93236] text-white text-xs font-bold uppercase tracking-wider border border-[#e03a3e] transition-colors cursor-pointer"
+            className="flex items-center gap-1.5 px-6 py-2 bg-[#1d4ed8] hover:bg-[#1e40af] text-white text-xs font-bold uppercase tracking-wider border border-[#1d4ed8] transition-colors cursor-pointer"
           >
             <PopArtCheck className="w-4 h-4" />
             <span>Áp dụng bộ lọc</span>
@@ -509,7 +509,7 @@ export const FilterPanel: React.FC<FilterPanelProps> = ({
   if (isMobileDrawer) {
     return (
       <div className="fixed inset-0 z-50 overflow-hidden bg-black/60 flex justify-end animate-in fade-in duration-200">
-        <div className="w-full max-w-lg bg-white h-full overflow-y-auto p-6 border-l border-[#111111] animate-in slide-in-from-right duration-250">
+        <div className="w-full max-w-lg bg-white h-full overflow-y-auto p-6 border-l border-gray-300 animate-in slide-in-from-right duration-250">
           {content}
         </div>
       </div>
@@ -518,7 +518,7 @@ export const FilterPanel: React.FC<FilterPanelProps> = ({
 
   // Desktop Collapsible Card
   return (
-    <div className="bg-white border border-[#111111] p-6 transition-all animate-in fade-in duration-150">
+    <div className="bg-white border border-gray-300 p-6 transition-all animate-in fade-in duration-150">
       {content}
     </div>
   );

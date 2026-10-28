@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { getRatingLevel, RATING_LEVELS, RatingLevel } from "@/lib/ratingLevels";
+import { getRatingLevel, RatingLevel } from "@/lib/ratingLevels";
 import { useTranslation } from "@/locales/i18n";
 
 export interface ScoreSquareProps {
@@ -16,13 +16,7 @@ export interface ScoreSquareProps {
 
 /**
  * ScoreSquare Component
- * Replaces lecturer avatar with a score inside a sharp Neo-Brutalist square.
- * Color depends strictly on the rating level:
- * - Level 1: Coral Red   (#f87171 / pastel #fee2e2 / text #991b1b)
- * - Level 2: Warm Orange  (#fb923c / pastel #ffedd5 / text #9a3412)
- * - Level 3: Golden Yellow (#facc15 / pastel #fef9c3 / text #854d0e)
- * - Level 4: Lime Green   (#a3e635 / pastel #ecfccb / text #3f6212)
- * - Level 5: Vibrant Green (#4ade80 / pastel #dcfce7 / text #166534)
+ * Clean, elegant Super Flat Score Badge in Blue & White.
  */
 export const ScoreSquare: React.FC<ScoreSquareProps> = ({
   score,
@@ -45,24 +39,29 @@ export const ScoreSquare: React.FC<ScoreSquareProps> = ({
   const level: RatingLevel | null = hasScore ? getRatingLevel(score) : null;
   const scoreDisplay = hasScore && typeof score === "number" ? score.toFixed(1) : "N/A";
 
-  // Style tokens based on user-specified 5-tier color scale
   const bg = level
     ? variant === "solid"
       ? level.color
       : level.lightBg
-    : "#f4f4f5";
+    : "#f8fafc";
 
   const textColor = level
     ? variant === "solid"
-      ? "#111111"
+      ? "#ffffff"
       : level.textColor
-    : "#71717a";
+    : "#94a3b8";
+
+  const borderColor = level
+    ? variant === "solid"
+      ? level.color
+      : "#bfdbfe"
+    : "#e2e8f0";
 
   if (size === "xl") {
     return (
       <div
-        className={`w-20 h-20 sm:w-24 sm:h-24 shrink-0 border border-black flex flex-col items-center justify-center p-1 select-none text-center ${className}`}
-        style={{ backgroundColor: bg, color: textColor }}
+        className={`w-20 h-20 sm:w-24 sm:h-24 shrink-0 border flex flex-col items-center justify-center p-1 select-none text-center ${className}`}
+        style={{ backgroundColor: bg, color: textColor, borderColor }}
         role="img"
         aria-label={`Điểm: ${scoreDisplay}`}
       >
@@ -86,8 +85,8 @@ export const ScoreSquare: React.FC<ScoreSquareProps> = ({
   if (size === "lg") {
     return (
       <div
-        className={`w-14 h-14 sm:w-16 sm:h-16 shrink-0 border border-black flex flex-col items-center justify-center p-1 select-none text-center ${className}`}
-        style={{ backgroundColor: bg, color: textColor }}
+        className={`w-14 h-14 sm:w-16 sm:h-16 shrink-0 border flex flex-col items-center justify-center p-1 select-none text-center ${className}`}
+        style={{ backgroundColor: bg, color: textColor, borderColor }}
         role="img"
         aria-label={`Điểm: ${scoreDisplay}`}
       >
@@ -106,8 +105,8 @@ export const ScoreSquare: React.FC<ScoreSquareProps> = ({
   if (size === "sm") {
     return (
       <div
-        className={`w-8 h-8 shrink-0 border border-black flex items-center justify-center select-none text-center ${className}`}
-        style={{ backgroundColor: bg, color: textColor }}
+        className={`w-8 h-8 shrink-0 border flex items-center justify-center select-none text-center ${className}`}
+        style={{ backgroundColor: bg, color: textColor, borderColor }}
         role="img"
         aria-label={`Điểm: ${scoreDisplay}`}
       >
@@ -118,11 +117,11 @@ export const ScoreSquare: React.FC<ScoreSquareProps> = ({
     );
   }
 
-  // Default: size === 'md' (w-10 h-10 to w-12 h-12)
+  // Default: size === 'md'
   return (
     <div
-      className={`w-10 h-10 sm:w-12 sm:h-12 shrink-0 border border-black flex flex-col items-center justify-center p-0.5 select-none text-center ${className}`}
-      style={{ backgroundColor: bg, color: textColor }}
+      className={`w-10 h-10 sm:w-12 sm:h-12 shrink-0 border flex flex-col items-center justify-center p-0.5 select-none text-center ${className}`}
+      style={{ backgroundColor: bg, color: textColor, borderColor }}
       role="img"
       aria-label={`Điểm: ${scoreDisplay}`}
     >

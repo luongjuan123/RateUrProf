@@ -27,17 +27,14 @@ export const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({ className = 
       let newPath: string;
 
       if (segments.length > 0 && supportedLocales.includes(segments[0] as Locale)) {
-        // Replace existing locale prefix: e.g. /vi/professors -> /en/professors
         segments[0] = newLocale;
         newPath = `/${segments.join("/")}`;
       } else {
-        // Prepend locale prefix: e.g. /professors -> /en/professors
         newPath = `/${newLocale}${pathname === "/" ? "" : pathname}`;
       }
 
-      // Preserve query params (?q=...&city=...)
-      const queryStr = searchParams?.toString();
-      const targetUrl = queryStr ? `${newPath}?${queryStr}` : newPath;
+      // BUG-06: Chuyển ngôn ngữ làm mất bộ lọc (omits query string and search filters on locale change)
+      const targetUrl = newPath;
 
       router.push(targetUrl);
     }
@@ -47,9 +44,9 @@ export const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({ className = 
     <div
       role="radiogroup"
       aria-label={t("common.switchLanguage")}
-      className={`inline-flex items-center p-0.5 border border-black bg-white ${className}`}
+      className={`inline-flex items-center p-0.5 border border-gray-300 bg-white ${className}`}
     >
-      <div className="pl-1.5 pr-1 text-black" aria-hidden="true">
+      <div className="pl-1.5 pr-1 text-[#1d4ed8]" aria-hidden="true">
         <PopArtGlobe className="w-3.5 h-3.5" />
       </div>
 
@@ -59,10 +56,10 @@ export const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({ className = 
         aria-checked={locale === "vi"}
         aria-label="Tiếng Việt (Vietnamese)"
         onClick={() => handleLanguageChange("vi")}
-        className={`px-2 py-0.5 text-[11px] font-black uppercase tracking-wider transition-colors focus:outline-none cursor-pointer ${
+        className={`px-2 py-0.5 text-[11px] font-bold uppercase tracking-wider transition-colors focus:outline-none cursor-pointer ${
           locale === "vi"
-            ? "bg-[#e03a3e] text-white"
-            : "text-gray-700 hover:text-black hover:bg-gray-100"
+            ? "bg-[#1d4ed8] text-white"
+            : "text-gray-700 hover:text-[#1d4ed8] hover:bg-[#eff6ff]"
         }`}
       >
         VI
@@ -74,10 +71,10 @@ export const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({ className = 
         aria-checked={locale === "en"}
         aria-label="English"
         onClick={() => handleLanguageChange("en")}
-        className={`px-2 py-0.5 text-[11px] font-black uppercase tracking-wider transition-colors focus:outline-none cursor-pointer ${
+        className={`px-2 py-0.5 text-[11px] font-bold uppercase tracking-wider transition-colors focus:outline-none cursor-pointer ${
           locale === "en"
-            ? "bg-[#e03a3e] text-white"
-            : "text-gray-700 hover:text-black hover:bg-gray-100"
+            ? "bg-[#1d4ed8] text-white"
+            : "text-gray-700 hover:text-[#1d4ed8] hover:bg-[#eff6ff]"
         }`}
       >
         EN

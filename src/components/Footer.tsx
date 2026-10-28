@@ -17,31 +17,31 @@ export const Footer: React.FC = () => {
           <nav className="flex flex-wrap items-center gap-2 text-xs font-bold uppercase tracking-wider font-mono">
             <Link
               href={`/${locale}`}
-              className="px-2 py-0.5 bg-white text-black font-mono font-bold text-[11px] uppercase tracking-wider border border-gray-300 hover:border-black hover:bg-black hover:text-white transition-colors"
+              className="px-2 py-0.5 bg-white text-gray-700 font-mono font-medium text-[11px] uppercase tracking-wider border border-gray-300 hover:border-[#1d4ed8] hover:bg-[#eff6ff] hover:text-[#1d4ed8] transition-colors"
             >
               [{t("nav.home")}]
             </Link>
             <Link
               href={`/${locale}/guidelines`}
-              className="px-2 py-0.5 bg-[#fef9c3] text-black font-mono font-bold text-[11px] uppercase tracking-wider border border-yellow-300 hover:bg-[#e03a3e] hover:text-white hover:border-[#e03a3e] transition-colors"
+              className="px-2 py-0.5 bg-white text-gray-700 font-mono font-medium text-[11px] uppercase tracking-wider border border-gray-300 hover:border-[#1d4ed8] hover:bg-[#eff6ff] hover:text-[#1d4ed8] transition-colors"
             >
               [Site Guidelines]
             </Link>
             <Link
               href={`/${locale}/terms`}
-              className="px-2 py-0.5 bg-white text-black font-mono font-bold text-[11px] uppercase tracking-wider border border-gray-300 hover:border-black hover:bg-black hover:text-white transition-colors"
+              className="px-2 py-0.5 bg-white text-gray-700 font-mono font-medium text-[11px] uppercase tracking-wider border border-gray-300 hover:border-[#1d4ed8] hover:bg-[#eff6ff] hover:text-[#1d4ed8] transition-colors"
             >
               [Terms of Use]
             </Link>
             <Link
               href={`/${locale}/privacy`}
-              className="px-2 py-0.5 bg-[#dbeafe] text-black font-mono font-bold text-[11px] uppercase tracking-wider border border-blue-200 hover:bg-[#e03a3e] hover:text-white hover:border-[#e03a3e] transition-colors"
+              className="px-2 py-0.5 bg-white text-gray-700 font-mono font-medium text-[11px] uppercase tracking-wider border border-gray-300 hover:border-[#1d4ed8] hover:bg-[#eff6ff] hover:text-[#1d4ed8] transition-colors"
             >
               [Privacy Policy]
             </Link>
             <Link
               href={`/${locale}/copyright`}
-              className="px-2 py-0.5 bg-[#fed7aa] text-black font-mono font-bold text-[11px] uppercase tracking-wider border border-orange-200 hover:bg-[#e03a3e] hover:text-white hover:border-[#e03a3e] transition-colors"
+              className="px-2 py-0.5 bg-white text-gray-700 font-mono font-medium text-[11px] uppercase tracking-wider border border-gray-300 hover:border-[#1d4ed8] hover:bg-[#eff6ff] hover:text-[#1d4ed8] transition-colors"
             >
               [Copyright Policy]
             </Link>
@@ -52,10 +52,9 @@ export const Footer: React.FC = () => {
           <p className="max-w-2xl leading-relaxed">
             {t("footer.disclaimerText")}
           </p>
-          <p className="shrink-0 font-bold text-black">{t("footer.copyright")}</p>
+          <p className="shrink-0 font-bold text-gray-900">{t("footer.copyright")}</p>
         </div>
       </div>
     </footer>
   );
 };
-

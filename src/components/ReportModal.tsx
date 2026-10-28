@@ -74,12 +74,12 @@ export const ReportModal: React.FC<ReportModalProps> = ({
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 animate-in fade-in duration-150">
       <div className="relative w-full max-w-md bg-white border border-gray-200 overflow-hidden">
-        {/* Editorial red top stripe */}
-        <div className="h-1 bg-[#e03a3e] w-full" />
+        {/* Editorial blue top stripe */}
+        <div className="h-1 bg-[#1d4ed8] w-full" />
 
         <div className="p-5 border-b border-gray-200 flex items-center justify-between bg-white">
           <div className="flex items-center gap-2">
-            <PopArtShieldAlert className="w-5 h-5" />
+            <PopArtShieldAlert className="w-5 h-5 text-[#1d4ed8]" />
             <h3 className="font-mono font-bold text-base uppercase text-black tracking-wider">
               {t("reportModal.title")}
             </h3>
@@ -95,7 +95,7 @@ export const ReportModal: React.FC<ReportModalProps> = ({
 
         {success ? (
           <div className="p-8 text-center space-y-4 bg-white">
-            <div className="w-12 h-12 bg-[#dcfce7] text-[#166534] border border-green-200 flex items-center justify-center mx-auto">
+            <div className="w-12 h-12 bg-[#eff6ff] text-[#1d4ed8] border border-[#bfdbfe] flex items-center justify-center mx-auto">
               <PopArtCheck className="w-7 h-7" />
             </div>
             <h4 className="font-mono font-bold text-black text-base uppercase tracking-tight">{t("reportModal.successTitle")}</h4>
@@ -106,7 +106,7 @@ export const ReportModal: React.FC<ReportModalProps> = ({
         ) : (
           <form onSubmit={handleSubmit} className="p-5 space-y-4 bg-white">
             {error && (
-              <div className="p-3 bg-[#fee2e2] text-black font-mono text-xs border border-red-200">
+              <div className="p-3 bg-[#eff6ff] text-[#1d4ed8] font-mono text-xs border border-[#bfdbfe]">
                 {error}
               </div>
             )}
@@ -122,7 +122,7 @@ export const ReportModal: React.FC<ReportModalProps> = ({
               <select
                 value={reason}
                 onChange={(e) => setReason(e.target.value)}
-                className="w-full p-2.5 text-xs font-mono font-bold border border-gray-200 outline-none focus:outline-none focus:border-black bg-white text-black"
+                className="w-full p-2.5 text-xs font-mono font-bold border border-gray-200 outline-none focus:outline-none focus:border-[#1d4ed8] bg-white text-black"
               >
                 {reasons.map((r) => (
                   <option key={r.key} value={r.label}>
@@ -141,7 +141,7 @@ export const ReportModal: React.FC<ReportModalProps> = ({
                 value={details}
                 onChange={(e) => setDetails(e.target.value)}
                 placeholder={t("reportModal.detailsPlaceholder")}
-                className="w-full p-2.5 text-xs font-mono border border-gray-200 outline-none focus:outline-none focus:border-black bg-white text-black"
+                className="w-full p-2.5 text-xs font-mono border border-gray-200 outline-none focus:outline-none focus:border-[#1d4ed8] bg-white text-black"
               />
             </div>
 
@@ -156,7 +156,7 @@ export const ReportModal: React.FC<ReportModalProps> = ({
               <button
                 type="submit"
                 disabled={loading}
-                className="px-5 py-2 bg-[#e03a3e] hover:bg-[#b91c1c] text-white font-mono font-bold text-xs uppercase tracking-wider border border-[#e03a3e] transition-colors disabled:opacity-50 cursor-pointer"
+                className="px-5 py-2 bg-[#1d4ed8] hover:bg-[#1e40af] text-white font-mono font-bold text-xs uppercase tracking-wider border border-[#1d4ed8] transition-colors disabled:opacity-50 cursor-pointer"
               >
                 {loading ? t("reportModal.submitting") : t("reportModal.submit")}
               </button>

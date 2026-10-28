@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<title>Đặc tả yêu cầu phần mềm (SRS v1.2)</title>
+<style>
+
+@font-face {
+  font-family: 'Times New Roman';
+  src: url('/home/juan/.local/share/fonts/times/Tinos-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Times New Roman';
+  src: url('/home/juan/.local/share/fonts/times/Tinos-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Times New Roman';
+  src: url('/home/juan/.local/share/fonts/times/Tinos-Italic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Times New Roman';
+  src: url('/home/juan/.local/share/fonts/times/Tinos-BoldItalic.ttf') format('truetype');
+  font-weight: bold;
+  font-style: italic;
+}
+
+* {
+  box-sizing: border-box;
+  color: #000000 !important;
+}
+
+body {
+  font-family: 'Times New Roman', Times, 'Tinos', serif;
+  font-size: 11pt;
+  line-height: 1.4;
+  color: #000000;
+  background-color: #ffffff;
+  margin: 0;
+  padding: 0;
+}
+
+.doc-header {
+  text-align: center;
+  border-bottom: 1.5px solid #000000;
+  padding-bottom: 8px;
+  margin-bottom: 14px;
+}
+
+.doc-title {
+  font-size: 15pt;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 0 0 4px 0;
+}
+
+.doc-subtitle {
+  font-size: 11.5pt;
+  font-weight: bold;
+  margin: 0 0 6px 0;
+}
+
+.doc-meta {
+  font-size: 10pt;
+  margin: 0;
+}
+
+h1 {
+  font-size: 12.5pt;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-bottom: 1px solid #000000;
+  padding-bottom: 2px;
+  margin-top: 14px;
+  margin-bottom: 6px;
+  page-break-after: avoid;
+  break-after: avoid;
+}
+
+h2 {
+  font-size: 11.5pt;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 4px;
+  page-break-after: avoid;
+  break-after: avoid;
+}
+
+h3 {
+  font-size: 11pt;
+  font-weight: bold;
+  font-style: italic;
+  margin-top: 8px;
+  margin-bottom: 3px;
+  page-break-after: avoid;
+  break-after: avoid;
+}
+
+p {
+  margin: 0 0 6px 0;
+  text-align: justify;
+}
+
+ul, ol {
+  margin: 0 0 6px 0;
+  padding-left: 20px;
+}
+
+li {
+  margin-bottom: 2px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 6px 0 10px 0;
+  font-size: 9.5pt;
+  page-break-inside: auto;
+}
+
+tr {
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+
+th {
+  background-color: #f2f2f2;
+  color: #000000;
+  font-weight: bold;
+  border: 1px solid #000000;
+  padding: 4px 6px;
+  text-align: left;
+}
+
+td {
+  border: 1px solid #000000;
+  padding: 3.5px 6px;
+  vertical-align: top;
+}
+
+.text-center {
+  text-align: center;
+}
+
+pre {
+  background-color: #fafafa;
+  border: 1px solid #000000;
+  padding: 5px 8px;
+  font-family: 'Times New Roman', Courier, monospace;
+  font-size: 9pt;
+  line-height: 1.3;
+  white-space: pre-wrap;
+  word-break: break-all;
+  margin: 5px 0;
+}
+
+code {
+  font-family: 'Times New Roman', Courier, monospace;
+  font-size: 9.5pt;
+}
+
+.endpoint-block {
+  margin-bottom: 12px;
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+
+.endpoint-title {
+  font-weight: bold;
+  margin-bottom: 3px;
+}
+
+</style>
+</head>
+<body>
+
+<div class="doc-header">
+  <div class="doc-title">ĐẶC TẢ YÊU CẦU PHẦN MỀM (SRS)</div>
+  <div class="doc-subtitle">Hệ thống Đánh giá Giảng viên và Tra cứu Học thuật Toàn quốc (RateProfCuaBan / RateUrProf)</div>
+  <div class="doc-meta">Phiên bản 1.2 (Bản chốt sau Review) • Ngày 26/10/2026 &nbsp;|&nbsp; Website: https://rateurprofs.site &nbsp;|&nbsp; Sinh viên: Lương Chí Dũng / MSSV: 24110215 / Lớp: BCSE2024</div>
+</div>
+
+<h1>1. Giới thiệu tổng quan & Phạm vi hệ thống</h1>
+<p><strong>1.1. Mục đích:</strong> Tài liệu này đặc tả chi tiết toàn bộ yêu cầu chức năng (FR-01 đến FR-12), các luồng nghiệp vụ E2E (FLOW-01 đến FLOW-03), các chỉ tiêu chất lượng phi chức năng định lượng (NFR-01 đến NFR-10), cấu trúc dữ liệu, bảng quyết định logic, biểu đồ chuyển trạng thái và ma trận phân quyền người dùng (RBAC) cho hệ thống RateProfCuaBan (RateUrProf). Tài liệu phục vụ làm căn cứ kỹ thuật và pháp lý phục vụ kiểm thử và nghiệm thu trong Học phần Đánh giá hiệu năng.</p>
+<p><strong>1.2. Môi trường triển khai:</strong> Hệ thống được đóng gói Docker container và triển khai trực tuyến trên Google Cloud Run (khu vực asia-southeast1), kết nối cơ sở dữ liệu SQLite/PostgreSQL chuẩn hóa, phục vụ tên miền chính thức: <a href="https://rateurprofs.site">https://rateurprofs.site</a>.</p>
+
+<h1>2. Ba luồng nghiệp vụ xuyên suốt (End-to-End Business Flows)</h1>
+<p><strong>FLOW-01. Tra cứu học thuật & Đóng góp đánh giá giảng viên (E2E):</strong><br>
+Khách vãng lai truy cập hệ thống &rarr; Tìm kiếm giảng viên theo tên tiếng Việt có dấu hoặc không dấu &rarr; Lọc kết quả theo trường đại học &rarr; Xem hồ sơ chi tiết, học hàm GS/PGS, minh chứng .edu.vn và lịch sử nhận xét &rarr; Nhấn "Đánh giá" &rarr; Hệ thống yêu cầu xác thực Google OAuth &rarr; Điền điểm 5 tiêu chí sư phạm (thang 1-5) và nhận xét văn bản &rarr; Hệ thống kiểm tra hợp lệ, lưu bài đánh giá ẩn danh và cập nhật điểm trung bình rollup nguyên tử trong cơ sở dữ liệu.</p>
+
+<p><strong>FLOW-02. Tiếp nhận & Xử lý yêu cầu đính chính theo Nghị định 13/2023/NĐ-CP (E2E):</strong><br>
+Người dùng phát hiện nhận xét vi phạm tiêu chuẩn cộng đồng, bấm "Báo cáo" &rarr; Hoặc giảng viên gửi form yêu cầu đính chính học hàm / gỡ bỏ thông tin cá nhân kèm email trường (.edu.vn / .ac.vn) và link quyết định minh chứng &rarr; Yêu cầu được chuyển vào hàng đợi kiểm duyệt tại <code>/admin</code> &rarr; Quản trị viên thẩm định hồ sơ: nếu hợp lệ thì phê duyệt cập nhật thông tin / ẩn bài viết, nếu thiếu minh chứng thì từ chối kèm lý do phản hồi &rarr; Dữ liệu công khai được cập nhật ngay lập tức.</p>
+
+<p><strong>FLOW-03. Thu thập dữ liệu lịch sự & Đối soát danh bạ trường đại học (E2E):</strong><br>
+Quản trị viên kích hoạt chiến dịch thu thập danh bạ từ cổng thông tin trường đại học đối tác &rarr; Pipeline kiểm tra tệp <code>robots.txt</code>, thực hiện cào dữ liệu với User-Agent minh bạch và độ trễ an toàn 1.5 giây giữa các lượt request &rarr; Bóc tách họ tên, chuẩn hóa học hàm GS/PGS tách riêng học vị TS/ThS, tạo avatar SVG trung tính &rarr; Thuật toán phát hiện trùng lặp thực thể &rarr; Quản trị viên đối soát và phê duyệt hợp nhất dữ liệu vào danh bạ toàn quốc.</p>
+
+<h1>3. Ma trận phân quyền người dùng (RBAC Matrix)</h1>
+<p>Hệ thống phân chia 4 vai trò rõ rệt: <strong>Khách (Guest)</strong>, <strong>Thành viên (Member)</strong>, <strong>Giảng viên (Faculty)</strong>, và <strong>Quản trị viên (Admin)</strong>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="width: 32%;">Chức năng / Quyền hạn</th>
+      <th style="width: 17%;" class="text-center">Khách (Guest)</th>
+      <th style="width: 17%;" class="text-center">Thành viên (Member)</th>
+      <th style="width: 17%;" class="text-center">Giảng viên (Faculty)</th>
+      <th style="width: 17%;" class="text-center">Quản trị viên (Admin)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Tìm kiếm & Xem hồ sơ, đánh giá</td><td class="text-center">Có</td><td class="text-center">Có</td><td class="text-center">Có</td><td class="text-center">Có</td></tr>
+    <tr><td>Bình chọn Upvote hữu ích</td><td class="text-center">Có (theo Session)</td><td class="text-center">Có (1 lần/bài)</td><td class="text-center">Có (1 lần/bài)</td><td class="text-center">Có</td></tr>
+    <tr><td>Lưu giảng viên quan tâm (Bookmark)</td><td class="text-center">LocalStorage</td><td class="text-center">Đồng bộ CSDL</td><td class="text-center">Đồng bộ CSDL</td><td class="text-center">Đồng bộ CSDL</td></tr>
+    <tr><td>Đăng bài đánh giá 5 tiêu chí</td><td class="text-center">Không (yêu cầu Login)</td><td class="text-center">Có (Ẩn danh)</td><td class="text-center">Không (xung đột lợi ích)</td><td class="text-center">Có</td></tr>
+    <tr><td>Quản lý / Xóa bài đánh giá của tôi</td><td class="text-center">Không</td><td class="text-center">Chỉ bài của mình</td><td class="text-center">Không</td><td class="text-center">Xóa mọi bài vi phạm</td></tr>
+    <tr><td>Gửi yêu cầu đính chính theo NĐ 13</td><td class="text-center">Có</td><td class="text-center">Có</td><td class="text-center">Toàn quyền yêu cầu</td><td class="text-center">Tiếp nhận & Xử lý</td></tr>
+    <tr><td>Truy cập bảng điều khiển /admin</td><td class="text-center">KHÔNG (Chặn 403)</td><td class="text-center">KHÔNG (Chặn 403)</td><td class="text-center">KHÔNG (Chặn 403)</td><td class="text-center">Toàn quyền (Duyệt/Ẩn)</td></tr>
+    <tr><td>Điều khiển pipeline cào dữ liệu</td><td class="text-center">Không</td><td class="text-center">Không</td><td class="text-center">Không</td><td class="text-center">Toàn quyền Admin</td></tr>
+  </tbody>
+</table>
+
+<h1>4. Danh sách 12 Yêu cầu chức năng chi tiết (FR-01 đến FR-12)</h1>
+
+<p><strong>FR-01 — Tìm kiếm thông minh tiếng Việt (Smart Search):</strong><br>
+Hệ thống cung cấp thanh tìm kiếm toàn cục hỗ trợ tự động chuẩn hóa chuỗi tiếng Việt Unicode NFC và loại bỏ dấu thanh (accent-insensitive). Người dùng gõ tên có dấu, không dấu hoặc sai vị trí dấu đều trả về danh sách giảng viên chính xác. Độ dài từ khóa tối thiểu 2 ký tự (dưới 2 ký tự hiển thị cảnh báo, không thực hiện truy vấn). Thời gian phản hồi tìm kiếm &le; 100ms trong điều kiện bình thường.</p>
+
+<p><strong>FR-02 — Bộ lọc trường đại học và cơ sở giáo dục (University Filters):</strong><br>
+Cho phép người dùng lọc danh sách giảng viên theo trường đại học, khu vực địa lý (Miền Bắc, Miền Trung, Miền Nam), khoa/viện và môn học. Kết quả lọc phải chính xác 100% thuộc về đơn vị đã chọn (sử dụng toán tử AND chặt chẽ, không được lẫn lộn giảng viên giữa các trường).</p>
+
+<p><strong>FR-03 — Xem hồ sơ học thuật giảng viên (Academic Profile & Provenance):</strong><br>
+Trang chi tiết hiển thị đầy đủ: Họ và tên, ảnh đại diện chuẩn tỉ lệ 1:1, học hàm (GS/PGS), học vị (TS/ThS), cơ sở công tác, liên kết nguồn minh chứng cổng thông tin trường (.edu.vn), điểm trung bình tổng quan (Overall Rating) và phân bố sao (Rating Breakdown từ 1 đến 5 sao).</p>
+
+<p><strong>FR-04 — Lưu giảng viên yêu thích (Bookmark System):</strong><br>
+Người dùng có thể bấm nút "Lưu giảng viên" để lưu vào danh sách yêu thích cá nhân. Trạng thái lưu phải được lưu bền vững vào LocalStorage (với khách) và CSDL (với thành viên), đảm bảo tồn tại nguyên vẹn sau khi tải lại trang (F5). Danh sách đã lưu hiển thị chính xác tên và trường tương ứng của từng người.</p>
+
+<p><strong>FR-05 — Xem danh sách đánh giá & Tương tác hữu ích (Review Feed & Upvote):</strong><br>
+Hiển thị danh sách các bài đánh giá công khai có phân trang, hỗ trợ sắp xếp theo "Mới nhất" hoặc "Hữu ích nhất". Mỗi bài đánh giá có nút Upvote để ghi nhận tính hữu ích. Giao diện thẻ đánh giá hiển thị đơn nhất, không bị trùng lặp DOM khi người dùng tương tác.</p>
+
+<p><strong>FR-06 — Đăng bài đánh giá 5 tiêu chí ẩn danh (Review Submission):</strong><br>
+Thành viên đã đăng nhập có thể gửi bài đánh giá gồm 5 tiêu chí: Sư phạm (Pedagogy), Độ khó (Difficulty), Nỗ lực (Work Effort), Công bằng (Grading Fairness), và Điểm tổng thể (Overall Rating). Mỗi tiêu chí là một số nguyên từ 1 đến 5 sao (cấm điểm ngoài thang đo). Nội dung nhận xét văn bản bắt buộc từ 10 đến 2.000 ký tự. Tên người đăng hiển thị ẩn danh để bảo vệ người học.</p>
+
+<p><strong>FR-07 — Tiếp nhận báo cáo vi phạm & Đính chính theo Nghị định 13/2023/NĐ-CP:</strong><br>
+Cung cấp biểu mẫu trực tuyến cho phép sinh viên báo cáo nội dung nhận xét vi phạm văn hóa, và cho phép giảng viên/nhà trường gửi yêu cầu đính chính học hàm hoặc xóa hồ sơ cá nhân. Biểu mẫu yêu cầu cung cấp email trường (.edu.vn / .ac.vn), đường dẫn minh chứng hợp lệ và lý do cụ thể.</p>
+
+<p><strong>FR-08 — Xác thực người dùng & Bảo mật phiên (Authentication & Session):</strong><br>
+Xác thực đăng nhập người dùng an toàn qua Google OAuth 2.0. Hệ thống cấp Cookie phiên <code>auth_token</code> có cờ <code>HttpOnly</code>, <code>SameSite=Lax</code>, <code>Secure</code> trên production. Ngăn chặn spam upvote bằng cách giới hạn mỗi người dùng / phiên chỉ được upvote 1 lần duy nhất cho mỗi bài đánh giá.</p>
+
+<p><strong>FR-09 — Hồ sơ cá nhân & Quản lý đánh giá của tôi (My Reviews Management):</strong><br>
+Tại trang <code>/my-reviews</code>, sinh viên có thể xem lại toàn bộ lịch sử các bài đánh giá do chính mình đã đăng, kèm quyền xóa bài đánh giá. Khi xóa bài, hệ thống tự động tái tính toán điểm trung bình rollup của giảng viên. Nghiêm cấm xóa bài viết thuộc quyền sở hữu của sinh viên khác.</p>
+
+<p><strong>FR-10 — Tra cứu thông tin trường đại học (University Directory):</strong><br>
+Trang danh mục trường cung cấp danh sách toàn bộ các trường đại học tại Việt Nam, thông tin tổng quan, số lượng giảng viên trực thuộc, và tính năng tìm kiếm nội bộ giảng viên của riêng trường đó.</p>
+
+<p><strong>FR-11 — Chuyển đổi ngôn ngữ song ngữ Vi/En (Bilingual i18n):</strong><br>
+Hệ thống hỗ trợ song ngữ Tiếng Việt và Tiếng Anh. Toàn bộ nhãn, tiêu đề, nút bấm và thông báo lỗi trên giao diện tiếng Anh phải được bản địa hóa 100%. Khi chuyển đổi ngôn ngữ, toàn bộ tham số truy vấn tìm kiếm và bộ lọc trên URL (ví dụ: <code>?q=...&dept=...</code>) phải được bảo toàn nguyên vẹn.</p>
+
+<p><strong>FR-12 — Bảng điều khiển Quản trị viên (Admin Dashboard & Moderation Queue):</strong><br>
+Giao diện quản trị tại <code>/admin</code> dành riêng cho Quản trị viên đã xác thực. Bao gồm các tính năng: duyệt hàng đợi báo cáo vi phạm (ẩn bài viết độc hại), phê duyệt hoặc từ chối yêu cầu đính chính học hàm theo Nghị định 13, và theo dõi nhật ký kiểm toán hệ thống.</p>
+
+<h1>5. Bảng quyết định logic (Decision Table) cho Quy trình Đánh giá</h1>
+<table>
+  <thead>
+    <tr>
+      <th style="width: 40%;">Điều kiện đầu vào</th>
+      <th style="width: 15%;" class="text-center">Quy tắc 1</th>
+      <th style="width: 15%;" class="text-center">Quy tắc 2</th>
+      <th style="width: 15%;" class="text-center">Quy tắc 3</th>
+      <th style="width: 15%;" class="text-center">Quy tắc 4</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Đã đăng nhập tài khoản?</td><td class="text-center">Sai</td><td class="text-center">Đúng</td><td class="text-center">Đúng</td><td class="text-center">Đúng</td></tr>
+    <tr><td>Điểm 5 tiêu chí hợp lệ (1 &le; Điểm &le; 5)?</td><td class="text-center">—</td><td class="text-center">Sai (Điểm 0 hoặc 6)</td><td class="text-center">Đúng</td><td class="text-center">Đúng</td></tr>
+    <tr><td>Độ dài nhận xét hợp lệ (10 &le; len &le; 2000)?</td><td class="text-center">—</td><td class="text-center">—</td><td class="text-center">Sai (&lt;10 ký tự)</td><td class="text-center">Đúng</td></tr>
+    <tr><td>Chưa từng đánh giá môn này của GV?</td><td class="text-center">—</td><td class="text-center">—</td><td class="text-center">—</td><td class="text-center">Đúng</td></tr>
+    <tr style="background: #DDEBF7; font-weight: bold;">
+      <td>Hành động hệ thống</td>
+      <td class="text-center">Mở Modal Login (401)</td>
+      <td class="text-center">Báo lỗi 400 Bad Request</td>
+      <td class="text-center">Báo lỗi 422 Validation</td>
+      <td class="text-center">Lưu CSDL & Rollup (201)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1>6. Mô hình chuyển trạng thái (State Transition)</h1>
+<p><strong>1. Trạng thái Bài đánh giá (Review):</strong><br>
+<code>[Soạn thảo] &rarr; (Gửi bài) &rarr; [Published] &harr; (Bị báo cáo) &rarr; [Flagged] &rarr; (Admin duyệt vi phạm) &rarr; [Hidden - Bị ẩn vĩnh viễn]</code></p>
+<p><strong>2. Trạng thái Yêu cầu đính chính theo Nghị định 13 (Correction Request):</strong><br>
+<code>[Gửi form] &rarr; [PENDING - Chờ duyệt] &rarr; (Admin chấp thuận) &rarr; [APPROVED - Đã cập nhật] / (Admin từ chối) &rarr; [REJECTED - Từ chối]</code></p>
+<p><strong>3. Trạng thái Nút Lưu giảng viên (Bookmark State):</strong><br>
+<code>[Chưa lưu (Default)] &harr; (Bấm Bookmark) &harr; [Đã lưu (Persisted)]</code> (Bảo toàn sau reload F5).</p>
+
+<h1>7. Mười Yêu cầu phi chức năng định lượng (NFR-01 đến NFR-10)</h1>
+<table>
+  <thead>
+    <tr>
+      <th style="width: 12%;">Mã NFR</th>
+      <th style="width: 20%;">Nhóm chất lượng</th>
+      <th style="width: 42%;">Chỉ tiêu kỹ thuật định lượng bắt buộc</th>
+      <th style="width: 26%;">Phương pháp đo kiểm</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>NFR-01</strong></td><td>Hiệu năng phản hồi</td><td>P90 Response time của API tìm kiếm &le; 2.0s và Tỉ lệ lỗi &lt; 1% khi chịu tải 20 người dùng đồng thời.</td><td>Apache JMeter 5.6.3 non-GUI</td></tr>
+    <tr><td><strong>NFR-02</strong></td><td>Hiệu năng tải trang</td><td>Chỉ số Largest Contentful Paint (LCP) trên mạng di động 4G &le; 2.5s; Điểm Performance &ge; 80.</td><td>Google Lighthouse Web Vitals</td></tr>
+    <tr><td><strong>NFR-03</strong></td><td>Toàn vẹn giao dịch</td><td>Giao dịch ghi đánh giá đồng thời (50 concurrent writes) đảm bảo atomic rollback, không race condition.</td><td>K6 / Postman Newman runner</td></tr>
+    <tr><td><strong>NFR-04</strong></td><td>Tương thích Responsive</td><td>Giao diện hiển thị chuẩn xác tại các breakpoint: 375px, 768px, 1366px, 1920px; không có thanh cuộn ngang.</td><td>Chrome DevTools Device Mode</td></tr>
+    <tr><td><strong>NFR-05</strong></td><td>Độ tin cậy (Resilience)</td><td>Xử lý an toàn mọi payload JSON bất thường, tuyệt đối không crash unhandled hoặc trả HTTP 500.</td><td>Postman negative data test</td></tr>
+    <tr><td><strong>NFR-06</strong></td><td>Khả năng phục hồi</td><td>Tự động ngắt timeout sau 5 giây khi mất kết nối mạng và hiển thị thông báo thân thiện, không đơ loading.</td><td>DevTools Network Offline test</td></tr>
+    <tr><td><strong>NFR-07</strong></td><td>An toàn bảo mật</td><td>Cookie phiên bắt buộc HttpOnly=true, Secure=true, SameSite=Lax; phân quyền RBAC chặn triệt để /admin.</td><td>OWASP ZAP & DevTools audit</td></tr>
+    <tr><td><strong>NFR-08</strong></td><td>Bảo vệ dữ liệu NĐ 13</td><td>Không rò rỉ email/danh tính sinh viên trong payload JSON công khai; hiển thị ẩn danh chuẩn hóa.</td><td>Kiểm tra gói tin Network API</td></tr>
+    <tr><td><strong>NFR-09</strong></td><td>Trợ năng tiếp cận</td><td>Đạt chuẩn WCAG 2.1 AA; hỗ trợ thao tác 100% bằng bàn phím (Tab, Enter, Esc); tương phản màu &ge; 4.5:1.</td><td>Lighthouse Accessibility & Key</td></tr>
+    <tr><td><strong>NFR-10</strong></td><td>Tính nhất quán song ngữ</td><td>Dịch thuật 100% giao diện tiếng Anh; bảo toàn nguyên vẹn tham số lọc URL khi chuyển đổi ngôn ngữ.</td><td>Test tích hợp i18n tự động</td></tr>
+  </tbody>
+</table>
+
+<h1>8. Ma trận truy vết URD - SRS và Điều kiện nghiệm thu</h1>
+<table>
+  <thead>
+    <tr>
+      <th style="width: 20%;">User Story URD</th>
+      <th style="width: 25%;">Yêu cầu SRS tương ứng</th>
+      <th style="width: 20%;">Luồng nghiệp vụ</th>
+      <th style="width: 35%;">Tiêu chí chấp nhận nghiệm thu</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>US01 (Đăng nhập Google)</td><td>FR-08 (Xác thực người dùng)</td><td>FLOW-01</td><td>Đăng nhập 1-click, cấp cookie HttpOnly an toàn, đăng xuất sạch sẽ.</td></tr>
+    <tr><td>US02 (Tìm kiếm không dấu)</td><td>FR-01, FR-02 (Tìm kiếm & Lọc)</td><td>FLOW-01</td><td>Tìm chuẩn tiếng Việt không dấu, lọc chính xác theo trường, p90 &le; 2.0s.</td></tr>
+    <tr><td>US03 (Hồ sơ học thuật)</td><td>FR-03 (Hồ sơ giảng viên)</td><td>FLOW-01</td><td>Tách rõ GS/PGS với TS/ThS, avatar 1:1, dẫn link nguồn trường .edu.vn.</td></tr>
+    <tr><td>US04 (Đánh giá ẩn danh)</td><td>FR-06 (Đăng đánh giá)</td><td>FLOW-01</td><td>Thang điểm 1-5 sao, nhận xét 10-2000 ký tự, tác giả ẩn danh hoàn toàn.</td></tr>
+    <tr><td>US05 (Bình chọn hữu ích)</td><td>FR-05, FR-08 (Upvote)</td><td>FLOW-01</td><td>Chỉ upvote 1 lần/bài, không spam tăng vote vô hạn, toggle hủy vote.</td></tr>
+    <tr><td>US06 (Tra cứu trường ĐH)</td><td>FR-10 (Danh mục trường)</td><td>FLOW-01</td><td>Hiển thị danh bạ các trường và giảng viên trực thuộc chính xác.</td></tr>
+    <tr><td>US07 (Báo cáo vi phạm)</td><td>FR-07 (Báo cáo nội dung)</td><td>FLOW-02</td><td>Tiếp nhận báo cáo vi phạm, đưa vào hàng đợi kiểm duyệt tại /admin.</td></tr>
+    <tr><td>US08 (Đính chính NĐ 13)</td><td>FR-07 (Đính chính NĐ 13)</td><td>FLOW-02</td><td>Tiếp nhận email .edu.vn, link quyết định; Admin thẩm định duyệt/từ chối.</td></tr>
+    <tr><td>US09 (Giao diện song ngữ)</td><td>FR-11 (Song ngữ Vi/En)</td><td>FLOW-01, 02</td><td>Bản địa hóa 100%, bảo toàn tham số tìm kiếm ?q=... khi đổi ngôn ngữ.</td></tr>
+    <tr><td>US10 (Lưu giảng viên)</td><td>FR-04 (Bookmark)</td><td>FLOW-01</td><td>Lưu bền vững, tồn tại sau F5, danh sách đã lưu không đảo thông tin.</td></tr>
+    <tr><td>US11 (Bảo mật quản trị)</td><td>FR-12, NFR-07 (Admin RBAC)</td><td>FLOW-02</td><td>Chặn khách vãng lai và thành viên vào /admin, bảo vệ phiên cookie.</td></tr>
+    <tr><td>US12 (Thu thập dữ liệu)</td><td>FLOW-03 (Thu thập lịch sự)</td><td>FLOW-03</td><td>Tuân thủ robots.txt, độ trễ 1.5s, khử trùng lặp và đối soát danh bạ.</td></tr>
+  </tbody>
+</table>
+
+</body>
+</html>

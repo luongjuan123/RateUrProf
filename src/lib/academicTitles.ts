@@ -58,16 +58,14 @@ export function normalizeAcademicTitle(
   }
 
   // 4. Doctor of Philosophy / Lecturer (NOT a Professor)
-  // Strictly adhering to Requirement 7: A doctoral degree does not mean professor title.
   if (/^TS(\.|\s)/i.test(clean) || /Tiến sĩ/i.test(clean)) {
     return {
       rank: 'TS',
       degree: 'TS',
       instructionalRank: undefined,
       displayVi: 'Tiến sĩ',
-      displayEn: 'Doctor of Philosophy (Ph.D.), Lecturer',
+      displayEn: 'Lecturer, Ph.D.',
       sourceWordingPreserved: clean,
-      notes: 'Doctoral degree held; faculty instructional rank is Lecturer.',
     };
   }
 
